@@ -14,9 +14,14 @@
         <h2>Heisse Preise</h2>        
         <input id="search" class="search" type="text" placeholder="Produkte suchen...">
         <div class="filters">
-            <input id="billa" type="checkbox" checked="true"><label>Billa</label>
-            <input id="spar" type="checkbox" checked="true"><label>Spar</label>
-            <input id="eigenmarken" type="checkbox"><label>Nur CLEVER & S-BUDGET</label>
+            <label><input id="billa" type="checkbox" checked="true"> Billa</label>
+            <label><input id="spar" type="checkbox" checked="true"> Spar</label>
+            <label><input id="eigenmarken" type="checkbox"> Nur CLEVER & S-BUDGET</label>            
+        </div>
+        <div class="filters">
+            <label>Min € <input id="minprice" type="number" min="0" value="0"></label>
+            <label>Max € <input id="maxprice" type="number" min="0" value="100"></label>
+            <label><input id="exact" type="checkbox"> Exaktes Wort</label>
         </div>
         <div class="results">
             <table id="result">
