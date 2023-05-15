@@ -4,7 +4,8 @@ async function load() {
     let response = await fetch("api/index")
     items = await response.json();    
     for (item of items) {        
-        item.search = item.name + " " + item.unit;        
+        item.search = item.name + " " + item.unit;
+        item.search = item.search.toLowerCase();     
     }
 
     console.log(items.length);
