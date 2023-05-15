@@ -30,6 +30,8 @@ function dom(el, html) {
 }
 
 function searchItems(query) {
+    if (query.length < 3) return [];
+
     const tokens = query.split(/\s+/).map(token => token.toLowerCase());
 
     const hits = [];
