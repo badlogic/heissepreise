@@ -50,10 +50,7 @@ async function updateData() {
 }
 
 (async () => {
-    if (!fs.existsSync("data/latest-canonical.json")) {
-        console.log("Fetching initial data.");
-        await updateData();
-    }
+    await updateData();    
     let items = JSON.parse(fs.readFileSync("data/latest-canonical.json"));    
     
     const express = require('express')

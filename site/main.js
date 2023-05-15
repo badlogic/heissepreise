@@ -43,7 +43,8 @@ function searchItems(query) {
                 break;
             }
         }
-        if (allFound) hits.push({ doc: item });
+        if (allFound)
+            hits.push({ doc: item });
     }
     return hits;
 }
