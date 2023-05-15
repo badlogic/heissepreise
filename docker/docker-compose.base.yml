@@ -19,8 +19,6 @@ services:
             context: .
         container_name: hp_site
         restart: always
-#        links:
-#            - elasticsearch
         environment:            
             - HP_ADMIN_TOKEN=${HP_ADMIN_TOKEN}
         volumes:
@@ -28,17 +26,6 @@ services:
             - ./data/:/heisse-preise/data
         networks:
             - hp_network
-#    elasticsearch:
-#        image: docker.elastic.co/elasticsearch/elasticsearch:8.7.0
-#        container_name: hp_elasticsearch
-#        restart: always
-#        environment:
-#            - discovery.type=single-node
-#        ports:
-#            - 9200:9200
-#            - 9300:9300
-#        networks:
-#            - hp_network
 
 networks:
     hp_network:
