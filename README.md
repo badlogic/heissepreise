@@ -11,6 +11,8 @@ You can also get the [raw data](https://heisse-preise.io/api/index). The raw dat
 
 To run this terrible project locally, you'll need to install [Docker](https://www.docker.com/).
 
+The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `index.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
+
 For development, run `docker/control.sh startdev`. You can connect to both the NodeJS server and the client for debugging in Visual Studio code via the `client-server` launch configuration (found in `.vscode/launch.json`).
 
 For production, run `docker/control.sh start`.
