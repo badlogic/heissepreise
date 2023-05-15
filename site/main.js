@@ -1,22 +1,10 @@
-let index = null;
 let items = null;
 
 async function load() {
     let response = await fetch("api/index")
-    items = await response.json();
-
-    index = elasticlunr(function () {
-        // this.use(elasticlunr.de);
-        this.addField("search");        
-        this.setRef("id");        
-    });    
-
-    let i = 0;
-    for (item of items) {
-        item.id = i++;
-        item.search = item.name + " " + item.unit;
-        item.search = item.search.toLowerCase();
-        index.addDoc(item);
+    items = await response.json();    
+    for (item of items) {        
+        item.search = item.name + " " + item.unit;        
     }
 
     console.log(items.length);
@@ -49,8 +37,7 @@ function searchItems(query) {
     return hits;
 }
 
-function search(query) {
-    // const hits = index.search(query);
+function search(query) {    
     const hits = searchItems(query);
     const table = document.querySelector("#result");
     const eigenmarken = document.querySelector("#eigenmarken").checked;
