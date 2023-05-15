@@ -94,7 +94,7 @@ function search(query) {
         table.appendChild(dom("tr", `
         <td>${hit.doc.store}</td>
         <td>${hit.doc.name}</td>
-        <td>${hit.doc.unit}</td>
+        <td>${hit.doc.unit ? hit.doc.unit : ""}</td>
         <td>${hit.doc.price}</td>
         `));
     }
