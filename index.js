@@ -49,20 +49,25 @@ async function updateData() {
     console.log("Updated data");
 }
 
-let items = JSON.parse(fs.readFileSync("data/latest-canonical.json"));
-// updateData()
-
-const express = require('express')
-const compression = require('compression');
-const app = express()
-const port = 3000
-
-app.use(compression());
-
-app.get('/api/index', (req, res) => {
-  res.send(items)
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+(async () => {
+    if (!fs.existsSync("data/latest-canonical.json")) {
+        console.log("Fetching initial data.");
+        await updateData();
+    }
+    let items = JSON.parse(fs.readFileSync("data/latest-canonical.json"));    
+    
+    const express = require('express')
+    const compression = require('compression');
+    const app = express()
+    const port = 3000
+    
+    app.use(compression());
+    
+    app.get('/api/index', (req, res) => {
+      res.send(items)
+    })
+    
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`)
+    })
+})();
