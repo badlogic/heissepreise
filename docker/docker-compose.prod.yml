@@ -1,0 +1,13 @@
+version: "3"
+services:
+    web:
+        environment:
+            VIRTUAL_HOST: heisse-preise.io,www.heisse-preise.io
+            LETSENCRYPT_HOST: heisse-preise.io,www.heisse-preise.io
+            LETSENCRYPT_EMAIL: "badlogicgames@gmail.com"
+        networks:
+            - reverse_proxy
+networks:
+    reverse_proxy:
+        external:
+            name: nginx-proxy

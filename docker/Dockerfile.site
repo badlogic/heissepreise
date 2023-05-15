@@ -1,0 +1,4 @@
+FROM node:16
+
+WORKDIR /heisse-preise/
+ENTRYPOINT ["./docker/main.sh"]

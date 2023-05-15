@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web:
+    ports:
+      - 3001:80
+  site:
+    ports:
+      - 9230:9230
+    environment:
+      - DEV=true
+  

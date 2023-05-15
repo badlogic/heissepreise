@@ -1,0 +1,26 @@
+{
+  "name": "heissepreise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "DEV=true nodemon --watch index.js --inspect-brk=0.0.0.0:9230 index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badlogic/heissepreise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/badlogic/heissepreise/issues"
+  },
+  "homepage": "https://github.com/badlogic/heissepreise#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.2",
+    "nodemon": "^2.0.22"
+  }
+}

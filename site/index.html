@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heisse Preise</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="elasticlunr.js"></script>
+    <script src="lunr.stemmer.support.js"></script>
+    <script src="lunr.de.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Heisse Preise</h2>
+        <a href="api/index">Rohdaten</a>
+        <input id="search" class="search" type="text" placeholder="Produkte suchen...">
+        <div class="filters">
+            <input id="billa" type="checkbox" checked="true"><label>Billa</label>
+            <input id="spar" type="checkbox" checked="true"><label>Spar</label>
+            <input id="eigenmarken" type="checkbox"><label>Nur CLEVER & S-BUDGET</label>
+        </div>
+        <div class="results">
+            <table id="result">
+            </table>
+        </div>        
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

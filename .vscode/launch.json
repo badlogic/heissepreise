@@ -1,0 +1,37 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "pwa-chrome",
+			"request": "launch",
+			"name": "client",
+			"url": "http://localhost:3001",
+			"webRoot": "${workspaceFolder}/site"
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "server",
+			"port": 9230,
+			"address": "localhost",
+			"localRoot": "${workspaceFolder}",
+			"remoteRoot": "/heisse-preise",
+			"protocol": "inspector",
+			"restart": true,
+			"continueOnAttach": true
+		},
+	],
+	"compounds": [
+		{
+			"name": "client-server",
+			"configurations": [
+				"client",
+				"server"
+			],
+			"stopAll": true
+		}
+	]
+}

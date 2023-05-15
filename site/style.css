@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;   
+}
+
+.search {
+    margin: 20px 0;
+    width: 80%;
+    font-size: 1.5em;
+}
+
+.filters {
+    margin-bottom: 1em;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+}
+
+table {
+    width: 100%;    
+}
