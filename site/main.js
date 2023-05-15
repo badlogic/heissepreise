@@ -57,7 +57,7 @@ function search(query) {
     const spar = document.querySelector("#spar").checked;
     table.innerHTML = "";
 
-    if (hits.ielength == 0) return;
+    if (hits.length == 0) return;
 
     hits.sort((a, b) => {
         return a.doc.price - b.doc.price;

@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 800px;
-    margin: 0 auto;   
+    margin: 0 auto;
 }
 
 .search {
@@ -26,9 +26,13 @@ body {
 .results {
     display: flex;
     flex-direction: row;
-    width: 100%; 
+    width: 100%;
 }
 
 table {
-    width: 100%;    
+    width: 100%;
+}
+
+th {
+    text-align: left;
 }
