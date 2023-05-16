@@ -2,15 +2,11 @@ let items = null;
 
 async function load() {
     let response = await fetch("api/index")
-    items = await response.json();
-    let units = {};
+    items = await response.json();    
     for (item of items) {        
         item.search = item.name + " " + item.unit;
-        item.search = item.search.toLowerCase();   
-        units[item.unit] = item.unit; 
-    }
-
-    console.log(Object.keys(units));
+        item.search = item.search.toLowerCase();           
+    }    
     
     setupUI();
 }

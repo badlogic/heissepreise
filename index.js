@@ -1,7 +1,7 @@
 const fs = require("fs")
 const axios = require("axios")
 
-const HITS = 30000;
+const HITS = Math.floor(30000 + Math.random() * 2000);
 const SPAR_SEARCH = `https://search-spar.spar-ics.com/fact-finder/rest/v4/search/products_lmos_at?query=*&q=*&page=1&hitsPerPage=${HITS}`;
 const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}`;
 
@@ -49,32 +49,49 @@ async function updateData() {
     fs.writeFileSync(`data/billa-${today}-canonical.json`, JSON.stringify(billaItemsCanonical, null, 2));
 
     const allItems = [...billaItemsCanonical, ...sparItemsCanonical];
+    const priceChanges = [];
     if (fs.existsSync("data/latest-canonical.json")) {
         const oldItems = JSON.parse(fs.readFileSync("data/latest-canonical.json"));    
         const lookup = {}
         for (oldItem of oldItems) {
-            lookup[oldItem.name] = oldItem;
+            lookup[oldItem.name + oldItem.unit] = oldItem;
         }
-
+        
         for (item of allItems) {
-            let oldItem = lookup[item.name];
+            let oldItem = lookup[item.name + item.unit];
             let currPrice = item.priceHistory[0];
             if (oldItem) {
                 for (oldPrice of oldItem.priceHistory) {
-                    if (oldPrice.date != currPrice.date)
+                    if (oldPrice.date != currPrice.date && oldPrice.price != currPrice.price) {
                         item.priceHistory.push(oldPrice);
+                    }
                 }
+            }
+        }
+        
+        for (item of allItems) {
+            if (item.priceHistory.length > 1 && item.priceHistory[0].date == today) {
+                priceChanges.push({
+                    store: item.store,
+                    name: item.name,
+                    unit: item.unit,
+                    oldPrice: item.priceHistory[1],
+                    newPrice: item.priceHistory[0]
+                });
             }
         }
     }
 
     fs.writeFileSync(`data/latest-canonical.json`,  JSON.stringify(allItems, null, 2));
+    fs.writeFileSync(`data/price-changes-${today}.json`,  JSON.stringify(priceChanges, null, 2));
 
     console.log("Updated data");
     items = allItems;
+    changes = priceChanges;
 }
 
 let items = null;
+let changes = null;
 
 (async () => {
     await updateData();    
@@ -90,6 +107,10 @@ let items = null;
     app.get('/api/index', (req, res) => {
       res.send(items)
     })
+
+    app.get('/api/changes', (req, res) => {
+        res.send(changes)
+      })
     
     app.listen(port, () => {
       console.log(`Example app listening on port ${port}`)
