@@ -5,6 +5,15 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "analysis",
+			"program": "${workspaceFolder}/analysis.js",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
 			"type": "pwa-chrome",
 			"request": "launch",
 			"name": "client",
