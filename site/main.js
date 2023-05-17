@@ -78,23 +78,43 @@ function search(query) {
         <th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>
     `));
 
-    for (hit of hits) {
+    hits.forEach(hit => {
         const name = hit.name.toLowerCase();
-        if (hit.store == "billa" && !billa) continue;
-        if (hit.store == "spar" && !spar) continue;
-        if (hit.price < minPrice) continue;
-        if (hit.price > maxPrice) continue;
+        if (hit.store == "billa" && !billa) return;
+        if (hit.store == "spar" && !spar) return;
+        if (hit.price < minPrice) return;
+        if (hit.price > maxPrice) return;
         if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0))
-            continue;
+            return;
 
         let storeDom = dom("td", hit.store);
         let nameDom = dom("td", hit.store == "spar" ?
             `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(hit.name)}">${hit.name}</a>` :
             `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(hit.name)}">${hit.name}</a>`);
         let unitDom = dom("td", hit.unit ? hit.unit : "");
-        let priceDom = dom("td", hit.price + (hit.priceHistory.length > 1 ? (hit.priceHistory[0].price > hit.priceHistory[1].price ? " 📈" : " 📉") : ""));
+        let priceDomText = hit.price + (hit.priceHistory.length > 1 ? (hit.priceHistory[0].price > hit.priceHistory[1].price ? " 📈" : " 📉") : "");
+        let priceDom = dom("td", priceDomText);
         if (hit.priceHistory.length > 1) {
             priceDom.style["cursor"] = "pointer";
+            priceDom.addEventListener("click", () => {
+                if (priceDom.innerHTML == priceDomText) {
+                    priceDom.innerHTML = priceDomText;
+                    let pricesText = "";
+                    for (let i = 0; i < hit.priceHistory.length; i++) {
+                        const date = hit.priceHistory[i].date;
+                        const currPrice = hit.priceHistory[i].price;
+                        const lastPrice = hit.priceHistory[i + 1] ? hit.priceHistory[i + 1].price : currPrice;
+                        const increase = Math.round((currPrice - lastPrice) / lastPrice * 100);
+                        let priceColor = "black";
+                        if (increase > 0) priceColor = "red";
+                        if (increase < 0) priceColor = "green";
+                        pricesText += `<br><span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
+                    }
+                    priceDom.innerHTML += pricesText;
+                } else {
+                    priceDom.innerHTML = priceDomText;
+                }
+            });
         }
         let row = dom("tr", "");
         row.appendChild(storeDom);
@@ -102,7 +122,7 @@ function search(query) {
         row.appendChild(unitDom);
         row.appendChild(priceDom);
         table.appendChild(row);
-    }
+    });
 }
 
 function setupUI() {

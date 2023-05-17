@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 1em;
     font-family: sans-serif;
 }
 
@@ -9,7 +9,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -30,7 +29,6 @@ input[type="number"] {
 .results {
     display: flex;
     flex-direction: row;
-    width: 100%;
 }
 
 table {
