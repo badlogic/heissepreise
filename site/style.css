@@ -15,8 +15,8 @@ body {
 
 .search {
     margin: 20px 0;
-    width: 80%;
-    font-size: 1.5em;
+    width: 50%;
+    font-size: 1em;
 }
 
 .filters {
@@ -42,12 +42,12 @@ table {
 th {
     border: 1px solid;
     padding: 0.2em;
-    background: #aaa;  
+    background: #aaa;
 }
 
 tr {
     border-collapse: collapse;
-    border: 1px solid #ddd;    
+    border: 1px solid #ddd;
 }
 
 td {

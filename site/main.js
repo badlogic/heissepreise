@@ -2,12 +2,12 @@ let items = null;
 
 async function load() {
     let response = await fetch("api/index")
-    items = await response.json();    
-    for (item of items) {        
+    items = await response.json();
+    for (item of items) {
         item.search = item.name + " " + item.unit;
-        item.search = item.search.toLowerCase();           
-    }    
-    
+        item.search = item.search.toLowerCase();
+    }
+
     setupUI();
 }
 
@@ -44,7 +44,7 @@ function searchItems(query, exact) {
             }
         }
         if (allFound)
-            hits.push({ doc: item });
+            hits.push(item);
     }
     return hits;
 }
@@ -52,18 +52,18 @@ function searchItems(query, exact) {
 function toNumber(value, defaultValue) {
     try {
         return Number.parseFloat(value);
-    } catch(e) {
+    } catch (e) {
         return defaultValue;
     }
 }
 
-function search(query) {    
+function search(query) {
     const exact = document.querySelector("#exact").checked;
     const hits = searchItems(query, exact);
     const table = document.querySelector("#result");
     const eigenmarken = document.querySelector("#eigenmarken").checked;
     const billa = document.querySelector("#billa").checked;
-    const spar = document.querySelector("#spar").checked;    
+    const spar = document.querySelector("#spar").checked;
     const minPrice = toNumber(document.querySelector("#minprice").value, 0);
     const maxPrice = toNumber(document.querySelector("#maxprice").value, 100);
     table.innerHTML = "";
@@ -71,7 +71,7 @@ function search(query) {
     if (hits.length == 0) return;
 
     hits.sort((a, b) => {
-        return a.doc.price - b.doc.price;
+        return a.price - b.price;
     })
 
     table.appendChild(dom("tr", `
@@ -79,20 +79,29 @@ function search(query) {
     `));
 
     for (hit of hits) {
-        const name = hit.doc.name.toLowerCase();
-        if (hit.doc.store == "billa" && !billa) continue;
-        if (hit.doc.store == "spar" && !spar) continue;
-        if (hit.doc.price < minPrice) continue;
-        if (hit.doc.price > maxPrice) continue;
+        const name = hit.name.toLowerCase();
+        if (hit.store == "billa" && !billa) continue;
+        if (hit.store == "spar" && !spar) continue;
+        if (hit.price < minPrice) continue;
+        if (hit.price > maxPrice) continue;
         if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0))
             continue;
 
-        table.appendChild(dom("tr", `
-        <td>${hit.doc.store}</td>
-        <td>${hit.doc.name}</td>
-        <td>${hit.doc.unit ? hit.doc.unit : ""}</td>
-        <td>${hit.doc.price}</td>
-        `));
+        let storeDom = dom("td", hit.store);
+        let nameDom = dom("td", hit.store == "spar" ?
+            `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(hit.name)}">${hit.name}</a>` :
+            `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(hit.name)}">${hit.name}</a>`);
+        let unitDom = dom("td", hit.unit ? hit.unit : "");
+        let priceDom = dom("td", hit.price + (hit.priceHistory.length > 1 ? (hit.priceHistory[0].price > hit.priceHistory[1].price ? " 📈" : " 📉") : ""));
+        if (hit.priceHistory.length > 1) {
+            priceDom.style["cursor"] = "pointer";
+        }
+        let row = dom("tr", "");
+        row.appendChild(storeDom);
+        row.appendChild(nameDom);
+        row.appendChild(unitDom);
+        row.appendChild(priceDom);
+        table.appendChild(row);
     }
 }
 
