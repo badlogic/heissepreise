@@ -71,11 +71,10 @@ async function fetchHofer() {
   const CONFIG={headers: {authorization: null}}
   const ITEMS = BASE_URL+`/productlist/CategoryProductList`
 
-  // TODO: create/fetch token on the fly
-  if(CONFIG.headers.authorization == null) {
-    console.warn("SKIP Hofer (no token set)")
-    return [];
-  }
+  // fetch access token
+  const token_data ={"OwnWebshopProviderCode":"","SetUserSelectedShopsOnFirstSiteLoad":true,"RedirectToDashboardNeeded":false,"ShopsSelectedForRoot":"hofer","BrandProviderSelectedForRoot":null,"UserSelectedShops":[]}
+  const token = (await axios.post("https://shopservice.roksh.at/session/configure", token_data, {headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }})).headers['jwt-auth'];
+  CONFIG.headers.authorization = "Bearer " + token;
 
   // concat all subcategories (categories.[i].ChildList)
   const categories = (await axios.post(CATEGORIES, {}, CONFIG)).data;
