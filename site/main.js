@@ -80,7 +80,7 @@ function search(query) {
         if (hit.store == "hofer" && !hofer) return;
         if (hit.price < minPrice) return;
         if (hit.price > maxPrice) return;
-        if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0))
+        if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0 || name.indexOf("milfina") == 0))
             return;
 
         table.appendChild(itemToDOM(hit));
