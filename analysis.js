@@ -126,7 +126,7 @@ function replay(rawDataDir) {
     const today = currentDate();
 
     const files = fs.readdirSync(rawDataDir).filter(
-        file => file.indexOf("canonical") == -1 && (file.indexOf("billa-") == 0 || file.indexOf("spar") == 0)
+        file => file.indexOf("canonical") == -1 && (file.indexOf("billa-") == 0 || file.indexOf("spar") == 0 || file.indexOf("hofer") == 0)
     );
 
     const dateSort = (a, b) => {
@@ -138,11 +138,25 @@ function replay(rawDataDir) {
     const sparFilesCanonical = sparFiles.map(file => sparToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
     const billaFiles = files.filter(file => file.indexOf("billa-") == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
     const billaFilesCanonical = billaFiles.map(file => billaToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+    const hoferFiles = files.filter(file => file.indexOf("hofer-") == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
+    const hoferFilesCanonical = hoferFiles.map(file => hoferToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
 
     const allFilesCanonical = [];
-    for (let i = 0; i < sparFilesCanonical.length; i++) {
-        allFilesCanonical.push([...sparFilesCanonical[i], ...billaFilesCanonical[i]]);
+    const len = Math.max(sparFilesCanonical.length, Math.max(billaFilesCanonical.length, hoferFilesCanonical.length));
+    sparFilesCanonical.reverse();
+    billaFilesCanonical.reverse();
+    hoferFilesCanonical.reverse();
+    for (let i = 0; i < len; i++) {
+        const canonical = [];
+        let spar = sparFilesCanonical.pop();
+        if (spar) canonical.push(...spar);
+        let billa = billaFilesCanonical.pop();
+        if (billa) canonical.push(...billa);
+        let hofer = hoferFilesCanonical.pop();
+        if (hofer) canonical.push(...hofer);
+        allFilesCanonical.push(canonical);
     }
+    allFilesCanonical.reverse();
 
     if (allFilesCanonical.length == 0) return null;
     if (allFilesCanonical.length == 1) return allFilesCanonical[0];
