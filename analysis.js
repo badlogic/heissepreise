@@ -49,6 +49,51 @@ function billaToCanonical(rawItems, today) {
     return canonicalItems;
 }
 
+function hoferToCanonical(rawItems, today) {
+    const canonicalItems = [];
+    for (let i = 0; i < rawItems.length; i++) {
+        const item = rawItems[i];
+        canonicalItems.push({
+            store: "hofer",
+            id: item.ProductId,
+            name: item.ProductName,
+            price: item.Price,
+            priceHistory: [{date: today, price: item.Price}],
+            unit: `${item.Unit} ${item.UnitType}`
+        });
+    }
+    return canonicalItems;
+}
+
+async function fetchHofer() {
+  const BASE_URL = `https://shopservice.roksh.at`
+  const CATEGORIES = BASE_URL+`/category/GetFullCategoryList/`
+  const CONFIG={headers: {authorization: null}}
+  const ITEMS = BASE_URL+`/productlist/CategoryProductList`
+
+  // fetch access token
+  const token_data ={"OwnWebshopProviderCode":"","SetUserSelectedShopsOnFirstSiteLoad":true,"RedirectToDashboardNeeded":false,"ShopsSelectedForRoot":"hofer","BrandProviderSelectedForRoot":null,"UserSelectedShops":[]}
+  const token = (await axios.post("https://shopservice.roksh.at/session/configure", token_data, {headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }})).headers['jwt-auth'];
+  CONFIG.headers.authorization = "Bearer " + token;
+
+  // concat all subcategories (categories.[i].ChildList)
+  const categories = (await axios.post(CATEGORIES, {}, CONFIG)).data;
+  const subCategories = categories.reduce((acc, category) => acc.concat(category.ChildList), []);
+
+  let hoferItems = [];
+  for (let subCategory of subCategories) {
+    let categoryData = (await axios.get(`${ITEMS}?progId=${subCategory.ProgID}&firstLoadProductListResultNum=4&listResultProductNum=24`, CONFIG)).data;
+    const numPages = categoryData.ProductListResults[0].ListContext.TotalPages;
+
+    for (let iPage = 1; iPage <= numPages; iPage++) {
+      let items = (await axios.post(`${BASE_URL}/productlist/GetProductList`, {CategoryProgId: subCategory.ProgID, Page: iPage}, CONFIG)).data;
+      hoferItems = hoferItems.concat(items.ProductList);
+    }
+  }
+
+  return hoferItems;
+}
+
 function mergePriceHistory(oldItems, items) {
     if (oldItems == null) return items;
 
@@ -132,7 +177,13 @@ exports.updateData = async function (dataDir) {
     const billaItemsCanonical = billaToCanonical(billaItems, today);
     console.log("Fetched BILLA data, took " + (performance.now() - start) / 1000 + " seconds");
 
-    const items = [...billaItemsCanonical, ...sparItemsCanonical];
+    start = performance.now();
+    const hoferItems = await fetchHofer();
+    fs.writeFileSync(`${dataDir}/hofer-${today}.json`, JSON.stringify(hoferItems, null, 2));
+    const hoferItemsCanonical = hoferToCanonical(hoferItems, today);
+    console.log("Fetched HOFER data, took " + (performance.now() - start) / 1000 + " seconds");
+
+    const items = [...billaItemsCanonical, ...sparItemsCanonical, ...hoferItemsCanonical];
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
         const oldItems = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
         mergePriceHistory(oldItems, items);
