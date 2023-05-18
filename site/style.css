@@ -26,13 +26,7 @@ input[type="number"] {
     max-width: 3em;
 }
 
-.results {
-    display: flex;
-    flex-direction: row;
-}
-
 table {
-    width: 100%;
     border-collapse: collapse;
     border: 1px solid;
 }

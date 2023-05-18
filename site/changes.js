@@ -1,17 +1,3 @@
-function currentDate() {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    const day = String(currentDate.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-}
-
-function dom(el, html) {
-    let element = document.createElement(el);
-    element.innerHTML = html;
-    return element;
-}
-
 let changeDates = [];
 let items = [];
 
@@ -49,13 +35,7 @@ function showResults(items, today) {
 
         for (let i = 0; i < item.priceHistory.length; i++) {
             if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
-                changedItems.push({
-                    store: item.store,
-                    name: item.name,
-                    unit: item.unit,
-                    oldPrice: item.priceHistory[i + 1].price,
-                    newPrice: item.priceHistory[i].price
-                });
+                changedItems.push(item);
             }
         }
     }
@@ -63,17 +43,11 @@ function showResults(items, today) {
     const table = document.querySelector("#result");
     table.innerHTML = "";
     table.appendChild(dom("tr", `
-        <th>Kette</th><th>Name</th><th>Menge</th><th>Preis alt</th><th>Preis neu</th>
+        <th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>
     `));
 
     for (item of changedItems) {
-        table.appendChild(dom("tr", `
-        <td>${item.store}</td>
-        <td>${item.name}</td>
-        <td>${item.unit ? item.unit : ""}</td>
-        <td>${item.oldPrice}</td>
-        <td style="color: ${item.oldPrice < item.newPrice ? "red" : "green"}">${item.newPrice}</td>
-        `));
+        table.appendChild(itemToDOM(item));
     }
 }
 

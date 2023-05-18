@@ -12,6 +12,10 @@
 <body>
     <div class="main">
         <h2>Heisse Preise</h2>
+        <div class="filters">
+            <a href="changes.html">Tagespreisänderungen</a>
+            <a href="carts.html">Warenkörbe</a>
+        </div>
         <input id="search" class="search" type="text" placeholder="Produkte suchen...">
         <div class="filters">
             <label><input id="billa" type="checkbox" checked="true"> Billa</label>
@@ -23,11 +27,9 @@
             <label>Max € <input id="maxprice" type="number" min="0" value="100"></label>
             <label><input id="exact" type="checkbox"> Exaktes Wort</label>
         </div>
-        <div class="results">
-            <table id="result">
-            </table>
-        </div>
+        <table id="result"></table>
     </div>
+    <script src="utils.js"></script>
     <script src="main.js"></script>
 </body>
 

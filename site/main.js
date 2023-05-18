@@ -11,12 +11,6 @@ async function load() {
     setupUI();
 }
 
-function dom(el, html) {
-    let element = document.createElement(el);
-    element.innerHTML = html;
-    return element;
-}
-
 function searchItems(query, exact) {
     if (query.length < 3) return [];
 
@@ -87,41 +81,7 @@ function search(query) {
         if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0))
             return;
 
-        let storeDom = dom("td", hit.store);
-        let nameDom = dom("td", hit.store == "spar" ?
-            `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(hit.name)}">${hit.name}</a>` :
-            `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(hit.name)}">${hit.name}</a>`);
-        let unitDom = dom("td", hit.unit ? hit.unit : "");
-        let priceDomText = hit.price + (hit.priceHistory.length > 1 ? (hit.priceHistory[0].price > hit.priceHistory[1].price ? " 📈" : " 📉") : "");
-        let priceDom = dom("td", priceDomText);
-        if (hit.priceHistory.length > 1) {
-            priceDom.style["cursor"] = "pointer";
-            priceDom.addEventListener("click", () => {
-                if (priceDom.innerHTML == priceDomText) {
-                    priceDom.innerHTML = priceDomText;
-                    let pricesText = "";
-                    for (let i = 0; i < hit.priceHistory.length; i++) {
-                        const date = hit.priceHistory[i].date;
-                        const currPrice = hit.priceHistory[i].price;
-                        const lastPrice = hit.priceHistory[i + 1] ? hit.priceHistory[i + 1].price : currPrice;
-                        const increase = Math.round((currPrice - lastPrice) / lastPrice * 100);
-                        let priceColor = "black";
-                        if (increase > 0) priceColor = "red";
-                        if (increase < 0) priceColor = "green";
-                        pricesText += `<br><span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
-                    }
-                    priceDom.innerHTML += pricesText;
-                } else {
-                    priceDom.innerHTML = priceDomText;
-                }
-            });
-        }
-        let row = dom("tr", "");
-        row.appendChild(storeDom);
-        row.appendChild(nameDom);
-        row.appendChild(unitDom);
-        row.appendChild(priceDom);
-        table.appendChild(row);
+        table.appendChild(itemToDOM(hit));
     });
 }
 
