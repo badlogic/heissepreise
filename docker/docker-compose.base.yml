@@ -4,6 +4,8 @@ services:
         image: nginx:1.21.6
         container_name: hp_nginx
         restart: always
+        ports:
+            - "80:80"
         links:
             - site
         volumes:
