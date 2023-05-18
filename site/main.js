@@ -64,6 +64,7 @@ function search(query) {
     const eigenmarken = document.querySelector("#eigenmarken").checked;
     const billa = document.querySelector("#billa").checked;
     const spar = document.querySelector("#spar").checked;
+    const hofer = document.querySelector("#hofer").checked;
     const minPrice = toNumber(document.querySelector("#minprice").value, 0);
     const maxPrice = toNumber(document.querySelector("#maxprice").value, 100);
     table.innerHTML = "";
@@ -82,6 +83,7 @@ function search(query) {
         const name = hit.name.toLowerCase();
         if (hit.store == "billa" && !billa) return;
         if (hit.store == "spar" && !spar) return;
+        if (hit.store == "hofer" && !hofer) return;
         if (hit.price < minPrice) return;
         if (hit.price > maxPrice) return;
         if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0))
@@ -137,6 +139,7 @@ function setupUI() {
     document.querySelector("#eigenmarken").addEventListener("change", () => search(searchInput.value));
     document.querySelector("#billa").addEventListener("change", () => search(searchInput.value));
     document.querySelector("#spar").addEventListener("change", () => search(searchInput.value));
+    document.querySelector("#hofer").addEventListener("change", () => search(searchInput.value));
     document.querySelector("#exact").addEventListener("change", () => search(searchInput.value));
     document.querySelector("#minprice").addEventListener("change", () => search(searchInput.value));
     document.querySelector("#maxprice").addEventListener("change", () => search(searchInput.value));
