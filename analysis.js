@@ -58,7 +58,7 @@ function hoferToCanonical(rawItems, today) {
             id: item.ProductId,
             name: item.ProductName,
             price: item.Price,
-            priceHistory: [{date: today, price: item.Price}],
+            priceHistory: [{ date: today, price: item.Price }],
             unit: `${item.Unit} ${item.UnitType}`
         });
     }
@@ -66,32 +66,32 @@ function hoferToCanonical(rawItems, today) {
 }
 
 async function fetchHofer() {
-  const BASE_URL = `https://shopservice.roksh.at`
-  const CATEGORIES = BASE_URL+`/category/GetFullCategoryList/`
-  const CONFIG={headers: {authorization: null}}
-  const ITEMS = BASE_URL+`/productlist/CategoryProductList`
+    const BASE_URL = `https://shopservice.roksh.at`
+    const CATEGORIES = BASE_URL + `/category/GetFullCategoryList/`
+    const CONFIG = { headers: { authorization: null } }
+    const ITEMS = BASE_URL + `/productlist/CategoryProductList`
 
-  // fetch access token
-  const token_data ={"OwnWebshopProviderCode":"","SetUserSelectedShopsOnFirstSiteLoad":true,"RedirectToDashboardNeeded":false,"ShopsSelectedForRoot":"hofer","BrandProviderSelectedForRoot":null,"UserSelectedShops":[]}
-  const token = (await axios.post("https://shopservice.roksh.at/session/configure", token_data, {headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }})).headers['jwt-auth'];
-  CONFIG.headers.authorization = "Bearer " + token;
+    // fetch access token
+    const token_data = { "OwnWebshopProviderCode": "", "SetUserSelectedShopsOnFirstSiteLoad": true, "RedirectToDashboardNeeded": false, "ShopsSelectedForRoot": "hofer", "BrandProviderSelectedForRoot": null, "UserSelectedShops": [] }
+    const token = (await axios.post("https://shopservice.roksh.at/session/configure", token_data, { headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } })).headers['jwt-auth'];
+    CONFIG.headers.authorization = "Bearer " + token;
 
-  // concat all subcategories (categories.[i].ChildList)
-  const categories = (await axios.post(CATEGORIES, {}, CONFIG)).data;
-  const subCategories = categories.reduce((acc, category) => acc.concat(category.ChildList), []);
+    // concat all subcategories (categories.[i].ChildList)
+    const categories = (await axios.post(CATEGORIES, {}, CONFIG)).data;
+    const subCategories = categories.reduce((acc, category) => acc.concat(category.ChildList), []);
 
-  let hoferItems = [];
-  for (let subCategory of subCategories) {
-    let categoryData = (await axios.get(`${ITEMS}?progId=${subCategory.ProgID}&firstLoadProductListResultNum=4&listResultProductNum=24`, CONFIG)).data;
-    const numPages = categoryData.ProductListResults[0].ListContext.TotalPages;
+    let hoferItems = [];
+    for (let subCategory of subCategories) {
+        let categoryData = (await axios.get(`${ITEMS}?progId=${subCategory.ProgID}&firstLoadProductListResultNum=4&listResultProductNum=24`, CONFIG)).data;
+        const numPages = categoryData.ProductListResults[0].ListContext.TotalPages;
 
-    for (let iPage = 1; iPage <= numPages; iPage++) {
-      let items = (await axios.post(`${BASE_URL}/productlist/GetProductList`, {CategoryProgId: subCategory.ProgID, Page: iPage}, CONFIG)).data;
-      hoferItems = hoferItems.concat(items.ProductList);
+        for (let iPage = 1; iPage <= numPages; iPage++) {
+            let items = (await axios.post(`${BASE_URL}/productlist/GetProductList`, { CategoryProgId: subCategory.ProgID, Page: iPage }, CONFIG)).data;
+            hoferItems = hoferItems.concat(items.ProductList);
+        }
     }
-  }
 
-  return hoferItems;
+    return hoferItems;
 }
 
 function mergePriceHistory(oldItems, items) {
