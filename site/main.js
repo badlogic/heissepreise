@@ -73,15 +73,6 @@ function search(query) {
         <th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>
     `));
 
-    const genLink = (store, name) => {
-        if (store == "spar")
-            return `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(name)}">${name}</a>`;
-        if (store == "billa")
-            return `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(name)}">${name}</a>`;
-        if (store == "hofer")
-            return `<a target="_blank" href="https://www.roksh.at/hofer/angebot/suche/${encodeURIComponent(name)}">${name}</a>`;
-        return name;
-    }
     hits.forEach(hit => {
         const name = hit.name.toLowerCase();
         if (hit.store == "billa" && !billa) return;

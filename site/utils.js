@@ -12,11 +12,19 @@ function dom(el, html) {
     return element;
 }
 
+function itemToStoreLink(item) {
+    if (item.store == "spar")
+        return `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(item.name)}">${item.name}</a>`;
+    if (item.store == "billa")
+        return `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(item.name)}">${item.name}</a>`;
+    if (item.store == "hofer")
+        return `<a target="_blank" href="https://www.roksh.at/hofer/angebot/suche/${encodeURIComponent(item.name)}">${item.name}</a>`;
+    return item.name;
+}
+
 function itemToDOM(item) {
     let storeDom = dom("td", item.store);
-    let nameDom = dom("td", item.store == "spar" ?
-        `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(item.name)}">${item.name}</a>` :
-        `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(item.name)}">${item.name}</a>`);
+    let nameDom = dom("td", itemToStoreLink(item));
     let unitDom = dom("td", item.unit ? item.unit : "");
     let priceDomText = item.price + (item.priceHistory.length > 1 ? (item.priceHistory[0].price > item.priceHistory[1].price ? " 📈" : " 📉") : "");
     let priceDom = dom("td", priceDomText);
