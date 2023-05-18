@@ -55,7 +55,7 @@ function hoferToCanonical(rawItems, today) {
         const item = rawItems[i];
         canonicalItems.push({
             store: "hofer",
-            id: item.ProductId,
+            id: item.ProductID,
             name: item.ProductName,
             price: item.Price,
             priceHistory: [{ date: today, price: item.Price }],
@@ -99,11 +99,11 @@ function mergePriceHistory(oldItems, items) {
 
     const lookup = {}
     for (oldItem of oldItems) {
-        lookup[oldItem.id] = oldItem;
+        lookup[oldItem.store + oldItem.id] = oldItem;
     }
 
     for (item of items) {
-        let oldItem = lookup[item.id];
+        let oldItem = lookup[item.store + item.id];
         let currPrice = item.priceHistory[0];
         if (oldItem) {
             if (oldItem.priceHistory[0].price == currPrice.price) {
@@ -148,15 +148,14 @@ function replay(rawDataDir) {
     hoferFilesCanonical.reverse();
     for (let i = 0; i < len; i++) {
         const canonical = [];
-        let spar = sparFilesCanonical.pop();
-        if (spar) canonical.push(...spar);
         let billa = billaFilesCanonical.pop();
         if (billa) canonical.push(...billa);
+        let spar = sparFilesCanonical.pop();
+        if (spar) canonical.push(...spar);
         let hofer = hoferFilesCanonical.pop();
         if (hofer) canonical.push(...hofer);
         allFilesCanonical.push(canonical);
     }
-    allFilesCanonical.reverse();
 
     if (allFilesCanonical.length == 0) return null;
     if (allFilesCanonical.length == 1) return allFilesCanonical[0];
@@ -175,7 +174,7 @@ const HITS = Math.floor(30000 + Math.random() * 2000);
 const SPAR_SEARCH = `https://search-spar.spar-ics.com/fact-finder/rest/v4/search/products_lmos_at?query=*&q=*&page=1&hitsPerPage=${HITS}`;
 const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}`;
 
-exports.updateData = async function (dataDir) {
+exports.updateData = async function (dataDir, done) {
     const today = currentDate();
     console.log("Fetching data for date: " + today);
 
@@ -205,12 +204,14 @@ exports.updateData = async function (dataDir) {
     }
     fs.writeFileSync(`${dataDir}/latest-canonical.json`, JSON.stringify(items, null, 2));
 
+    if (done) done(items);
     return items;
 }
 
-/*(async () => {
+async function restore() {
+    console.log("Restoring data");
     writeJSON("data/latest-canonical.json", replay("data"));
-    await updateData("data");
+    await exports.updateData("data");
 
     const today = currentDate();
     const items = readJSON("data/latest-canonical.json");
@@ -219,4 +220,6 @@ exports.updateData = async function (dataDir) {
             console.log(`${item.store} ${item.name} ${item.priceHistory[1].price} -> ${item.priceHistory[0].price}`);
         }
     }
-})();*/
+}
+ writeJSON("data/latest-canonical-replay.json", replay("data"));
+// restore()

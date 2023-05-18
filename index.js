@@ -1,11 +1,11 @@
 const fs = require("fs");
 const analysis = require("./analysis");
 
+let items = [];
 (async () => {
-  let items = [];
   if (fs.existsSync("data/latest-canonical.json")) {
     items = JSON.parse(fs.readFileSync("data/latest-canonical.json"));
-    analysis.updateData("data");
+    analysis.updateData("data", (newItems => items = newItems));
   } else {
     items = await analysis.updateData("data");
   }
