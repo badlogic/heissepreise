@@ -221,5 +221,5 @@ async function restore() {
         }
     }
 }
- writeJSON("data/latest-canonical-replay.json", replay("data"));
+ // writeJSON("data/latest-canonical-replay.json", replay("data"));
 // restore()
