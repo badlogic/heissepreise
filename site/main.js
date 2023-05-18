@@ -79,6 +79,15 @@ function search(query) {
         <th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>
     `));
 
+    const genLink = (store, name) => {
+        if (store == "spar")
+            return `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(name)}">${name}</a>`;
+        if (store == "billa")
+            return `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(name)}">${name}</a>`;
+        if (store == "hofer")
+            return `<a target="_blank" href="https://www.roksh.at/hofer/angebot/suche/${encodeURIComponent(name)}">${name}</a>`;
+        return name;
+    }
     hits.forEach(hit => {
         const name = hit.name.toLowerCase();
         if (hit.store == "billa" && !billa) return;
@@ -90,9 +99,7 @@ function search(query) {
             return;
 
         let storeDom = dom("td", hit.store);
-        let nameDom = dom("td", hit.store == "spar" ?
-            `<a target="_blank" href="https://www.interspar.at/shop/lebensmittel/search/?q=${encodeURIComponent(hit.name)}">${hit.name}</a>` :
-            `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(hit.name)}">${hit.name}</a>`);
+        let nameDom = dom("td", genLink(hit.store, hit.name))
         let unitDom = dom("td", hit.unit ? hit.unit : "");
         let priceDomText = hit.price + (hit.priceHistory.length > 1 ? (hit.priceHistory[0].price > hit.priceHistory[1].price ? " 📈" : " 📉") : "");
         let priceDom = dom("td", priceDomText);
