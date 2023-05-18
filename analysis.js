@@ -21,13 +21,24 @@ function sparToCanonical(rawItems, today) {
     const canonicalItems = [];
     for (let i = 0; i < rawItems.length; i++) {
         const item = rawItems[i];
+
+        let price, unit;
+        if (item.masterValues["quantity-selector"]) {
+            const [str_price, str_unit] = item.masterValues["price-per-unit"].split('/');
+            price = parseFloat(str_price.replace("€", ""));
+            unit = str_unit.trim();
+        }
+        else {
+            price = item.masterValues.price;
+            unit = item.masterValues["short-description-3"];
+        }
         canonicalItems.push({
             store: "spar",
             id: item.masterValues["code-internal"],
             name: item.masterValues.title + " " + item.masterValues["short-description"],
-            price: item.masterValues.price,
-            priceHistory: [{ date: today, price: item.masterValues.price }],
-            unit: item.masterValues["short-description-3"]
+            price,
+            priceHistory: [{ date: today, price }],
+            unit
         });
     }
     return canonicalItems;
