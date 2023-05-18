@@ -165,25 +165,30 @@ exports.updateData = async function (dataDir) {
     const today = currentDate();
     console.log("Fetching data for date: " + today);
 
-    let start = performance.now();
-    const sparItems = (await axios.get(SPAR_SEARCH)).data.hits;
-    fs.writeFileSync(`${dataDir}/spar-${today}.json`, JSON.stringify(sparItems, null, 2));
-    const sparItemsCanonical = sparToCanonical(sparItems, today);
-    console.log("Fetched SPAR data, took " + (performance.now() - start) / 1000 + " seconds");
 
-    start = performance.now();
-    const billaItems = (await axios.get(BILLA_SEARCH)).data.tiles;
-    fs.writeFileSync(`${dataDir}/billa-${today}.json`, JSON.stringify(billaItems, null, 2));
-    const billaItemsCanonical = billaToCanonical(billaItems, today);
-    console.log("Fetched BILLA data, took " + (performance.now() - start) / 1000 + " seconds");
+    let items = [];
+    for (const shop of ['spar', 'billa', 'hofer']) {
+      let start = performance.now();
+      let itemsCanonical;
+      let shopItems;
+      const itemsFile = `${dataDir}/${shop}-${today}.json`
+      const load = fs.existsSync(itemsFile);
+      if(load) {
+        shopItems = JSON.parse(fs.readFileSync(itemsFile));
+      }
+      else {
+        if(shop === 'spar') shopItems = (await axios.get(SPAR_SEARCH)).data.hits;
+        if(shop === 'billa') shopItems = (await axios.get(BILLA_SEARCH)).data.hits;
+        if(shop === 'hofer') shopItems = await fetchHofer();
+        fs.writeFileSync(itemsFile, JSON.stringify(shopItems, null, 2));
+      }
+      if(shop === 'spar') itemsCanonical = sparToCanonical(shopItems, today);
+      if(shop === 'billa') itemsCanonical = billaToCanonical(shopItems, today);
+      if(shop === 'hofer') itemsCanonical = hoferToCanonical(shopItems, today);
+      items = items.concat(itemsCanonical);
+      console.log(`${load ? 'Loaded' : 'Fetched'} ${shop.toUpperCase()} data, took ${(performance.now() - start) / 1000}  seconds`);
+    }
 
-    start = performance.now();
-    const hoferItems = await fetchHofer();
-    fs.writeFileSync(`${dataDir}/hofer-${today}.json`, JSON.stringify(hoferItems, null, 2));
-    const hoferItemsCanonical = hoferToCanonical(hoferItems, today);
-    console.log("Fetched HOFER data, took " + (performance.now() - start) / 1000 + " seconds");
-
-    const items = [...billaItemsCanonical, ...sparItemsCanonical, ...hoferItemsCanonical];
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
         const oldItems = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
         mergePriceHistory(oldItems, items);
