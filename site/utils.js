@@ -6,6 +6,19 @@ function currentDate() {
     return `${year}-${month}-${day}`;
 }
 
+function getQueryParameter(name) {
+    const url = window.location.href;
+    const queryString = url.substring(url.indexOf('?') + 1);
+    const parameters = queryString.split('&');
+
+    for (var i = 0; i < parameters.length; i++) {
+        const parameter = parameters[i].split('=');
+        const paramName = decodeURIComponent(parameter[0]);
+        if (paramName == name) return decodeURIComponent(parameter[1]);
+    }
+    return null;
+}
+
 function toNumber(value, defaultValue) {
     try {
         return Number.parseFloat(value);
@@ -48,7 +61,7 @@ function addCart(name) {
 }
 
 function removeCart(name) {
-    carts = carts.filter(cart => cart.name == name);
+    carts = carts.filter(cart => cart.name != name);
     saveCarts();
 }
 
@@ -66,7 +79,7 @@ function itemToDOM(item) {
     let storeDom = dom("td", item.store);
     let nameDom = dom("td", itemToStoreLink(item));
     let unitDom = dom("td", item.unit ? item.unit : "");
-    let priceDomText = item.price + (item.priceHistory.length > 1 ? (item.priceHistory[0].price > item.priceHistory[1].price ? " 📈" : " 📉") + " (" + (item.priceHistory.length - 1) + ")": "");
+    let priceDomText = item.price + (item.priceHistory.length > 1 ? (item.priceHistory[0].price > item.priceHistory[1].price ? " 📈" : " 📉") + " (" + (item.priceHistory.length - 1) + ")" : "");
     let priceDom = dom("td", priceDomText);
     if (item.priceHistory.length > 1) {
         priceDom.style["cursor"] = "pointer";
@@ -132,7 +145,7 @@ function searchItems(items, query, exact) {
     return hits;
 }
 
-function newSearchComponent(parentElement, items, filter, headerModifier, itemModifier) {
+function newSearchComponent(parentElement, items, filter, headerModifier, itemDomModifier) {
     for (item of items) {
         item.search = item.name + " " + item.unit;
         item.search = item.search.toLowerCase();
@@ -187,9 +200,9 @@ function newSearchComponent(parentElement, items, filter, headerModifier, itemMo
             if (eigenmarken.checked && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0 || name.indexOf("milfina") == 0))
                 return;
 
-            let item = itemToDOM(hit);
-            if (itemModifier) item = itemModifier(item);
-            table.appendChild(item);
+            let itemDom = itemToDOM(hit);
+            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom);
+            table.appendChild(itemDom);
         });
     }
 
