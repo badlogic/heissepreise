@@ -104,6 +104,17 @@ function itemToDOM(item) {
         });
     }
     let row = dom("tr", "");
+    switch(item.store) {
+        case "billa":
+            row.style["background"] = "#ffffbf";
+            break;
+        case "spar":
+            row.style["background"] = "#c5f0c5";
+            break;
+        case "hofer":
+            row.style["background"] = "#d5d5ff";
+            break;
+    }
     row.appendChild(storeDom);
     row.appendChild(nameDom);
     row.appendChild(unitDom);
