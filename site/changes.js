@@ -26,16 +26,26 @@ async function load() {
     dateSelection.addEventListener("change", () => {
         showResults(items, dateSelection.value);
     })
+    document.querySelector("#increases").addEventListener("change", () => {
+        showResults(items, dateSelection.value);
+    })
+    document.querySelector("#decreases").addEventListener("change", () => {
+        showResults(items, dateSelection.value);
+    })
 }
 
 function showResults(items, today) {
+    const increases = document.querySelector("#increases").checked;
+    const decreases = document.querySelector("#decreases").checked;
+    const fullHistory = document.querySelector("#fullhistory").checked;
     const changedItems = [];
     for (item of items) {
         if (item.priceHistory.length < 2) continue;
 
         for (let i = 0; i < item.priceHistory.length; i++) {
             if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
-                changedItems.push(item);
+                if (increases && (item.priceHistory[i].price > item.priceHistory[i + 1].price)) changedItems.push(item);
+                if (decreases && (item.priceHistory[i].price < item.priceHistory[i + 1].price)) changedItems.push(item);
             }
         }
     }
@@ -47,6 +57,14 @@ function showResults(items, today) {
     `));
 
     for (item of changedItems) {
+        item = JSON.parse(JSON.stringify(item));
+        if (!fullHistory) {
+            let priceHistory = [];
+            for(let i = 0;i < item.priceHistory.length; i++) {
+                priceHistory.push(item.priceHistory[i]);
+                if (item.priceHistory[i].date == today) break;
+            }
+        }
         table.appendChild(itemToDOM(item));
     }
 }

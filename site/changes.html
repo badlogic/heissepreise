@@ -10,10 +10,15 @@
 </head>
 
 <body>
-    <div class="main">
+    <div class="column">
         <h2>Heisse Preise</h2>
         <div class="filters">
             <label>Preisänderungen am <select id="dates"></select></label>
+        </div>
+        <div class="filters">
+            <label>Teurer<input id="increases" type="checkbox" checked="true"></label>
+            <label>Billiger<input id="decreases" type="checkbox" checked="true"></label>
+            <label>Gesamte Preishistorie<input id="fullhistory" type="checkbox" checked="true"></label>
         </div>
         <table id="result"></table>
     </div>
