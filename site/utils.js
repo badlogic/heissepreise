@@ -106,13 +106,13 @@ function itemToDOM(item) {
     let row = dom("tr", "");
     switch(item.store) {
         case "billa":
-            row.style["background"] = "#ffffbf";
+            row.style["background"] = "rgb(255 255 225)";
             break;
         case "spar":
-            row.style["background"] = "#c5f0c5";
+            row.style["background"] = "rgb(225 244 225)";
             break;
         case "hofer":
-            row.style["background"] = "#d5d5ff";
+            row.style["background"] = "rgb(230 230 255)";
             break;
     }
     row.appendChild(storeDom);
