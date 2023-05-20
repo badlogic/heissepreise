@@ -54,7 +54,7 @@ function billaToCanonical(rawItems, today) {
             name: item.data.name,
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
-            unit: item.data.grammage
+            unit: item.data.grammagePriceFactor != 1 ? item.data.grammage : "kg"
         });
     }
     return canonicalItems;
@@ -133,7 +133,7 @@ function mergePriceHistory(oldItems, items) {
 
 /// Given a directory of raw data of the form `billa-$date.json` and `spar-$date.json`, constructs
 /// a canonical list of all products and their historical price data.
-function replay(rawDataDir) {
+exports.replay = function(rawDataDir) {
     const today = currentDate();
 
     const files = fs.readdirSync(rawDataDir).filter(
@@ -218,19 +218,3 @@ exports.updateData = async function (dataDir, done) {
     if (done) done(items);
     return items;
 }
-
-async function restore() {
-    console.log("Restoring data");
-    writeJSON("data/latest-canonical.json", replay("data"));
-    await exports.updateData("data");
-
-    const today = currentDate();
-    const items = readJSON("data/latest-canonical.json");
-    for (item of items) {
-        if (item.priceHistory[0].date == today && item.priceHistory.length > 1) {
-            console.log(`${item.store} ${item.name} ${item.priceHistory[1].price} -> ${item.priceHistory[0].price}`);
-        }
-    }
-}
- // writeJSON("data/latest-canonical-replay.json", replay("data"));
-// restore()
