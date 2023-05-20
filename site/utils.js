@@ -127,7 +127,7 @@ let componentId = 0;
 function searchItems(items, query, exact) {
     if (query.length < 3) return [];
 
-    const tokens = query.split(/\s+/).map(token => token.toLowerCase());
+    const tokens = query.split(/\s+/).map(token => token.toLowerCase().replace(",", "."));
 
     const hits = [];
     for (item of items) {
@@ -159,7 +159,7 @@ function searchItems(items, query, exact) {
 function newSearchComponent(parentElement, items, filter, headerModifier, itemDomModifier) {
     for (item of items) {
         item.search = item.name + " " + item.unit;
-        item.search = item.search.toLowerCase();
+        item.search = item.search.toLowerCase().replace(",", ".");;
     }
 
     let id = componentId++;
