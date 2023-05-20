@@ -54,7 +54,7 @@ function billaToCanonical(rawItems, today) {
             name: item.data.name,
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
-            unit: item.data.grammagePriceFactor != 1 ? item.data.grammage : "kg"
+            unit: item.data.grammagePriceFactor == 1 ? item.data.grammage : "kg"
         });
     }
     return canonicalItems;
