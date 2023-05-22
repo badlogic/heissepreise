@@ -8,17 +8,11 @@ async function load() {
 
     let cart = null;
     let cartName = getQueryParameter("name");
-
-    if (cartName != "Momentum Eigenmarken Vergleich") {
-        for (c of carts) {
-            if (c.name == cartName) {
-                cart = c;
-                break;
-            }
+    for (c of carts) {
+        if (c.name == cartName) {
+            cart = c;
+            break;
         }
-    } else {
-        const response = await fetch("momentum-cart.json");
-        cart = await response.json();
     }
 
     if (cart == null) {
@@ -26,7 +20,7 @@ async function load() {
         location.href = "carts.html";
     }
 
-    showSearch(cart, items);
+    if (cart.name != "Momentum Eigenmarken Vergleich") showSearch(cart, items);
     showCart(cart, lookup);
 }
 
@@ -60,10 +54,68 @@ function showSearch(cart, items) {
     });
 }
 
+let lastChart = null;
+function showChart(canvasDom, cart, lookup) {
+    let data = [];
+    cart.items.forEach((i, idx) => {
+        const item = lookup[i.id];
+        if (!item) return;
+        if(i.chart) data.push(item);
+    });
+    if (data.length == 0) {
+        canvasDom.style.display = "none";
+        return;
+    } else {
+        canvasDom.style.display = "block";
+    }
+
+    const allDates = data.flatMap(product => product.priceHistory.map(item => item.date));
+    const uniqueDates = [...new Set(allDates)];
+    uniqueDates.sort();
+
+    const datasets = data.map(product => {
+        let price = null;
+        const prices = uniqueDates.map(date => {
+            const priceObj = product.priceHistory.find(item => item.date === date);
+            if (!price && priceObj) price = priceObj.price;
+            return priceObj ? priceObj.price : null;
+        });
+
+        for (let i = 0; i < prices.length; i++) {
+            if (!prices[i]) {
+                prices[i] = price;
+            } else {
+                price = prices[i];
+            }
+        }
+
+        return {
+            label: product.name,
+            data: prices,
+        };
+    });
+
+    const ctx = canvasDom.getContext('2d');
+    if (lastChart) lastChart.destroy();
+    lastChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: uniqueDates,
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+        }
+    });
+}
+
 function showCart(cart, lookup) {
     const cartDom = document.querySelector("#cart");
     cartDom.innerHTML = "";
     cartDom.append(dom("h2", "Warenkorb '" + cart.name + "'"));
+    const canvasDom = dom("canvas", "");
+    cartDom.append(canvasDom);
+    showChart(canvasDom, cart, lookup);
 
     const itemTable = dom("table", "");
     const header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th><th></th>`);
@@ -73,17 +125,30 @@ function showCart(cart, lookup) {
         const item = lookup[i.id];
         if (!item) return;
         const itemDom = itemToDOM(item)
-        const deleteButton = dom("input", "");
-        deleteButton.setAttribute("type", "button");
-        deleteButton.setAttribute("value", "-");
-        itemDom.append(deleteButton);
-        itemTable.append(itemDom);
 
-        deleteButton.addEventListener("click", () => {
-            cart.items.splice(idx, 1);
+        const checkBox = dom("input", "");
+        checkBox.setAttribute("type", "checkbox");
+        if (i.chart) checkBox.setAttribute("checked", true);
+        itemDom.append(checkBox);
+        checkBox.addEventListener("change", () => {
+            i.chart = checkBox.checked;
             saveCarts();
-            showCart(cart, lookup)
-        })
+            showChart(canvasDom, cart, lookup);
+        });
+
+        if (cart.name != "Momentum Eigenmarken Vergleich") {
+            const deleteButton = dom("input", "");
+            deleteButton.setAttribute("type", "button");
+            deleteButton.setAttribute("value", "-");
+            itemDom.append(deleteButton);
+            deleteButton.addEventListener("click", () => {
+                cart.items.splice(idx, 1);
+                saveCarts();
+                showCart(cart, lookup)
+            })
+        }
+
+        itemTable.append(itemDom);
     });
     cartDom.append(itemTable);
 }

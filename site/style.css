@@ -29,6 +29,7 @@ input[type="number"] {
 table {
     border-collapse: collapse;
     border: 1px solid;
+    margin-top: 1em;
 }
 
 th {

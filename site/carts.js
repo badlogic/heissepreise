@@ -6,9 +6,12 @@ async function load() {
         lookup[item.id] = item;
     }
 
-    response = await fetch("momentum-cart.json");
-    momentumCart = await response.json();
-    carts.unshift(momentumCart);
+    if (carts.findIndex(cart => cart.name == "Momentum Eigenmarken Vergleich") == -1) {
+        response = await fetch("momentum-cart.json");
+        momentumCart = await response.json();
+        carts.unshift(momentumCart);
+        saveCarts();
+    }
 
     const newCartButton = document.querySelector("#newcart");
     newCartButton.addEventListener("click", () => {
