@@ -1,10 +1,14 @@
 async function load() {
-    const response = await fetch("api/index")
+    let response = await fetch("api/index")
     items = await response.json();
     lookup = {};
     for (item of items) {
         lookup[item.id] = item;
     }
+
+    response = await fetch("momentum-cart.json");
+    momentumCart = await response.json();
+    carts.unshift(momentumCart);
 
     const newCartButton = document.querySelector("#newcart");
     newCartButton.addEventListener("click", () => {
@@ -48,16 +52,18 @@ function showCarts(lookup) {
         row.appendChild(dom("td", `<a href="cart.html?name=${cart.name}">${cart.name}</a>`));
         row.appendChild(dom("td", cart.items.length));
         row.appendChild(dom("td", `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)}`));
-        let deleteButton = dom("input");
-        deleteButton.setAttribute("type", "button");
-        deleteButton.setAttribute("value", "Löschen");
-        row.appendChild(deleteButton);
-        cartsTable.appendChild(row);
+        if (cart.name != "Momentum Eigenmarken Vergleich") {
+            let deleteButton = dom("input");
+            deleteButton.setAttribute("type", "button");
+            deleteButton.setAttribute("value", "Löschen");
+            row.appendChild(deleteButton);
 
-        deleteButton.addEventListener("click", () => {
-            removeCart(cart.name);
-            showCarts(lookup);
-        });
+            deleteButton.addEventListener("click", () => {
+                removeCart(cart.name);
+                showCarts(lookup);
+            });
+        }
+        cartsTable.appendChild(row);
     });
 }
 

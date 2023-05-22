@@ -6,13 +6,19 @@ async function load() {
         lookup[item.id] = item;
     }
 
-    let cartName = getQueryParameter("name");
     let cart = null;
-    for (c of carts) {
-        if (c.name == cartName) {
-            cart = c;
-            break;
+    let cartName = getQueryParameter("name");
+
+    if (cartName != "Momentum Eigenmarken Vergleich") {
+        for (c of carts) {
+            if (c.name == cartName) {
+                cart = c;
+                break;
+            }
         }
+    } else {
+        const response = await fetch("momentum-cart.json");
+        cart = await response.json();
     }
 
     if (cart == null) {
