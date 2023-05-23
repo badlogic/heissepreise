@@ -16,3 +16,6 @@ The project consists of a trivial NodeJS Express server responsible for fetching
 For development, run `docker/control.sh startdev`. You can connect to both the NodeJS server and the client for debugging in Visual Studio code via the `client-server` launch configuration (found in `.vscode/launch.json`).
 
 For production, run `docker/control.sh start`.
+
+## Self-contained executable
+If you just want to run an instance of this app without Docker, run `package.sh` in a Bash shell, with NodeJS installed. It will generate a folder `dist/` with executable for Windows, Linux, and MacOS. Run the executable for your OS. On first start, it will fetch the initial data. Once loaded, you can open http://localhost:3000 to use the app. Subsequent starts will fetch the data in the background, so the web app is available instantaniously.
