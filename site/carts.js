@@ -1,6 +1,5 @@
 async function load() {
-    let response = await fetch("api/index")
-    items = await response.json();
+    const items = await loadItems();
     lookup = {};
     for (item of items) {
         lookup[item.id] = item;

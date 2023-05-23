@@ -14,7 +14,8 @@ body {
 
 .search {
     margin: 20px 0;
-    width: 30em;
+    width: 100%;
+    max-width: 30em;
     font-size: 1em;
 }
 

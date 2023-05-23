@@ -1,13 +1,12 @@
 async function load() {
-    const response = await fetch("api/index")
-    items = await response.json();
-    lookup = {};
+    const items = await loadItems();
+    const lookup = {};
     for (item of items) {
         lookup[item.id] = item;
     }
 
     let cart = null;
-    let cartName = getQueryParameter("name");
+    const cartName = getQueryParameter("name");
     for (c of carts) {
         if (c.name == cartName) {
             cart = c;

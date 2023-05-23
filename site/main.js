@@ -1,9 +1,5 @@
-let items = null;
-
 async function load() {
-    let response = await fetch("api/index")
-    items = await response.json();
-
+    const items = await loadItems();
     newSearchComponent(document.querySelector("#search"), items);
 }
 

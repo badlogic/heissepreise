@@ -125,11 +125,26 @@ function itemToDOM(item) {
 let componentId = 0;
 
 function searchItems(items, query, exact) {
+    query = query.trim();
     if (query.length < 3) return [];
+
+    if (query.charAt(0) == "!") {
+        query = query.substring(1);
+        try {
+            let hits = alasql("select * from ? where " + query, [items]);
+            if (hits.length > 1000) {
+                return hits.slice(0, 1000);
+            } else {
+                return hits;
+            }
+        } catch (e) {
+            return [];
+        }
+    }
 
     const tokens = query.split(/\s+/).map(token => token.toLowerCase().replace(",", "."));
 
-    const hits = [];
+    let hits = [];
     for (item of items) {
         let allFound = true;
         for (token of tokens) {
@@ -156,12 +171,30 @@ function searchItems(items, query, exact) {
     return hits;
 }
 
-function newSearchComponent(parentElement, items, filter, headerModifier, itemDomModifier) {
+async function loadItems() {
+    const response = await fetch("api/index")
+    const items = await response.json();
+
     for (item of items) {
         item.search = item.name + " " + item.unit;
-        item.search = item.search.toLowerCase().replace(",", ".");;
-    }
+        item.search = item.search.toLowerCase().replace(",", ".");
 
+        item.numPrices = item.priceHistory.length;
+        item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
+        item.date = item.priceHistory[0].date;
+        let lastPrice = item.price;
+        for (let i = 1; i < 10; i++) {
+            let price = item.priceHistory[i];
+            if (!price) price = lastPrice;
+            item["price" + (i + 1)] = price.price;
+            item["date" + (i + 1)] = price.date;
+            lastPrice = price;
+        }
+    }
+    return items;
+}
+
+function newSearchComponent(parentElement, items, filter, headerModifier, itemDomModifier) {
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
@@ -177,6 +210,7 @@ function newSearchComponent(parentElement, items, filter, headerModifier, itemDo
             <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
             <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
         </div>
+        <div id="numresults-${id}"></div>
         <table id="result-${id}"></table>
     `;
 
@@ -189,18 +223,20 @@ function newSearchComponent(parentElement, items, filter, headerModifier, itemDo
     const hofer = parentElement.querySelector(`#hofer-${id}`);
     const minPrice = parentElement.querySelector(`#minprice-${id}`);
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
+    const numResults = parentElement.querySelector(`#numresults-${id}`);
 
     let search = (query) => {
         let hits = searchItems(items, query, exact.checked);
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
         if (hits.length == 0) return;
-        hits.sort((a, b) => a.price - b.price);
+        if (query.trim().charAt(0) != "!") hits.sort((a, b) => a.price - b.price);
 
         const header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
         if (headerModifier) headerModifier(header);
         table.appendChild(header);
 
+        let num = 0;
         hits.forEach(hit => {
             const name = hit.name.toLowerCase();
             if (hit.store == "billa" && !billa.checked) return;
@@ -214,7 +250,9 @@ function newSearchComponent(parentElement, items, filter, headerModifier, itemDo
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom);
             table.appendChild(itemDom);
+            num++;
         });
+        numResults.innerHTML = "Resultate: " + num;
     }
 
     searchInput.addEventListener("input", (event) => {
