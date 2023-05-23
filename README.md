@@ -37,7 +37,7 @@ Once the app is listening on port 3000, open http://localhost:3000 in your brows
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
 
 ## Docker
-The project has a somewhat peculiar Docker Compose setup tailored to my infrastructure. All compose config files are in `docker/` including a simple Bash script to start and interact with the containers. This is the setup I use for both deployment
+The project has a somewhat peculiar Docker Compose setup tailored to my infrastructure. All compose config files are in `docker/` including a simple Bash script to start and interact with the containers. This is the setup I use for both development and deployment.
 
 For development, run `docker/control.sh startdev`. You can connect to both the NodeJS server and the client for debugging in Visual Studio code via the `client-server` launch configuration (found in `.vscode/launch.json`).
 
