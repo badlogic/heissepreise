@@ -33,6 +33,29 @@ function dom(el, html) {
     return element;
 }
 
+async function loadItems() {
+    const response = await fetch("api/index")
+    const items = await response.json();
+
+    for (item of items) {
+        item.search = item.name + " " + item.unit;
+        item.search = item.search.toLowerCase().replace(",", ".");
+
+        item.numPrices = item.priceHistory.length;
+        item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
+        item.date = item.priceHistory[0].date;
+        let lastPrice = item.price;
+        for (let i = 1; i < 10; i++) {
+            let price = item.priceHistory[i];
+            if (!price) price = lastPrice;
+            item["price" + (i + 1)] = price.price;
+            item["date" + (i + 1)] = price.date;
+            lastPrice = price;
+        }
+    }
+    return items;
+}
+
 let carts = [];
 loadCarts();
 
@@ -124,7 +147,7 @@ function itemToDOM(item) {
 
 let componentId = 0;
 
-function searchItems(items, query, exact) {
+function searchItems(items, query, billa, spar, hofer, eigenmarken, minPrice, maxPrice, exact) {
     query = query.trim();
     if (query.length < 3) return [];
 
@@ -165,36 +188,21 @@ function searchItems(items, query, exact) {
                 }
             }
         }
-        if (allFound)
+        if (allFound) {
+            const name = item.name.toLowerCase();
+            if (item.store == "billa" && !billa) continue;
+            if (item.store == "spar" && !spar) continue;
+            if (item.store == "hofer" && !hofer) continue;
+            if (item.price < minPrice) continue;
+            if (item.price > maxPrice) continue;
+            if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0 || name.indexOf("milfina") == 0)) continue;
             hits.push(item);
+        }
     }
     return hits;
 }
 
-async function loadItems() {
-    const response = await fetch("api/index")
-    const items = await response.json();
-
-    for (item of items) {
-        item.search = item.name + " " + item.unit;
-        item.search = item.search.toLowerCase().replace(",", ".");
-
-        item.numPrices = item.priceHistory.length;
-        item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
-        item.date = item.priceHistory[0].date;
-        let lastPrice = item.price;
-        for (let i = 1; i < 10; i++) {
-            let price = item.priceHistory[i];
-            if (!price) price = lastPrice;
-            item["price" + (i + 1)] = price.price;
-            item["date" + (i + 1)] = price.date;
-            lastPrice = price;
-        }
-    }
-    return items;
-}
-
-function newSearchComponent(parentElement, items, filter, headerModifier, itemDomModifier) {
+function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier) {
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
@@ -226,10 +234,17 @@ function newSearchComponent(parentElement, items, filter, headerModifier, itemDo
     const numResults = parentElement.querySelector(`#numresults-${id}`);
 
     let search = (query) => {
-        let hits = searchItems(items, query, exact.checked);
+        let hits = searchItems(items, query,
+            billa.checked, spar.checked, hofer.checked, eigenmarken.checked,
+            toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked
+        );
+        if (searched) hits = searched(hits);
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
-        if (hits.length == 0) return;
+        if (hits.length == 0) {
+            numResults.innerHTML = "Resultate: 0";
+            return;
+        }
         if (query.trim().charAt(0) != "!") hits.sort((a, b) => a.price - b.price);
 
         const header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
@@ -238,27 +253,24 @@ function newSearchComponent(parentElement, items, filter, headerModifier, itemDo
 
         let num = 0;
         hits.forEach(hit => {
-            const name = hit.name.toLowerCase();
-            if (hit.store == "billa" && !billa.checked) return;
-            if (hit.store == "spar" && !spar.checked) return;
-            if (hit.store == "hofer" && !hofer.checked) return;
-            if (hit.price < toNumber(minPrice.value, 0)) return;
-            if (hit.price > toNumber(maxPrice.value, 100)) return;
-            if (eigenmarken.checked && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0 || name.indexOf("milfina") == 0))
-                return;
-
             let itemDom = itemToDOM(hit);
-            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom);
+            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits);
             table.appendChild(itemDom);
             num++;
         });
-        numResults.innerHTML = "Resultate: " + num;
+        numResults.innerHTML = "Resultate: " + num + (num == 1000 ? "+" : "");
     }
 
     searchInput.addEventListener("input", (event) => {
-        if (searchInput.value.length == 0) {
+        const query = searchInput.value.trim();
+        if (query == 0) {
             minPrice.value = 0;
             maxPrice.value = 100;
+        }
+        if (query.length > 0 && query.charAt(0) == "!") {
+            parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
+        } else {
+            parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
         }
         search(searchInput.value);
     });
@@ -271,4 +283,53 @@ function newSearchComponent(parentElement, items, filter, headerModifier, itemDo
     maxPrice.addEventListener("change", () => search(searchInput.value));
 
     return () => search(searchInput.value);
+}
+
+function showChart(canvasDom, items) {
+    if (items.length == 0) {
+        canvasDom.style.display = "none";
+        return;
+    } else {
+        canvasDom.style.display = "block";
+    }
+
+    const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
+    const uniqueDates = [...new Set(allDates)];
+    uniqueDates.sort();
+
+    const datasets = items.map(product => {
+        let price = null;
+        const prices = uniqueDates.map(date => {
+            const priceObj = product.priceHistory.find(item => item.date === date);
+            if (!price && priceObj) price = priceObj.price;
+            return priceObj ? priceObj.price : null;
+        });
+
+        for (let i = 0; i < prices.length; i++) {
+            if (!prices[i]) {
+                prices[i] = price;
+            } else {
+                price = prices[i];
+            }
+        }
+
+        return {
+            label: product.name,
+            data: prices,
+        };
+    });
+
+    const ctx = canvasDom.getContext('2d');
+    if (canvasDom.lastChart) canvasDom.lastChart.destroy();
+    canvasDom.lastChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: uniqueDates,
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            aspectRation: 16 / 9
+        }
+    });
 }
