@@ -38,7 +38,8 @@ function sparToCanonical(rawItems, today) {
             name: item.masterValues.title + " " + item.masterValues["short-description"],
             price,
             priceHistory: [{ date: today, price }],
-            unit
+            unit,
+            bio: item.masterValues.biolevel === "Bio"
         });
     }
     return canonicalItems;
@@ -54,7 +55,8 @@ function billaToCanonical(rawItems, today) {
             name: item.data.name,
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
-            unit: item.data.grammagePriceFactor == 1 ? item.data.grammage : "kg"
+            unit: item.data.grammagePriceFactor == 1 ? item.data.grammage : "kg",
+            bio: item.data.attributes && item.data.attributes.includes("s_bio")
         });
     }
     return canonicalItems;
@@ -70,7 +72,8 @@ function hoferToCanonical(rawItems, today) {
             name: item.ProductName,
             price: item.Price,
             priceHistory: [{ date: today, price: item.Price }],
-            unit: `${item.Unit} ${item.UnitType}`
+            unit: `${item.Unit} ${item.UnitType}`,
+            bio: item.IsBio
         });
     }
     return canonicalItems;
