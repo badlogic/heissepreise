@@ -127,7 +127,7 @@ function itemToDOM(item) {
         });
     }
     let row = dom("tr", "");
-    switch(item.store) {
+    switch (item.store) {
         case "billa":
             row.style["background"] = "rgb(255 255 225)";
             break;
@@ -161,7 +161,7 @@ function searchItems(items, query, billa, spar, hofer, eigenmarken, minPrice, ma
                 return hits;
             }
         } catch (e) {
-            return [];
+            throw e;
         }
     }
 
@@ -234,10 +234,15 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const numResults = parentElement.querySelector(`#numresults-${id}`);
 
     let search = (query) => {
-        let hits = searchItems(items, query,
-            billa.checked, spar.checked, hofer.checked, eigenmarken.checked,
-            toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked
-        );
+        let hits = [];
+        try {
+            hits = searchItems(items, query,
+                billa.checked, spar.checked, hofer.checked, eigenmarken.checked,
+                toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked
+            );
+        } catch (e) {
+            console.log("Query: " + query + "\n" + e.message);
+        }
         if (searched) hits = searched(hits);
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
