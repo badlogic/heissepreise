@@ -284,6 +284,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         search(searchInput.value);
     });
     eigenmarken.addEventListener("change", () => search(searchInput.value));
+    bio.addEventListener("change", () => search(searchInput.value));
     billa.addEventListener("change", () => search(searchInput.value));
     spar.addEventListener("change", () => search(searchInput.value));
     hofer.addEventListener("change", () => search(searchInput.value));
