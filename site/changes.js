@@ -52,9 +52,18 @@ function showResults(items, today) {
 
     const table = document.querySelector("#result");
     table.innerHTML = "";
-    table.appendChild(dom("tr", `
-        <th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>
-    `));
+    const header = dom("tr", `
+        <th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th>
+    `)
+    const showHideAll = header.querySelectorAll('th:nth-child(4)')[0];
+    showHideAll.style["cursor"] = "pointer";
+    showHideAll.showAll = true;
+    showHideAll.addEventListener("click", () => {
+        table.querySelectorAll(".priceinfo").forEach(el => showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide"));
+        showHideAll.showAll = !showHideAll.showAll;
+    })
+
+    table.appendChild(header);
 
     for (item of changedItems) {
         item = JSON.parse(JSON.stringify(item));

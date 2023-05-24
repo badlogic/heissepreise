@@ -52,3 +52,11 @@ td {
 th {
     text-align: left;
 }
+
+.priceinfo {
+    margin-top: 0;
+}
+
+.hide {
+    display: none;
+}

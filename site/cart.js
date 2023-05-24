@@ -21,6 +21,19 @@ async function load() {
 
     if (cart.name != "Momentum Eigenmarken Vergleich") showSearch(cart, items, lookup);
     showCart(cart, lookup);
+    const canvasDom = document.querySelector("#chart");
+    document.querySelector("#sum").addEventListener("change", () => {
+        showCharts(canvasDom, cart, lookup);
+    });
+    document.querySelector("#sumbilla").addEventListener("change", () => {
+        showCharts(canvasDom, cart, lookup);
+    });
+    document.querySelector("#sumspar").addEventListener("change", () => {
+        showCharts(canvasDom, cart, lookup);
+    });
+    document.querySelector("#sumhofer").addEventListener("change", () => {
+        showCharts(canvasDom, cart, lookup);
+    })
 }
 
 function showSearch(cart, items, lookup) {
@@ -53,21 +66,68 @@ function showSearch(cart, items, lookup) {
     });
 }
 
-function showCart(cart, lookup) {
-    const cartDom = document.querySelector("#cart");
-    cartDom.innerHTML = "";
-    cartDom.append(dom("h2", "Warenkorb '" + cart.name + "'"));
-    const canvasDom = dom("canvas", "");
-    cartDom.append(canvasDom);
-    const items = [];
+function showCharts(canvasDom, cart, lookup) {
+    let itemsToShow = [];
+    let items = [];
     cart.items.forEach((cartItem) => {
         const item = lookup[cartItem.id];
         if (!item) return;
-        if(cartItem.chart) items.push(item);
+        items.push(item);
     });
-    showChart(canvasDom, items, lookup);
 
-    const itemTable = dom("table", "");
+    if (document.querySelector("#sum").checked && items.length > 0) {
+        itemsToShow.push({
+            name: "Summe",
+            priceHistory: calculateOverallPriceChanges(items)
+        });
+    }
+
+    if (document.querySelector("#sumbilla").checked) {
+        const itemsBilla = items.filter(item => item.store == "billa");
+        if (itemsBilla.length > 0) {
+            itemsToShow.push({
+                name: "Summe Billa",
+                priceHistory: calculateOverallPriceChanges(itemsBilla)
+            });
+        }
+    }
+
+    if (document.querySelector("#sumspar").checked) {
+        const itemsSpar = items.filter(item => item.store == "spar");
+        if (itemsSpar.length > 0) {
+            itemsToShow.push({
+                name: "Summe Spar",
+                priceHistory: calculateOverallPriceChanges(itemsSpar)
+            });
+        }
+    }
+
+    if (document.querySelector("#sumhofer").checked) {
+        const itemsHofer = items.filter(item => item.store == "hofer");
+        if (itemsHofer.length > 0) {
+            itemsToShow.push({
+                name: "Summe Hofer",
+                priceHistory: calculateOverallPriceChanges(itemsHofer)
+            });
+        }
+    }
+
+    cart.items.forEach((cartItem) => {
+        const item = lookup[cartItem.id];
+        if (!item) return;
+        if (cartItem.chart) itemsToShow.push(item);
+    });
+
+    showChart(canvasDom, itemsToShow);
+}
+
+function showCart(cart, lookup) {
+    document.querySelector("#cartname").innerText = "Warenkorb '" + cart.name + "'";
+    const canvasDom = document.querySelector("#chart");
+    showCharts(canvasDom, cart, lookup);
+
+    const itemTable = document.querySelector("#cartitems");
+    itemTable.innerHTML = "";
     const header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th><th></th>`);
     itemTable.append(header);
 
@@ -76,20 +136,14 @@ function showCart(cart, lookup) {
         if (!item) return;
         const itemDom = itemToDOM(item)
 
-        const checkBox = dom("input", "");
-        checkBox.setAttribute("type", "checkbox");
-        if (cartItem.chart) checkBox.setAttribute("checked", true);
-        itemDom.append(checkBox);
-        checkBox.addEventListener("change", () => {
-            cartItem.chart = checkBox.checked;
+        const showCheckbox = dom("input", "");
+        showCheckbox.setAttribute("type", "checkbox");
+        if (cartItem.chart) showCheckbox.setAttribute("checked", true);
+        itemDom.append(showCheckbox);
+        showCheckbox.addEventListener("change", () => {
+            cartItem.chart = showCheckbox.checked;
             saveCarts();
-            const items = [];
-            cart.items.forEach((cartItem) => {
-                const item = lookup[cartItem.id];
-                if (!item) return;
-                if(cartItem.chart) items.push(item);
-            });
-            showChart(canvasDom, items);
+            showCharts(canvasDom, cart, lookup);
         });
 
         if (cart.name != "Momentum Eigenmarken Vergleich") {
@@ -106,7 +160,6 @@ function showCart(cart, lookup) {
 
         itemTable.append(itemDom);
     });
-    cartDom.append(itemTable);
 }
 
 load();

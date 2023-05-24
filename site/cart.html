@@ -17,7 +17,17 @@
             <a href="carts.html">Warenkörbe</a>
         </div>
         <h2>Heisse Preise</h2>
-        <div id="cart"></div>
+        <div id="cart">
+            <h3 id="cartname"></h3>
+            <canvas id="chart"></canvas>
+            <div class="filters" style="margin-top: 1em;">
+                <label>Summe <input type="checkbox" id="sum" checked></label>
+                <label>Summe Billa<input type="checkbox" id="sumbilla"></label>
+                <label>Summe Spar<input type="checkbox" id="sumspar"></label>
+                <label>Summe Hofer<input type="checkbox" id="sumhofer"></label>
+            </div>
+            <table id="cartitems"></table>
+        </div>
         <div id="search" class="column"></div>
     </div>
     <script src="utils.js"></script>

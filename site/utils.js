@@ -103,26 +103,27 @@ function itemToDOM(item) {
     let nameDom = dom("td", itemToStoreLink(item));
     let unitDom = dom("td", item.unit ? item.unit : "");
     let priceDomText = item.price + (item.priceHistory.length > 1 ? (item.priceHistory[0].price > item.priceHistory[1].price ? " 📈" : " 📉") + " (" + (item.priceHistory.length - 1) + ")" : "");
-    let priceDom = dom("td", priceDomText);
+    let pricesText = "";
+    for (let i = 0; i < item.priceHistory.length; i++) {
+        const date = item.priceHistory[i].date;
+        const currPrice = item.priceHistory[i].price;
+        const lastPrice = item.priceHistory[i + 1] ? item.priceHistory[i + 1].price : currPrice;
+        const increase = Math.round((currPrice - lastPrice) / lastPrice * 100);
+        let priceColor = "black";
+        if (increase > 0) priceColor = "red";
+        if (increase < 0) priceColor = "green";
+        pricesText += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
+        if (i != item.priceHistory.length - 1) pricesText += "<br>";
+    }
+    let priceDom = dom("td", `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`);
     if (item.priceHistory.length > 1) {
         priceDom.style["cursor"] = "pointer";
         priceDom.addEventListener("click", () => {
-            if (priceDom.innerHTML == priceDomText) {
-                priceDom.innerHTML = priceDomText;
-                let pricesText = "";
-                for (let i = 0; i < item.priceHistory.length; i++) {
-                    const date = item.priceHistory[i].date;
-                    const currPrice = item.priceHistory[i].price;
-                    const lastPrice = item.priceHistory[i + 1] ? item.priceHistory[i + 1].price : currPrice;
-                    const increase = Math.round((currPrice - lastPrice) / lastPrice * 100);
-                    let priceColor = "black";
-                    if (increase > 0) priceColor = "red";
-                    if (increase < 0) priceColor = "green";
-                    pricesText += `<br><span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
-                }
-                priceDom.innerHTML += pricesText;
+            const pricesDom = priceDom.querySelector(".priceinfo");
+            if (pricesDom.classList.contains("hide")) {
+                pricesDom.classList.remove("hide");
             } else {
-                priceDom.innerHTML = priceDomText;
+                pricesDom.classList.add("hide");
             }
         });
     }
@@ -311,7 +312,7 @@ function showChart(canvasDom, items) {
         });
 
         for (let i = 0; i < prices.length; i++) {
-            if (!prices[i]) {
+            if (prices[i] == null) {
                 prices[i] = price;
             } else {
                 price = prices[i];
@@ -337,4 +338,40 @@ function showChart(canvasDom, items) {
             aspectRation: 16 / 9
         }
     });
+}
+
+function calculateOverallPriceChanges(items) {
+    if (items.length == 0) return { dates: [], changes: [] };
+    const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
+    const uniqueDates = [...new Set(allDates)];
+    uniqueDates.sort();
+
+    const allPrices = items.map(product => {
+        let price = null;
+        const prices = uniqueDates.map(date => {
+            const priceObj = product.priceHistory.find(item => item.date === date);
+            if (!price && priceObj) price = priceObj.price;
+            return priceObj ? priceObj.price : null;
+        });
+
+        for (let i = 0; i < prices.length; i++) {
+            if (!prices[i]) {
+                prices[i] = price;
+            } else {
+                price = prices[i];
+            }
+        }
+        return prices;
+    });
+
+    const priceChanges = [];
+    for (let i = 0; i < uniqueDates.length; i++) {
+        let price = 0;
+        for (let j = 0; j < allPrices.length; j++) {
+            price += allPrices[j][i];
+        }
+        priceChanges.push({ date: uniqueDates[i], price });
+    }
+
+    return priceChanges;
 }
