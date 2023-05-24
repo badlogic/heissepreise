@@ -37,6 +37,9 @@ async function load() {
     document.querySelector("#sumdm").addEventListener("change", () => {
         showCharts(canvasDom, cart, lookup);
     })
+    document.querySelector("#sumlidl").addEventListener("change", () => {
+        showCharts(canvasDom, cart, lookup);
+    })
 }
 
 function showSearch(cart, items, lookup) {
@@ -121,6 +124,16 @@ function showCharts(canvasDom, cart, lookup) {
             itemsToShow.push({
                 name: "Summe dm",
                 priceHistory: calculateOverallPriceChanges(itemsDm)
+            });
+        }
+    }
+
+    if (document.querySelector("#sumlidl").checked) {
+        const itemsLidl = items.filter(item => item.store == "lidl");
+        if (itemsLidl.length > 0) {
+            itemsToShow.push({
+                name: "Summe Lidl",
+                priceHistory: calculateOverallPriceChanges(itemsLidl)
             });
         }
     }
