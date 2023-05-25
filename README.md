@@ -35,7 +35,8 @@ Merged price history
 Example app listening on port 3000
 ```
 
-Once the app is listening on port 3000, open http://localhost:3000 in your browser.
+Once the app is listening per default on port 3000, open http://localhost:3000 in your browser.\
+**Note**: If you want to start on a different port add it as the third parameter, e.g. `node index.js 3001` will map to port `3001`.
 
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
 
