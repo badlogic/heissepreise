@@ -188,6 +188,23 @@ async function fetchDm() {
     return dmItems;
 }
 
+function lidlToCanonical(rawItems, today) {
+    const canonicalItems = [];
+    for (let i = 0; i < rawItems.length; i++) {
+        const item = rawItems[i];
+        canonicalItems.push({
+            store: "lidl",
+            id: item.productId,
+            name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
+            price: item.price.price,
+            priceHistory: [{ date: today, price: item.price.price }],
+            unit: item.price.basePrice?.text ?? "",
+            url: item.canonicalUrl
+        });
+    }
+    return canonicalItems;
+}
+
 function mergePriceHistory(oldItems, items) {
     if (oldItems == null) return items;
 
@@ -228,21 +245,27 @@ exports.replay = function(rawDataDir) {
         const dateB = new Date(b.match(/\d{4}-\d{2}-\d{2}/)[0]);
         return dateA - dateB;
     };
-    const sparFiles = files.filter(file => file.indexOf("spar-") == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
+
+    const getFilteredFilesFor = (identifier) => files.filter(file => file.indexOf(`${identifier}-` == 0).sort(dateSort).map(file => rawDataDir + "/" + file));
+
+    const sparFiles = getFilteredFilesFor("spar");
     const sparFilesCanonical = sparFiles.map(file => sparToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
-    const billaFiles = files.filter(file => file.indexOf("billa-") == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
+    const billaFiles = getFilteredFilesFor("billa");
     const billaFilesCanonical = billaFiles.map(file => billaToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
-    const hoferFiles = files.filter(file => file.indexOf("hofer-") == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
+    const hoferFiles = getFilteredFilesFor("hofer");
     const hoferFilesCanonical = hoferFiles.map(file => hoferToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
     const dmFiles = files.filter(file => file.indexOf("dm-") == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
     const dmFilesCanonical = dmFiles.map(file => dmToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+    const lidlFiles = getFilteredFilesFor("lidl");
+    const lidlFilesCanonical = lidlFiles.map(file => lidlToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
 
     const allFilesCanonical = [];
-    const len = Math.max(Math.max(sparFilesCanonical.length, Math.max(billaFilesCanonical.length, hoferFilesCanonical.length)), dmFilesCanonical.length);
+    const len = Math.max(sparFilesCanonical.length, billaFilesCanonical.length, hoferFilesCanonical.length, lidlFilesCanonical.length, dmFilesCanonical.length);
     sparFilesCanonical.reverse();
     billaFilesCanonical.reverse();
     hoferFilesCanonical.reverse();
     dmFilesCanonical.reverse();
+    lidlFilesCanonical.reverse();
     for (let i = 0; i < len; i++) {
         const canonical = [];
         let billa = billaFilesCanonical.pop();
@@ -254,6 +277,8 @@ exports.replay = function(rawDataDir) {
         allFilesCanonical.push(canonical);
         let dm = dmFilesCanonical.pop();
         if (dm) canonical.push(...dmFilesCanonical.pop());
+        let lidl = lidlFilesCanonical.pop();
+        if (lidl) canonical.push(...lidl);
         allFilesCanonical.push(canonical);
     }
 
@@ -273,6 +298,7 @@ exports.replay = function(rawDataDir) {
 const HITS = Math.floor(30000 + Math.random() * 2000);
 const SPAR_SEARCH = `https://search-spar.spar-ics.com/fact-finder/rest/v4/search/products_lmos_at?query=*&q=*&page=1&hitsPerPage=${HITS}`;
 const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}`;
+const LIDL_SEARCH = `https://www.lidl.at/p/api/gridboxes/AT/de/?max=${HITS}`;
 
 exports.updateData = async function (dataDir, done) {
     const today = currentDate();
@@ -301,8 +327,14 @@ exports.updateData = async function (dataDir, done) {
     fs.writeFileSync(`${dataDir}/dm-${today}.json`, JSON.stringify(dmItems, null, 2));
     const dmItemsCanonical = dmToCanonical(dmItems, today);
     console.log("Fetched DM data, took " + (performance.now() - start) / 1000 + " seconds");
+    
+    start = performance.now();
+    const lidlItems = (await axios.get(LIDL_SEARCH)).data.filter(item => !!item.price.price);
+    fs.writeFileSync(`${dataDir}/lidl-${today}.json`, JSON.stringify(lidlItems, null, 2));
+    const lidlItemsCanonical = lidlToCanonical(lidlItems, today);
+    console.log("Fetched LIDL data, took " + (performance.now() - start) / 1000 + " seconds");
 
-    const items = [...billaItemsCanonical, ...sparItemsCanonical, ...hoferItemsCanonical, ...dmItemsCanonical];
+    const items = [...billaItemsCanonical, ...sparItemsCanonical, ...hoferItemsCanonical, ...dmItemsCanonical, ...lidlItemsCanonical];
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
         const oldItems = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
         mergePriceHistory(oldItems, items);

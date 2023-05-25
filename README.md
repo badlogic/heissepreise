@@ -29,6 +29,8 @@ Fetching data for date: 2023-05-23
 Fetched SPAR data, took 17.865891209602356 seconds
 Fetched BILLA data, took 52.95784649944306 seconds
 Fetched HOFER data, took 64.83968291568756 seconds
+Fetched DM data, took 438.77065160000324 seconds
+Fetched LIDL data, took 0.77065160000324 seconds
 Merged price history
 Example app listening on port 3000
 ```
