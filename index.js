@@ -4,6 +4,10 @@ const analysis = require("./analysis");
 let items = [];
 let itemsJson = "";
 (async () => {
+  if (!fs.existsSync("data")) {
+    fs.mkdirSync("data");
+  }
+
   if (fs.existsSync("data/latest-canonical.json")) {
     items = JSON.parse(fs.readFileSync("data/latest-canonical.json"));
     itemsJson = JSON.stringify(items)
