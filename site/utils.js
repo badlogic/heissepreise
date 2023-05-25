@@ -109,7 +109,7 @@ function itemToDOM(item) {
         let percentageChange = Math.round((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price * 100);
         increase = `<span class="${percentageChange > 0 ? "increase" : "decrease"}">${(percentageChange > 0 ? "+" + percentageChange : percentageChange)}%</span>`;
     }
-    let priceDomText = `${item.price} ${increase} ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}`;
+    let priceDomText = `${Number(item.price).toFixed(2)} ${increase} ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}`;
     let pricesText = "";
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
