@@ -21,43 +21,33 @@ async function load() {
         return 0;
     });
 
-    const dates = {};
-    for (item of items) {
-        for (price of item.priceHistory) {
-            dates[price.date] = dates[price.date] ? dates[price.date] + 1 : 1;
-        }
-    }
+    document.querySelector("#date").innerText = "Preisänderungen am " + currentDate();
 
-    const dateNames = Object.keys(dates).sort((a, b) => b.localeCompare(a));
-    const dateSelection = document.querySelector("#dates");
-    for (dateName of dateNames) {
-        const option = dom("option", dateName + " (" + dates[dateName] + ")");
-        option.setAttribute("value", dateName);
-        dateSelection.appendChild(option);
-    }
+    showResults(items, currentDate());
 
-    showResults(items, dateNames[0]);
-
-    dateSelection.addEventListener("change", () => {
-        showResults(items, dateSelection.value);
-    })
-    document.querySelector("#increases").addEventListener("change", () => {
-        showResults(items, dateSelection.value);
-    })
-    document.querySelector("#decreases").addEventListener("change", () => {
-        showResults(items, dateSelection.value);
-    })
+    document.querySelector("#billa").addEventListener("change", () => showResults(items, currentDate()));
+    document.querySelector("#hofer").addEventListener("change", () => showResults(items, currentDate()));
+    document.querySelector("#spar").addEventListener("change", () => showResults(items, currentDate()));
+    document.querySelector("#increases").addEventListener("change", () => showResults(items, currentDate()));
+    document.querySelector("#decreases").addEventListener("change", () => showResults(items, currentDate()));
 }
 
 function showResults(items, today) {
     const increases = document.querySelector("#increases").checked;
     const decreases = document.querySelector("#decreases").checked;
-    const fullHistory = document.querySelector("#fullhistory").checked;
+    const billa = document.querySelector("#billa").checked;
+    const spar = document.querySelector("#spar").checked;
+    const hofer = document.querySelector("#hofer").checked;
+    const fullHistory = true;
     const changedItems = [];
     for (item of items) {
         if (item.priceHistory.length < 2) continue;
 
         for (let i = 0; i < item.priceHistory.length; i++) {
+            if (item.store == "billa" && !billa) continue;
+            if (item.store == "spar" && !spar) continue;
+            if (item.store == "hofer" && !hofer) continue;
+
             if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
                 if (increases && (item.priceHistory[i].price > item.priceHistory[i + 1].price)) changedItems.push(item);
                 if (decreases && (item.priceHistory[i].price < item.priceHistory[i + 1].price)) changedItems.push(item);
@@ -82,13 +72,6 @@ function showResults(items, today) {
 
     for (item of changedItems) {
         item = JSON.parse(JSON.stringify(item));
-        if (!fullHistory) {
-            let priceHistory = [];
-            for(let i = 0;i < item.priceHistory.length; i++) {
-                priceHistory.push(item.priceHistory[i]);
-                if (item.priceHistory[i].date == today) break;
-            }
-        }
         table.appendChild(itemToDOM(item));
     }
 }

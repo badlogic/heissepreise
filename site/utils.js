@@ -104,7 +104,12 @@ function itemToDOM(item) {
     let storeDom = dom("td", item.store);
     let nameDom = dom("td", itemToStoreLink(item));
     let unitDom = dom("td", item.unit ? item.unit : "");
-    let priceDomText = item.price + (item.priceHistory.length > 1 ? (item.priceHistory[0].price > item.priceHistory[1].price ? " 📈" : " 📉") + " (" + (item.priceHistory.length - 1) + ")" : "");
+    let increase = "";
+    if (item.priceHistory.length > 1) {
+        let percentageChange = Math.round((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price * 100);
+        increase = (percentageChange > 0 ? "+" + percentageChange : percentageChange) + "%";
+    }
+    let priceDomText = item.price + (item.priceHistory.length > 1 ? (item.priceHistory[0].price > item.priceHistory[1].price ? " 📈" : " 📉") + " " + increase + " (" + (item.priceHistory.length - 1) + ")" : "");
     let pricesText = "";
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
