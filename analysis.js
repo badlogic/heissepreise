@@ -198,7 +198,7 @@ function lidlToCanonical(rawItems, today) {
             name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
             price: item.price.price,
             priceHistory: [{ date: today, price: item.price.price }],
-            unit: item.price.basePrice?.text ?? "n/a",
+            unit: item.price.basePrice?.text ?? "",
             url: item.canonicalUrl
         });
     }
