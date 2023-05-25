@@ -4,18 +4,26 @@ const analysis = require("./analysis");
 let items = [];
 let itemsJson = "";
 (async () => {
-  if (fs.existsSync("data/latest-canonical.json")) {
-    items = JSON.parse(fs.readFileSync("data/latest-canonical.json"));
+  const dataDir = 'data';
+
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir)
+  }
+
+  if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
+    items = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
     itemsJson = JSON.stringify(items)
-    analysis.updateData("data", newItems => {
+    analysis.updateData(dataDir, (newItems) => {
       items = newItems;
       itemsJson = JSON.stringify(items)
     });
   } else {
-    items = await analysis.updateData("data");
+    items = await analysis.updateData(dataDir)
     itemsJson = JSON.stringify(items)
   }
-  setInterval(async () => { items = await analysis.updateData("data") }, 1000 * 60 * 60 * 24);
+  setInterval(async () => {
+    items = await analysis.updateData(dataDir)
+  }, 1000 * 60 * 60 * 24);
 
   const express = require('express')
   const compression = require('compression');
