@@ -115,7 +115,7 @@ function showCharts(canvasDom, cart, lookup) {
         }
     }
 
-    if (document.querySelector("#sumdn").checked) {
+    if (document.querySelector("#sumdm").checked) {
         const itemsDm = items.filter(item => item.store == "dm");
         if (itemsDm.length > 0) {
             itemsToShow.push({
