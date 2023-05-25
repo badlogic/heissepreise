@@ -20,7 +20,7 @@ let itemsJson = "";
   const express = require('express')
   const compression = require('compression');
   const app = express()
-  const port = 3000
+  const port = process?.argv?.[2] ?? 3000
 
   app.use(express.static('site'));
   app.use(compression());
