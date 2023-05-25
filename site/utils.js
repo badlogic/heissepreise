@@ -95,6 +95,8 @@ function itemToStoreLink(item) {
         return `<a target="_blank" href="https://shop.billa.at/search/results?category=&searchTerm=${encodeURIComponent(item.name)}">${item.name}</a>`;
     if (item.store == "hofer")
         return `<a target="_blank" href="https://www.roksh.at/hofer/angebot/suche/${encodeURIComponent(item.name)}">${item.name}</a>`;
+    if (item.store == "dm")
+        return `<a target="_blank" href="https://www.dm.at/product-p${item.id}.html">${item.name}</a>`;
     return item.name;
 }
 
@@ -143,6 +145,10 @@ function itemToDOM(item) {
         case "hofer":
             row.style["background"] = "rgb(230 230 255)";
             break;
+        case "dm":
+            row.style["background"] = "rgb(255 240 230)";
+            break;
+
     }
     row.appendChild(storeDom);
     row.appendChild(nameDom);
@@ -153,7 +159,7 @@ function itemToDOM(item) {
 
 let componentId = 0;
 
-function searchItems(items, query, billa, spar, hofer, eigenmarken, minPrice, maxPrice, exact, bio) {
+function searchItems(items, query, billa, spar, hofer, dm, eigenmarken, minPrice, maxPrice, exact, bio) {
     query = query.trim();
     if (query.length < 3) return [];
 
@@ -199,6 +205,7 @@ function searchItems(items, query, billa, spar, hofer, eigenmarken, minPrice, ma
             if (item.store == "billa" && !billa) continue;
             if (item.store == "spar" && !spar) continue;
             if (item.store == "hofer" && !hofer) continue;
+            if (item.store == "dm" && !dm) continue;
             if (item.price < minPrice) continue;
             if (item.price > maxPrice) continue;
             if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0 || name.indexOf("milfina") == 0)) continue;
@@ -218,6 +225,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             <label><input id="billa-${id}" type="checkbox" checked="true"> Billa</label>
             <label><input id="spar-${id}" type="checkbox" checked="true"> Spar</label>
             <label><input id="hofer-${id}" type="checkbox" checked="true"> Hofer</label>
+            <label><input id="dm-${id}" type="checkbox" checked="true"> DM</label>
             <label><input id="eigenmarken-${id}" type="checkbox"> Nur CLEVER / S-BUDGET / MILFINA</label>
             <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
         </div>
@@ -238,6 +246,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const billa = parentElement.querySelector(`#billa-${id}`);
     const spar = parentElement.querySelector(`#spar-${id}`);
     const hofer = parentElement.querySelector(`#hofer-${id}`);
+    const dm = parentElement.querySelector(`#dm-${id}`);
     const minPrice = parentElement.querySelector(`#minprice-${id}`);
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
     const numResults = parentElement.querySelector(`#numresults-${id}`);
@@ -246,7 +255,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         let hits = [];
         try {
             hits = searchItems(items, query,
-                billa.checked, spar.checked, hofer.checked, eigenmarken.checked,
+                billa.checked, spar.checked, hofer.checked, dm.checked, eigenmarken.checked,
                 toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked, bio.checked
             );
         } catch (e) {
@@ -293,6 +302,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     billa.addEventListener("change", () => search(searchInput.value));
     spar.addEventListener("change", () => search(searchInput.value));
     hofer.addEventListener("change", () => search(searchInput.value));
+    dm.addEventListener("change", () => search(searchInput.value));
     exact.addEventListener("change", () => search(searchInput.value));
     minPrice.addEventListener("change", () => search(searchInput.value));
     maxPrice.addEventListener("change", () => search(searchInput.value));

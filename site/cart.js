@@ -34,6 +34,9 @@ async function load() {
     document.querySelector("#sumhofer").addEventListener("change", () => {
         showCharts(canvasDom, cart, lookup);
     })
+    document.querySelector("#sumdm").addEventListener("change", () => {
+        showCharts(canvasDom, cart, lookup);
+    })
 }
 
 function showSearch(cart, items, lookup) {
@@ -108,6 +111,16 @@ function showCharts(canvasDom, cart, lookup) {
             itemsToShow.push({
                 name: "Summe Hofer",
                 priceHistory: calculateOverallPriceChanges(itemsHofer)
+            });
+        }
+    }
+
+    if (document.querySelector("#sumdn").checked) {
+        const itemsDm = items.filter(item => item.store == "dm");
+        if (itemsDm.length > 0) {
+            itemsToShow.push({
+                name: "Summe dm",
+                priceHistory: calculateOverallPriceChanges(itemsDm)
             });
         }
     }
