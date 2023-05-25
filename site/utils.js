@@ -148,7 +148,7 @@ function itemToDOM(item) {
 
 let componentId = 0;
 
-function searchItems(items, query, billa, spar, hofer, eigenmarken, minPrice, maxPrice, exact) {
+function searchItems(items, query, billa, spar, hofer, eigenmarken, minPrice, maxPrice, exact, bio) {
     query = query.trim();
     if (query.length < 3) return [];
 
@@ -197,6 +197,7 @@ function searchItems(items, query, billa, spar, hofer, eigenmarken, minPrice, ma
             if (item.price < minPrice) continue;
             if (item.price > maxPrice) continue;
             if (eigenmarken && !(name.indexOf("clever") == 0 || name.indexOf("s-budget") == 0 || name.indexOf("milfina") == 0)) continue;
+            if (bio && !item.bio) continue;
             hits.push(item);
         }
     }
@@ -213,6 +214,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             <label><input id="spar-${id}" type="checkbox" checked="true"> Spar</label>
             <label><input id="hofer-${id}" type="checkbox" checked="true"> Hofer</label>
             <label><input id="eigenmarken-${id}" type="checkbox"> Nur CLEVER / S-BUDGET / MILFINA</label>
+            <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
         </div>
         <div class="filters">
             <label>Min € <input id="minprice-${id}" type="number" min="0" value="0"></label>
@@ -227,6 +229,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const exact = parentElement.querySelector(`#exact-${id}`);
     const table = parentElement.querySelector(`#result-${id}`);
     const eigenmarken = parentElement.querySelector(`#eigenmarken-${id}`);
+    const bio = parentElement.querySelector(`#bio-${id}`);
     const billa = parentElement.querySelector(`#billa-${id}`);
     const spar = parentElement.querySelector(`#spar-${id}`);
     const hofer = parentElement.querySelector(`#hofer-${id}`);
@@ -239,7 +242,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         try {
             hits = searchItems(items, query,
                 billa.checked, spar.checked, hofer.checked, eigenmarken.checked,
-                toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked
+                toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked, bio.checked
             );
         } catch (e) {
             console.log("Query: " + query + "\n" + e.message);
@@ -281,6 +284,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         search(searchInput.value);
     });
     eigenmarken.addEventListener("change", () => search(searchInput.value));
+    bio.addEventListener("change", () => search(searchInput.value));
     billa.addEventListener("change", () => search(searchInput.value));
     spar.addEventListener("change", () => search(searchInput.value));
     hofer.addEventListener("change", () => search(searchInput.value));

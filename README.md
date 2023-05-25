@@ -8,6 +8,7 @@ You can also get the [raw data](https://heisse-preise.io/api/index). The raw dat
 * `price`: the current price in €.
 * `priceHistory`: an array of `{ date: "yyyy-mm-dd", price: number }` objects, sorted in descending order of date.
 * `unit`: unit the product is sold at. May be undefined.
+* `bio`: whether this product is classified as organic/"Bio"
 
 The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `index.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
 
