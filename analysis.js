@@ -98,6 +98,23 @@ function dmToCanonical(rawItems, today) {
     return canonicalItems;
 }
 
+function mpreisToCanonical(rawItems, today) {
+    const canonicalItems = [];
+    for (let i = 0; i < rawItems.length; i++) {
+        const item = rawItems[i];
+        canonicalItems.push({
+            store: "mpreis",
+            id: item.code,
+            name: item.name[0],
+            price: item.prices[0].presentationPrice.effectiveAmount,
+            priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],
+            unit: `${item.prices[0].presentationPrice.measurementUnit.quantity} ${item.prices[0].presentationPrice.measurementUnit.unitCode}`,
+            bio: item.mixins.mpreisAttributes.properties?.includes('BIO')
+        });
+    }
+    return canonicalItems;
+}
+
 async function fetchHofer() {
     const BASE_URL = `https://shopservice.roksh.at`
     const CATEGORIES = BASE_URL + `/category/GetFullCategoryList/`
@@ -188,6 +205,20 @@ async function fetchDm() {
     return dmItems;
 }
 
+async function fetchMpreis() {
+    const url = `https://ax2ixv4hll-dsn.algolia.net/1/indexes/prod_mpreis_8450/browse?X-Algolia-API-Key=NmJlMTI0NjY1NGU4MDUwYTRlMmYzYWFjOWFlY2U4MGFkNGZjMDY2NmNjNjQzNWY3OWJlNDY4OTY0ZjEwOTEwYWZpbHRlcnM9cHVibGlzaGVk&X-Algolia-Application-Id=AX2IXV4HLL&X-Algolia-Agent=Vue.js`
+    let mpreisItems = [];
+    let res = (await axios.get(url)).data;
+    mpreisItems = mpreisItems.concat(res.hits);
+    cursor = res.cursor;
+    while (cursor) {
+        res = (await axios.get(url + `&cursor=${cursor}`)).data;
+        mpreisItems = mpreisItems.concat(res.hits);
+        cursor = res.cursor;
+    }
+    return mpreisItems;
+}
+
 function lidlToCanonical(rawItems, today) {
     const canonicalItems = [];
     for (let i = 0; i < rawItems.length; i++) {
@@ -258,14 +289,17 @@ exports.replay = function(rawDataDir) {
     const dmFilesCanonical = dmFiles.map(file => dmToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
     const lidlFiles = getFilteredFilesFor("lidl");
     const lidlFilesCanonical = lidlFiles.map(file => lidlToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+    const mpreisFiles = getFilteredFilesFor("mpreis");
+    const mpreisFilesCanonical = mpreisFiles.map(file => mpreisToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
 
     const allFilesCanonical = [];
-    const len = Math.max(sparFilesCanonical.length, billaFilesCanonical.length, hoferFilesCanonical.length, lidlFilesCanonical.length, dmFilesCanonical.length);
+    const len = Math.max(sparFilesCanonical.length, billaFilesCanonical.length, hoferFilesCanonical.length, lidlFilesCanonical.length, dmFilesCanonical.length, mpreisFilesCanonical.length);
     sparFilesCanonical.reverse();
     billaFilesCanonical.reverse();
     hoferFilesCanonical.reverse();
     dmFilesCanonical.reverse();
     lidlFilesCanonical.reverse();
+    mpreisFilesCanonical.reverse();
     for (let i = 0; i < len; i++) {
         const canonical = [];
         let billa = billaFilesCanonical.pop();
@@ -279,6 +313,9 @@ exports.replay = function(rawDataDir) {
         if (dm) canonical.push(...dmFilesCanonical.pop());
         let lidl = lidlFilesCanonical.pop();
         if (lidl) canonical.push(...lidl);
+        allFilesCanonical.push(canonical);
+        let mpreis = mpreisFilesCanonical.pop();
+        if (mpreis) canonical.push(...mpreis);
         allFilesCanonical.push(canonical);
     }
 
@@ -350,6 +387,16 @@ exports.updateData = async function (dataDir, done) {
         console.log("Fetched LIDL data, took " + (performance.now() - start) / 1000 + " seconds");
         resolve(lidlItemsCanonical)
     }));
+
+    storeFetchPromises.push(new Promise(async (resolve) => {
+        const start = performance.now();
+        const mpreisItems = await fetchMpreis();
+        fs.writeFileSync(`${dataDir}/mpreis-${today}.json`, JSON.stringify(mpreisItems, null, 2));
+        const mpreisItemsCanonical = mpreisToCanonical(mpreisItems, today);
+        console.log("Fetched MPREIS data, took " + (performance.now() - start) / 1000 + " seconds");
+        resolve(mpreisItemsCanonical)
+    }));
+
     
     const items = [].concat(...await Promise.all(storeFetchPromises));
 

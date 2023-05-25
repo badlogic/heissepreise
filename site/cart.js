@@ -40,6 +40,9 @@ async function load() {
     document.querySelector("#sumlidl").addEventListener("change", () => {
         showCharts(canvasDom, cart, lookup);
     })
+    document.querySelector("#summpreis").addEventListener("change", () => {
+        showCharts(canvasDom, cart, lookup);
+    })
 }
 
 function showSearch(cart, items, lookup) {
@@ -134,6 +137,16 @@ function showCharts(canvasDom, cart, lookup) {
             itemsToShow.push({
                 name: "Summe Lidl",
                 priceHistory: calculateOverallPriceChanges(itemsLidl)
+            });
+        }
+    }
+
+    if (document.querySelector("#summpreis").checked) {
+        const itemsMpreis = items.filter(item => item.store == "mpreis");
+        if (itemsMpreis.length > 0) {
+            itemsToShow.push({
+                name: "Summe MPREIS",
+                priceHistory: calculateOverallPriceChanges(itemsMpreis)
             });
         }
     }
