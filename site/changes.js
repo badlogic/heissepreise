@@ -5,6 +5,21 @@ async function load() {
     const today = currentDate();
     const response = await fetch("api/index")
     items = await response.json();
+    items.sort((a, b) => {
+        if (a.store < b.store) {
+            return -1;
+        } else if (a.store > b.store) {
+            return 1;
+        }
+
+        if (a.name < b.name) {
+            return -1;
+        } else if (a.name > b.name) {
+            return 1;
+        }
+
+        return 0;
+    });
 
     const dates = {};
     for (item of items) {
