@@ -270,8 +270,8 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         }
         if (query.trim().charAt(0) != "!") hits.sort((a, b) => a.price - b.price);
 
-        const header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
-        if (headerModifier) headerModifier(header);
+        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
+        if (headerModifier) header = headerModifier(header);
         table.appendChild(header);
 
         let num = 0;
