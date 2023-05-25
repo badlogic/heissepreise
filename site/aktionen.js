@@ -3,8 +3,7 @@ let items = [];
 
 async function load() {
     const today = currentDate();
-    const response = await fetch("api/index")
-    items = await response.json();
+    items = await loadItems();
     items.sort((a, b) => {
         if (a.store < b.store) {
             return -1;
@@ -30,6 +29,7 @@ async function load() {
     document.querySelector("#spar").addEventListener("change", () => showResults(items, currentDate()));
     document.querySelector("#increases").addEventListener("change", () => showResults(items, currentDate()));
     document.querySelector("#decreases").addEventListener("change", () => showResults(items, currentDate()));
+    document.querySelector("#filter").addEventListener("input", () => showResults(items, currentDate()));
 }
 
 function showResults(items, today) {
@@ -38,8 +38,7 @@ function showResults(items, today) {
     const billa = document.querySelector("#billa").checked;
     const spar = document.querySelector("#spar").checked;
     const hofer = document.querySelector("#hofer").checked;
-    const fullHistory = true;
-    const changedItems = [];
+    let changedItems = [];
     for (item of items) {
         if (item.priceHistory.length < 2) continue;
 
@@ -54,6 +53,8 @@ function showResults(items, today) {
             }
         }
     }
+    const query = document.querySelector("#filter").value.trim();
+    if (query.length >= 3) changedItems = searchItems(changedItems, document.querySelector("#filter").value, billa, spar, hofer, false, 0, 10000, false, false);
 
     const table = document.querySelector("#result");
     table.innerHTML = "";
@@ -72,7 +73,8 @@ function showResults(items, today) {
 
     for (item of changedItems) {
         item = JSON.parse(JSON.stringify(item));
-        table.appendChild(itemToDOM(item));
+        const itemDom = itemToDOM(item);
+        table.appendChild(itemDom);
     }
 }
 

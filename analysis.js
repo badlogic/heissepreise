@@ -31,6 +31,7 @@ function sparToCanonical(rawItems, today) {
         else {
             price = item.masterValues.price;
             unit = item.masterValues["short-description-3"];
+            if (!unit) unit = "";
         }
         canonicalItems.push({
             store: "spar",

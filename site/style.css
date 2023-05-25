@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 1em;
@@ -53,8 +57,21 @@ th {
     text-align: left;
 }
 
+.itemname {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
 .priceinfo {
     margin-top: 0;
+}
+
+.increase {
+    color: red;
+}
+
+.decrease {
+    color: green;
 }
 
 .hide {

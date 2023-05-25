@@ -3,8 +3,7 @@ let items = [];
 
 async function load() {
     const today = currentDate();
-    const response = await fetch("api/index")
-    items = await response.json();
+    items = await loadItems();
     items.sort((a, b) => {
         if (a.store < b.store) {
             return -1;
