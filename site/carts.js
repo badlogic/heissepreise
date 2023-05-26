@@ -32,11 +32,13 @@ async function load() {
 function showCarts(lookup) {
     const cartsTable = document.querySelector("#carts");
     cartsTable.innerHTML = "";
-    cartsTable.appendChild(dom("tr", `
-        <th>Name</th>
-        <th>Produkte</th>
-        <th>Preis</th>
-        <th></th>
+    cartsTable.appendChild(dom("thead", `
+        <tr>
+            <th>Name</th>
+            <th>Produkte</th>
+            <th>Preis</th>
+            <th></th>
+        </tr>
     `));
 
     carts.forEach(cart => {

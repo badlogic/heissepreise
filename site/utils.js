@@ -107,8 +107,11 @@ function itemToStoreLink(item) {
 
 function itemToDOM(item) {
     let storeDom = dom("td", item.store);
+    storeDom.setAttribute("data-label", "Kette");
     let nameDom = dom("td", `<div class="itemname">${itemToStoreLink(item)}</div>`);
+    nameDom.setAttribute("data-label", "Name");
     let unitDom = dom("td", item.unit ? item.unit : "");
+    unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
         let percentageChange = Math.round((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price * 100);
@@ -128,6 +131,7 @@ function itemToDOM(item) {
         if (i != item.priceHistory.length - 1) pricesText += "<br>";
     }
     let priceDom = dom("td", `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`);
+    priceDom.setAttribute("data-label", "Preis");
     if (item.priceHistory.length > 1) {
         priceDom.style["cursor"] = "pointer";
         priceDom.addEventListener("click", () => {
@@ -289,7 +293,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         }
         if (query.trim().charAt(0) != "!") hits.sort((a, b) => a.price - b.price);
 
-        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
+        let header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th></tr>`);
         if (headerModifier) header = headerModifier(header);
         table.appendChild(header);
 
