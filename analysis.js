@@ -246,6 +246,7 @@ function mergePriceHistory(oldItems, items) {
 
     for (item of items) {
         let oldItem = lookup[item.store + item.id];
+        delete lookup[item.store + item.id];
         let currPrice = item.priceHistory[0];
         if (oldItem) {
             if (oldItem.priceHistory[0].price == currPrice.price) {
@@ -259,7 +260,33 @@ function mergePriceHistory(oldItems, items) {
         }
     }
 
+    console.log(`${Object.keys(lookup).length} not in latest list.`)
+    for (key of Object.keys(lookup)) {
+        items.push(lookup[key]);
+    }
+
+    sortItems(items);
+    console.log(`Items: ${items.length}`);
+
     return items;
+}
+
+function sortItems(items) {
+    items.sort((a, b) => {
+        if (a.store < b.store) {
+            return -1;
+        } else if (a.store > b.store) {
+            return 1;
+        }
+
+        if (a.name < b.name) {
+            return -1;
+        } else if (a.name > b.name) {
+            return 1;
+        }
+
+        return 0;
+    });
 }
 
 /// Given a directory of raw data of the form `billa-$date.json` and `spar-$date.json`, constructs
@@ -268,7 +295,8 @@ exports.replay = function(rawDataDir) {
     const today = currentDate();
 
     const files = fs.readdirSync(rawDataDir).filter(
-        file => file.indexOf("canonical") == -1 && (file.indexOf("billa-") == 0 || file.indexOf("spar") == 0 || file.indexOf("hofer") == 0)
+        file => file.indexOf("canonical") == -1 &&
+        (file.indexOf("billa-") == 0 || file.indexOf("spar") == 0 || file.indexOf("hofer") == 0 || file.indexOf("dm") == 0 || file.indexOf("lidl") == 0 || file.indexOf("mpreis") == 0)
     );
 
     const dateSort = (a, b) => {
@@ -277,7 +305,7 @@ exports.replay = function(rawDataDir) {
         return dateA - dateB;
     };
 
-    const getFilteredFilesFor = (identifier) => files.filter(file => file.indexOf(`${identifier}-` == 0).sort(dateSort).map(file => rawDataDir + "/" + file));
+    const getFilteredFilesFor = (identifier) => files.filter(file => file.indexOf(`${identifier}-`) == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
 
     const sparFiles = getFilteredFilesFor("spar");
     const sparFilesCanonical = sparFiles.map(file => sparToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
@@ -285,7 +313,7 @@ exports.replay = function(rawDataDir) {
     const billaFilesCanonical = billaFiles.map(file => billaToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
     const hoferFiles = getFilteredFilesFor("hofer");
     const hoferFilesCanonical = hoferFiles.map(file => hoferToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
-    const dmFiles = files.filter(file => file.indexOf("dm-") == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
+    const dmFiles = getFilteredFilesFor("dm");
     const dmFilesCanonical = dmFiles.map(file => dmToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
     const lidlFiles = getFilteredFilesFor("lidl");
     const lidlFilesCanonical = lidlFiles.map(file => lidlToCanonical(readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
@@ -302,20 +330,24 @@ exports.replay = function(rawDataDir) {
     mpreisFilesCanonical.reverse();
     for (let i = 0; i < len; i++) {
         const canonical = [];
-        let billa = billaFilesCanonical.pop();
+        const billa = billaFilesCanonical.pop();
         if (billa) canonical.push(...billa);
-        let spar = sparFilesCanonical.pop();
+
+        const spar = sparFilesCanonical.pop();
         if (spar) canonical.push(...spar);
-        let hofer = hoferFilesCanonical.pop();
+
+        const hofer = hoferFilesCanonical.pop();
         if (hofer) canonical.push(...hofer);
-        allFilesCanonical.push(canonical);
-        let dm = dmFilesCanonical.pop();
-        if (dm) canonical.push(...dmFilesCanonical.pop());
-        let lidl = lidlFilesCanonical.pop();
+
+        const dm = dmFilesCanonical.pop();
+        if (dm) canonical.push(...dm);
+
+        const lidl = lidlFilesCanonical.pop();
         if (lidl) canonical.push(...lidl);
-        allFilesCanonical.push(canonical);
-        let mpreis = mpreisFilesCanonical.pop();
+
+        const mpreis = mpreisFilesCanonical.pop();
         if (mpreis) canonical.push(...mpreis);
+
         allFilesCanonical.push(canonical);
     }
 
@@ -340,7 +372,7 @@ const LIDL_SEARCH = `https://www.lidl.at/p/api/gridboxes/AT/de/?max=${HITS}`;
 exports.updateData = async function (dataDir, done) {
     const today = currentDate();
     console.log("Fetching data for date: " + today);
-    
+
     const storeFetchPromises = [];
 
     storeFetchPromises.push(new Promise(async (resolve) => {
@@ -378,7 +410,7 @@ exports.updateData = async function (dataDir, done) {
         console.log("Fetched DM data, took " + (performance.now() - start) / 1000 + " seconds");
         resolve(dmItemsCanonical)
     }));
-    
+
     storeFetchPromises.push(new Promise(async (resolve) => {
         const start = performance.now();
         const lidlItems = (await axios.get(LIDL_SEARCH)).data.filter(item => !!item.price.price);
@@ -397,7 +429,7 @@ exports.updateData = async function (dataDir, done) {
         resolve(mpreisItemsCanonical)
     }));
 
-    
+
     const items = [].concat(...await Promise.all(storeFetchPromises));
 
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
@@ -405,6 +437,8 @@ exports.updateData = async function (dataDir, done) {
         mergePriceHistory(oldItems, items);
         console.log("Merged price history");
     }
+
+    sortItems(items);
     fs.writeFileSync(`${dataDir}/latest-canonical.json`, JSON.stringify(items, null, 2));
 
     if (done) done(items);
