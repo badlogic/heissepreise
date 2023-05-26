@@ -78,11 +78,19 @@ th {
     display: none;
 }
 
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 600px) {
     table {
       border: 0;
     }
-      
+
     table thead {
       border: none;
       clip: rect(0 0 0 0);
@@ -93,19 +101,19 @@ th {
       position: absolute;
       width: 1px;
     }
-    
+
     table tr {
       display: block;
       margin-bottom: .625em;
     }
-    
+
     table td {
       border-bottom: 1px solid #ddd;
       padding-left: calc(65px + 1.2em);
       position: relative;
       display: block;
     }
-    
+
     table td::before {
       /*
       * aria-label has no advantage, it won't be read inside a table
@@ -123,7 +131,7 @@ th {
       text-align: right;
       font-weight: bold;
     }
-    
+
     table td:last-child {
       border-bottom: 0;
     }

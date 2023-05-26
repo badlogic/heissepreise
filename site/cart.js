@@ -175,6 +175,8 @@ function showCart(cart, lookup) {
         if (!item) return;
         const itemDom = itemToDOM(item)
 
+
+        const cell = dom("td", "");
         const showCheckbox = dom("input", "");
         showCheckbox.setAttribute("type", "checkbox");
         if (cartItem.chart) showCheckbox.setAttribute("checked", true);
@@ -184,6 +186,7 @@ function showCart(cart, lookup) {
             saveCarts();
             showCharts(canvasDom, cart, lookup);
         });
+        cell.append(showCheckbox);
 
         if (cart.name != "Momentum Eigenmarken Vergleich") {
             const deleteButton = dom("input", "");
@@ -195,8 +198,9 @@ function showCart(cart, lookup) {
                 saveCarts();
                 showCart(cart, lookup)
             })
+            cell.appendChild(deleteButton);
         }
-
+        itemDom.append(cell);
         itemTable.append(itemDom);
     });
 }
