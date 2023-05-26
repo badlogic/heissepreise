@@ -39,6 +39,15 @@ async function load() {
 
             return itemDom;
         });
+    const query = getQueryParameter("q");
+    if (query) {
+        document.querySelector("input").value = query;
+        const inputEvent = new Event('input', {
+            bubbles: true,
+            cancelable: true
+        });
+        document.querySelector("input").dispatchEvent(inputEvent);
+    }
 }
 
 load();

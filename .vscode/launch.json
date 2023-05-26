@@ -39,6 +39,13 @@
 			"webRoot": "${workspaceFolder}/site"
 		},
 		{
+			"type": "pwa-chrome",
+			"request": "launch",
+			"name": "client2",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}/site"
+		},
+		{
 			"type": "node",
 			"request": "attach",
 			"name": "server",

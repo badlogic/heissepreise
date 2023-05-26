@@ -18,6 +18,7 @@ function writeJSON(file, data) {
 }
 
 function sparToCanonical(rawItems, today) {
+    if (rawItems.hits) rawItems = rawItems.hits;
     const canonicalItems = [];
     for (let i = 0; i < rawItems.length; i++) {
         const item = rawItems[i];

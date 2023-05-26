@@ -43,6 +43,7 @@ async function loadItems() {
 
         item.numPrices = item.priceHistory.length;
         item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
+        item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
         item.date = item.priceHistory[0].date;
         let lastPrice = item.price;
         for (let i = 1; i < 10; i++) {
@@ -231,6 +232,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
+        <a id="querylink-${id}" class="hide">Query link</a>
         <div class="filters">
             <label><input id="billa-${id}" type="checkbox" checked="true"> Billa</label>
             <label><input id="spar-${id}" type="checkbox" checked="true"> Spar</label>
@@ -253,6 +255,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     `;
 
     const searchInput = parentElement.querySelector(`#search-${id}`);
+    const queryLink = parentElement.querySelector(`#querylink-${id}`);
     const exact = parentElement.querySelector(`#exact-${id}`);
     const table = parentElement.querySelector(`#result-${id}`);
     const eigenmarken = parentElement.querySelector(`#eigenmarken-${id}`);
@@ -308,8 +311,11 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         }
         if (query.length > 0 && query.charAt(0) == "!") {
             parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
+            queryLink.classList.remove("hide");
+            queryLink.setAttribute("href", "/?q=" + encodeURIComponent(query));
         } else {
             parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
+            queryLink.classList.add("hide");
         }
         search(searchInput.value);
     });
