@@ -102,7 +102,7 @@ exports.replay = function(rawDataDir) {
         return dateA - dateB;
     };
 
-    const getFilteredFilesFor = (store) => files.filter(file => file.indexOf(`${store}-` == 0).sort(dateSort).map(file => rawDataDir + "/" + file));
+    const getFilteredFilesFor = (store) => files.filter(file => file.indexOf(`${store}-`) == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
 
     const storeFiles = {};
     const canonicalFiles = {};

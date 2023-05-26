@@ -137,4 +137,17 @@ function momentumCartConversion() {
     fs.writeFileSync("site/momentum-cart.json", JSON.stringify(cart, null, 2));
 }
 
-momentumCartConversion();
+function fixSparHistoricalData(dataDir) {
+    const files = fs.readdirSync(dataDir).filter(file => file.indexOf("canonical") == -1 && file.indexOf(`spar-`) == 0);
+    console.log(files);
+
+    for (file of files) {
+        const items = JSON.parse(fs.readFileSync(`${dataDir}/${file}`));
+        if (items.hits) {
+            console.log(`Rewriting ${file}`);
+            fs.writeFileSync(`${dataDir}/${file}`, JSON.stringify(items.hits, null, 2));
+        }
+    }
+}
+
+// momentumCartConversion();
