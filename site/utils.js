@@ -238,6 +238,8 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             <label><input id="dm-${id}" type="checkbox" checked="true"> DM</label>
             <label><input id="lidl-${id}" type="checkbox" checked="true"> Lidl</label>
             <label><input id="mpreis-${id}" type="checkbox" checked="false"> MPREIS</label>
+        </div>
+        <div class="filters">
             <label><input id="eigenmarken-${id}" type="checkbox"> Nur CLEVER / S-BUDGET / MILFINA</label>
             <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
         </div>
@@ -269,7 +271,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         let hits = [];
         try {
             hits = searchItems(items, query,
-                billa.checked, spar.checked, hofer.checked, dm.checked, lidl.checked, mpreis.checked, 
+                billa.checked, spar.checked, hofer.checked, dm.checked, lidl.checked, mpreis.checked,
                 eigenmarken.checked, toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked, bio.checked
             );
         } catch (e) {
