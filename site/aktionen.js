@@ -40,6 +40,8 @@ function showResults(items, today) {
     const spar = document.querySelector("#spar").checked;
     const hofer = document.querySelector("#hofer").checked;
     const dm = document.querySelector("#dm").checked;
+    const lidl = document.querySelector("#lidl").checked;
+    const mpreis = document.querySelector("#mpreis").checked;
     let changedItems = [];
     for (item of items) {
         if (item.priceHistory.length < 2) continue;
@@ -49,6 +51,8 @@ function showResults(items, today) {
             if (item.store == "spar" && !spar) continue;
             if (item.store == "hofer" && !hofer) continue;
             if (item.store == "dm" && !dm) continue;
+            if (item.store == "lidl" && !dm) continue;
+            if (item.store == "mpreis" && !dm) continue;
 
             if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
                 if (increases && (item.priceHistory[i].price > item.priceHistory[i + 1].price)) changedItems.push(item);
