@@ -34,7 +34,7 @@ function dom(el, html) {
 }
 
 async function loadItems() {
-    const response = await fetch("api/index")
+    const response = await fetch("latest-canonical.json")
     const items = await response.json();
 
     for (item of items) {

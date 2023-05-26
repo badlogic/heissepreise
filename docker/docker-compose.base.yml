@@ -19,8 +19,6 @@ services:
             context: .
         container_name: hp_site
         restart: always
-        environment:            
-            - HP_ADMIN_TOKEN=${HP_ADMIN_TOKEN}
         volumes:
             - ..:/heisse-preise
             - ./data/:/heisse-preise/data

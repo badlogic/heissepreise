@@ -4,3 +4,4 @@ docker/data
 data/
 dist
 heissepreise.zip
+site/latest-canonical.json
