@@ -18,7 +18,8 @@ exports.getCanonical = function(item, today) {
         price,
         priceHistory: [{ date: today, price }],
         unit,
-        bio: item.masterValues.biolevel === "Bio"
+        bio: item.masterValues.biolevel === "Bio",
+        url: `https://www.interspar.at/shop/lebensmittel${item.masterValues.url}`
     };
 }
 

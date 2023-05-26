@@ -8,6 +8,7 @@ exports.getCanonical = function(item, today) {
         priceHistory: [{ date: today, price: item.price.value }],
         unit: `${item.netQuantityContent} ${item.contentUnit}`,
         ...(item.brandName === "dmBio" || (item.name ? (item.name.startsWith("Bio ") | item.name.startsWith("Bio-")) : false)) && {bio: true},
+        url: `https://www.dm.at/product-p${item.gtin}.html`
     };
 }
 
