@@ -167,7 +167,7 @@ function showCart(cart, lookup) {
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
-    const header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th><th></th>`);
+    const header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th><th></th></tr>`);
     itemTable.append(header);
 
     cart.items.forEach((cartItem, idx) => {

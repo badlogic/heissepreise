@@ -77,3 +77,54 @@ th {
 .hide {
     display: none;
 }
+
+@media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+      
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      padding-left: calc(65px + 1.2em);
+      position: relative;
+      display: block;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      background-color: #aaa;
+      border: 1px solid;
+      position: absolute;
+      padding: .2em .4em;
+      width: 65px;
+      height: calc(100% - .4em);
+      left: -1px;
+      top: -1px;
+      text-align: right;
+      font-weight: bold;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }

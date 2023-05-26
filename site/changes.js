@@ -66,8 +66,8 @@ function showResults(items, today) {
 
     const table = document.querySelector("#result");
     table.innerHTML = "";
-    const header = dom("tr", `
-        <th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th>
+    const header = dom("thead", `
+        <tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th></tr>
     `)
     const showHideAll = header.querySelectorAll('th:nth-child(4)')[0];
     showHideAll.style["cursor"] = "pointer";
