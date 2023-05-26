@@ -45,7 +45,7 @@ async function loadItems() {
         item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
         item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
         item.date = item.priceHistory[0].date;
-        let lastPrice = item.price;
+        let lastPrice = {price: item.price, date: item.date};
         for (let i = 1; i < 10; i++) {
             let price = item.priceHistory[i];
             if (!price) price = lastPrice;
