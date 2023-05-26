@@ -53,14 +53,22 @@ function showCarts(lookup) {
         const increase = Math.round((currPrice - oldPrice) / oldPrice * 100);
 
         const row = dom("tr", ``);
-        row.appendChild(dom("td", `<a href="cart.html?name=${cart.name}">${cart.name}</a>`));
-        row.appendChild(dom("td", cart.items.length));
-        row.appendChild(dom("td", `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)}`));
+        const nameDom = dom("td", `<a href="cart.html?name=${cart.name}">${cart.name}</a>`);
+        nameDom.setAttribute("data-label", "Name");
+        row.appendChild(nameDom);
+        const itemsDom = dom("td", cart.items.length);
+        itemsDom.setAttribute("data-label", "Produkte");
+        row.appendChild(itemsDom);
+        const priceDom = dom("td", `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)}`);
+        priceDom.setAttribute("data-label", "Preis");
+        row.appendChild(priceDom);
         if (cart.name != "Momentum Eigenmarken Vergleich") {
             let deleteButton = dom("input");
             deleteButton.setAttribute("type", "button");
             deleteButton.setAttribute("value", "Löschen");
-            row.appendChild(deleteButton);
+            const deleteDom = dom("td", ``);
+            deleteDom.appendChild(deleteButton);
+            row.appendChild(deleteDom);
 
             deleteButton.addEventListener("click", () => {
                 removeCart(cart.name);
