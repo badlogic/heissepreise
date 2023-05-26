@@ -3,7 +3,7 @@ A terrible grocery price search "app". Fetches data from big Austrian grocery ch
 
 You can also get the [raw data](https://heisse-preise.io/api/index). The raw data is returned as a JSON array of items. An item has the following fields:
 
-* `store`: either `billa` or `spar`.
+* `store`: (`billa`, `spar`, `hofer`, `dm`, `lidl`, `mpreis`)
 * `name`: the product name.
 * `price`: the current price in €.
 * `priceHistory`: an array of `{ date: "yyyy-mm-dd", price: number }` objects, sorted in descending order of date.
@@ -31,6 +31,7 @@ Fetched BILLA data, took 52.95784649944306 seconds
 Fetched HOFER data, took 64.83968291568756 seconds
 Fetched DM data, took 438.77065160000324 seconds
 Fetched LIDL data, took 0.77065160000324 seconds
+Fetched MPREIS data, took 13.822936070203781 seconds
 Merged price history
 Example app listening on port 3000
 ```
