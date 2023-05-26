@@ -45,14 +45,13 @@ async function loadItems() {
         item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
         item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
         item.date = item.priceHistory[0].date;
-        let lastPrice = {price: item.price, date: item.date};
-        for (let i = 1; i < 10; i++) {
-            let price = item.priceHistory[i];
-            if (!price) price = lastPrice;
-            item["price" + (i + 1)] = price.price;
-            item["date" + (i + 1)] = price.date;
-            lastPrice = price;
+        let highestPriceBefore = -1;
+        for (let i = 1; i < item.priceHistory.length; i++) {
+            const price = item.priceHistory[i];
+            highestPriceBefore = Math.max(highestPriceBefore, price.price);
         }
+        if (highestPriceBefore == -1) highestPriceBefore = item.price;
+        item.highestBefore = highestPriceBefore;
     }
     return items;
 }
@@ -178,16 +177,7 @@ function searchItems(items, query, billa, spar, hofer, dm, lidl, mpreis, eigenma
 
     if (query.charAt(0) == "!") {
         query = query.substring(1);
-        try {
-            let hits = alasql("select * from ? where " + query, [items]);
-            if (hits.length > 1000) {
-                return hits.slice(0, 1000);
-            } else {
-                return hits;
-            }
-        } catch (e) {
-            throw e;
-        }
+        return alasql("select * from ? where " + query, [items]);
     }
 
     const tokens = query.split(/\s+/).map(token => token.toLowerCase().replace(",", "."));
@@ -300,13 +290,14 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         table.appendChild(thead);
 
         let num = 0;
-        hits.forEach(hit => {
+        hits.every(hit => {
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits);
             table.appendChild(itemDom);
             num++;
+            return num <= 1000;
         });
-        numResults.innerHTML = "Resultate: " + num + (num == 1000 ? "+" : "");
+        numResults.innerHTML = "Resultate: " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
     }
 
     searchInput.addEventListener("input", (event) => {
