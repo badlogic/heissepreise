@@ -7,9 +7,6 @@ const analysis = require("./analysis");
   if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir)
   }
-  if (!fs.existsSync("site/api")) {
-    fs.mkdirSync("site/api");
-  }
 
   if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
     fs.copyFileSync(`${dataDir}/latest-canonical.json`, `site/latest-canonical.json`);
