@@ -7,11 +7,40 @@ async function load() {
 
     let cart = null;
     const cartName = getQueryParameter("name");
-    for (c of carts) {
-        if (c.name == cartName) {
-            cart = c;
-            break;
+    if (cartName) {
+        for (c of carts) {
+            if (c.name == cartName) {
+                cart = c;
+                break;
+            }
         }
+    }
+
+    const cartDesc = getQueryParameter("cart");
+    if (cartDesc) {
+        let tokens = cartDesc.split(";");
+        cart = {
+            name: tokens[0],
+            items: [],
+            linked: true
+        };
+        for (let i = 1; i < tokens.length; i++) {
+            const item = lookup[tokens[i]];
+            if (item) cart.items.push(item);
+        }
+        let saveButton = document.querySelector("#save");
+        saveButton.classList.remove("hide");
+        saveButton.addEventListener("click", () => {
+            let index = carts.findIndex(c => c.name == cart.name);
+            if (index != -1) {
+                if (confirm("Existierenden Warenkorb '" + cart.name + " überschreiben?")) {
+                    carts[index] = cart;
+                }
+            } else {
+                carts.push(importedCart);
+            }
+            location.href = "/cart.html?name=" + encodeURIComponent(cart.name);
+        });
     }
 
     if (cart == null) {
@@ -19,7 +48,7 @@ async function load() {
         location.href = "carts.html";
     }
 
-    if (cart.name != "Momentum Eigenmarken Vergleich") showSearch(cart, items, lookup);
+    if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) showSearch(cart, items, lookup);
     showCart(cart, lookup);
     const canvasDom = document.querySelector("#chart");
     document.querySelector("#sum").addEventListener("change", () => {
@@ -188,7 +217,7 @@ function showCart(cart, lookup) {
         });
         cell.append(showCheckbox);
 
-        if (cart.name != "Momentum Eigenmarken Vergleich") {
+        if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) {
             const deleteButton = dom("input", "");
             deleteButton.setAttribute("type", "button");
             deleteButton.setAttribute("value", "-");

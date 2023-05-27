@@ -109,38 +109,47 @@ function showCarts(lookup) {
     carts.forEach(cart => {
         let oldPrice = 0;
         let currPrice = 0;
+        let link = cart.name + ";"
         for (cartItem of cart.items) {
             const item = lookup[cartItem.id];
             if (!item) continue;
             oldPrice += item.priceHistory[item.priceHistory.length - 1].price;
             currPrice += item.priceHistory[0].price;
+            link += item.id + ";";
         }
         const increase = Math.round((currPrice - oldPrice) / oldPrice * 100);
 
         const row = dom("tr", ``);
+
         const nameDom = dom("td", `<a href="cart.html?name=${cart.name}">${cart.name}</a>`);
         nameDom.setAttribute("data-label", "Name");
         row.appendChild(nameDom);
+
         const itemsDom = dom("td", cart.items.length);
         itemsDom.setAttribute("data-label", "Produkte");
         row.appendChild(itemsDom);
-        const priceDom = dom("td", `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)}`);
+
+        const priceDom = dom("td", `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${(increase > 0 ? "+" : "") + increase + "%"}`);
         priceDom.setAttribute("data-label", "Preis");
         row.appendChild(priceDom);
+
+        const actionsDom = dom("td", ``);
+        const linkDom = dom("a", "Teilen");
+        linkDom.setAttribute("href", "cart.html?cart=" + link);
+        actionsDom.appendChild(linkDom);
+
         if (cart.name != "Momentum Eigenmarken Vergleich") {
             let deleteButton = dom("input");
             deleteButton.setAttribute("type", "button");
             deleteButton.setAttribute("value", "Löschen");
-            const deleteDom = dom("td", ``);
-            deleteDom.appendChild(deleteButton);
-            priceDom.setAttribute("data-label", "Delete");
-            row.appendChild(deleteDom);
+            actionsDom.appendChild(deleteButton);
 
             deleteButton.addEventListener("click", () => {
                 removeCart(cart.name);
                 showCarts(lookup);
             });
         }
+        row.appendChild(actionsDom);
         cartsTable.appendChild(row);
     });
 }
