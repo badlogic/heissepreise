@@ -124,8 +124,24 @@ td:nth-child(4) {
     padding-left: 0.5em;
 }
 
-td:nth-child(4):before {
+.searchresults td:nth-child(4):before {
     content: "€ "
+}
+
+.carts td:nth-child(1) {
+    text-align: left;
+}
+
+.carts td:nth-child(2) {
+    text-align: center;
+}
+
+.carts td:nth-child(3):before {
+    content: "€ "
+}
+
+.carts td:nth-child(3) {
+    text-align: left;
 }
 
 .itemname {

@@ -1,9 +1,33 @@
+function downloadFile(filename, content) {
+    const blob = new Blob([content], { type: 'text/plain' });
+    const element = document.createElement('a');
+    element.href = URL.createObjectURL(blob);
+    element.download = filename;
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+    URL.revokeObjectURL(element.href);
+}
+
 async function load() {
     const items = await loadItems();
     lookup = {};
     for (item of items) {
         lookup[item.id] = item;
     }
+
+    // Update carts with latest price info
+    for (cart of carts) {
+        const items = [];
+        for (cartItem of cart.items) {
+            const item = lookup[cartItem.id];
+            if (!item) continue;
+            items.push(item);
+        }
+        cart.items = items;
+    }
+    saveCarts();
 
     if (carts.findIndex(cart => cart.name == "Momentum Eigenmarken Vergleich") == -1) {
         response = await fetch("momentum-cart.json");
@@ -24,6 +48,47 @@ async function load() {
         }
         addCart(name);
         location.href = "/cart.html?name=" + name;
+    });
+
+    const exportButton = document.querySelector("#export");
+    exportButton.addEventListener("click", () => {
+        downloadFile("carts.json", JSON.stringify(carts, null, 2));
+    });
+
+    const importButton = document.querySelector("#import");
+    importButton.addEventListener("click", () => {
+        document.getElementById('fileInput').value = null
+        document.getElementById('fileInput').click();
+    });
+
+    document.querySelector("#fileInput").addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const contents = event.target.result;
+            const importedCarts = JSON.parse(contents);
+            for (importedCart of importedCarts) {
+                const items = [];
+                for (cartItem of cart.items) {
+                    const item = lookup[cartItem.id];
+                    if (!item) continue;
+                    items.push(item);
+                }
+                importedCart.items = items;
+
+                let index = carts.findIndex(cart => cart.name == importedCart.name);
+                if (index != -1) {
+                    if (confirm("Existierenden Warenkorb '" + importedCart.name + " überschreiben?")) {
+                        carts[index] = importedCart;
+                    }
+                } else {
+                    carts.push(importedCart);
+                }
+            }
+            saveCarts();
+            showCarts(lookup);
+        };
+        reader.readAsText(file);
     });
 
     showCarts(lookup);
@@ -68,6 +133,7 @@ function showCarts(lookup) {
             deleteButton.setAttribute("value", "Löschen");
             const deleteDom = dom("td", ``);
             deleteDom.appendChild(deleteButton);
+            priceDom.setAttribute("data-label", "Delete");
             row.appendChild(deleteDom);
 
             deleteButton.addEventListener("click", () => {

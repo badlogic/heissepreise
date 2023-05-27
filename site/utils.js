@@ -245,7 +245,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
         </div>
         <div id="numresults-${id}"></div>
-        <table id="result-${id}"></table>
+        <table id="result-${id}" class="searchresults"></table>
     `;
 
     const searchInput = parentElement.querySelector(`#search-${id}`);
@@ -266,6 +266,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
     let search = (query) => {
         let hits = [];
+        let now = performance.now();
         try {
             hits = searchItems(items, query,
                 billa.checked, spar.checked, hofer.checked, dm.checked, lidl.checked, mpreis.checked,
@@ -274,6 +275,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         } catch (e) {
             console.log("Query: " + query + "\n" + e.message);
         }
+        console.log("Search took " + (performance.now() - now) / 1000.0 + " secs");
         if (searched) hits = searched(hits);
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
@@ -289,14 +291,16 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         thead.appendChild(header);
         table.appendChild(thead);
 
+        now = performance.now();
         let num = 0;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits);
             table.appendChild(itemDom);
             num++;
-            return num <= 1000;
+            return num < 500;
         });
+        console.log("Building DOM took: " + (performance.now() - now) / 1000.0 + " secs");
         numResults.innerHTML = "Resultate: " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
     }
 
