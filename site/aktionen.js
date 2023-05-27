@@ -28,6 +28,8 @@ async function load() {
     document.querySelector("#hofer").addEventListener("change", () => showResults(items, currentDate()));
     document.querySelector("#spar").addEventListener("change", () => showResults(items, currentDate()));
     document.querySelector("#dm").addEventListener("change", () => showResults(items, currentDate()));
+    document.querySelector("#lidl").addEventListener("change", () => showResults(items, currentDate()));
+    document.querySelector("#mpreis").addEventListener("change", () => showResults(items, currentDate()));
     document.querySelector("#increases").addEventListener("change", () => showResults(items, currentDate()));
     document.querySelector("#decreases").addEventListener("change", () => showResults(items, currentDate()));
     document.querySelector("#filter").addEventListener("input", () => showResults(items, currentDate()));
@@ -51,8 +53,8 @@ function showResults(items, today) {
             if (item.store == "spar" && !spar) continue;
             if (item.store == "hofer" && !hofer) continue;
             if (item.store == "dm" && !dm) continue;
-            if (item.store == "lidl" && !dm) continue;
-            if (item.store == "mpreis" && !dm) continue;
+            if (item.store == "lidl" && !lidl) continue;
+            if (item.store == "mpreis" && !mpreis) continue;
 
             if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
                 if (increases && (item.priceHistory[i].price > item.priceHistory[i + 1].price)) changedItems.push(item);
