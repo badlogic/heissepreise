@@ -13,7 +13,7 @@ printHelp () {
 	echo
 	echo "   reloadnginx  Reloads the nginx configuration"
 	echo
-	echo "   stop         Stops the services."	
+	echo "   stop         Stops the services."
 	echo
 	echo "   logs         Tail -f services' logs."
 	echo
@@ -30,10 +30,11 @@ pushd $dir > /dev/null
 case "$1" in
 start)
 	git pull
+	./deploy.sh
 	docker-compose -p heisse-preise -f docker-compose.base.yml -f docker-compose.prod.yml build
 	docker-compose -p heisse-preise -f docker-compose.base.yml -f docker-compose.prod.yml up -d
 	;;
-startdev)	
+startdev)
 	docker-compose -p heisse-preise -f docker-compose.base.yml -f docker-compose.dev.yml build
 	docker-compose -p heisse-preise -f docker-compose.base.yml -f docker-compose.dev.yml up
 	;;
@@ -53,7 +54,7 @@ shellnginx)
 logs)
 	docker-compose -p heisse-preise -f docker-compose.base.yml logs -f
 	;;
-*) 
+*)
 	echo "Invalid command $1"
 	printHelp
 	;;
