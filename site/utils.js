@@ -375,7 +375,15 @@ function showChart(canvasDom, items) {
         },
         options: {
             responsive: true,
-            aspectRation: 16 / 9
+            aspectRation: 16 / 9,
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: "EURO"
+                    }
+                }
+            }
         }
     });
 }

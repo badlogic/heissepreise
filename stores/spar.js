@@ -14,6 +14,7 @@ exports.getCanonical = function(item, today) {
     }
     return {
         id: item.masterValues["code-internal"],
+        sparId: item.masterValues["product-number"],
         name: item.masterValues.title + " " + item.masterValues["short-description"],
         price,
         priceHistory: [{ date: today, price }],

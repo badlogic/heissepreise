@@ -150,4 +150,81 @@ function fixSparHistoricalData(dataDir) {
     }
 }
 
+const nReadlines = require('n-readlines');
+
+function convertDossierData(dataDir, file) {
+    console.log(`Converting ${file}`);
+    const lookup = {};
+    for (item of JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`))) {
+        lookup[item.store + item.id] = item;
+        if (item.sparId)
+            lookup[item.store + "-" + item.sparId] = item;
+    }
+
+    const lines = new nReadlines(file);
+
+    const itemsPerDate = {};
+    let line = null;
+    const store = file.indexOf("spar") == 0 ? "spar" : "billa";
+    lines.next()
+    let itemsTotal = 0;
+    let notFound = 0;
+    while(line = lines.next()) {
+        itemsTotal++;
+        const tokens = line.toString("utf-8").split(";");
+        const dateTokens = tokens[0].split(".");
+        const date = "20" + dateTokens[2] + "-" + dateTokens[1] + "-" + dateTokens[0];
+        const producer = tokens[5];
+        const name = tokens[3];
+        const unit = tokens[6];
+        const price = Number.parseFloat(tokens[7].replace("€", "").trim().replace(",", "."));
+        const id = tokens[4].replace("ARTIKELNUMMER: ", "").replace("Art. Nr.: ", "");
+        let item = lookup[store + id];
+        if (!item)
+            item = lookup[store + "-" + id]
+        if (!item) {
+            // console.log("Couldn't find item " + name);
+            notFound++;
+            continue;
+        }
+        let items = itemsPerDate[date];
+        if (!items) itemsPerDate[date] = items = [];
+        if (store == "spar") {
+            items.push({
+                masterValues: {
+                    "code-internal": item.id,
+                    "product-number": id,
+                    price,
+                    title: producer,
+                    "short-description": name,
+                    "short-description-3": unit,
+                    bioLevel: ""
+                }
+            });
+        } else {
+            items.push({
+                data: {
+                    articleId: id,
+                    name: name,
+                    price: {
+                        final: price
+                    },
+                    grammagePriceFactor: 1,
+                    grammage: unit,
+                }
+            })
+        }
+    }
+    console.log("total: " + itemsTotal);
+    console.log("not found: " + notFound);
+
+    const dates = Object.keys(itemsPerDate).sort((a, b) => b.localeCompare(a));
+    for (date of dates) {
+        fs.writeFileSync(`${dataDir}/${store}-${date}.json`, JSON.stringify(itemsPerDate[date], null, 2));
+    }
+    console.log(`Wrote files for ${file}`);
+}
 // momentumCartConversion();
+
+convertDossierData("data", "spar-2020.csv");
+convertDossierData("data", "billa-2020.csv");
