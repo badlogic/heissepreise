@@ -109,7 +109,7 @@ function itemToDOM(item) {
     storeDom.setAttribute("data-label", "Kette");
     let nameDom = dom("td", `<div class="itemname">${itemToStoreLink(item)}</div>`);
     nameDom.setAttribute("data-label", "Name");
-    let unitDom = dom("td", item.unit ? item.unit : "");
+    let unitDom = dom("td", (item.quantity ? item.quantity + " ": "") + (item.unit ? item.unit : ""));
     unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
