@@ -52,7 +52,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         url: item.canonicalUrl
-    };
+    }, conversions, 'lidl');
 }
 
 exports.fetchData = async function() {
