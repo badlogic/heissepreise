@@ -30,7 +30,7 @@ exports.getCanonical = function(item, today) {
     let quantity = 1, unit = "kg";
     if(item.data.grammagePriceFactor == 1) {
         const grammage = item.data.grammage !== "" && item.data.grammage.trim().split(' ').length>1 ? item.data.grammage : item.data.price.unit;
-        [quantity, unit] = grammage.trim().split(' ').splice(0,2);
+        if (grammage) [quantity, unit] = grammage.trim().split(' ').splice(0,2);
     }
     return utils.convertUnit({
         id: item.data.articleId,
