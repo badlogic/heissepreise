@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heisse Preise</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2>Heisse Preise</h2>
+        <div class="filters">
+            <a href="index.html">Produktsuche</a>
+            <a href="changes.html"><strong>Tagespreisänderungen</strong></a>
+            <a href="carts.html">Warenkörbe</a>
+        </div>
+        <div class="filters">
+            <label>Preisänderungen am <select id="dates"></select></label>
+        </div>
+        <div class="filters">
+            <label><input id="increases" type="checkbox" checked="true">Teurer</label>
+            <label><input id="decreases" type="checkbox" checked="true">Billiger</label>
+            <label><input id="fullhistory" type="checkbox" checked="true">Gesamte Preishistorie</label>
+        </div>
+        <table id="result"></table>
+    </div>
+    <script src="utils.js"></script>
+    <script src="changes.js"></script>
+</body>
+
+</html>
