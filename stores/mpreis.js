@@ -17,6 +17,7 @@ const conversions = {
 exports.getCanonical = function(item, today) {
     let quantity = item.prices[0].presentationPrice.measurementUnit.quantity
     let unit = item.prices[0].presentationPrice.measurementUnit.unitCode
+    const isWeighted = (item.mixins.productCustomAttributes?.packagingDescription ?? "").startsWith("Gewichtsware");
     if(unit in conversions) {
         const conv = conversions[unit];
         unit = conv.unit;
@@ -26,8 +27,9 @@ exports.getCanonical = function(item, today) {
         console.error("Unknown mpreis unit:", unit)
     return {
         id: item.code,
-        name: item.name[0],
-        price: item.prices[0].presentationPrice.effectiveAmount,
+        name: item.name[0] + isWeighted.toString(),
+        isWeighted,
+        price: isWeighted ? item.prices[0].effectiveAmount : item.prices[0].presentationPrice.effectiveAmount,
         priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],
         unit,
         quantity,
