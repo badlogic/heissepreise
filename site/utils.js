@@ -4,10 +4,10 @@ const stores = {
         budgetBrands: ["clever"],
         color: "rgb(255 255 225)",
     },
-    dm: {
-        name: "DM",
-        budgetBrands: [],
-        color: "rgb(255 240 230)",
+    spar: {
+        name: "Spar",
+        budgetBrands: ["s-budget"],
+        color: "rgb(225 244 225)",
     },
     hofer: {
         name: "Hofer",
@@ -24,10 +24,10 @@ const stores = {
         budgetBrands: [],
         color: "rgb(255 230 230)",
     },
-    spar: {
-        name: "Spar",
-        budgetBrands: ["s-budget"],
-        color: "rgb(225 244 225)",
+    dm: {
+        name: "DM",
+        budgetBrands: [],
+        color: "rgb(255 240 230)",
     },
 };
 
@@ -222,8 +222,8 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
             if (item.price < minPrice) continue;
             if (item.price > maxPrice) continue;
             if (
-                budgetBrands && 
-                !BUDGET_BRANDS.some(budgetBrand => name.indexOf(budgetBrand))
+                budgetBrands &&
+                !BUDGET_BRANDS.some(budgetBrand => name.indexOf(budgetBrand) >= 0)
             ) continue;
             if (bio && !item.bio) continue;
             hits.push(item);
