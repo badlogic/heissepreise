@@ -8,7 +8,8 @@ exports.getCanonical = function(item, today) {
         price: item.data.price.final,
         priceHistory: [{ date: today, price: item.data.price.final }],
         unit: item.data.grammagePriceFactor == 1 ? item.data.grammage : "kg",
-        bio: item.data.attributes && item.data.attributes.includes("s_bio")
+        bio: item.data.attributes && item.data.attributes.includes("s_bio"),
+        url: `https://shop.billa.at${item.data.canonicalPath}`
     };
 }
 

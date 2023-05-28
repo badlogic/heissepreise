@@ -8,7 +8,7 @@ exports.getCanonical = function(item, today) {
         price: item.price.price,
         priceHistory: [{ date: today, price: item.price.price }],
         unit: item.price.basePrice?.text ?? "",
-        url: item.canonicalUrl
+        url: `https://www.lidl.at${item.canonicalUrl}`
     };
 }
 
