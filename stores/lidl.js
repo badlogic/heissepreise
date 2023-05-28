@@ -39,7 +39,7 @@ exports.getCanonical = function(item, today) {
         unit = conv.unit;
     }
     else
-        console.error(`unknown lidl unit: '${unit}'`, item.price.basePrice?.text ?? "")
+        console.error(`unknown lidl unit: '${unit}'`)
 
     return {
         id: item.productId,
