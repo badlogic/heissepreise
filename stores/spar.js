@@ -50,6 +50,7 @@ exports.getCanonical = function(item, today) {
         priceHistory: [{ date: today, price }],
         unit,
         quantity,
+        isWeighted: item.masterValues['item-type'] === 'WeightProduct',
         bio: item.masterValues.biolevel === "Bio"
     };
 }

@@ -41,6 +41,7 @@ exports.getCanonical = function(item, today) {
         name: item.data.name,
         price: item.data.price.final,
         priceHistory: [{ date: today, price: item.data.price.final }],
+        isWeighted : item.data.isWeightArticle,
         unit,
         quantity,
         bio: item.data.attributes && item.data.attributes.includes("s_bio")

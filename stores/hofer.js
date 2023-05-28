@@ -56,6 +56,7 @@ exports.getCanonical = function(item, today) {
         name: item.ProductName,
         price: item.Price,
         priceHistory: [{ date: today, price: item.Price }],
+        isWeighted: item.IsBulk,
         unit,
         quantity,
         bio: item.IsBio

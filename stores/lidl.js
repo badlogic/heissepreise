@@ -18,28 +18,36 @@ exports.getCanonical = function(item, today) {
     let quantity = 1;
     let unit = '';
     let text = (item.price.basePrice?.text ?? "").trim().split('(')[0].replaceAll(',', '.').toLowerCase();
-    if(text.startsWith('bei') && text.search('je ') != -1)
-        text = text.substr(text.search('je '))
+    let isWeighted = false;
 
-    for (let s of ['ab ', 'je ', 'ca. ', 'z.b.: ', 'z.b. '])
-        text = text.replace(s, '').trim()
+    if(text === 'per kg') {
+      isWeighted = true;
+      unit = 'kg';
+    }
+    else {
+        if(text.startsWith('bei') && text.search('je ') != -1)
+            text = text.substr(text.search('je '))
 
-    const regex = /^([0-9.x ]+)(.*)$/;
-    const matches = text.match(regex);
-    if(matches) {
-        matches[1].split('x').forEach( (q)=> {
-          quantity = quantity * parseFloat(q.split('/')[0])
-        })
-        unit = matches[2].split('/')[0].trim().split(' ')[0];
+        for (let s of ['ab ', 'je ', 'ca. ', 'z.b.: ', 'z.b. '])
+            text = text.replace(s, '').trim()
+
+        const regex = /^([0-9.x ]+)(.*)$/;
+        const matches = text.match(regex);
+        if(matches) {
+            matches[1].split('x').forEach( (q)=> {
+              quantity = quantity * parseFloat(q.split('/')[0])
+            })
+            unit = matches[2].split('/')[0].trim().split(' ')[0];
+        }
+        unit = unit.split('-')[0];
+        if(unit in conversions) {
+            const conv = conversions[unit];
+            quantity = conv.factor * quantity;
+            unit = conv.unit;
+        }
+        else
+            console.error(`Unknown unit in lidl: '${unit}'`)
     }
-    unit = unit.split('-')[0];
-    if(unit in conversions) {
-        const conv = conversions[unit];
-        quantity = conv.factor * quantity;
-        unit = conv.unit;
-    }
-    else
-        console.error(`Unknown unit in lidl: '${unit}'`)
 
     return {
         id: item.productId,
