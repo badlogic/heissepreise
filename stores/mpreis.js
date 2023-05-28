@@ -1,4 +1,5 @@
 const axios = require("axios");
+const utils = require("./utils");
 
 const conversions = {
     'CM': { unit: 'cm', factor: 1 },
@@ -18,14 +19,7 @@ exports.getCanonical = function(item, today) {
     let quantity = item.prices[0].presentationPrice.measurementUnit.quantity
     let unit = item.prices[0].presentationPrice.measurementUnit.unitCode
     const isWeighted = (item.mixins.productCustomAttributes?.packagingDescription ?? "").startsWith("Gewichtsware");
-    if(unit in conversions) {
-        const conv = conversions[unit];
-        unit = conv.unit;
-        quantity = conv.factor * quantity;
-    }
-    else
-        console.error(`Unknown unit in mpreis: ${unit}`)
-    return {
+    return utils.convertUnit({
         id: item.code,
         name: item.name[0],
         isWeighted,
@@ -34,7 +28,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         bio: item.mixins.mpreisAttributes.properties?.includes('BIO')
-    };
+    }, conversions, 'mpreis');
 }
 
 exports.fetchData = async function() {

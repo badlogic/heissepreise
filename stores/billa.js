@@ -1,4 +1,5 @@
 const axios = require("axios");
+const utils = require("./utils");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const conversions = {
@@ -29,14 +30,9 @@ exports.getCanonical = function(item, today) {
     let quantity = 1, unit = "kg";
     if(item.data.grammagePriceFactor == 1) {
         const grammage = item.data.grammage !== "" && item.data.grammage.trim().split(' ').length>1 ? item.data.grammage : item.data.price.unit;
-        const [rawQuantity, rawUnit] = grammage.trim().split(' ').splice(0,2);
-        const conv = conversions[rawUnit];
-        if(conv === undefined)
-        console.error(`Unknown unit in billa: '${rawUnit}'`)
-        quantity = parseFloat(rawQuantity.replace(',','.')) * conv.factor;
-        unit = conv.unit;
+        [quantity, unit] = grammage.trim().split(' ').splice(0,2);
     }
-    return {
+    return utils.convertUnit({
         id: item.data.articleId,
         name: item.data.name,
         price: item.data.price.final,
@@ -45,7 +41,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         bio: item.data.attributes && item.data.attributes.includes("s_bio")
-    };
+    }, conversions, 'billa');
 }
 
 exports.fetchData = async function() {

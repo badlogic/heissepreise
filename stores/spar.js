@@ -1,4 +1,5 @@
 const axios = require("axios");
+const utils = require("./utils");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const conversions = {
@@ -27,22 +28,16 @@ exports.getCanonical = function(item, today) {
         price = item.masterValues.price;
     }
     if("short-description-3" in item.masterValues) {
-        let [rawQuantity, rawUnit] = item.masterValues["short-description-3"].replace(" EINWEG", "").replace(" MEHRWEG", "").trim().split(' ');
-        const conv = conversions[rawUnit];
-        quantity = parseFloat(rawQuantity.replace(',','.')) * conv.factor;
-        unit = conv.unit;
+        [quantity, unit] = item.masterValues["short-description-3"].replace(" EINWEG", "").replace(" MEHRWEG", "").trim().split(' ');
     }
     else{
       // use price per unit to calculate quantity (less accurate)
-      let [unitPrice, rawUnit] = item.masterValues['price-per-unit'].split('/');
+      let [unitPrice, unit_] = item.masterValues['price-per-unit'].split('/');
       unitPrice = parseFloat(unitPrice.replace("€", ""));
-      const conv = conversions[rawUnit];
-      if(conv === undefined)
-          console.error(`Unknown unit in spar: ${rawUnit}`)
-      quantity = Math.round(price / unitPrice * conv.factor)
-      unit = conv.unit;
+      quantity = Math.round(price / unitPrice)
+      unit = unit_;
     }
-    return {
+    return utils.convertUnit({
         id: item.masterValues["code-internal"],
         sparId: item.masterValues["product-number"],
         name: item.masterValues.title + " " + item.masterValues["short-description"],
@@ -52,7 +47,7 @@ exports.getCanonical = function(item, today) {
         quantity,
         isWeighted: item.masterValues['item-type'] === 'WeightProduct',
         bio: item.masterValues.biolevel === "Bio"
-    };
+    }, conversions, 'spar');
 }
 
 exports.fetchData = async function() {

@@ -1,4 +1,5 @@
 const axios = require("axios");
+const utils = require("./utils");
 
 const conversions = {
     'g': { unit: 'g', factor: 1 },
@@ -20,14 +21,7 @@ const conversions = {
 exports.getCanonical = function(item, today) {
     let quantity = item.netQuantityContent || item.basePriceQuantity;
     let unit = item.contentUnit || item.basePriceUnit;
-    if(unit in conversions) {
-        const conv = conversions[unit];
-        quantity = conv.factor * quantity;
-        unit = conv.unit;
-    }
-    else
-        console.error(`Unknown dm unit: '${unit}'`)
-    return {
+    return utils.convertUnit({
         id: item.gtin,
         name: `${item.brandName} ${item.title}`,
         price: item.price.value,
@@ -35,7 +29,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         ...(item.brandName === "dmBio" || (item.name ? (item.name.startsWith("Bio ") | item.name.startsWith("Bio-")) : false)) && {bio: true},
-    };
+    }, conversions, 'dm');
 }
 
 exports.fetchData = async function() {

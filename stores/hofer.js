@@ -1,4 +1,5 @@
 const axios = require("axios");
+const utils = require("./utils");
 
 const conversions = {
     "": {unit: "stk", factor: 1},
@@ -44,14 +45,7 @@ exports.getCanonical = function(item, today) {
         quantity = item.Unit
         unit= item.UnitType
     }
-    if(unit in conversions) {
-      const conv = conversions[unit];
-      quantity = conv.factor * quantity;
-      unit = conv.unit;
-    }
-    else
-      console.error(`Unknown unit in hofer: '${unit}'`)
-    return {
+    return utils.convertUnit({
         id: item.ProductID,
         name: item.ProductName,
         price: item.Price,
@@ -60,7 +54,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         bio: item.IsBio
-    };
+    }, conversions, 'hofer');
 }
 
 exports.fetchData = async function() {

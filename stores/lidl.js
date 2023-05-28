@@ -1,4 +1,6 @@
 const axios = require("axios");
+const utils = require("./utils");
+
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const conversions = {
@@ -40,16 +42,9 @@ exports.getCanonical = function(item, today) {
             unit = matches[2].split('/')[0].trim().split(' ')[0];
         }
         unit = unit.split('-')[0];
-        if(unit in conversions) {
-            const conv = conversions[unit];
-            quantity = conv.factor * quantity;
-            unit = conv.unit;
-        }
-        else
-            console.error(`Unknown unit in lidl: '${unit}'`)
     }
 
-    return {
+    return utils.convertUnit({
         id: item.productId,
         name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
         price: item.price.price,
