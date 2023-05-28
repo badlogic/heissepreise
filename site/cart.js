@@ -14,6 +14,16 @@ async function load() {
                 break;
             }
         }
+
+        // Update cart pricing info
+        let items = [];
+        for (cartItem of cart.items) {
+            const item = lookup[cartItem.id];
+            if (!item) items.push(cartItem);
+            else items.push(item);
+        }
+        cart.items = items;
+        saveCarts();
     }
 
     const cartDesc = getQueryParameter("cart");
@@ -48,40 +58,58 @@ async function load() {
         location.href = "carts.html";
     }
 
-    if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) showSearch(cart, items, lookup);
-    showCart(cart, lookup);
+    if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) showSearch(cart, items);
+
+    showCart(cart);
     const canvasDom = document.querySelector("#chart");
     document.querySelector("#sum").addEventListener("change", () => {
-        showCharts(canvasDom, cart, lookup);
+        showCharts(canvasDom, cart.items);
     });
-    document.querySelector("#sumbilla").addEventListener("change", () => {
-        showCharts(canvasDom, cart, lookup);
-    });
-    document.querySelector("#sumspar").addEventListener("change", () => {
-        showCharts(canvasDom, cart, lookup);
-    });
-    document.querySelector("#sumhofer").addEventListener("change", () => {
-        showCharts(canvasDom, cart, lookup);
-    })
-    document.querySelector("#sumdm").addEventListener("change", () => {
-        showCharts(canvasDom, cart, lookup);
-    })
-    document.querySelector("#sumlidl").addEventListener("change", () => {
-        showCharts(canvasDom, cart, lookup);
-    })
-    document.querySelector("#summpreis").addEventListener("change", () => {
-        showCharts(canvasDom, cart, lookup);
-    })
+    document.querySelector("#billa").addEventListener("change", () => showCart(cart));
+    document.querySelector("#hofer").addEventListener("change", () => showCart(cart));
+    document.querySelector("#spar").addEventListener("change", () => showCart(cart));
+    document.querySelector("#dm").addEventListener("change", () => showCart(cart));
+    document.querySelector("#lidl").addEventListener("change", () => showCart(cart));
+    document.querySelector("#mpreis").addEventListener("change", () => showCart(cart));
+    document.querySelector("#filter").addEventListener("input", () => showCart(cart));
 }
 
-function showSearch(cart, items, lookup) {
+function filter(cartItems) {
+    const query = document.querySelector("#filter").value.trim();
+    const billa = document.querySelector("#billa").checked;
+    const spar = document.querySelector("#spar").checked;
+    const hofer = document.querySelector("#hofer").checked;
+    const dm = document.querySelector("#dm").checked;
+    const lidl = document.querySelector("#lidl").checked;
+    const mpreis = document.querySelector("#mpreis").checked;
+    let items = [];
+    if (query.charAt(0) != "!") {
+        for (item of cartItems) {
+            if (item.store == "billa" && !billa) continue;
+            if (item.store == "spar" && !spar) continue;
+            if (item.store == "hofer" && !hofer) continue;
+            if (item.store == "dm" && !dm) continue;
+            if (item.store == "lidl" && !lidl) continue;
+            if (item.store == "mpreis" && !mpreis) continue;
+            items.push(item);
+        }
+    } else {
+        items = cartItems;
+    }
+    if (query.length >= 3) items = searchItems(items, document.querySelector("#filter").value, billa, spar, hofer, dm, lidl, mpreis, false, 0, 10000, false, false);
+    return items;
+}
+
+function showSearch(cart, items) {
     const searchDom = document.querySelector("#search");
     searchDom.innerHTML = "";
     newSearchComponent(searchDom, items, null, (item) => {
-        for (let i = 0; i < cart.items.length; i++) {
+        // This would filter all items in the cart from the search
+        // result.
+        /*for (let i = 0; i < cart.items.length; i++) {
             const cartItem = cart.items[i];
             if (cartItem.id == item.id) return false;
-        }
+        }*/
         return true;
     }, (header) => {
         header.append(dom("th", ""));
@@ -97,113 +125,48 @@ function showSearch(cart, items, lookup) {
         addButton.addEventListener("click", () => {
             cart.items.push(item);
             saveCarts();
-            showCart(cart, lookup);
+            showCart(cart);
         });
 
         return itemDom;
     });
 }
 
-function showCharts(canvasDom, cart, lookup) {
+function showCharts(canvasDom, items) {
     let itemsToShow = [];
-    let items = [];
-    cart.items.forEach((cartItem) => {
-        const item = lookup[cartItem.id];
-        if (!item) return;
-        items.push(item);
-    });
 
     if (document.querySelector("#sum").checked && items.length > 0) {
         itemsToShow.push({
-            name: "Summe",
+            name: "Preissumme",
             priceHistory: calculateOverallPriceChanges(items)
         });
     }
 
-    if (document.querySelector("#sumbilla").checked) {
-        const itemsBilla = items.filter(item => item.store == "billa");
-        if (itemsBilla.length > 0) {
-            itemsToShow.push({
-                name: "Summe Billa",
-                priceHistory: calculateOverallPriceChanges(itemsBilla)
-            });
-        }
-    }
-
-    if (document.querySelector("#sumspar").checked) {
-        const itemsSpar = items.filter(item => item.store == "spar");
-        if (itemsSpar.length > 0) {
-            itemsToShow.push({
-                name: "Summe Spar",
-                priceHistory: calculateOverallPriceChanges(itemsSpar)
-            });
-        }
-    }
-
-    if (document.querySelector("#sumhofer").checked) {
-        const itemsHofer = items.filter(item => item.store == "hofer");
-        if (itemsHofer.length > 0) {
-            itemsToShow.push({
-                name: "Summe Hofer",
-                priceHistory: calculateOverallPriceChanges(itemsHofer)
-            });
-        }
-    }
-
-    if (document.querySelector("#sumdm").checked) {
-        const itemsDm = items.filter(item => item.store == "dm");
-        if (itemsDm.length > 0) {
-            itemsToShow.push({
-                name: "Summe dm",
-                priceHistory: calculateOverallPriceChanges(itemsDm)
-            });
-        }
-    }
-
-    if (document.querySelector("#sumlidl").checked) {
-        const itemsLidl = items.filter(item => item.store == "lidl");
-        if (itemsLidl.length > 0) {
-            itemsToShow.push({
-                name: "Summe Lidl",
-                priceHistory: calculateOverallPriceChanges(itemsLidl)
-            });
-        }
-    }
-
-    if (document.querySelector("#summpreis").checked) {
-        const itemsMpreis = items.filter(item => item.store == "mpreis");
-        if (itemsMpreis.length > 0) {
-            itemsToShow.push({
-                name: "Summe MPREIS",
-                priceHistory: calculateOverallPriceChanges(itemsMpreis)
-            });
-        }
-    }
-
-    cart.items.forEach((cartItem) => {
-        const item = lookup[cartItem.id];
-        if (!item) return;
-        if (cartItem.chart) itemsToShow.push(item);
+    items.forEach((item) => {
+        if (item.chart) itemsToShow.push(item);
     });
 
     showChart(canvasDom, itemsToShow);
 }
 
-function showCart(cart, lookup) {
+function showCart(cart) {
     document.querySelector("#cartname").innerText = "Warenkorb '" + cart.name + "'";
     const canvasDom = document.querySelector("#chart");
-    showCharts(canvasDom, cart, lookup);
+    let items = filter(cart.items);
+    if (items.length == cart.items.length) {
+        document.querySelector("#numitems").innerText = `${cart.items.length} Artikel`;
+    } else {
+        document.querySelector("#numitems").innerText = `${items.length} / ${cart.items.length} Artikel`;
+    }
+    showCharts(canvasDom, items);
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
     const header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th><th></th></tr>`);
     itemTable.append(header);
 
-    cart.items.forEach((cartItem, idx) => {
-        const item = lookup[cartItem.id];
-        if (!item) return;
-        const itemDom = itemToDOM(item)
-
+    items.forEach((cartItem, idx) => {
+        const itemDom = itemToDOM(cartItem)
 
         const cell = dom("td", "");
         const showCheckbox = dom("input", "");
@@ -213,7 +176,7 @@ function showCart(cart, lookup) {
         showCheckbox.addEventListener("change", () => {
             cartItem.chart = showCheckbox.checked;
             saveCarts();
-            showCharts(canvasDom, cart, lookup);
+            showCharts(canvasDom, cart.items);
         });
         cell.append(showCheckbox);
 
@@ -225,7 +188,7 @@ function showCart(cart, lookup) {
             deleteButton.addEventListener("click", () => {
                 cart.items.splice(idx, 1);
                 saveCarts();
-                showCart(cart, lookup)
+                showCart(cart)
             })
             cell.appendChild(deleteButton);
         }
