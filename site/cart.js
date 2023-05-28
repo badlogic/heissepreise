@@ -60,43 +60,32 @@ async function load() {
 
     if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) showSearch(cart, items);
 
-    showCart(cart);
     const canvasDom = document.querySelector("#chart");
     document.querySelector("#sum").addEventListener("change", () => {
         showCharts(canvasDom, cart.items);
     });
-    document.querySelector("#billa").addEventListener("change", () => showCart(cart));
-    document.querySelector("#hofer").addEventListener("change", () => showCart(cart));
-    document.querySelector("#spar").addEventListener("change", () => showCart(cart));
-    document.querySelector("#dm").addEventListener("change", () => showCart(cart));
-    document.querySelector("#lidl").addEventListener("change", () => showCart(cart));
-    document.querySelector("#mpreis").addEventListener("change", () => showCart(cart));
-    document.querySelector("#filter").addEventListener("input", () => showCart(cart));
+    const filtersStore = document.querySelector("#filters-store");
+    filtersStore.innerHTML = STORE_KEYS.map(store => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
+    filtersStore.querySelectorAll("input").forEach(input => {
+        input.addEventListener("change", () => showCart(cart));
+    });
+    showCart(cart);
 }
 
 function filter(cartItems) {
     const query = document.querySelector("#filter").value.trim();
-    const billa = document.querySelector("#billa").checked;
-    const spar = document.querySelector("#spar").checked;
-    const hofer = document.querySelector("#hofer").checked;
-    const dm = document.querySelector("#dm").checked;
-    const lidl = document.querySelector("#lidl").checked;
-    const mpreis = document.querySelector("#mpreis").checked;
+    const storeCheckboxes = STORE_KEYS.map(store => document.querySelector(`#${store}`));
+    const checkedStores = STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked)
     let items = [];
     if (query.charAt(0) != "!") {
         for (item of cartItems) {
-            if (item.store == "billa" && !billa) continue;
-            if (item.store == "spar" && !spar) continue;
-            if (item.store == "hofer" && !hofer) continue;
-            if (item.store == "dm" && !dm) continue;
-            if (item.store == "lidl" && !lidl) continue;
-            if (item.store == "mpreis" && !mpreis) continue;
+            if (!checkedStores.includes(item.store)) continue;
             items.push(item);
         }
     } else {
         items = cartItems;
     }
-    if (query.length >= 3) items = searchItems(items, document.querySelector("#filter").value, billa, spar, hofer, dm, lidl, mpreis, false, 0, 10000, false, false);
+    if (query.length >= 3) items = searchItems(items, document.querySelector("#filter").value, checkedStores, false, 0, 10000, false, false);
     return items;
 }
 
