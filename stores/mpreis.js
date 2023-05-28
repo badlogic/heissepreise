@@ -27,7 +27,7 @@ exports.getCanonical = function(item, today) {
         console.error(`Unknown unit in mpreis: ${unit}`)
     return {
         id: item.code,
-        name: item.name[0] + isWeighted.toString(),
+        name: item.name[0],
         isWeighted,
         price: isWeighted ? item.prices[0].effectiveAmount : item.prices[0].presentationPrice.effectiveAmount,
         priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],
