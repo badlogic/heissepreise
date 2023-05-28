@@ -360,7 +360,7 @@ function showChart(canvasDom, items) {
         }
 
         return {
-            label: product.name,
+            label: (product.store ? product.store + " " : "") + product.name,
             data: prices,
         };
     });
