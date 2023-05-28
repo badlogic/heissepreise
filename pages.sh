@@ -18,7 +18,7 @@ node pages.js tmp-data $pagesUrl
 
 git clone $repoUrl pages
 cp site/* pages
-cp data/latest-canonical.json pages
+cp tmp-data/latest-canonical.json pages
 pushd pages
 git add *
 git commit -am "Updated $(date +'%Y-%m-%d')"
