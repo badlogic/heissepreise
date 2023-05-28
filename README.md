@@ -44,7 +44,8 @@ Subsequent starts will fetch the data asynchronously, so you can start working i
 ## Run via GitHub pages & GitHub workflows
 Create a GitHub account and pick a username. Below, we assume your user name is `hotprices123`. **Replace `hotprices123` with your real username everywhere you see it below**
 
-2. Fork this repository and name the repository `hotprices123.github.io`.
+1. Log in to your GitHub account.
+2. [Fork](https://github.com/badlogic/heissepreise/fork) this repository and name the repository `hotprices123.github.io`.
 3. In your forked repository, go to `Settings > Pages`, then under `Branch` select the `main` branch, and the `docs/` directory as shown in this screenshot.
 ![docs/github-pages.png](docs/github-pages.png)
 3. In your forked repository, go to `Settings > Actions > General`, then under `Workflow permissions`, select `Read and write permissions` as shown in this screenshot.
