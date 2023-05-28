@@ -24,7 +24,7 @@ exports.getCanonical = function(item, today) {
         quantity = conv.factor * quantity;
     }
     else
-        console.error("Unknown mpreis unit:", unit)
+        console.error(`Unknown unit in mpreis: ${unit}`)
     return {
         id: item.code,
         name: item.name[0] + isWeighted.toString(),

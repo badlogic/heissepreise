@@ -50,7 +50,7 @@ exports.getCanonical = function(item, today) {
       unit = conv.unit;
     }
     else
-      console.error("unknown hofer unit", unit, name)
+      console.error(`Unknown unit in hofer: '${unit}'`)
     return {
         id: item.ProductID,
         name: item.ProductName,

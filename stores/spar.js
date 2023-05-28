@@ -38,7 +38,7 @@ exports.getCanonical = function(item, today) {
       unitPrice = parseFloat(unitPrice.replace("€", ""));
       const conv = conversions[rawUnit];
       if(conv === undefined)
-          console.error("unknown unit: " + rawUnit)
+          console.error(`Unknown unit in spar: ${rawUnit}`)
       quantity = Math.round(price / unitPrice * conv.factor)
       unit = conv.unit;
     }

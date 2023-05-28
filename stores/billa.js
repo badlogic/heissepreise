@@ -32,7 +32,7 @@ exports.getCanonical = function(item, today) {
         const [rawQuantity, rawUnit] = grammage.trim().split(' ').splice(0,2);
         const conv = conversions[rawUnit];
         if(conv === undefined)
-        console.error(`Unknown unit in billa: "${JSON.stringify(item.data, null, 2)}"`)
+        console.error(`Unknown unit in billa: '${rawUnit}'`)
         quantity = parseFloat(rawQuantity.replace(',','.')) * conv.factor;
         unit = conv.unit;
     }

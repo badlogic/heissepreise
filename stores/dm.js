@@ -26,7 +26,7 @@ exports.getCanonical = function(item, today) {
         unit = conv.unit;
     }
     else
-        console.error(`unknown dm unit: '${unit}'`)
+        console.error(`Unknown dm unit: '${unit}'`)
     return {
         id: item.gtin,
         name: `${item.brandName} ${item.title}`,
