@@ -109,7 +109,13 @@ function itemToDOM(item) {
     storeDom.setAttribute("data-label", "Kette");
     let nameDom = dom("td", `<div class="itemname">${itemToStoreLink(item)}</div>`);
     nameDom.setAttribute("data-label", "Name");
-    let unitDom = dom("td", (item.quantity ? item.quantity + " ": "") + (item.unit ? item.unit : ""));
+    let quantity = item.quantity || ""
+    let unit = item.unit || "";
+    if(quantity >= 1000 && (unit == 'g' || unit == 'ml')) {
+        quantity = parseFloat((0.001 * quantity).toFixed(2));
+        unit = unit == 'ml' ? 'l' : 'kg';
+    }
+    let unitDom = dom("td", (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`);
     unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
