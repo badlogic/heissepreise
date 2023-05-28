@@ -69,6 +69,7 @@ async function load() {
     filtersStore.querySelectorAll("input").forEach(input => {
         input.addEventListener("change", () => showCart(cart));
     });
+    document.querySelector("#filter").addEventListener("input", () => showCart(cart));
     showCart(cart);
 }
 
