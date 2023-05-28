@@ -7,7 +7,8 @@ exports.getCanonical = function(item, today) {
         price: item.prices[0].presentationPrice.effectiveAmount,
         priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],
         unit: `${item.prices[0].presentationPrice.measurementUnit.quantity} ${item.prices[0].presentationPrice.measurementUnit.unitCode}`,
-        bio: item.mixins.mpreisAttributes.properties?.includes('BIO')
+        bio: item.mixins.mpreisAttributes.properties?.includes('BIO'),
+        url: `https://www.mpreis.at/shop/p/${item.code}`
     };
 }
 

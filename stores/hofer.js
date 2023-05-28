@@ -7,7 +7,8 @@ exports.getCanonical = function(item, today) {
         price: item.Price,
         priceHistory: [{ date: today, price: item.Price }],
         unit: `${item.Unit} ${item.UnitType}`,
-        bio: item.IsBio
+        bio: item.IsBio,
+        url: `https://www.roksh.at/hofer/produkte/${item.CategorySEOName}/${item.SEOName}`
     };
 }
 
