@@ -63,7 +63,7 @@ function showResults(items, today) {
         }
     }
     const query = document.querySelector("#filter").value.trim();
-    if (query.length >= 3) changedItems = searchItems(changedItems, document.querySelector("#filter").value, billa, spar, hofer, dm, false, 0, 10000, false, false);
+    if (query.length >= 3) changedItems = searchItems(changedItems, document.querySelector("#filter").value, billa, spar, hofer, dm, lidle, mpreis, false, 0, 10000, false, false);
 
     const table = document.querySelector("#result");
     table.innerHTML = "";
