@@ -29,6 +29,11 @@ const stores = {
         budgetBrands: [],
         color: "rgb(255 240 230)",
     },
+    unimarkt: {
+        name: "Unimarkt",
+        budgetBrands: ["jeden tag", "unipur"],
+        color: "rgb(179, 217, 255)",
+    },
 };
 
 const STORE_KEYS = Object.keys(stores);
