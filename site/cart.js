@@ -140,7 +140,12 @@ function showCharts(canvasDom, items) {
 }
 
 function showCart(cart) {
-    document.querySelector("#cartname").innerText = "Warenkorb '" + cart.name + "'";
+    let link = cart.name + ";"
+    for (cartItem of cart.items) {
+        link += cartItem.id + ";";
+    }
+
+    document.querySelector("#cartname").innerHTML = "Warenkorb '" + cart.name + `' <a href="cart.html?cart=${link}">Teilen</a>`;
     const canvasDom = document.querySelector("#chart");
     let items = filter(cart.items);
     if (items.length == cart.items.length) {
