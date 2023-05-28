@@ -1,15 +1,36 @@
 const axios = require("axios");
+const utils = require("./utils");
+
+const conversions = {
+    'g': { unit: 'g', factor: 1 },
+    'kg': { unit: 'g', factor: 1000 },
+    'l': { unit: 'ml', factor: 1000 },
+    'ml':   { unit: 'ml', factor: 1 },
+    'St': { unit: 'stk', factor: 1 },
+    'Wl': { unit: 'wg', factor: 1 },
+    'm': { unit: 'cm', factor: 100 },
+    'mm': { unit: 'cm', factor: .1 },
+    'Bl': { unit: 'stk', factor: 1 },
+    'Btl': { unit: 'stk', factor: 1 },
+    'Paar': { unit: 'stk', factor: 1 },
+    'Portion': { unit: 'stk', factor: 1 },
+    'Satz': { unit: 'stk', factor: 1 },
+    'Tablette': { unit: 'stk', factor: 1 },
+};
 
 exports.getCanonical = function(item, today) {
-    return {
+    let quantity = item.netQuantityContent || item.basePriceQuantity;
+    let unit = item.contentUnit || item.basePriceUnit;
+    return utils.convertUnit({
         id: item.gtin,
         name: `${item.brandName} ${item.title}`,
         price: item.price.value,
         priceHistory: [{ date: today, price: item.price.value }],
-        unit: `${item.netQuantityContent} ${item.contentUnit}`,
+        unit,
+        quantity,
         ...(item.brandName === "dmBio" || (item.name ? (item.name.startsWith("Bio ") | item.name.startsWith("Bio-")) : false)) && {bio: true},
-        url: `https://www.dm.at/product-p${item.gtin}.html`
-    };
+        url: `https://www.dm.at/product-p${item.gtin}.html`,
+    }, conversions, 'dm');
 }
 
 exports.fetchData = async function() {
