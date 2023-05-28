@@ -29,6 +29,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         ...(item.brandName === "dmBio" || (item.name ? (item.name.startsWith("Bio ") | item.name.startsWith("Bio-")) : false)) && {bio: true},
+        url: `https://www.dm.at/product-p${item.gtin}.html`,
     }, conversions, 'dm');
 }
 

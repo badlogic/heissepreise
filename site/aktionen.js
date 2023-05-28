@@ -22,39 +22,26 @@ async function load() {
 
     document.querySelector("#date").innerText = "Preisänderungen am " + currentDate();
 
-    showResults(items, currentDate());
+    const filtersStore = document.querySelector("#filters-store");
+    filtersStore.innerHTML = STORE_KEYS.map(store => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
+    filtersStore.querySelectorAll("input").forEach(input => {
+        input.addEventListener("change", () => showResults(items, currentDate()));
+    });
 
-    document.querySelector("#billa").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#hofer").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#spar").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#dm").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#lidl").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#mpreis").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#increases").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#decreases").addEventListener("change", () => showResults(items, currentDate()));
-    document.querySelector("#filter").addEventListener("input", () => showResults(items, currentDate()));
+    showResults(items, currentDate());
 }
 
 function showResults(items, today) {
     const increases = document.querySelector("#increases").checked;
     const decreases = document.querySelector("#decreases").checked;
-    const billa = document.querySelector("#billa").checked;
-    const spar = document.querySelector("#spar").checked;
-    const hofer = document.querySelector("#hofer").checked;
-    const dm = document.querySelector("#dm").checked;
-    const lidl = document.querySelector("#lidl").checked;
-    const mpreis = document.querySelector("#mpreis").checked;
+    const storeCheckboxes = STORE_KEYS.map(store => document.querySelector(`#${store}`));
+    const checkedStores = STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked)
     let changedItems = [];
     for (item of items) {
         if (item.priceHistory.length < 2) continue;
 
         for (let i = 0; i < item.priceHistory.length; i++) {
-            if (item.store == "billa" && !billa) continue;
-            if (item.store == "spar" && !spar) continue;
-            if (item.store == "hofer" && !hofer) continue;
-            if (item.store == "dm" && !dm) continue;
-            if (item.store == "lidl" && !lidl) continue;
-            if (item.store == "mpreis" && !mpreis) continue;
+            if (!checkedStores.includes(item.store)) continue;
 
             if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
                 if (increases && (item.priceHistory[i].price > item.priceHistory[i + 1].price)) changedItems.push(item);
@@ -63,7 +50,7 @@ function showResults(items, today) {
         }
     }
     const query = document.querySelector("#filter").value.trim();
-    if (query.length >= 3) changedItems = searchItems(changedItems, document.querySelector("#filter").value, billa, spar, hofer, dm, lidl, mpreis, false, 0, 10000, false, false);
+    if (query.length >= 3) changedItems = searchItems(changedItems, document.querySelector("#filter").value, checkedStores, false, 0, 10000, false, false);
 
     const table = document.querySelector("#result");
     table.innerHTML = "";

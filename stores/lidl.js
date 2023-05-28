@@ -51,7 +51,7 @@ exports.getCanonical = function(item, today) {
         priceHistory: [{ date: today, price: item.price.price }],
         unit,
         quantity,
-        url: item.canonicalUrl
+        url: `https://www.lidl.at${item.canonicalUrl}`,
     }, conversions, 'lidl');
 }
 

@@ -53,7 +53,8 @@ exports.getCanonical = function(item, today) {
         isWeighted: item.IsBulk,
         unit,
         quantity,
-        bio: item.IsBio
+        bio: item.IsBio,
+        url: `https://www.roksh.at/hofer/produkte/${item.CategorySEOName}/${item.SEOName}`
     }, conversions, 'hofer');
 }
 

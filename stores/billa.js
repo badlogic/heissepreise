@@ -40,7 +40,8 @@ exports.getCanonical = function(item, today) {
         isWeighted : item.data.isWeightArticle,
         unit,
         quantity,
-        bio: item.data.attributes && item.data.attributes.includes("s_bio")
+        bio: item.data.attributes && item.data.attributes.includes("s_bio"),
+        url: `https://shop.billa.at${item.data.canonicalPath}`,
     }, conversions, 'billa');
 }
 

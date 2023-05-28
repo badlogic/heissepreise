@@ -41,12 +41,40 @@ Once the app is listening per default on port 3000, open http://localhost:3000 i
 
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
 
+## Run via GitHub pages & GitHub workflows
+Create a GitHub account and pick a username. Below, we assume your user name is `hotprices123`. **Replace `hotprices123` with your real username everywhere you see it below**
+
+1. Log in to your GitHub account.
+2. [Fork](https://github.com/badlogic/heissepreise/fork) this repository and name the repository `hotprices123.github.io`.
+3. In your forked repository, go to `Settings > Pages`, then under `Branch` select the `main` branch, and the `docs/` directory as shown in this screenshot.
+![docs/github-pages.png](docs/github-pages.png)
+3. In your forked repository, go to `Settings > Actions > General`, then under `Workflow permissions`, select `Read and write permissions` as shown in this screenshot.
+![docs/github-permissions.png](docs/github-permissions.png)
+3. In your forked repository, go to the `Actions` tab, then select the `Pages Update` workflow in the list to the left, then click `Enable workflow`. Confirm that you know what you are doing.
+![docs/github-workflow.png](docs/github-workflow.png)
+3. Trigger the workflow once manually to build the initial site and data.
+![docs/github-workflow2.png](docs/github-workflow2.png)
+3. Once the workflow has finished, go to `https:/hotprices123.github.io` and enjoy your price comparisons.
+
+The data will be automatically fetched once a day at 8am (no idea what timezone), and the site will be updated.
+
+To get the latest code changes from this repository into your fork:
+1. Go to `https://github.com/hotprices123/hotprices123.github.io/compare/main...badlogic:heissepreise:main`
+2. Click on `Create pull request`
+![docs/github-pullrequest.png](docs/github-pullrequest.png)
+3. Enter a Title like "Updated from upstream", then click `Create pull request``
+![docs/github-pullrequest2.png](docs/github-pullrequest2.png)
+3. Click `Merge pull request`
+![docs/github-pullrequest3.png](docs/github-pullrequest3.png)
+
+Your site will now use the latest source code changes from this repository. It will be automatically updated and is usually live under `https://hotprices123.github.io` within 10-15 minutes.
+
+## Generating a self-contained executable
+ Run the `package.sh`script in a Bash shell. It will generate a folder `dist/` with executable for Windows, Linux, and MacOS. Run the executable for your OS.
+
 ## Docker
 The project has a somewhat peculiar Docker Compose setup tailored to my infrastructure. All compose config files are in `docker/` including a simple Bash script to start and interact with the containers. This is the setup I use for both development and deployment.
 
 For development, run `docker/control.sh startdev`. You can connect to both the NodeJS server and the client for debugging in Visual Studio code via the `client-server` launch configuration (found in `.vscode/launch.json`).
 
 For production, run `docker/control.sh start`.
-
-## Generating a self-contained executable
- Run the `package.sh`script in a Bash shell. It will generate a folder `dist/` with executable for Windows, Linux, and MacOS. Run the executable for your OS.

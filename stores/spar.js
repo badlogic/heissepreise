@@ -46,7 +46,8 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         isWeighted: item.masterValues['item-type'] === 'WeightProduct',
-        bio: item.masterValues.biolevel === "Bio"
+        bio: item.masterValues.biolevel === "Bio",
+        url: `https://www.interspar.at/shop/lebensmittel${item.masterValues.url}`,
     }, conversions, 'spar');
 }
 

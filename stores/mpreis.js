@@ -27,7 +27,8 @@ exports.getCanonical = function(item, today) {
         priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],
         unit,
         quantity,
-        bio: item.mixins.mpreisAttributes.properties?.includes('BIO')
+        bio: item.mixins.mpreisAttributes.properties?.includes('BIO'),
+        url: `https://www.mpreis.at/shop/p/${item.code}`,
     }, conversions, 'mpreis');
 }
 
