@@ -19,4 +19,4 @@ jobs:
       run: |
         git config --global user.email "badlogicgames@gmail.com"
         git config --global user.name "badlogic"
-        ./pages.sh "https://${{ secrets.PAGES_ACCESS_TOKEN }}@github.com/badlogic/badlogic.github.io"
+        ./pages.sh
