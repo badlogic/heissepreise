@@ -2,7 +2,6 @@ let changeDates = [];
 let items = [];
 
 async function load() {
-    const today = currentDate();
     items = await loadItems();
     items.sort((a, b) => {
         if (a.store < b.store) {
