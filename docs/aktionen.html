@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heisse Preise</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="column">
+        <h2 id="date"></h2>
+        <div class="filters" id="filters-store">
+        </div>
+        <div class="filters">
+            <label><input id="increases" type="checkbox" checked="true"> Teurer</label>
+            <label><input id="decreases" type="checkbox" checked="true"> Billiger</label>
+        </div>
+        <input id="filter" type="text" style="max-width: 800px; width: 100%;" placeholder="Filtern...">
+        <table id="result"></table>
+    </div>
+    <script src="utils.js"></script>
+    <script src="aktionen.js"></script>
+</body>
+
+</html>
