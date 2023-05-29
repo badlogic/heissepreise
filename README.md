@@ -28,12 +28,12 @@ The first time you run this, the data needs to be fetched from the stores. You s
 
 ```bash
 Fetching data for date: 2023-05-23
+Fetched LIDL data, took 0.77065160000324 seconds
+Fetched MPREIS data, took 13.822936070203781 seconds
 Fetched SPAR data, took 17.865891209602356 seconds
 Fetched BILLA data, took 52.95784649944306 seconds
 Fetched HOFER data, took 64.83968291568756 seconds
 Fetched DM data, took 438.77065160000324 seconds
-Fetched LIDL data, took 0.77065160000324 seconds
-Fetched MPREIS data, took 13.822936070203781 seconds
 Merged price history
 Example app listening on port 3000
 ```
