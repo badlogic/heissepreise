@@ -38,7 +38,7 @@ const stores = {
 
 const STORE_KEYS = Object.keys(stores);
 const BUDGET_BRANDS = [].concat(
-  ...Object.values(stores).map((store) => store.budgetBrands)
+    ...Object.values(stores).map((store) => store.budgetBrands)
 );
 
 /**
@@ -66,11 +66,11 @@ function getQueryParameter(name) {
  * @returns {number} Converted number or default value
  */
 function toNumber(value, defaultValue) {
-  try {
-    return Number.parseFloat(value);
-  } catch (e) {
-    return defaultValue;
-  }
+    try {
+        return Number.parseFloat(value);
+    } catch (e) {
+        return defaultValue;
+    }
 }
 
 /**
@@ -80,9 +80,9 @@ function toNumber(value, defaultValue) {
  * @returns {HTMLElement} DOM element
  */
 function dom(el, html) {
-  const element = document.createElement(el);
-  element.innerHTML = html;
-  return element;
+    const element = document.createElement(el);
+    element.innerHTML = html;
+    return element;
 }
 
 async function loadItems() {
@@ -90,20 +90,21 @@ async function loadItems() {
     const items = await response.json();
 
     for (const item of items) {
-      item.search = item.name + " " + item.unit;
-      item.search = item.search.toLowerCase().replace(",", ".");
+        item.search = item.name + " " + item.unit;
+        item.search = item.search.toLowerCase().replace(",", ".");
 
-      item.numPrices = item.priceHistory.length;
-      item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
-      item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
-      item.date = item.priceHistory[0].date;
-      let highestPriceBefore = -1;
-      for (let i = 1; i < item.priceHistory.length; i++) {
-        const price = item.priceHistory[i];
-        highestPriceBefore = Math.max(highestPriceBefore, price.price);
-      }
-      if (highestPriceBefore == -1) highestPriceBefore = item.price;
-      item.highestBefore = highestPriceBefore;
+        item.numPrices = item.priceHistory.length;
+        item.priceOldest =
+            item.priceHistory[item.priceHistory.length - 1].price;
+        item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
+        item.date = item.priceHistory[0].date;
+        let highestPriceBefore = -1;
+        for (let i = 1; i < item.priceHistory.length; i++) {
+            const price = item.priceHistory[i];
+            highestPriceBefore = Math.max(highestPriceBefore, price.price);
+        }
+        if (highestPriceBefore == -1) highestPriceBefore = item.price;
+        item.highestBefore = highestPriceBefore;
     }
     return items;
 }
@@ -112,57 +113,57 @@ async function loadItems() {
  * @description Class for managing the shopping carts, which are stored in local storage
  */
 class ShoppingCarts {
-  constructor() {
-    this.carts = [];
-    this.load();
-  }
-
-  /**
-   * @description Load the shopping carts from local storage into carts array
-   */
-  load() {
-    let val = localStorage.getItem("carts");
-    this.carts = val ? JSON.parse(val) : [];
-  }
-
-  /**
-   * @description Save the shopping carts to local storage, with key "carts"
-   */
-  save() {
-    localStorage.setItem("carts", JSON.stringify(this.carts, null, 2));
-  }
-
-  /**
-   * @description Check if the shopping carts contains a cart with the given name
-    * @param {string} name Name of the shopping cart to check
-   */
-  has(name) {
-    for (const cart of this.carts) {
-      if (cart.name === name) return true;
+    constructor() {
+        this.carts = [];
+        this.load();
     }
-    return false;
-  }
 
-  /**
-   * @description Add new shopping card to array and save new carts array to local storage
-   * @param {string} name Name of the shopping cart to add
-   */
-  add(name) {
-    this.carts.push({
-      name: name,
-      items: [],
-    });
-    this.save();
-  }
+    /**
+     * @description Load the shopping carts from local storage into carts array
+     */
+    load() {
+        const val = localStorage.getItem("carts");
+        this.carts = val ? JSON.parse(val) : [];
+    }
 
-  /**
-   * @description Remove shopping cart from carts array based on name and save updated array to local storage
-   * @param {string} name Name of the shopping cart to remove
-   */
-  remove(name) {
-    this.carts = this.carts.filter((cart) => cart.name !== name);
-    this.save();
-  }
+    /**
+     * @description Save the shopping carts to local storage, with key "carts"
+     */
+    save() {
+        localStorage.setItem("carts", JSON.stringify(this.carts, null, 2));
+    }
+
+    /**
+     * @description Check if the shopping carts contains a cart with the given name
+     * @param {string} name Name of the shopping cart to check
+     */
+    has(name) {
+        for (const cart of this.carts) {
+            if (cart.name === name) return true;
+        }
+        return false;
+    }
+
+    /**
+     * @description Add new shopping card to array and save new carts array to local storage
+     * @param {string} name Name of the shopping cart to add
+     */
+    add(name) {
+        this.carts.push({
+            name: name,
+            items: [],
+        });
+        this.save();
+    }
+
+    /**
+     * @description Remove shopping cart from carts array based on name and save updated array to local storage
+     * @param {string} name Name of the shopping cart to remove
+     */
+    remove(name) {
+        this.carts = this.carts.filter((cart) => cart.name !== name);
+        this.save();
+    }
 }
 
 const shoppingCarts = new ShoppingCarts();
@@ -235,7 +236,7 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     query = query.trim();
     if (query.length < 3) return [];
 
-    if (query.charAt(0) === "!") {
+    if (query.charAt(0) == "!") {
         query = query.substring(1);
         return alasql("select * from ? where " + query, [items]);
     }
@@ -246,7 +247,7 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     for (const item of items) {
         let allFound = true;
         for (const token of tokens) {
-            if (token.length == 0) continue;
+            if (token.length === 0) continue;
             const index = item.search.indexOf(token);
             if (index < 0) {
                 allFound = false;
@@ -286,15 +287,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
         <a id="querylink-${id}" class="hide">Query link</a>
         <div class="filters filters--store">
-            ${STORE_KEYS.map(
-              (store) =>
-                `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`
-            ).join(" ")}
+            ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
         </div>
         <div class="filters">
-            <label><input id="budgetBrands-${id}" type="checkbox"> Nur ${BUDGET_BRANDS.map(
-    (budgetBrand) => budgetBrand.toUpperCase()
-  ).join(", ")}</label>
+            <label><input id="budgetBrands-${id}" type="checkbox"> Nur ${BUDGET_BRANDS.map(budgetBrand => budgetBrand.toUpperCase()).join(", ")}</label>
             <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
         </div>
         <div class="filters">
