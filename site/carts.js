@@ -18,7 +18,7 @@ async function load() {
     }
 
     // Update carts with latest price info
-    for (cart of shoppingCart.carts) {
+    for (cart of shoppingCarts.carts) {
         const items = [];
         for (cartItem of cart.items) {
             const item = lookup[cartItem.id];
@@ -27,32 +27,32 @@ async function load() {
         }
         cart.items = items;
     }
-    shoppingCart.save();
+    shoppingCarts.save();
 
-    if (shoppingCart.carts.findIndex(cart => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
+    if (shoppingCarts.carts.findIndex(cart => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
         response = await fetch("momentum-cart.json");
         momentumCart = await response.json();
-        shoppingCart.carts.unshift(momentumCart);
-        shoppingCart.save();
+        shoppingCarts.carts.unshift(momentumCart);
+        shoppingCarts.save();
     }
 
     const newCartButton = document.querySelector("#newcart");
     newCartButton.addEventListener("click", () => {
         let name = prompt("Name für Warenkorb eingeben:");
         if (name.length === 0) return;
-        for (cart of shoppingCart.carts) {
+        for (cart of shoppingCarts.carts) {
             if (cart.name === name) {
                 alert("Warenkorb mit Namen '" + name + "' existiert bereits");
                 return;
             }
         }
-        shoppingCart.add(name);
+        shoppingCarts.add(name);
         location.href = "/cart.html?name=" + name;
     });
 
     const exportButton = document.querySelector("#export");
     exportButton.addEventListener("click", () => {
-        downloadFile("carts.json", JSON.stringify(shoppingCart.carts, null, 2));
+        downloadFile("carts.json", JSON.stringify(shoppingCarts.carts, null, 2));
     });
 
     const importButton = document.querySelector("#import");
@@ -76,18 +76,18 @@ async function load() {
                 }
                 importedCart.items = items;
 
-                const index = shoppingCart.carts.findIndex(cart => cart.name === importedCart.name);
+                const index = shoppingCarts.carts.findIndex(cart => cart.name === importedCart.name);
                 if (index != -1) {
                     if (confirm("Existierenden Warenkorb '" + importedCart.name + " überschreiben?")) {
-                        console.log(shoppingCart.carts[index]);
-                        shoppingCart.carts[index] = importedCart;
-                        console.log(shoppingCart.carts[index])
+                        console.log(shoppingCarts.carts[index]);
+                        shoppingCarts.carts[index] = importedCart;
+                        console.log(shoppingCarts.carts[index])
                     }
                 } else {
-                    shoppingCart.carts.push(importedCart);
+                    shoppingCarts.carts.push(importedCart);
                 }
             }
-            shoppingCart.save();
+            shoppingCarts.save();
             showCarts(lookup);
         };
         reader.readAsText(file);
@@ -108,7 +108,7 @@ function showCarts(lookup) {
         </tr>
     `));
 
-    shoppingCart.carts.forEach(cart => {
+    shoppingCarts.carts.forEach(cart => {
         let oldPrice = 0;
         let currPrice = 0;
         let link = cart.name + ";"
@@ -147,7 +147,7 @@ function showCarts(lookup) {
             actionsDom.appendChild(deleteButton);
 
             deleteButton.addEventListener("click", () => {
-                shoppingCart.remove(cart.name);
+                shoppingCarts.remove(cart.name);
                 showCarts(lookup);
             });
         }

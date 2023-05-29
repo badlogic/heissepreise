@@ -8,7 +8,7 @@ async function load() {
     let cart = null;
     const cartName = getQueryParameter("name");
     if (cartName) {
-        for (c of shoppingCart.carts) {
+        for (c of shoppingCarts.carts) {
             if (c.name == cartName) {
                 cart = c;
                 break;
@@ -19,11 +19,11 @@ async function load() {
         let items = [];
         for (cartItem of cart.items) {
             const item = lookup[cartItem.id];
-            if (!item) shoppingCart.items.push(cartItem);
+            if (!item) shoppingCarts.items.push(cartItem);
             else items.push(item);
         }
         cart.items = items;
-        shoppingCart.save();
+        shoppingCarts.save();
     }
 
     const cartDesc = getQueryParameter("cart");
@@ -41,13 +41,13 @@ async function load() {
         let saveButton = document.querySelector("#save");
         saveButton.classList.remove("hide");
         saveButton.addEventListener("click", () => {
-            let index = shoppingCart.carts.findIndex((c) => c.name === cart.name);
+            let index = shoppingCarts.carts.findIndex((c) => c.name === cart.name);
             if (index != -1) {
                 if (confirm("Existierenden Warenkorb '" + cart.name + " überschreiben?")) {
-                    shoppingCart.carts[index] = cart;
+                    shoppingCarts.carts[index] = cart;
                 }
             } else {
-                shoppingCart.carts.push(importedCart);
+                shoppingCarts.carts.push(importedCart);
             }
             location.href = "/cart.html?name=" + encodeURIComponent(cart.name);
         });
@@ -114,7 +114,7 @@ function showSearch(cart, items) {
 
         addButton.addEventListener("click", () => {
             cart.items.push(item);
-            shoppingCart.save();
+            shoppingCarts.save();
             showCart(cart);
         });
 
@@ -170,7 +170,7 @@ function showCart(cart) {
         itemDom.append(showCheckbox);
         showCheckbox.addEventListener("change", () => {
             cartItem.chart = showCheckbox.checked;
-            shoppingCart.save();
+            shoppingCarts.save();
             showCharts(canvasDom, cart.items);
         });
         cell.append(showCheckbox);
@@ -182,7 +182,7 @@ function showCart(cart) {
             itemDom.append(deleteButton);
             deleteButton.addEventListener("click", () => {
                 cart.items.splice(idx, 1);
-                shoppingCart.save();
+                shoppingCarts.save();
                 showCart(cart)
             })
             cell.appendChild(deleteButton);
