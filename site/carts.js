@@ -18,7 +18,7 @@ async function load() {
     }
 
     // Update carts with latest price info
-    for (cart of carts) {
+    for (cart of shoppingCart.carts) {
         const items = [];
         for (cartItem of cart.items) {
             const item = lookup[cartItem.id];
@@ -27,32 +27,32 @@ async function load() {
         }
         cart.items = items;
     }
-    saveCarts();
+    shoppingCart.save();
 
-    if (carts.findIndex(cart => cart.name == "Momentum Eigenmarken Vergleich") == -1) {
+    if (shoppingCart.carts.findIndex(cart => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
         response = await fetch("momentum-cart.json");
         momentumCart = await response.json();
-        carts.unshift(momentumCart);
-        saveCarts();
+        shoppingCart.carts.unshift(momentumCart);
+        shoppingCart.save();
     }
 
     const newCartButton = document.querySelector("#newcart");
     newCartButton.addEventListener("click", () => {
         let name = prompt("Name für Warenkorb eingeben:");
-        if (name.length == 0) return;
-        for (cart of carts) {
-            if (cart.name == name) {
+        if (name.length === 0) return;
+        for (cart of shoppingCart.carts) {
+            if (cart.name === name) {
                 alert("Warenkorb mit Namen '" + name + "' existiert bereits");
                 return;
             }
         }
-        addCart(name);
+        shoppingCart.add(name);
         location.href = "/cart.html?name=" + name;
     });
 
     const exportButton = document.querySelector("#export");
     exportButton.addEventListener("click", () => {
-        downloadFile("carts.json", JSON.stringify(carts, null, 2));
+        downloadFile("carts.json", JSON.stringify(shoppingCart.carts, null, 2));
     });
 
     const importButton = document.querySelector("#import");
@@ -67,25 +67,27 @@ async function load() {
         reader.onload = function (event) {
             const contents = event.target.result;
             const importedCarts = JSON.parse(contents);
-            for (importedCart of importedCarts) {
+            for (const importedCart of importedCarts) {
                 const items = [];
-                for (cartItem of cart.items) {
+                for (cartItem of importedCart.items) {
                     const item = lookup[cartItem.id];
                     if (!item) continue;
                     items.push(item);
                 }
                 importedCart.items = items;
 
-                let index = carts.findIndex(cart => cart.name == importedCart.name);
+                const index = shoppingCart.carts.findIndex(cart => cart.name === importedCart.name);
                 if (index != -1) {
                     if (confirm("Existierenden Warenkorb '" + importedCart.name + " überschreiben?")) {
-                        carts[index] = importedCart;
+                        console.log(shoppingCart.carts[index]);
+                        shoppingCart.carts[index] = importedCart;
+                        console.log(shoppingCart.carts[index])
                     }
                 } else {
-                    carts.push(importedCart);
+                    shoppingCart.carts.push(importedCart);
                 }
             }
-            saveCarts();
+            shoppingCart.save();
             showCarts(lookup);
         };
         reader.readAsText(file);
@@ -106,7 +108,7 @@ function showCarts(lookup) {
         </tr>
     `));
 
-    carts.forEach(cart => {
+    shoppingCart.carts.forEach(cart => {
         let oldPrice = 0;
         let currPrice = 0;
         let link = cart.name + ";"
@@ -145,7 +147,7 @@ function showCarts(lookup) {
             actionsDom.appendChild(deleteButton);
 
             deleteButton.addEventListener("click", () => {
-                removeCart(cart.name);
+                shoppingCart.remove(cart.name);
                 showCarts(lookup);
             });
         }
