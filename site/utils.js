@@ -46,7 +46,7 @@ const BUDGET_BRANDS = [].concat(
  * @returns {string} ISO date string in format YYYY-MM-DD
  */
 function currentDate() {
-  return new Date().toISOString().slice(0, 10);
+    return new Date().toISOString().slice(0, 10);
 }
 
 /**
@@ -55,8 +55,8 @@ function currentDate() {
  * @returns {string | null} Value of the query parameter or null if not found
  */
 function getQueryParameter(name) {
-  const url = new URL(window.location.href);
-  return url.searchParams.get(name);
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
 }
 
 /**
@@ -86,39 +86,39 @@ function dom(el, html) {
 }
 
 async function loadItems() {
-  const response = await fetch("latest-canonical.json");
-  const items = await response.json();
+    const response = await fetch("latest-canonical.json");
+    const items = await response.json();
 
-  for (const item of items) {
-    item.search = item.name + " " + item.unit;
-    item.search = item.search.toLowerCase().replace(",", ".");
+    for (const item of items) {
+      item.search = item.name + " " + item.unit;
+      item.search = item.search.toLowerCase().replace(",", ".");
 
-    item.numPrices = item.priceHistory.length;
-    item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
-    item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
-    item.date = item.priceHistory[0].date;
-    let highestPriceBefore = -1;
-    for (let i = 1; i < item.priceHistory.length; i++) {
-      const price = item.priceHistory[i];
-      highestPriceBefore = Math.max(highestPriceBefore, price.price);
+      item.numPrices = item.priceHistory.length;
+      item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
+      item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
+      item.date = item.priceHistory[0].date;
+      let highestPriceBefore = -1;
+      for (let i = 1; i < item.priceHistory.length; i++) {
+        const price = item.priceHistory[i];
+        highestPriceBefore = Math.max(highestPriceBefore, price.price);
+      }
+      if (highestPriceBefore == -1) highestPriceBefore = item.price;
+      item.highestBefore = highestPriceBefore;
     }
-    if (highestPriceBefore == -1) highestPriceBefore = item.price;
-    item.highestBefore = highestPriceBefore;
-  }
-  return items;
+    return items;
 }
 
 /**
- * @description Class for managing the shopping cart, which is stored in local storage
+ * @description Class for managing the shopping carts, which are stored in local storage
  */
-class ShoppingCart {
+class ShoppingCarts {
   constructor() {
     this.carts = [];
     this.load();
   }
 
   /**
-   * @description Load the shopping cart from local storage
+   * @description Load the shopping carts from local storage into carts array
    */
   load() {
     let val = localStorage.getItem("carts");
@@ -126,14 +126,14 @@ class ShoppingCart {
   }
 
   /**
-   * @description Save the shopping cart to local storage, with key "carts"
+   * @description Save the shopping carts to local storage, with key "carts"
    */
   save() {
     localStorage.setItem("carts", JSON.stringify(this.carts, null, 2));
   }
 
   /**
-   * @description Check if the shopping cart contains a cart with the given name
+   * @description Check if the shopping carts contains a cart with the given name
     * @param {string} name Name of the shopping cart to check
    */
   has(name) {
@@ -144,7 +144,7 @@ class ShoppingCart {
   }
 
   /**
-   * @description Add new shopping card to array and save to local storage
+   * @description Add new shopping card to array and save new carts array to local storage
    * @param {string} name Name of the shopping cart to add
    */
   add(name) {
@@ -156,7 +156,7 @@ class ShoppingCart {
   }
 
   /**
-   * @description Remove shopping cart from array based on name and save to local storage
+   * @description Remove shopping cart from carts array based on name and save updated array to local storage
    * @param {string} name Name of the shopping cart to remove
    */
   remove(name) {
@@ -165,8 +165,8 @@ class ShoppingCart {
   }
 }
 
-const shoppingCart = new ShoppingCart();
-shoppingCart.load();
+const shoppingCarts = new ShoppingCarts();
+shoppingCarts.load();
 
 
 function itemToStoreLink(item) {
