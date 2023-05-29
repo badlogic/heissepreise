@@ -27,7 +27,9 @@ async function load() {
     filtersStore.querySelectorAll("input").forEach(input => {
         input.addEventListener("change", () => showResults(items, currentDate()));
     });
-
+    document.querySelector("#filters-changes").querySelectorAll("input").forEach(input => {
+        input.addEventListener("change", () => showResults(items, currentDate()));
+    });
     showResults(items, currentDate());
 }
 
