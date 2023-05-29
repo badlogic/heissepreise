@@ -145,7 +145,13 @@ function itemToDOM(item) {
     storeDom.setAttribute("data-label", "Kette");
     let nameDom = dom("td", `${itemToStoreLink(item)}`);
     nameDom.setAttribute("data-label", "Name");
-    let unitDom = dom("td", item.unit ? item.unit : "");
+    let quantity = item.quantity || ""
+    let unit = item.unit || "";
+    if(quantity >= 1000 && (unit == 'g' || unit == 'ml')) {
+        quantity = parseFloat((0.001 * quantity).toFixed(2));
+        unit = unit == 'ml' ? 'l' : 'kg';
+    }
+    let unitDom = dom("td", (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`);
     unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
@@ -365,7 +371,7 @@ function showChart(canvasDom, items) {
         }
 
         return {
-            label: product.name,
+            label: (product.store ? product.store + " " : "") + product.name,
             data: prices,
         };
     });
