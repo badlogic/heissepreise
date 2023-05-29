@@ -10,7 +10,7 @@ const analysis = require("./analysis");
 
   if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
     fs.copyFileSync(`${dataDir}/latest-canonical.json`, `site/latest-canonical.json`);
-    analysis.updateData(dataDir, (newItems) => {
+    analysis.updateData(dataDir, (_newItems) => {
       fs.copyFileSync(`${dataDir}/latest-canonical.json`, `site/latest-canonical.json`);
     });
   } else {

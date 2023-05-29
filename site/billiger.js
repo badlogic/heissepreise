@@ -2,7 +2,6 @@ let changeDates = [];
 let items = [];
 
 async function load() {
-    const today = currentDate();
     items = await loadItems();
     items.sort((a, b) => {
         if (a.store < b.store) {
@@ -29,9 +28,9 @@ async function load() {
     showResults(items, currentDate());
 }
 
-function showResults(items, today) {
+function showResults(items, _today) {
     const storeCheckboxes = STORE_KEYS.map(store => document.querySelector(`#${store}`));
-    const checkedStores = STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked)
+    const checkedStores = STORE_KEYS.filter((_store, i) => storeCheckboxes[i].checked)
     let changedItems = [];
     for (item of items) {
         if (item.priceHistory.length < 2) continue;

@@ -1,5 +1,4 @@
 const fs = require("fs");
-const analysis = require("./analysis");
 const stores = require("./stores");
 const STORE_KEYS = Object.keys(stores);
 
