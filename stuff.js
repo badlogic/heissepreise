@@ -1,5 +1,7 @@
 const fs = require("fs");
 const analysis = require("./analysis");
+const stores = require("./stores");
+const STORE_KEYS = Object.keys(stores);
 
 function grammageAnalysis() {
     const items = JSON.parse(fs.readFileSync("docker/data/latest-canonical.json"));
@@ -224,7 +226,58 @@ function convertDossierData(dataDir, file) {
     }
     console.log(`Wrote files for ${file}`);
 }
-// momentumCartConversion();
 
-convertDossierData("data", "spar-2020.csv");
-convertDossierData("data", "billa-2020.csv");
+function clownCompress(dataDir) {
+    const items = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
+    const compressed = {
+        stores: STORE_KEYS,
+        n: items.length,
+        data: []
+    }
+    const data = compressed.data;
+    for (item of items) {
+        data.push(STORE_KEYS.indexOf(item.store));
+        data.push(item.id);
+        data.push(item.name);
+        data.push(item.priceHistory.length);
+        for (price of item.priceHistory) {
+            data.push(price.date.replace("-", ""));
+            data.push(price.price);
+        }
+        data.push(item.unit);
+        data.push(item.quantity);
+        data.push(item.isWeighted ? 1 : 0);
+        data.push(item.bio ? 1 : 0);
+        switch (item.store) {
+            case "billa":
+                data.push(item.url.replace("https://shop.billa.at", ""));
+                break;
+            case "dm":
+                data.push("");
+                break;
+            case "hofer":
+                data.push(item.url.replace("https://www.roksh.at/hofer/produkte/", ""));
+                break;
+            case "lidl":
+                data.push(item.url.replace("https://www.lidl.at", ""));
+                break;
+            case "mpreis":
+                data.push("");
+                break;
+            case "spar":
+                data.push(item.url.replace("https://www.interspar.at/shop/lebensmittel", ""));
+                break;
+            case "unimarkt":
+                data.push(item.url.replace("https://shop.unimarkt.at", ""));
+                break;
+        }
+    }
+    fs.writeFileSync(`${dataDir}/clown.json`, JSON.stringify(compressed));
+}
+
+clownCompress("data");
+
+// momentumCartConversion();
+// convertDossierData("data", "spar-2020.csv");
+// convertDossierData("data", "billa-2020.csv");
+
