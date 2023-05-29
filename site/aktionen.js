@@ -53,7 +53,9 @@ function showResults(items, today) {
         }
     }
     const query = document.querySelector("#filter").value.trim();
+    const total = changedItems.length;
     if (query.length >= 3) changedItems = searchItems(changedItems, document.querySelector("#filter").value, checkedStores, false, 0, 10000, false, false);
+    document.querySelector("#numresults").innerText = "Resultate: " + changedItems.length + (total > changedItems.length ? " / " + total : "");
 
     const table = document.querySelector("#result");
     table.innerHTML = "";
