@@ -8,6 +8,7 @@ exports.getCanonical = function (item, today) {
     price: item.price,
     priceHistory: [{ date: today, price: item.price }],
     unit: item.unit,
+    bio: item.name.toLowerCase().includes('bio'),
     url: `https://shop.unimarkt.at${item.canonicalUrl}`,
   };
 };
@@ -28,7 +29,7 @@ exports.fetchData = async function () {
   for (let category of UNIMARKT_MAIN_CATEGORIES) {
     var res = await axios.get(UNIMARKT_BASE_URL + category, {
       validateStatus: function (status) {
-        return (status >= 200 && status < 300) || status == 429;
+        return (status >= 200 && status < 300);
       },
     });
 
