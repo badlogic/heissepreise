@@ -1,22 +1,42 @@
-name: Pages Update
+name: Deploy static content to Pages
 
 on:
   schedule:
     - cron: "0 8 * * *"
   push:
+    branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  run-script:
-    name: Execute pages.sh
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Run script
-      run: |
-        git config --global user.email "badlogicgames@gmail.com"
-        git config --global user.name "badlogic"
-        ./pages.sh
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Generate artifact
+        run: |
+          git config --global user.email "heissepreise-pages@gmail.com"
+          git config --global user.name "heissepreise-pages"
+          ./pages.sh
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: './docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
