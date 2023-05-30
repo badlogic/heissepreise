@@ -5,7 +5,10 @@ function copyItemsToSite(dataDir) {
   fs.copyFileSync(`${dataDir}/latest-canonical.json`, `site/latest-canonical.json`);
   const items = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
   const compressedItems = analysis.compress(items);
-  fs.writeFileSync(`site/latest-canonical-compressed.json`, JSON.stringify(compressedItems));
+  for (const store of analysis.STORE_KEYS) {
+    const storeItems = items.filter(item => item.store === store);
+    fs.writeFileSync(`site/latest-canonical.${store}.compressed.json`, JSON.stringify(analysis.compress(storeItems)));
+  }
 }
 
 (async () => {

@@ -3,6 +3,8 @@ const stores = require("./stores");
 
 const STORE_KEYS = Object.keys(stores);
 
+exports.STORE_KEYS = STORE_KEYS;
+
 function currentDate() {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
