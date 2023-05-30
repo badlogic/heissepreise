@@ -18,10 +18,12 @@ if (!fs.existsSync(dataDir)) {
     try {
         await analysis.updateData(dataDir);
         const items = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
-        const compressedItems = analysis.compress(items);
-        fs.writeFileSync(`${dataDir}/latest-canonical-compressed.json`, JSON.stringify(compressedItems));
+        for (const store of analysis.STORE_KEYS) {
+            const storeItems = items.filter(item => item.store === store);
+            fs.writeFileSync(`${dataDir}/latest-canonical.${store}.compressed.json`, JSON.stringify(analysis.compress(storeItems)));
+        }
         console.log(`Wrote ${items.length} items to ${dataDir}/latest-canonical(-compressed).json`);
-    } catch(e) {
+    } catch (e) {
         process.exit(1);
     }
 })();
