@@ -26,7 +26,7 @@ const stores = {
     },
     dm: {
         name: "DM",
-        budgetBrands: [],
+        budgetBrands: ["balea"],
         color: "rgb(255 240 230)",
     },
     unimarkt: {
