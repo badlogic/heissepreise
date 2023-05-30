@@ -159,7 +159,7 @@ async function loadItems() {
 
     now = performance.now();
     for (const item of items) {
-        item.search = item.name + " " + item.unit;
+        item.search = item.name + " " + item.quantity + " "  + item.unit;
         item.search = item.search.toLowerCase().replace(",", ".");
 
         item.numPrices = item.priceHistory.length;
