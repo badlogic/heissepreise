@@ -152,10 +152,23 @@ function decompress(compressedItems) {
 
 async function loadItems() {
     now = performance.now();
-    const response = await fetch("latest-canonical-compressed.json");
-    const compressedItems = await response.json();
-    const items = decompress(compressedItems);
-    console.log("Loading compressed items took " + (performance.now() - now) / 1000 + " secs");
+    const compressedItemsPerStore = [];
+    for (const store of STORE_KEYS) {
+        compressedItemsPerStore.push(new Promise(async (resolve) => {
+            const now = performance.now();
+            try {
+                const response = await fetch(`latest-canonical.${store}.compressed.json`);
+                const json = await response.json();
+                console.log(`Loading compressed items for ${store} took ${((performance.now() - now) / 1000)} secs`);
+                resolve(decompress(json));
+            } catch {
+                console.log(`Error while loading compressed items for ${store}. It took ${((performance.now() - now) / 1000)} secs, continueing...`);
+                resolve([]);
+            }
+        }));
+    }
+    const items = [].concat(...await Promise.all(compressedItemsPerStore));
+    console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
 
     now = performance.now();
     for (const item of items) {
