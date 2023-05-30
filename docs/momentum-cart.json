@@ -1,0 +1,6425 @@
+{
+  "name": "Momentum Eigenmarken Vergleich",
+  "items": [
+    {
+      "store": "spar",
+      "id": "8799317032961",
+      "sparId": "1829037",
+      "name": "S-BUDGET Kartoffeln",
+      "price": 4.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.49
+        }
+      ],
+      "unit": "5 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-89536",
+      "name": "Clever Erdäpfel festkochend aus Österreich",
+      "price": 4.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.49
+        }
+      ],
+      "unit": "5 kg Sack"
+    },
+    {
+      "store": "spar",
+      "id": "8800163332097",
+      "sparId": "6713805",
+      "name": "S-BUDGET Birnen Conference 1 KG",
+      "price": 2.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.19
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-89316",
+      "name": "Clever Birnen aus Österreich / Italien / Spanien",
+      "price": 2.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.19
+        }
+      ],
+      "unit": "1 kg Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800163168257",
+      "sparId": "6707439",
+      "name": "S-BUDGET Cherrytomate an der Rispe",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-22",
+          "price": 2.49
+        },
+        {
+          "date": "2023-05-15",
+          "price": 2.79
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-410026",
+      "name": "Clever Cherrytomaten aus Spanien / Italien / Marokko",
+      "price": 2.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 2.19
+        },
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "500 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8799971246081",
+      "sparId": "6725440",
+      "name": "S-BUDGET Apfel rot Gala 2 kg",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "2 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-89280",
+      "name": "Clever Apfel rot aus Österreich",
+      "price": 2.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 2.69
+        },
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "2 kg Sack"
+    },
+    {
+      "store": "spar",
+      "id": "8798732156929",
+      "sparId": "1386776",
+      "name": "S-BUDGET Cremejogurt Kaffee",
+      "price": 0.45,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.45
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-655232",
+      "name": "Clever Joghurt Kaffee",
+      "price": 0.45,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.45
+        }
+      ],
+      "unit": "180 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8804063412225",
+      "sparId": "2020002923822",
+      "name": "S-BUDGET Schoko-Eis",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "1 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-624939",
+      "name": "Clever Schokoladen Eis",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "1000 Milliliter Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799209357313",
+      "sparId": "1651461",
+      "name": "S-BUDGET Schokopudding mit Sahne",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-621279",
+      "name": "Clever Schokolade Pudding mit Sahne",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "200 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8807235551233",
+      "sparId": "2020004204103",
+      "name": "S-BUDGET Schoko-Bananen",
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.29
+        }
+      ],
+      "unit": "600 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-644014",
+      "name": "Clever Schokobananen",
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.29
+        }
+      ],
+      "unit": "600 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799248089089",
+      "sparId": "2020001301560",
+      "name": "S-BUDGET Gemüsemais 3 x 150g",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "450 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-356300",
+      "name": "Clever Gemüsemais 3er Pack",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "450 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8799499386881",
+      "sparId": "2827865",
+      "name": "S-BUDGET Kalifornische Pistazien geröstet und gesalzen",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-917653",
+      "name": "Clever Pistazien geröstet & gesalzen",
+      "price": 3.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.79
+        }
+      ],
+      "unit": "250 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800315572225",
+      "sparId": "7809538",
+      "name": "S-BUDGET Riesengarnelen tiefgekühlt",
+      "price": 4.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.99
+        }
+      ],
+      "unit": "225 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-507295",
+      "name": "Clever Riesengarnelen geschält",
+      "price": 4.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.49
+        }
+      ],
+      "unit": "225 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799966298113",
+      "sparId": "6461386",
+      "name": "S-BUDGET Orangen Sirup",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-856700",
+      "name": "Clever Sirup Orangeade",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8798934597633",
+      "sparId": "1652475",
+      "name": "S-BUDGET 20 Peanut Minis 400g (=20 Stück)",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-562603",
+      "name": "Clever Peanuts Minis",
+      "price": 2.16,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.16
+        }
+      ],
+      "unit": "400 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8804063608833",
+      "sparId": "2020002923853",
+      "name": "S-BUDGET Schoko-, Vanille-, Erdbeer-Eis",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "1 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-417083",
+      "name": "Clever Vanille Schoko Erdbeere Eis",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-20",
+          "price": 2.49
+        }
+      ],
+      "unit": "1000 Milliliter Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800094257153",
+      "sparId": "6602994",
+      "name": "S-BUDGET Ananasscheiben",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "825 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-479352",
+      "name": "Clever Ananas Scheiben in Ananassaft",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "825 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8798953078785",
+      "sparId": "1318692",
+      "name": "S-BUDGET Schoko-Pudding Pulver 3 x 41g",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-522498",
+      "name": "Clever Puddingpulver Schokolade 3er",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "123 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8804064493569",
+      "sparId": "2020002865573",
+      "name": "S-BUDGET Wurst-Salat Wurstsalat 400g",
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.59
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-499871",
+      "name": "Clever Wurstsalat",
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.59
+        }
+      ],
+      "unit": "400 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8799917998081",
+      "sparId": "6985837",
+      "name": "S-BUDGET Schmelzkäse Eckerl Natur 16 Stück",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-875888",
+      "name": "Clever Schmelzkäse Eckerl",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "400 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8799200116737",
+      "sparId": "1641820",
+      "name": "S-BUDGET Cashew-Cranberry Mix",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-569793",
+      "name": "Clever Cashew Cranberry",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "200 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799981207553",
+      "sparId": "6734855",
+      "name": "S-BUDGET Milchschokolade",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "100 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-769715",
+      "name": "Clever Alpenvollmilch Schokolade",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "100 Gramm Tafel"
+    },
+    {
+      "store": "spar",
+      "id": "8800418332673",
+      "sparId": "7758362",
+      "name": "S-BUDGET Tortelloni Mortadella & Rohschinken 250G",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-542085",
+      "name": "Clever Tortelloni Prosciutto",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "250 Gramm Blister"
+    },
+    {
+      "store": "spar",
+      "id": "8798944198657",
+      "sparId": "1711486",
+      "name": "S-BUDGET Snack Sticks gesalzen",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-699649",
+      "name": "Clever Gebäckstangen Meersalz",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "150 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800335134721",
+      "sparId": "7832321",
+      "name": "S-BUDGET Latte Macchiato",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "250 ML EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-810158",
+      "name": "Clever Eiscafé Latte Macchiato",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "250 ml Becher (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8805825216513",
+      "sparId": "2020003260728",
+      "name": "S-BUDGET Heringsalat Rote Rübe",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-516366",
+      "name": "Clever Heringssalat Rote Rübe",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8799661752321",
+      "sparId": "4848356",
+      "name": "S-BUDGET Energydrink Sugarfree 6 x 250ml",
+      "price": 3.54,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.54
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-534071",
+      "name": "Clever Energy Drink Sugarfree",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "0.25 l Dose (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800418201601",
+      "sparId": "7758232",
+      "name": "S-BUDGET Kartoffel-Gnocchi 500G",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-296825",
+      "name": "Clever Gnocchi",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "500 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8800370130945",
+      "sparId": "7690532",
+      "name": "S-BUDGET Holunderblüten Sirup",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-667247",
+      "name": "Clever Sirup Holunderblüte",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800040517633",
+      "sparId": "7498534",
+      "name": "S-BUDGET Vollkorn Müsli Früchte",
+      "price": 2.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.09
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-960630",
+      "name": "Clever Früchte Müsli 32% Fruchtanteil",
+      "price": 2.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.09
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8806423134209",
+      "sparId": "2020003984181",
+      "name": "S-BUDGET Frischkäse- Zubereitung Kren",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-576272",
+      "name": "Clever Frischkäse Kren",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "200 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800537116673",
+      "sparId": "2020001073672",
+      "name": "S-BUDGET Frische Eier aus Bodenhaltung",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "10 STK"
+    },
+    {
+      "store": "billa",
+      "id": "00-312703",
+      "name": "Clever Eier aus Bodenhaltung M",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "10 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798899142657",
+      "sparId": "1592528",
+      "name": "S-BUDGET Astoria Natürliches Mineralwasser prickelnd",
+      "price": 0.33,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.33
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-720919",
+      "name": "Clever Urquelle Mineralwasser Prickelnd",
+      "price": 0.33,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.33
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8805076074497",
+      "sparId": "2020003337277",
+      "name": "S-BUDGET Trockengerm",
+      "price": 0.58,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.58
+        }
+      ],
+      "unit": "42 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-522502",
+      "name": "Clever Trockenhefe 6er",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ],
+      "unit": "42 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8802254159873",
+      "sparId": "2020002031121",
+      "name": "S-BUDGET Regenbogenforellenfilets 2 Stück",
+      "price": 2.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.69
+        }
+      ],
+      "unit": "125 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-435758",
+      "name": "Clever Regenbogen Forellenfilet Geräuchert",
+      "price": 2.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.69
+        }
+      ],
+      "unit": "125 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8798949539841",
+      "sparId": "2020000684961",
+      "name": "S-BUDGET Österreichischer Sauerrahm 15% Fett",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-420428",
+      "name": "Clever Sauerrahm 15%",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "250 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8799784632321",
+      "sparId": "4813538",
+      "name": "S-BUDGET Haltbare Magermilch 0,5% Fett",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-746474",
+      "name": "Clever Haltbarmilch 0.5%",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1 Liter Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8806423298049",
+      "sparId": "2020003984167",
+      "name": "S-BUDGET Frischkäse- Zubereitung Natur",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-320394",
+      "name": "Clever Frischkäse Natur",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "200 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8807071121409",
+      "sparId": "2020004195531",
+      "name": "S-BUDGET Mandel-Mega- Bar 6 Stück 720ml Packung",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "0,72 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-381881",
+      "name": "Clever Maxi Stieleis Mandel",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "720 Milliliter Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798791434241",
+      "sparId": "1834079",
+      "name": "S-BUDGET Mignonschnitten",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "210 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-338417",
+      "name": "Clever Mignon-Schnitten Trio",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "210 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798786420737",
+      "sparId": "2020001016297",
+      "name": "S-BUDGET Butter",
+      "price": 1.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.85
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-425413",
+      "name": "Clever Österreichische Teebutter",
+      "price": 1.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.85
+        }
+      ],
+      "unit": "250 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799990579201",
+      "sparId": "6740702",
+      "name": "S-BUDGET Flips Classic",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-500413",
+      "name": "Clever Erdnuss Flips",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-17",
+          "price": 0.89
+        },
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "200 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8798766432257",
+      "sparId": "2020000412755",
+      "name": "S-BUDGET Himbeer-Zitrone Sirup",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-868687",
+      "name": "Clever Sirup Himbeer-Zitrone",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8802908930049",
+      "sparId": "2020002561956",
+      "name": "S-BUDGET Österreichischer Butterkäse 45 % F. i. T.",
+      "price": 3.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 3.79
+        },
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "350 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-295912",
+      "name": "Clever Butterkäse im Stück",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "350 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8800226738177",
+      "sparId": "7229114",
+      "name": "S-BUDGET Selchfleischaufstrich",
+      "price": 1.05,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.05
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-771945",
+      "name": "Clever Rauchfleisch Aufstrich",
+      "price": 1.05,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.05
+        }
+      ],
+      "unit": "150 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8800286081025",
+      "sparId": "7439353",
+      "name": "S-BUDGET Makrelenfilets mit Sonnenblumenöl",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "125 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-399583",
+      "name": "Clever Makrelen in Sonnenblumenöl",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "125 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8799160434689",
+      "sparId": "2020001358908",
+      "name": "S-BUDGET Butterkeks 2 x 200g",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-309406",
+      "name": "Clever Butterkekse",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "400 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798952980481",
+      "sparId": "1317473",
+      "name": "S-BUDGET Vanillin-Zucker 10 x 8G",
+      "price": 0.37,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.37
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-522501",
+      "name": "Clever Vanillin Zucker 10er",
+      "price": 0.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.29
+        }
+      ],
+      "unit": "80 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800064831489",
+      "sparId": "6842666",
+      "name": "S-BUDGET Chicken Nuggets tiefgekühlt",
+      "price": 5.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 5.99
+        }
+      ],
+      "unit": "750 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-500842",
+      "name": "Clever Hühner Nuggets",
+      "price": 4.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.29
+        }
+      ],
+      "unit": "750 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800864534529",
+      "sparId": "2020001019816",
+      "name": "S-BUDGET Grüne Oliven mit Paprikapaste",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "680 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-301830",
+      "name": "Clever Oliven Grün mit Paprikapaste",
+      "price": 1.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.79
+        }
+      ],
+      "unit": "700 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8802812657665",
+      "sparId": "2020001847556",
+      "name": "S-BUDGET Tomaten gewürfelt",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-374991",
+      "name": "Clever Gehackte Tomaten",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ],
+      "unit": "400 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8798796906497",
+      "sparId": "1837797",
+      "name": "S-BUDGET Tomaten geschält",
+      "price": 0.55,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.55
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-274510",
+      "name": "Clever Geschälte Tomaten",
+      "price": 0.55,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.55
+        }
+      ],
+      "unit": "400 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8802191048705",
+      "sparId": "2020001540501",
+      "name": "S-BUDGET Sommer-Gemüse tiefgekühlt",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-504189",
+      "name": "Clever Sommergemüse",
+      "price": 2.15,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.15
+        }
+      ],
+      "unit": "1000 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799538380801",
+      "sparId": "2891545",
+      "name": "S-BUDGET Backhendl-Filetstreifen",
+      "price": 6.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 6.49
+        }
+      ],
+      "unit": "750 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-958365",
+      "name": "Clever Backhendlstreifen",
+      "price": 6.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 6.49
+        }
+      ],
+      "unit": "500 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8802190852097",
+      "sparId": "2020001540419",
+      "name": "S-BUDGET Puszta-Gemüse",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-504192",
+      "name": "Clever Pusztagemüse",
+      "price": 2.15,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.15
+        }
+      ],
+      "unit": "1000 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8804646060033",
+      "sparId": "2020003065255",
+      "name": "S-BUDGET Blue",
+      "price": 2.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.25
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-359449",
+      "name": "Clever Weichkäse mit Blau- und Weißschimmel",
+      "price": 2.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.25
+        }
+      ],
+      "unit": ""
+    },
+    {
+      "store": "spar",
+      "id": "8799301992449",
+      "sparId": "2400259",
+      "name": "S-BUDGET Stapel Chips Meersalz",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "175 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-324192",
+      "name": "Clever Stapelchips Meersalz",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "175 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8803040002049",
+      "sparId": "2020002533618",
+      "name": "S-BUDGET 3 Linzerschnitten",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "225 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-299274",
+      "name": "Clever Linzerschnitte 3er",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "225 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8800182370305",
+      "sparId": "7082276",
+      "name": "S-BUDGET Marmor-Gugelhupf",
+      "price": 2.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.69
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-425497",
+      "name": "Clever Marmor Gugelhupf",
+      "price": 2.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.59
+        }
+      ],
+      "unit": "500 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8798766465025",
+      "sparId": "2020000412939",
+      "name": "S-BUDGET Johannisbeer-Zitrone Sirup",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-298660",
+      "name": "Clever Sirup Johannisbeere - Zitrone",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800891961345",
+      "sparId": "2020001607440",
+      "name": "S-BUDGET Pizza-Käse gerieben, leicht*",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-339652",
+      "name": "Clever Pizzakäse Leicht gerieben",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "250 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800373735425",
+      "sparId": "7896712",
+      "name": "S-BUDGET Allzwecktuch 5 Stk",
+      "price": 0.75,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.75
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-863930",
+      "name": "Clever Haushaltstücher perforiert",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "6 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800192266241",
+      "sparId": "7088087",
+      "name": "S-BUDGET Toastbrot",
+      "price": 0.95,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.95
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-425504",
+      "name": "Clever Weizentoast",
+      "price": 0.95,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.95
+        }
+      ],
+      "unit": "500 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799862587393",
+      "sparId": "4569718",
+      "name": "S-BUDGET Gold Premium",
+      "price": 4.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.99
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-680402",
+      "name": "Clever Löskaffee",
+      "price": 3.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.79
+        }
+      ],
+      "unit": "200 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8805694537729",
+      "sparId": "2020003677878",
+      "name": "S-BUDGET Extra-Wurst",
+      "price": 2.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.59
+        }
+      ],
+      "unit": "300 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-296815",
+      "name": "Clever Extrawurst Geschnitten",
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.59
+        }
+      ],
+      "unit": "200 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799302057985",
+      "sparId": "2400297",
+      "name": "S-BUDGET Stapel Chips Sour Cream & Onion-Geschmack",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "175 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-324195",
+      "name": "Clever Stapelchips Sour Cream & Onion",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "175 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8800055296001",
+      "sparId": "7285141",
+      "name": "S-BUDGET Ketchup mild",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "1,4 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-416408",
+      "name": "Clever Ketchup",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "1.4 Kilogramm Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8800000999425",
+      "sparId": "6878887",
+      "name": "S-BUDGET Weizenmehl Universal, Type W 700",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-760899",
+      "name": "Clever Mehl Universal",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-18",
+          "price": 0.85
+        },
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798934466561",
+      "sparId": "1651584",
+      "name": "S-BUDGET Vanillepudding mit Sahne",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-621278",
+      "name": "Clever Vanille Pudding mit Sahne",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "200 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800167329793",
+      "sparId": "6481940",
+      "name": "S-BUDGET Langkornreis parboiled",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-596624",
+      "name": "Clever Parboild Langkornrreis",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8801794981889",
+      "sparId": "2020001337743",
+      "name": "S-BUDGET Schlemmerfilet Bordelaise",
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.29
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-312931",
+      "name": "Clever Schlemmerfilet Bordelaise",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-22",
+          "price": 2.99
+        }
+      ],
+      "unit": "400 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799670927361",
+      "sparId": "4851752",
+      "name": "S-BUDGET Vanille-Pudding Pulver 5 x 37g",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-522495",
+      "name": "Clever Puddingpulver Vanille 5er",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "185 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800330645505",
+      "sparId": "7868054",
+      "name": "S-BUDGET Caffè Crema Ganze Bohne",
+      "price": 9.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 9.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-813014",
+      "name": "Clever Caffe Crema",
+      "price": 9.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 9.99
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799996084225",
+      "sparId": "6527181",
+      "name": "S-BUDGET Österreichischer Gouda 45% F.i.T.",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "450 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-486890",
+      "name": "Clever Gouda 45%",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-18",
+          "price": 3.49
+        },
+        {
+          "date": "2023-05-15",
+          "price": 3.79
+        }
+      ],
+      "unit": "450 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8800442482689",
+      "sparId": "7979828",
+      "name": "S-BUDGET Basmati Reis",
+      "price": 2.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.69
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-297121",
+      "name": "Clever Basmatireis",
+      "price": 2.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.69
+        }
+      ],
+      "unit": "1 Kilogramm Paket"
+    },
+    {
+      "store": "spar",
+      "id": "8801468547073",
+      "sparId": "2020001843619",
+      "name": "S-BUDGET Butter Brioche in Scheiben geschnitten",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-461509",
+      "name": "Clever Butterbrioche geschnitten",
+      "price": 2.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.09
+        }
+      ],
+      "unit": "500 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8804551262209",
+      "sparId": "2020002981235",
+      "name": "S-BUDGET weiss 30x30cm 100 Stück",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-314495",
+      "name": "Clever Servietten",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "100 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8805825150977",
+      "sparId": "2020003260681",
+      "name": "S-BUDGET Heringsalat Senf",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-703950",
+      "name": "Clever Heringssalat mit Senf",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8805211308033",
+      "sparId": "2020003506406",
+      "name": "S-BUDGET Müllbeutel mit Zugband 60l 20 Stk.",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-904083",
+      "name": "Clever Müllsäcke mit Zugband 60L",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "20 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8805867847681",
+      "sparId": "2020003679858",
+      "name": "S-BUDGET Salami",
+      "price": 6.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 6.99
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-817776",
+      "name": "Clever Haussalami",
+      "price": 7.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 7.99
+        }
+      ],
+      "unit": "500 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8804776607745",
+      "sparId": "2020003270147",
+      "name": "S-BUDGET Mager-Topfen",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-746455",
+      "name": "Clever Topfen mager",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "250 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8805236277249",
+      "sparId": "2020003563805",
+      "name": "S-BUDGET Schlagobers 36% Fett länger frisch",
+      "price": 2.78,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.78
+        }
+      ],
+      "unit": "0,5 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-962052",
+      "name": "Clever Schlagobers 36% länger frisch",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "250 Milliliter Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8805763710977",
+      "sparId": "2020003710438",
+      "name": "S-BUDGET Haselnuss Mignon Haselnuss",
+      "price": 2.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.79
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-477957",
+      "name": "Clever Mignon Schnitten",
+      "price": 2.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.79
+        }
+      ],
+      "unit": "400 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8805106155521",
+      "sparId": "2020003234460",
+      "name": "S-BUDGET Mini Kokoskuppeln 6 Stk.",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "220 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-285260",
+      "name": "Clever Kokoskuppeln",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "220 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798934630401",
+      "sparId": "1652529",
+      "name": "S-BUDGET 20 Caramel Minis 400g (= 20 Stück)",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-562612",
+      "name": "Clever Caramel Minis",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "400 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799154634753",
+      "sparId": "2020001332434",
+      "name": "S-BUDGET Knäckebrot Roggenvollkorn Classic",
+      "price": 1.1,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.1
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-441751",
+      "name": "Clever Roggenvollkorn-Knäckebrot",
+      "price": 1.1,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.1
+        }
+      ],
+      "unit": "250 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799194546177",
+      "sparId": "1641233",
+      "name": "S-BUDGET Schokoröllchen",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "125 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-359375",
+      "name": "Clever Waffelröllchen Vollmilch",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "125 Gramm Box"
+    },
+    {
+      "store": "spar",
+      "id": "8799430934529",
+      "sparId": "2341804",
+      "name": "S-BUDGET Punschkrapferl 6 Stück",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-363729",
+      "name": "Clever Mini Punschkrapfen",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "250 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799154503681",
+      "sparId": "2020001177424",
+      "name": "S-BUDGET Frischkäsezubereitung Kräuter",
+      "price": 1.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.25
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-886678",
+      "name": "Clever Frischkäse Kräuter",
+      "price": 1.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.25
+        }
+      ],
+      "unit": "150 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8799203852289",
+      "sparId": "1650259",
+      "name": "S-BUDGET Haltbare Vollmilch 3,5% Fett",
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.09
+        }
+      ],
+      "unit": "1 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-746506",
+      "name": "Clever Haltbar-Vollmilch 3.5%",
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.09
+        }
+      ],
+      "unit": "1 Liter Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799562956801",
+      "sparId": "4466017",
+      "name": "S-BUDGET Fruchtmolke Mango",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "0,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-307034",
+      "name": "Clever Mango Fruchtmolke",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "500 Milliliter Packung (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8805211602945",
+      "sparId": "2020003506352",
+      "name": "S-BUDGET Müllbeutel mit Zugband 30l 35 Stk.",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-360948",
+      "name": "Clever Müllsäcke mit Zugband 30L",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "35 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800373669889",
+      "sparId": "7896668",
+      "name": "S-BUDGET Schwammtuch 5 Stk",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-677672",
+      "name": "Clever Schwammtücher",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "5 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799170691073",
+      "sparId": "2020001391363",
+      "name": "S-BUDGET Wild-Preiselbeeren",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-531068",
+      "name": "Clever Wildpreiselbeeren",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "400 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8798899175425",
+      "sparId": "1592559",
+      "name": "S-BUDGET Astoria Natürliches Mineralwasser still",
+      "price": 0.33,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.33
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-768434",
+      "name": "Clever Mineralwasser Still",
+      "price": 0.33,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.33
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8802191114241",
+      "sparId": "2020001540457",
+      "name": "S-BUDGET Erbsen tiefgekühlt",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-488970",
+      "name": "Clever Junge Erbsen",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "1000 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799075794945",
+      "sparId": "2020000780540",
+      "name": "S-BUDGET Pfirsich-Hälften leicht gezuckert 820g",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "820 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-904480",
+      "name": "Clever Pfirsich Hälften",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "825 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8804063346689",
+      "sparId": "2020002923860",
+      "name": "S-BUDGET Vanille-Eis",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "2,5 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-260599",
+      "name": "Clever Bourbon-Vanille Eis",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "2500 Milliliter Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799981174785",
+      "sparId": "6734794",
+      "name": "S-BUDGET Milchschokolade mit Haselnusssplittern",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "100 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-769716",
+      "name": "Clever Vollmilch Nuss Schokolade",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "100 Gramm Tafel"
+    },
+    {
+      "store": "spar",
+      "id": "8800050610177",
+      "sparId": "7509063",
+      "name": "S-BUDGET Eierteigwaren Fadennudeln",
+      "price": 1.98,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.98
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-436779",
+      "name": "Clever Fadennudeln",
+      "price": 1.98,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.98
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8802614345729",
+      "sparId": "2020002170103",
+      "name": "S-BUDGET Haselnuss Creme",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-772003",
+      "name": "Clever Haselnusscreme",
+      "price": 1.35,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.35
+        }
+      ],
+      "unit": "400 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8799194513409",
+      "sparId": "1641226",
+      "name": "S-BUDGET Grain Biscuits Vollmilchschokolade",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-766912",
+      "name": "Clever Mürbteigkekse mit Milchschokolade",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "200 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798722359297",
+      "sparId": "1036237",
+      "name": "S-BUDGET Ananasstücke",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "560 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-479357",
+      "name": "Clever Ananas Stücke in Ananassaft",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "567 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8799562989569",
+      "sparId": "4466093",
+      "name": "S-BUDGET Frucht-Molke Maracuja",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "0,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-307054",
+      "name": "Clever  Maracuja Fruchtmolke",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "500 Milliliter Packung (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800035766273",
+      "sparId": "7271229",
+      "name": "S-BUDGET Brötchen 6 x 50g",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "300 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-288154",
+      "name": "Clever Brötchen zum Fertigbacken",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "300 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8803762601985",
+      "sparId": "2020002781453",
+      "name": "S-BUDGET Hirtenkäse",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-451145",
+      "name": "Clever Hirtenkäse",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8798900322305",
+      "sparId": "2020000666486",
+      "name": "S-BUDGET Kalifornische Pistazien geröstet, ungesalzen",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-775038",
+      "name": "Clever Pistazien ungesalzen & geröstet",
+      "price": 3.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.79
+        }
+      ],
+      "unit": "250 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800340082689",
+      "sparId": "7354236",
+      "name": "S-BUDGET Orangennektar aus Orangensaftkonzentrat, 50%",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-857019",
+      "name": "Clever Orangennektar",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1.5 l Paket (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8798766628865",
+      "sparId": "2020000426219",
+      "name": "S-BUDGET Lemon",
+      "price": 0.64,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.64
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-578188",
+      "name": "Clever Zitronenlimonade",
+      "price": 0.64,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.64
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8802714648577",
+      "sparId": "2020002398286",
+      "name": "S-BUDGET Blätterteig 1 Stück",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "275 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-437908",
+      "name": "Clever Blätterteig",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "275 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799154470913",
+      "sparId": "2020001176564",
+      "name": "S-BUDGET Frischkäsezubereitung Kren",
+      "price": 1.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.25
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-886677",
+      "name": "Clever Frischkäse Kren",
+      "price": 1.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.25
+        }
+      ],
+      "unit": "150 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8799175507969",
+      "sparId": "2020001195855",
+      "name": "S-BUDGET Österreichischer Großlochkäse",
+      "price": 4.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.29
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-296470",
+      "name": "Clever Großlochkäse im Stück",
+      "price": 4.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 4.29
+        }
+      ],
+      "unit": "400 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8805502091265",
+      "sparId": "2020003527586",
+      "name": "S-BUDGET Österreichischer Bergkäse aus Heumilch",
+      "price": 4.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.29
+        }
+      ],
+      "unit": "350 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-961300",
+      "name": "Clever Tiroler Bergkäse",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-18",
+          "price": 3.99
+        },
+        {
+          "date": "2023-05-15",
+          "price": 4.29
+        }
+      ],
+      "unit": "350 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8803665838081",
+      "sparId": "2020002743529",
+      "name": "S-BUDGET Liptauer-Art mild",
+      "price": 1.15,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.15
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-531477",
+      "name": "Clever Liptauer Art Aufstrich",
+      "price": 1.15,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.15
+        }
+      ],
+      "unit": "200 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8807896219649",
+      "sparId": "2020004602114",
+      "name": "S-BUDGET 100% Apfel 100% Apfelsaft",
+      "price": 0.83,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 0.83
+        },
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "1 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-861714",
+      "name": "Clever Apfelsaft",
+      "price": 0.83,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.83
+        }
+      ],
+      "unit": "1 l Packung (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800271073281",
+      "sparId": "7429682",
+      "name": "S-BUDGET Cappuccino Nach Belieben süßen",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-434366",
+      "name": "Clever Cappuccino",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "400 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8803662757889",
+      "sparId": "2020002735623",
+      "name": "S-BUDGET Cashew Nüsse geröstet & ungesalzen",
+      "price": 1.86,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.86
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-278747",
+      "name": "Clever Cashews geröstet & ungesalzen",
+      "price": 1.86,
+      "priceHistory": [
+        {
+          "date": "2023-05-17",
+          "price": 1.86
+        },
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "150 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799538151425",
+      "sparId": "3930489",
+      "name": "S-BUDGET Cashew Nüsse geröstet und gesalzen",
+      "price": 1.86,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.86
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-278746",
+      "name": "Clever Cashews geröstet & gesalzen",
+      "price": 1.86,
+      "priceHistory": [
+        {
+          "date": "2023-05-17",
+          "price": 1.86
+        },
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "150 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800310132737",
+      "sparId": "8033369",
+      "name": "S-BUDGET Marillen-Hälften",
+      "price": 2.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.39
+        }
+      ],
+      "unit": "820 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-518447",
+      "name": "Clever Marillenhälften",
+      "price": 2.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.39
+        }
+      ],
+      "unit": "825 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8800335101953",
+      "sparId": "7832307",
+      "name": "S-BUDGET Cappuccino",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "250 ML EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-810102",
+      "name": "Clever Eiscafé Cappuccino",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "250 ml Becher (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8805139480577",
+      "sparId": "2020003423321",
+      "name": "S-BUDGET Rahm-Camembert",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-634069",
+      "name": "Clever Rahmcamembert",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "250 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8800183025665",
+      "sparId": "8183491",
+      "name": "S-BUDGET Aqua+ Aqua+ Birne-Melisse",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-708327",
+      "name": "Clever Wasser Birne-Melisse prickelnd",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ],
+      "unit": "1.5 l Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8799149555713",
+      "sparId": "2020000850823",
+      "name": "S-BUDGET 100% Reines Rapsöl",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "1 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-374363",
+      "name": "Clever Rapsöl 1 Lt",
+      "price": 3.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.25
+        }
+      ],
+      "unit": "1 Liter Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8799155257345",
+      "sparId": "1951349",
+      "name": "S-BUDGET Paprika edelsüß 140g",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-437794",
+      "name": "Clever Paprika Edelsüß",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "140 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799154601985",
+      "sparId": "2020001332380",
+      "name": "S-BUDGET Knäckebrot Roggenvollkorn Sesam",
+      "price": 1.1,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.1
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-441476",
+      "name": "Clever Sesam Knäckebrot",
+      "price": 1.1,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.1
+        }
+      ],
+      "unit": "250 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798776066049",
+      "sparId": "2020000433859",
+      "name": "S-BUDGET Himbeer Sirup",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-616403",
+      "name": "Clever Sirup Himbeer",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8798732288001",
+      "sparId": "1930252",
+      "name": "S-BUDGET Weizengriess Type 480",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-309599",
+      "name": "Clever Weizengrieß",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-18",
+          "price": 0.99
+        },
+        {
+          "date": "2023-05-15",
+          "price": 1.09
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8805176049665",
+      "sparId": "2020003486937",
+      "name": "S-BUDGET Frische Eier aus Bodenhaltung",
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.29
+        }
+      ],
+      "unit": "15 STK"
+    },
+    {
+      "store": "billa",
+      "id": "00-312736",
+      "name": "Clever Eier aus Bodenhaltung M",
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.29
+        }
+      ],
+      "unit": "15 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800246398977",
+      "sparId": "7390241",
+      "name": "S-BUDGET Vanillejogurt",
+      "price": 0.45,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.45
+        }
+      ],
+      "unit": "180 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-655230",
+      "name": "Clever Joghurt Vanille",
+      "price": 0.45,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.45
+        }
+      ],
+      "unit": "180 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8805993381889",
+      "sparId": "2020003811104",
+      "name": "S-BUDGET Kartoffelchips Paprikageschmack",
+      "price": 1.54,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.54
+        }
+      ],
+      "unit": "300 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-558252",
+      "name": "Clever Chips Paprika",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "250 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800398770177",
+      "sparId": "7732218",
+      "name": "S-BUDGET Studentenfutter",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-301696",
+      "name": "Clever Studentenfutter",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "200 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799716311041",
+      "sparId": "4949916",
+      "name": "S-BUDGET Milchbrötchen",
+      "price": 1.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.79
+        }
+      ],
+      "unit": "480 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-367439",
+      "name": "Clever Milchbrötchen",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "480 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799125569537",
+      "sparId": "2758800",
+      "name": "S-BUDGET Linsen",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "800 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-736914",
+      "name": "Clever Linsen",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "800 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8799091195905",
+      "sparId": "2658582",
+      "name": "S-BUDGET Marmorkuchen",
+      "price": 2.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.89
+        }
+      ],
+      "unit": "600 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-397814",
+      "name": "Clever Marmorkuchen",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "400 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799282659329",
+      "sparId": "2463896",
+      "name": "S-BUDGET Cevapcici",
+      "price": 9.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 9.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-273722",
+      "name": "Clever Cevapcici",
+      "price": 9.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 9.99
+        }
+      ],
+      "unit": "1000 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8806874480641",
+      "sparId": "2020004117168",
+      "name": "S-BUDGET Putenschinken",
+      "price": 2.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.19
+        }
+      ],
+      "unit": "130 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-681304",
+      "name": "Clever Putenschinken",
+      "price": 3.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.09
+        }
+      ],
+      "unit": "150 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800167493633",
+      "sparId": "6483722",
+      "name": "S-BUDGET Spaghetti",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-379560",
+      "name": "Clever Spaghetti",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8805792546817",
+      "sparId": "2020003677182",
+      "name": "S-BUDGET Maiskeimöl",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "1 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-404127",
+      "name": "Clever Maiskeimöl",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "1 Liter Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8800825638913",
+      "sparId": "2020001578610",
+      "name": "S-BUDGET Semmelbrösel",
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.59
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-610488",
+      "name": "Clever Semmelbrösel",
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.59
+        }
+      ],
+      "unit": "1000 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799101976577",
+      "sparId": "2099873",
+      "name": "S-BUDGET Mascarpone",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-336750",
+      "name": "Clever Mascarpone",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "500 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800226705409",
+      "sparId": "7229107",
+      "name": "S-BUDGET Fleischschmalz",
+      "price": 1.05,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.05
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-771955",
+      "name": "Clever Fleischschmalz",
+      "price": 1.05,
+      "priceHistory": [
+        {
+          "date": "2023-05-18",
+          "price": 1.05
+        }
+      ],
+      "unit": "150 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8799470288897",
+      "sparId": "2686653",
+      "name": "S-BUDGET Mozzarella",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "125 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-282168",
+      "name": "Clever Mozzarella",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "125 g Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799184125953",
+      "sparId": "2020001215249",
+      "name": "S-BUDGET Käferbohnen",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-648579",
+      "name": "Clever Käferbohnen",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "400 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8798973100033",
+      "sparId": "2020000692386",
+      "name": "S-BUDGET Sonnenblumenbrot",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-335709",
+      "name": "Clever Sonnenblumenbrot",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "500 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8806745538561",
+      "sparId": "2020004026002",
+      "name": "S-BUDGET Sauerkraut",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-405996",
+      "name": "Clever Sauerkraut",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "500 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800167264257",
+      "sparId": "6481704",
+      "name": "S-BUDGET Apfelessig",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-501108",
+      "name": "Clever Apfelessig",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1 Liter Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8800167297025",
+      "sparId": "6481889",
+      "name": "S-BUDGET Langkornreis",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-309662",
+      "name": "Clever Langkornreis",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "1 Kilogramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799980748801",
+      "sparId": "6730697",
+      "name": "S-BUDGET Backerbsen",
+      "price": 0.63,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.63
+        }
+      ],
+      "unit": "220 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-870665",
+      "name": "Clever Backerbsen",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "310 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800030392321",
+      "sparId": "7310867",
+      "name": "S-BUDGET Bergwurst",
+      "price": 4.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.79
+        }
+      ],
+      "unit": "350 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-674035",
+      "name": "Clever Bergwurst",
+      "price": 4.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.79
+        }
+      ],
+      "unit": "350 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8800167559169",
+      "sparId": "6483777",
+      "name": "S-BUDGET Fusilli",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-379583",
+      "name": "Clever Fusilli",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799966265345",
+      "sparId": "6461317",
+      "name": "S-BUDGET Tafelessig",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "1 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-501109",
+      "name": "Clever Tafelessig",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "1 Liter Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8807171129345",
+      "sparId": "2020003903137",
+      "name": "S-BUDGET Semmelwürfel",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-615168",
+      "name": "Clever Semmelwürfel",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "500 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8804987273217",
+      "sparId": "2020003396076",
+      "name": "S-BUDGET Emmentaler",
+      "price": 7.98,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 7.98
+        }
+      ],
+      "unit": "800 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-260971",
+      "name": "Clever Emmentaler",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "400 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8807431569409",
+      "sparId": "2020004128621",
+      "name": "S-BUDGET Kakao",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-930899",
+      "name": "Clever Kakao",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "250 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8806350192641",
+      "sparId": "7904356",
+      "name": "S-BUDGET Laugenbreze",
+      "price": 0.55,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.55
+        }
+      ],
+      "unit": "1 STK"
+    },
+    {
+      "store": "billa",
+      "id": "00-352693",
+      "name": "Clever Laugenbreze",
+      "price": 0.45,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.45
+        }
+      ],
+      "unit": "90 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8805564383233",
+      "sparId": "2020003504587",
+      "name": "S-BUDGET Emmentaler gerieben",
+      "price": 2.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.79
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-260980",
+      "name": "Clever Emmentaler gerieben",
+      "price": 2.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.79
+        }
+      ],
+      "unit": "250 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798914084865",
+      "sparId": "1207347",
+      "name": "S-BUDGET Wiener Eiskaffee",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-918279",
+      "name": "Clever Wiener Eiskaffee",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "1 Liter Packung (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8805173657601",
+      "sparId": "2020003192418",
+      "name": "S-BUDGET Prosciutto Crudo",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "100 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-475375",
+      "name": "Clever Prosciutto Crudo",
+      "price": 2.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.19
+        }
+      ],
+      "unit": "100 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798826692609",
+      "sparId": "2020001031412",
+      "name": "S-BUDGET Weiße Bohnen",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "800 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-736902",
+      "name": "Clever Weiße Bohnen",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-18",
+          "price": 0.99
+        }
+      ],
+      "unit": "800 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8803665870849",
+      "sparId": "2020002743543",
+      "name": "S-BUDGET Ei-Zwiebel Aufstrich",
+      "price": 1.15,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.15
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-528814",
+      "name": "Clever Ei-Zwiebel Aufstrich",
+      "price": 1.15,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.15
+        }
+      ],
+      "unit": "200 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8798957830145",
+      "sparId": "1194036",
+      "name": "S-BUDGET Pfefferoni mild",
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.09
+        }
+      ],
+      "unit": "600 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-966988",
+      "name": "Clever Pfefferoni mild",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "600 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8804950179841",
+      "sparId": "2020003329494",
+      "name": "S-BUDGET Mozzarella gerieben",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-313942",
+      "name": "Clever Mozzarella gerieben",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "250 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800891994113",
+      "sparId": "2020001607464",
+      "name": "S-BUDGET Pizzakäse gerieben",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-457741",
+      "name": "Clever Pizzakäse gerieben",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "250 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800246464513",
+      "sparId": "7390289",
+      "name": "S-BUDGET Fruchtjogurt Heidelbeer",
+      "price": 0.45,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.45
+        }
+      ],
+      "unit": "180 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-625019",
+      "name": "Clever Fruchtjoghurt Heidelbeer",
+      "price": 1.15,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.15
+        }
+      ],
+      "unit": "500 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800060407809",
+      "sparId": "7523182",
+      "name": "S-BUDGET Pommes Frites",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "1,2 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-859053",
+      "name": "Clever Pommes Frites",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "1000 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8806547881985",
+      "sparId": "2020003987205",
+      "name": "S-BUDGET Chicken Wings",
+      "price": 4.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.49
+        }
+      ],
+      "unit": "750 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-667910",
+      "name": "Clever Chicken Wings",
+      "price": 4.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.49
+        }
+      ],
+      "unit": "750 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800314654721",
+      "sparId": "7840739",
+      "name": "S-BUDGET Crème fraîche natur",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "150 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-668900",
+      "name": "Clever Crème Fraîche Natur",
+      "price": 0.95,
+      "priceHistory": [
+        {
+          "date": "2023-05-19",
+          "price": 0.95
+        },
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "150 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800864501761",
+      "sparId": "2020001019793",
+      "name": "S-BUDGET Grüne Oliven ohne Kern",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "670 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-301790",
+      "name": "Clever Grüne Oliven ohne Kern",
+      "price": 1.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.79
+        }
+      ],
+      "unit": "690 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8800011255809",
+      "sparId": "6282226",
+      "name": "S-BUDGET Jumbo Erdnüsse geröstet und gesalzen",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-962810",
+      "name": "Clever Jumbo Erdnüsse geröstet & gesalzen",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "500 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8807333691393",
+      "sparId": "2020004279989",
+      "name": "S-BUDGET Emmentaler in Scheiben",
+      "price": 4.78,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.78
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-450351",
+      "name": "Clever Emmentaler in Scheiben",
+      "price": 4.78,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.78
+        }
+      ],
+      "unit": "400 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799288426497",
+      "sparId": "2153100",
+      "name": "S-BUDGET Schmelzkäse Eckerl Mix 8 Stück",
+      "price": 2.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 2.19
+        },
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-506156",
+      "name": "Clever Schmelzkäse Eckerl Mix",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "250 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799150735361",
+      "sparId": "1951332",
+      "name": "S-BUDGET Pfeffer bunt ganz 70g",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-957964",
+      "name": "Clever Pfeffer Bunt Ganz",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "70 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800217071617",
+      "sparId": "7212666",
+      "name": "S-BUDGET Back- & Kochschokolade 400G",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-399881",
+      "name": "Clever Back- & Kochschokolade",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "400 Gramm Tafel"
+    },
+    {
+      "store": "spar",
+      "id": "8800286343169",
+      "sparId": "7442063",
+      "name": "S-BUDGET Chili con Carne",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-892491",
+      "name": "Clever Chili Con Carne",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "400 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8799183962113",
+      "sparId": "2020001213917",
+      "name": "S-BUDGET Butterkäse in Scheiben",
+      "price": 4.38,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 4.38
+        },
+        {
+          "date": "2023-05-15",
+          "price": 3.9
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-295909",
+      "name": "Clever Butterkäse in Scheiben",
+      "price": 3.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.89
+        }
+      ],
+      "unit": "400 g Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8799763922945",
+      "sparId": "5733477",
+      "name": "S-BUDGET Natives Olivenöl Extra",
+      "price": 5.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 5.99
+        }
+      ],
+      "unit": "0,75 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-748774",
+      "name": "Clever Natives Olivenöl Extra",
+      "price": 5.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 5.99
+        }
+      ],
+      "unit": "750 Milliliter Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8798959403009",
+      "sparId": "1332032",
+      "name": "S-BUDGET Tortelloni Ricotta und Spinat",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "800 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-542029",
+      "name": "Clever Tortelloni Ricotta und Spinat",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "250 Gramm Blister"
+    },
+    {
+      "store": "spar",
+      "id": "8799150702593",
+      "sparId": "1951301",
+      "name": "S-BUDGET Pfeffer schwarz gemahlen 100g",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-957963",
+      "name": "Clever Pfeffer Schwarz Gemahlen",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "100 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8800850608129",
+      "sparId": "6713065",
+      "name": "S-Budget Kiwi 5 Stück Tasse",
+      "price": 1.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.79
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-88206",
+      "name": "Clever Kiwi Tasse aus Griechenland / Italien",
+      "price": 1.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.79
+        }
+      ],
+      "unit": "5 Stk Tasse"
+    },
+    {
+      "store": "spar",
+      "id": "8799877070849",
+      "sparId": "6942526",
+      "name": "S-BUDGET Bananen per kg",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-22",
+          "price": 1.69
+        },
+        {
+          "date": "2023-05-15",
+          "price": 1.79
+        }
+      ],
+      "unit": "kg"
+    },
+    {
+      "store": "billa",
+      "id": "00-258074",
+      "name": "Clever Bananen aus Kolumbien",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "Per kg"
+    },
+    {
+      "store": "spar",
+      "id": "8798964350977",
+      "sparId": "2020000690832",
+      "name": "S-BUDGET Avocado",
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.09
+        }
+      ],
+      "unit": "1 STK"
+    },
+    {
+      "store": "billa",
+      "id": "00-307536",
+      "name": "Clever Avocado aus Kolumbien",
+      "price": 1.14,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.14
+        }
+      ],
+      "unit": "Per Stk"
+    },
+    {
+      "store": "spar",
+      "id": "8801119338497",
+      "sparId": "2020001405602",
+      "name": "S-BUDGET Schlagobers 36% Fett",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "250 ML"
+    },
+    {
+      "store": "billa",
+      "id": "00-451003",
+      "name": "Clever Schlagobers 36% länger frisch",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "250 Milliliter Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800167428097",
+      "sparId": "6483661",
+      "name": "S-BUDGET Weizenmehl Glatt, Type W 700",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.85
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-594850",
+      "name": "Clever Weizenmehl W700 Glatt",
+      "price": 0.85,
+      "priceHistory": [
+        {
+          "date": "2023-05-18",
+          "price": 0.85
+        },
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1 Kilogramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798854709249",
+      "sparId": "1514483",
+      "name": "S-BUDGET Energy Drink Classic XL 6 x 355ml",
+      "price": 4.74,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.74
+        }
+      ],
+      "unit": "2,13 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-867073",
+      "name": "Clever Energy Drink",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "0.25 l Dose (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8799916523521",
+      "sparId": "6777241",
+      "name": "S-BUDGET Himbeeren tiefgekühlt",
+      "price": 4.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.99
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-380087",
+      "name": "Clever Himbeeren",
+      "price": 3.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.79
+        }
+      ],
+      "unit": "500 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8804846272513",
+      "sparId": "2020003136467",
+      "name": "S-BUDGET Frankfurter 8 Stück",
+      "price": 3.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.19
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-968433",
+      "name": "Clever Frankfurter",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "480 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798952947713",
+      "sparId": "1317459",
+      "name": "S-BUDGET Backpulver 6 x 15G",
+      "price": 0.36,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.36
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-522492",
+      "name": "Clever Backpulver 6er",
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.49
+        }
+      ],
+      "unit": "90 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8799037849601",
+      "sparId": "1071405",
+      "name": "S-BUDGET Grammelknödel 10 Stück",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-686337",
+      "name": "Clever Grammelknödel",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "1000 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8805150228481",
+      "sparId": "2020003466502",
+      "name": "S-BUDGET Cabanossi 300g",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "300 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-473701",
+      "name": "Clever Cabanossi",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "300 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8802286469121",
+      "sparId": "2020002281397",
+      "name": "S-BUDGET Faschiertes gemischt per Packung",
+      "price": 5.58,
+      "priceHistory": [
+        {
+          "date": "2023-05-20",
+          "price": 5.58
+        }
+      ],
+      "unit": "700 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-317050",
+      "name": "Clever Faschiertes gemischt",
+      "price": 4.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 4.89
+        }
+      ],
+      "unit": "700 g Tasse"
+    },
+    {
+      "store": "spar",
+      "id": "8799200018433",
+      "sparId": "1641318",
+      "name": "S-BUDGET Soft Cake Orange",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "300 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-648894",
+      "name": "Clever Soft Orange Cake",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "300 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800683491329",
+      "sparId": "2020001082469",
+      "name": "S-BUDGET Condimento Bianco",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "0,5 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-607023",
+      "name": "Clever Condimento Balsamico Bianco",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "500 Milliliter Flasche"
+    },
+    {
+      "store": "spar",
+      "id": "8800682803201",
+      "sparId": "2020001082438",
+      "name": "S-BUDGET Aceto Balsamico di Modena I. G. P.",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "0,5 L"
+    },
+    {
+      "store": "billa",
+      "id": "00-607024",
+      "name": "Clever Aceto Balsamico die Modena",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "500 Milliliter Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799622856705",
+      "sparId": "5546343",
+      "name": "S-BUDGET Orangensaft 100%",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "1 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-861713",
+      "name": "Clever Orangensaft",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "1 l Packung (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800148520961",
+      "sparId": "6619923",
+      "name": "S-BUDGET Fruchtcocktail leicht gezuckert",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "820 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-854134",
+      "name": "Clever Fruchtcocktail",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "820 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8804846305281",
+      "sparId": "2020003136481",
+      "name": "S-BUDGET Debreziner 6 Stück",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "360 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-422912",
+      "name": "Clever Debreziner",
+      "price": 3.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.89
+        }
+      ],
+      "unit": "360 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800035700737",
+      "sparId": "7271083",
+      "name": "S-BUDGET Baguettes 2 x 150g",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "300 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-417636",
+      "name": "Clever Baguette 2er",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "300 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800148488193",
+      "sparId": "6619886",
+      "name": "S-BUDGET Birnenhälften leicht gezuckert",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "820 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-529311",
+      "name": "Clever Birnenhälften",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "820 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8800340017153",
+      "sparId": "7354038",
+      "name": "S-BUDGET Apfelnektar aus Apfelsaftkonzentrat, 50%",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-857020",
+      "name": "Clever Apfelnektar",
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "1.5 l Paket (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800822394881",
+      "sparId": "2020001182091",
+      "name": "S-BUDGET Estragon Senf scharf & würzig",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "330 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-384389",
+      "name": "Clever Estragon Senf",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "330 Gramm Tube"
+    },
+    {
+      "store": "spar",
+      "id": "8805148262401",
+      "sparId": "2020003390807",
+      "name": "S-BUDGET Küchenrolle 3-lagig 6 Rollen",
+      "price": 3.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.19
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-870889",
+      "name": "Clever Küchenrolle",
+      "price": 3.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.19
+        }
+      ],
+      "unit": "6 Rollen Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8805564350465",
+      "sparId": "2020002818739",
+      "name": "S-BUDGET Hirtenkäse Dose",
+      "price": 7.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 7.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-567069",
+      "name": "Clever Hirtenkäse",
+      "price": 7.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 7.99
+        }
+      ],
+      "unit": "1000 g Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8800295944193",
+      "sparId": "8012333",
+      "name": "S-BUDGET Wurstknödel 10 Stück",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-687304",
+      "name": "Clever Wurstknödel",
+      "price": 3.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.99
+        }
+      ],
+      "unit": "1000 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8805761384449",
+      "sparId": "2020003624339",
+      "name": "S-BUDGET Mischbrot dunkel geschnitten",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-307131",
+      "name": "Clever Mischbrot geschnitten",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "500 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799263293441",
+      "sparId": "2448459",
+      "name": "S-BUDGET Cornflakes 500G",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-881106",
+      "name": "Clever Cornflakes",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.29
+        }
+      ],
+      "unit": "750 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8802160246785",
+      "sparId": "2020002106911",
+      "name": "S-BUDGET Linzerstangerl 4 Stück",
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.89
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-283859",
+      "name": "Clever Linzerstangerl",
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.59
+        }
+      ],
+      "unit": "200 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8804909252609",
+      "sparId": "2020002818807",
+      "name": "S-BUDGET Edamer in Scheiben",
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 3.29
+        },
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-457748",
+      "name": "Clever Edamer Scheiben",
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.49
+        }
+      ],
+      "unit": "400 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8803026763777",
+      "sparId": "2020001696963",
+      "name": "S-BUDGET Kakaokekse 4 x 45g",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "180 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-720535",
+      "name": "Clever Kakaokekse mit zarter Cremefüllung",
+      "price": 1.25,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.25
+        }
+      ],
+      "unit": "176 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8806743867393",
+      "sparId": "2020003843242",
+      "name": "S-BUDGET Alufolie 20 cm",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-374651",
+      "name": "Clever Alufolie 20m",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "20 Meter Rolle"
+    },
+    {
+      "store": "spar",
+      "id": "8803957506049",
+      "sparId": "2020002853624",
+      "name": "S-BUDGET Toastschinken XXL per Packung",
+      "price": 3.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.79
+        }
+      ],
+      "unit": "300 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-425215",
+      "name": "Clever Toastschinken",
+      "price": 2.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.59
+        }
+      ],
+      "unit": "200 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8804711432193",
+      "sparId": "2020003082672",
+      "name": "S-BUDGET Marillen Konfitüre",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "750 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-353474",
+      "name": "Clever Marillen Konfitüre Extra Passiert",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "450 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8799380832257",
+      "sparId": "2251073",
+      "name": "S-BUDGET Müsliriegel Schoko 8 x 25G",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-544532",
+      "name": "Clever Müsliriegel Schokolade",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "200 Gramm Schachtel"
+    },
+    {
+      "store": "spar",
+      "id": "8802263891969",
+      "sparId": "2020002276515",
+      "name": "S-BUDGET Champignons weiß",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-705790",
+      "name": "Clever Champignons aus Ungarn",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "500 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8799981240321",
+      "sparId": "6735630",
+      "name": "S-BUDGET Tomaten",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-22",
+          "price": 2.99
+        },
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "1 KG"
+    },
+    {
+      "store": "billa",
+      "id": "00-402113",
+      "name": "Clever Tomaten aus Spanien / Marokko / Österreich",
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.49
+        }
+      ],
+      "unit": "1 kg Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800055263233",
+      "sparId": "7285080",
+      "name": "S-BUDGET Mayonnaise 80% Fett",
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "275 ML"
+    },
+    {
+      "store": "billa",
+      "id": "00-415152",
+      "name": "Clever Mayonnaise 80%",
+      "price": 1.44,
+      "priceHistory": [
+        {
+          "date": "2023-05-22",
+          "price": 1.44
+        },
+        {
+          "date": "2023-05-15",
+          "price": 1.69
+        }
+      ],
+      "unit": "275 Gramm Tube"
+    },
+    {
+      "store": "spar",
+      "id": "8800879607809",
+      "sparId": "2020001635306",
+      "name": "S-BUDGET Apfelmus ungezuckert",
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.09
+        }
+      ],
+      "unit": "700 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-447481",
+      "name": "Clever Apfelmus ohne Zucker",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "700 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8800388939777",
+      "sparId": "7701085",
+      "name": "S-BUDGET Haferflocken 500G",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ],
+      "unit": "500 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-292968",
+      "name": "Clever Haferflocken Kernig",
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.59
+        }
+      ],
+      "unit": "500 Gramm Beutel"
+    },
+    {
+      "store": "spar",
+      "id": "8798840487937",
+      "sparId": "2020000586715",
+      "name": "S-BUDGET Naturjogurt 3,6% Fett",
+      "price": 0.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.39
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-668140",
+      "name": "Clever Joghurt Natur 3.6%",
+      "price": 0.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.39
+        }
+      ],
+      "unit": "250 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8798840422401",
+      "sparId": "2020000586654",
+      "name": "S-BUDGET Naturjogurt 1% Fett cremig",
+      "price": 0.35,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.35
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-749716",
+      "name": "Clever Joghurt Natur 0.1%",
+      "price": 0.35,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.35
+        }
+      ],
+      "unit": "250 Gramm Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800010272769",
+      "sparId": "6925550",
+      "name": "S-BUDGET Eistee Peach",
+      "price": 0.75,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.75
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-864928",
+      "name": "Clever Eistee Pfirsich",
+      "price": 0.75,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.75
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8798826659841",
+      "sparId": "2020001031344",
+      "name": "S-BUDGET Rote Kidneybohnen",
+      "price": 0.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.69
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-374436",
+      "name": "Clever Rote Kidney Bohnen",
+      "price": 0.71,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.71
+        }
+      ],
+      "unit": "410 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8798974115841",
+      "sparId": "1407969",
+      "name": "S-BUDGET Gouda 48% F.i.T. in Scheiben",
+      "price": 3.82,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.82
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-933033",
+      "name": "Clever Gouda Scheiben",
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 2.29
+        },
+        {
+          "date": "2023-05-15",
+          "price": 2.39
+        }
+      ],
+      "unit": "250 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8798840356865",
+      "sparId": "2020000586531",
+      "name": "S-BUDGET Vollmilch 3,5% Fett länger frisch",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "1 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-504029",
+      "name": "Clever Vollmilch länger frisch 3.5%",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "1 Liter Packung (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8798732091393",
+      "sparId": "1386448",
+      "name": "S-BUDGET Cottage Cheese Natur",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-406402",
+      "name": "Clever Cottage Cheese",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "250 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8802811150337",
+      "sparId": "2020002514235",
+      "name": "S-BUDGET Toilettenpapier 10 Rollen",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-864153",
+      "name": "Clever Toilettenpapier 3-lagig",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "10 Rollen Paket"
+    },
+    {
+      "store": "spar",
+      "id": "8800055230465",
+      "sparId": "7284977",
+      "name": "S-BUDGET Mayonnaise 25% Fett",
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "275 ML"
+    },
+    {
+      "store": "billa",
+      "id": "00-414868",
+      "name": "Clever Mayonnaise 25 %",
+      "price": 1.27,
+      "priceHistory": [
+        {
+          "date": "2023-05-22",
+          "price": 1.27
+        },
+        {
+          "date": "2023-05-15",
+          "price": 1.49
+        }
+      ],
+      "unit": "275 Gramm Tube"
+    },
+    {
+      "store": "spar",
+      "id": "8800134135809",
+      "sparId": "6925543",
+      "name": "S-BUDGET Eistee Lemon",
+      "price": 0.75,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.75
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-864929",
+      "name": "Clever Eistee Zitrone",
+      "price": 0.75,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.75
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8799278661633",
+      "sparId": "2136424",
+      "name": "S-BUDGET Rote Rüben Salat",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.89
+        }
+      ],
+      "unit": "670 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-966986",
+      "name": "Clever Rote Rübensalat",
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.09
+        }
+      ],
+      "unit": "670 Gramm Glas"
+    },
+    {
+      "store": "spar",
+      "id": "8802255962113",
+      "sparId": "2020002248253",
+      "name": "S-BUDGET Cottage Cheese Schnittlauch",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "250 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-543635",
+      "name": "Clever Cottage Cheese mit Schnittlauch",
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.39
+        }
+      ],
+      "unit": "250 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8798766661633",
+      "sparId": "2020000426714",
+      "name": "S-BUDGET Cola",
+      "price": 0.64,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.64
+        }
+      ],
+      "unit": "1,5 L EINWEG"
+    },
+    {
+      "store": "billa",
+      "id": "00-578176",
+      "name": "Clever Cola Classic",
+      "price": 0.64,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.64
+        }
+      ],
+      "unit": "1.5 l Flasche (Einweg)"
+    },
+    {
+      "store": "spar",
+      "id": "8800206815233",
+      "sparId": "7125515",
+      "name": "S-BUDGET Sardinen in Öl ohne Haut & Gräten",
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2023-05-16",
+          "price": 0.89
+        },
+        {
+          "date": "2023-05-15",
+          "price": 0.99
+        }
+      ],
+      "unit": "125 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-574102",
+      "name": "Clever Sardinen in Sonnenblumenöl",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "125 Gramm Dose"
+    },
+    {
+      "store": "spar",
+      "id": "8800167133185",
+      "sparId": "6478452",
+      "name": "S-BUDGET Taschentücher 100 Stück",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ]
+    },
+    {
+      "store": "billa",
+      "id": "00-862347",
+      "name": "Clever Taschentücher",
+      "price": 0.79,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 0.79
+        }
+      ],
+      "unit": "100 Stück Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8802224832513",
+      "sparId": "7786587",
+      "name": "S-BUDGET Knacker per Packung",
+      "price": 3.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.59
+        }
+      ],
+      "unit": "450 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-667019",
+      "name": "Clever Knacker",
+      "price": 3.59,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 3.59
+        }
+      ],
+      "unit": "450 g Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8806423363585",
+      "sparId": "2020003984174",
+      "name": "S-BUDGET Frischkäse Zubereitung Kräuter",
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19
+        }
+      ],
+      "unit": "200 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-320422",
+      "name": "Clever Frischkäse Kräuter",
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29
+        }
+      ],
+      "unit": "200 g Becher"
+    },
+    {
+      "store": "spar",
+      "id": "8800403095553",
+      "sparId": "7938672",
+      "name": "S-BUDGET Topfenstrudel tiefgefroren, backfertig",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "600 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-667912",
+      "name": "Clever Topfenstrudel",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "600 Gramm Packung"
+    },
+    {
+      "store": "spar",
+      "id": "8800339689473",
+      "sparId": "7340840",
+      "name": "S-BUDGET Cappuccino classic",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "400 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-606847",
+      "name": "Clever Cappuccino Ungesüßt",
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99
+        }
+      ],
+      "unit": "400 Gramm Stück"
+    },
+    {
+      "store": "spar",
+      "id": "8799160369153",
+      "sparId": "2020001355839",
+      "name": "S-BUDGET Tomaten sonnengetrocknet",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "280 G"
+    },
+    {
+      "store": "billa",
+      "id": "00-857063",
+      "name": "Clever Tomaten getrocknet",
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.99
+        }
+      ],
+      "unit": "280 Gramm Glas"
+    }
+  ]
+}

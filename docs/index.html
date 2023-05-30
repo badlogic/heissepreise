@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heisse Preise</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="column" style="max-width: 1000px">
+        <h2>Heisse Preise</h2>
+        <div class="filters">
+            <a href="index.html"><strong>Produktsuche</strong></a>
+            <a href="changes.html">Tagespreisänderungen</a>
+            <a href="carts.html">Warenkörbe</a>
+        </div>
+        <canvas id="chart" style="display: none;"></canvas>
+        <div id="search" class="column">
+        </div>
+    </div>
+    <script src="utils.js"></script>
+    <script src="alasql.js"></script>
+    <script src="chart.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

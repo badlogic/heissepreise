@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 1em;
+    font-family: Helvetica;
+    background: #f5f5f5;
+    color: #393939;
+}
+
+a {
+    color: #c9543a;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.search {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 30em;
+    font-size: 1em;
+}
+
+.filters {
+    margin-bottom: 1em;
+}
+
+input {
+    border: 2px solid;
+    padding: 0.4em;
+    border-color: #ee907b;
+    accent-color: #c9543a;
+}
+
+input[type="number"] {
+    max-width: 6em;
+    border: 2px solid;
+    padding: 0.4em;
+    border-color: #ee907b;
+}
+
+h2 {
+    background-color: #c9543a;
+    color: white;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5em;
+    margin-top: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0px;
+    margin-top: 1em;
+}
+
+th {
+    padding: 0.2em;
+    text-align: left;
+    background: #c9543a;
+    color: white;
+    border: 0px;
+}
+
+th:nth-child(1) {
+    text-align: center;
+}
+
+th:nth-child(3) {
+    text-align: right;
+    padding: 0.7em;
+}
+
+th:nth-child(4) {
+    text-align: center;
+    padding: 0.6em;
+}
+
+tr {
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+td {
+    padding: 0.2em;
+}
+
+td a {
+    color: #393939;
+    text-decoration: none;
+}
+
+td:nth-child(1) {
+    text-align: center;
+    padding: 0.5em;
+}
+
+td:nth-child(2) {
+    background-color: white;
+    padding: 0.4em;
+}
+
+td:nth-child(3) {
+    background-color: white;
+    font-size: small;
+    text-align: right;
+    padding-right: 0.7em;
+}
+
+td:nth-child(4) {
+    padding-left: 0.5em;
+}
+
+.searchresults td:nth-child(4):before {
+    content: "€ "
+}
+
+.querylink {
+    margin-bottom: 1em;
+}
+
+.carts td:nth-child(1) {
+    text-align: left;
+}
+
+.carts td:nth-child(2) {
+    text-align: center;
+}
+
+.carts td:nth-child(3):before {
+    content: "€ "
+}
+
+.carts td:nth-child(3) {
+    text-align: left;
+}
+
+.itemname {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.priceinfo {
+    margin-top: 0;
+}
+
+.increase {
+    color: red;
+}
+
+.decrease {
+    color: green;
+}
+
+.hide {
+    display: none;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        padding: 0 0 0 0 !important;
+        padding-left: calc(65px + 1.2em) !important;
+        position: relative;
+        display: block;
+    }
+
+    table td::before {
+        /*
+          * aria-label has no advantage, it won't be read inside a table
+          content: attr(aria-label);
+          */
+        content: attr(data-label);
+        background-color: #c9543a;
+        color: white;
+        border: 0px;
+        position: absolute;
+        padding: .1em .4em;
+        width: 65px;
+        height: calc(100%);
+        left: -1px;
+        top: -1px;
+        text-align: right;
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    td:nth-child(1) {
+        text-align: center;
+        font-size: medium;
+        padding: 0.5em;
+    }
+
+    td:nth-child(3) {
+        background-color: white;
+        font-size: medium;
+        text-align: left;
+        padding-right: 0.7em;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
