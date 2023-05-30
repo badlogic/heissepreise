@@ -119,7 +119,7 @@ function showCarts(lookup) {
             currPrice += item.priceHistory[0].price;
             link += item.id + ";";
         }
-        const increase = Math.round((currPrice - oldPrice) / oldPrice * 100);
+        const increase = oldPrice != 0 ? Math.round((currPrice - oldPrice) / oldPrice * 100) : 0;
 
         const row = dom("tr", ``);
 
