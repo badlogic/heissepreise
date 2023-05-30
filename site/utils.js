@@ -29,6 +29,11 @@ const stores = {
         budgetBrands: ["balea"],
         color: "rgb(255 240 230)",
     },
+    dmDe: {
+        name: "DM DE",
+        budgetBrands: ["balea"],
+        color: "rgb(236 254 253)",
+    },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
@@ -117,6 +122,9 @@ function decompress(compressedItems) {
                 break;
             case "dm":
                 url = `https://www.dm.at/product-p${id}.html`;
+                break;
+            case "dmDe":
+                url = `https://www.dm.de/product-p${id}.html`;
                 break;
             case "hofer":
                 url = "https://www.roksh.at/hofer/produkte/" + url;

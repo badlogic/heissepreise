@@ -113,6 +113,7 @@ function compress(items) {
                 data.push(item.url?.replace("https://shop.billa.at", ""));
                 break;
             case "dm":
+            case "dmDe":
                 data.push("");
                 break;
             case "hofer":

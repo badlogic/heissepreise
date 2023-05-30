@@ -1,5 +1,6 @@
 exports.billa = require("./billa");
 exports.dm = require("./dm");
+exports.dmDe = require("./dm-de");
 exports.hofer = require("./hofer");
 exports.lidl = require("./lidl");
 exports.mpreis = require("./mpreis");
