@@ -26,7 +26,7 @@ const stores = {
     },
     dm: {
         name: "DM",
-        budgetBrands: [],
+        budgetBrands: ["balea"],
         color: "rgb(255 240 230)",
     },
     unimarkt: {
@@ -38,32 +38,33 @@ const stores = {
 
 const STORE_KEYS = Object.keys(stores);
 const BUDGET_BRANDS = [].concat(
-    ...Object
-        .values(stores)
-        .map(store => store.budgetBrands)
+    ...Object.values(stores).map((store) => store.budgetBrands)
 );
 
+/**
+ * @description Returns the current date in ISO format
+ * @returns {string} ISO date string in format YYYY-MM-DD
+ */
 function currentDate() {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    const day = String(currentDate.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    return new Date().toISOString().slice(0, 10);
 }
 
+/**
+ * @description Gets the query parameter from the URL
+ * @param {string} name Name of the query parameter
+ * @returns {string | null} Value of the query parameter or null if not found
+ */
 function getQueryParameter(name) {
-    const url = window.location.href;
-    const queryString = url.substring(url.indexOf('?') + 1);
-    const parameters = queryString.split('&');
-
-    for (var i = 0; i < parameters.length; i++) {
-        const parameter = parameters[i].split('=');
-        const paramName = decodeURIComponent(parameter[0]);
-        if (paramName == name) return decodeURIComponent(parameter[1]);
-    }
-    return null;
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
 }
 
+/**
+ * @description Converts a string to a number
+ * @param {string} value String to convert
+ * @param {number} defaultValue Default value if conversion fails
+ * @returns {number} Converted number or default value
+ */
 function toNumber(value, defaultValue) {
     try {
         return Number.parseFloat(value);
@@ -72,22 +73,98 @@ function toNumber(value, defaultValue) {
     }
 }
 
+/**
+ * @description Create dom element from html string and add inner html via string template
+ * @param {string} el Element type
+ * @param {string} html Inner html
+ * @returns {HTMLElement} DOM element
+ */
 function dom(el, html) {
-    let element = document.createElement(el);
+    const element = document.createElement(el);
     element.innerHTML = html;
     return element;
 }
 
-async function loadItems() {
-    const response = await fetch("latest-canonical.json")
-    const items = await response.json();
+function decompress(compressedItems) {
+    const items = [];
+    const stores = compressedItems.stores;
+    const data = compressedItems.data;
+    const numItems = compressedItems.n;
+    let i = 0;
+    while (items.length < numItems) {
+        const store = stores[data[i++]];
+        const id = data[i++];
+        const name = data[i++];
+        const numPrices = data[i++];
+        const prices = [];
+        for (let j = 0; j < numPrices; j++) {
+            const date = data[i++];
+            const price = data[i++];
+            prices.push({
+                date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
+                price
+            });
+        }
+        const unit = data[i++];
+        const quantity = data[i++];
+        const isWeighted = data[i++] == 1;
+        const bio = data[i++] == 1;
+        let url = data[i++];
+        switch (store) {
+            case "billa":
+                url = "https://shop.billa.at" + url;
+                break;
+            case "dm":
+                url = `https://www.dm.at/product-p${id}.html`;
+                break;
+            case "hofer":
+                url = "https://www.roksh.at/hofer/produkte/" + url;
+                break;
+            case "lidl":
+                url = "https://www.lidl.at" + url;
+                break;
+            case "mpreis":
+                url = "https://www.mpreis.at/shop/p/" + id;
+                break;
+            case "spar":
+                url = "https://www.interspar.at/shop/lebensmittel" + url;
+                break;
+            case "unimarkt":
+                url = "https://shop.unimarkt.at" + url;
+                break;
+        }
 
-    for (item of items) {
-        item.search = item.name + " " + item.unit;
+        items.push({
+            store,
+            id,
+            name,
+            price: prices[0].price,
+            priceHistory: prices,
+            isWeighted,
+            unit,
+            quantity,
+            bio,
+            url
+        });
+    }
+    return items;
+}
+
+async function loadItems() {
+    now = performance.now();
+    const response = await fetch("latest-canonical-compressed.json");
+    const compressedItems = await response.json();
+    const items = decompress(compressedItems);
+    console.log("Loading compressed items took " + (performance.now() - now) / 1000 + " secs");
+
+    now = performance.now();
+    for (const item of items) {
+        item.search = item.name + " " + item.quantity + " "  + item.unit;
         item.search = item.search.toLowerCase().replace(",", ".");
 
         item.numPrices = item.priceHistory.length;
-        item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
+        item.priceOldest =
+            item.priceHistory[item.priceHistory.length - 1].price;
         item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
         item.date = item.priceHistory[0].date;
         let highestPriceBefore = -1;
@@ -98,40 +175,70 @@ async function loadItems() {
         if (highestPriceBefore == -1) highestPriceBefore = item.price;
         item.highestBefore = highestPriceBefore;
     }
+    console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
     return items;
 }
 
-let carts = [];
-loadCarts();
-
-function loadCarts() {
-    let val = localStorage.getItem("carts");
-    carts = val ? JSON.parse(val) : [];
-}
-
-function saveCarts() {
-    localStorage.setItem("carts", JSON.stringify(carts, null, 2));
-}
-
-function hasCart(name) {
-    for (cart of carts) {
-        if (cart.name = name) return true;
+/**
+ * @description Class for managing the shopping carts, which are stored in local storage
+ */
+class ShoppingCarts {
+    constructor() {
+        this.carts = [];
+        this.load();
     }
-    return false;
+
+    /**
+     * @description Load the shopping carts from local storage into carts array
+     */
+    load() {
+        const val = localStorage.getItem("carts");
+        this.carts = val ? JSON.parse(val) : [];
+    }
+
+    /**
+     * @description Save the shopping carts to local storage, with key "carts"
+     */
+    save() {
+        localStorage.setItem("carts", JSON.stringify(this.carts, null, 2));
+    }
+
+    /**
+     * @description Check if the shopping carts contains a cart with the given name
+     * @param {string} name Name of the shopping cart to check
+     */
+    has(name) {
+        for (const cart of this.carts) {
+            if (cart.name === name) return true;
+        }
+        return false;
+    }
+
+    /**
+     * @description Add new shopping card to array and save new carts array to local storage
+     * @param {string} name Name of the shopping cart to add
+     */
+    add(name) {
+        this.carts.push({
+            name: name,
+            items: [],
+        });
+        this.save();
+    }
+
+    /**
+     * @description Remove shopping cart from carts array based on name and save updated array to local storage
+     * @param {string} name Name of the shopping cart to remove
+     */
+    remove(name) {
+        this.carts = this.carts.filter((cart) => cart.name !== name);
+        this.save();
+    }
 }
 
-function addCart(name) {
-    carts.push({
-        name: name,
-        items: []
-    });
-    saveCarts();
-}
+const shoppingCarts = new ShoppingCarts();
+shoppingCarts.load();
 
-function removeCart(name) {
-    carts = carts.filter(cart => cart.name != name);
-    saveCarts();
-}
 
 function itemToStoreLink(item) {
     if (STORE_KEYS.includes(item.store)) {
@@ -145,7 +252,13 @@ function itemToDOM(item) {
     storeDom.setAttribute("data-label", "Kette");
     let nameDom = dom("td", `${itemToStoreLink(item)}`);
     nameDom.setAttribute("data-label", "Name");
-    let unitDom = dom("td", item.unit ? item.unit : "");
+    let quantity = item.quantity || ""
+    let unit = item.unit || "";
+    if(quantity >= 1000 && (unit == 'g' || unit == 'ml')) {
+        quantity = parseFloat((0.001 * quantity).toFixed(2));
+        unit = unit == 'ml' ? 'l' : 'kg';
+    }
+    let unitDom = dom("td", (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`);
     unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
@@ -201,10 +314,10 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     const tokens = query.split(/\s+/).map(token => token.toLowerCase().replace(",", "."));
 
     let hits = [];
-    for (item of items) {
+    for (const item of items) {
         let allFound = true;
-        for (token of tokens) {
-            if (token.length == 0) continue;
+        for (const token of tokens) {
+            if (token.length === 0) continue;
             const index = item.search.indexOf(token);
             if (index < 0) {
                 allFound = false;

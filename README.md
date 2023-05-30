@@ -1,5 +1,6 @@
 # Heisse Preise
-A terrible grocery price search "app". Fetches data from big Austrian grocery chains daily and lets you search them. See https://heisse-preise.io.
+
+A terrible grocery price search "app". Fetches data from big Austrian grocery chains daily and lets you search them. See <https://heisse-preise.io>.
 
 You can also get the [raw data](https://heisse-preise.io/api/index). The raw data is returned as a JSON array of items. An item has the following fields:
 
@@ -13,9 +14,10 @@ You can also get the [raw data](https://heisse-preise.io/api/index). The raw dat
 The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `index.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
 
 ## Run via NodeJS
+
 Install NodeJS, then run this in a shell of your choice.
 
-```
+```bash
 git clone https://github.com/badlogic/heissepreise
 cd heissepreise
 npm install
@@ -24,55 +26,60 @@ node index.js
 
 The first time you run this, the data needs to be fetched from the stores. You should see log out put like this.
 
-```
+```bash
 Fetching data for date: 2023-05-23
+Fetched LIDL data, took 0.77065160000324 seconds
+Fetched MPREIS data, took 13.822936070203781 seconds
 Fetched SPAR data, took 17.865891209602356 seconds
 Fetched BILLA data, took 52.95784649944306 seconds
 Fetched HOFER data, took 64.83968291568756 seconds
 Fetched DM data, took 438.77065160000324 seconds
-Fetched LIDL data, took 0.77065160000324 seconds
-Fetched MPREIS data, took 13.822936070203781 seconds
 Merged price history
 Example app listening on port 3000
 ```
 
-Once the app is listening per default on port 3000, open http://localhost:3000 in your browser.\
+Once the app is listening per default on port 3000, open <http://localhost:3000> in your browser.\
 **Note**: If you want to start on a different port add it as the third parameter, e.g. `node index.js 3001` will map to port `3001`.
 
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
 
 ## Run via GitHub pages & GitHub workflows
+
 Create a GitHub account and pick a username. Below, we assume your user name is `hotprices123`. **Replace `hotprices123` with your real username everywhere you see it below**
 
 1. Log in to your GitHub account.
 2. [Fork](https://github.com/badlogic/heissepreise/fork) this repository and name the repository `hotprices123.github.io`.
-3. In your forked repository, go to `Settings > Pages`, then under `Branch` select the `main` branch, and the `docs/` directory as shown in this screenshot.
+3. **In your forked repository**:
+   1. go to `Settings > Pages`, then under `Branch` select the `main` branch, and the `docs/` directory as shown in this screenshot.
 ![docs/github-pages.png](docs/github-pages.png)
-3. In your forked repository, go to `Settings > Actions > General`, then under `Workflow permissions`, select `Read and write permissions` as shown in this screenshot.
+   2. go to `Settings > Actions > General`, then under `Workflow permissions`, select `Read and write permissions` as shown in this screenshot.
 ![docs/github-permissions.png](docs/github-permissions.png)
-3. In your forked repository, go to the `Actions` tab, then select the `Pages Update` workflow in the list to the left, then click `Enable workflow`. Confirm that you know what you are doing.
+   3. go to the `Actions` tab, then select the `Pages Update` workflow in the list to the left, then click `Enable workflow`. Confirm that you know what you are doing.
 ![docs/github-workflow.png](docs/github-workflow.png)
-3. Trigger the workflow once manually to build the initial site and data.
+4. Trigger the workflow once manually to build the initial site and data.
 ![docs/github-workflow2.png](docs/github-workflow2.png)
-3. Once the workflow has finished, go to `https:/hotprices123.github.io` and enjoy your price comparisons.
+5. Once the workflow has finished, go to `https:/hotprices123.github.io` and enjoy your price comparisons.
 
 The data will be automatically fetched once a day at 8am (no idea what timezone), and the site will be updated.
 
 To get the latest code changes from this repository into your fork:
+
 1. Go to `https://github.com/hotprices123/hotprices123.github.io/compare/main...badlogic:heissepreise:main`
 2. Click on `Create pull request`
 ![docs/github-pullrequest.png](docs/github-pullrequest.png)
 3. Enter a Title like "Updated from upstream", then click `Create pull request``
 ![docs/github-pullrequest2.png](docs/github-pullrequest2.png)
-3. Click `Merge pull request`
+4. Click `Merge pull request`
 ![docs/github-pullrequest3.png](docs/github-pullrequest3.png)
 
 Your site will now use the latest source code changes from this repository. It will be automatically updated and is usually live under `https://hotprices123.github.io` within 10-15 minutes.
 
 ## Generating a self-contained executable
+
  Run the `package.sh`script in a Bash shell. It will generate a folder `dist/` with executable for Windows, Linux, and MacOS. Run the executable for your OS.
 
 ## Docker
+
 The project has a somewhat peculiar Docker Compose setup tailored to my infrastructure. All compose config files are in `docker/` including a simple Bash script to start and interact with the containers. This is the setup I use for both development and deployment.
 
 For development, run `docker/control.sh startdev`. You can connect to both the NodeJS server and the client for debugging in Visual Studio code via the `client-server` launch configuration (found in `.vscode/launch.json`).

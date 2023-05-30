@@ -18,7 +18,7 @@ async function load() {
     }
 
     // Update carts with latest price info
-    for (cart of carts) {
+    for (cart of shoppingCarts.carts) {
         const items = [];
         for (cartItem of cart.items) {
             const item = lookup[cartItem.id];
@@ -27,32 +27,32 @@ async function load() {
         }
         cart.items = items;
     }
-    saveCarts();
+    shoppingCarts.save();
 
-    if (carts.findIndex(cart => cart.name == "Momentum Eigenmarken Vergleich") == -1) {
+    if (shoppingCarts.carts.findIndex(cart => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
         response = await fetch("momentum-cart.json");
         momentumCart = await response.json();
-        carts.unshift(momentumCart);
-        saveCarts();
+        shoppingCarts.carts.unshift(momentumCart);
+        shoppingCarts.save();
     }
 
     const newCartButton = document.querySelector("#newcart");
     newCartButton.addEventListener("click", () => {
         let name = prompt("Name für Warenkorb eingeben:");
-        if (name.length == 0) return;
-        for (cart of carts) {
-            if (cart.name == name) {
+        if (name.length === 0) return;
+        for (cart of shoppingCarts.carts) {
+            if (cart.name === name) {
                 alert("Warenkorb mit Namen '" + name + "' existiert bereits");
                 return;
             }
         }
-        addCart(name);
+        shoppingCarts.add(name);
         location.href = "/cart.html?name=" + name;
     });
 
     const exportButton = document.querySelector("#export");
     exportButton.addEventListener("click", () => {
-        downloadFile("carts.json", JSON.stringify(carts, null, 2));
+        downloadFile("carts.json", JSON.stringify(shoppingCarts.carts, null, 2));
     });
 
     const importButton = document.querySelector("#import");
@@ -67,25 +67,27 @@ async function load() {
         reader.onload = function (event) {
             const contents = event.target.result;
             const importedCarts = JSON.parse(contents);
-            for (importedCart of importedCarts) {
+            for (const importedCart of importedCarts) {
                 const items = [];
-                for (cartItem of cart.items) {
+                for (cartItem of importedCart.items) {
                     const item = lookup[cartItem.id];
                     if (!item) continue;
                     items.push(item);
                 }
                 importedCart.items = items;
 
-                let index = carts.findIndex(cart => cart.name == importedCart.name);
+                const index = shoppingCarts.carts.findIndex(cart => cart.name === importedCart.name);
                 if (index != -1) {
                     if (confirm("Existierenden Warenkorb '" + importedCart.name + " überschreiben?")) {
-                        carts[index] = importedCart;
+                        console.log(shoppingCarts.carts[index]);
+                        shoppingCarts.carts[index] = importedCart;
+                        console.log(shoppingCarts.carts[index])
                     }
                 } else {
-                    carts.push(importedCart);
+                    shoppingCarts.carts.push(importedCart);
                 }
             }
-            saveCarts();
+            shoppingCarts.save();
             showCarts(lookup);
         };
         reader.readAsText(file);
@@ -106,7 +108,7 @@ function showCarts(lookup) {
         </tr>
     `));
 
-    carts.forEach(cart => {
+    shoppingCarts.carts.forEach(cart => {
         let oldPrice = 0;
         let currPrice = 0;
         let link = cart.name + ";"
@@ -117,7 +119,7 @@ function showCarts(lookup) {
             currPrice += item.priceHistory[0].price;
             link += item.id + ";";
         }
-        const increase = Math.round((currPrice - oldPrice) / oldPrice * 100);
+        const increase = oldPrice != 0 ? Math.round((currPrice - oldPrice) / oldPrice * 100) : 0;
 
         const row = dom("tr", ``);
 
@@ -145,7 +147,7 @@ function showCarts(lookup) {
             actionsDom.appendChild(deleteButton);
 
             deleteButton.addEventListener("click", () => {
-                removeCart(cart.name);
+                shoppingCarts.remove(cart.name);
                 showCarts(lookup);
             });
         }
