@@ -85,6 +85,55 @@ function sortItems(items) {
     });
 }
 
+// Keep this in sync with utils.js:decompress
+function compress(items) {
+    const compressed = {
+        stores: STORE_KEYS,
+        n: items.length,
+        data: []
+    }
+    const data = compressed.data;
+    for (item of items) {
+        data.push(STORE_KEYS.indexOf(item.store));
+        data.push(item.id);
+        data.push(item.name);
+        data.push(item.priceHistory.length);
+        for (price of item.priceHistory) {
+            data.push(price.date.replaceAll("-", ""));
+            data.push(price.price);
+        }
+        data.push(item.unit);
+        data.push(item.quantity);
+        data.push(item.isWeighted ? 1 : 0);
+        data.push(item.bio ? 1 : 0);
+        switch (item.store) {
+            case "billa":
+                data.push(item.url.replace("https://shop.billa.at", ""));
+                break;
+            case "dm":
+                data.push("");
+                break;
+            case "hofer":
+                data.push(item.url.replace("https://www.roksh.at/hofer/produkte/", ""));
+                break;
+            case "lidl":
+                data.push(item.url.replace("https://www.lidl.at", ""));
+                break;
+            case "mpreis":
+                data.push("");
+                break;
+            case "spar":
+                data.push(item.url.replace("https://www.interspar.at/shop/lebensmittel", ""));
+                break;
+            case "unimarkt":
+                data.push(item.url.replace("https://shop.unimarkt.at", ""));
+                break;
+        }
+    }
+    return compressed;
+}
+exports.compress = compress;
+
 /// Given a directory of raw data of the form `$store-$date.json`, constructs
 /// a canonical list of all products and their historical price data.
 exports.replay = function(rawDataDir) {

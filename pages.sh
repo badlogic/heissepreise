@@ -14,7 +14,7 @@ cp docs/latest-canonical.json tmp-data
 
 npm install
 node pages.js tmp-data
-cp tmp-data/latest-canonical.json docs
+cp tmp-data/latest-canonical* docs
 
 cp site/* docs
 pushd docs

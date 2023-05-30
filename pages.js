@@ -17,7 +17,10 @@ if (!fs.existsSync(dataDir)) {
 (async function () {
     try {
         await analysis.updateData(dataDir);
-        console.log(`Wrote ${JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`)).length} to ${dataDir}/latest-canonical.json`);
+        const items = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
+        const compressedItems = analysis.compress(items);
+        fs.writeFileSync(`${dataDir}/latest-canonical-compressed.json`, JSON.stringify(compressedItems));
+        console.log(`Wrote ${items.length} items to ${dataDir}/latest-canonical(-compressed).json`);
     } catch(e) {
         process.exit(1);
     }

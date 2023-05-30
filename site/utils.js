@@ -85,10 +85,79 @@ function dom(el, html) {
     return element;
 }
 
-async function loadItems() {
-    const response = await fetch("latest-canonical.json");
-    const items = await response.json();
+function decompress(compressedItems) {
+    const items = [];
+    const stores = compressedItems.stores;
+    const data = compressedItems.data;
+    const numItems = compressedItems.n;
+    let i = 0;
+    while (items.length < numItems) {
+        const store = stores[data[i++]];
+        const id = data[i++];
+        const name = data[i++];
+        const numPrices = data[i++];
+        const prices = [];
+        for (let j = 0; j < numPrices; j++) {
+            const date = data[i++];
+            const price = data[i++];
+            prices.push({
+                date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
+                price
+            });
+        }
+        const unit = data[i++];
+        const quantity = data[i++];
+        const isWeighted = data[i++] == 1;
+        const bio = data[i++] == 1;
+        let url = data[i++];
+        switch (store) {
+            case "billa":
+                url = "https://shop.billa.at" + url;
+                break;
+            case "dm":
+                url = `https://www.dm.at/product-p${id}.html`;
+                break;
+            case "hofer":
+                url = "https://www.roksh.at/hofer/produkte/" + url;
+                break;
+            case "lidl":
+                url = "https://www.lidl.at" + url;
+                break;
+            case "mpreis":
+                url = "https://www.mpreis.at/shop/p/" + id;
+                break;
+            case "spar":
+                url = "https://www.interspar.at/shop/lebensmittel" + url;
+                break;
+            case "unimarkt":
+                url = "https://shop.unimarkt.at" + url;
+                break;
+        }
 
+        items.push({
+            store,
+            id,
+            name,
+            price: prices[0].price,
+            priceHistory: prices,
+            isWeighted,
+            unit,
+            quantity,
+            bio,
+            url
+        });
+    }
+    return items;
+}
+
+async function loadItems() {
+    now = performance.now();
+    const response = await fetch("latest-canonical-compressed.json");
+    const compressedItems = await response.json();
+    const items = decompress(compressedItems);
+    console.log("Loading compressed items took " + (performance.now() - now) / 1000 + " secs");
+
+    now = performance.now();
     for (const item of items) {
         item.search = item.name + " " + item.unit;
         item.search = item.search.toLowerCase().replace(",", ".");
@@ -106,6 +175,7 @@ async function loadItems() {
         if (highestPriceBefore == -1) highestPriceBefore = item.price;
         item.highestBefore = highestPriceBefore;
     }
+    console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
     return items;
 }
 
