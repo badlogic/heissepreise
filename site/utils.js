@@ -56,7 +56,8 @@ function currentDate() {
  */
 function getQueryParameter(name) {
     const url = new URL(window.location.href);
-    return url.searchParams.get(name);
+    const params = url.searchParams.getAll(name);
+    return params.length > 1 ? params : params?.[0];
 }
 
 /**
@@ -79,9 +80,9 @@ function toNumber(value, defaultValue) {
  * @param {string} html Inner html
  * @returns {HTMLElement} DOM element
  */
-function dom(el, html) {
+function dom(el, html = null) {
     const element = document.createElement(el);
-    element.innerHTML = html;
+    if (html != null) element.innerHTML = html;
     return element;
 }
 
@@ -152,10 +153,23 @@ function decompress(compressedItems) {
 
 async function loadItems() {
     now = performance.now();
-    const response = await fetch("latest-canonical-compressed.json");
-    const compressedItems = await response.json();
-    const items = decompress(compressedItems);
-    console.log("Loading compressed items took " + (performance.now() - now) / 1000 + " secs");
+    const compressedItemsPerStore = [];
+    for (const store of STORE_KEYS) {
+        compressedItemsPerStore.push(new Promise(async (resolve) => {
+            const now = performance.now();
+            try {
+                const response = await fetch(`latest-canonical.${store}.compressed.json`);
+                const json = await response.json();
+                console.log(`Loading compressed items for ${store} took ${((performance.now() - now) / 1000)} secs`);
+                resolve(decompress(json));
+            } catch {
+                console.log(`Error while loading compressed items for ${store}. It took ${((performance.now() - now) / 1000)} secs, continueing...`);
+                resolve([]);
+            }
+        }));
+    }
+    const items = [].concat(...await Promise.all(compressedItemsPerStore));
+    console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
 
     now = performance.now();
     for (const item of items) {
@@ -355,7 +369,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-        <a id="querylink-${id}" class="hide">Query link</a>
+        <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
         <div class="filters filters--store">
             ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
         </div>
@@ -382,6 +396,18 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const minPrice = parentElement.querySelector(`#minprice-${id}`);
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
     const numResults = parentElement.querySelector(`#numresults-${id}`);
+
+    const setQuery = () => {
+        const query = searchInput.value.trim();
+        if (query.length === 0) {
+            queryLink.classList.add("hide");
+            return;
+        }
+        queryLink.classList.remove("hide");
+        const inputs = [...table.querySelectorAll("input:checked")];
+        const checked = inputs.length ? inputs.map(item => item.dataset.id) : getQueryParameter("c");
+        queryLink.setAttribute("href", `/?q=${encodeURIComponent(query)}${checked?.length ? `&c=${checked.join("&c=")}`: "" }`)
+    };
 
     let search = (query) => {
         let hits = [];
@@ -414,7 +440,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         let num = 0;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
-            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits);
+            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
             table.appendChild(itemDom);
             num++;
             return num < 500;
@@ -429,14 +455,12 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             minPrice.value = 0;
             maxPrice.value = 100;
         }
-        if (query.length > 0 && query.charAt(0) == "!") {
+        if (query?.charAt(0) == "!") {
             parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
-            queryLink.classList.remove("hide");
-            queryLink.setAttribute("href", "/?q=" + encodeURIComponent(query));
         } else {
             parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
-            queryLink.classList.add("hide");
         }
+        setQuery();
         search(searchInput.value);
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));

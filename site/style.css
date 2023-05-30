@@ -128,6 +128,10 @@ td:nth-child(4) {
     content: "€ "
 }
 
+.querylink {
+    margin-bottom: 1em;
+}
+
 .carts td:nth-child(1) {
     text-align: left;
 }

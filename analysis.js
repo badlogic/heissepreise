@@ -3,6 +3,8 @@ const stores = require("./stores");
 
 const STORE_KEYS = Object.keys(stores);
 
+exports.STORE_KEYS = STORE_KEYS;
+
 function currentDate() {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
@@ -108,25 +110,25 @@ function compress(items) {
         data.push(item.bio ? 1 : 0);
         switch (item.store) {
             case "billa":
-                data.push(item.url.replace("https://shop.billa.at", ""));
+                data.push(item.url?.replace("https://shop.billa.at", ""));
                 break;
             case "dm":
                 data.push("");
                 break;
             case "hofer":
-                data.push(item.url.replace("https://www.roksh.at/hofer/produkte/", ""));
+                data.push(item.url?.replace("https://www.roksh.at/hofer/produkte/", ""));
                 break;
             case "lidl":
-                data.push(item.url.replace("https://www.lidl.at", ""));
+                data.push(item.url?.replace("https://www.lidl.at", ""));
                 break;
             case "mpreis":
                 data.push("");
                 break;
             case "spar":
-                data.push(item.url.replace("https://www.interspar.at/shop/lebensmittel", ""));
+                data.push(item.url?.replace("https://www.interspar.at/shop/lebensmittel", ""));
                 break;
             case "unimarkt":
-                data.push(item.url.replace("https://shop.unimarkt.at", ""));
+                data.push(item.url?.replace("https://shop.unimarkt.at", ""));
                 break;
         }
     }
