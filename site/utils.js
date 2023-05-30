@@ -369,7 +369,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-        <a id="querylink-${id}" class="hide">Query link</a>
+        <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
         <div class="filters filters--store">
             ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
         </div>
