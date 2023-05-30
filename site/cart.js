@@ -67,7 +67,7 @@ async function load() {
     document.querySelector("#sumchain").addEventListener("change", () => {
         showCharts(canvasDom, cart.items);
     });
-    document.querySelector("#charttype").addEventListener("change", () => {
+    document.querySelector("#todayonly").addEventListener("change", () => {
         showCharts(canvasDom, cart.items);
     })
     const filtersStore = document.querySelector("#filters-store");
@@ -129,12 +129,13 @@ function showSearch(cart, items) {
 }
 
 function showCharts(canvasDom, items) {
+    const todayOnly = document.querySelector("#todayonly").checked;
     let itemsToShow = [];
 
     if (document.querySelector("#sum").checked && items.length > 0) {
         itemsToShow.push({
             name: "Preissumme Warenkorb",
-            priceHistory: calculateOverallPriceChanges(items)
+            priceHistory: calculateOverallPriceChanges(items, todayOnly)
         });
     }
 
@@ -147,17 +148,17 @@ function showCharts(canvasDom, items) {
             if (storeItems.length > 0) {
                 itemsToShow.push({
                     name: "Preissumme " + store,
-                    priceHistory: calculateOverallPriceChanges(storeItems)
+                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly)
                 });
             }
         });
     }
 
     items.forEach((item) => {
-        if (item.chart) itemsToShow.push(item);
+        if (item.chart) itemsToShow.push({ name: item.store + " " + item.name, priceHistory: todayOnly ? [{date: currentDate(), price: item.price}] : item.priceHistory});
     });
 
-    showChart(canvasDom, itemsToShow, document.querySelector("#charttype").value);
+    showChart(canvasDom, itemsToShow, todayOnly ? "bar" : "line"); // document.querySelector("#charttype").value);
 }
 
 function showCart(cart) {
@@ -207,6 +208,34 @@ function showCart(cart) {
                 showCart(cart)
             })
             cell.appendChild(deleteButton);
+
+            const upButton = dom("input", "");
+            upButton.setAttribute("type", "button");
+            upButton.setAttribute("value", "⬆️");
+            itemDom.append(upButton);
+            upButton.addEventListener("click", () => {
+                if (idx == 0) return;
+                let otherItem = cart.items[idx - 1];
+                cart.items[idx - 1] = cartItem;
+                cart.items[idx] = otherItem;
+                shoppingCarts.save();
+                showCart(cart)
+            })
+            cell.appendChild(upButton);
+
+            const downButton = dom("input", "");
+            downButton.setAttribute("type", "button");
+            downButton.setAttribute("value", "⬇️");
+            itemDom.append(downButton);
+            downButton.addEventListener("click", () => {
+                if (idx == cart.items.length - 1) return;
+                let otherItem = cart.items[idx + 1];
+                cart.items[idx + 1] = cartItem;
+                cart.items[idx] = otherItem;
+                shoppingCarts.save();
+                showCart(cart)
+            })
+            cell.appendChild(downButton);
         }
         itemDom.append(cell);
         itemTable.append(itemDom);

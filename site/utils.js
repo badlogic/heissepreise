@@ -516,7 +516,11 @@ function showChart(canvasDom, items, chartType) {
     });
 
     const ctx = canvasDom.getContext('2d');
-    if (canvasDom.lastChart) canvasDom.lastChart.destroy();
+    let scrollTop = -1;
+    if (canvasDom.lastChart) {
+        scrollTop = document.documentElement.scrollTop;
+        canvasDom.lastChart.destroy();
+    }
     canvasDom.lastChart = new Chart(ctx, {
         type: chartType ? chartType : 'line',
         data: {
@@ -536,10 +540,19 @@ function showChart(canvasDom, items, chartType) {
             }
         }
     });
+    if (scrollTop != -1)
+        document.documentElement.scrollTop = scrollTop;
 }
 
-function calculateOverallPriceChanges(items) {
+function calculateOverallPriceChanges(items, todayOnly) {
     if (items.length == 0) return { dates: [], changes: [] };
+
+    if (todayOnly) {
+        let sum = 0;
+        for (item of items) sum += item.price;
+        return [{ date: currentDate(), price: sum }];
+    }
+
     const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
     const uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
