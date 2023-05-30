@@ -2,7 +2,7 @@ async function load() {
     const items = await loadItems();
     const lookup = {};
     for (item of items) {
-        lookup[item.id] = item;
+        lookup[item.store + item.id] = item;
     }
 
     let cart = null;
@@ -18,7 +18,7 @@ async function load() {
         // Update cart pricing info
         let items = [];
         for (cartItem of cart.items) {
-            const item = lookup[cartItem.id];
+            const item = lookup[cartItem.store + cartItem.id];
             if (!item) shoppingCarts.items.push(cartItem);
             else items.push(item);
         }
@@ -64,6 +64,12 @@ async function load() {
     document.querySelector("#sum").addEventListener("change", () => {
         showCharts(canvasDom, cart.items);
     });
+    document.querySelector("#sumchain").addEventListener("change", () => {
+        showCharts(canvasDom, cart.items);
+    });
+    document.querySelector("#charttype").addEventListener("change", () => {
+        showCharts(canvasDom, cart.items);
+    })
     const filtersStore = document.querySelector("#filters-store");
     filtersStore.innerHTML = STORE_KEYS.map(store => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
     filtersStore.querySelectorAll("input").forEach(input => {
@@ -127,8 +133,23 @@ function showCharts(canvasDom, items) {
 
     if (document.querySelector("#sum").checked && items.length > 0) {
         itemsToShow.push({
-            name: "Preissumme",
+            name: "Preissumme Warenkorb",
             priceHistory: calculateOverallPriceChanges(items)
+        });
+    }
+
+    if (document.querySelector("#sumchain").checked && items.length > 0) {
+        const storeCheckboxes = STORE_KEYS.map(store => document.querySelector(`#${store}`));
+        const checkedStores = STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked)
+
+        checkedStores.forEach(store => {
+            const storeItems = items.filter(item => item.store === store);
+            if (storeItems.length > 0) {
+                itemsToShow.push({
+                    name: "Preissumme " + store,
+                    priceHistory: calculateOverallPriceChanges(storeItems)
+                });
+            }
         });
     }
 
@@ -136,13 +157,13 @@ function showCharts(canvasDom, items) {
         if (item.chart) itemsToShow.push(item);
     });
 
-    showChart(canvasDom, itemsToShow);
+    showChart(canvasDom, itemsToShow, document.querySelector("#charttype").value);
 }
 
 function showCart(cart) {
     let link = cart.name + ";"
     for (cartItem of cart.items) {
-        link += cartItem.id + ";";
+        link += cartItem.store + cartItem.id + ";";
     }
 
     document.querySelector("#cartname").innerHTML = "Warenkorb '" + cart.name + `' <a href="cart.html?cart=${link}">Teilen</a>`;

@@ -481,7 +481,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     return () => search(searchInput.value);
 }
 
-function showChart(canvasDom, items) {
+function showChart(canvasDom, items, chartType) {
     if (items.length == 0) {
         canvasDom.style.display = "none";
         return;
@@ -518,7 +518,7 @@ function showChart(canvasDom, items) {
     const ctx = canvasDom.getContext('2d');
     if (canvasDom.lastChart) canvasDom.lastChart.destroy();
     canvasDom.lastChart = new Chart(ctx, {
-        type: 'line',
+        type: chartType ? chartType : 'line',
         data: {
             labels: uniqueDates,
             datasets: datasets
