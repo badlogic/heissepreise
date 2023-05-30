@@ -56,7 +56,8 @@ function currentDate() {
  */
 function getQueryParameter(name) {
     const url = new URL(window.location.href);
-    return url.searchParams.get(name);
+    const params = url.searchParams.getAll(name);
+    return params.length > 1 ? params : params?.[0];
 }
 
 /**
@@ -79,9 +80,9 @@ function toNumber(value, defaultValue) {
  * @param {string} html Inner html
  * @returns {HTMLElement} DOM element
  */
-function dom(el, html) {
+function dom(el, html = null) {
     const element = document.createElement(el);
-    element.innerHTML = html;
+    if (html != null) element.innerHTML = html;
     return element;
 }
 
@@ -383,6 +384,18 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
     const numResults = parentElement.querySelector(`#numresults-${id}`);
 
+    const setQuery = () => {
+        const query = searchInput.value.trim();
+        if (query.length === 0) {
+            queryLink.classList.add("hide");
+            return;
+        }
+        queryLink.classList.remove("hide");
+        const inputs = [...table.querySelectorAll("input:checked")];
+        const checked = inputs.length ? inputs.map(item => item.dataset.id) : getQueryParameter("c");
+        queryLink.setAttribute("href", `/?q=${encodeURIComponent(query)}${checked?.length ? `&c=${checked.join("&c=")}`: "" }`)
+    };
+
     let search = (query) => {
         let hits = [];
         let now = performance.now();
@@ -414,7 +427,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         let num = 0;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
-            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits);
+            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
             table.appendChild(itemDom);
             num++;
             return num < 500;
@@ -429,14 +442,12 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             minPrice.value = 0;
             maxPrice.value = 100;
         }
-        if (query.length > 0 && query.charAt(0) == "!") {
+        if (query?.charAt(0) == "!") {
             parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
-            queryLink.classList.remove("hide");
-            queryLink.setAttribute("href", "/?q=" + encodeURIComponent(query));
         } else {
             parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
-            queryLink.classList.add("hide");
         }
+        setQuery();
         search(searchInput.value);
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));
