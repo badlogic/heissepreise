@@ -18,14 +18,17 @@ async function load() {
                 showHideAll.showAll = !showHideAll.showAll;
             })
             return header;
-        }, (item, itemDom, items) => {
+        }, (item, itemDom, items, setQuery) => {
             const chartCheckbox = dom("input");
+            const checked = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`);
             chartCheckbox.setAttribute("type", "checkbox");
+            chartCheckbox.checked = checked;
+            item.chart = checked;
+            chartCheckbox.setAttribute("data-id", `${item.store}:${item.id}`);
             const cell = dom("td", "");
             cell.appendChild(chartCheckbox);
             itemDom.appendChild(cell);
-
-            chartCheckbox.addEventListener("click", () => {
+            const handleClick = (eventShouldSetQuery = false) =>{
                 item.chart = chartCheckbox.checked;
                 const data = [];
                 items.forEach(i => { if (i.chart) data.push(i) });
@@ -35,8 +38,10 @@ async function load() {
                     chartDom.style.display = "block";
                     showChart(chartDom, data);
                 }
-            });
-
+                !!eventShouldSetQuery && setQuery();
+            }
+            chartCheckbox.addEventListener("click", handleClick);
+            checked && handleClick();
             return itemDom;
         });
     const query = getQueryParameter("q");
