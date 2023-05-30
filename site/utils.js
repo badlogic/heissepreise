@@ -42,19 +42,30 @@ const stores = {
     reweDe: {
         name: "REWE DE",
         budgetBrands: ["ja!"],
-        color: "rgb(236 231 225)"
+        color: "rgb(236 231 225)",
     },
     penny: {
         name: "Penny",
-        budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
+        budgetBrands: [
+            "bravo",
+            "echt bio!",
+            "san fabio",
+            "federike",
+            "blik",
+            "berida",
+            "today",
+            "ich bin österreich",
+        ],
         color: "rgb(255, 180, 180)",
-    }
+    },
 };
 
 const STORE_KEYS = Object.keys(stores);
-const BUDGET_BRANDS = [].concat(
-    ...Object.values(stores).map((store) => store.budgetBrands)
-);
+const BUDGET_BRANDS = [
+    ...new Set(
+        [].concat(...Object.values(stores).map((store) => store.budgetBrands))
+    ),
+];
 
 /**
  * @description Returns the current date in ISO format
@@ -117,8 +128,13 @@ function decompress(compressedItems) {
             const date = data[i++];
             const price = data[i++];
             prices.push({
-                date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
-                price
+                date:
+                    date.substring(0, 4) +
+                    "-" +
+                    date.substring(4, 6) +
+                    "-" +
+                    date.substring(6, 8),
+                price,
             });
         }
         const unit = data[i++];
@@ -152,7 +168,11 @@ function decompress(compressedItems) {
                 url = "https://shop.unimarkt.at" + url;
                 break;
             case "reweDe":
-                url = "https://shop.rewe.de/p/" + name.toLowerCase().replace(/ /g, "-") + "/" + id;
+                url =
+                    "https://shop.rewe.de/p/" +
+                    name.toLowerCase().replace(/ /g, "-") +
+                    "/" +
+                    id;
                 break;
         }
 
@@ -166,7 +186,7 @@ function decompress(compressedItems) {
             unit,
             quantity,
             bio,
-            url
+            url,
         });
     }
     return items;
@@ -176,27 +196,46 @@ async function loadItems() {
     now = performance.now();
     const compressedItemsPerStore = [];
     for (const store of STORE_KEYS) {
-        compressedItemsPerStore.push(new Promise(async (resolve) => {
-            const now = performance.now();
-            try {
-                const response = await fetch(`latest-canonical.${store}.compressed.json`);
-                const json = await response.json();
-                console.log(`Loading compressed items for ${store} took ${((performance.now() - now) / 1000)} secs`);
-                resolve(decompress(json));
-            } catch {
-                console.log(`Error while loading compressed items for ${store}. It took ${((performance.now() - now) / 1000)} secs, continueing...`);
-                resolve([]);
-            }
-        }));
+        compressedItemsPerStore.push(
+            new Promise(async (resolve) => {
+                const now = performance.now();
+                try {
+                    const response = await fetch(
+                        `latest-canonical.${store}.compressed.json`
+                    );
+                    const json = await response.json();
+                    console.log(
+                        `Loading compressed items for ${store} took ${
+                            (performance.now() - now) / 1000
+                        } secs`
+                    );
+                    resolve(decompress(json));
+                } catch {
+                    console.log(
+                        `Error while loading compressed items for ${store}. It took ${
+                            (performance.now() - now) / 1000
+                        } secs, continueing...`
+                    );
+                    resolve([]);
+                }
+            })
+        );
     }
-    const items = [].concat(...await Promise.all(compressedItemsPerStore));
-    console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
+    const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
+    console.log(
+        "Loading compressed items in parallel took " +
+            (performance.now() - now) / 1000 +
+            " secs"
+    );
 
     now = performance.now();
     alasql.fn.hasPriceChange = (priceHistory, date, endDate) => {
-        if (!endDate) return priceHistory.some(price => price.date == date);
-        else return priceHistory.some(price => price.date >= date && price.date <= endDate);
-    }
+        if (!endDate) return priceHistory.some((price) => price.date == date);
+        else
+            return priceHistory.some(
+                (price) => price.date >= date && price.date <= endDate
+            );
+    };
     for (const item of items) {
         item.search = item.name + " " + item.quantity + " " + item.unit;
         item.search = item.search.toLowerCase().replace(",", ".");
@@ -222,7 +261,9 @@ async function loadItems() {
         item.highestBefore = highestPriceBefore;
         item.lowestBefore = lowestPriceBefore;
     }
-    console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
+    console.log(
+        "Processing items took " + (performance.now() - now) / 1000 + " secs"
+    );
     return items;
 }
 
@@ -285,7 +326,7 @@ class ShoppingCarts {
 
 function itemToStoreLink(item) {
     if (STORE_KEYS.includes(item.store)) {
-        return `<a target="_blank" class="itemname itemname--${item.store}" rel="noopener noreferrer nofollow" href="${item.url}">${item.name}</a>`
+        return `<a target="_blank" class="itemname itemname--${item.store}" rel="noopener noreferrer nofollow" href="${item.url}">${item.name}</a>`;
     }
     return `<span class="itemname itemname--${item.store} itemname--nolink">${item.name}</span>`;
 }
@@ -295,33 +336,57 @@ function itemToDOM(item) {
     storeDom.setAttribute("data-label", "Kette");
     let nameDom = dom("td", `${itemToStoreLink(item)}`);
     nameDom.setAttribute("data-label", "Name");
-    let quantity = item.quantity || ""
+    let quantity = item.quantity || "";
     let unit = item.unit || "";
-    if (quantity >= 1000 && (unit == 'g' || unit == 'ml')) {
+    if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
         quantity = parseFloat((0.001 * quantity).toFixed(2));
-        unit = unit == 'ml' ? 'l' : 'kg';
+        unit = unit == "ml" ? "l" : "kg";
     }
-    let unitDom = dom("td", (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`);
+    let unitDom = dom(
+        "td",
+        (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`
+    );
     unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
-        let percentageChange = Math.round((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price * 100);
-        increase = `<span class="${percentageChange > 0 ? "increase" : "decrease"}">${(percentageChange > 0 ? "+" + percentageChange : percentageChange)}%</span>`;
+        let percentageChange = Math.round(
+            ((item.priceHistory[0].price - item.priceHistory[1].price) /
+                item.priceHistory[1].price) *
+                100
+        );
+        increase = `<span class="${
+            percentageChange > 0 ? "increase" : "decrease"
+        }">${
+            percentageChange > 0 ? "+" + percentageChange : percentageChange
+        }%</span>`;
     }
-    let priceDomText = `${Number(item.price).toFixed(2)} ${increase} ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}`;
+    let priceDomText = `${Number(item.price).toFixed(2)} ${increase} ${
+        item.priceHistory.length > 1
+            ? "(" + (item.priceHistory.length - 1) + ")"
+            : ""
+    }`;
     let pricesText = "";
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
         const currPrice = item.priceHistory[i].price;
-        const lastPrice = item.priceHistory[i + 1] ? item.priceHistory[i + 1].price : currPrice;
-        const increase = Math.round((currPrice - lastPrice) / lastPrice * 100);
+        const lastPrice = item.priceHistory[i + 1]
+            ? item.priceHistory[i + 1].price
+            : currPrice;
+        const increase = Math.round(
+            ((currPrice - lastPrice) / lastPrice) * 100
+        );
         let priceColor = "black";
         if (increase > 0) priceColor = "red";
         if (increase < 0) priceColor = "green";
-        pricesText += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
+        pricesText += `<span style="color: ${priceColor}">${date} ${currPrice} ${
+            increase > 0 ? "+" + increase : increase
+        }%</span>`;
         if (i != item.priceHistory.length - 1) pricesText += "<br>";
     }
-    let priceDom = dom("td", `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`);
+    let priceDom = dom(
+        "td",
+        `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`
+    );
     priceDom.setAttribute("data-label", "Preis");
     if (item.priceHistory.length > 1) {
         priceDom.style["cursor"] = "pointer";
@@ -345,7 +410,16 @@ function itemToDOM(item) {
 
 let componentId = 0;
 
-function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPrice, exact, bio) {
+function searchItems(
+    items,
+    query,
+    checkedStores,
+    budgetBrands,
+    minPrice,
+    maxPrice,
+    exact,
+    bio
+) {
     query = query.trim();
     if (query.length < 3) return [];
 
@@ -354,7 +428,9 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
         return alasql("select * from ? where " + query, [items]);
     }
 
-    const tokens = query.split(/\s+/).map(token => token.toLowerCase().replace(",", "."));
+    const tokens = query
+        .split(/\s+/)
+        .map((token) => token.toLowerCase().replace(",", "."));
 
     let hits = [];
     for (const item of items) {
@@ -367,11 +443,18 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
                 break;
             }
             if (exact) {
-                if (index > 0 && (item.search.charAt(index - 1) != " " && item.search.charAt(index - 1) != "-")) {
+                if (
+                    index > 0 &&
+                    item.search.charAt(index - 1) != " " &&
+                    item.search.charAt(index - 1) != "-"
+                ) {
                     allFound = false;
                     break;
                 }
-                if (index + token.length < item.search.length && item.search.charAt(index + token.length) != " ") {
+                if (
+                    index + token.length < item.search.length &&
+                    item.search.charAt(index + token.length) != " "
+                ) {
                     allFound = false;
                     break;
                 }
@@ -379,13 +462,17 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
         }
         if (allFound) {
             const name = item.name.toLowerCase();
-            if (checkedStores.length && !checkedStores.includes(item.store)) continue;
+            if (checkedStores.length && !checkedStores.includes(item.store))
+                continue;
             if (item.price < minPrice) continue;
             if (item.price > maxPrice) continue;
             if (
                 budgetBrands &&
-                !stores[item.store].budgetBrands.some(budgetBrand => name.indexOf(budgetBrand) >= 0)
-            ) continue;
+                !BUDGET_BRANDS.some(
+                    (budgetBrand) => name.indexOf(budgetBrand) >= 0
+                )
+            )
+                continue;
             if (bio && !item.bio) continue;
             hits.push(item);
         }
@@ -393,36 +480,75 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     return hits;
 }
 
-function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier) {
+function newSearchComponent(
+    parentElement,
+    items,
+    searched,
+    filter,
+    headerModifier,
+    itemDomModifier
+) {
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
-        <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-        <div style="margin-bottom: 1em">
+        <div class="wrapper wrapper--search">
+            <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
+            <label for="filter-toggle-${id}"><abbr title="Filter anzeigen/ausblenden">🎚</abbr></label>
+        </div>
+        <input class="toggle toggle--hidden" type="checkbox" id="filter-toggle-${id}" />
+        <div class="wrapper wrapper--sticky">
             <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
             <a id="json-${id}" href="" class="hide">JSON</a>
+            <div class="filters filters--store"> 
+                <label style="margin-right: 10px;"><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
+                ${STORE_KEYS.map(
+                    (store) =>
+                        `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`
+                ).join(" ")}
+            </div>
+            <div class="filters">
+                <label>
+                    <input id="budgetBrands-${id}" type="checkbox"> Nur 
+                    <abbr title="${BUDGET_BRANDS.map((budgetBrand) =>
+                        budgetBrand.toUpperCase()
+                    ).join(", ")}">
+                        Diskont-Eigenmarken
+                    </abbr>
+                </label>
+                <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
+            </div>
+            <div class="filters">
+                <label>Min € <input id="minprice-${id}" type="number" min="0" value="0"></label>
+                <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
+                <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
+            </div>
+            <label style="margin-bottom: 1em">Sortieren <select id="sort-${id}">
+                <option value="priceasc">Preis aufsteigend</option>
+                <option value="pricedesc">Preis absteigend</option>
+                <option value="namesim">Namensähnlichkeit</option>
+            </select></label>
+            <div id="numresults-${id}"></div>
         </div>
-        <div class="filters filters--store">
-            <label style="margin-right: 10px;"><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
-            ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
-        </div>
-        <div class="filters">
-            <label><input id="budgetBrands-${id}" type="checkbox"> Nur Billigeigenmarken (Clever, S-Budget, Milfina, Milboa, etc.)</label>
-            <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
-        </div>
-        <div class="filters">
-            <label>Min € <input id="minprice-${id}" type="number" min="0" value="0"></label>
-            <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
-            <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
-        </div>
-        <label style="margin-bottom: 1em">Sortieren <select id="sort-${id}">
-            <option value="priceasc">Preis aufsteigend</option>
-            <option value="pricedesc">Preis absteigend</option>
-            <option value="namesim">Namensähnlichkeit</option>
-        </select></label>
-        <div id="numresults-${id}"></div>
         <table id="result-${id}" class="searchresults"></table>
     `;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            console.log(entries);
+            for (const entry of entries) {
+                if (entry.intersectionRatio < 1) {
+                    entry.target.classList.add("wrapper--pinned");
+                } else {
+                    entry.target.classList.remove("wrapper--pinned");
+                }
+            }
+        },
+        {
+            rootMargin: "0px",
+            threshold: 1.0,
+        }
+    );
+    observer.observe(document.querySelector(".wrapper--search"));
 
     const searchInput = parentElement.querySelector(`#search-${id}`);
     const queryLink = parentElement.querySelector(`#querylink-${id}`);
@@ -432,7 +558,9 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const budgetBrands = parentElement.querySelector(`#budgetBrands-${id}`);
     const bio = parentElement.querySelector(`#bio-${id}`);
     const allCheckbox = parentElement.querySelector(`#all-${id}`);
-    const storeCheckboxes = STORE_KEYS.map(store => parentElement.querySelector(`#${store}-${id}`));
+    const storeCheckboxes = STORE_KEYS.map((store) =>
+        parentElement.querySelector(`#${store}-${id}`)
+    );
     const minPrice = parentElement.querySelector(`#minprice-${id}`);
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
     const numResults = parentElement.querySelector(`#numresults-${id}`);
@@ -442,7 +570,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     jsonLink.addEventListener("click", (event) => {
         event.preventDefault();
         downloadFile("items.json", JSON.stringify(lastHits, null, 2));
-    })
+    });
 
     const setQuery = () => {
         const query = searchInput.value.trim();
@@ -454,23 +582,39 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         queryLink.classList.remove("hide");
         jsonLink.classList.remove("hide");
         const inputs = [...table.querySelectorAll("input:checked")];
-        let checked = inputs.length ? inputs.map(item => item.dataset.id) : getQueryParameter("c");
-        if (typeof checked === "string") checked = [ checked ];
-        queryLink.setAttribute("href", `/?q=${encodeURIComponent(query)}${checked?.length ? `&c=${checked.join("&c=")}` : ""}`)
+        let checked = inputs.length
+            ? inputs.map((item) => item.dataset.id)
+            : getQueryParameter("c");
+        if (typeof checked === "string") checked = [checked];
+        queryLink.setAttribute(
+            "href",
+            `/?q=${encodeURIComponent(query)}${
+                checked?.length ? `&c=${checked.join("&c=")}` : ""
+            }`
+        );
     };
 
     let search = (query) => {
         let hits = [];
         let now = performance.now();
         try {
-            hits = searchItems(items, query,
+            hits = searchItems(
+                items,
+                query,
                 STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked),
-                budgetBrands.checked, toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked, bio.checked, sort.value
+                budgetBrands.checked,
+                toNumber(minPrice.value, 0),
+                toNumber(maxPrice.value, 100),
+                exact.checked,
+                bio.checked,
+                sort.value
             );
         } catch (e) {
             console.log("Query: " + query + "\n" + e.message);
         }
-        console.log("Search took " + (performance.now() - now) / 1000.0 + " secs");
+        console.log(
+            "Search took " + (performance.now() - now) / 1000.0 + " secs"
+        );
         if (searched) hits = searched(hits);
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
@@ -478,7 +622,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             numResults.innerHTML = "Resultate: 0";
             return;
         }
-        if (query.trim().charAt(0) != "!" || (query.trim().toLowerCase().indexOf("order by") == -1)) {
+        if (
+            query.trim().charAt(0) != "!" ||
+            query.trim().toLowerCase().indexOf("order by") == -1
+        ) {
             if (sort.value == "priceasc") {
                 hits.sort((a, b) => a.price - b.price);
             } else if (sort.value == "pricedesc") {
@@ -489,7 +636,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             }
         }
 
-        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
+        let header = dom(
+            "tr",
+            `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`
+        );
         if (headerModifier) header = headerModifier(header);
         const thead = dom("thead", ``);
         thead.appendChild(header);
@@ -500,15 +650,21 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         let limit = isMobile() ? 500 : 2000;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
-            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
+            if (itemDomModifier)
+                itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
             table.appendChild(itemDom);
             num++;
             return num < limit;
         });
-        console.log("Building DOM took: " + (performance.now() - now) / 1000.0 + " secs");
-        numResults.innerHTML = "Resultate: " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
+        console.log(
+            "Building DOM took: " + (performance.now() - now) / 1000.0 + " secs"
+        );
+        numResults.innerHTML =
+            "Resultate: " +
+            hits.length +
+            (num < hits.length ? ", " + num + " angezeigt" : "");
         lastHits = hits;
-    }
+    };
 
     let timeoutId;
     searchInput.addEventListener("input", (event) => {
@@ -520,9 +676,13 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 maxPrice.value = 100;
             }
             if (query?.charAt(0) == "!") {
-                parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
+                parentElement
+                    .querySelectorAll(".filters")
+                    .forEach((f) => (f.style.display = "none"));
             } else {
-                parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
+                parentElement
+                    .querySelectorAll(".filters")
+                    .forEach((f) => (f.style.display = "block"));
             }
             setQuery();
             search(searchInput.value);
@@ -531,11 +691,13 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
     allCheckbox.addEventListener("change", () => storeCheckboxes.forEach(store => store.checked = allCheckbox.checked));
-    storeCheckboxes.map(store => store.addEventListener("change", () => search(searchInput.value)));
+    storeCheckboxes.map((store) =>
+        store.addEventListener("change", () => search(searchInput.value))
+    );
     sort.addEventListener("change", () => search(searchInput.value));
     minPrice.addEventListener("change", () => search(searchInput.value));
     maxPrice.addEventListener("change", () => search(searchInput.value));
-    exact.addEventListener("change", () => search(searchInput.value))
+    exact.addEventListener("change", () => search(searchInput.value));
 
     return () => search(searchInput.value);
 }
@@ -548,14 +710,18 @@ function showChart(canvasDom, items, chartType) {
         canvasDom.style.display = "block";
     }
 
-    const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
+    const allDates = items.flatMap((product) =>
+        product.priceHistory.map((item) => item.date)
+    );
     const uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
 
-    const datasets = items.map(product => {
+    const datasets = items.map((product) => {
         let price = null;
-        const prices = uniqueDates.map(date => {
-            const priceObj = product.priceHistory.find(item => item.date === date);
+        const prices = uniqueDates.map((date) => {
+            const priceObj = product.priceHistory.find(
+                (item) => item.date === date
+            );
             if (!price && priceObj) price = priceObj.price;
             return priceObj ? priceObj.price : null;
         });
@@ -574,17 +740,17 @@ function showChart(canvasDom, items, chartType) {
         };
     });
 
-    const ctx = canvasDom.getContext('2d');
+    const ctx = canvasDom.getContext("2d");
     let scrollTop = -1;
     if (canvasDom.lastChart) {
         scrollTop = document.documentElement.scrollTop;
         canvasDom.lastChart.destroy();
     }
     canvasDom.lastChart = new Chart(ctx, {
-        type: chartType ? chartType : 'line',
+        type: chartType ? chartType : "line",
         data: {
             labels: uniqueDates,
-            datasets: datasets
+            datasets: datasets,
         },
         options: {
             responsive: true,
@@ -593,14 +759,13 @@ function showChart(canvasDom, items, chartType) {
                 y: {
                     title: {
                         display: true,
-                        text: "EURO"
-                    }
-                }
-            }
-        }
+                        text: "EURO",
+                    },
+                },
+            },
+        },
     });
-    if (scrollTop != -1)
-        document.documentElement.scrollTop = scrollTop;
+    if (scrollTop != -1) document.documentElement.scrollTop = scrollTop;
 }
 
 function getOldestDate(items) {
@@ -611,23 +776,41 @@ function getOldestDate(items) {
     return oldestDate;
 }
 
-function showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endDate) {
+function showCharts(
+    canvasDom,
+    items,
+    sum,
+    sumStores,
+    todayOnly,
+    startDate,
+    endDate
+) {
     let itemsToShow = [];
 
     if (sum && items.length > 0) {
         itemsToShow.push({
             name: "Preissumme Warenkorb",
-            priceHistory: calculateOverallPriceChanges(items, todayOnly, startDate, endDate)
+            priceHistory: calculateOverallPriceChanges(
+                items,
+                todayOnly,
+                startDate,
+                endDate
+            ),
         });
     }
 
     if (sumStores && items.length > 0) {
-        STORE_KEYS.forEach(store => {
-            const storeItems = items.filter(item => item.store === store);
+        STORE_KEYS.forEach((store) => {
+            const storeItems = items.filter((item) => item.store === store);
             if (storeItems.length > 0) {
                 itemsToShow.push({
                     name: "Preissumme " + store,
-                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly, startDate, endDate)
+                    priceHistory: calculateOverallPriceChanges(
+                        storeItems,
+                        todayOnly,
+                        startDate,
+                        endDate
+                    ),
                 });
             }
         });
@@ -637,9 +820,12 @@ function showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endD
         if (item.chart) {
             itemsToShow.push({
                 name: item.store + " " + item.name,
-                priceHistory: todayOnly ?
-                    [{ date: currentDate(), price: item.price }] :
-                    item.priceHistory.filter(price => price.date >= startDate && price.date <= endDate)
+                priceHistory: todayOnly
+                    ? [{ date: currentDate(), price: item.price }]
+                    : item.priceHistory.filter(
+                          (price) =>
+                              price.date >= startDate && price.date <= endDate
+                      ),
             });
         }
     });
@@ -656,15 +842,21 @@ function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
         return [{ date: currentDate(), price: sum }];
     }
 
-    const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
+    const allDates = items.flatMap((product) =>
+        product.priceHistory.map((item) => item.date)
+    );
     let uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
-    uniqueDates = uniqueDates.filter(date => date >= startDate && date <= endDate);
+    uniqueDates = uniqueDates.filter(
+        (date) => date >= startDate && date <= endDate
+    );
 
-    const allPrices = items.map(product => {
+    const allPrices = items.map((product) => {
         let price = null;
-        const prices = uniqueDates.map(date => {
-            const priceObj = product.priceHistory.find(item => item.date === date);
+        const prices = uniqueDates.map((date) => {
+            const priceObj = product.priceHistory.find(
+                (item) => item.date === date
+            );
             if (!price && priceObj) price = priceObj.price;
             return priceObj ? priceObj.price : null;
         });
@@ -692,11 +884,11 @@ function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
 }
 
 function downloadFile(filename, content) {
-    const blob = new Blob([content], { type: 'text/plain' });
-    const element = document.createElement('a');
+    const blob = new Blob([content], { type: "text/plain" });
+    const element = document.createElement("a");
     element.href = URL.createObjectURL(blob);
     element.download = filename;
-    element.style.display = 'none';
+    element.style.display = "none";
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
@@ -708,8 +900,8 @@ function stem(word) {
     /*
     Put u and y between vowels into upper case
     */
-    word = word.replace(/([aeiouyäöü])u([aeiouyäöü])/g, '$1U$2');
-    word = word.replace(/([aeiouyäöü])y([aeiouyäöü])/g, '$1Y$2');
+    word = word.replace(/([aeiouyäöü])u([aeiouyäöü])/g, "$1U$2");
+    word = word.replace(/([aeiouyäöü])y([aeiouyäöü])/g, "$1Y$2");
 
     /*
     and then do the following mappings,
@@ -724,7 +916,7 @@ function stem(word) {
     feuer it is not mapped because the first part of the rule changes it to
     feUer, so the u is not found.
     */
-    word = word.replace(/ß/g, 'ss');
+    word = word.replace(/ß/g, "ss");
     //word = word.replace(/ae/g, 'ä');
     //word = word.replace(/oe/g, 'ö');
     //word = word.replace(/([^q])ue/g, '$1ü');
@@ -740,14 +932,14 @@ function stem(word) {
     */
 
     var r1Index = word.search(/[aeiouyäöü][^aeiouyäöü]/);
-    var r1 = '';
+    var r1 = "";
     if (r1Index != -1) {
         r1Index += 2;
         r1 = word.substring(r1Index);
     }
 
     var r2Index = -1;
-    var r2 = '';
+    var r2 = "";
 
     if (r1Index != -1) {
         var r2Index = r1.search(/[aeiouyäöü][^aeiouyäöü]/);
@@ -756,7 +948,7 @@ function stem(word) {
             r2 = r1.substring(r2Index);
             r2Index += r1Index;
         } else {
-            r2 = '';
+            r2 = "";
         }
     }
 
@@ -788,17 +980,17 @@ function stem(word) {
         c1Index++;
     }
     var index1 = 10000;
-    var optionUsed1 = '';
+    var optionUsed1 = "";
     if (a1Index != -1 && a1Index < index1) {
-        optionUsed1 = 'a';
+        optionUsed1 = "a";
         index1 = a1Index;
     }
     if (b1Index != -1 && b1Index < index1) {
-        optionUsed1 = 'b';
+        optionUsed1 = "b";
         index1 = b1Index;
     }
     if (c1Index != -1 && c1Index < index1) {
-        optionUsed1 = 'c';
+        optionUsed1 = "c";
         index1 = c1Index;
     }
 
@@ -813,7 +1005,7 @@ function stem(word) {
     if (index1 != 10000 && r1Index != -1) {
         if (index1 >= r1Index) {
             word = word.substring(0, index1);
-            if (optionUsed1 == 'b') {
+            if (optionUsed1 == "b") {
                 if (word.search(/niss$/) != -1) {
                     word = word.substring(0, word.length - 1);
                 }
@@ -835,13 +1027,13 @@ function stem(word) {
     }
 
     var index2 = 10000;
-    var optionUsed2 = '';
+    var optionUsed2 = "";
     if (a2Index != -1 && a2Index < index2) {
-        optionUsed2 = 'a';
+        optionUsed2 = "a";
         index2 = a2Index;
     }
     if (b2Index != -1 && b2Index < index2) {
-        optionUsed2 = 'b';
+        optionUsed2 = "b";
         index2 = b2Index;
     }
 
@@ -883,21 +1075,21 @@ function stem(word) {
     }
 
     var index3 = 10000;
-    var optionUsed3 = '';
+    var optionUsed3 = "";
     if (a3Index != -1 && a3Index < index3) {
-        optionUsed3 = 'a';
+        optionUsed3 = "a";
         index3 = a3Index;
     }
     if (b3Index != -1 && b3Index < index3) {
-        optionUsed3 = 'b';
+        optionUsed3 = "b";
         index3 = b3Index;
     }
     if (c3Index != -1 && c3Index < index3) {
-        optionUsed3 = 'c';
+        optionUsed3 = "c";
         index3 = c3Index;
     }
     if (d3Index != -1 && d3Index < index3) {
-        optionUsed3 = 'd';
+        optionUsed3 = "d";
         index3 = d3Index;
     }
 
@@ -905,8 +1097,8 @@ function stem(word) {
         if (index3 >= r2Index) {
             word = word.substring(0, index3);
             var optionIndex = -1;
-            var optionSubsrt = '';
-            if (optionUsed3 == 'a') {
+            var optionSubsrt = "";
+            if (optionUsed3 == "a") {
                 optionIndex = word.search(/[^e](ig)$/);
                 if (optionIndex != -1) {
                     optionIndex++;
@@ -914,14 +1106,14 @@ function stem(word) {
                         word = word.substring(0, optionIndex);
                     }
                 }
-            } else if (optionUsed3 == 'c') {
+            } else if (optionUsed3 == "c") {
                 optionIndex = word.search(/(er|en)$/);
                 if (optionIndex != -1) {
                     if (optionIndex >= r1Index) {
                         word = word.substring(0, optionIndex);
                     }
                 }
-            } else if (optionUsed3 == 'd') {
+            } else if (optionUsed3 == "d") {
                 optionIndex = word.search(/(lich|ig)$/);
                 if (optionIndex != -1) {
                     if (optionIndex >= r2Index) {
@@ -937,11 +1129,11 @@ function stem(word) {
     turn U and Y back into lower case, and remove the umlaut accent from
     a, o and u.
     */
-    word = word.replace(/U/g, 'u');
-    word = word.replace(/Y/g, 'y');
-    word = word.replace(/ä/g, 'a');
-    word = word.replace(/ö/g, 'o');
-    word = word.replace(/ü/g, 'u');
+    word = word.replace(/U/g, "u");
+    word = word.replace(/Y/g, "y");
+    word = word.replace(/ä/g, "a");
+    word = word.replace(/ö/g, "o");
+    word = word.replace(/ü/g, "u");
 
     return word;
 }
@@ -1030,9 +1222,12 @@ function similaritySortItems(items) {
 }
 
 function vectorizeItems(items) {
-    items.forEach(item => {
-        let name = item.name.toLowerCase().replace(/[^\w\s]|_/g, "").replace("-", " ");
-        item.tokens = name.split(/\s+/).map(token => stem(token));
+    items.forEach((item) => {
+        let name = item.name
+            .toLowerCase()
+            .replace(/[^\w\s]|_/g, "")
+            .replace("-", " ");
+        item.tokens = name.split(/\s+/).map((token) => stem(token));
         if (item.quantity) item.tokens.push("" + item.quantity);
         if (item.unit) item.tokens.push(item.unit);
         item.vector = vector(item.tokens);
@@ -1040,7 +1235,7 @@ function vectorizeItems(items) {
 }
 
 function cluster(items, maxTime) {
-    if (!maxTime) maxTime = 0.250;
+    if (!maxTime) maxTime = 0.25;
 
     // Tokenize, stem, and vectorize item names
     vectorizeItems(items);
@@ -1048,15 +1243,17 @@ function cluster(items, maxTime) {
     // Split by store and sort by number of items in descending order
     const itemsPerStore = [];
     for (const store of STORE_KEYS) {
-        const storeItems = items.filter(item => item.store === store);
+        const storeItems = items.filter((item) => item.store === store);
         if (storeItems.length > 0) itemsPerStore.push(storeItems);
     }
     itemsPerStore.sort((a, b) => b.length - a.length);
-    itemsPerStore.forEach(items => console.log(items[0].store + ", " + items.length));
+    itemsPerStore.forEach((items) =>
+        console.log(items[0].store + ", " + items.length)
+    );
 
     // Take the store with the most items, then try to find the best match
     // from each of the other stores
-    const baseStore = itemsPerStore.shift()
+    const baseStore = itemsPerStore.shift();
     itemsPerStore.push(baseStore);
     const otherItems = itemsPerStore.flat();
 
@@ -1084,7 +1281,7 @@ function cluster(items, maxTime) {
 
         const newClusters = [];
         for (cluster of clusters) {
-            const newCluster = { centroid: {}, item: cluster.item, items: [] }
+            const newCluster = { centroid: {}, item: cluster.item, items: [] };
             for (item of cluster.items) {
                 addVector(newCluster.centroid, item.vector);
             }
@@ -1095,9 +1292,13 @@ function cluster(items, maxTime) {
             newClusters.push(newCluster);
         }
 
-        const time = (performance.now() - now) / 1000
+        const time = (performance.now() - now) / 1000;
         console.log(maxIterations + ", time " + time);
-        if (JSON.stringify(clusters) == JSON.stringify(newClusters) || maxIterations == 1 || time > maxTime) {
+        if (
+            JSON.stringify(clusters) == JSON.stringify(newClusters) ||
+            maxIterations == 1 ||
+            time > maxTime
+        ) {
             break;
         }
 
@@ -1114,7 +1315,7 @@ function cluster(items, maxTime) {
 }
 
 function flattenClusters(clusters) {
-    const items = []
+    const items = [];
     for (cluster of clusters) {
         for (item of cluster.items) {
             items.push(item);
@@ -1124,7 +1325,9 @@ function flattenClusters(clusters) {
 }
 
 function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+    );
 }
 
 try {
