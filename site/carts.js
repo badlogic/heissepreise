@@ -14,14 +14,14 @@ async function load() {
     const items = await loadItems();
     lookup = {};
     for (item of items) {
-        lookup[item.id] = item;
+        lookup[item.store + item.id] = item;
     }
 
     // Update carts with latest price info
     for (cart of shoppingCarts.carts) {
         const items = [];
         for (cartItem of cart.items) {
-            const item = lookup[cartItem.id];
+            const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
             items.push(item);
         }
@@ -70,7 +70,7 @@ async function load() {
             for (const importedCart of importedCarts) {
                 const items = [];
                 for (cartItem of importedCart.items) {
-                    const item = lookup[cartItem.id];
+                    const item = lookup[cartItem.store + cartItem.id];
                     if (!item) continue;
                     items.push(item);
                 }
@@ -113,11 +113,11 @@ function showCarts(lookup) {
         let currPrice = 0;
         let link = cart.name + ";"
         for (cartItem of cart.items) {
-            const item = lookup[cartItem.id];
+            const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
             oldPrice += item.priceHistory[item.priceHistory.length - 1].price;
             currPrice += item.priceHistory[0].price;
-            link += item.id + ";";
+            link += item.store + item.id + ";";
         }
         const increase = oldPrice != 0 ? Math.round((currPrice - oldPrice) / oldPrice * 100) : 0;
 
