@@ -955,8 +955,8 @@ function vectorizeItems(items) {
     items.forEach(item => {
         let name = item.name.toLowerCase().replace(/[^\w\s]|_/g, "").replace("-", " ");
         item.tokens = name.split(/\s+/).map(token => stem(token));
-        item.tokens.push("" + item.quantity);
-        item.tokens.push(item.unit);
+        if (item.quantity) item.tokens.push("" + item.quantity);
+        if (item.unit) item.tokens.push(item.unit);
         item.vector = vector(item.tokens);
     });
 }
