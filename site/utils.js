@@ -39,6 +39,11 @@ const stores = {
         budgetBrands: ["jeden tag", "unipur"],
         color: "rgb(179, 217, 255)",
     },
+    reweDe: {
+        name: "REWE DE",
+        budgetBrands: ["ja!"],
+        color: "rgb(236 231 225)"
+    }
 };
 
 const STORE_KEYS = Object.keys(stores);
@@ -140,6 +145,9 @@ function decompress(compressedItems) {
                 break;
             case "unimarkt":
                 url = "https://shop.unimarkt.at" + url;
+                break;
+            case "reweDe":
+                url = "https://shop.rewe.de/p/" + name.toLowerCase().replace(/ /g, "-") + "/" + id;
                 break;
         }
 
@@ -359,7 +367,7 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
             if (item.price > maxPrice) continue;
             if (
                 budgetBrands &&
-                !BUDGET_BRANDS.some(budgetBrand => name.indexOf(budgetBrand) >= 0)
+                !stores[item.store].budgetBrands.some(budgetBrand => name.indexOf(budgetBrand) >= 0)
             ) continue;
             if (bio && !item.bio) continue;
             hits.push(item);

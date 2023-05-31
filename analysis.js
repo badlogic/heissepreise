@@ -131,6 +131,9 @@ function compress(items) {
             case "unimarkt":
                 data.push(item.url?.replace("https://shop.unimarkt.at", ""));
                 break;
+            case "reweDe":
+                data.push("");
+                break;
         }
     }
     return compressed;
