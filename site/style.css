@@ -148,6 +148,10 @@ td:nth-child(4) {
     text-align: left;
 }
 
+.cartactions > * {
+    margin: 0 0.1em;
+}
+
 .itemname {
     word-wrap: break-word;
     word-break: break-all;

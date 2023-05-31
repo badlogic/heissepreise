@@ -1,14 +1,5 @@
-function downloadFile(filename, content) {
-    const blob = new Blob([content], { type: 'text/plain' });
-    const element = document.createElement('a');
-    element.href = URL.createObjectURL(blob);
-    element.download = filename;
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-    URL.revokeObjectURL(element.href);
-}
+const shoppingCarts = new ShoppingCarts();
+shoppingCarts.load();
 
 async function load() {
     const items = await loadItems();
@@ -135,10 +126,19 @@ function showCarts(lookup) {
         priceDom.setAttribute("data-label", "Preis");
         row.appendChild(priceDom);
 
-        const actionsDom = dom("td", ``);
+        const actionsDom = dom("div", "");
+        actionsDom.classList.add("cartactions")
         const linkDom = dom("a", "Teilen");
         linkDom.setAttribute("href", "cart.html?cart=" + link);
         actionsDom.appendChild(linkDom);
+
+        const jsonDom = dom("a", "JSON");
+        jsonDom.setAttribute("href", "");
+        jsonDom.addEventListener("click", (event) => {
+            event.preventDefault();
+            downloadFile(cart.name + ".json", JSON.stringify(cart, null, 2));
+        })
+        actionsDom.appendChild(jsonDom);
 
         if (cart.name != "Momentum Eigenmarken Vergleich") {
             let deleteButton = dom("input");
@@ -151,7 +151,9 @@ function showCarts(lookup) {
                 showCarts(lookup);
             });
         }
-        row.appendChild(actionsDom);
+        const actionsCell = dom("td", "");
+        actionsCell.append(actionsDom);
+        row.appendChild(actionsCell);
         cartsTable.appendChild(row);
     });
 }
