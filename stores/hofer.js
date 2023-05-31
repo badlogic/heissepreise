@@ -3,51 +3,33 @@ const utils = require("./utils");
 
 const conversions = {
     "": {unit: "stk", factor: 1},
-    "Blatt": {unit: "stk", factor: 1},
+    "blatt": {unit: "stk", factor: 1},
     "g": {unit: "g", factor: 1},
     "gg": {unit: "g", factor: 1},
     "gramm": {unit: "g", factor: 1},
     "kg": {unit: "g", factor: 1000},
-    "KG": {unit: "g", factor: 1000},
     "cl": {unit: "ml", factor: 100},
     "l": {unit: "ml", factor: 1000},
-    "L": {unit: "ml", factor: 1000},
     "ml": {unit: "ml", factor: 1},
-    "Paar": {unit: "stk", factor: 1},
-    "Stk.": {unit: "stk", factor: 1},
+    "paar": {unit: "stk", factor: 1},
+    "stk.": {unit: "stk", factor: 1},
     "stück": {unit: "stk", factor: 1},
-    "Stück": {unit: "stk", factor: 1},
     "er": {unit: "stk", factor: 1},
-    "Teebeutel": {unit: "stk", factor: 1},
+    "teebeutel": {unit: "stk", factor: 1},
 };
 
 exports.getCanonical = function(item, today) {
     // try to read quantity and unit from product name
-    let unit, quantity = 1;
     const name = item.ProductName;
-    const nameTokens = name.trim().replaceAll('(','').replaceAll(')','').replaceAll(',', '.').split(' ');
-    const lastToken = nameTokens[nameTokens.length-1];
-    const secondLastToken = nameTokens.length > 2 ? nameTokens[nameTokens.length-2] : null;
-    const regex = /^([0-9.x]+)(.*)$/;
-    const matches = lastToken.match(regex);
-    if(matches) {
-      matches[1].split('x').forEach( (q)=> {
-        quantity = quantity * parseFloat(q)
-      })
-      unit = matches[2];
-    }
-    else if(secondLastToken !== null && secondLastToken.match(/^([0-9.]+)$/)) {
-      quantity = parseFloat(secondLastToken)
-      unit = lastToken;
-    }
-    else {
+    let [quantity, unit] = utils.parseUnitAndQuantityAtEnd(name);
+    if(conversions[unit] === undefined) {
         // fallback: use given quantity and unit (including packaging)
         quantity = item.Unit
         unit= item.UnitType
     }
     return utils.convertUnit({
         id: item.ProductID,
-        name: item.ProductName,
+        name,
         price: item.Price,
         priceHistory: [{ date: today, price: item.Price }],
         isWeighted: item.IsBulk,
