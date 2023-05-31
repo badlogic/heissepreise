@@ -29,6 +29,11 @@ const stores = {
         budgetBrands: ["balea"],
         color: "rgb(255 240 230)",
     },
+    dmDe: {
+        name: "DM DE",
+        budgetBrands: ["balea"],
+        color: "rgb(236 254 253)",
+    },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
@@ -117,6 +122,9 @@ function decompress(compressedItems) {
                 break;
             case "dm":
                 url = `https://www.dm.at/product-p${id}.html`;
+                break;
+            case "dmDe":
+                url = `https://www.dm.de/product-p${id}.html`;
                 break;
             case "hofer":
                 url = "https://www.roksh.at/hofer/produkte/" + url;
@@ -473,7 +481,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     return () => search(searchInput.value);
 }
 
-function showChart(canvasDom, items) {
+function showChart(canvasDom, items, chartType) {
     if (items.length == 0) {
         canvasDom.style.display = "none";
         return;
@@ -508,9 +516,13 @@ function showChart(canvasDom, items) {
     });
 
     const ctx = canvasDom.getContext('2d');
-    if (canvasDom.lastChart) canvasDom.lastChart.destroy();
+    let scrollTop = -1;
+    if (canvasDom.lastChart) {
+        scrollTop = document.documentElement.scrollTop;
+        canvasDom.lastChart.destroy();
+    }
     canvasDom.lastChart = new Chart(ctx, {
-        type: 'line',
+        type: chartType ? chartType : 'line',
         data: {
             labels: uniqueDates,
             datasets: datasets
@@ -528,10 +540,19 @@ function showChart(canvasDom, items) {
             }
         }
     });
+    if (scrollTop != -1)
+        document.documentElement.scrollTop = scrollTop;
 }
 
-function calculateOverallPriceChanges(items) {
+function calculateOverallPriceChanges(items, todayOnly) {
     if (items.length == 0) return { dates: [], changes: [] };
+
+    if (todayOnly) {
+        let sum = 0;
+        for (item of items) sum += item.price;
+        return [{ date: currentDate(), price: sum }];
+    }
+
     const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
     const uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
