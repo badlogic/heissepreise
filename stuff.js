@@ -277,13 +277,13 @@ function clownCompress(dataDir) {
 
 const clustering = require("./site/utils");
 
-let items = JSON.parse(fs.readFileSync("palmolive.json"));
+/*let items = JSON.parse(fs.readFileSync("palmolive.json"));
 clustering.vectorizeItems(items);
 let originalItems = JSON.parse(JSON.stringify(items));
 let sortedItems = clustering.similaritySortItems(items);
 for (item of sortedItems) {
     console.log(`${item.store} - ${item.name} - ${item.quantity} ${item.unit}`);
-}
+}*/
 
 /* let clusters = clustering.cluster(items);
  let clusters = clustering.cluster(JSON.parse(fs.readFileSync("kellyssmall.json")));
@@ -299,3 +299,8 @@ for (cluster of clusters) {
 // convertDossierData("data", "spar-2020.csv");
 // convertDossierData("data", "billa-2020.csv");
 
+(async () => {
+    // let items = await stores.reweDe.fetchData();
+    let items = JSON.parse(fs.readFileSync("tmp/reweDe-2023-05-31.json"));
+    for (item of items) stores.reweDe.getCanonical(item)
+})();
