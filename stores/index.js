@@ -6,3 +6,4 @@ exports.lidl = require("./lidl");
 exports.mpreis = require("./mpreis");
 exports.spar = require("./spar");
 exports.unimarkt = require("./unimarkt");
+exports.penny = require("./penny");

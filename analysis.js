@@ -112,6 +112,9 @@ function compress(items) {
             case "billa":
                 data.push(item.url?.replace("https://shop.billa.at", ""));
                 break;
+            case "penny":
+                data.push(item.url?.replace("https://www.penny.at", ""));
+                break;
             case "dm":
             case "dmDe":
                 data.push("");

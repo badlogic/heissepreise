@@ -39,6 +39,12 @@ const stores = {
         budgetBrands: ["jeden tag", "unipur"],
         color: "rgb(179, 217, 255)",
     },
+    penny: {
+        name: "Penny",
+        budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
+        color: "rgb(255, 180, 180)",
+    }
+
 };
 
 const STORE_KEYS = Object.keys(stores);
@@ -141,6 +147,10 @@ function decompress(compressedItems) {
             case "unimarkt":
                 url = "https://shop.unimarkt.at" + url;
                 break;
+            case "penny":
+                url = "https://www.penny.at" + url;
+                break;
+		
         }
 
         items.push({
@@ -181,7 +191,7 @@ async function loadItems() {
 
     now = performance.now();
     for (const item of items) {
-        item.search = item.name + " " + item.quantity + " " + item.unit;
+        item.search = item.name + " " + item.quantity + " "  + item.unit;
         item.search = item.search.toLowerCase().replace(",", ".");
 
         item.numPrices = item.priceHistory.length;
@@ -258,6 +268,10 @@ class ShoppingCarts {
     }
 }
 
+const shoppingCarts = new ShoppingCarts();
+shoppingCarts.load();
+
+
 function itemToStoreLink(item) {
     if (STORE_KEYS.includes(item.store)) {
         return `<a target="_blank" class="itemname itemname--${item.store}" rel="noopener noreferrer nofollow" href="${item.url}">${item.name}</a>`
@@ -272,7 +286,7 @@ function itemToDOM(item) {
     nameDom.setAttribute("data-label", "Name");
     let quantity = item.quantity || ""
     let unit = item.unit || "";
-    if (quantity >= 1000 && (unit == 'g' || unit == 'ml')) {
+    if(quantity >= 1000 && (unit == 'g' || unit == 'ml')) {
         quantity = parseFloat((0.001 * quantity).toFixed(2));
         unit = unit == 'ml' ? 'l' : 'kg';
     }
@@ -373,10 +387,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-        <div class="filters">
-            <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
-            <a id="json-${id}" href="" class="hide">JSON</a>
-        </div>
+        <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
         <div class="filters filters--store">
             ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
         </div>
@@ -389,18 +400,12 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
             <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
         </div>
-        <label style="margin-bottom: 1em">Sortieren <select id="sort-${id}">
-            <option value="priceasc">Preis aufsteigend</option>
-            <option value="pricedesc">Preis absteigend</option>
-            <option value="namesim">Namensähnlichkeit</option>
-        </select></label>
         <div id="numresults-${id}"></div>
         <table id="result-${id}" class="searchresults"></table>
     `;
 
     const searchInput = parentElement.querySelector(`#search-${id}`);
     const queryLink = parentElement.querySelector(`#querylink-${id}`);
-    const jsonLink = parentElement.querySelector(`#json-${id}`);
     const exact = parentElement.querySelector(`#exact-${id}`);
     const table = parentElement.querySelector(`#result-${id}`);
     const budgetBrands = parentElement.querySelector(`#budgetBrands-${id}`);
@@ -409,26 +414,17 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const minPrice = parentElement.querySelector(`#minprice-${id}`);
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
     const numResults = parentElement.querySelector(`#numresults-${id}`);
-    const sort = parentElement.querySelector(`#sort-${id}`);
-
-    let lastHits = [];
-    jsonLink.addEventListener("click", (event) => {
-        event.preventDefault();
-        downloadFile("items.json", JSON.stringify(lastHits, null, 2));
-    })
 
     const setQuery = () => {
         const query = searchInput.value.trim();
         if (query.length === 0) {
             queryLink.classList.add("hide");
-            jsonLink.classList.add("hide");
             return;
         }
         queryLink.classList.remove("hide");
-        jsonLink.classList.remove("hide");
         const inputs = [...table.querySelectorAll("input:checked")];
         const checked = inputs.length ? inputs.map(item => item.dataset.id) : getQueryParameter("c");
-        queryLink.setAttribute("href", `/?q=${encodeURIComponent(query)}${checked?.length ? `&c=${checked.join("&c=")}` : ""}`)
+        queryLink.setAttribute("href", `/?q=${encodeURIComponent(query)}${checked?.length ? `&c=${checked.join("&c=")}`: "" }`)
     };
 
     let search = (query) => {
@@ -437,7 +433,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         try {
             hits = searchItems(items, query,
                 STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked),
-                budgetBrands.checked, toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked, bio.checked, sort.value
+                budgetBrands.checked, toNumber(minPrice.value, 0), toNumber(maxPrice.value, 100), exact.checked, bio.checked
             );
         } catch (e) {
             console.log("Query: " + query + "\n" + e.message);
@@ -450,16 +446,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             numResults.innerHTML = "Resultate: 0";
             return;
         }
-        if (query.trim().charAt(0) != "!" || (query.trim().toLowerCase().indexOf("order by") == -1)) {
-            if (sort.value == "priceasc") {
-                hits.sort((a, b) => a.price - b.price);
-            } else if (sort.value == "pricedesc") {
-                hits.sort((a, b) => b.price - a.price);
-            } else {
-                vectorizeItems(hits);
-                hits = similaritySortItems(hits);
-            }
-        }
+        if (query.trim().charAt(0) != "!") hits.sort((a, b) => a.price - b.price);
 
         let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
         if (headerModifier) header = headerModifier(header);
@@ -469,17 +456,15 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
         now = performance.now();
         let num = 0;
-        let limit = isMobile() ? 500 : 5000;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
             table.appendChild(itemDom);
             num++;
-            return num < limit;
+            return num < 500;
         });
         console.log("Building DOM took: " + (performance.now() - now) / 1000.0 + " secs");
         numResults.innerHTML = "Resultate: " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
-        lastHits = hits;
     }
 
     searchInput.addEventListener("input", (event) => {
@@ -499,10 +484,9 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
     storeCheckboxes.map(store => store.addEventListener("change", () => search(searchInput.value)));
-    sort.addEventListener("change", () => search(searchInput.value));
+    exact.addEventListener("change", () => search(searchInput.value));
     minPrice.addEventListener("change", () => search(searchInput.value));
     maxPrice.addEventListener("change", () => search(searchInput.value));
-    exact.addEventListener("change", () => search(searchInput.value))
 
     return () => search(searchInput.value);
 }
@@ -542,11 +526,7 @@ function showChart(canvasDom, items, chartType) {
     });
 
     const ctx = canvasDom.getContext('2d');
-    let scrollTop = -1;
-    if (canvasDom.lastChart) {
-        scrollTop = document.documentElement.scrollTop;
-        canvasDom.lastChart.destroy();
-    }
+    if (canvasDom.lastChart) canvasDom.lastChart.destroy();
     canvasDom.lastChart = new Chart(ctx, {
         type: chartType ? chartType : 'line',
         data: {
@@ -566,19 +546,10 @@ function showChart(canvasDom, items, chartType) {
             }
         }
     });
-    if (scrollTop != -1)
-        document.documentElement.scrollTop = scrollTop;
 }
 
-function calculateOverallPriceChanges(items, todayOnly) {
+function calculateOverallPriceChanges(items) {
     if (items.length == 0) return { dates: [], changes: [] };
-
-    if (todayOnly) {
-        let sum = 0;
-        for (item of items) sum += item.price;
-        return [{ date: currentDate(), price: sum }];
-    }
-
     const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
     const uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
@@ -611,455 +582,4 @@ function calculateOverallPriceChanges(items, todayOnly) {
     }
 
     return priceChanges;
-}
-
-function downloadFile(filename, content) {
-    const blob = new Blob([content], { type: 'text/plain' });
-    const element = document.createElement('a');
-    element.href = URL.createObjectURL(blob);
-    element.download = filename;
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-    URL.revokeObjectURL(element.href);
-}
-
-/* by Joder Illi, Snowball mailing list */
-function stem(word) {
-    /*
-    Put u and y between vowels into upper case
-    */
-    word = word.replace(/([aeiouyäöü])u([aeiouyäöü])/g, '$1U$2');
-    word = word.replace(/([aeiouyäöü])y([aeiouyäöü])/g, '$1Y$2');
-
-    /*
-    and then do the following mappings,
-    (a) replace ß with ss,
-    (a) replace ae with ä, Not doing these,
-    have trouble with diphtongs
-    (a) replace oe with ö, Not doing these,
-    have trouble with diphtongs
-    (a) replace ue with ü unless preceded by q. Not doing these,
-    have trouble with diphtongs
-    So in quelle, ue is not mapped to ü because it follows q, and in
-    feuer it is not mapped because the first part of the rule changes it to
-    feUer, so the u is not found.
-    */
-    word = word.replace(/ß/g, 'ss');
-    //word = word.replace(/ae/g, 'ä');
-    //word = word.replace(/oe/g, 'ö');
-    //word = word.replace(/([^q])ue/g, '$1ü');
-
-    /*
-    R1 and R2 are first set up in the standard way (see the note on R1
-    and R2), but then R1 is adjusted so that the region before it contains at
-    least 3 letters.
-    R1 is the region after the first non-vowel following a vowel, or is
-    the null region at the end of the word if there is no such non-vowel.
-    R2 is the region after the first non-vowel following a vowel in R1,
-    or is the null region at the end of the word if there is no such non-vowel.
-    */
-
-    var r1Index = word.search(/[aeiouyäöü][^aeiouyäöü]/);
-    var r1 = '';
-    if (r1Index != -1) {
-        r1Index += 2;
-        r1 = word.substring(r1Index);
-    }
-
-    var r2Index = -1;
-    var r2 = '';
-
-    if (r1Index != -1) {
-        var r2Index = r1.search(/[aeiouyäöü][^aeiouyäöü]/);
-        if (r2Index != -1) {
-            r2Index += 2;
-            r2 = r1.substring(r2Index);
-            r2Index += r1Index;
-        } else {
-            r2 = '';
-        }
-    }
-
-    if (r1Index != -1 && r1Index < 3) {
-        r1Index = 3;
-        r1 = word.substring(r1Index);
-    }
-
-    /*
-    Define a valid s-ending as one of b, d, f, g, h, k, l, m, n, r or t.
-    Define a valid st-ending as the same list, excluding letter r.
-    */
-
-    /*
-    Do each of steps 1, 2 and 3.
-    */
-
-    /*
-    Step 1:
-    Search for the longest among the following suffixes,
-    (a) em ern er
-    (b) e en es
-    (c) s (preceded by a valid s-ending)
-    */
-    var a1Index = word.search(/(em|ern|er)$/g);
-    var b1Index = word.search(/(e|en|es)$/g);
-    var c1Index = word.search(/([bdfghklmnrt]s)$/g);
-    if (c1Index != -1) {
-        c1Index++;
-    }
-    var index1 = 10000;
-    var optionUsed1 = '';
-    if (a1Index != -1 && a1Index < index1) {
-        optionUsed1 = 'a';
-        index1 = a1Index;
-    }
-    if (b1Index != -1 && b1Index < index1) {
-        optionUsed1 = 'b';
-        index1 = b1Index;
-    }
-    if (c1Index != -1 && c1Index < index1) {
-        optionUsed1 = 'c';
-        index1 = c1Index;
-    }
-
-    /*
-    and delete if in R1. (Of course the letter of the valid s-ending is
-    not necessarily in R1.) If an ending of group (b) is deleted, and the ending
-    is preceded by niss, delete the final s.
-    (For example, äckern -> äck, ackers -> acker, armes -> arm,
-    bedürfnissen -> bedürfnis)
-    */
-
-    if (index1 != 10000 && r1Index != -1) {
-        if (index1 >= r1Index) {
-            word = word.substring(0, index1);
-            if (optionUsed1 == 'b') {
-                if (word.search(/niss$/) != -1) {
-                    word = word.substring(0, word.length - 1);
-                }
-            }
-        }
-    }
-    /*
-    Step 2:
-    Search for the longest among the following suffixes,
-    (a) en er est
-    (b) st (preceded by a valid st-ending, itself preceded by at least 3
-    letters)
-    */
-
-    var a2Index = word.search(/(en|er|est)$/g);
-    var b2Index = word.search(/(.{3}[bdfghklmnt]st)$/g);
-    if (b2Index != -1) {
-        b2Index += 4;
-    }
-
-    var index2 = 10000;
-    var optionUsed2 = '';
-    if (a2Index != -1 && a2Index < index2) {
-        optionUsed2 = 'a';
-        index2 = a2Index;
-    }
-    if (b2Index != -1 && b2Index < index2) {
-        optionUsed2 = 'b';
-        index2 = b2Index;
-    }
-
-    /*
-    and delete if in R1.
-    (For example, derbsten -> derbst by step 1, and derbst -> derb by
-    step 2, since b is a valid st-ending, and is preceded by just 3 letters)
-    */
-
-    if (index2 != 10000 && r1Index != -1) {
-        if (index2 >= r1Index) {
-            word = word.substring(0, index2);
-        }
-    }
-
-    /*
-    Step 3: d-suffixes (*)
-    Search for the longest among the following suffixes, and perform the
-    action indicated.
-    end ung
-    delete if in R2
-    if preceded by ig, delete if in R2 and not preceded by e
-    ig ik isch
-    delete if in R2 and not preceded by e
-    lich heit
-    delete if in R2
-    if preceded by er or en, delete if in R1
-    keit
-    delete if in R2
-    if preceded by lich or ig, delete if in R2
-    */
-
-    var a3Index = word.search(/(end|ung)$/g);
-    var b3Index = word.search(/[^e](ig|ik|isch)$/g);
-    var c3Index = word.search(/(lich|heit)$/g);
-    var d3Index = word.search(/(keit)$/g);
-    if (b3Index != -1) {
-        b3Index++;
-    }
-
-    var index3 = 10000;
-    var optionUsed3 = '';
-    if (a3Index != -1 && a3Index < index3) {
-        optionUsed3 = 'a';
-        index3 = a3Index;
-    }
-    if (b3Index != -1 && b3Index < index3) {
-        optionUsed3 = 'b';
-        index3 = b3Index;
-    }
-    if (c3Index != -1 && c3Index < index3) {
-        optionUsed3 = 'c';
-        index3 = c3Index;
-    }
-    if (d3Index != -1 && d3Index < index3) {
-        optionUsed3 = 'd';
-        index3 = d3Index;
-    }
-
-    if (index3 != 10000 && r2Index != -1) {
-        if (index3 >= r2Index) {
-            word = word.substring(0, index3);
-            var optionIndex = -1;
-            var optionSubsrt = '';
-            if (optionUsed3 == 'a') {
-                optionIndex = word.search(/[^e](ig)$/);
-                if (optionIndex != -1) {
-                    optionIndex++;
-                    if (optionIndex >= r2Index) {
-                        word = word.substring(0, optionIndex);
-                    }
-                }
-            } else if (optionUsed3 == 'c') {
-                optionIndex = word.search(/(er|en)$/);
-                if (optionIndex != -1) {
-                    if (optionIndex >= r1Index) {
-                        word = word.substring(0, optionIndex);
-                    }
-                }
-            } else if (optionUsed3 == 'd') {
-                optionIndex = word.search(/(lich|ig)$/);
-                if (optionIndex != -1) {
-                    if (optionIndex >= r2Index) {
-                        word = word.substring(0, optionIndex);
-                    }
-                }
-            }
-        }
-    }
-
-    /*
-    Finally,
-    turn U and Y back into lower case, and remove the umlaut accent from
-    a, o and u.
-    */
-    word = word.replace(/U/g, 'u');
-    word = word.replace(/Y/g, 'y');
-    word = word.replace(/ä/g, 'a');
-    word = word.replace(/ö/g, 'o');
-    word = word.replace(/ü/g, 'u');
-
-    return word;
-}
-
-function vector(tokens) {
-    const vector = {};
-    /*for (const token of tokens) {
-        vector[token] = (vector[token] || 0) + 1;
-    }*/
-    for (token of tokens) {
-        if (token.length > 3) {
-            for (let i = 0; i < token.length - 3; i++) {
-                let trigram = token.substring(i, i + 3);
-                vector[trigram] = (vector[trigram] || 0) + 1;
-            }
-        } else {
-            vector[token] = (vector[token] || 0) + 1;
-        }
-    }
-    normalizeVector(vector);
-    return vector;
-}
-
-function dotProduct(vector1, vector2) {
-    let product = 0;
-    for (const key in vector1) {
-        if (vector2.hasOwnProperty(key)) {
-            product += vector1[key] * vector2[key];
-        }
-    }
-    return product;
-}
-
-function addVector(vector1, vector2) {
-    for (const key in vector2) {
-        vector1[key] = (vector1[key] || 0) + vector2[key];
-    }
-}
-
-function scaleVector(vector, scalar) {
-    for (const key in vector) {
-        vector[key] *= scalar;
-    }
-}
-
-function normalizeVector(vector) {
-    const len = magnitude(vector);
-    for (const key in vector) {
-        vector[key] /= len;
-    }
-}
-
-function magnitude(vector) {
-    let sumOfSquares = 0;
-    for (const key in vector) {
-        sumOfSquares += vector[key] ** 2;
-    }
-    return Math.sqrt(sumOfSquares);
-}
-
-function deepCopy(obj) {
-    return JSON.parse(JSON.stringify(obj));
-}
-
-function similaritySortItems(items) {
-    if (items.length == 0) return items;
-    sortedItems = [items.shift()];
-    let refItem = sortedItems[0];
-    while (items.length > 0) {
-        let maxSimilarity = -1;
-        let similarItem = null;
-        let similarItemIdx = -1;
-        items.forEach((item, idx) => {
-            let similarity = dotProduct(refItem.vector, item.vector);
-            if (similarity > maxSimilarity) {
-                maxSimilarity = similarity;
-                similarItem = item;
-                similarItemIdx = idx;
-            }
-        });
-        sortedItems.push(similarItem);
-        items.splice(similarItemIdx, 1);
-        refItem = similarItem;
-    }
-    return sortedItems;
-}
-
-function vectorizeItems(items) {
-    items.forEach(item => {
-        let name = item.name.toLowerCase().replace(/[^\w\s]|_/g, "").replace("-", " ");
-        item.tokens = name.split(/\s+/).map(token => stem(token));
-        if (item.quantity) item.tokens.push("" + item.quantity);
-        if (item.unit) item.tokens.push(item.unit);
-        item.vector = vector(item.tokens);
-    });
-}
-
-function cluster(items, maxTime) {
-    if (!maxTime) maxTime = 0.250;
-
-    // Tokenize, stem, and vectorize item names
-    vectorizeItems(items);
-
-    // Split by store and sort by number of items in descending order
-    const itemsPerStore = [];
-    for (const store of STORE_KEYS) {
-        const storeItems = items.filter(item => item.store === store);
-        if (storeItems.length > 0) itemsPerStore.push(storeItems);
-    }
-    itemsPerStore.sort((a, b) => b.length - a.length);
-    itemsPerStore.forEach(items => console.log(items[0].store + ", " + items.length));
-
-    // Take the store with the most items, then try to find the best match
-    // from each of the other stores
-    const baseStore = itemsPerStore.shift()
-    itemsPerStore.push(baseStore);
-    const otherItems = itemsPerStore.flat();
-
-    let clusters = [];
-    for (item of baseStore) {
-        clusters.push({ centroid: deepCopy(item.vector), item, items: [] });
-    }
-
-    const now = performance.now();
-    let maxIterations = 100;
-    while (maxIterations-- > 0) {
-        for (item of otherItems) {
-            let maxSimilarity = -1;
-            let nearestCluster = null;
-            for (cluster of clusters) {
-                const similarity = dotProduct(cluster.centroid, item.vector);
-                if (similarity > maxSimilarity) {
-                    maxSimilarity = similarity;
-                    nearestCluster = cluster;
-                    item.similarity = similarity;
-                }
-            }
-            nearestCluster.items.push(item);
-        }
-
-        const newClusters = [];
-        for (cluster of clusters) {
-            const newCluster = { centroid: {}, item: cluster.item, items: [] }
-            for (item of cluster.items) {
-                addVector(newCluster.centroid, item.vector);
-            }
-            if (cluster.items.length > 0) {
-                scaleVector(newCluster.centroid, 1 / cluster.items.length);
-                normalizeVector(newCluster.centroid);
-            }
-            newClusters.push(newCluster);
-        }
-
-        const time = (performance.now() - now) / 1000
-        console.log(maxIterations + ", time " + time);
-        if (JSON.stringify(clusters) == JSON.stringify(newClusters) || maxIterations == 1 || time > maxTime) {
-            break;
-        }
-
-        clusters = newClusters;
-    }
-
-    const finalClusters = [];
-    for (cluster of clusters) {
-        cluster.items = similaritySortItems(cluster.items);
-        finalClusters.push(cluster);
-    }
-
-    return finalClusters;
-}
-
-function flattenClusters(clusters) {
-    const items = []
-    for (cluster of clusters) {
-        for (item of cluster.items) {
-            items.push(item);
-        }
-    }
-    return items;
-}
-
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-try {
-    exports.vector = vector;
-    exports.dotProduct = dotProduct;
-    exports.addVector = addVector;
-    exports.scaleVector = scaleVector;
-    exports.normalizeVector = normalizeVector;
-    exports.stem = stem;
-    exports.cluster = cluster;
-    exports.flattenClusters = flattenClusters;
-    exports.vectorizeItems = vectorizeItems;
-    exports.similaritySortItems = similaritySortItems;
-} catch (e) {
-    // hax
 }
