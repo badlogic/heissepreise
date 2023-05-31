@@ -170,7 +170,7 @@ function convertDossierData(dataDir, file) {
     lines.next()
     let itemsTotal = 0;
     let notFound = 0;
-    while(line = lines.next()) {
+    while (line = lines.next()) {
         itemsTotal++;
         const tokens = line.toString("utf-8").split(";");
         const dateTokens = tokens[0].split(".");
@@ -274,8 +274,27 @@ function clownCompress(dataDir) {
     fs.writeFileSync(`${dataDir}/clown.json`, JSON.stringify(compressed));
 }
 
-clownCompress("data");
 
+const clustering = require("./site/utils");
+
+let items = JSON.parse(fs.readFileSync("palmolive.json"));
+clustering.vectorizeItems(items);
+let originalItems = JSON.parse(JSON.stringify(items));
+let sortedItems = clustering.similaritySortItems(items);
+for (item of sortedItems) {
+    console.log(`${item.store} - ${item.name} - ${item.quantity} ${item.unit}`);
+}
+
+/* let clusters = clustering.cluster(items);
+ let clusters = clustering.cluster(JSON.parse(fs.readFileSync("kellyssmall.json")));
+for (cluster of clusters) {
+    for (item of cluster.items) {
+        console.log(`${item.store} - ${item.name} - ${item.quantity} ${item.unit} - ${item.similarity}`);
+    }
+    console.log("--------");
+}*/
+
+// clownCompress("data");
 // momentumCartConversion();
 // convertDossierData("data", "spar-2020.csv");
 // convertDossierData("data", "billa-2020.csv");

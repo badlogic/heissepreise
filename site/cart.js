@@ -1,3 +1,6 @@
+const shoppingCarts = new ShoppingCarts();
+shoppingCarts.load();
+
 async function load() {
     const items = await loadItems();
     const lookup = {};
