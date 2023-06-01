@@ -65,12 +65,13 @@ async function load() {
         });
     const query = getQueryParameter("q");
     if (query) {
-        document.querySelector("input").value = query;
+
+        document.querySelector(".search").value = query;
         const inputEvent = new Event('input', {
             bubbles: true,
             cancelable: false
         });
-        document.querySelector("input").dispatchEvent(inputEvent);
+        document.querySelector(".search").dispatchEvent(inputEvent);
     }
 }
 
