@@ -67,6 +67,10 @@ async function load() {
     document.querySelector("#sum").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
     document.querySelector("#sumstores").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
     document.querySelector("#todayonly").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
+    document.querySelector("#start").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
+    document.querySelector("#end").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
+    document.querySelector("#start").value = getOldestDate(cart.items);
+    document.querySelector("#end").value = currentDate();
 
     const filtersStore = document.querySelector("#filters-store");
     filtersStore.innerHTML = STORE_KEYS.map(store => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
@@ -103,6 +107,8 @@ function showSearch(cart, items) {
         cell.children[0].addEventListener("click", () => {
             cart.items.push(item);
             shoppingCarts.save();
+            document.querySelector("#start").value = getOldestDate(cart.items);
+            document.querySelector("#end").value = currentDate();
             showCart(cart);
         });
         itemDom.appendChild(cell);
@@ -111,7 +117,22 @@ function showSearch(cart, items) {
 }
 
 function updateCharts(canvasDom, items) {
-    showCharts(canvasDom, items, document.querySelector("#sum").checked, document.querySelector("#sumstores").checked, document.querySelector("#todayonly").checked);
+    let startDate = document.querySelector("#start").value;
+    let endDate = document.querySelector("#end").value;
+    if (start > endDate) {
+        let tmp = start;
+        start = endDate;
+        endDate = tmp;
+    }
+    showCharts(
+        canvasDom,
+        items,
+        document.querySelector("#sum").checked,
+        document.querySelector("#sumstores").checked,
+        document.querySelector("#todayonly").checked,
+        startDate,
+        endDate
+    );
 }
 
 function showCart(cart) {
@@ -156,6 +177,8 @@ function showCart(cart) {
             cell.children[1].addEventListener("click", () => {
                 cart.items.splice(idx, 1);
                 shoppingCarts.save();
+                document.querySelector("#start").value = getOldestDate(cart.items);
+                document.querySelector("#end").value = currentDate();
                 showCart(cart)
             });
 

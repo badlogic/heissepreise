@@ -17,7 +17,18 @@
             <a href="changes.html">Tagespreisänderungen</a>
             <a href="carts.html">Warenkörbe</a>
         </div>
-        <canvas id="chart" style="display: none;"></canvas>
+        <div id="chart" class="column hide" style="width: 80%">
+            <canvas></canvas>
+            <div class="filters" style="margin-top: 1em;">
+                <label><input type="checkbox" id="sum"> Preissumme Gesamt</label>
+                <label><input type="checkbox" id="sumstores"> Preissumme pro Kette</label>
+                <label><input type="checkbox" id="todayonly"> Nur heutige Preise</label>
+            </div>
+            <div>
+                <label>Von <input id="start" type="date"></label>
+                <label>Bis <input id="end"type="date"></label>
+            </div>
+        </div>
         <div id="search" class="column">
         </div>
     </div>

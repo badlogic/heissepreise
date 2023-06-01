@@ -486,7 +486,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
         now = performance.now();
         let num = 0;
-        let limit = isMobile() ? 500 : 2000;
+        let limit = 500; // isMobile() ? 500 : 2000;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
@@ -499,19 +499,23 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         lastHits = hits;
     }
 
+    let timeoutId;
     searchInput.addEventListener("input", (event) => {
-        const query = searchInput.value.trim();
-        if (query == 0) {
-            minPrice.value = 0;
-            maxPrice.value = 100;
-        }
-        if (query?.charAt(0) == "!") {
-            parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
-        } else {
-            parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
-        }
-        setQuery();
-        search(searchInput.value);
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            const query = searchInput.value.trim();
+            if (query == 0) {
+                minPrice.value = 0;
+                maxPrice.value = 100;
+            }
+            if (query?.charAt(0) == "!") {
+                parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
+            } else {
+                parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
+            }
+            setQuery();
+            search(searchInput.value);
+        }, 50);
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
@@ -587,13 +591,21 @@ function showChart(canvasDom, items, chartType) {
         document.documentElement.scrollTop = scrollTop;
 }
 
-function showCharts(canvasDom, items, sum, sumStores, todayOnly) {
+function getOldestDate(items) {
+    let oldestDate = "9999-01-01";
+    for (item of items) {
+        if (oldestDate > item.dateOldest) oldestDate = item.dateOldest;
+    }
+    return oldestDate;
+}
+
+function showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endDate) {
     let itemsToShow = [];
 
     if (sum && items.length > 0) {
         itemsToShow.push({
             name: "Preissumme Warenkorb",
-            priceHistory: calculateOverallPriceChanges(items, todayOnly)
+            priceHistory: calculateOverallPriceChanges(items, todayOnly, startDate, endDate)
         });
     }
 
@@ -603,20 +615,27 @@ function showCharts(canvasDom, items, sum, sumStores, todayOnly) {
             if (storeItems.length > 0) {
                 itemsToShow.push({
                     name: "Preissumme " + store,
-                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly)
+                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly, startDate, endDate)
                 });
             }
         });
     }
 
     items.forEach((item) => {
-        if (item.chart) itemsToShow.push({ name: item.store + " " + item.name, priceHistory: todayOnly ? [{date: currentDate(), price: item.price}] : item.priceHistory});
+        if (item.chart) {
+            itemsToShow.push({
+                name: item.store + " " + item.name,
+                priceHistory: todayOnly ?
+                    [{ date: currentDate(), price: item.price }] :
+                    item.priceHistory.filter(price => price.date >= startDate && price.date <= endDate)
+            });
+        }
     });
 
     showChart(canvasDom, itemsToShow, todayOnly ? "bar" : "line");
 }
 
-function calculateOverallPriceChanges(items, todayOnly) {
+function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
     if (items.length == 0) return { dates: [], changes: [] };
 
     if (todayOnly) {
@@ -626,8 +645,9 @@ function calculateOverallPriceChanges(items, todayOnly) {
     }
 
     const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
-    const uniqueDates = [...new Set(allDates)];
+    let uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
+    uniqueDates = uniqueDates.filter(date => date >= startDate && date <= endDate);
 
     const allPrices = items.map(product => {
         let price = null;
