@@ -89,6 +89,7 @@ function showResults(items, today) {
         }
         table.appendChild(itemToDOM(item));
     }
+    document.querySelector("#results").innerText = "Resultate: " + changedItems.length;
 }
 
 load();

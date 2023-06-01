@@ -1,10 +1,41 @@
+function updateCharts(canvasDom, items) {
+    const now =performance.now();
+    const sum = document.querySelector("#sum").checked;
+    const sumStores = document.querySelector("#sumstores").checked;
+    const todayOnly = document.querySelector("#todayonly").checked;
+    let startDate = document.querySelector("#start").value;
+    let endDate = document.querySelector("#end").value;
+    if (start > endDate) {
+        let tmp = start;
+        start = endDate;
+        endDate = tmp;
+    }
+    showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endDate);
+    console.log("Updating charts took: " + (performance.now() - now) / 1000 + " seconds");
+}
 async function load() {
     const items = await loadItems();
     const chartDom = document.querySelector("#chart");
+    const canvasDom = chartDom.querySelector("canvas");
+    let lastHits = null;
+    document.querySelector("#sum").addEventListener("change", () => updateCharts(canvasDom, lastHits));
+    document.querySelector("#sumstores").addEventListener("change", () => updateCharts(canvasDom, lastHits));
+    document.querySelector("#todayonly").addEventListener("change", () => updateCharts(canvasDom, lastHits));
+    document.querySelector("#start").addEventListener("change", () => updateCharts(canvasDom, lastHits));
+    document.querySelector("#end").addEventListener("change", () => updateCharts(canvasDom, lastHits));
+    document.querySelector("#start").value = getOldestDate(items);
+    document.querySelector("#end").value = currentDate();
+
     newSearchComponent(document.querySelector("#search"), items,
         (hits) => {
             items.forEach(item => item.chart = false);
-            showChart(chartDom, []);
+            if (hits.length > 0) {
+                chartDom.classList.remove("hide");
+            } else {
+                chartDom.classList.add("hide");
+            }
+            updateCharts(canvasDom, hits);
+            lastHits = hits;
             return hits;
         },
         null,
@@ -19,28 +50,16 @@ async function load() {
             })
             return header;
         }, (item, itemDom, items, setQuery) => {
-            const chartCheckbox = dom("input");
-            const checked = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`);
-            chartCheckbox.setAttribute("type", "checkbox");
-            chartCheckbox.checked = checked;
-            item.chart = checked;
-            chartCheckbox.setAttribute("data-id", `${item.store}:${item.id}`);
-            const cell = dom("td", "");
-            cell.appendChild(chartCheckbox);
+            const checked = item.chart = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`);
+            const dataId = item.store + ":" + item.id;
+            const cell = dom("td", `<input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">`);
             itemDom.appendChild(cell);
             const handleClick = (eventShouldSetQuery = false) =>{
-                item.chart = chartCheckbox.checked;
-                const data = [];
-                items.forEach(i => { if (i.chart) data.push(i) });
-                if (data.length == 0) {
-                    chartDom.style.display = "none";
-                } else {
-                    chartDom.style.display = "block";
-                    showChart(chartDom, data);
-                }
+                item.chart = cell.children[0].checked;
+                updateCharts(canvasDom, lastHits)
                 !!eventShouldSetQuery && setQuery();
             }
-            chartCheckbox.addEventListener("click", handleClick);
+            cell.children[0].addEventListener("click", handleClick);
             checked && handleClick();
             return itemDom;
         });
@@ -49,7 +68,7 @@ async function load() {
         document.querySelector("input").value = query;
         const inputEvent = new Event('input', {
             bubbles: true,
-            cancelable: true
+            cancelable: false
         });
         document.querySelector("input").dispatchEvent(inputEvent);
     }

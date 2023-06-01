@@ -7,3 +7,4 @@ exports.mpreis = require("./mpreis");
 exports.spar = require("./spar");
 exports.unimarkt = require("./unimarkt");
 exports.reweDe = require("./rewe-de");
+exports.penny = require("./penny");

@@ -43,6 +43,11 @@ const stores = {
         name: "REWE DE",
         budgetBrands: ["ja!"],
         color: "rgb(236 231 225)"
+    },
+    penny: {
+        name: "Penny",
+        budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
+        color: "rgb(255, 180, 180)",
     }
 };
 
@@ -200,6 +205,10 @@ async function loadItems() {
         let highestPriceBefore = -1;
         for (let i = 1; i < item.priceHistory.length; i++) {
             const price = item.priceHistory[i];
+            if (i < 10) {
+                item["price" + i] = price.price;
+                item["date" + i] = price.date;
+            }
             highestPriceBefore = Math.max(highestPriceBefore, price.price);
         }
         if (highestPriceBefore == -1) highestPriceBefore = item.price;
@@ -381,7 +390,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-        <div class="filters">
+        <div style="margin-bottom: 1em">
             <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
             <a id="json-${id}" href="" class="hide">JSON</a>
         </div>
@@ -389,7 +398,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
         </div>
         <div class="filters">
-            <label><input id="budgetBrands-${id}" type="checkbox"> Nur ${BUDGET_BRANDS.map(budgetBrand => budgetBrand.toUpperCase()).join(", ")}</label>
+            <label><input id="budgetBrands-${id}" type="checkbox"> Nur Billigeigenmarken (Clever, S-Budget, Milfina, Milboa, etc.)</label>
             <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
         </div>
         <div class="filters">
@@ -477,7 +486,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
         now = performance.now();
         let num = 0;
-        let limit = isMobile() ? 500 : 5000;
+        let limit = 500; // isMobile() ? 500 : 2000;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
@@ -490,19 +499,23 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         lastHits = hits;
     }
 
+    let timeoutId;
     searchInput.addEventListener("input", (event) => {
-        const query = searchInput.value.trim();
-        if (query == 0) {
-            minPrice.value = 0;
-            maxPrice.value = 100;
-        }
-        if (query?.charAt(0) == "!") {
-            parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
-        } else {
-            parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
-        }
-        setQuery();
-        search(searchInput.value);
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            const query = searchInput.value.trim();
+            if (query == 0) {
+                minPrice.value = 0;
+                maxPrice.value = 100;
+            }
+            if (query?.charAt(0) == "!") {
+                parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "none");
+            } else {
+                parentElement.querySelectorAll(".filters").forEach(f => f.style.display = "block");
+            }
+            setQuery();
+            search(searchInput.value);
+        }, 50);
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
@@ -578,7 +591,51 @@ function showChart(canvasDom, items, chartType) {
         document.documentElement.scrollTop = scrollTop;
 }
 
-function calculateOverallPriceChanges(items, todayOnly) {
+function getOldestDate(items) {
+    let oldestDate = "9999-01-01";
+    for (item of items) {
+        if (oldestDate > item.dateOldest) oldestDate = item.dateOldest;
+    }
+    return oldestDate;
+}
+
+function showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endDate) {
+    let itemsToShow = [];
+
+    if (sum && items.length > 0) {
+        itemsToShow.push({
+            name: "Preissumme Warenkorb",
+            priceHistory: calculateOverallPriceChanges(items, todayOnly, startDate, endDate)
+        });
+    }
+
+    if (sumStores && items.length > 0) {
+        STORE_KEYS.forEach(store => {
+            const storeItems = items.filter(item => item.store === store);
+            if (storeItems.length > 0) {
+                itemsToShow.push({
+                    name: "Preissumme " + store,
+                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly, startDate, endDate)
+                });
+            }
+        });
+    }
+
+    items.forEach((item) => {
+        if (item.chart) {
+            itemsToShow.push({
+                name: item.store + " " + item.name,
+                priceHistory: todayOnly ?
+                    [{ date: currentDate(), price: item.price }] :
+                    item.priceHistory.filter(price => price.date >= startDate && price.date <= endDate)
+            });
+        }
+    });
+
+    showChart(canvasDom, itemsToShow, todayOnly ? "bar" : "line");
+}
+
+function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
     if (items.length == 0) return { dates: [], changes: [] };
 
     if (todayOnly) {
@@ -588,8 +645,9 @@ function calculateOverallPriceChanges(items, todayOnly) {
     }
 
     const allDates = items.flatMap(product => product.priceHistory.map(item => item.date));
-    const uniqueDates = [...new Set(allDates)];
+    let uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
+    uniqueDates = uniqueDates.filter(date => date >= startDate && date <= endDate);
 
     const allPrices = items.map(product => {
         let price = null;
