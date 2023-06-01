@@ -64,20 +64,13 @@ async function load() {
     if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) showSearch(cart, items);
 
     const canvasDom = document.querySelector("#chart");
-    document.querySelector("#sum").addEventListener("change", () => {
-        showCharts(canvasDom, cart.items);
-    });
-    document.querySelector("#sumchain").addEventListener("change", () => {
-        showCharts(canvasDom, cart.items);
-    });
-    document.querySelector("#todayonly").addEventListener("change", () => {
-        showCharts(canvasDom, cart.items);
-    })
+    document.querySelector("#sum").addEventListener("change", () => showCharts(canvasDom, cart.items));
+    document.querySelector("#sumstores").addEventListener("change", () => showCharts(canvasDom, cart.items));
+    document.querySelector("#todayonly").addEventListener("change", () => showCharts(canvasDom, cart.items));
+
     const filtersStore = document.querySelector("#filters-store");
     filtersStore.innerHTML = STORE_KEYS.map(store => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
-    filtersStore.querySelectorAll("input").forEach(input => {
-        input.addEventListener("change", () => showCart(cart));
-    });
+    filtersStore.querySelectorAll("input").forEach(input => input.addEventListener("change", () => showCart(cart)));
     document.querySelector("#filter").addEventListener("input", () => showCart(cart));
     showCart(cart);
 }
@@ -102,31 +95,17 @@ function filter(cartItems) {
 function showSearch(cart, items) {
     const searchDom = document.querySelector("#search");
     searchDom.innerHTML = "";
-    newSearchComponent(searchDom, items, null, (item) => {
-        // This would filter all items in the cart from the search
-        // result.
-        /*for (let i = 0; i < cart.items.length; i++) {
-            const cartItem = cart.items[i];
-            if (cartItem.id == item.id) return false;
-        }*/
-        return true;
-    }, (header) => {
+    newSearchComponent(searchDom, items, null, null, (header) => {
         header.append(dom("th", ""));
         return header;
     }, (item, itemDom) => {
-        const addButton = dom("input");
-        addButton.setAttribute("type", "button");
-        addButton.setAttribute("value", "+");
-        const cell = dom("td", "");
-        cell.appendChild(addButton);
-        itemDom.appendChild(cell);
-
-        addButton.addEventListener("click", () => {
+        const cell = dom("td", `<input type="button" value="+">`);
+        cell.children[0].addEventListener("click", () => {
             cart.items.push(item);
             shoppingCarts.save();
             showCart(cart);
         });
-
+        itemDom.appendChild(cell);
         return itemDom;
     });
 }
@@ -142,7 +121,7 @@ function showCharts(canvasDom, items) {
         });
     }
 
-    if (document.querySelector("#sumchain").checked && items.length > 0) {
+    if (document.querySelector("#sumstores").checked && items.length > 0) {
         const storeCheckboxes = STORE_KEYS.map(store => document.querySelector(`#${store}`));
         const checkedStores = STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked)
 
@@ -161,7 +140,7 @@ function showCharts(canvasDom, items) {
         if (item.chart) itemsToShow.push({ name: item.store + " " + item.name, priceHistory: todayOnly ? [{date: currentDate(), price: item.price}] : item.priceHistory});
     });
 
-    showChart(canvasDom, itemsToShow, todayOnly ? "bar" : "line"); // document.querySelector("#charttype").value);
+    showChart(canvasDom, itemsToShow, todayOnly ? "bar" : "line");
 }
 
 function showCart(cart) {
@@ -188,58 +167,48 @@ function showCart(cart) {
     items.forEach((cartItem, idx) => {
         const itemDom = itemToDOM(cartItem)
 
-        const cell = dom("td", "");
-        const showCheckbox = dom("input", "");
-        showCheckbox.setAttribute("type", "checkbox");
-        if (cartItem.chart) showCheckbox.setAttribute("checked", true);
-        itemDom.append(showCheckbox);
-        showCheckbox.addEventListener("change", () => {
-            cartItem.chart = showCheckbox.checked;
+        const cell = dom("td", `
+            <input type="checkbox">
+            <input type="button" value="-">
+            <input type="button" value="⬆️">
+            <input type="button" value="⬇️">
+        `);
+
+        if (cartItem.chart) cell.children[0].setAttribute("checked", true);
+        cell.children[0].addEventListener("change", () => {
+            cartItem.chart = cell.children[0].checked;
             shoppingCarts.save();
-            showCharts(canvasDom, cart.items);
+            showCharts(canvasDom, items);
         });
-        cell.append(showCheckbox);
 
         if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) {
-            const deleteButton = dom("input", "");
-            deleteButton.setAttribute("type", "button");
-            deleteButton.setAttribute("value", "-");
-            itemDom.append(deleteButton);
-            deleteButton.addEventListener("click", () => {
+            cell.children[1].addEventListener("click", () => {
                 cart.items.splice(idx, 1);
                 shoppingCarts.save();
                 showCart(cart)
-            })
-            cell.appendChild(deleteButton);
+            });
 
-            const upButton = dom("input", "");
-            upButton.setAttribute("type", "button");
-            upButton.setAttribute("value", "⬆️");
-            itemDom.append(upButton);
-            upButton.addEventListener("click", () => {
+            cell.children[2].addEventListener("click", () => {
                 if (idx == 0) return;
                 let otherItem = cart.items[idx - 1];
                 cart.items[idx - 1] = cartItem;
                 cart.items[idx] = otherItem;
                 shoppingCarts.save();
                 showCart(cart)
-            })
-            cell.appendChild(upButton);
+            });
 
-            const downButton = dom("input", "");
-            downButton.setAttribute("type", "button");
-            downButton.setAttribute("value", "⬇️");
-            itemDom.append(downButton);
-            downButton.addEventListener("click", () => {
+            cell.children[3].addEventListener("click", () => {
                 if (idx == cart.items.length - 1) return;
                 let otherItem = cart.items[idx + 1];
                 cart.items[idx + 1] = cartItem;
                 cart.items[idx] = otherItem;
                 shoppingCarts.save();
                 showCart(cart)
-            })
-            cell.appendChild(downButton);
+            });
+        } else {
+            cell.querySelectorAll("input[type='button']").forEach(button => button.classList.add("hide"));
         }
+
         itemDom.append(cell);
         itemTable.append(itemDom);
     });
