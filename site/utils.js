@@ -200,6 +200,10 @@ async function loadItems() {
         let highestPriceBefore = -1;
         for (let i = 1; i < item.priceHistory.length; i++) {
             const price = item.priceHistory[i];
+            if (i < 10) {
+                item["price" + i] = price.price;
+                item["date" + i] = price.date;
+            }
             highestPriceBefore = Math.max(highestPriceBefore, price.price);
         }
         if (highestPriceBefore == -1) highestPriceBefore = item.price;
@@ -381,7 +385,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-        <div class="filters">
+        <div style="margin-bottom: 1em">
             <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
             <a id="json-${id}" href="" class="hide">JSON</a>
         </div>
@@ -477,7 +481,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
         now = performance.now();
         let num = 0;
-        let limit = isMobile() ? 500 : 5000;
+        let limit = isMobile() ? 500 : 2000;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
