@@ -448,7 +448,8 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         queryLink.classList.remove("hide");
         jsonLink.classList.remove("hide");
         const inputs = [...table.querySelectorAll("input:checked")];
-        const checked = inputs.length ? inputs.map(item => item.dataset.id) : getQueryParameter("c");
+        let checked = inputs.length ? inputs.map(item => item.dataset.id) : getQueryParameter("c");
+        if (typeof checked === "string") checked = [ checked ];
         queryLink.setAttribute("href", `/?q=${encodeURIComponent(query)}${checked?.length ? `&c=${checked.join("&c=")}` : ""}`)
     };
 
