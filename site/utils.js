@@ -193,6 +193,10 @@ async function loadItems() {
     console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
 
     now = performance.now();
+    alasql.fn.hasPriceChange = (priceHistory, date, endDate) => {
+        if (!endDate) return priceHistory.some(price => price.date == date);
+        else return priceHistory.some(price => price.date >= date && price.date <= endDate);
+    }
     for (const item of items) {
         item.search = item.name + " " + item.quantity + " " + item.unit;
         item.search = item.search.toLowerCase().replace(",", ".");
