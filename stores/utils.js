@@ -1,7 +1,7 @@
 exports.convertUnit = function (item, units, store) {
 
     if(!(item.unit in units)) {
-        console.error(`Unknown unit in ${store}: '${item.unit}'`);
+        console.error(`Unknown unit in ${store}: '${item.unit}' in item ${item.name}`);
         return item;
     }
 
