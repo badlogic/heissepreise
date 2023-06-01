@@ -587,6 +587,35 @@ function showChart(canvasDom, items, chartType) {
         document.documentElement.scrollTop = scrollTop;
 }
 
+function showCharts(canvasDom, items, sum, sumStores, todayOnly) {
+    let itemsToShow = [];
+
+    if (sum && items.length > 0) {
+        itemsToShow.push({
+            name: "Preissumme Warenkorb",
+            priceHistory: calculateOverallPriceChanges(items, todayOnly)
+        });
+    }
+
+    if (sumStores && items.length > 0) {
+        STORE_KEYS.forEach(store => {
+            const storeItems = items.filter(item => item.store === store);
+            if (storeItems.length > 0) {
+                itemsToShow.push({
+                    name: "Preissumme " + store,
+                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly)
+                });
+            }
+        });
+    }
+
+    items.forEach((item) => {
+        if (item.chart) itemsToShow.push({ name: item.store + " " + item.name, priceHistory: todayOnly ? [{date: currentDate(), price: item.price}] : item.priceHistory});
+    });
+
+    showChart(canvasDom, itemsToShow, todayOnly ? "bar" : "line");
+}
+
 function calculateOverallPriceChanges(items, todayOnly) {
     if (items.length == 0) return { dates: [], changes: [] };
 

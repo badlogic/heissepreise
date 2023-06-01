@@ -64,9 +64,9 @@ async function load() {
     if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) showSearch(cart, items);
 
     const canvasDom = document.querySelector("#chart");
-    document.querySelector("#sum").addEventListener("change", () => showCharts(canvasDom, cart.items));
-    document.querySelector("#sumstores").addEventListener("change", () => showCharts(canvasDom, cart.items));
-    document.querySelector("#todayonly").addEventListener("change", () => showCharts(canvasDom, cart.items));
+    document.querySelector("#sum").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
+    document.querySelector("#sumstores").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
+    document.querySelector("#todayonly").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
 
     const filtersStore = document.querySelector("#filters-store");
     filtersStore.innerHTML = STORE_KEYS.map(store => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
@@ -110,37 +110,8 @@ function showSearch(cart, items) {
     });
 }
 
-function showCharts(canvasDom, items) {
-    const todayOnly = document.querySelector("#todayonly").checked;
-    let itemsToShow = [];
-
-    if (document.querySelector("#sum").checked && items.length > 0) {
-        itemsToShow.push({
-            name: "Preissumme Warenkorb",
-            priceHistory: calculateOverallPriceChanges(items, todayOnly)
-        });
-    }
-
-    if (document.querySelector("#sumstores").checked && items.length > 0) {
-        const storeCheckboxes = STORE_KEYS.map(store => document.querySelector(`#${store}`));
-        const checkedStores = STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked)
-
-        checkedStores.forEach(store => {
-            const storeItems = items.filter(item => item.store === store);
-            if (storeItems.length > 0) {
-                itemsToShow.push({
-                    name: "Preissumme " + store,
-                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly)
-                });
-            }
-        });
-    }
-
-    items.forEach((item) => {
-        if (item.chart) itemsToShow.push({ name: item.store + " " + item.name, priceHistory: todayOnly ? [{date: currentDate(), price: item.price}] : item.priceHistory});
-    });
-
-    showChart(canvasDom, itemsToShow, todayOnly ? "bar" : "line");
+function updateCharts(canvasDom, items) {
+    showCharts(canvasDom, items, document.querySelector("#sum").checked, document.querySelector("#sumstores").checked, document.querySelector("#todayonly").checked);
 }
 
 function showCart(cart) {
@@ -157,7 +128,7 @@ function showCart(cart) {
     } else {
         document.querySelector("#numitems").innerText = `${items.length} / ${cart.items.length} Artikel`;
     }
-    showCharts(canvasDom, items);
+    updateCharts(canvasDom, items);
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
@@ -178,7 +149,7 @@ function showCart(cart) {
         cell.children[0].addEventListener("change", () => {
             cartItem.chart = cell.children[0].checked;
             shoppingCarts.save();
-            showCharts(canvasDom, items);
+            updateCharts(canvasDom, items);
         });
 
         if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) {
