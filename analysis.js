@@ -134,6 +134,9 @@ function compress(items) {
             case "reweDe":
                 data.push("");
                 break;
+            case "penny":
+                data.push(item.url?.replace("https://www.penny.at", ""));
+                break;
         }
     }
     return compressed;
@@ -142,12 +145,12 @@ exports.compress = compress;
 
 /// Given a directory of raw data of the form `$store-$date.json`, constructs
 /// a canonical list of all products and their historical price data.
-exports.replay = function(rawDataDir) {
+exports.replay = function (rawDataDir) {
     const today = currentDate();
 
     const files = fs.readdirSync(rawDataDir).filter(
         file => file.indexOf("canonical") == -1 &&
-        STORE_KEYS.some(store => file.indexOf(`${store}-`) == 0)
+            STORE_KEYS.some(store => file.indexOf(`${store}-`) == 0)
     );
 
     const dateSort = (a, b) => {
@@ -161,7 +164,7 @@ exports.replay = function(rawDataDir) {
     const storeFiles = {};
     const canonicalFiles = {};
 
-    for(const store of STORE_KEYS) {
+    for (const store of STORE_KEYS) {
         storeFiles[store] = getFilteredFilesFor(store);
         canonicalFiles[store] = storeFiles[store].map(file => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
         canonicalFiles[store].reverse();
@@ -195,7 +198,7 @@ exports.updateData = async function (dataDir, done) {
     const today = currentDate();
     console.log("Fetching data for date: " + today);
     const storeFetchPromises = []
-    for(const store of STORE_KEYS) {
+    for (const store of STORE_KEYS) {
         storeFetchPromises.push(new Promise(async (resolve) => {
             const start = performance.now();
             try {

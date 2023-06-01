@@ -43,6 +43,11 @@ const stores = {
         name: "REWE DE",
         budgetBrands: ["ja!"],
         color: "rgb(236 231 225)"
+    },
+    penny: {
+        name: "Penny",
+        budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
+        color: "rgb(255, 180, 180)",
     }
 };
 
@@ -393,7 +398,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
         </div>
         <div class="filters">
-            <label><input id="budgetBrands-${id}" type="checkbox"> Nur ${BUDGET_BRANDS.map(budgetBrand => budgetBrand.toUpperCase()).join(", ")}</label>
+            <label><input id="budgetBrands-${id}" type="checkbox"> Nur Billigeigenmarken (Clever, S-Budget, Milfina, Milboa, etc.)</label>
             <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
         </div>
         <div class="filters">
