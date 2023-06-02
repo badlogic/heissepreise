@@ -45,10 +45,5 @@
     "assets": [
       "./node_modules/axios/dist/node/axios.cjs"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }

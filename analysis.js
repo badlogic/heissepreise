@@ -43,7 +43,6 @@ function currentDate() {
 }
 
 function getCanonicalFor(store, rawItems, today) {
-    console.log(`Converting ${store}-${today} to canonical.`);
     const canonicalItems = [];
     for (let i = 0; i < rawItems.length; i++) {
         const item = stores[store]?.getCanonical(rawItems[i], today);
