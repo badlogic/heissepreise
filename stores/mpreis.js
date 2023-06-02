@@ -39,17 +39,21 @@ exports.getCanonical = function (item, today) {
     }
     const isWeighted = (item.mixins.productCustomAttributes?.packagingDescription ?? "").startsWith("Gewichtsware");
 
-    return utils.convertUnit({
-        id: item.code,
-        name: item.name[0],
-        isWeighted,
-        price: isWeighted ? item.prices[0].effectiveAmount : item.prices[0].presentationPrice.effectiveAmount,
-        priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],
-        unit,
-        quantity,
-        bio: item.mixins.mpreisAttributes.properties?.includes('BIO'),
-    }, conversions, 'mpreis');
-}
+    return utils.convertUnit(
+        {
+            id: item.code,
+            name: item.name[0],
+            isWeighted,
+            price: isWeighted ? item.prices[0].effectiveAmount : item.prices[0].presentationPrice.effectiveAmount,
+            priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],
+            unit,
+            quantity,
+            bio: item.mixins.mpreisAttributes.properties?.includes("BIO"),
+        },
+        conversions,
+        "mpreis"
+    );
+};
 
 exports.fetchData = async function () {
     const MPREIS_URL = `https://ax2ixv4hll-dsn.algolia.net/1/indexes/prod_mpreis_8450/browse?X-Algolia-API-Key=NmJlMTI0NjY1NGU4MDUwYTRlMmYzYWFjOWFlY2U4MGFkNGZjMDY2NmNjNjQzNWY3OWJlNDY4OTY0ZjEwOTEwYWZpbHRlcnM9cHVibGlzaGVk&X-Algolia-Application-Id=AX2IXV4HLL&X-Algolia-Agent=Vue.js`;
@@ -63,6 +67,6 @@ exports.fetchData = async function () {
         cursor = res.cursor;
     }
     return mpreisItems;
-}
+};
 
-exports.urlBase = "https://www.mpreis.at/shop/p/"
+exports.urlBase = "https://www.mpreis.at/shop/p/";

@@ -4,7 +4,7 @@ const analysis = require("./analysis");
 function copyItemsToSite(dataDir) {
     const items = analysis.readJSON(`${dataDir}/latest-canonical.json`, true);
     for (const store of analysis.STORE_KEYS) {
-        const storeItems = items.filter(item => item.store === store);
+        const storeItems = items.filter((item) => item.store === store);
         analysis.writeJSON(`site/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
     }
 }
@@ -39,13 +39,12 @@ function scheduleFunction(hour, minute, second, func) {
 
     // gzip existing data
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
-        const files = fs.readdirSync(dataDir).filter(
-            file => file.indexOf("canonical") == -1 &&
-               analysis.STORE_KEYS.some(store => file.indexOf(`${store}-`) == 0)
-        );
+        const files = fs
+            .readdirSync(dataDir)
+            .filter((file) => file.indexOf("canonical") == -1 && analysis.STORE_KEYS.some((store) => file.indexOf(`${store}-`) == 0 && file.endsWith(".json")));
         files.push(`latest-canonical.json`);
-        for(const file of files) {
-            const path = `${dataDir}/${file}`
+        for (const file of files) {
+            const path = `${dataDir}/${file}`;
             const data = analysis.readJSON(path);
             analysis.writeJSON(path, data, true);
             fs.unlinkSync(path);

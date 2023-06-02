@@ -2,15 +2,15 @@ const axios = require("axios");
 const HTMLParser = require("node-html-parser");
 
 exports.getCanonical = function (item, today) {
-  return {
-    id: item.id,
-    name: item.name,
-    price: item.price,
-    priceHistory: [{ date: today, price: item.price }],
-    unit: item.unit,
-    bio: item.name.toLowerCase().includes('bio'),
-    url: item.canonicalUrl,
-  };
+    return {
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        priceHistory: [{ date: today, price: item.price }],
+        unit: item.unit,
+        bio: item.name.toLowerCase().includes("bio"),
+        url: item.canonicalUrl,
+    };
 };
 
 exports.fetchData = async function () {
@@ -50,4 +50,4 @@ exports.fetchData = async function () {
     return unimarktItems;
 };
 
-exports.urlBase = "https://shop.unimarkt.at"
+exports.urlBase = "https://shop.unimarkt.at";

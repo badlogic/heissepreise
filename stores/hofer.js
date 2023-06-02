@@ -27,19 +27,23 @@ exports.getCanonical = function (item, today) {
         quantity = item.Unit;
         unit = item.UnitType;
     }
-  
-    return utils.convertUnit({
-        id: item.ProductID,
-        name,
-        price: item.Price,
-        priceHistory: [{ date: today, price: item.Price }],
-        isWeighted: item.IsBulk,
-        unit,
-        quantity,
-        bio: item.IsBio,
-        url: `${item.CategorySEOName}/${item.SEOName}`
-    }, conversions, 'hofer');
-}
+
+    return utils.convertUnit(
+        {
+            id: item.ProductID,
+            name,
+            price: item.Price,
+            priceHistory: [{ date: today, price: item.Price }],
+            isWeighted: item.IsBulk,
+            unit,
+            quantity,
+            bio: item.IsBio,
+            url: `${item.CategorySEOName}/${item.SEOName}`,
+        },
+        conversions,
+        "hofer"
+    );
+};
 
 exports.fetchData = async function () {
     const HOFER_BASE_URL = `https://shopservice.roksh.at`;
@@ -82,6 +86,6 @@ exports.fetchData = async function () {
     }
 
     return hoferItems;
-}
+};
 
 exports.urlBase = "https://www.roksh.at/hofer/produkte/";

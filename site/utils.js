@@ -58,7 +58,7 @@ const stores = {
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "rgb(255, 180, 180)",
         getUrl: (item) => "",
-    }
+    },
 };
 
 const STORE_KEYS = Object.keys(stores);
@@ -133,7 +133,7 @@ function decompress(compressedItems) {
         const quantity = data[i++];
         const isWeighted = data[i++] == 1;
         const bio = data[i++] == 1;
-        const url = stores[store].getUrl({id, name, url: data[i++]});
+        const url = stores[store].getUrl({ id, name, url: data[i++] });
 
         items.push({
             store,

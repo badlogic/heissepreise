@@ -20,18 +20,22 @@ const conversions = {
 exports.getCanonical = function (item, today) {
     let quantity = item.amount;
     let unit = item.volumeLabelKey;
-    return utils.convertUnit({
-        id: item.productId,
-        name: item.name,
-        price: item.price.regular.value / 100,
-        priceHistory: [{ date: today, price: item.price.regular.value / 100 }],
-        isWeighted: item.isWeightArticle,
-        unit,
-        quantity,
-        bio: item.name.toLowerCase().includes("bio") && !item.name.toLowerCase().includes("fabio"),
-        url: item.slug,
-    }, conversions, 'penny');
-}
+    return utils.convertUnit(
+        {
+            id: item.productId,
+            name: item.name,
+            price: item.price.regular.value / 100,
+            priceHistory: [{ date: today, price: item.price.regular.value / 100 }],
+            isWeighted: item.isWeightArticle,
+            unit,
+            quantity,
+            bio: item.name.toLowerCase().includes("bio") && !item.name.toLowerCase().includes("fabio"),
+            url: item.slug,
+        },
+        conversions,
+        "penny"
+    );
+};
 
 exports.fetchData = async function () {
     hits = 100;
@@ -46,6 +50,6 @@ exports.fetchData = async function () {
         result = result.concat(data.results);
     }
     return result;
-}
+};
 
-exports.urlBase = "https://www.penny.at/produkte/"
+exports.urlBase = "https://www.penny.at/produkte/";

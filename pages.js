@@ -19,7 +19,7 @@ if (!fs.existsSync(dataDir)) {
         await analysis.updateData(dataDir);
         const items = analysis.readJSON(`${dataDir}/latest-canonical.json`, true);
         for (const store of analysis.STORE_KEYS) {
-            const storeItems = items.filter(item => item.store === store);
+            const storeItems = items.filter((item) => item.store === store);
             analysis.writeJSON(`${dataDir}/latest-canonical.${store}.compressed.json`, false, storeItems, 0, true);
         }
         console.log(`Wrote ${items.length} items to ${dataDir}/latest-canonical(-compressed).json`);

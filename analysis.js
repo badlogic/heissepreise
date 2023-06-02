@@ -15,8 +15,8 @@ function currentDate() {
 }
 
 function readJSON(file, gzipped = false) {
-    let data = fs.readFileSync(`${file}${gzipped ? ".gz" : ""}`)
-    if (gzipped) data = zlib.gunzipSync(data); 
+    let data = fs.readFileSync(`${file}${gzipped ? ".gz" : ""}`);
+    if (gzipped) data = zlib.gunzipSync(data);
     return JSON.parse(data);
 }
 exports.readJSON = readJSON;
@@ -150,7 +150,7 @@ exports.replay = function (rawDataDir) {
 
     for (const store of STORE_KEYS) {
         storeFiles[store] = getFilteredFilesFor(store);
-        canonicalFiles[store] = storeFiles[store].map(file => getCanonicalFor(store, readJSON(file, true), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+        canonicalFiles[store] = storeFiles[store].map((file) => getCanonicalFor(store, readJSON(file, true), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
         canonicalFiles[store].reverse();
     }
 
@@ -183,19 +183,21 @@ exports.updateData = async function (dataDir, done) {
     console.log("Fetching data for date: " + today);
     const storeFetchPromises = [];
     for (const store of STORE_KEYS) {
-        storeFetchPromises.push(new Promise(async (resolve) => {
-            const start = performance.now();
-            try {
-                const storeItems = await stores[store].fetchData();
-                writeJSON(`${dataDir}/${store}-${today}.json`, storeItems, true);
-                const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
-                console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
-                resolve(storeItemsCanonical)
-            } catch (e) {
-                console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
-                resolve([])
-            }
-        }));
+        storeFetchPromises.push(
+            new Promise(async (resolve) => {
+                const start = performance.now();
+                try {
+                    const storeItems = await stores[store].fetchData();
+                    writeJSON(`${dataDir}/${store}-${today}.json`, storeItems, true);
+                    const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
+                    console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
+                    resolve(storeItemsCanonical);
+                } catch (e) {
+                    console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
+                    resolve([]);
+                }
+            })
+        );
     }
 
     const items = [].concat(...(await Promise.all(storeFetchPromises)));
