@@ -38,7 +38,7 @@ async function load() {
             }
         }
         shoppingCarts.add(name);
-        location.href = "/cart.html?name=" + name;
+        location.href = `/cart.html?name=${encodeURIComponent(name)}`;
     });
 
     const exportButton = document.querySelector("#export");
@@ -102,7 +102,7 @@ function showCarts(lookup) {
     shoppingCarts.carts.forEach(cart => {
         let oldPrice = 0;
         let currPrice = 0;
-        let link = cart.name + ";"
+        let link = encodeURIComponent(cart.name) + ";"
         for (cartItem of cart.items) {
             const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
@@ -114,7 +114,7 @@ function showCarts(lookup) {
 
         const row = dom("tr", ``);
 
-        const nameDom = dom("td", `<a href="cart.html?name=${cart.name}">${cart.name}</a>`);
+        const nameDom = dom("td", `<a href="cart.html?name=${encodeURIComponent(cart.name)}">${cart.name}</a>`);
         nameDom.setAttribute("data-label", "Name");
         row.appendChild(nameDom);
 

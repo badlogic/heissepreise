@@ -136,7 +136,7 @@ function updateCharts(canvasDom, items) {
 }
 
 function showCart(cart) {
-    let link = cart.name + ";"
+    let link = encodeURIComponent(cart.name) + ";"
     for (cartItem of cart.items) {
         link += cartItem.store + cartItem.id + ";";
     }
