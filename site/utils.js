@@ -207,6 +207,7 @@ async function loadItems() {
         item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
         item.date = item.priceHistory[0].date;
         let highestPriceBefore = -1;
+        let lowestPriceBefore = 100000;
         for (let i = 1; i < item.priceHistory.length; i++) {
             const price = item.priceHistory[i];
             if (i < 10) {
@@ -214,9 +215,12 @@ async function loadItems() {
                 item["date" + i] = price.date;
             }
             highestPriceBefore = Math.max(highestPriceBefore, price.price);
+            lowestPriceBefore = Math.min(lowestPriceBefore, price.price);
         }
         if (highestPriceBefore == -1) highestPriceBefore = item.price;
+        if (lowestPriceBefore == 100000) lowestPriceBefore = item.price;
         item.highestBefore = highestPriceBefore;
+        item.lowestBefore = lowestPriceBefore;
     }
     console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
     return items;
@@ -491,7 +495,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
         now = performance.now();
         let num = 0;
-        let limit = 500; // isMobile() ? 500 : 2000;
+        let limit = isMobile() ? 500 : 2000;
         hits.every(hit => {
             let itemDom = itemToDOM(hit);
             if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
