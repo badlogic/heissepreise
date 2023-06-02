@@ -29,7 +29,10 @@ const conversions = {
 exports.getCanonical = function (item, today) {
     let quantity = 1,
         unit = "kg";
+
     if (item.data.grammagePriceFactor == 1) {
+        if (item.data.grammage.indexOf("Per ") == 0)
+            item.data.grammage = item.data.grammage.replace("Per ", "");
         const grammage = item.data.grammage !== "" && item.data.grammage.trim().split(" ").length > 1 ? item.data.grammage : item.data.price.unit;
         if (grammage) [quantity, unit] = grammage.trim().split(" ").splice(0, 2);
     }

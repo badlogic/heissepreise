@@ -7,6 +7,7 @@ const conversions = {
     "": {unit: "stk", factor: 1},
     "dosen": {unit: "stk", factor: 1},
     "blatt": {unit: "stk", factor: 1},
+    "flasche": {unit: "stk", factor: 1},
     "flaschen": {unit: "stk", factor: 1},
     "l": {unit: "ml", factor: 1000},
     "liter": {unit: "ml", factor: 1000},

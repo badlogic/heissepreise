@@ -14,9 +14,9 @@ function currentDate() {
     return `${year}-${month}-${day}`;
 }
 
-function readJSON(file, gzipped = false) {
-    let data = fs.readFileSync(`${file}${gzipped ? ".gz" : ""}`)
-    if (gzipped) data = zlib.gunzipSync(data); 
+function readJSON(file) {
+    let data = fs.readFileSync(file)
+    if (file.endsWith(".gz")) data = zlib.gunzipSync(data);
     return JSON.parse(data);
 }
 exports.readJSON = readJSON;
@@ -32,6 +32,7 @@ function writeJSON(file, data, gzipped = false, spacer = 2, compressData = false
 exports.writeJSON = writeJSON;
 
 function getCanonicalFor(store, rawItems, today) {
+    console.log(`Converting ${store}-${today} to canonical.`);
     const canonicalItems = [];
     for (let i = 0; i < rawItems.length; i++) {
         const item = stores[store]?.getCanonical(rawItems[i], today);
@@ -150,7 +151,7 @@ exports.replay = function (rawDataDir) {
 
     for (const store of STORE_KEYS) {
         storeFiles[store] = getFilteredFilesFor(store);
-        canonicalFiles[store] = storeFiles[store].map(file => getCanonicalFor(store, readJSON(file, true), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+        canonicalFiles[store] = storeFiles[store].map(file => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
         canonicalFiles[store].reverse();
     }
 
@@ -201,7 +202,7 @@ exports.updateData = async function (dataDir, done) {
     const items = [].concat(...(await Promise.all(storeFetchPromises)));
 
     if (fs.existsSync(`${dataDir}/latest-canonical.json.gz`)) {
-        const oldItems = readJSON(`${dataDir}/latest-canonical.json`, true);
+        const oldItems = readJSON(`${dataDir}/latest-canonical.json.gz`);
         mergePriceHistory(oldItems, items);
         console.log("Merged price history");
     }
@@ -212,3 +213,21 @@ exports.updateData = async function (dataDir, done) {
     if (done) done(items);
     return items;
 };
+
+exports.migrateToGzip = (dataDir) => {
+    if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
+        console.log("Migrating old .json data to .json.gz");
+        const files = fs.readdirSync(dataDir).filter(
+            file => file.indexOf("canonical") == -1 &&
+               STORE_KEYS.some(store => file.indexOf(`${store}-`) == 0)
+        );
+        files.push(`latest-canonical.json`);
+        for(const file of files) {
+            const path = `${dataDir}/${file}`
+            console.log(`${path} -> ${path}.gz`);
+            const data = readJSON(path);
+            writeJSON(path, data, true);
+            fs.unlinkSync(path);
+        }
+    }
+}
