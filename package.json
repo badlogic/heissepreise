@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "dev": "DEV=true nodemon --watch index.js --inspect-brk=0.0.0.0:9230 index.js",
     "format": "npx prettier --write ."
   },
