@@ -9,11 +9,6 @@ exports.convertUnit = function (item, units, store) {
     const conv = units[item.unit];
     item.quantity = conv.factor * item.quantity;
     item.unit = conv.unit;
-
-    if (item.isWeighted && (item.unit == "g" || item.unit == "ml")) {
-        item.price = (100 * item.price) / item.quantity;
-        item.quantity = 100;
-    }
     return item;
 };
 
