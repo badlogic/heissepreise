@@ -403,6 +403,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             <a id="json-${id}" href="" class="hide">JSON</a>
         </div>
         <div class="filters filters--store">
+            <label style="margin-right: 10px;"><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
             ${STORE_KEYS.map(store => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ")}
         </div>
         <div class="filters">
@@ -430,6 +431,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const table = parentElement.querySelector(`#result-${id}`);
     const budgetBrands = parentElement.querySelector(`#budgetBrands-${id}`);
     const bio = parentElement.querySelector(`#bio-${id}`);
+    const allCheckbox = parentElement.querySelector(`#all-${id}`);
     const storeCheckboxes = STORE_KEYS.map(store => parentElement.querySelector(`#${store}-${id}`));
     const minPrice = parentElement.querySelector(`#minprice-${id}`);
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
@@ -528,6 +530,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
+    allCheckbox.addEventListener("change", () => storeCheckboxes.forEach(store => store.checked = allCheckbox.checked));
     storeCheckboxes.map(store => store.addEventListener("change", () => search(searchInput.value)));
     sort.addEventListener("change", () => search(searchInput.value));
     minPrice.addEventListener("change", () => search(searchInput.value));
