@@ -536,7 +536,9 @@ function newSearchComponent(
         (entries) => {
             console.log(entries);
             for (const entry of entries) {
-                if (entry.intersectionRatio < 1) {
+                const clientRect = entry.target.getBoundingClientRect();
+                console.log(entry, clientRect.top, window.innerHeight)
+                if (entry.intersectionRatio < 0.999 && (clientRect.top + clientRect.height) < window.innerHeight) { // Fix Edge issue
                     entry.target.classList.add("wrapper--pinned");
                 } else {
                     entry.target.classList.remove("wrapper--pinned");
@@ -545,7 +547,7 @@ function newSearchComponent(
         },
         {
             rootMargin: "0px",
-            threshold: 1.0,
+            threshold: 0.999,
         }
     );
     observer.observe(document.querySelector(".wrapper--search"));
