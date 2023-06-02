@@ -1,12 +1,10 @@
-const fs = require("fs");
 const analysis = require("./analysis.js");
-const dataDir = process?.argv?.[2] ?? "docker/data"
+const dataDir = process?.argv?.[2] ?? "data";
 console.log("Restoring data from raw data.");
 (async function () {
-    /*console.log("Items: " + JSON.parse(fs.readFileSync("docker/data/latest-canonical.json")).length);
-    await analysis.updateData(dataDir);
-    fs.copyFileSync(`${dataDir}/latest-canonical.json`, `${dataDir}/latest-canonical-old.json`);*/
+    analysis.migrateCompression(dataDir, ".json", ".json.br", false);
+    analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
     const items = analysis.replay(dataDir);
-    fs.writeFileSync(`${dataDir}/latest-canonical.json`, JSON.stringify(items, null, 2));
-    console.log(`Wrote ${JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`)).length} to ${dataDir}/latest-canonical.json`);
+    analysis.writeJSON(`${dataDir}/latest-canonical.json`, items, analysis.FILE_COMPRESSOR);
+    console.log(`Wrote ${analysis.readJSON(`${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`).length} items to ${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`);
 })();

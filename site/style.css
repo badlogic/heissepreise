@@ -14,6 +14,10 @@ a {
     color: #c9543a;
 }
 
+label {
+    cursor: pointer;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -25,13 +29,99 @@ a {
 }
 
 .search {
-    margin: 20px 0;
     width: 100%;
     font-size: 1em;
 }
 
 .filters {
     margin-bottom: 1em;
+    z-index: 1;
+}
+
+.filters--store {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.toggle--hidden {
+    display: none;
+}
+.wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 0.5em;
+    z-index: 1;
+}
+.wrapper--search {
+    position: sticky;
+    top: -1px;
+    padding: 1em 0;
+}
+.wrapper--search label {
+    display: none;
+    cursor: pointer;
+}
+.wrapper--search abbr {
+    text-decoration: none;
+}
+.wrapper--pinned label {
+    display: initial;
+}
+.wrapper--sticky {
+    flex-direction: column;
+    position: sticky;
+    top: 4em;
+    z-index: 1;
+    padding: 1em;
+}
+
+.wrapper--pinned ~ .wrapper--sticky {
+    max-width: 650px;
+}
+
+.wrapper--pinned ~ .wrapper--sticky::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 650px;
+    left: 50%;
+    background-color: white;
+    opacity: 0.95;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.wrapper--pinned ~ .wrapper--sticky,
+.wrapper--pinned ~ .wrapper--sticky * {
+    opacity: 0;
+    pointer-events: none;
+}
+.toggle:checked ~ .wrapper--sticky,
+.toggle:checked ~ .wrapper--sticky * {
+    opacity: 1;
+    pointer-events: initial;
+}
+.wrapper--pinned::before {
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10em;
+    background: linear-gradient(rgba(245, 245, 245, 1), rgba(245, 245, 245, 0));
+    z-index: -1;
+    pointer-events: none;
 }
 
 input {
@@ -124,7 +214,7 @@ td:nth-child(4) {
 }
 
 .searchresults td:nth-child(4):before {
-    content: "€ "
+    content: "€ ";
 }
 
 .querylink {
@@ -140,7 +230,7 @@ td:nth-child(4) {
 }
 
 .carts td:nth-child(3):before {
-    content: "€ "
+    content: "€ ";
 }
 
 .carts td:nth-child(3) {
@@ -198,7 +288,7 @@ td:nth-child(4) {
 
     table tr {
         display: block;
-        margin-bottom: .625em;
+        margin-bottom: 0.625em;
     }
 
     table td {
@@ -219,7 +309,7 @@ td:nth-child(4) {
         color: white;
         border: 0px;
         position: absolute;
-        padding: .1em .4em;
+        padding: 0.1em 0.4em;
         width: 65px;
         height: calc(100%);
         left: -1px;

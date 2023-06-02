@@ -4,12 +4,13 @@ A terrible grocery price search "app". Fetches data from big Austrian grocery ch
 
 You can also get the [raw data](https://heisse-preise.io/api/index). The raw data is returned as a JSON array of items. An item has the following fields:
 
-* `store`: (`billa`, `spar`, `hofer`, `dm`, `lidl`, `mpreis`)
-* `name`: the product name.
-* `price`: the current price in €.
-* `priceHistory`: an array of `{ date: "yyyy-mm-dd", price: number }` objects, sorted in descending order of date.
-* `unit`: unit the product is sold at. May be undefined.
-* `bio`: whether this product is classified as organic/"Bio"
+-   `store`: (`billa`, `spar`, `hofer`, `dm`, `lidl`, `mpreis`)
+-   `name`: the product name.
+-   `price`: the current price in €.
+-   `priceHistory`: an array of `{ date: "yyyy-mm-dd", price: number }` objects, sorted in descending order of date.
+-   `unit`: unit the product is sold at. May be undefined.
+-   `quantity`: quantity the product is sold at for the given price
+-   `bio`: whether this product is classified as organic/"Bio"
 
 The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `index.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
 
@@ -50,14 +51,14 @@ Create a GitHub account and pick a username. Below, we assume your user name is 
 1. Log in to your GitHub account.
 2. [Fork](https://github.com/badlogic/heissepreise/fork) this repository and name the repository `hotprices123.github.io`.
 3. **In your forked repository**:
-   1. go to `Settings > Pages`, then under `Branch` select the `main` branch, and the `docs/` directory as shown in this screenshot.
-![docs/github-pages.png](docs/github-pages.png)
-   2. go to `Settings > Actions > General`, then under `Workflow permissions`, select `Read and write permissions` as shown in this screenshot.
-![docs/github-permissions.png](docs/github-permissions.png)
-   3. go to the `Actions` tab, then select the `Pages Update` workflow in the list to the left, then click `Enable workflow`. Confirm that you know what you are doing.
-![docs/github-workflow.png](docs/github-workflow.png)
+    1. go to `Settings > Pages`, then under `Branch` select the `main` branch, and the `docs/` directory as shown in this screenshot.
+       ![docs/github-pages.png](docs/github-pages.png)
+    2. go to `Settings > Actions > General`, then under `Workflow permissions`, select `Read and write permissions` as shown in this screenshot.
+       ![docs/github-permissions.png](docs/github-permissions.png)
+    3. go to the `Actions` tab, then select the `Pages Update` workflow in the list to the left, then click `Enable workflow`. Confirm that you know what you are doing.
+       ![docs/github-workflow.png](docs/github-workflow.png)
 4. Trigger the workflow once manually to build the initial site and data.
-![docs/github-workflow2.png](docs/github-workflow2.png)
+   ![docs/github-workflow2.png](docs/github-workflow2.png)
 5. Once the workflow has finished, go to `https:/hotprices123.github.io` and enjoy your price comparisons.
 
 The data will be automatically fetched once a day at 8am (no idea what timezone), and the site will be updated.
@@ -66,17 +67,17 @@ To get the latest code changes from this repository into your fork:
 
 1. Go to `https://github.com/hotprices123/hotprices123.github.io/compare/main...badlogic:heissepreise:main`
 2. Click on `Create pull request`
-![docs/github-pullrequest.png](docs/github-pullrequest.png)
+   ![docs/github-pullrequest.png](docs/github-pullrequest.png)
 3. Enter a Title like "Updated from upstream", then click `Create pull request``
-![docs/github-pullrequest2.png](docs/github-pullrequest2.png)
+   ![docs/github-pullrequest2.png](docs/github-pullrequest2.png)
 4. Click `Merge pull request`
-![docs/github-pullrequest3.png](docs/github-pullrequest3.png)
+   ![docs/github-pullrequest3.png](docs/github-pullrequest3.png)
 
 Your site will now use the latest source code changes from this repository. It will be automatically updated and is usually live under `https://hotprices123.github.io` within 10-15 minutes.
 
 ## Generating a self-contained executable
 
- Run the `package.sh`script in a Bash shell. It will generate a folder `dist/` with executable for Windows, Linux, and MacOS. Run the executable for your OS.
+Run the `package.sh`script in a Bash shell. It will generate a folder `dist/` with executable for Windows, Linux, and MacOS. Run the executable for your OS.
 
 ## Docker
 

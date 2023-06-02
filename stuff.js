@@ -4,20 +4,19 @@ const STORE_KEYS = Object.keys(stores);
 
 function grammageAnalysis() {
     const items = JSON.parse(fs.readFileSync("docker/data/latest-canonical.json"));
-    items.sort(item => item.priceHistory.length);
+    items.sort((item) => item.priceHistory.length);
 
     for (item of items) {
-        if (item.priceHistory.length > 2)
-            console.log(JSON.stringify(item, null, 2));
+        if (item.priceHistory.length > 2) console.log(JSON.stringify(item, null, 2));
     }
 
     const units = {};
-    const unitsSmall = {}
+    const unitsSmall = {};
 
     for (item of items) {
         const tokens = item.unit ? item.unit.split(/\s+/) : [];
         if (tokens.length == 0) continue;
-        if (tokens[0].charAt(0) >= '0' && tokens[0].charAt(0) <= '9') {
+        if (tokens[0].charAt(0) >= "0" && tokens[0].charAt(0) <= "9") {
             tokens.splice(0, 1);
         }
         units[tokens.join(" ")] = item;
@@ -29,7 +28,7 @@ function grammageAnalysis() {
     console.log(Object.keys(unitsSmall).length);
 
     const hofer = JSON.parse(fs.readFileSync("docker/data/hofer-2023-05-19.json"));
-    const unitTypes = {}
+    const unitTypes = {};
     for (item of hofer) {
         unitTypes[item.UnitType] = true;
     }
@@ -75,7 +74,7 @@ function grammageAnalysis() {
         for (item of billa) {
             let unit;
             if (item.masterValues["quantity-selector"]) {
-                const [str_price, str_unit] = item.masterValues["price-per-unit"].split('/');
+                const [str_price, str_unit] = item.masterValues["price-per-unit"].split("/");
                 unit = str_unit.trim();
             } else {
                 unit = item.masterValues["short-description-3"];
@@ -83,7 +82,9 @@ function grammageAnalysis() {
 
             if (!unit) {
                 noGrammage.push(item);
-                noGrammageUnits[item.masterValues["sales-unit"]] = noGrammageUnits[item.masterValues["sales-unit"]] ? noGrammageUnits[item.masterValues["sales-unit"]] + 1 : 1;
+                noGrammageUnits[item.masterValues["sales-unit"]] = noGrammageUnits[item.masterValues["sales-unit"]]
+                    ? noGrammageUnits[item.masterValues["sales-unit"]] + 1
+                    : 1;
                 continue;
             }
             let tokens = unit.split(" ");
@@ -116,8 +117,8 @@ function momentumCartConversion() {
     const lines = fs.readFileSync("momentum-cart.csv").toString().split(/\r?\n/);
     const cart = {
         name: "Momentum Eigenmarken Vergleich",
-        items: []
-    }
+        items: [],
+    };
     for (line of lines) {
         const [sparId, billaId] = line.split(/\s+/);
         const sparItem = lookup[sparId];
@@ -139,7 +140,7 @@ function momentumCartConversion() {
 }
 
 function fixSparHistoricalData(dataDir) {
-    const files = fs.readdirSync(dataDir).filter(file => file.indexOf("canonical") == -1 && file.indexOf(`spar-`) == 0);
+    const files = fs.readdirSync(dataDir).filter((file) => file.indexOf("canonical") == -1 && file.indexOf(`spar-`) == 0);
     console.log(files);
 
     for (file of files) {
@@ -151,15 +152,14 @@ function fixSparHistoricalData(dataDir) {
     }
 }
 
-const nReadlines = require('n-readlines');
+const nReadlines = require("n-readlines");
 
 function convertDossierData(dataDir, file) {
     console.log(`Converting ${file}`);
     const lookup = {};
     for (item of JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`))) {
         lookup[item.store + item.id] = item;
-        if (item.sparId)
-            lookup[item.store + "-" + item.sparId] = item;
+        if (item.sparId) lookup[item.store + "-" + item.sparId] = item;
     }
 
     const lines = new nReadlines(file);
@@ -167,10 +167,10 @@ function convertDossierData(dataDir, file) {
     const itemsPerDate = {};
     let line = null;
     const store = file.indexOf("spar") == 0 ? "spar" : "billa";
-    lines.next()
+    lines.next();
     let itemsTotal = 0;
     let notFound = 0;
-    while (line = lines.next()) {
+    while ((line = lines.next())) {
         itemsTotal++;
         const tokens = line.toString("utf-8").split(";");
         const dateTokens = tokens[0].split(".");
@@ -181,8 +181,7 @@ function convertDossierData(dataDir, file) {
         const price = Number.parseFloat(tokens[7].replace("€", "").trim().replace(",", "."));
         const id = tokens[4].replace("ARTIKELNUMMER: ", "").replace("Art. Nr.: ", "");
         let item = lookup[store + id];
-        if (!item)
-            item = lookup[store + "-" + id]
+        if (!item) item = lookup[store + "-" + id];
         if (!item) {
             // console.log("Couldn't find item " + name);
             notFound++;
@@ -199,8 +198,8 @@ function convertDossierData(dataDir, file) {
                     title: producer,
                     "short-description": name,
                     "short-description-3": unit,
-                    bioLevel: ""
-                }
+                    bioLevel: "",
+                },
             });
         } else {
             items.push({
@@ -208,12 +207,12 @@ function convertDossierData(dataDir, file) {
                     articleId: id,
                     name: name,
                     price: {
-                        final: price
+                        final: price,
                     },
                     grammagePriceFactor: 1,
                     grammage: unit,
-                }
-            })
+                },
+            });
         }
     }
     console.log("total: " + itemsTotal);
@@ -231,8 +230,8 @@ function clownCompress(dataDir) {
     const compressed = {
         stores: STORE_KEYS,
         n: items.length,
-        data: []
-    }
+        data: [],
+    };
     const data = compressed.data;
     for (item of items) {
         data.push(STORE_KEYS.indexOf(item.store));
@@ -274,7 +273,6 @@ function clownCompress(dataDir) {
     fs.writeFileSync(`${dataDir}/clown.json`, JSON.stringify(compressed));
 }
 
-
 const clustering = require("./site/utils");
 
 /*let items = JSON.parse(fs.readFileSync("palmolive.json"));
@@ -302,5 +300,5 @@ for (cluster of clusters) {
 (async () => {
     // let items = await stores.reweDe.fetchData();
     let items = JSON.parse(fs.readFileSync("tmp/reweDe-2023-05-31.json"));
-    for (item of items) stores.reweDe.getCanonical(item)
+    for (item of items) stores.reweDe.getCanonical(item);
 })();
