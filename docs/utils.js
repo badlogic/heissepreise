@@ -58,7 +58,7 @@ const stores = {
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "rgb(255, 180, 180)",
         getUrl: (item) => "",
-    }
+    },
 };
 
 const STORE_KEYS = Object.keys(stores);
@@ -69,7 +69,11 @@ const BUDGET_BRANDS = [...new Set([].concat(...Object.values(stores).map((store)
  * @returns {string} ISO date string in format YYYY-MM-DD
  */
 function currentDate() {
-    return new Date().toISOString().slice(0, 10);
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
 }
 
 /**
@@ -133,7 +137,7 @@ function decompress(compressedItems) {
         const quantity = data[i++];
         const isWeighted = data[i++] == 1;
         const bio = data[i++] == 1;
-        const url = stores[store].getUrl({id, name, url: data[i++]});
+        const url = stores[store].getUrl({ id, name, url: data[i++] });
 
         items.push({
             store,
@@ -388,7 +392,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         <div class="wrapper wrapper--sticky">
             <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
             <a id="json-${id}" href="" class="hide">JSON</a>
-            <div class="filters filters--store"> 
+            <div class="filters filters--store">
                 <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
                 ${STORE_KEYS.map((store) => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(
                     " "
@@ -396,7 +400,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             </div>
             <div class="filters">
                 <label>
-                    <input id="budgetBrands-${id}" type="checkbox"> Nur 
+                    <input id="budgetBrands-${id}" type="checkbox"> Nur
                     <abbr title="${BUDGET_BRANDS.map((budgetBrand) => budgetBrand.toUpperCase()).join(", ")}">
                         Diskont-Eigenmarken
                     </abbr>
