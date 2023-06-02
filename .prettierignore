@@ -1,0 +1,6 @@
+data/
+.github/
+.vscode/
+latest-canonical*.json
+momentum-cart.json
+package-lock.json
