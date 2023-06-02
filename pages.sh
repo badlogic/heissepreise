@@ -14,9 +14,11 @@ cp docs/latest-canonical.json tmp-data
 
 npm install
 node pages.js tmp-data
+node migrate tmp-data ".json.br" ".json"
 cp tmp-data/latest-canonical* docs
 
 cp site/* docs
+rm docs/latest-canonical.json.*
 pushd docs
 git add *
 git commit -am "Updated $(date +'%Y-%m-%d')"
