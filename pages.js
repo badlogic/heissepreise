@@ -3,9 +3,9 @@ const analysis = require("./analysis.js");
 
 if (process.argv.length < 3) {
     console.log("Usage: node pages.js <data-dir>");
-    console.log()
+    console.log();
     console.log("e.g. node pages.js data/");
-    console.log()
+    console.log();
     process.exit(1);
 }
 const dataDir = process.argv[2];

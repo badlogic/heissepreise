@@ -17,32 +17,29 @@ const conversions = {
     "pkg.": {unit: "stk", factor: 1},
 };
 
-exports.getCanonical = function(item, today) {
+exports.getCanonical = function (item, today) {
     let quantity = 1;
-    let unit = '';
-    let text = (item.price.basePrice?.text ?? "").trim().split('(')[0].replaceAll(',', '.').toLowerCase();
+    let unit = "";
+    let text = (item.price.basePrice?.text ?? "").trim().split("(")[0].replaceAll(",", ".").toLowerCase();
     let isWeighted = false;
 
-    if(text === 'per kg') {
-      isWeighted = true;
-      unit = 'kg';
-    }
-    else {
-        if(text.startsWith('bei') && text.search('je ') != -1)
-            text = text.substr(text.search('je '))
+    if (text === "per kg") {
+        isWeighted = true;
+        unit = "kg";
+    } else {
+        if (text.startsWith("bei") && text.search("je ") != -1) text = text.substr(text.search("je "));
 
-        for (let s of ['ab ', 'je ', 'ca. ', 'z.b.: ', 'z.b. '])
-            text = text.replace(s, '').trim()
+        for (let s of ["ab ", "je ", "ca. ", "z.b.: ", "z.b. "]) text = text.replace(s, "").trim();
 
         const regex = /^([0-9.x ]+)(.*)$/;
         const matches = text.match(regex);
-        if(matches) {
-            matches[1].split('x').forEach( (q)=> {
-              quantity = quantity * parseFloat(q.split('/')[0])
-            })
-            unit = matches[2].split('/')[0].trim().split(' ')[0];
+        if (matches) {
+            matches[1].split("x").forEach((q) => {
+                quantity = quantity * parseFloat(q.split("/")[0]);
+            });
+            unit = matches[2].split("/")[0].trim().split(" ")[0];
         }
-        unit = unit.split('-')[0];
+        unit = unit.split("-")[0];
     }
 
     return utils.convertUnit({
