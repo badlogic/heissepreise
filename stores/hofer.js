@@ -36,7 +36,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         bio: item.IsBio,
-        url: `https://www.roksh.at/hofer/produkte/${item.CategorySEOName}/${item.SEOName}`
+        url: `${item.CategorySEOName}/${item.SEOName}`
     }, conversions, 'hofer');
 }
 
@@ -68,3 +68,5 @@ exports.fetchData = async function() {
 
     return hoferItems;
 }
+
+exports.urlBase = "https://www.roksh.at/hofer/produkte/";

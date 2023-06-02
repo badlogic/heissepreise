@@ -41,7 +41,7 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         bio: item.data.attributes && item.data.attributes.includes("s_bio"),
-        url: `https://shop.billa.at${item.data.canonicalPath}`,
+        url: item.data.canonicalPath,
     }, conversions, 'billa');
 }
 
@@ -49,3 +49,5 @@ exports.fetchData = async function() {
     const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}`;
     return (await axios.get(BILLA_SEARCH)).data.tiles;
 }
+
+exports.urlBase = "https://shop.billa.at";

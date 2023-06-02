@@ -29,7 +29,7 @@ exports.getCanonical = function (item, today) {
         unit,
         quantity,
         bio: item.name.toLowerCase().includes("bio") && !item.name.toLowerCase().includes("fabio"),
-        url: `https://www.penny.at/produkte/${item.slug}`,
+        url: item.slug,
     }, conversions, 'penny');
 }
 
@@ -47,3 +47,5 @@ exports.fetchData = async function () {
     }
     return result;
 }
+
+exports.urlBase = "https://www.penny.at/produkte/"

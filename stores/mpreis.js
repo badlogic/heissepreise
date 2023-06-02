@@ -47,7 +47,6 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         bio: item.mixins.mpreisAttributes.properties?.includes('BIO'),
-        url: `https://www.mpreis.at/shop/p/${item.code}`,
     }, conversions, 'mpreis');
 }
 
@@ -64,3 +63,5 @@ exports.fetchData = async function() {
     }
     return mpreisItems;
 }
+
+exports.urlBase = "https://www.mpreis.at/shop/p/"

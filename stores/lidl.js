@@ -14,6 +14,7 @@ const conversions = {
     "g": {unit: "g", factor: 1},
     "kg": {unit: "g", factor: 1000},
     "stk.": {unit: "stk", factor: 1},
+    "pkg.": {unit: "stk", factor: 1},
 };
 
 exports.getCanonical = function(item, today) {
@@ -51,7 +52,7 @@ exports.getCanonical = function(item, today) {
         priceHistory: [{ date: today, price: item.price.price }],
         unit,
         quantity,
-        url: `https://www.lidl.at${item.canonicalUrl}`,
+        url: item.canonicalUrl,
     }, conversions, 'lidl');
 }
 
@@ -59,3 +60,5 @@ exports.fetchData = async function() {
     const LIDL_SEARCH = `https://www.lidl.at/p/api/gridboxes/AT/de/?max=${HITS}`;
     return (await axios.get(LIDL_SEARCH)).data.filter(item => !!item.price.price);
 }
+
+exports.urlBase = "https://www.lidl.at"

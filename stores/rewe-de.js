@@ -64,7 +64,6 @@ exports.getCanonical = function (item, today) {
         unit,
         quantity,
         bio: false,
-        url: "",
     }, conversions, "reweDe");
 }
 
@@ -99,3 +98,5 @@ exports.fetchData = async function () {
     }
     return items;
 }
+
+exports.urlBase = "";

@@ -3,46 +3,55 @@ const stores = {
         name: "Billa",
         budgetBrands: ["clever"],
         color: "rgb(255 255 225)",
+        getUrl: (item) => `https://shop.billa.at${item.url}`,
     },
     spar: {
         name: "Spar",
         budgetBrands: ["s-budget"],
         color: "rgb(225 244 225)",
+        getUrl: (item) => `https://www.interspar.at/shop/lebensmittel${item.url}`,
     },
     hofer: {
         name: "Hofer",
         budgetBrands: ["milfina"],
         color: "rgb(230 230 255)",
+        getUrl: (item) => `https://www.roksh.at/hofer/produkte/${item.url}`,
     },
     lidl: {
         name: "Lidl",
         budgetBrands: ["milbona"],
         color: "rgb(255 225 225)",
+        getUrl: (item) => `https://www.lidl.at${item.url}`,
     },
     mpreis: {
         name: "MPREIS",
         budgetBrands: [],
         color: "rgb(255 230 230)",
+        getUrl: (item) => `https://www.mpreis.at/shop/p/${item.id}`,
     },
     dm: {
         name: "DM",
         budgetBrands: ["balea"],
         color: "rgb(255 240 230)",
+        getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],
         color: "rgb(236 254 253)",
+        getUrl: (item) => `https://www.dm.de/product-p${item.id}.html`,
     },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
         color: "rgb(179, 217, 255)",
+        getUrl: (item) => `https://shop.unimarkt.at/${item.url}`,
     },
     reweDe: {
         name: "REWE DE",
         budgetBrands: ["ja!"],
         color: "rgb(236 231 225)",
+        getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
     },
     penny: {
         name: "Penny",
@@ -57,7 +66,8 @@ const stores = {
             "ich bin österreich",
         ],
         color: "rgb(255, 180, 180)",
-    },
+        getUrl: (item) => "",
+    }
 };
 
 const STORE_KEYS = Object.keys(stores);
@@ -114,12 +124,12 @@ function dom(el, html = null) {
 
 function decompress(compressedItems) {
     const items = [];
-    const stores = compressedItems.stores;
+    const stores_ = compressedItems.stores;
     const data = compressedItems.data;
     const numItems = compressedItems.n;
     let i = 0;
     while (items.length < numItems) {
-        const store = stores[data[i++]];
+        const store = stores_[data[i++]];
         const id = data[i++];
         const name = data[i++];
         const numPrices = data[i++];
@@ -141,41 +151,7 @@ function decompress(compressedItems) {
         const quantity = data[i++];
         const isWeighted = data[i++] == 1;
         const bio = data[i++] == 1;
-        let url = data[i++];
-        switch (store) {
-            case "billa":
-                url = "https://shop.billa.at" + url;
-                break;
-            case "dm":
-                url = `https://www.dm.at/product-p${id}.html`;
-                break;
-            case "dmDe":
-                url = `https://www.dm.de/product-p${id}.html`;
-                break;
-            case "hofer":
-                url = "https://www.roksh.at/hofer/produkte/" + url;
-                break;
-            case "lidl":
-                url = "https://www.lidl.at" + url;
-                break;
-            case "mpreis":
-                url = "https://www.mpreis.at/shop/p/" + id;
-                break;
-            case "spar":
-                url = "https://www.interspar.at/shop/lebensmittel" + url;
-                break;
-            case "unimarkt":
-                url = "https://shop.unimarkt.at" + url;
-                break;
-            case "reweDe":
-                url =
-                    "https://shop.rewe.de/p/" +
-                    name.toLowerCase().replace(/ /g, "-") +
-                    "/" +
-                    id;
-                break;
-        }
-
+        const url = stores[store].getUrl({id, name, url: data[i++]});
         items.push({
             store,
             id,

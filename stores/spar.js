@@ -55,7 +55,7 @@ exports.getCanonical = function(item, today) {
         quantity,
         isWeighted: item.masterValues['item-type'] === 'WeightProduct',
         bio: item.masterValues.biolevel === "Bio",
-        url: `https://www.interspar.at/shop/lebensmittel${item.masterValues.url}`,
+        url: item.masterValues.url,
     }, conversions, 'spar');
 }
 
@@ -64,3 +64,5 @@ exports.fetchData = async function() {
     const rawItems = (await axios.get(SPAR_SEARCH)).data.hits;
     return rawItems?.hits || rawItems;
 }
+
+exports.urlBase = "https://www.interspar.at/shop/lebensmittel"

@@ -29,7 +29,6 @@ exports.getCanonical = function(item, today) {
         unit,
         quantity,
         ...(item.brandName === "dmBio" || (item.name ? (item.name.startsWith("Bio ") | item.name.startsWith("Bio-")) : false)) && {bio: true},
-        url: `https://www.dm.de/product-p${item.gtin}.html`,
     }, conversions, 'dmDe');
 }
 
@@ -91,3 +90,5 @@ exports.fetchData = async function() {
     }
     return dmItems;
 }
+
+exports.urlBase = "https://www.dm.de/product-p";
