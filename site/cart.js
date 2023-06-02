@@ -19,10 +19,10 @@ async function load() {
         }
 
         // Update cart pricing info
-        let items = [];
+        const items = [];
         for (cartItem of cart.items) {
             const item = lookup[cartItem.store + cartItem.id];
-            if (!item) shoppingCarts.items.push(cartItem);
+            if (!item) items.push(cartItem);
             else items.push(item);
         }
         cart.items = items;
