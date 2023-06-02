@@ -14,6 +14,34 @@ a {
     color: #c9543a;
 }
 
+.menu {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 1em auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c9543a;
+    /* background-color: #ee907b; */
+    color: white;
+    padding: 0.5em;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+}
+
+.menu a.menu-active {
+    font-weight: bold;
+    background-color: #c76752;
+    color: white;
+    border: 2px solid;
+    border-color: #ee907b;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -48,11 +76,13 @@ input[type="number"] {
     border-color: #ee907b;
 }
 
-h2 {
+.site-title {
     background-color: #c9543a;
     color: white;
     width: 100%;
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
     text-align: center;
     padding: 0.5em;
     margin-top: 0;
