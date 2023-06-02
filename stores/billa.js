@@ -9,7 +9,7 @@ const conversions = {
     g: { unit: "g", factor: 1 },
     Gramm: { unit: "g", factor: 1 },
     kg: { unit: "g", factor: 1000 },
-    Kilogramm: { unit: "g", factor: 1 },
+    Kilogramm: { unit: "g", factor: 1000 },
     l: { unit: "ml", factor: 1000 },
     Liter: { unit: "ml", factor: 1000 },
     Meter: { unit: "cm", factor: 100 },
