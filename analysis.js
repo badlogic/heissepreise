@@ -223,6 +223,9 @@ exports.migrateToGzip = (dataDir) => {
         );
         files.push(`latest-canonical.json`);
         for(const file of files) {
+            // skip if already gzipped
+            if (file.indexOf(".gz") != -1) continue;
+
             const path = `${dataDir}/${file}`
             console.log(`${path} -> ${path}.gz`);
             const data = readJSON(path);
