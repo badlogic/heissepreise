@@ -2,7 +2,7 @@ const fs = require("fs");
 const analysis = require("./analysis");
 
 function copyItemsToSite(dataDir) {
-    const items = analysis.readJSON(`${dataDir}/latest-canonical.json.gz`);
+    const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
     for (const store of analysis.STORE_KEYS) {
         const storeItems = items.filter(item => item.store === store);
         analysis.writeJSON(`site/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
@@ -37,9 +37,10 @@ function scheduleFunction(hour, minute, second, func) {
         fs.mkdirSync(dataDir);
     }
 
-    analysis.migrateToGzip(dataDir);
+    analysis.migrateCompression(dataDir, ".json", ".json.br");
+    analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
 
-    if (fs.existsSync(`${dataDir}/latest-canonical.json.gz`)) {
+    if (fs.existsSync(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`)) {
         copyItemsToSite(dataDir);
         analysis.updateData(dataDir, (_newItems) => {
             copyItemsToSite(dataDir);

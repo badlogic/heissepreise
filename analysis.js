@@ -1,10 +1,38 @@
 const fs = require("fs");
 const zlib = require("zlib");
 const stores = require("./stores");
+const { FILE } = require("dns");
 
 const STORE_KEYS = Object.keys(stores);
-
 exports.STORE_KEYS = STORE_KEYS;
+
+const BROTLI_OPTIONS = {
+    params: {
+        [zlib.constants.BROTLI_PARAM_MODE]: zlib.constants.BROTLI_MODE_GENERIC,
+        [zlib.constants.BROTLI_PARAM_QUALITY]: 9,
+        [zlib.constants.BROTLI_PARAM_LGWIN]: 22,
+    },
+};
+
+const FILE_COMPRESSOR = "br";
+exports.FILE_COMPRESSOR = FILE_COMPRESSOR;
+
+function readJSON(file) {
+    let data = fs.readFileSync(file);
+    if (file.endsWith(".gz")) data = zlib.gunzipSync(data);
+    if (file.endsWith(".br")) data = zlib.brotliDecompressSync(data);
+    return JSON.parse(data);
+}
+exports.readJSON = readJSON;
+
+function writeJSON(file, data, fileCompressor = false, spacer = 2, compressData = false) {
+    if (compressData) data = compress(data);
+    data = JSON.stringify(data, null, spacer);
+    if (fileCompressor == "gz") data = zlib.gzipSync(data);
+    if (fileCompressor == "br") data = zlib.brotliCompressSync(data, BROTLI_OPTIONS);
+    fs.writeFileSync(`${file}${fileCompressor ? "." + fileCompressor : ""}`, data);
+}
+exports.writeJSON = writeJSON;
 
 function currentDate() {
     const currentDate = new Date();
@@ -13,23 +41,6 @@ function currentDate() {
     const day = String(currentDate.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
 }
-
-function readJSON(file) {
-    let data = fs.readFileSync(file)
-    if (file.endsWith(".gz")) data = zlib.gunzipSync(data);
-    return JSON.parse(data);
-}
-exports.readJSON = readJSON;
-
-function writeJSON(file, data, gzipped = false, spacer = 2, compressData = false) {
-    if (compressData) {
-        data = compress(data);
-    }
-    data = JSON.stringify(data, null, spacer);
-    if (gzipped) data = zlib.gzipSync(data);
-    fs.writeFileSync(`${file}${gzipped ? ".gz" : ""}`, data);
-}
-exports.writeJSON = writeJSON;
 
 function getCanonicalFor(store, rawItems, today) {
     console.log(`Converting ${store}-${today} to canonical.`);
@@ -151,7 +162,7 @@ exports.replay = function (rawDataDir) {
 
     for (const store of STORE_KEYS) {
         storeFiles[store] = getFilteredFilesFor(store);
-        canonicalFiles[store] = storeFiles[store].map(file => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+        canonicalFiles[store] = storeFiles[store].map((file) => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
         canonicalFiles[store].reverse();
     }
 
@@ -184,53 +195,57 @@ exports.updateData = async function (dataDir, done) {
     console.log("Fetching data for date: " + today);
     const storeFetchPromises = [];
     for (const store of STORE_KEYS) {
-        storeFetchPromises.push(new Promise(async (resolve) => {
-            const start = performance.now();
-            try {
-                const storeItems = await stores[store].fetchData();
-                writeJSON(`${dataDir}/${store}-${today}.json`, storeItems, true);
-                const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
-                console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
-                resolve(storeItemsCanonical)
-            } catch (e) {
-                console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
-                resolve([])
-            }
-        }));
+        storeFetchPromises.push(
+            new Promise(async (resolve) => {
+                const start = performance.now();
+                try {
+                    const storeItems = await stores[store].fetchData();
+                    writeJSON(`${dataDir}/${store}-${today}.json`, storeItems, FILE_COMPRESSOR);
+                    const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
+                    console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
+                    resolve(storeItemsCanonical);
+                } catch (e) {
+                    console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
+                    resolve([]);
+                }
+            })
+        );
     }
 
     const items = [].concat(...(await Promise.all(storeFetchPromises)));
 
-    if (fs.existsSync(`${dataDir}/latest-canonical.json.gz`)) {
-        const oldItems = readJSON(`${dataDir}/latest-canonical.json.gz`);
+    if (fs.existsSync(`${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`)) {
+        const oldItems = readJSON(`${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`);
         mergePriceHistory(oldItems, items);
         console.log("Merged price history");
     }
 
     sortItems(items);
-    writeJSON(`${dataDir}/latest-canonical.json`, items, true);
+    writeJSON(`${dataDir}/latest-canonical.json`, items, FILE_COMPRESSOR);
 
     if (done) done(items);
     return items;
 };
 
-exports.migrateToGzip = (dataDir) => {
-    if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
-        console.log("Migrating old .json data to .json.gz");
-        const files = fs.readdirSync(dataDir).filter(
-            file => file.indexOf("canonical") == -1 &&
-               STORE_KEYS.some(store => file.indexOf(`${store}-`) == 0)
+exports.migrateCompression = (dataDir, fromSuffix, toSuffix, remove = true) => {
+    console.log(`Migrating ${fromSuffix} data to ${toSuffix}`);
+    let fileCompressor = toSuffix == ".json" ? false : toSuffix.replace(".json.", "");
+    const files = fs
+        .readdirSync(dataDir)
+        .filter(
+            (file) => (file.startsWith("latest-canonical") || STORE_KEYS.some((store) => file.startsWith(`${store}-`))) && file.endsWith(fromSuffix)
         );
-        files.push(`latest-canonical.json`);
-        for(const file of files) {
-            // skip if already gzipped
-            if (file.indexOf(".gz") != -1) continue;
-
-            const path = `${dataDir}/${file}`
-            console.log(`${path} -> ${path}.gz`);
-            const data = readJSON(path);
-            writeJSON(path, data, true);
+    for (const file of files) {
+        const fromPath = `${dataDir}/${file}`;
+        const toPath = fromPath.substring(0, fromPath.length - fromSuffix.length) + toSuffix;
+        console.log(`${fromPath} -> ${toPath}`);
+        const data = readJSON(fromPath);
+        writeJSON(toPath.substring(0, toPath.lastIndexOf(".json") + 5), data, fileCompressor);
+    }
+    if (remove) {
+        for (const file of files) {
+            const path = `${dataDir}/${file}`;
             fs.unlinkSync(path);
         }
     }
-}
+};
