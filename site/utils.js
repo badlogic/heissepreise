@@ -534,10 +534,8 @@ function newSearchComponent(
 
     const observer = new IntersectionObserver(
         (entries) => {
-            console.log(entries);
             for (const entry of entries) {
                 const clientRect = entry.target.getBoundingClientRect();
-                console.log(entry, clientRect.top, window.innerHeight)
                 if (entry.intersectionRatio < 0.999 && (clientRect.top + clientRect.height) < window.innerHeight) { // Fix Edge issue
                     entry.target.classList.add("wrapper--pinned");
                 } else {
