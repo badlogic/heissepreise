@@ -33,24 +33,23 @@ exports.getCanonical = function (item, today) {
         const grammage = item.data.grammage !== "" && item.data.grammage.trim().split(" ").length > 1 ? item.data.grammage : item.data.price.unit;
         if (grammage) [quantity, unit] = grammage.trim().split(" ").splice(0, 2);
     }
-    return utils.convertUnit(
-        {
-            id: item.data.articleId,
-            name: item.data.name,
-            price: item.data.price.final,
-            priceHistory: [{ date: today, price: item.data.price.final }],
-            isWeighted: item.data.isWeightArticle,
-            unit,
-            quantity,
-            bio: item.data.attributes && item.data.attributes.includes("s_bio"),
-            url: `https://shop.billa.at${item.data.canonicalPath}`,
-        },
-        conversions,
-        "billa"
-    );
-};
+
+    return utils.convertUnit({
+        id: item.data.articleId,
+        name: item.data.name,
+        price: item.data.price.final,
+        priceHistory: [{ date: today, price: item.data.price.final }],
+        isWeighted : item.data.isWeightArticle,
+        unit,
+        quantity,
+        bio: item.data.attributes && item.data.attributes.includes("s_bio"),
+        url: item.data.canonicalPath,
+    }, conversions, 'billa');
+}
 
 exports.fetchData = async function () {
     const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}`;
     return (await axios.get(BILLA_SEARCH)).data.tiles;
-};
+}
+
+exports.urlBase = "https://shop.billa.at";

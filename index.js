@@ -2,11 +2,10 @@ const fs = require("fs");
 const analysis = require("./analysis");
 
 function copyItemsToSite(dataDir) {
-    fs.copyFileSync(`${dataDir}/latest-canonical.json`, `site/latest-canonical.json`);
-    const items = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
+    const items = analysis.readJSON(`${dataDir}/latest-canonical.json`, true);
     for (const store of analysis.STORE_KEYS) {
-        const storeItems = items.filter((item) => item.store === store);
-        fs.writeFileSync(`site/latest-canonical.${store}.compressed.json`, JSON.stringify(analysis.compress(storeItems)));
+        const storeItems = items.filter(item => item.store === store);
+        analysis.writeJSON(`site/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
     }
 }
 
@@ -38,7 +37,22 @@ function scheduleFunction(hour, minute, second, func) {
         fs.mkdirSync(dataDir);
     }
 
+    // gzip existing data
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
+        const files = fs.readdirSync(dataDir).filter(
+            file => file.indexOf("canonical") == -1 &&
+               analysis.STORE_KEYS.some(store => file.indexOf(`${store}-`) == 0)
+        );
+        files.push(`latest-canonical.json`);
+        for(const file of files) {
+            const path = `${dataDir}/${file}`
+            const data = analysis.readJSON(path);
+            analysis.writeJSON(path, data, true);
+            fs.unlinkSync(path);
+        }
+    }
+
+    if (fs.existsSync(`${dataDir}/latest-canonical.json.gz`)) {
         copyItemsToSite(dataDir);
         analysis.updateData(dataDir, (_newItems) => {
             copyItemsToSite(dataDir);

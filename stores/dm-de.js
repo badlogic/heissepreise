@@ -21,21 +21,16 @@ const conversions = {
 exports.getCanonical = function (item, today) {
     let quantity = item.netQuantityContent || item.basePriceQuantity;
     let unit = item.contentUnit || item.basePriceUnit;
-    return utils.convertUnit(
-        {
-            id: item.gtin,
-            name: `${item.brandName} ${item.title}`,
-            price: item.price.value,
-            priceHistory: [{ date: today, price: item.price.value }],
-            unit,
-            quantity,
-            ...((item.brandName === "dmBio" || (item.name ? item.name.startsWith("Bio ") | item.name.startsWith("Bio-") : false)) && { bio: true }),
-            url: `https://www.dm.de/product-p${item.gtin}.html`,
-        },
-        conversions,
-        "dmDe"
-    );
-};
+    return utils.convertUnit({
+        id: item.gtin,
+        name: `${item.brandName} ${item.title}`,
+        price: item.price.value,
+        priceHistory: [{ date: today, price: item.price.value }],
+        unit,
+        quantity,
+        ...(item.brandName === "dmBio" || (item.name ? (item.name.startsWith("Bio ") | item.name.startsWith("Bio-")) : false)) && {bio: true},
+    }, conversions, 'dmDe');
+}
 
 exports.fetchData = async function () {
     const DM_BASE_URL = `https://product-search.services.dmtech.com/de/search/crawl?pageSize=1000&`;
@@ -94,4 +89,6 @@ exports.fetchData = async function () {
         await new Promise((resolve) => setTimeout(resolve, 1000));
     }
     return dmItems;
-};
+}
+
+exports.urlBase = "https://www.dm.de/product-p";

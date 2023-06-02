@@ -44,26 +44,25 @@ exports.getCanonical = function (item, today) {
         quantity = parseFloat((price / unitPrice).toFixed(3));
         unit = unit_.toLowerCase();
     }
-    return utils.convertUnit(
-        {
-            id: item.masterValues["code-internal"],
-            sparId: item.masterValues["product-number"],
-            name: item.masterValues.title + " " + item.masterValues["short-description"],
-            price,
-            priceHistory: [{ date: today, price }],
-            unit,
-            quantity,
-            isWeighted: item.masterValues["item-type"] === "WeightProduct",
-            bio: item.masterValues.biolevel === "Bio",
-            url: `https://www.interspar.at/shop/lebensmittel${item.masterValues.url}`,
-        },
-        conversions,
-        "spar"
-    );
-};
+
+    return utils.convertUnit({
+        id: item.masterValues["code-internal"],
+        sparId: item.masterValues["product-number"],
+        name: item.masterValues.title + " " + item.masterValues["short-description"],
+        price,
+        priceHistory: [{ date: today, price }],
+        unit,
+        quantity,
+        isWeighted: item.masterValues['item-type'] === 'WeightProduct',
+        bio: item.masterValues.biolevel === "Bio",
+        url: item.masterValues.url,
+    }, conversions, 'spar');
+}
 
 exports.fetchData = async function () {
     const SPAR_SEARCH = `https://search-spar.spar-ics.com/fact-finder/rest/v4/search/products_lmos_at?query=*&q=*&page=1&hitsPerPage=${HITS}`;
     const rawItems = (await axios.get(SPAR_SEARCH)).data.hits;
     return rawItems?.hits || rawItems;
-};
+}
+
+exports.urlBase = "https://www.interspar.at/shop/lebensmittel"

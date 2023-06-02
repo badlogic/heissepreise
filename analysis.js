@@ -1,4 +1,5 @@
 const fs = require("fs");
+const zlib = require("zlib");
 const stores = require("./stores");
 
 const STORE_KEYS = Object.keys(stores);
@@ -13,13 +14,22 @@ function currentDate() {
     return `${year}-${month}-${day}`;
 }
 
-function readJSON(file) {
-    return JSON.parse(fs.readFileSync(file));
+function readJSON(file, gzipped = false) {
+    let data = fs.readFileSync(`${file}${gzipped ? ".gz" : ""}`)
+    if (gzipped) data = zlib.gunzipSync(data); 
+    return JSON.parse(data);
 }
+exports.readJSON = readJSON;
 
-function writeJSON(file, data) {
-    fs.writeFileSync(file, JSON.stringify(data, null, 2));
+function writeJSON(file, data, gzipped = false, spacer = 2, compressData = false) {
+    if (compressData) {
+        data = compress(data);
+    }
+    data = JSON.stringify(data, null, spacer);
+    if (gzipped) data = zlib.gzipSync(data);
+    fs.writeFileSync(`${file}${gzipped ? ".gz" : ""}`, data);
 }
+exports.writeJSON = writeJSON;
 
 function getCanonicalFor(store, rawItems, today) {
     const canonicalItems = [];
@@ -108,36 +118,7 @@ function compress(items) {
         data.push(item.quantity);
         data.push(item.isWeighted ? 1 : 0);
         data.push(item.bio ? 1 : 0);
-        switch (item.store) {
-            case "billa":
-                data.push(item.url?.replace("https://shop.billa.at", ""));
-                break;
-            case "dm":
-            case "dmDe":
-                data.push("");
-                break;
-            case "hofer":
-                data.push(item.url?.replace("https://www.roksh.at/hofer/produkte/", ""));
-                break;
-            case "lidl":
-                data.push(item.url?.replace("https://www.lidl.at", ""));
-                break;
-            case "mpreis":
-                data.push("");
-                break;
-            case "spar":
-                data.push(item.url?.replace("https://www.interspar.at/shop/lebensmittel", ""));
-                break;
-            case "unimarkt":
-                data.push(item.url?.replace("https://shop.unimarkt.at", ""));
-                break;
-            case "reweDe":
-                data.push("");
-                break;
-            case "penny":
-                data.push(item.url?.replace("https://www.penny.at", ""));
-                break;
-        }
+        data.push(item.url?.replace(stores[item.store].urlBase, ""));
     }
     return compressed;
 }
@@ -169,7 +150,7 @@ exports.replay = function (rawDataDir) {
 
     for (const store of STORE_KEYS) {
         storeFiles[store] = getFilteredFilesFor(store);
-        canonicalFiles[store] = storeFiles[store].map((file) => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+        canonicalFiles[store] = storeFiles[store].map(file => getCanonicalFor(store, readJSON(file, true), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
         canonicalFiles[store].reverse();
     }
 
@@ -202,33 +183,31 @@ exports.updateData = async function (dataDir, done) {
     console.log("Fetching data for date: " + today);
     const storeFetchPromises = [];
     for (const store of STORE_KEYS) {
-        storeFetchPromises.push(
-            new Promise(async (resolve) => {
-                const start = performance.now();
-                try {
-                    const storeItems = await stores[store].fetchData();
-                    fs.writeFileSync(`${dataDir}/${store}-${today}.json`, JSON.stringify(storeItems, null, 2));
-                    const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
-                    console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
-                    resolve(storeItemsCanonical);
-                } catch (e) {
-                    console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
-                    resolve([]);
-                }
-            })
-        );
+        storeFetchPromises.push(new Promise(async (resolve) => {
+            const start = performance.now();
+            try {
+                const storeItems = await stores[store].fetchData();
+                writeJSON(`${dataDir}/${store}-${today}.json`, storeItems, true);
+                const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
+                console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
+                resolve(storeItemsCanonical)
+            } catch (e) {
+                console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
+                resolve([])
+            }
+        }));
     }
 
     const items = [].concat(...(await Promise.all(storeFetchPromises)));
 
-    if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
-        const oldItems = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
+    if (fs.existsSync(`${dataDir}/latest-canonical.json.gz`)) {
+        const oldItems = readJSON(`${dataDir}/latest-canonical.json`, true);
         mergePriceHistory(oldItems, items);
         console.log("Merged price history");
     }
 
     sortItems(items);
-    fs.writeFileSync(`${dataDir}/latest-canonical.json`, JSON.stringify(items, null, 2));
+    writeJSON(`${dataDir}/latest-canonical.json`, items, true);
 
     if (done) done(items);
     return items;

@@ -61,22 +61,17 @@ exports.getCanonical = function (item, today) {
     }
 
     let price = Number.parseFloat(item.currentPrice.split(" ")[0].replace(",", "."));
-    return utils.convertUnit(
-        {
-            id: item.id,
-            name: item.name,
-            price,
-            priceHistory: [{ date: today, price }],
-            isWeighted: false,
-            unit,
-            quantity,
-            bio: false,
-            url: "",
-        },
-        conversions,
-        "reweDe"
-    );
-};
+    return utils.convertUnit({
+        id: item.id,
+        name: item.name,
+        price,
+        priceHistory: [{ date: today, price }],
+        isWeighted: false,
+        unit,
+        quantity,
+        bio: false,
+    }, conversions, "reweDe");
+}
 
 exports.fetchData = async function () {
     // For some unholy reason, Axios returns 403 when accessing the endpoint
@@ -120,4 +115,6 @@ exports.fetchData = async function () {
         );
     }
     return items;
-};
+}
+
+exports.urlBase = "";
