@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Heisse Preise</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🔥</text></svg>"
+        />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heisse Preise</title>
-    <link
-        rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🔥</text></svg>"
-    />
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-    <div class="column">
-        <h2 id="date"></h2>
-        <div class="filters" id="filters-store">
+    <body>
+        <div class="column">
+            <h2 id="date"></h2>
+            <div class="filters" id="filters-store"></div>
+            <div class="filters" id="filters-changes">
+                <label><input id="increases" type="checkbox" checked="true" /> Teurer</label>
+                <label><input id="decreases" type="checkbox" checked="true" /> Billiger</label>
+            </div>
+            <input id="filter" type="text" style="max-width: 800px; width: 100%" placeholder="Filtern..." />
+            <div id="numresults" style="margin-top: 1em"></div>
+            <table id="result"></table>
         </div>
-        <div class="filters" id="filters-changes">
-            <label><input id="increases" type="checkbox" checked="true"> Teurer</label>
-            <label><input id="decreases" type="checkbox" checked="true"> Billiger</label>
-        </div>
-        <input id="filter" type="text" style="max-width: 800px; width: 100%;" placeholder="Filtern...">
-        <div id="numresults" style="margin-top: 1em"></div>
-        <table id="result"></table>
-    </div>
-    <script src="alasql.js"></script>
-    <script src="utils.js"></script>
-    <script src="aktionen.js"></script>
-</body>
-
+        <script src="alasql.js"></script>
+        <script src="utils.js"></script>
+        <script src="aktionen.js"></script>
+    </body>
 </html>

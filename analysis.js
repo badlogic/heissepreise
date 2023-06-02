@@ -8,8 +8,8 @@ exports.STORE_KEYS = STORE_KEYS;
 function currentDate() {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
 }
 
@@ -28,7 +28,7 @@ function getCanonicalFor(store, rawItems, today) {
         if (item)
             canonicalItems.push({
                 store,
-                ...item
+                ...item,
             });
     }
     return canonicalItems;
@@ -37,7 +37,7 @@ function getCanonicalFor(store, rawItems, today) {
 function mergePriceHistory(oldItems, items) {
     if (oldItems == null) return items;
 
-    const lookup = {}
+    const lookup = {};
     for (oldItem of oldItems) {
         lookup[oldItem.store + oldItem.id] = oldItem;
     }
@@ -58,7 +58,7 @@ function mergePriceHistory(oldItems, items) {
         }
     }
 
-    console.log(`${Object.keys(lookup).length} not in latest list.`)
+    console.log(`${Object.keys(lookup).length} not in latest list.`);
     for (key of Object.keys(lookup)) {
         items.push(lookup[key]);
     }
@@ -92,8 +92,8 @@ function compress(items) {
     const compressed = {
         stores: STORE_KEYS,
         n: items.length,
-        data: []
-    }
+        data: [],
+    };
     const data = compressed.data;
     for (item of items) {
         data.push(STORE_KEYS.indexOf(item.store));
@@ -148,10 +148,9 @@ exports.compress = compress;
 exports.replay = function (rawDataDir) {
     const today = currentDate();
 
-    const files = fs.readdirSync(rawDataDir).filter(
-        file => file.indexOf("canonical") == -1 &&
-            STORE_KEYS.some(store => file.indexOf(`${store}-`) == 0)
-    );
+    const files = fs
+        .readdirSync(rawDataDir)
+        .filter((file) => file.indexOf("canonical") == -1 && STORE_KEYS.some((store) => file.indexOf(`${store}-`) == 0));
 
     const dateSort = (a, b) => {
         const dateA = new Date(a.match(/\d{4}-\d{2}-\d{2}/)[0]);
@@ -159,25 +158,29 @@ exports.replay = function (rawDataDir) {
         return dateA - dateB;
     };
 
-    const getFilteredFilesFor = (store) => files.filter(file => file.indexOf(`${store}-`) == 0).sort(dateSort).map(file => rawDataDir + "/" + file);
+    const getFilteredFilesFor = (store) =>
+        files
+            .filter((file) => file.indexOf(`${store}-`) == 0)
+            .sort(dateSort)
+            .map((file) => rawDataDir + "/" + file);
 
     const storeFiles = {};
     const canonicalFiles = {};
 
     for (const store of STORE_KEYS) {
         storeFiles[store] = getFilteredFilesFor(store);
-        canonicalFiles[store] = storeFiles[store].map(file => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+        canonicalFiles[store] = storeFiles[store].map((file) => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
         canonicalFiles[store].reverse();
     }
 
     const allFilesCanonical = [];
-    const len = Math.max(...Object.values(canonicalFiles).map(filesByStore => filesByStore.length));
+    const len = Math.max(...Object.values(canonicalFiles).map((filesByStore) => filesByStore.length));
     for (let i = 0; i < len; i++) {
         const canonical = [];
-        Object.values(canonicalFiles).forEach(filesByStore => {
+        Object.values(canonicalFiles).forEach((filesByStore) => {
             const file = filesByStore.pop();
             if (file) canonical.push(...file);
-        })
+        });
         allFilesCanonical.push(canonical);
     }
 
@@ -192,29 +195,31 @@ exports.replay = function (rawDataDir) {
         prev = curr;
     }
     return curr;
-}
+};
 
 exports.updateData = async function (dataDir, done) {
     const today = currentDate();
     console.log("Fetching data for date: " + today);
-    const storeFetchPromises = []
+    const storeFetchPromises = [];
     for (const store of STORE_KEYS) {
-        storeFetchPromises.push(new Promise(async (resolve) => {
-            const start = performance.now();
-            try {
-                const storeItems = await stores[store].fetchData();
-                fs.writeFileSync(`${dataDir}/${store}-${today}.json`, JSON.stringify(storeItems, null, 2));
-                const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
-                console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
-                resolve(storeItemsCanonical)
-            } catch (e) {
-                console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
-                resolve([])
-            }
-        }));
+        storeFetchPromises.push(
+            new Promise(async (resolve) => {
+                const start = performance.now();
+                try {
+                    const storeItems = await stores[store].fetchData();
+                    fs.writeFileSync(`${dataDir}/${store}-${today}.json`, JSON.stringify(storeItems, null, 2));
+                    const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
+                    console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
+                    resolve(storeItemsCanonical);
+                } catch (e) {
+                    console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
+                    resolve([]);
+                }
+            })
+        );
     }
 
-    const items = [].concat(...await Promise.all(storeFetchPromises));
+    const items = [].concat(...(await Promise.all(storeFetchPromises)));
 
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
         const oldItems = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
@@ -227,4 +232,4 @@ exports.updateData = async function (dataDir, done) {
 
     if (done) done(items);
     return items;
-}
+};

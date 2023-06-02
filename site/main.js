@@ -1,5 +1,5 @@
 function updateCharts(canvasDom, items) {
-    const now =performance.now();
+    const now = performance.now();
     const sum = document.querySelector("#sum").checked;
     const sumStores = document.querySelector("#sumstores").checked;
     const todayOnly = document.querySelector("#todayonly").checked;
@@ -26,9 +26,11 @@ async function load() {
     document.querySelector("#start").value = getOldestDate(items);
     document.querySelector("#end").value = currentDate();
 
-    newSearchComponent(document.querySelector("#search"), items,
+    newSearchComponent(
+        document.querySelector("#search"),
+        items,
         (hits) => {
-            items.forEach(item => item.chart = false);
+            items.forEach((item) => (item.chart = false));
             if (hits.length > 0) {
                 chartDom.classList.remove("hide");
             } else {
@@ -40,36 +42,39 @@ async function load() {
         },
         null,
         (header) => {
-            header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`)
-            const showHideAll = header.querySelectorAll('th:nth-child(4)')[0];
+            header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`);
+            const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
             showHideAll.style["cursor"] = "pointer";
             showHideAll.showAll = true;
             showHideAll.addEventListener("click", () => {
-                document.querySelectorAll(".priceinfo").forEach(el => showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide"));
+                document
+                    .querySelectorAll(".priceinfo")
+                    .forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
                 showHideAll.showAll = !showHideAll.showAll;
-            })
+            });
             return header;
-        }, (item, itemDom, items, setQuery) => {
-            const checked = item.chart = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`);
+        },
+        (item, itemDom, items, setQuery) => {
+            const checked = (item.chart = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`));
             const dataId = item.store + ":" + item.id;
             const cell = dom("td", `<input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">`);
             itemDom.appendChild(cell);
-            const handleClick = (eventShouldSetQuery = false) =>{
+            const handleClick = (eventShouldSetQuery = false) => {
                 item.chart = cell.children[0].checked;
-                updateCharts(canvasDom, lastHits)
+                updateCharts(canvasDom, lastHits);
                 !!eventShouldSetQuery && setQuery();
-            }
+            };
             cell.children[0].addEventListener("click", handleClick);
             checked && handleClick();
             return itemDom;
-        });
+        }
+    );
     const query = getQueryParameter("q");
     if (query) {
-
         document.querySelector(".search").value = query;
-        const inputEvent = new Event('input', {
+        const inputEvent = new Event("input", {
             bubbles: true,
-            cancelable: false
+            cancelable: false,
         });
         document.querySelector(".search").dispatchEvent(inputEvent);
     }

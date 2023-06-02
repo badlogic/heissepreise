@@ -46,26 +46,13 @@ const stores = {
     },
     penny: {
         name: "Penny",
-        budgetBrands: [
-            "bravo",
-            "echt bio!",
-            "san fabio",
-            "federike",
-            "blik",
-            "berida",
-            "today",
-            "ich bin österreich",
-        ],
+        budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "rgb(255, 180, 180)",
     },
 };
 
 const STORE_KEYS = Object.keys(stores);
-const BUDGET_BRANDS = [
-    ...new Set(
-        [].concat(...Object.values(stores).map((store) => store.budgetBrands))
-    ),
-];
+const BUDGET_BRANDS = [...new Set([].concat(...Object.values(stores).map((store) => store.budgetBrands)))];
 
 /**
  * @description Returns the current date in ISO format
@@ -128,12 +115,7 @@ function decompress(compressedItems) {
             const date = data[i++];
             const price = data[i++];
             prices.push({
-                date:
-                    date.substring(0, 4) +
-                    "-" +
-                    date.substring(4, 6) +
-                    "-" +
-                    date.substring(6, 8),
+                date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
                 price,
             });
         }
@@ -168,11 +150,7 @@ function decompress(compressedItems) {
                 url = "https://shop.unimarkt.at" + url;
                 break;
             case "reweDe":
-                url =
-                    "https://shop.rewe.de/p/" +
-                    name.toLowerCase().replace(/ /g, "-") +
-                    "/" +
-                    id;
+                url = "https://shop.rewe.de/p/" + name.toLowerCase().replace(/ /g, "-") + "/" + id;
                 break;
         }
 
@@ -200,21 +178,13 @@ async function loadItems() {
             new Promise(async (resolve) => {
                 const now = performance.now();
                 try {
-                    const response = await fetch(
-                        `latest-canonical.${store}.compressed.json`
-                    );
+                    const response = await fetch(`latest-canonical.${store}.compressed.json`);
                     const json = await response.json();
-                    console.log(
-                        `Loading compressed items for ${store} took ${
-                            (performance.now() - now) / 1000
-                        } secs`
-                    );
+                    console.log(`Loading compressed items for ${store} took ${(performance.now() - now) / 1000} secs`);
                     resolve(decompress(json));
                 } catch {
                     console.log(
-                        `Error while loading compressed items for ${store}. It took ${
-                            (performance.now() - now) / 1000
-                        } secs, continueing...`
+                        `Error while loading compressed items for ${store}. It took ${(performance.now() - now) / 1000} secs, continueing...`
                     );
                     resolve([]);
                 }
@@ -222,27 +192,19 @@ async function loadItems() {
         );
     }
     const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
-    console.log(
-        "Loading compressed items in parallel took " +
-            (performance.now() - now) / 1000 +
-            " secs"
-    );
+    console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
 
     now = performance.now();
     alasql.fn.hasPriceChange = (priceHistory, date, endDate) => {
         if (!endDate) return priceHistory.some((price) => price.date == date);
-        else
-            return priceHistory.some(
-                (price) => price.date >= date && price.date <= endDate
-            );
+        else return priceHistory.some((price) => price.date >= date && price.date <= endDate);
     };
     for (const item of items) {
         item.search = item.name + " " + item.quantity + " " + item.unit;
         item.search = item.search.toLowerCase().replace(",", ".");
 
         item.numPrices = item.priceHistory.length;
-        item.priceOldest =
-            item.priceHistory[item.priceHistory.length - 1].price;
+        item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
         item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
         item.date = item.priceHistory[0].date;
         let highestPriceBefore = -1;
@@ -261,9 +223,7 @@ async function loadItems() {
         item.highestBefore = highestPriceBefore;
         item.lowestBefore = lowestPriceBefore;
     }
-    console.log(
-        "Processing items took " + (performance.now() - now) / 1000 + " secs"
-    );
+    console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
     return items;
 }
 
@@ -342,51 +302,31 @@ function itemToDOM(item) {
         quantity = parseFloat((0.001 * quantity).toFixed(2));
         unit = unit == "ml" ? "l" : "kg";
     }
-    let unitDom = dom(
-        "td",
-        (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`
-    );
+    let unitDom = dom("td", (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`);
     unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
-        let percentageChange = Math.round(
-            ((item.priceHistory[0].price - item.priceHistory[1].price) /
-                item.priceHistory[1].price) *
-                100
-        );
-        increase = `<span class="${
-            percentageChange > 0 ? "increase" : "decrease"
-        }">${
+        let percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
+        increase = `<span class="${percentageChange > 0 ? "increase" : "decrease"}">${
             percentageChange > 0 ? "+" + percentageChange : percentageChange
         }%</span>`;
     }
     let priceDomText = `${Number(item.price).toFixed(2)} ${increase} ${
-        item.priceHistory.length > 1
-            ? "(" + (item.priceHistory.length - 1) + ")"
-            : ""
+        item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""
     }`;
     let pricesText = "";
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
         const currPrice = item.priceHistory[i].price;
-        const lastPrice = item.priceHistory[i + 1]
-            ? item.priceHistory[i + 1].price
-            : currPrice;
-        const increase = Math.round(
-            ((currPrice - lastPrice) / lastPrice) * 100
-        );
+        const lastPrice = item.priceHistory[i + 1] ? item.priceHistory[i + 1].price : currPrice;
+        const increase = Math.round(((currPrice - lastPrice) / lastPrice) * 100);
         let priceColor = "black";
         if (increase > 0) priceColor = "red";
         if (increase < 0) priceColor = "green";
-        pricesText += `<span style="color: ${priceColor}">${date} ${currPrice} ${
-            increase > 0 ? "+" + increase : increase
-        }%</span>`;
+        pricesText += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
         if (i != item.priceHistory.length - 1) pricesText += "<br>";
     }
-    let priceDom = dom(
-        "td",
-        `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`
-    );
+    let priceDom = dom("td", `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`);
     priceDom.setAttribute("data-label", "Preis");
     if (item.priceHistory.length > 1) {
         priceDom.style["cursor"] = "pointer";
@@ -410,16 +350,7 @@ function itemToDOM(item) {
 
 let componentId = 0;
 
-function searchItems(
-    items,
-    query,
-    checkedStores,
-    budgetBrands,
-    minPrice,
-    maxPrice,
-    exact,
-    bio
-) {
+function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPrice, exact, bio) {
     query = query.trim();
     if (query.length < 3) return [];
 
@@ -428,9 +359,7 @@ function searchItems(
         return alasql("select * from ? where " + query, [items]);
     }
 
-    const tokens = query
-        .split(/\s+/)
-        .map((token) => token.toLowerCase().replace(",", "."));
+    const tokens = query.split(/\s+/).map((token) => token.toLowerCase().replace(",", "."));
 
     let hits = [];
     for (const item of items) {
@@ -443,18 +372,11 @@ function searchItems(
                 break;
             }
             if (exact) {
-                if (
-                    index > 0 &&
-                    item.search.charAt(index - 1) != " " &&
-                    item.search.charAt(index - 1) != "-"
-                ) {
+                if (index > 0 && item.search.charAt(index - 1) != " " && item.search.charAt(index - 1) != "-") {
                     allFound = false;
                     break;
                 }
-                if (
-                    index + token.length < item.search.length &&
-                    item.search.charAt(index + token.length) != " "
-                ) {
+                if (index + token.length < item.search.length && item.search.charAt(index + token.length) != " ") {
                     allFound = false;
                     break;
                 }
@@ -462,17 +384,10 @@ function searchItems(
         }
         if (allFound) {
             const name = item.name.toLowerCase();
-            if (checkedStores.length && !checkedStores.includes(item.store))
-                continue;
+            if (checkedStores.length && !checkedStores.includes(item.store)) continue;
             if (item.price < minPrice) continue;
             if (item.price > maxPrice) continue;
-            if (
-                budgetBrands &&
-                !BUDGET_BRANDS.some(
-                    (budgetBrand) => name.indexOf(budgetBrand) >= 0
-                )
-            )
-                continue;
+            if (budgetBrands && !BUDGET_BRANDS.some((budgetBrand) => name.indexOf(budgetBrand) >= 0)) continue;
             if (bio && !item.bio) continue;
             hits.push(item);
         }
@@ -480,14 +395,7 @@ function searchItems(
     return hits;
 }
 
-function newSearchComponent(
-    parentElement,
-    items,
-    searched,
-    filter,
-    headerModifier,
-    itemDomModifier
-) {
+function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier) {
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
@@ -501,17 +409,14 @@ function newSearchComponent(
             <a id="json-${id}" href="" class="hide">JSON</a>
             <div class="filters filters--store"> 
                 <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
-                ${STORE_KEYS.map(
-                    (store) =>
-                        `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`
-                ).join(" ")}
+                ${STORE_KEYS.map((store) => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(
+                    " "
+                )}
             </div>
             <div class="filters">
                 <label>
                     <input id="budgetBrands-${id}" type="checkbox"> Nur 
-                    <abbr title="${BUDGET_BRANDS.map((budgetBrand) =>
-                        budgetBrand.toUpperCase()
-                    ).join(", ")}">
+                    <abbr title="${BUDGET_BRANDS.map((budgetBrand) => budgetBrand.toUpperCase()).join(", ")}">
                         Diskont-Eigenmarken
                     </abbr>
                 </label>
@@ -536,7 +441,8 @@ function newSearchComponent(
         (entries) => {
             for (const entry of entries) {
                 const clientRect = entry.target.getBoundingClientRect();
-                if (entry.intersectionRatio < 0.999 && (clientRect.top + clientRect.height) < window.innerHeight) { // Fix Edge issue
+                if (entry.intersectionRatio < 0.999 && clientRect.top + clientRect.height < window.innerHeight) {
+                    // Fix Edge issue
                     entry.target.classList.add("wrapper--pinned");
                 } else {
                     entry.target.classList.remove("wrapper--pinned");
@@ -558,9 +464,7 @@ function newSearchComponent(
     const budgetBrands = parentElement.querySelector(`#budgetBrands-${id}`);
     const bio = parentElement.querySelector(`#bio-${id}`);
     const allCheckbox = parentElement.querySelector(`#all-${id}`);
-    const storeCheckboxes = STORE_KEYS.map((store) =>
-        parentElement.querySelector(`#${store}-${id}`)
-    );
+    const storeCheckboxes = STORE_KEYS.map((store) => parentElement.querySelector(`#${store}-${id}`));
     const minPrice = parentElement.querySelector(`#minprice-${id}`);
     const maxPrice = parentElement.querySelector(`#maxprice-${id}`);
     const numResults = parentElement.querySelector(`#numresults-${id}`);
@@ -582,16 +486,9 @@ function newSearchComponent(
         queryLink.classList.remove("hide");
         jsonLink.classList.remove("hide");
         const inputs = [...table.querySelectorAll("input:checked")];
-        let checked = inputs.length
-            ? inputs.map((item) => item.dataset.id)
-            : getQueryParameter("c");
+        let checked = inputs.length ? inputs.map((item) => item.dataset.id) : getQueryParameter("c");
         if (typeof checked === "string") checked = [checked];
-        queryLink.setAttribute(
-            "href",
-            `/?q=${encodeURIComponent(query)}${
-                checked?.length ? `&c=${checked.join("&c=")}` : ""
-            }`
-        );
+        queryLink.setAttribute("href", `/?q=${encodeURIComponent(query)}${checked?.length ? `&c=${checked.join("&c=")}` : ""}`);
     };
 
     let search = (query) => {
@@ -612,9 +509,7 @@ function newSearchComponent(
         } catch (e) {
             console.log("Query: " + query + "\n" + e.message);
         }
-        console.log(
-            "Search took " + (performance.now() - now) / 1000.0 + " secs"
-        );
+        console.log("Search took " + (performance.now() - now) / 1000.0 + " secs");
         if (searched) hits = searched(hits);
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
@@ -622,10 +517,7 @@ function newSearchComponent(
             numResults.innerHTML = "Resultate: 0";
             return;
         }
-        if (
-            query.trim().charAt(0) != "!" ||
-            query.trim().toLowerCase().indexOf("order by") == -1
-        ) {
+        if (query.trim().charAt(0) != "!" || query.trim().toLowerCase().indexOf("order by") == -1) {
             if (sort.value == "priceasc") {
                 hits.sort((a, b) => a.price - b.price);
             } else if (sort.value == "pricedesc") {
@@ -636,10 +528,7 @@ function newSearchComponent(
             }
         }
 
-        let header = dom(
-            "tr",
-            `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`
-        );
+        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
         if (headerModifier) header = headerModifier(header);
         const thead = dom("thead", ``);
         thead.appendChild(header);
@@ -648,21 +537,15 @@ function newSearchComponent(
         now = performance.now();
         let num = 0;
         let limit = isMobile() ? 500 : 2000;
-        hits.every(hit => {
+        hits.every((hit) => {
             let itemDom = itemToDOM(hit);
-            if (itemDomModifier)
-                itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
+            if (itemDomModifier) itemDom = itemDomModifier(hit, itemDom, hits, setQuery);
             table.appendChild(itemDom);
             num++;
             return num < limit;
         });
-        console.log(
-            "Building DOM took: " + (performance.now() - now) / 1000.0 + " secs"
-        );
-        numResults.innerHTML =
-            "Resultate: " +
-            hits.length +
-            (num < hits.length ? ", " + num + " angezeigt" : "");
+        console.log("Building DOM took: " + (performance.now() - now) / 1000.0 + " secs");
+        numResults.innerHTML = "Resultate: " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
         lastHits = hits;
     };
 
@@ -676,13 +559,9 @@ function newSearchComponent(
                 maxPrice.value = 100;
             }
             if (query?.charAt(0) == "!") {
-                parentElement
-                    .querySelectorAll(".filters")
-                    .forEach((f) => (f.style.display = "none"));
+                parentElement.querySelectorAll(".filters").forEach((f) => (f.style.display = "none"));
             } else {
-                parentElement
-                    .querySelectorAll(".filters")
-                    .forEach((f) => (f.style = undefined));
+                parentElement.querySelectorAll(".filters").forEach((f) => (f.style = undefined));
             }
             setQuery();
             search(searchInput.value);
@@ -690,10 +569,8 @@ function newSearchComponent(
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
-    allCheckbox.addEventListener("change", () => storeCheckboxes.forEach(store => store.checked = allCheckbox.checked));
-    storeCheckboxes.map((store) =>
-        store.addEventListener("change", () => search(searchInput.value))
-    );
+    allCheckbox.addEventListener("change", () => storeCheckboxes.forEach((store) => (store.checked = allCheckbox.checked)));
+    storeCheckboxes.map((store) => store.addEventListener("change", () => search(searchInput.value)));
     sort.addEventListener("change", () => search(searchInput.value));
     minPrice.addEventListener("change", () => search(searchInput.value));
     maxPrice.addEventListener("change", () => search(searchInput.value));
@@ -710,18 +587,14 @@ function showChart(canvasDom, items, chartType) {
         canvasDom.style.display = "block";
     }
 
-    const allDates = items.flatMap((product) =>
-        product.priceHistory.map((item) => item.date)
-    );
+    const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));
     const uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
 
     const datasets = items.map((product) => {
         let price = null;
         const prices = uniqueDates.map((date) => {
-            const priceObj = product.priceHistory.find(
-                (item) => item.date === date
-            );
+            const priceObj = product.priceHistory.find((item) => item.date === date);
             if (!price && priceObj) price = priceObj.price;
             return priceObj ? priceObj.price : null;
         });
@@ -776,26 +649,13 @@ function getOldestDate(items) {
     return oldestDate;
 }
 
-function showCharts(
-    canvasDom,
-    items,
-    sum,
-    sumStores,
-    todayOnly,
-    startDate,
-    endDate
-) {
+function showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endDate) {
     let itemsToShow = [];
 
     if (sum && items.length > 0) {
         itemsToShow.push({
             name: "Preissumme Warenkorb",
-            priceHistory: calculateOverallPriceChanges(
-                items,
-                todayOnly,
-                startDate,
-                endDate
-            ),
+            priceHistory: calculateOverallPriceChanges(items, todayOnly, startDate, endDate),
         });
     }
 
@@ -805,12 +665,7 @@ function showCharts(
             if (storeItems.length > 0) {
                 itemsToShow.push({
                     name: "Preissumme " + store,
-                    priceHistory: calculateOverallPriceChanges(
-                        storeItems,
-                        todayOnly,
-                        startDate,
-                        endDate
-                    ),
+                    priceHistory: calculateOverallPriceChanges(storeItems, todayOnly, startDate, endDate),
                 });
             }
         });
@@ -822,10 +677,7 @@ function showCharts(
                 name: item.store + " " + item.name,
                 priceHistory: todayOnly
                     ? [{ date: currentDate(), price: item.price }]
-                    : item.priceHistory.filter(
-                          (price) =>
-                              price.date >= startDate && price.date <= endDate
-                      ),
+                    : item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate),
             });
         }
     });
@@ -842,21 +694,15 @@ function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
         return [{ date: currentDate(), price: sum }];
     }
 
-    const allDates = items.flatMap((product) =>
-        product.priceHistory.map((item) => item.date)
-    );
+    const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));
     let uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
-    uniqueDates = uniqueDates.filter(
-        (date) => date >= startDate && date <= endDate
-    );
+    uniqueDates = uniqueDates.filter((date) => date >= startDate && date <= endDate);
 
     const allPrices = items.map((product) => {
         let price = null;
         const prices = uniqueDates.map((date) => {
-            const priceObj = product.priceHistory.find(
-                (item) => item.date === date
-            );
+            const priceObj = product.priceHistory.find((item) => item.date === date);
             if (!price && priceObj) price = priceObj.price;
             return priceObj ? priceObj.price : null;
         });
@@ -1247,9 +1093,7 @@ function cluster(items, maxTime) {
         if (storeItems.length > 0) itemsPerStore.push(storeItems);
     }
     itemsPerStore.sort((a, b) => b.length - a.length);
-    itemsPerStore.forEach((items) =>
-        console.log(items[0].store + ", " + items.length)
-    );
+    itemsPerStore.forEach((items) => console.log(items[0].store + ", " + items.length));
 
     // Take the store with the most items, then try to find the best match
     // from each of the other stores
@@ -1294,11 +1138,7 @@ function cluster(items, maxTime) {
 
         const time = (performance.now() - now) / 1000;
         console.log(maxIterations + ", time " + time);
-        if (
-            JSON.stringify(clusters) == JSON.stringify(newClusters) ||
-            maxIterations == 1 ||
-            time > maxTime
-        ) {
+        if (JSON.stringify(clusters) == JSON.stringify(newClusters) || maxIterations == 1 || time > maxTime) {
             break;
         }
 
@@ -1325,9 +1165,7 @@ function flattenClusters(clusters) {
 }
 
 function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-    );
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 try {

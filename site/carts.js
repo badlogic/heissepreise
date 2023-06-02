@@ -20,7 +20,7 @@ async function load() {
     }
     shoppingCarts.save();
 
-    if (shoppingCarts.carts.findIndex(cart => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
+    if (shoppingCarts.carts.findIndex((cart) => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
         response = await fetch("momentum-cart.json");
         momentumCart = await response.json();
         shoppingCarts.carts.unshift(momentumCart);
@@ -48,11 +48,11 @@ async function load() {
 
     const importButton = document.querySelector("#import");
     importButton.addEventListener("click", () => {
-        document.getElementById('fileInput').value = null
-        document.getElementById('fileInput').click();
+        document.getElementById("fileInput").value = null;
+        document.getElementById("fileInput").click();
     });
 
-    document.querySelector("#fileInput").addEventListener('change', function (event) {
+    document.querySelector("#fileInput").addEventListener("change", function (event) {
         const file = event.target.files[0];
         const reader = new FileReader();
         reader.onload = function (event) {
@@ -67,12 +67,12 @@ async function load() {
                 }
                 importedCart.items = items;
 
-                const index = shoppingCarts.carts.findIndex(cart => cart.name === importedCart.name);
+                const index = shoppingCarts.carts.findIndex((cart) => cart.name === importedCart.name);
                 if (index != -1) {
                     if (confirm("Existierenden Warenkorb '" + importedCart.name + " überschreiben?")) {
                         console.log(shoppingCarts.carts[index]);
                         shoppingCarts.carts[index] = importedCart;
-                        console.log(shoppingCarts.carts[index])
+                        console.log(shoppingCarts.carts[index]);
                     }
                 } else {
                     shoppingCarts.carts.push(importedCart);
@@ -90,19 +90,24 @@ async function load() {
 function showCarts(lookup) {
     const cartsTable = document.querySelector("#carts");
     cartsTable.innerHTML = "";
-    cartsTable.appendChild(dom("thead", `
+    cartsTable.appendChild(
+        dom(
+            "thead",
+            `
         <tr>
             <th>Name</th>
             <th>Produkte</th>
             <th>Preis</th>
             <th></th>
         </tr>
-    `));
+    `
+        )
+    );
 
-    shoppingCarts.carts.forEach(cart => {
+    shoppingCarts.carts.forEach((cart) => {
         let oldPrice = 0;
         let currPrice = 0;
-        let link = encodeURIComponent(cart.name) + ";"
+        let link = encodeURIComponent(cart.name) + ";";
         for (cartItem of cart.items) {
             const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
@@ -110,7 +115,7 @@ function showCarts(lookup) {
             currPrice += item.priceHistory[0].price;
             link += item.store + item.id + ";";
         }
-        const increase = oldPrice != 0 ? Math.round((currPrice - oldPrice) / oldPrice * 100) : 0;
+        const increase = oldPrice != 0 ? Math.round(((currPrice - oldPrice) / oldPrice) * 100) : 0;
 
         const row = dom("tr", ``);
 
@@ -122,12 +127,15 @@ function showCarts(lookup) {
         itemsDom.setAttribute("data-label", "Produkte");
         row.appendChild(itemsDom);
 
-        const priceDom = dom("td", `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${(increase > 0 ? "+" : "") + increase + "%"}`);
+        const priceDom = dom(
+            "td",
+            `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${(increase > 0 ? "+" : "") + increase + "%"}`
+        );
         priceDom.setAttribute("data-label", "Preis");
         row.appendChild(priceDom);
 
         const actionsDom = dom("div", "");
-        actionsDom.classList.add("cartactions")
+        actionsDom.classList.add("cartactions");
         const linkDom = dom("a", "Teilen");
         linkDom.setAttribute("href", "cart.html?cart=" + link);
         actionsDom.appendChild(linkDom);
@@ -137,7 +145,7 @@ function showCarts(lookup) {
         jsonDom.addEventListener("click", (event) => {
             event.preventDefault();
             downloadFile(cart.name + ".json", JSON.stringify(cart, null, 2));
-        })
+        });
         actionsDom.appendChild(jsonDom);
 
         if (cart.name != "Momentum Eigenmarken Vergleich") {

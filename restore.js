@@ -1,6 +1,6 @@
 const fs = require("fs");
 const analysis = require("./analysis.js");
-const dataDir = process?.argv?.[2] ?? "docker/data"
+const dataDir = process?.argv?.[2] ?? "docker/data";
 console.log("Restoring data from raw data.");
 (async function () {
     /*console.log("Items: " + JSON.parse(fs.readFileSync("docker/data/latest-canonical.json")).length);

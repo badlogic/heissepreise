@@ -1,6 +1,8 @@
 data/
 .github/
 .vscode/
+alasql.js
+charts.js
 latest-canonical*.json
 momentum-cart.json
 package-lock.json

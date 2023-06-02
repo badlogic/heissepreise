@@ -5,7 +5,7 @@ function copyItemsToSite(dataDir) {
     fs.copyFileSync(`${dataDir}/latest-canonical.json`, `site/latest-canonical.json`);
     const items = JSON.parse(fs.readFileSync(`${dataDir}/latest-canonical.json`));
     for (const store of analysis.STORE_KEYS) {
-        const storeItems = items.filter(item => item.store === store);
+        const storeItems = items.filter((item) => item.store === store);
         fs.writeFileSync(`site/latest-canonical.${store}.compressed.json`, JSON.stringify(analysis.compress(storeItems)));
     }
 }
@@ -31,12 +31,11 @@ function scheduleFunction(hour, minute, second, func) {
     }, delay);
 }
 
-
 (async () => {
-    const dataDir = 'data';
+    const dataDir = "data";
 
     if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir)
+        fs.mkdirSync(dataDir);
     }
 
     if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
@@ -45,23 +44,23 @@ function scheduleFunction(hour, minute, second, func) {
             copyItemsToSite(dataDir);
         });
     } else {
-        await analysis.updateData(dataDir)
+        await analysis.updateData(dataDir);
         copyItemsToSite(dataDir);
     }
     scheduleFunction(7, 0, 0, async () => {
-        items = await analysis.updateData(dataDir)
+        items = await analysis.updateData(dataDir);
         copyItemsToSite(dataDir);
     });
 
-    const express = require('express')
-    const compression = require('compression');
-    const app = express()
-    const port = process?.argv?.[2] ?? 3000
+    const express = require("express");
+    const compression = require("compression");
+    const app = express();
+    const port = process?.argv?.[2] ?? 3000;
 
     app.use(compression());
-    app.use(express.static('site'));
+    app.use(express.static("site"));
 
     app.listen(port, () => {
-        console.log(`Example app listening on port ${port}`)
-    })
+        console.log(`Example app listening on port ${port}`);
+    });
 })();
