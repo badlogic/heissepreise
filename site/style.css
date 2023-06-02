@@ -38,6 +38,14 @@ label {
     z-index: 1;
 }
 
+.filters--store {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
 .toggle--hidden {
     display: none;
 }
@@ -73,6 +81,10 @@ label {
     top: 4em;
     z-index: 1;
     padding: 1em;
+}
+
+.wrapper--pinned ~ .wrapper--sticky {
+    max-width: 650px;
 }
 
 .wrapper--pinned ~ .wrapper--sticky::before {

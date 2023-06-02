@@ -500,7 +500,7 @@ function newSearchComponent(
             <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
             <a id="json-${id}" href="" class="hide">JSON</a>
             <div class="filters filters--store"> 
-                <label style="margin-right: 10px;"><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
+                <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
                 ${STORE_KEYS.map(
                     (store) =>
                         `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`
@@ -682,7 +682,7 @@ function newSearchComponent(
             } else {
                 parentElement
                     .querySelectorAll(".filters")
-                    .forEach((f) => (f.style.display = "block"));
+                    .forEach((f) => (f.style = undefined));
             }
             setQuery();
             search(searchInput.value);
