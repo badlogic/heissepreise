@@ -1,19 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-function findUniqueFilenames(str) {
-    const regex = /%%([^%]+)%%/g;
-    const filenames = new Set();
-    let match;
-
-    while ((match = regex.exec(str))) {
-        const filename = match[1];
-        filenames.add(filename);
-    }
-
-    return Array.from(filenames);
-}
-
 function deleteDirectory(directory) {
     if (fs.existsSync(directory)) {
         fs.readdirSync(directory).forEach((file) => {
@@ -26,12 +13,6 @@ function deleteDirectory(directory) {
         });
         fs.rmdirSync(directory);
     }
-}
-
-function isSameDirectory(directory, potentialSubdirectory) {
-    return path.resolve(directory);
-    const absolutePotentialSubdirectory = path.resolve(potentialSubdirectory);
-    return absolutePotentialSubdirectory.startsWith(absoluteDirectory);
 }
 
 function processFile(inputFile, outputFile) {

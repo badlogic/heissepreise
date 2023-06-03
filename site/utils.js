@@ -971,9 +971,6 @@ function stem(word) {
 
 function vector(tokens) {
     const vector = {};
-    /*for (const token of tokens) {
-        vector[token] = (vector[token] || 0) + 1;
-    }*/
     for (token of tokens) {
         if (token.length > 3) {
             for (let i = 0; i < token.length - 3; i++) {
@@ -1025,10 +1022,6 @@ function magnitude(vector) {
     return Math.sqrt(sumOfSquares);
 }
 
-function deepCopy(obj) {
-    return JSON.parse(JSON.stringify(obj));
-}
-
 function similaritySortItems(items) {
     if (items.length == 0) return items;
     sortedItems = [items.shift()];
@@ -1065,90 +1058,6 @@ function vectorizeItems(items) {
     });
 }
 
-function cluster(items, maxTime) {
-    if (!maxTime) maxTime = 0.25;
-
-    // Tokenize, stem, and vectorize item names
-    vectorizeItems(items);
-
-    // Split by store and sort by number of items in descending order
-    const itemsPerStore = [];
-    for (const store of STORE_KEYS) {
-        const storeItems = items.filter((item) => item.store === store);
-        if (storeItems.length > 0) itemsPerStore.push(storeItems);
-    }
-    itemsPerStore.sort((a, b) => b.length - a.length);
-    itemsPerStore.forEach((items) => console.log(items[0].store + ", " + items.length));
-
-    // Take the store with the most items, then try to find the best match
-    // from each of the other stores
-    const baseStore = itemsPerStore.shift();
-    itemsPerStore.push(baseStore);
-    const otherItems = itemsPerStore.flat();
-
-    let clusters = [];
-    for (item of baseStore) {
-        clusters.push({ centroid: deepCopy(item.vector), item, items: [] });
-    }
-
-    const now = performance.now();
-    let maxIterations = 100;
-    while (maxIterations-- > 0) {
-        for (item of otherItems) {
-            let maxSimilarity = -1;
-            let nearestCluster = null;
-            for (cluster of clusters) {
-                const similarity = dotProduct(cluster.centroid, item.vector);
-                if (similarity > maxSimilarity) {
-                    maxSimilarity = similarity;
-                    nearestCluster = cluster;
-                    item.similarity = similarity;
-                }
-            }
-            nearestCluster.items.push(item);
-        }
-
-        const newClusters = [];
-        for (cluster of clusters) {
-            const newCluster = { centroid: {}, item: cluster.item, items: [] };
-            for (item of cluster.items) {
-                addVector(newCluster.centroid, item.vector);
-            }
-            if (cluster.items.length > 0) {
-                scaleVector(newCluster.centroid, 1 / cluster.items.length);
-                normalizeVector(newCluster.centroid);
-            }
-            newClusters.push(newCluster);
-        }
-
-        const time = (performance.now() - now) / 1000;
-        console.log(maxIterations + ", time " + time);
-        if (JSON.stringify(clusters) == JSON.stringify(newClusters) || maxIterations == 1 || time > maxTime) {
-            break;
-        }
-
-        clusters = newClusters;
-    }
-
-    const finalClusters = [];
-    for (cluster of clusters) {
-        cluster.items = similaritySortItems(cluster.items);
-        finalClusters.push(cluster);
-    }
-
-    return finalClusters;
-}
-
-function flattenClusters(clusters) {
-    const items = [];
-    for (cluster of clusters) {
-        for (item of cluster.items) {
-            items.push(item);
-        }
-    }
-    return items;
-}
-
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
@@ -1167,3 +1076,24 @@ try {
 } catch (e) {
     // hax
 }
+
+function setupLiveEdit() {
+    if (window.location.host.indexOf("localhost") < 0 && window.location.host.indexOf("127.0.0.1") < 0) return;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.onload = () => {
+        let lastChangeTimestamp = null;
+        this.socket = io({ transports: ["websocket"] });
+        this.socket.on("connect", () => console.log("Connected"));
+        this.socket.on("disconnect", () => console.log("Disconnected"));
+        this.socket.on("message", (timestamp) => {
+            if (lastChangeTimestamp != timestamp) {
+                setTimeout(() => location.reload(), 100);
+                lastChangeTimestamp = timestamp;
+            }
+        });
+    };
+    script.src = "js/socket.io.js";
+    document.body.appendChild(script);
+}
+setupLiveEdit();

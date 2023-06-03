@@ -1,6 +1,12 @@
 const fs = require("fs");
+const path = require("path");
+const http = require("http");
+const chokidar = require("chokidar");
 const analysis = require("./analysis");
 const template = require("./template");
+const socketIO = require("socket.io");
+const express = require("express");
+const compression = require("compression");
 
 function copyItemsToSite(dataDir) {
     const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
@@ -31,14 +37,31 @@ function scheduleFunction(hour, minute, second, func) {
     }, delay);
 }
 
+function generateSiteAndWatch(inputDir, outputDir) {
+    template.generateSite(inputDir, outputDir, true);
+    const watcher = chokidar.watch(inputDir, { ignored: /(^|[\/\\])\../ });
+
+    let initialScan = true;
+    watcher.on("ready", () => (initialScan = false));
+    watcher.on("all", (event, filePath) => {
+        if (initialScan) return;
+        if (path.resolve(filePath).startsWith(path.resolve(outputDir))) return;
+        console.log(`File ${filePath} has been ${event}`);
+        template.generateSite(inputDir, outputDir, false);
+    });
+    console.log(`Watching directory for changes: ${inputDir}`);
+}
+
 (async () => {
     const dataDir = "data";
+    const port = process?.argv?.[2] ?? 3000;
+    const liveReload = process?.argv?.[3] ?? false;
 
     if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir);
     }
 
-    template.generateSite("site", "site/output");
+    generateSiteAndWatch("site", "site/output");
 
     analysis.migrateCompression(dataDir, ".json", ".json.br");
     analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
@@ -57,15 +80,21 @@ function scheduleFunction(hour, minute, second, func) {
         copyItemsToSite(dataDir);
     });
 
-    const express = require("express");
-    const compression = require("compression");
     const app = express();
-    const port = process?.argv?.[2] ?? 3000;
-
     app.use(compression());
     app.use(express.static("site/output"));
-
-    app.listen(port, () => {
+    const server = http.createServer(app).listen(port, () => {
         console.log(`Example app listening on port ${port}`);
     });
+    if (liveReload === "true") {
+        const sockets = [];
+        const io = socketIO(server);
+        io.on("connection", (socket) => sockets.push(socket));
+        chokidar.watch("site/output").on("all", () => {
+            lastChangeTimestamp = Date.now();
+            for (let i = 0; i < sockets.length; i++) {
+                sockets[i].send(`${lastChangeTimestamp}`);
+            }
+        });
+    }
 })();
