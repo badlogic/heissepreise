@@ -1,16 +1,25 @@
 const axios = require("axios");
+const utils = require("./utils");
 const HTMLParser = require("node-html-parser");
 
+const units = {};
+
 exports.getCanonical = function (item, today) {
-  return {
-    id: item.id,
-    name: item.name,
-    price: item.price,
-    priceHistory: [{ date: today, price: item.price }],
-    unit: item.unit,
-    bio: item.name.toLowerCase().includes('bio'),
-    url: item.canonicalUrl,
-  };
+    let [quantity, unit] = utils.parseUnitAndQuantityAtEnd(item.unit.replace("/ EINWEG", "").replace("/ MEHRWEG", ""));
+    return utils.convertUnit(
+        {
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            priceHistory: [{ date: today, price: item.price }],
+            quantity,
+            unit,
+            bio: item.name.toLowerCase().includes("bio"),
+            url: item.canonicalUrl,
+        },
+        units,
+        "unimarkt"
+    );
 };
 
 exports.fetchData = async function () {
@@ -50,4 +59,4 @@ exports.fetchData = async function () {
     return unimarktItems;
 };
 
-exports.urlBase = "https://shop.unimarkt.at"
+exports.urlBase = "https://shop.unimarkt.at";

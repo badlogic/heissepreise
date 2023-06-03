@@ -1,37 +1,33 @@
 const axios = require("axios");
 const utils = require("./utils");
 
-const conversions = {
-    'g': { unit: 'g', factor: 1 },
-    'kg': { unit: 'g', factor: 1000 },
-    'l': { unit: 'ml', factor: 1000 },
-    'ml':   { unit: 'ml', factor: 1 },
-    'St': { unit: 'stk', factor: 1 },
-    'Wl': { unit: 'wg', factor: 1 },
-    'm': { unit: 'cm', factor: 100 },
-    'mm': { unit: 'cm', factor: .1 },
-    'Bl': { unit: 'stk', factor: 1 },
-    'Btl': { unit: 'stk', factor: 1 },
-    'Paar': { unit: 'stk', factor: 1 },
-    'Portion': { unit: 'stk', factor: 1 },
-    'Satz': { unit: 'stk', factor: 1 },
-    'Tablette': { unit: 'stk', factor: 1 },
-    'undefined': { unit: 'stk', factor: 1 },
+const units = {
+    wl: { unit: "wg", factor: 1 },
+    bl: { unit: "stk", factor: 1 },
+    btl: { unit: "stk", factor: 1 },
+    portion: { unit: "stk", factor: 1 },
+    satz: { unit: "stk", factor: 1 },
+    tablette: { unit: "stk", factor: 1 },
+    undefined: { unit: "stk", factor: 1 },
 };
 
 exports.getCanonical = function (item, today) {
     let quantity = item.netQuantityContent || item.basePriceQuantity;
     let unit = item.contentUnit || item.basePriceUnit;
-    return utils.convertUnit({
-        id: item.gtin,
-        name: `${item.brandName} ${item.title}`,
-        price: item.price.value,
-        priceHistory: [{ date: today, price: item.price.value }],
-        unit,
-        quantity,
-        ...(item.brandName === "dmBio" || (item.name ? (item.name.startsWith("Bio ") | item.name.startsWith("Bio-")) : false)) && {bio: true},
-    }, conversions, 'dm');
-}
+    return utils.convertUnit(
+        {
+            id: item.gtin,
+            name: `${item.brandName} ${item.title}`,
+            price: item.price.value,
+            priceHistory: [{ date: today, price: item.price.value }],
+            unit,
+            quantity,
+            ...((item.brandName === "dmBio" || (item.name ? item.name.startsWith("Bio ") | item.name.startsWith("Bio-") : false)) && { bio: true }),
+        },
+        units,
+        "dm"
+    );
+};
 
 exports.fetchData = async function () {
     const DM_BASE_URL = `https://product-search.services.dmtech.com/at/search/crawl?pageSize=1000&`;
@@ -90,6 +86,6 @@ exports.fetchData = async function () {
         await new Promise((resolve) => setTimeout(resolve, 1000));
     }
     return dmItems;
-}
+};
 
 exports.urlBase = "https://www.dm.at/product-p";
