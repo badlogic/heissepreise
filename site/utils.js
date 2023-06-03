@@ -163,7 +163,7 @@ async function loadItems() {
             new Promise(async (resolve) => {
                 const now = performance.now();
                 try {
-                    const response = await fetch(`latest-canonical.${store}.compressed.json`);
+                    const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
                     const json = await response.json();
                     console.log(`Loading compressed items for ${store} took ${(performance.now() - now) / 1000} secs`);
                     resolve(decompress(json));

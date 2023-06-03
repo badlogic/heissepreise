@@ -1,11 +1,12 @@
 const fs = require("fs");
 const analysis = require("./analysis");
+const template = require("./template");
 
 function copyItemsToSite(dataDir) {
     const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
     for (const store of analysis.STORE_KEYS) {
-        const storeItems = items.filter(item => item.store === store);
-        analysis.writeJSON(`site/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
+        const storeItems = items.filter((item) => item.store === store);
+        analysis.writeJSON(`site/output/data/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
     }
 }
 
@@ -37,6 +38,8 @@ function scheduleFunction(hour, minute, second, func) {
         fs.mkdirSync(dataDir);
     }
 
+    template.generateSite("site", "site/output");
+
     analysis.migrateCompression(dataDir, ".json", ".json.br");
     analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
 
@@ -60,7 +63,7 @@ function scheduleFunction(hour, minute, second, func) {
     const port = process?.argv?.[2] ?? 3000;
 
     app.use(compression());
-    app.use(express.static("site"));
+    app.use(express.static("site/output"));
 
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);

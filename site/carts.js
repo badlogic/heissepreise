@@ -21,7 +21,7 @@ async function load() {
     shoppingCarts.save();
 
     if (shoppingCarts.carts.findIndex((cart) => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
-        response = await fetch("momentum-cart.json");
+        response = await fetch("data/momentum-cart.json");
         momentumCart = await response.json();
         shoppingCarts.carts.unshift(momentumCart);
         shoppingCarts.save();
