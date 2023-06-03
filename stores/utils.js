@@ -1,12 +1,41 @@
+exports.globalUnits = {
+    "stk.": { unit: "stk", factor: 1 },
+    blatt: { unit: "stk", factor: 1 },
+    paar: { unit: "stk", factor: 1 },
+    stk: { unit: "stk", factor: 1 },
+    st: { unit: "stk", factor: 1 },
+    stück: { unit: "stk", factor: 1 },
+    mm: { unit: "cm", factor: 0.1 },
+    cm: { unit: "cm", factor: 1 },
+    zentimeter: { unit: "cm", factor: 1 },
+    m: { unit: "cm", factor: 100 },
+    meter: { unit: "cm", factor: 100 },
+    g: { unit: "g", factor: 1 },
+    gramm: { unit: "g", factor: 1 },
+    dag: { unit: "g", factor: 10 },
+    kg: { unit: "g", factor: 1000 },
+    kilogramm: { unit: "g", factor: 1000 },
+    ml: { unit: "ml", factor: 1 },
+    milliliter: { unit: "ml", factor: 1 },
+    dl: { unit: "ml", factor: 10 },
+    cl: { unit: "ml", factor: 100 },
+    l: { unit: "ml", factor: 1000 },
+    liter: { unit: "ml", factor: 1000 },
+    wg: { unit: "wg", factor: 1 },
+};
+
 exports.convertUnit = function (item, units, store) {
-    if (!(item.unit in units)) {
-        console.error(`Unknown unit in ${store}: '${item.unit}' in item ${item.name}`);
+    if (typeof item.quantity == "string") item.quantity = parseFloat(item.quantity.replace(",", "."));
+
+    let unit = item.unit;
+    if (typeof unit === "string") unit = unit.toLowerCase();
+
+    const conv = unit in exports.globalUnits ? exports.globalUnits[unit] : units[unit];
+    if (conv === undefined) {
+        console.error(`Unknown unit in ${store}: '${unit}' in item ${item.name}`);
         return item;
     }
 
-    if (typeof item.quantity == "string") item.quantity = parseFloat(item.quantity.replace(",", "."));
-
-    const conv = units[item.unit];
     item.quantity = conv.factor * item.quantity;
     item.unit = conv.unit;
     return item;

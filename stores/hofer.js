@@ -1,19 +1,9 @@
 const axios = require("axios");
 const utils = require("./utils");
 
-const conversions = {
+const units = {
     "": { unit: "stk", factor: 1 },
-    blatt: { unit: "stk", factor: 1 },
-    g: { unit: "g", factor: 1 },
     gg: { unit: "g", factor: 1 },
-    gramm: { unit: "g", factor: 1 },
-    kg: { unit: "g", factor: 1000 },
-    cl: { unit: "ml", factor: 100 },
-    l: { unit: "ml", factor: 1000 },
-    ml: { unit: "ml", factor: 1 },
-    paar: { unit: "stk", factor: 1 },
-    "stk.": { unit: "stk", factor: 1 },
-    stück: { unit: "stk", factor: 1 },
     er: { unit: "stk", factor: 1 },
     teebeutel: { unit: "stk", factor: 1 },
 };
@@ -22,24 +12,28 @@ exports.getCanonical = function (item, today) {
     // try to read quantity and unit from product name
     const name = item.ProductName;
     let [quantity, unit] = utils.parseUnitAndQuantityAtEnd(name);
-    if (conversions[unit] === undefined) {
+    if (units[unit] === undefined) {
         // fallback: use given quantity and unit (including packaging)
         quantity = item.Unit;
         unit = item.UnitType;
     }
-  
-    return utils.convertUnit({
-        id: item.ProductID,
-        name,
-        price: item.Price,
-        priceHistory: [{ date: today, price: item.Price }],
-        isWeighted: item.IsBulk,
-        unit,
-        quantity,
-        bio: item.IsBio,
-        url: `${item.CategorySEOName}/${item.SEOName}`
-    }, conversions, 'hofer');
-}
+
+    return utils.convertUnit(
+        {
+            id: item.ProductID,
+            name,
+            price: item.Price,
+            priceHistory: [{ date: today, price: item.Price }],
+            isWeighted: item.IsBulk,
+            unit,
+            quantity,
+            bio: item.IsBio,
+            url: `${item.CategorySEOName}/${item.SEOName}`,
+        },
+        units,
+        "hofer"
+    );
+};
 
 exports.fetchData = async function () {
     const HOFER_BASE_URL = `https://shopservice.roksh.at`;
@@ -82,6 +76,6 @@ exports.fetchData = async function () {
     }
 
     return hoferItems;
-}
+};
 
 exports.urlBase = "https://www.roksh.at/hofer/produkte/";
