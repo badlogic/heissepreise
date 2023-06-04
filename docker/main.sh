@@ -2,10 +2,10 @@
 set -e
 
 npm install
-if [ -z "$DEV" ]; then			
-	echo "RUNNING STUFF 2"
-	node index.js
-else	
-	echo "RUNNING STUFF"
+if [ -z "$DEV" ]; then
+	echo "Running in prod."
+	node server.js
+else
+	echo "Running in dev."
 	npm run dev
 fi

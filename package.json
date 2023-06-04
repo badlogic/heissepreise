@@ -2,10 +2,10 @@
   "name": "heissepreise",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "prepare": "husky install",
-    "dev": "DEV=true nodemon --watch index.js --inspect-brk=0.0.0.0:9230 index.js",
+    "dev": "DEV=true nodemon --watch server.js --inspect-brk=0.0.0.0:9230 server.js",
     "format": "npx prettier --write ."
   },
   "repository": {
@@ -30,22 +30,7 @@
   },
   "devDependencies": {
     "husky": "^8.0.3",
-    "pkg": "^5.8.1",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3"
-  },
-  "bin": {
-    "heisse-preise": "index.js"
-  },
-  "pkg": {
-    "outputPath": "dist",
-    "targets": [
-      "latest-macos-x64",
-      "latest-win-x64",
-      "latest-linux-x64"
-    ],
-    "assets": [
-      "./node_modules/axios/dist/node/axios.cjs"
-    ]
   }
 }

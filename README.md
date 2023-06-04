@@ -75,14 +75,6 @@ To get the latest code changes from this repository into your fork:
 
 Your site will now use the latest source code changes from this repository. It will be automatically updated and is usually live under `https://hotprices123.github.io` within 10-15 minutes.
 
-## Generating a self-contained executable
-
-Run the `package.sh`script in a Bash shell. It will generate a folder `dist/` with executable for Windows, Linux, and MacOS. Run the executable for your OS.
-
 ## Docker
 
-The project has a somewhat peculiar Docker Compose setup tailored to my infrastructure. All compose config files are in `docker/` including a simple Bash script to start and interact with the containers. This is the setup I use for both development and deployment.
-
-For development, run `docker/control.sh startdev`. You can connect to both the NodeJS server and the client for debugging in Visual Studio code via the `client-server` launch configuration (found in `.vscode/launch.json`).
-
-For production, run `docker/control.sh start`.
+The project has a somewhat peculiar Docker Compose setup in `docker/` tailored to my infrastructure. You can entirely ignore it.
