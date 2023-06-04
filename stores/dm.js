@@ -79,8 +79,10 @@ exports.fetchData = async function () {
             });
         }
         let items = res.data;
-        if (items.count > 1000) {
-            console.warn(`Query returned more than 1000 items! Items may be missing. Adjust queries. Query: ${query}`);
+        if (items.count > items.products.length) {
+            console.warn(
+                `DM Query matches ${items.count} items, but API only returns first ${items.products.length}. Adjust queries. Query: ${query}`
+            );
         }
         dmItems = dmItems.concat(items.products);
         await new Promise((resolve) => setTimeout(resolve, 1000));
