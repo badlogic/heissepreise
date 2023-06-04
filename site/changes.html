@@ -1,22 +1,24 @@
-%%_templates/_header.html%% %%_templates/_menu.html%%
+%%_templates/_header.html%%
 
 <div class="column">
     <h2>Preisänderungen</h2>
     <div class="filters-container">
         <div class="filters">
-            <label
-                >Datum:
-                <select id="dates"></select
-            ></label>
+            <label>
+                <input type="radio" id="date" name="type" value="date" checked /> Datum
+                <select id="dates"></select>
+            </label>
+            <label><input type="radio" id="cheaper" name="type" value="cheaper" /> Billiger seit letzter Änderung</label>
         </div>
-        <div class="filters">
-            <label><input id="increases" type="checkbox" checked="true" />Teurer</label>
-            <label><input id="decreases" type="checkbox" checked="true" />Billiger</label>
-            <label><input id="fullhistory" type="checkbox" checked="true" />Gesamte Preishistorie</label>
+        <input id="filter" class="search" type="text" placeholder="Filtern..." />
+        <div class="filters" id="filters-store"></div>
+        <div class="filters" id="filters-changes">
+            <label><input id="increases" type="checkbox" checked="true" /> Teurer</label>
+            <label><input id="decreases" type="checkbox" checked="true" /> Billiger</label>
         </div>
-        <div id="results"></div>
+        <div id="numresults"></div>
     </div>
-    <table id="result"></table>
+    <table id="result" class="hide"></table>
 </div>
 
 <script src="js/alasql.js"></script>

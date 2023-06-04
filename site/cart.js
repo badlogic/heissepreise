@@ -73,10 +73,16 @@ async function load() {
     document.querySelector("#end").value = currentDate();
 
     const filtersStore = document.querySelector("#filters-store");
-    filtersStore.innerHTML = STORE_KEYS.map(
-        (store) => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`
-    ).join(" ");
-    filtersStore.querySelectorAll("input").forEach((input) => input.addEventListener("change", () => showCart(cart)));
+    filtersStore.innerHTML =
+        `<label><input id="all" type="checkbox" checked="true"><strong>Alle</strong></label>` +
+        STORE_KEYS.map((store) => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
+    filtersStore.querySelectorAll("input").forEach((input) => {
+        if (input.id == "all") return;
+        input.addEventListener("change", () => showResults(items, currentDate()));
+    });
+    filtersStore.querySelector("#all").addEventListener("change", () => {
+        STORE_KEYS.forEach((store) => (filtersStore.querySelector(`#${store}`).checked = filtersStore.querySelector("#all").checked));
+    });
     document.querySelector("#filter").addEventListener("input", () => showCart(cart));
     showCart(cart);
 }

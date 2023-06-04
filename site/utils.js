@@ -539,9 +539,9 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 maxPrice.value = 100;
             }
             if (query?.charAt(0) == "!") {
-                parentElement.querySelectorAll(".filters").forEach((f) => (f.style.display = "none"));
+                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.add("hide"));
             } else {
-                parentElement.querySelectorAll(".filters").forEach((f) => (f.style = undefined));
+                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.remove("hide"));
             }
             setQuery();
             search(searchInput.value);
