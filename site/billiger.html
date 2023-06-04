@@ -1,10 +1,14 @@
 %%_templates/_header.html%%
 
-<h2>Billiger seit letzter Preisänderung</h2>
-<div class="filters" id="filters-store"></div>
-<input id="filter" type="text" style="max-width: 800px; width: 100%" placeholder="Filtern..." />
-<div id="numresults" style="margin-top: 1em"></div>
-<table id="result"></table>
+<div class="column">
+    <h2>Billiger seit letzter Preisänderung</h2>
+    <input id="filter" class="search" type="text" placeholder="Filtern..." />
+    <div class="filters-container">
+        <div class="filters" id="filters-store"></div>
+        <div id="numresults"></div>
+    </div>
+    <table id="result"></table>
+</div>
 
 <script src="js/alasql.js"></script>
 <script src="utils.js"></script>

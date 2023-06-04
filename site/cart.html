@@ -1,10 +1,10 @@
-%%_templates/_header.html%%
+%%_templates/_header.html%% %%_templates/_menu.html%%
 
 <div id="cart" class="cart column">
     <h3 id="cartname"></h3>
     <input type="button" id="save" value="Speichern" class="hide" />
-    <canvas id="chart"></canvas>
-    <div class="filters" style="margin-top: 1em">
+    <canvas class="chart" id="chart"></canvas>
+    <div class="filters">
         <label><input type="checkbox" id="sum" checked /> Preissumme Warenkorb</label>
         <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
         <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
@@ -14,7 +14,7 @@
         <label>Bis <input id="end" type="date" /></label>
     </div>
     <hr />
-    <input id="filter" type="text" style="max-width: 800px; width: 100%; margin-bottom: 1em" placeholder="Filtern..." />
+    <input id="filter" type="text" class="search" placeholder="Filtern..." />
     <div class="filters" id="filters-store"></div>
     <div id="numitems"></div>
     <table id="cartitems"></table>

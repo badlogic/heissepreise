@@ -62,7 +62,7 @@ function showResults(items, today) {
     if (query.length >= 3)
         changedItems = searchItems(changedItems, document.querySelector("#filter").value, checkedStores, false, 0, 10000, false, false);
     document.querySelector("#numresults").innerText = "Resultate: " + changedItems.length + (total > changedItems.length ? " / " + total : "");
-
+    if (items.length > 0) return;
     const table = document.querySelector("#result");
     table.innerHTML = "";
     const header = dom(

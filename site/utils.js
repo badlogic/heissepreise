@@ -35,29 +35,29 @@ const stores = {
         color: "rgb(255 240 230)",
         getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
-    dmDe: {
-        name: "DM DE",
-        budgetBrands: ["balea"],
-        color: "rgb(236 254 253)",
-        getUrl: (item) => `https://www.dm.de/product-p${item.id}.html`,
-    },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
         color: "rgb(179, 217, 255)",
         getUrl: (item) => `https://shop.unimarkt.at/${item.url}`,
     },
-    reweDe: {
-        name: "REWE DE",
-        budgetBrands: ["ja!"],
-        color: "rgb(236 231 225)",
-        getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
-    },
     penny: {
         name: "Penny",
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "rgb(255, 180, 180)",
         getUrl: (item) => "",
+    },
+    dmDe: {
+        name: "DM DE",
+        budgetBrands: ["balea"],
+        color: "rgb(236 254 253)",
+        getUrl: (item) => `https://www.dm.de/product-p${item.id}.html`,
+    },
+    reweDe: {
+        name: "REWE DE",
+        budgetBrands: ["ja!"],
+        color: "rgb(236 231 225)",
+        getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
     },
 };
 
@@ -380,19 +380,13 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     return hits;
 }
 
-function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier) {
+function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier, chartCallback) {
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
-        <div class="wrapper wrapper--search">
-            <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-            <label for="filter-toggle-${id}"><abbr title="Filter anzeigen/ausblenden">🎚</abbr></label>
-        </div>
-        <input class="toggle toggle--hidden" type="checkbox" id="filter-toggle-${id}" />
-        <div class="wrapper wrapper--sticky">
-            <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
-            <a id="json-${id}" href="" class="hide">JSON</a>
-            <div class="filters filters--store">
+        <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
+        <div class="filters-container">
+            <div class="filters">
                 <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
                 ${STORE_KEYS.map((store) => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(
                     " "
@@ -406,44 +400,32 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                     </abbr>
                 </label>
                 <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
-            </div>
-            <div class="filters">
+                <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
                 <label>Min € <input id="minprice-${id}" type="number" min="0" value="0"></label>
                 <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
-                <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
             </div>
-            <label style="margin-bottom: 1em">Sortieren <select id="sort-${id}">
+            <label class="filters">Sortieren <select id="sort-${id}">
                 <option value="priceasc">Preis aufsteigend</option>
                 <option value="pricedesc">Preis absteigend</option>
                 <option value="namesim">Namensähnlichkeit</option>
             </select></label>
-            <div id="numresults-${id}"></div>
+            <div id="links-${id}" class="hide">
+                <span id="numresults-${id}"></span>
+                <strong>
+                    <a id="querylink-${id}" class="querylink">Teilen</a>
+                    <a id="json-${id}" href="">JSON</a>
+                </strong>
+                <label class="hide"><input id="chart-${id}" type="checkbox"> Diagramm</input>
+            </div>
         </div>
         <table id="result-${id}" class="searchresults"></table>
     `;
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            for (const entry of entries) {
-                const clientRect = entry.target.getBoundingClientRect();
-                if (entry.intersectionRatio < 0.999 && clientRect.top + clientRect.height < window.innerHeight) {
-                    // Fix Edge issue
-                    entry.target.classList.add("wrapper--pinned");
-                } else {
-                    entry.target.classList.remove("wrapper--pinned");
-                }
-            }
-        },
-        {
-            rootMargin: "0px",
-            threshold: 0.999,
-        }
-    );
-    observer.observe(document.querySelector(".wrapper--search"));
-
     const searchInput = parentElement.querySelector(`#search-${id}`);
+    const links = parentElement.querySelector(`#links-${id}`);
     const queryLink = parentElement.querySelector(`#querylink-${id}`);
     const jsonLink = parentElement.querySelector(`#json-${id}`);
+    const chart = parentElement.querySelector(`#chart-${id}`);
     const exact = parentElement.querySelector(`#exact-${id}`);
     const table = parentElement.querySelector(`#result-${id}`);
     const budgetBrands = parentElement.querySelector(`#budgetBrands-${id}`);
@@ -455,6 +437,11 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const numResults = parentElement.querySelector(`#numresults-${id}`);
     const sort = parentElement.querySelector(`#sort-${id}`);
 
+    if (chartCallback) {
+        chart.parentElement.classList.remove("hide");
+        chart.addEventListener("click", () => chartCallback(chart.checked));
+    }
+
     let lastHits = [];
     jsonLink.addEventListener("click", (event) => {
         event.preventDefault();
@@ -464,12 +451,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const setQuery = () => {
         const query = searchInput.value.trim();
         if (query.length === 0) {
-            queryLink.classList.add("hide");
-            jsonLink.classList.add("hide");
+            links.classList.add("hide");
             return;
         }
-        queryLink.classList.remove("hide");
-        jsonLink.classList.remove("hide");
+        links.classList.remove("hide");
         const inputs = [...table.querySelectorAll("input:checked")];
         let checked = inputs.length ? inputs.map((item) => item.dataset.id) : getQueryParameter("c");
         if (typeof checked === "string") checked = [checked];
@@ -499,7 +484,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
         if (hits.length == 0) {
-            numResults.innerHTML = "Resultate: 0";
+            numResults.innerHTML = "<strong>Resultate:</strong> 0";
             return;
         }
         if (query.trim().charAt(0) != "!" || query.trim().toLowerCase().indexOf("order by") == -1) {
@@ -530,7 +515,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             return num < limit;
         });
         console.log("Building DOM took: " + (performance.now() - now) / 1000.0 + " secs");
-        numResults.innerHTML = "Resultate: " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
+        numResults.innerHTML = "<strong>Resultate:</strong> " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
         lastHits = hits;
     };
 
@@ -566,10 +551,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
 function showChart(canvasDom, items, chartType) {
     if (items.length == 0) {
-        canvasDom.style.display = "none";
+        canvasDom.classList.add("hide");
         return;
     } else {
-        canvasDom.style.display = "block";
+        canvasDom.classList.remove("hide");
     }
 
     const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));

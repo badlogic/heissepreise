@@ -26,17 +26,22 @@ async function load() {
     document.querySelector("#start").value = getOldestDate(items);
     document.querySelector("#end").value = currentDate();
 
+    let chartEnabled = false;
     newSearchComponent(
         document.querySelector("#search"),
         items,
         (hits) => {
             items.forEach((item) => (item.chart = false));
-            if (hits.length > 0) {
-                chartDom.classList.remove("hide");
-            } else {
+            if (!chartEnabled) {
                 chartDom.classList.add("hide");
+            } else {
+                if (hits.length > 0) {
+                    chartDom.classList.remove("hide");
+                } else {
+                    chartDom.classList.add("hide");
+                }
+                updateCharts(canvasDom, hits);
             }
-            updateCharts(canvasDom, hits);
             lastHits = hits;
             return hits;
         },
@@ -67,6 +72,19 @@ async function load() {
             cell.children[0].addEventListener("click", handleClick);
             checked && handleClick();
             return itemDom;
+        },
+        (checked) => {
+            chartEnabled = checked;
+            if (checked) {
+                if (lastHits.length > 0) {
+                    chartDom.classList.remove("hide");
+                    updateCharts(canvasDom, lastHits);
+                } else {
+                    chartDom.classList.add("hide");
+                }
+            } else {
+                chartDom.classList.add("hide");
+            }
         }
     );
     const query = getQueryParameter("q");

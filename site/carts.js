@@ -117,9 +117,11 @@ function showCarts(lookup) {
         }
         const increase = oldPrice != 0 ? Math.round(((currPrice - oldPrice) / oldPrice) * 100) : 0;
 
+        let cartUrl = `cart.html?name=${encodeURIComponent(cart.name)}`;
         const row = dom("tr", ``);
+        row.addEventListener("click", () => (location.href = cartUrl));
 
-        const nameDom = dom("td", `<a href="cart.html?name=${encodeURIComponent(cart.name)}">${cart.name}</a>`);
+        const nameDom = dom("td", `<a href="${cartUrl}">${cart.name}</a>`);
         nameDom.setAttribute("data-label", "Name");
         row.appendChild(nameDom);
 

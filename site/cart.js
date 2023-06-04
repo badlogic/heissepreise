@@ -107,7 +107,16 @@ function showSearch(cart, items) {
         null,
         null,
         (header) => {
-            header.append(dom("th", ""));
+            header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`);
+            const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+            showHideAll.style["cursor"] = "pointer";
+            showHideAll.showAll = true;
+            showHideAll.addEventListener("click", () => {
+                header.parentElement.parentElement
+                    .querySelectorAll(".priceinfo")
+                    .forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+                showHideAll.showAll = !showHideAll.showAll;
+            });
             return header;
         },
         (item, itemDom) => {
@@ -162,7 +171,14 @@ function showCart(cart) {
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
-    const header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th><th></th></tr>`);
+    header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`);
+    const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+    showHideAll.style["cursor"] = "pointer";
+    showHideAll.showAll = true;
+    showHideAll.addEventListener("click", () => {
+        itemTable.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+        showHideAll.showAll = !showHideAll.showAll;
+    });
     itemTable.append(header);
 
     items.forEach((cartItem, idx) => {

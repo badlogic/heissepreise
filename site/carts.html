@@ -1,12 +1,14 @@
-%%_templates/_header.html%%
+%%_templates/_header.html%% %%_templates/_menu.html%%
 
-<div class="filters">
-    <button id="newcart">Neuer Warenkorb</button>
-    <button id="export">Exportieren</button>
-    <button id="import">Importieren</button>
+<div class="column">
+    <div class="filters">
+        <button id="newcart">Neuer Warenkorb</button>
+        <button id="export">Exportieren</button>
+        <button id="import">Importieren</button>
+    </div>
+    <table id="carts" class="carts"></table>
+    <input type="file" id="fileInput" style="display: none" />
 </div>
-<table id="carts" class="carts"></table>
-<input type="file" id="fileInput" style="display: none" />
 
 <script src="js/alasql.js"></script>
 <script src="utils.js"></script>
