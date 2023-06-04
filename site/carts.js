@@ -3,15 +3,15 @@ shoppingCarts.load();
 
 async function load() {
     const items = await loadItems();
-    lookup = {};
-    for (item of items) {
+    const lookup = {};
+    for (const item of items) {
         lookup[item.store + item.id] = item;
     }
 
     // Update carts with latest price info
-    for (cart of shoppingCarts.carts) {
+    for (const cart of shoppingCarts.carts) {
         const items = [];
-        for (cartItem of cart.items) {
+        for (const cartItem of cart.items) {
             const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
             items.push(item);
@@ -60,7 +60,7 @@ async function load() {
             const importedCarts = JSON.parse(contents);
             for (const importedCart of importedCarts) {
                 const items = [];
-                for (cartItem of importedCart.items) {
+                for (const cartItem of importedCart.items) {
                     const item = lookup[cartItem.store + cartItem.id];
                     if (!item) continue;
                     items.push(item);
@@ -108,7 +108,7 @@ function showCarts(lookup) {
         let oldPrice = 0;
         let currPrice = 0;
         let link = encodeURIComponent(cart.name) + ";";
-        for (cartItem of cart.items) {
+        for (const cartItem of cart.items) {
             const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
             oldPrice += item.priceHistory[item.priceHistory.length - 1].price;

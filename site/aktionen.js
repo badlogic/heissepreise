@@ -45,7 +45,7 @@ function showResults(items, today) {
     const storeCheckboxes = STORE_KEYS.map((store) => document.querySelector(`#${store}`));
     const checkedStores = STORE_KEYS.filter((store, i) => storeCheckboxes[i].checked);
     let changedItems = [];
-    for (item of items) {
+    for (const item of items) {
         if (item.priceHistory.length < 2) continue;
 
         for (let i = 0; i < item.priceHistory.length; i++) {
@@ -62,7 +62,7 @@ function showResults(items, today) {
     if (query.length >= 3)
         changedItems = searchItems(changedItems, document.querySelector("#filter").value, checkedStores, false, 0, 10000, false, false);
     document.querySelector("#numresults").innerText = "Resultate: " + changedItems.length + (total > changedItems.length ? " / " + total : "");
-    if (items.length > 0) return;
+    if (changedItems.length == 0) return;
     const table = document.querySelector("#result");
     table.innerHTML = "";
     const header = dom(
@@ -81,11 +81,13 @@ function showResults(items, today) {
 
     table.appendChild(header);
 
-    for (item of changedItems) {
+    for (let item of changedItems) {
         item = JSON.parse(JSON.stringify(item));
         const itemDom = itemToDOM(item);
         table.appendChild(itemDom);
     }
+
+    table.classList.remove("hide");
 }
 
 load();

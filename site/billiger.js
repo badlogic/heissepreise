@@ -34,7 +34,7 @@ function showResults(items, _today) {
     const storeCheckboxes = STORE_KEYS.map((store) => document.querySelector(`#${store}`));
     const checkedStores = STORE_KEYS.filter((_store, i) => storeCheckboxes[i].checked);
     let changedItems = [];
-    for (item of items) {
+    for (const item of items) {
         if (item.priceHistory.length < 2) continue;
         if (!checkedStores.includes(item.store)) continue;
 
@@ -65,7 +65,7 @@ function showResults(items, _today) {
 
     table.appendChild(header);
 
-    for (item of changedItems) {
+    for (let item of changedItems) {
         item = JSON.parse(JSON.stringify(item));
         const itemDom = itemToDOM(item);
         table.appendChild(itemDom);

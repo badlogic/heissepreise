@@ -20,15 +20,15 @@ async function load() {
     });
 
     const dates = {};
-    for (item of items) {
-        for (price of item.priceHistory) {
+    for (const item of items) {
+        for (const price of item.priceHistory) {
             dates[price.date] = dates[price.date] ? dates[price.date] + 1 : 1;
         }
     }
 
     const dateNames = Object.keys(dates).sort((a, b) => b.localeCompare(a));
     const dateSelection = document.querySelector("#dates");
-    for (dateName of dateNames) {
+    for (const dateName of dateNames) {
         const option = dom("option", dateName + " (" + dates[dateName] + ")");
         option.setAttribute("value", dateName);
         dateSelection.appendChild(option);
@@ -52,7 +52,7 @@ function showResults(items, today) {
     const decreases = document.querySelector("#decreases").checked;
     const fullHistory = document.querySelector("#fullhistory").checked;
     const changedItems = [];
-    for (item of items) {
+    for (const item of items) {
         if (item.priceHistory.length < 2) continue;
 
         for (let i = 0; i < item.priceHistory.length; i++) {
@@ -81,7 +81,7 @@ function showResults(items, today) {
 
     table.appendChild(header);
 
-    for (item of changedItems) {
+    for (let item of changedItems) {
         item = JSON.parse(JSON.stringify(item));
         if (!fullHistory) {
             let priceHistory = [];
@@ -94,5 +94,4 @@ function showResults(items, today) {
     }
     document.querySelector("#results").innerText = "Resultate: " + changedItems.length;
 }
-
 load();

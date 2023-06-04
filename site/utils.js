@@ -1068,10 +1068,10 @@ function setupLiveEdit() {
     script.type = "text/javascript";
     script.onload = () => {
         let lastChangeTimestamp = null;
-        this.socket = io({ transports: ["websocket"] });
-        this.socket.on("connect", () => console.log("Connected"));
-        this.socket.on("disconnect", () => console.log("Disconnected"));
-        this.socket.on("message", (timestamp) => {
+        let socket = io({ transports: ["websocket"] });
+        socket.on("connect", () => console.log("Connected"));
+        socket.on("disconnect", () => console.log("Disconnected"));
+        socket.on("message", (timestamp) => {
             if (lastChangeTimestamp != timestamp) {
                 setTimeout(() => location.reload(), 100);
                 lastChangeTimestamp = timestamp;

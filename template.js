@@ -15,26 +15,28 @@ function deleteDirectory(directory) {
     }
 }
 
+function replaceFileContents(string, fileDir) {
+    const pattern = /%%([^%]+)%%|\/\/\s*include\s*"([^"]+)"/g;
+
+    return string.replace(pattern, (_, filename1, filename2) => {
+        const filename = filename1 || filename2;
+        const filenamePath = path.join(fileDir, filename);
+        try {
+            const data = fs.readFileSync(filenamePath, "utf8");
+            const replacedData = replaceFileContents(data, path.dirname(filenamePath));
+            return replacedData;
+        } catch (error) {
+            console.error(`Error reading file "${filenamePath}":`, error);
+            return "";
+        }
+    });
+}
+
 function processFile(inputFile, outputFile) {
     console.log(`${inputFile} -> ${outputFile}`);
     const fileDir = path.dirname(inputFile);
     const data = fs.readFileSync(inputFile, "utf8");
-    const regex = /%%([^%]+)%%/g;
-    let result;
-    let replacedData = data;
-
-    while ((result = regex.exec(data))) {
-        const match = result[0];
-        const filename = result[1];
-        const filenamePath = path.join(fileDir, filename);
-
-        try {
-            const fileContents = fs.readFileSync(filenamePath, "utf8");
-            replacedData = replacedData.replace(match, fileContents);
-        } catch (error) {
-            console.error(`Error reading file '${filenamePath}': ${error}`);
-        }
-    }
+    const replacedData = replaceFileContents(data, fileDir);
     fs.writeFileSync(outputFile, replacedData);
 }
 
