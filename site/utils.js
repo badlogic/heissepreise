@@ -57,7 +57,7 @@ const stores = {
         name: "Penny",
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "rgb(255, 180, 180)",
-        getUrl: (item) => "",
+        getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
     },
 };
 
