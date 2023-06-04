@@ -56,7 +56,7 @@ async function load() {
             const cell = dom("td", `<label><input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">📈</label>`);
             itemDom.appendChild(cell);
             const handleClick = (eventShouldSetQuery = false) => {
-                item.chart = cell.children[0].checked;
+                item.chart = cell.children[0].children[0].checked;
                 updateCharts(canvasDom, lastHits);
                 !!eventShouldSetQuery && setQuery();
             };

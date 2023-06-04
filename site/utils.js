@@ -388,9 +388,12 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
             <div class="filters">
                 <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
-                ${STORE_KEYS.map((store) => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(
-                    " "
-                )}
+                ${STORE_KEYS.map(
+                    (store) =>
+                        `<label><input id="${store}-${id}" type="checkbox" ${stores[store].name.toLowerCase().endsWith("de") ? "" : "checked"}>${
+                            stores[store].name
+                        }</label>`
+                ).join(" ")}
             </div>
             <div class="filters" style="margin-bottom: 0em">
                 <label>
