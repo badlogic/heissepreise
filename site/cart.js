@@ -171,7 +171,7 @@ function showCart(cart) {
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
-    header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th><th>📈</th></tr>`);
+    header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th><th></th></tr>`);
     const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
     showHideAll.style["cursor"] = "pointer";
     showHideAll.showAll = true;
@@ -188,10 +188,10 @@ function showCart(cart) {
         const cell = dom(
             "td",
             `
-            <input type="checkbox">
+            <label><input type="checkbox">📈</label>
             <input type="button" value="-">
-            <input type="button" value="⬆️">
-            <input type="button" value="⬇️">
+            <input type="button" value="▲">
+            <input type="button" value="▼">
         `
         );
 

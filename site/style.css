@@ -68,7 +68,7 @@ h2 {
 .content {
     flex: 1;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 .footer {
@@ -99,6 +99,7 @@ h2 {
 
 .search {
     width: 100%;
+    max-width: 900px;
     font-size: 1em;
     border-radius: 5px;
 }
@@ -112,6 +113,8 @@ h2 {
     border-radius: 5px;
     background-color: rgb(228 227 227);
     gap: 1em;
+    width: 100%;
+    max-width: 900px;
 }
 
 .filters {
@@ -126,6 +129,7 @@ h2 {
     border-radius: 5px;
     background-color: rgb(228 227 227);
     width: 100%;
+    max-width: 900px;
 }
 
 .chart canvas {
@@ -240,6 +244,12 @@ td:nth-child(4) {
     content: "€ ";
 }
 
+.searchresults td:nth-child(5) > input[type="button"] {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+}
+
 .carts {
     width: auto;
 }
@@ -310,6 +320,15 @@ td:nth-child(4) {
     align-items: center;
     margin: 0 auto;
     margin-bottom: 1em;
+}
+
+#cartitems td:nth-child(4):before {
+    content: "€ ";
+}
+
+#cartitems input[type="button"] {
+    width: 2em;
+    height: 2em;
 }
 
 @media screen and (max-width: 600px) {

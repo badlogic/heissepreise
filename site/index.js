@@ -47,13 +47,13 @@ async function load() {
         },
         null,
         (header) => {
-            header.innerHTML += "<th>📈</th>";
+            header.innerHTML += "<th></th>";
             return header;
         },
         (item, itemDom, items, setQuery) => {
             const checked = (item.chart = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`));
             const dataId = item.store + ":" + item.id;
-            const cell = dom("td", `<input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">`);
+            const cell = dom("td", `<label><input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">📈</label>`);
             itemDom.appendChild(cell);
             const handleClick = (eventShouldSetQuery = false) => {
                 item.chart = cell.children[0].checked;

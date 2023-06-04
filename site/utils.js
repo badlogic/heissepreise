@@ -384,8 +384,8 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
-        <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
         <div class="filters-container">
+            <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
             <div class="filters">
                 <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
                 ${STORE_KEYS.map((store) => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(
