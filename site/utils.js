@@ -444,7 +444,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 
     if (chartCallback) {
         chart.parentElement.classList.remove("hide");
-        chart.addEventListener("click", () => chartCallback(chart.checked));
+        chart.addEventListener("change", () => chartCallback(chart.checked));
     }
 
     let lastHits = [];
@@ -559,7 +559,23 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     maxPrice.addEventListener("change", () => search(searchInput.value));
     exact.addEventListener("change", () => search(searchInput.value));
 
-    return () => search(searchInput.value);
+    return {
+        searchInput,
+        links,
+        queryLink,
+        jsonLink,
+        chart,
+        exact,
+        table,
+        budgetBrands,
+        bio,
+        allCheckbox,
+        storeCheckboxes,
+        minPrice,
+        maxPrice,
+        numResults,
+        sort,
+    };
 }
 
 function showChart(canvasDom, items, chartType) {

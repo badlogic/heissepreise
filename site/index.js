@@ -27,7 +27,7 @@ async function load() {
     document.querySelector("#end").value = currentDate();
 
     let chartEnabled = false;
-    newSearchComponent(
+    let search = newSearchComponent(
         document.querySelector("#search"),
         items,
         (hits) => {
@@ -57,6 +57,10 @@ async function load() {
             itemDom.appendChild(cell);
             const handleClick = (eventShouldSetQuery = false) => {
                 item.chart = cell.children[0].children[0].checked;
+                if (item.chart && !search.chart.checked) {
+                    search.chart.checked = true;
+                    search.chart.dispatchEvent(new Event("change"));
+                }
                 updateCharts(canvasDom, lastHits);
                 !!eventShouldSetQuery && setQuery();
             };
