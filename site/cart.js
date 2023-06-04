@@ -171,7 +171,7 @@ function showCart(cart) {
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
-    header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th><th>📈</th>`);
+    header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th><th>📈</th></tr>`);
     const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
     showHideAll.style["cursor"] = "pointer";
     showHideAll.showAll = true;
