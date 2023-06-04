@@ -1,18 +1,21 @@
 %%_templates/_header.html%% %%_templates/_menu.html%%
 
-<div id="chart" class="column hide">
-    <canvas class="chart"></canvas>
-    <div class="filters">
-        <label><input type="checkbox" id="sum" /> Preissumme Gesamt</label>
-        <label><input type="checkbox" id="sumstores" /> Preissumme pro Kette</label>
-        <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
+<div class="column">
+    <h2>Produktsuche</h2>
+    <div id="chart" class="chart filters-container hide">
+        <canvas></canvas>
+        <div class="filters">
+            <label><input type="checkbox" id="sum" /> Preissumme Gesamt</label>
+            <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
+            <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
+        </div>
+        <div>
+            <label>Von <input id="start" type="date" /></label>
+            <label>Bis <input id="end" type="date" /></label>
+        </div>
     </div>
-    <div>
-        <label>Von <input id="start" type="date" /></label>
-        <label>Bis <input id="end" type="date" /></label>
-    </div>
+    <div id="search" class="column"></div>
 </div>
-<div id="search" class="column"></div>
 
 <script src="js/alasql.js"></script>
 <script src="js/chart.js"></script>

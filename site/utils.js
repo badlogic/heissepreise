@@ -277,18 +277,12 @@ function itemToStoreLink(item) {
 }
 
 function itemToDOM(item) {
-    let storeDom = dom("td", item.store);
-    storeDom.setAttribute("data-label", "Kette");
-    let nameDom = dom("td", `${itemToStoreLink(item)}`);
-    nameDom.setAttribute("data-label", "Name");
     let quantity = item.quantity || "";
     let unit = item.unit || "";
     if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
         quantity = parseFloat((0.001 * quantity).toFixed(2));
         unit = unit == "ml" ? "l" : "kg";
     }
-    let unitDom = dom("td", (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`);
-    unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
         let percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
@@ -296,10 +290,8 @@ function itemToDOM(item) {
             percentageChange > 0 ? "+" + percentageChange : percentageChange
         }%</span>`;
     }
-    let priceDomText = `${Number(item.price).toFixed(2)} ${increase} ${
-        item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""
-    }`;
-    let pricesText = "";
+
+    let priceHistory = "";
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
         const currPrice = item.priceHistory[i].price;
@@ -308,12 +300,25 @@ function itemToDOM(item) {
         let priceColor = "black";
         if (increase > 0) priceColor = "red";
         if (increase < 0) priceColor = "green";
-        pricesText += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
-        if (i != item.priceHistory.length - 1) pricesText += "<br>";
+        priceHistory += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
+        if (i != item.priceHistory.length - 1) priceHistory += "<br>";
     }
-    let priceDom = dom("td", `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`);
-    priceDom.setAttribute("data-label", "Preis");
-    if (item.priceHistory.length > 1) {
+
+    const row = dom(
+        "tr",
+        `
+        <td data-label="Kette">${item.store}</td>
+        <td data-label="Name">${itemToStoreLink(item)}</td>
+        <td data-label="Menge">${(item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`}
+        <td data-label="Preis">
+            ${Number(item.price).toFixed(2)} ${increase} ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}
+            <div class="priceinfo hide">${priceHistory}</div>
+        </td>
+    `
+    );
+    row.style["background"] = stores[item.store]?.color;
+
+    row.querySelectorAll('td[data-label="Preis"]').forEach((priceDom) => {
         priceDom.style["cursor"] = "pointer";
         priceDom.addEventListener("click", () => {
             const pricesDom = priceDom.querySelector(".priceinfo");
@@ -323,13 +328,8 @@ function itemToDOM(item) {
                 pricesDom.classList.add("hide");
             }
         });
-    }
-    let row = dom("tr", "");
-    row.style["background"] = stores[item.store]?.color;
-    row.appendChild(storeDom);
-    row.appendChild(nameDom);
-    row.appendChild(unitDom);
-    row.appendChild(priceDom);
+    });
+
     return row;
 }
 
@@ -392,7 +392,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                     " "
                 )}
             </div>
-            <div class="filters">
+            <div class="filters" style="margin-bottom: 0em">
                 <label>
                     <input id="budgetBrands-${id}" type="checkbox"> Nur
                     <abbr title="${BUDGET_BRANDS.map((budgetBrand) => budgetBrand.toUpperCase()).join(", ")}">
@@ -404,18 +404,20 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 <label>Min € <input id="minprice-${id}" type="number" min="0" value="0"></label>
                 <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
             </div>
-            <label class="filters">Sortieren <select id="sort-${id}">
-                <option value="priceasc">Preis aufsteigend</option>
-                <option value="pricedesc">Preis absteigend</option>
-                <option value="namesim">Namensähnlichkeit</option>
-            </select></label>
-            <div id="links-${id}" class="hide">
-                <span id="numresults-${id}"></span>
-                <strong>
-                    <a id="querylink-${id}" class="querylink">Teilen</a>
-                    <a id="json-${id}" href="">JSON</a>
-                </strong>
-                <label class="hide"><input id="chart-${id}" type="checkbox"> Diagramm</input>
+            <div id="links-${id}" class="results hide">
+                <label>Sortieren <select id="sort-${id}">
+                    <option value="priceasc">Preis aufsteigend</option>
+                    <option value="pricedesc">Preis absteigend</option>
+                    <option value="namesim">Namensähnlichkeit</option>
+                </select></label>
+                <div class="row">
+                    <span id="numresults-${id}"></span>
+                    <strong>
+                        <a id="querylink-${id}" class="querylink">Teilen</a>
+                        <a id="json-${id}" href="">JSON</a>
+                    </strong>
+                    <label class="hide"><input id="chart-${id}" type="checkbox"> Diagramm</input>
+                </div>
             </div>
         </div>
         <table id="result-${id}" class="searchresults"></table>
@@ -498,8 +500,16 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             }
         }
 
-        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
+        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th>`);
         if (headerModifier) header = headerModifier(header);
+        const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+        showHideAll.style["cursor"] = "pointer";
+        showHideAll.showAll = true;
+        showHideAll.addEventListener("click", () => {
+            showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
+            table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+            showHideAll.showAll = !showHideAll.showAll;
+        });
         const thead = dom("thead", ``);
         thead.appendChild(header);
         table.appendChild(thead);

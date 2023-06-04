@@ -98,7 +98,7 @@ function showCarts(lookup) {
             <th>Name</th>
             <th>Produkte</th>
             <th>Preis</th>
-            <th></th>
+            <th>Aktionen</th>
         </tr>
     `
         )
@@ -116,54 +116,38 @@ function showCarts(lookup) {
             link += item.store + item.id + ";";
         }
         const increase = oldPrice != 0 ? Math.round(((currPrice - oldPrice) / oldPrice) * 100) : 0;
+        const cartUrl = `cart.html?name=${encodeURIComponent(cart.name)}`;
 
-        let cartUrl = `cart.html?name=${encodeURIComponent(cart.name)}`;
-        const row = dom("tr", ``);
-        row.addEventListener("click", () => (location.href = cartUrl));
-
-        const nameDom = dom("td", `<a href="${cartUrl}">${cart.name}</a>`);
-        nameDom.setAttribute("data-label", "Name");
-        row.appendChild(nameDom);
-
-        const itemsDom = dom("td", cart.items.length);
-        itemsDom.setAttribute("data-label", "Produkte");
-        row.appendChild(itemsDom);
-
-        const priceDom = dom(
-            "td",
-            `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${(increase > 0 ? "+" : "") + increase + "%"}`
+        const row = dom(
+            "tr",
+            `
+            <td data-label="Name"><a href="${cartUrl}">${cart.name}</a></td>
+            <td data-label="Produkte">${cart.items.length}</td>
+            <td data-label="Preis">
+                <span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${
+                (increase > 0 ? "+" : "") + increase + "%"
+            }</span>
+            </td>
+            <td>
+                <div class="cartactions">
+                    <a href="cart.html?cart=${link}">Teilen</a>
+                    <a class="cartjson" href="">JSON</a>
+                    ${cart.name != "Momentum Eigenmarken Vergleich" ? `<input class="cartdelete" type="button" value="Löschen">` : ""}
+                </div>
+            </td>
+        `
         );
-        priceDom.setAttribute("data-label", "Preis");
-        row.appendChild(priceDom);
-
-        const actionsDom = dom("div", "");
-        actionsDom.classList.add("cartactions");
-        const linkDom = dom("a", "Teilen");
-        linkDom.setAttribute("href", "cart.html?cart=" + link);
-        actionsDom.appendChild(linkDom);
-
-        const jsonDom = dom("a", "JSON");
-        jsonDom.setAttribute("href", "");
-        jsonDom.addEventListener("click", (event) => {
+        row.querySelector("td").addEventListener("click", () => (location.href = cartUrl));
+        row.querySelector(".cartjson").addEventListener("click", (event) => {
             event.preventDefault();
             downloadFile(cart.name + ".json", JSON.stringify(cart, null, 2));
         });
-        actionsDom.appendChild(jsonDom);
-
         if (cart.name != "Momentum Eigenmarken Vergleich") {
-            let deleteButton = dom("input");
-            deleteButton.setAttribute("type", "button");
-            deleteButton.setAttribute("value", "Löschen");
-            actionsDom.appendChild(deleteButton);
-
-            deleteButton.addEventListener("click", () => {
+            row.querySelector(".cartdelete").addEventListener("click", () => {
                 shoppingCarts.remove(cart.name);
                 showCarts(lookup);
             });
         }
-        const actionsCell = dom("td", "");
-        actionsCell.append(actionsDom);
-        row.appendChild(actionsCell);
         cartsTable.appendChild(row);
     });
 }

@@ -25,6 +25,7 @@ label {
 
 h2 {
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .hide {
@@ -59,6 +60,11 @@ h2 {
     margin-bottom: 1em;
 }
 
+.menu a {
+    font-size: large;
+    font-weight: 900;
+}
+
 .content {
     flex: 1;
     width: 100%;
@@ -80,12 +86,20 @@ h2 {
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 1em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }
 
 .search {
     width: 100%;
     font-size: 1em;
-    margin-bottom: 1em;
     border-radius: 5px;
 }
 
@@ -97,10 +111,33 @@ h2 {
     padding: 1em;
     border-radius: 5px;
     background-color: rgb(228 227 227);
+    gap: 1em;
 }
 
 .filters {
-    margin-bottom: 1em;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: rgb(228 227 227);
+    width: 100%;
+}
+
+.chart canvas {
+    background: white;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }
 
 input {
@@ -125,10 +162,18 @@ input[type="date"] {
     border-radius: 5px;
 }
 
+input[type="button"] {
+    border: 2px solid;
+    padding: 0.4em;
+    border-color: #ee907b;
+    border-radius: 5px;
+}
+
 table {
     border-collapse: collapse;
     border: 0px;
-    margin-top: 1em;
+    flex-basis: auto;
+    min-width: 0;
 }
 
 th {
@@ -195,11 +240,20 @@ td:nth-child(4) {
     content: "€ ";
 }
 
-.carts td:nth-child(1) {
+.carts {
+    width: auto;
+}
+
+.carts td {
     text-align: left;
+    background-color: white;
 }
 
 .carts td:nth-child(2) {
+    text-align: center;
+}
+
+.carts th {
     text-align: center;
 }
 
@@ -208,11 +262,28 @@ td:nth-child(4) {
 }
 
 .carts td:nth-child(3) {
-    text-align: left;
+    text-align: center;
+    font-size: medium;
 }
 
-.cartactions > * {
-    margin: 0 0.1em;
+.carts td:nth-child(4) {
+    padding-right: 0.5em;
+}
+
+.carts td:nth-child(4) a {
+    color: #c9543a;
+}
+
+.cartactions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 1em;
+}
+
+.cartactions a {
+    font-weight: 900;
 }
 
 .itemname {
@@ -238,9 +309,18 @@ td:nth-child(4) {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-bottom: 1em;
 }
 
 @media screen and (max-width: 600px) {
+    .menu a {
+        font-size: medium;
+    }
+
+    .cartactions {
+        justify-content: center;
+    }
+
     table {
         border: 0;
     }

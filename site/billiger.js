@@ -52,13 +52,14 @@ function showResults(items, _today) {
     const header = dom(
         "thead",
         `
-        <tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th></tr>
+        <tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th></tr>
     `
     );
     const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
     showHideAll.style["cursor"] = "pointer";
     showHideAll.showAll = true;
     showHideAll.addEventListener("click", () => {
+        showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
         table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
         showHideAll.showAll = !showHideAll.showAll;
     });

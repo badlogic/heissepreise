@@ -107,16 +107,7 @@ function showSearch(cart, items) {
         null,
         null,
         (header) => {
-            header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`);
-            const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
-            showHideAll.style["cursor"] = "pointer";
-            showHideAll.showAll = true;
-            showHideAll.addEventListener("click", () => {
-                header.parentElement.parentElement
-                    .querySelectorAll(".priceinfo")
-                    .forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
-                showHideAll.showAll = !showHideAll.showAll;
-            });
+            header.innerHTML += "<th></th>";
             return header;
         },
         (item, itemDom) => {
@@ -132,6 +123,7 @@ function showSearch(cart, items) {
             return itemDom;
         }
     );
+    searchDom.querySelector("input").setAttribute("placeholder", "Produkte suchen und hinzufügen...");
 }
 
 function updateCharts(canvasDom, items) {
@@ -154,6 +146,14 @@ function updateCharts(canvasDom, items) {
 }
 
 function showCart(cart) {
+    if (cart.items.length == 0) {
+        document.querySelector("#noproducts").classList.remove("hide");
+        document.querySelector("#hasproducts").classList.add("hide");
+    } else {
+        document.querySelector("#noproducts").classList.add("hide");
+        document.querySelector("#hasproducts").classList.remove("hide");
+    }
+
     let link = encodeURIComponent(cart.name) + ";";
     for (cartItem of cart.items) {
         link += cartItem.store + cartItem.id + ";";
@@ -171,11 +171,12 @@ function showCart(cart) {
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
-    header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`);
+    header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th><th>📈</th>`);
     const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
     showHideAll.style["cursor"] = "pointer";
     showHideAll.showAll = true;
     showHideAll.addEventListener("click", () => {
+        showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
         itemTable.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
         showHideAll.showAll = !showHideAll.showAll;
     });

@@ -1,18 +1,21 @@
 %%_templates/_header.html%% %%_templates/_menu.html%%
 
 <div class="column">
-    <div class="filters">
-        <label
-            >Preisänderungen am
-            <select id="dates"></select
-        ></label>
+    <h2>Preisänderungen</h2>
+    <div class="filters-container">
+        <div class="filters">
+            <label
+                >Datum:
+                <select id="dates"></select
+            ></label>
+        </div>
+        <div class="filters">
+            <label><input id="increases" type="checkbox" checked="true" />Teurer</label>
+            <label><input id="decreases" type="checkbox" checked="true" />Billiger</label>
+            <label><input id="fullhistory" type="checkbox" checked="true" />Gesamte Preishistorie</label>
+        </div>
+        <div id="results"></div>
     </div>
-    <div class="filters">
-        <label><input id="increases" type="checkbox" checked="true" />Teurer</label>
-        <label><input id="decreases" type="checkbox" checked="true" />Billiger</label>
-        <label><input id="fullhistory" type="checkbox" checked="true" />Gesamte Preishistorie</label>
-    </div>
-    <div id="results"></div>
     <table id="result"></table>
 </div>
 

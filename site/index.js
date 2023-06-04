@@ -47,16 +47,7 @@ async function load() {
         },
         null,
         (header) => {
-            header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`);
-            const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
-            showHideAll.style["cursor"] = "pointer";
-            showHideAll.showAll = true;
-            showHideAll.addEventListener("click", () => {
-                document
-                    .querySelectorAll(".priceinfo")
-                    .forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
-                showHideAll.showAll = !showHideAll.showAll;
-            });
+            header.innerHTML += "<th>📈</th>";
             return header;
         },
         (item, itemDom, items, setQuery) => {

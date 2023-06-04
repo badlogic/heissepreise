@@ -21,6 +21,7 @@ async function load() {
 
     const dates = {};
     for (const item of items) {
+        if (item.priceHistory.length == 1) continue;
         for (const price of item.priceHistory) {
             dates[price.date] = dates[price.date] ? dates[price.date] + 1 : 1;
         }
@@ -47,14 +48,11 @@ async function load() {
     });
 }
 
-function showResults(items, today) {
+function filter(items, today) {
     const increases = document.querySelector("#increases").checked;
     const decreases = document.querySelector("#decreases").checked;
-    const fullHistory = document.querySelector("#fullhistory").checked;
     const changedItems = [];
     for (const item of items) {
-        if (item.priceHistory.length < 2) continue;
-
         for (let i = 0; i < item.priceHistory.length; i++) {
             if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
                 if (increases && item.priceHistory[i].price > item.priceHistory[i + 1].price) changedItems.push(item);
@@ -62,19 +60,25 @@ function showResults(items, today) {
             }
         }
     }
+    return changedItems;
+}
 
+function showResults(items, today) {
+    const fullHistory = document.querySelector("#fullhistory").checked;
+    const changedItems = filter(items, today);
     const table = document.querySelector("#result");
     table.innerHTML = "";
     const header = dom(
         "thead",
         `
-        <tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th></tr>
+        <tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th></tr>
     `
     );
     const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
     showHideAll.style["cursor"] = "pointer";
     showHideAll.showAll = true;
     showHideAll.addEventListener("click", () => {
+        showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
         table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
         showHideAll.showAll = !showHideAll.showAll;
     });

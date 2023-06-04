@@ -1,23 +1,29 @@
 %%_templates/_header.html%% %%_templates/_menu.html%%
 
 <div id="cart" class="cart column">
-    <h3 id="cartname"></h3>
-    <input type="button" id="save" value="Speichern" class="hide" />
-    <canvas class="chart" id="chart"></canvas>
-    <div class="filters">
-        <label><input type="checkbox" id="sum" checked /> Preissumme Warenkorb</label>
-        <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
-        <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
+    <h2 id="cartname"></h2>
+    <div id="noproducts" class="hide">Noch keine Produkte im Warenkorb</div>
+    <div id="hasproducts" class="column hide">
+        <input type="button" id="save" value="Speichern" class="hide" />
+        <div class="filters-container chart">
+            <canvas class="chart" id="chart"></canvas>
+            <div class="filters">
+                <label><input type="checkbox" id="sum" checked /> Preissumme Warenkorb</label>
+                <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
+                <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
+            </div>
+            <div>
+                <label>Von <input id="start" type="date" /></label>
+                <label>Bis <input id="end" type="date" /></label>
+            </div>
+        </div>
+        <input id="filter" type="text" class="search" placeholder="Filtern..." />
+        <div class="filters-container">
+            <div class="filters" id="filters-store"></div>
+            <div id="numitems"></div>
+        </div>
+        <table id="cartitems"></table>
     </div>
-    <div>
-        <label>Von <input id="start" type="date" /></label>
-        <label>Bis <input id="end" type="date" /></label>
-    </div>
-    <hr />
-    <input id="filter" type="text" class="search" placeholder="Filtern..." />
-    <div class="filters" id="filters-store"></div>
-    <div id="numitems"></div>
-    <table id="cartitems"></table>
 </div>
 <div id="search" class="column"></div>
 
