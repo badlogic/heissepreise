@@ -677,7 +677,6 @@ function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
     const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));
     let uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
-    uniqueDates = uniqueDates.filter((date) => date >= startDate && date <= endDate);
 
     const allPrices = items.map((product) => {
         let price = null;
@@ -699,6 +698,7 @@ function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
 
     const priceChanges = [];
     for (let i = 0; i < uniqueDates.length; i++) {
+        if (uniqueDates[i] < startDate || uniqueDates[i] > endDate) continue;
         let price = 0;
         for (let j = 0; j < allPrices.length; j++) {
             price += allPrices[j][i];
