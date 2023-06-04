@@ -34,10 +34,11 @@ exports.fetchData = async function () {
         "allCategories.id=010000&price.value.to=2", //~500 items
         "allCategories.id=010000&price.value.from=2&price.value.to=3", //~600 items
         "allCategories.id=010000&price.value.from=3&price.value.to=4", //~500 items
-        "allCategories.id=010000&price.value.from=4&price.value.to=7", //~800 items
-        "allCategories.id=010000&price.value.from=7&price.value.to=10", //~900 items
-        "allCategories.id=010000&price.value.from=10&price.value.to=15", //~900 items
-        "allCategories.id=010000&price.value.from=15", //~300 items
+        "allCategories.id=010000&price.value.from=4&price.value.to=6", //~800 items
+        "allCategories.id=010000&price.value.from=6&price.value.to=8", //~800 items
+        "allCategories.id=010000&price.value.from=8&price.value.to=10", //~900 items
+        "allCategories.id=010000&price.value.from=10&price.value.to=14", //~900 items
+        "allCategories.id=010000&price.value.from=14", //~300 items
         "allCategories.id=020000&price.value.to=2", //~600 items
         "allCategories.id=020000&price.value.from=2&price.value.to=3", //~550 items
         "allCategories.id=020000&price.value.from=3&price.value.to=4", //~600 items
@@ -45,15 +46,17 @@ exports.fetchData = async function () {
         "allCategories.id=020000&price.value.from=6&price.value.to=10", //~850 items
         "allCategories.id=020000&price.value.from=10&price.value.to=18", //~900 items
         "allCategories.id=020000&price.value.from=18", //~960 items (!)
-        "allCategories.id=030000&price.value.to=8", //~900 items
-        "allCategories.id=030000&price.value.from=8", //~500 items
+        "allCategories.id=030000&price.value.to=7", //~980 items (!)
+        "allCategories.id=030000&price.value.from=7", //~500 items
         "allCategories.id=040000&price.value.to=2", //~600 items
         "allCategories.id=040000&price.value.from=2&price.value.to=4", //~900 items
         "allCategories.id=040000&price.value.from=4", //~400 items
-        "allCategories.id=050000&price.value.to=4", //~600 items
-        "allCategories.id=050000&price.value.from=4", //~800 items
-        "allCategories.id=060000&price.value.to=4", //~900 items
-        "allCategories.id=060000&price.value.from=4", //~500 items
+        "allCategories.id=050000&price.value.to=2", //~850 items
+        "allCategories.id=050000&price.value.from=2&price.value.to=6", //~900 items
+        "allCategories.id=050000&price.value.from=6&price.value.to=10", //~850 items
+        "allCategories.id=050000&price.value.from=10", //~850 items
+        "allCategories.id=060000&price.value.to=3", //~940 items
+        "allCategories.id=060000&price.value.from=3", //~850 items
         "allCategories.id=070000", //~300 items
     ];
 
@@ -78,8 +81,10 @@ exports.fetchData = async function () {
             });
         }
         let items = res.data;
-        if (items.count > 1000) {
-            console.warn(`DM-DE Query returned more than 1000 items! Items may be missing. Adjust queries. Query: ${query}`);
+        if (items.count > items.products.length) {
+            console.warn(
+                `DM-DE Query matches ${items.count} items, but API only returns first ${items.products.length}. Adjust queries. Query: ${query}`
+            );
         }
         dmItems = dmItems.concat(items.products);
         await new Promise((resolve) => setTimeout(resolve, 1000));
