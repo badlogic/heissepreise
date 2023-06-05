@@ -335,6 +335,37 @@ function itemToDOM(item) {
 
 let componentId = 0;
 
+const UNITS = {
+    "stk.": { unit: "stk", factor: 1 },
+    stück: { unit: "stk", factor: 1 },
+    blatt: { unit: "stk", factor: 1 },
+    paar: { unit: "stk", factor: 1 },
+    stk: { unit: "stk", factor: 1 },
+    st: { unit: "stk", factor: 1 },
+    teebeutel: { unit: "stk", factor: 1 },
+    tücher: { unit: "stk", factor: 1 },
+    rollen: { unit: "stk", factor: 1 },
+    tabs: { unit: "stk", factor: 1 },
+    stück: { unit: "stk", factor: 1 },
+    mm: { unit: "cm", factor: 0.1 },
+    cm: { unit: "cm", factor: 1 },
+    zentimeter: { unit: "cm", factor: 1 },
+    m: { unit: "cm", factor: 100 },
+    meter: { unit: "cm", factor: 100 },
+    g: { unit: "g", factor: 1 },
+    gramm: { unit: "g", factor: 1 },
+    dag: { unit: "g", factor: 10 },
+    kg: { unit: "g", factor: 1000 },
+    kilogramm: { unit: "g", factor: 1000 },
+    ml: { unit: "ml", factor: 1 },
+    milliliter: { unit: "ml", factor: 1 },
+    dl: { unit: "ml", factor: 10 },
+    cl: { unit: "ml", factor: 100 },
+    l: { unit: "ml", factor: 1000 },
+    liter: { unit: "ml", factor: 1000 },
+    wg: { unit: "wg", factor: 1 },
+};
+
 function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPrice, exact, bio) {
     query = query.trim();
     if (query.length < 3) return [];
@@ -344,7 +375,27 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
         return alasql("select * from ? where " + query, [items]);
     }
 
-    const tokens = query.split(/\s+/).map((token) => token.toLowerCase().replace(",", "."));
+    let tokens = query.split(/\s+/).map((token) => token.toLowerCase().replace(",", "."));
+
+    // Find quantity/unit query
+    let newTokens = [];
+    let unitQueries = [];
+    for (let i = 0; i < tokens.length; i++) {
+        const token = tokens[i];
+        let unit = UNITS[token];
+        if (unit && i > 0 && /^\d+(\.\d+)?$/.test(tokens[i - 1])) {
+            newTokens.pop();
+            unitQueries.push({
+                quantity: Number.parseFloat(tokens[i - 1]) * unit.factor,
+                unit: unit.unit,
+            });
+        } else {
+            newTokens.push(token);
+        }
+    }
+    console.log(JSON.stringify(unitQueries, null, 2));
+    console.log(newTokens);
+    tokens = newTokens;
 
     let hits = [];
     for (const item of items) {
@@ -374,7 +425,14 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
             if (item.price > maxPrice) continue;
             if (budgetBrands && !BUDGET_BRANDS.some((budgetBrand) => name.indexOf(budgetBrand) >= 0)) continue;
             if (bio && !item.bio) continue;
-            hits.push(item);
+            let allUnitsMatched = true;
+            for (const query of unitQueries) {
+                if (query.unit != item.unit || query.quantity != item.quantity) {
+                    allUnitsMatched = false;
+                    break;
+                }
+            }
+            if (allUnitsMatched) hits.push(item);
         }
     }
     return hits;
@@ -411,6 +469,8 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 <label>Sortieren <select id="sort-${id}">
                     <option value="priceasc">Preis aufsteigend</option>
                     <option value="pricedesc">Preis absteigend</option>
+                    <option value="quantityasc">Menge aufsteigend</option>
+                    <option value="quantitydesc">Menge absteigend</option>
                     <option value="namesim">Namensähnlichkeit</option>
                 </select></label>
                 <div class="row">
@@ -497,6 +557,16 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 hits.sort((a, b) => a.price - b.price);
             } else if (sort.value == "pricedesc") {
                 hits.sort((a, b) => b.price - a.price);
+            } else if (sort.value == "quantityasc") {
+                hits.sort((a, b) => {
+                    if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
+                    return a.quantity - b.quantity;
+                });
+            } else if (sort.value == "quantitydesc") {
+                hits.sort((a, b) => {
+                    if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
+                    return b.quantity - a.quantity;
+                });
             } else {
                 vectorizeItems(hits);
                 hits = similaritySortItems(hits);
