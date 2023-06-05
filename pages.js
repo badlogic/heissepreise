@@ -1,19 +1,31 @@
 const fs = require("fs");
+const path = require("path");
 const analysis = require("./analysis.js");
 const template = require("./template.js");
+const outputDir = path.resolve("docs");
+const dataDir = path.join(outputDir, "data");
 
-if (process.argv.length < 3) {
-    console.log("Usage: node pages.js <output-dir>");
-    console.log();
-    console.log("e.g. node pages.js docs/");
-    console.log();
-    process.exit(1);
+function deleteFiles(folderPath) {
+    const files = fs.readdirSync(folderPath);
+
+    files.forEach((file) => {
+        const filePath = path.join(folderPath, file);
+
+        if (filePath !== dataDir) {
+            if (fs.statSync(filePath).isFile()) {
+                fs.unlinkSync(filePath);
+            } else {
+                deleteFiles(filePath);
+                fs.rmdirSync(filePath);
+            }
+        }
+    });
 }
 
 (async function () {
     try {
-        const outputDir = process.argv[2];
-        const dataDir = outputDir + "/data";
+        if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
+        deleteFiles(outputDir);
         template.generateSite("site", outputDir, false);
 
         analysis.migrateCompression(dataDir, ".json", ".json.br");
@@ -23,9 +35,15 @@ if (process.argv.length < 3) {
         const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
         for (const store of analysis.STORE_KEYS) {
             const storeItems = items.filter((item) => item.store === store);
-            analysis.writeJSON(`${dataDir}/latest-canonical.${store}.compressed.json`, false, storeItems, 0, true);
+            analysis.writeJSON(`${dataDir}/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
         }
+        fs.readdirSync(dataDir).forEach((file) => {
+            const filePath = path.join(dataDir, file);
+            if (fs.statSync(filePath).isFile() && !file.startsWith("latest-canonical")) fs.unlinkSync(filePath);
+        });
+        analysis.migrateCompression(dataDir, ".json.br", ".json");
     } catch (e) {
+        console.error(e);
         process.exit(1);
     }
 })();
