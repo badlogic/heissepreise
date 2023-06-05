@@ -203,7 +203,7 @@ function showCart(cart) {
 
         if (cartItem.chart) cell.children[0].setAttribute("checked", true);
         cell.children[0].addEventListener("change", () => {
-            cartItem.chart = cell.children[0].checked;
+            cartItem.chart = cell.children[0].children[0].checked;
             shoppingCarts.save();
             updateCharts(canvasDom, items);
         });
