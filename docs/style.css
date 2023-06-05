@@ -229,6 +229,11 @@ td:nth-child(2) {
     padding: 0.4em;
 }
 
+td:nth-child(2) a {
+    width: 100%;
+    display: block;
+}
+
 td:nth-child(3) {
     background-color: white;
     font-size: small;
