@@ -77,7 +77,6 @@ h2 {
     justify-content: center;
     gap: 0.5em;
     width: 100%;
-    margin-top: 1em;
 }
 
 .column {
@@ -329,6 +328,12 @@ td:nth-child(4) {
 #cartitems input[type="button"] {
     width: 2em;
     height: 2em;
+}
+
+.disclaimer {
+    font-size: small;
+    text-align: center;
+    margin-top: 1em;
 }
 
 @media screen and (max-width: 600px) {
