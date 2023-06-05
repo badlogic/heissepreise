@@ -2,6 +2,7 @@ const axios = require("axios");
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const utils = require("./utils");
+const decompress = require("../site/utils");
 
 const units = {
     beutel: { unit: "stk", factor: 1 },
@@ -14,6 +15,8 @@ const units = {
 };
 
 exports.getCanonical = function (item, today) {
+    if (item.isCanonical) return item;
+
     let quantity = 1,
         unit = "kg";
     if (item.grammage && item.grammage.length > 0) {
@@ -75,33 +78,36 @@ exports.fetchData = async function () {
     return (await axiosNoDefaults.get('https://mobile-api.rewe.de/api/v3/product-search?searchTerm=*&page=1&sorting=RELEVANCE_DESC&objectsPerPage=250&marketCode=440405&serviceTypes=PICKUP', { headers, httpsAgent: agent })).data;*/
 
     try {
-        await exec("curl --version");
+        let pageId = 1;
+        let result = (
+            await exec(
+                `curl -s "https://mobile-api.rewe.de/api/v3/product-search\?searchTerm\=\*\&page\=${pageId++}\&sorting\=RELEVANCE_DESC\&objectsPerPage\=250\&marketCode\=440405\&serviceTypes\=PICKUP" -H "Rd-Service-Types: PICKUP" -H "Rd-Market-Id: 440405"`
+            )
+        ).stdout;
+        const firstPage = JSON.parse(result);
+        const totalPages = firstPage.totalPages;
+        const items = [...firstPage.products];
+        for (let i = 2; i <= totalPages; i++) {
+            items.push(
+                ...JSON.parse(
+                    (
+                        await exec(
+                            `curl -s "https://mobile-api.rewe.de/api/v3/product-search\?searchTerm\=\*\&page\=${pageId++}\&sorting\=RELEVANCE_DESC\&objectsPerPage\=250\&marketCode\=440405\&serviceTypes\=PICKUP" -H "Rd-Service-Types: PICKUP" -H "Rd-Market-Id: 440405"`
+                        )
+                    ).stdout
+                ).products
+            );
+        }
+        return items;
     } catch (e) {
-        console.log("ERROR: Can't fetch REWE-DE data, no curl installed.");
-        return [];
+        console.log("Failed to fetch REWE-DE data, either CURL is not installed, or CloudFlare protection kicked in.");
+        const compressedItems = (await axios.get("https://heissepreise.github.io/data/latest-canonical.reweDe.compressed.json")).data;
+        const items = decompress.decompress(compressedItems);
+        for (const item of items) {
+            item.isCanonical = true;
+        }
+        return items;
     }
-
-    let pageId = 1;
-    let result = (
-        await exec(
-            `curl -s "https://mobile-api.rewe.de/api/v3/product-search\?searchTerm\=\*\&page\=${pageId++}\&sorting\=RELEVANCE_DESC\&objectsPerPage\=250\&marketCode\=440405\&serviceTypes\=PICKUP" -H "Rd-Service-Types: PICKUP" -H "Rd-Market-Id: 440405"`
-        )
-    ).stdout;
-    const firstPage = JSON.parse(result);
-    const totalPages = firstPage.totalPages;
-    const items = [...firstPage.products];
-    for (let i = 2; i <= totalPages; i++) {
-        items.push(
-            ...JSON.parse(
-                (
-                    await exec(
-                        `curl -s "https://mobile-api.rewe.de/api/v3/product-search\?searchTerm\=\*\&page\=${pageId++}\&sorting\=RELEVANCE_DESC\&objectsPerPage\=250\&marketCode\=440405\&serviceTypes\=PICKUP" -H "Rd-Service-Types: PICKUP" -H "Rd-Market-Id: 440405"`
-                    )
-                ).stdout
-            ).products
-        );
-    }
-    return items;
 };
 
 exports.urlBase = "";
