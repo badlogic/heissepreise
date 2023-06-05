@@ -601,8 +601,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                     return b.quantity - a.quantity;
                 });
             } else {
-                vectorizeItems(hits);
-                hits = similaritySortItems(hits);
+                if (hits.length <= isMobile() ? 200 : 1000) {
+                    vectorizeItems(hits);
+                    hits = similaritySortItems(hits);
+                }
             }
         }
 
