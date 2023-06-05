@@ -1,45 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Heisse Preise</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
+%%_templates/_header.html%% %%_templates/_menu.html%%
 
-    <body>
-        <div class="column">
-            <h2>Heisse Preise</h2>
+<div id="cart" class="cart column">
+    <h2 id="cartname"></h2>
+    <div id="noproducts" class="hide">Noch keine Produkte im Warenkorb</div>
+    <div id="hasproducts" class="column hide">
+        <input type="button" id="save" value="Speichern" class="hide" />
+        <div class="filters-container chart">
+            <canvas class="chart" id="chart"></canvas>
             <div class="filters">
-                <a href="index.html">Produktsuche</a>
-                <a href="changes.html">Tagespreisänderungen</a>
-                <a href="carts.html">Warenkörbe</a>
+                <label><input type="checkbox" id="sum" checked /> Preissumme Warenkorb</label>
+                <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
+                <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
             </div>
-            <div id="cart" class="cart column">
-                <h3 id="cartname"></h3>
-                <input type="button" id="save" value="Speichern" class="hide" />
-                <canvas id="chart"></canvas>
-                <div class="filters" style="margin-top: 1em">
-                    <label><input type="checkbox" id="sum" checked /> Preissumme Warenkorb</label>
-                    <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
-                    <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
-                </div>
-                <div>
-                    <label>Von <input id="start" type="date" /></label>
-                    <label>Bis <input id="end" type="date" /></label>
-                </div>
-                <hr />
-                <input id="filter" type="text" style="max-width: 800px; width: 100%; margin-bottom: 1em" placeholder="Filtern..." />
-                <div class="filters" id="filters-store"></div>
-                <div id="numitems"></div>
-                <table id="cartitems"></table>
+            <div>
+                <input id="start" type="date" /> -
+                <input id="end" type="date" />
             </div>
-            <div id="search" class="column"></div>
         </div>
-        <script src="chart.js"></script>
-        <script src="alasql.js"></script>
-        <script src="utils.js"></script>
-        <script src="cart.js"></script>
-    </body>
-</html>
+        <div class="filters-container">
+            <input id="filter" class="search" placeholder="Filtern..." />
+            <div class="filters" id="filters-store"></div>
+            <div id="numitems"></div>
+        </div>
+        <table id="cartitems"></table>
+    </div>
+</div>
+<div id="search" class="column"></div>
+
+<script src="js/alasql.js"></script>
+<script src="js/chart.js"></script>
+<script src="utils.js"></script>
+<script src="cart.js"></script>
+
+%%_templates/_footer.html%%

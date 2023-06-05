@@ -35,29 +35,29 @@ const stores = {
         color: "rgb(255 240 230)",
         getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
-    dmDe: {
-        name: "DM DE",
-        budgetBrands: ["balea"],
-        color: "rgb(236 254 253)",
-        getUrl: (item) => `https://www.dm.de/product-p${item.id}.html`,
-    },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
         color: "rgb(179, 217, 255)",
         getUrl: (item) => `https://shop.unimarkt.at/${item.url}`,
     },
+    penny: {
+        name: "Penny",
+        budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
+        color: "rgb(255, 180, 180)",
+        getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
+    },
+    dmDe: {
+        name: "DM DE",
+        budgetBrands: ["balea"],
+        color: "rgb(236 254 253)",
+        getUrl: (item) => `https://www.dm.de/product-p${item.id}.html`,
+    },
     reweDe: {
         name: "REWE DE",
         budgetBrands: ["ja!"],
         color: "rgb(236 231 225)",
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
-    },
-    penny: {
-        name: "Penny",
-        budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
-        color: "rgb(255, 180, 180)",
-        getUrl: (item) => "",
     },
 };
 
@@ -163,7 +163,7 @@ async function loadItems() {
             new Promise(async (resolve) => {
                 const now = performance.now();
                 try {
-                    const response = await fetch(`latest-canonical.${store}.compressed.json`);
+                    const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
                     const json = await response.json();
                     console.log(`Loading compressed items for ${store} took ${(performance.now() - now) / 1000} secs`);
                     resolve(decompress(json));
@@ -277,18 +277,12 @@ function itemToStoreLink(item) {
 }
 
 function itemToDOM(item) {
-    let storeDom = dom("td", item.store);
-    storeDom.setAttribute("data-label", "Kette");
-    let nameDom = dom("td", `${itemToStoreLink(item)}`);
-    nameDom.setAttribute("data-label", "Name");
     let quantity = item.quantity || "";
     let unit = item.unit || "";
     if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
         quantity = parseFloat((0.001 * quantity).toFixed(2));
         unit = unit == "ml" ? "l" : "kg";
     }
-    let unitDom = dom("td", (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`);
-    unitDom.setAttribute("data-label", "Menge");
     let increase = "";
     if (item.priceHistory.length > 1) {
         let percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
@@ -296,10 +290,8 @@ function itemToDOM(item) {
             percentageChange > 0 ? "+" + percentageChange : percentageChange
         }%</span>`;
     }
-    let priceDomText = `${Number(item.price).toFixed(2)} ${increase} ${
-        item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""
-    }`;
-    let pricesText = "";
+
+    let priceHistory = "";
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
         const currPrice = item.priceHistory[i].price;
@@ -308,12 +300,25 @@ function itemToDOM(item) {
         let priceColor = "black";
         if (increase > 0) priceColor = "red";
         if (increase < 0) priceColor = "green";
-        pricesText += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
-        if (i != item.priceHistory.length - 1) pricesText += "<br>";
+        priceHistory += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
+        if (i != item.priceHistory.length - 1) priceHistory += "<br>";
     }
-    let priceDom = dom("td", `${priceDomText}<div class="priceinfo hide">${pricesText}</div>`);
-    priceDom.setAttribute("data-label", "Preis");
-    if (item.priceHistory.length > 1) {
+
+    const row = dom(
+        "tr",
+        `
+        <td data-label="Kette">${item.store}</td>
+        <td data-label="Name">${itemToStoreLink(item)}</td>
+        <td data-label="Menge">${(item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`}
+        <td data-label="Preis">
+            ${Number(item.price).toFixed(2)} ${increase} ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}
+            <div class="priceinfo hide">${priceHistory}</div>
+        </td>
+    `
+    );
+    row.style["background"] = stores[item.store]?.color;
+
+    row.querySelectorAll('td[data-label="Preis"]').forEach((priceDom) => {
         priceDom.style["cursor"] = "pointer";
         priceDom.addEventListener("click", () => {
             const pricesDom = priceDom.querySelector(".priceinfo");
@@ -323,13 +328,8 @@ function itemToDOM(item) {
                 pricesDom.classList.add("hide");
             }
         });
-    }
-    let row = dom("tr", "");
-    row.style["background"] = stores[item.store]?.color;
-    row.appendChild(storeDom);
-    row.appendChild(nameDom);
-    row.appendChild(unitDom);
-    row.appendChild(priceDom);
+    });
+
     return row;
 }
 
@@ -380,25 +380,22 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     return hits;
 }
 
-function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier) {
+function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier, chartCallback) {
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
-        <div class="wrapper wrapper--search">
+        <div class="filters-container">
             <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-            <label for="filter-toggle-${id}"><abbr title="Filter anzeigen/ausblenden">🎚</abbr></label>
-        </div>
-        <input class="toggle toggle--hidden" type="checkbox" id="filter-toggle-${id}" />
-        <div class="wrapper wrapper--sticky">
-            <a id="querylink-${id}" class="hide querylink">Abfrage teilen</a>
-            <a id="json-${id}" href="" class="hide">JSON</a>
-            <div class="filters filters--store">
-                <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
-                ${STORE_KEYS.map((store) => `<label><input id="${store}-${id}" type="checkbox" checked="true">${stores[store].name}</label>`).join(
-                    " "
-                )}
-            </div>
             <div class="filters">
+                <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
+                ${STORE_KEYS.map(
+                    (store) =>
+                        `<label><input id="${store}-${id}" type="checkbox" ${stores[store].name.toLowerCase().endsWith("de") ? "" : "checked"}>${
+                            stores[store].name
+                        }</label>`
+                ).join(" ")}
+            </div>
+            <div class="filters" style="margin-bottom: 0em">
                 <label>
                     <input id="budgetBrands-${id}" type="checkbox"> Nur
                     <abbr title="${BUDGET_BRANDS.map((budgetBrand) => budgetBrand.toUpperCase()).join(", ")}">
@@ -406,44 +403,34 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                     </abbr>
                 </label>
                 <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
-            </div>
-            <div class="filters">
+                <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
                 <label>Min € <input id="minprice-${id}" type="number" min="0" value="0"></label>
                 <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
-                <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
             </div>
-            <label style="margin-bottom: 1em">Sortieren <select id="sort-${id}">
-                <option value="priceasc">Preis aufsteigend</option>
-                <option value="pricedesc">Preis absteigend</option>
-                <option value="namesim">Namensähnlichkeit</option>
-            </select></label>
-            <div id="numresults-${id}"></div>
+            <div id="links-${id}" class="results hide">
+                <label>Sortieren <select id="sort-${id}">
+                    <option value="priceasc">Preis aufsteigend</option>
+                    <option value="pricedesc">Preis absteigend</option>
+                    <option value="namesim">Namensähnlichkeit</option>
+                </select></label>
+                <div class="row">
+                    <span id="numresults-${id}"></span>
+                    <strong>
+                        <a id="querylink-${id}" class="querylink">Teilen</a>
+                        <a id="json-${id}" href="">JSON</a>
+                    </strong>
+                    <label class="hide"><input id="chart-${id}" type="checkbox"> Diagramm</input>
+                </div>
+            </div>
         </div>
         <table id="result-${id}" class="searchresults"></table>
     `;
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            for (const entry of entries) {
-                const clientRect = entry.target.getBoundingClientRect();
-                if (entry.intersectionRatio < 0.999 && clientRect.top + clientRect.height < window.innerHeight) {
-                    // Fix Edge issue
-                    entry.target.classList.add("wrapper--pinned");
-                } else {
-                    entry.target.classList.remove("wrapper--pinned");
-                }
-            }
-        },
-        {
-            rootMargin: "0px",
-            threshold: 0.999,
-        }
-    );
-    observer.observe(document.querySelector(".wrapper--search"));
-
     const searchInput = parentElement.querySelector(`#search-${id}`);
+    const links = parentElement.querySelector(`#links-${id}`);
     const queryLink = parentElement.querySelector(`#querylink-${id}`);
     const jsonLink = parentElement.querySelector(`#json-${id}`);
+    const chart = parentElement.querySelector(`#chart-${id}`);
     const exact = parentElement.querySelector(`#exact-${id}`);
     const table = parentElement.querySelector(`#result-${id}`);
     const budgetBrands = parentElement.querySelector(`#budgetBrands-${id}`);
@@ -455,6 +442,11 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const numResults = parentElement.querySelector(`#numresults-${id}`);
     const sort = parentElement.querySelector(`#sort-${id}`);
 
+    if (chartCallback) {
+        chart.parentElement.classList.remove("hide");
+        chart.addEventListener("change", () => chartCallback(chart.checked));
+    }
+
     let lastHits = [];
     jsonLink.addEventListener("click", (event) => {
         event.preventDefault();
@@ -464,12 +456,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const setQuery = () => {
         const query = searchInput.value.trim();
         if (query.length === 0) {
-            queryLink.classList.add("hide");
-            jsonLink.classList.add("hide");
+            links.classList.add("hide");
             return;
         }
-        queryLink.classList.remove("hide");
-        jsonLink.classList.remove("hide");
+        links.classList.remove("hide");
         const inputs = [...table.querySelectorAll("input:checked")];
         let checked = inputs.length ? inputs.map((item) => item.dataset.id) : getQueryParameter("c");
         if (typeof checked === "string") checked = [checked];
@@ -499,7 +489,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         if (filter) hits = hits.filter(filter);
         table.innerHTML = "";
         if (hits.length == 0) {
-            numResults.innerHTML = "Resultate: 0";
+            numResults.innerHTML = "<strong>Resultate:</strong> 0";
             return;
         }
         if (query.trim().charAt(0) != "!" || query.trim().toLowerCase().indexOf("order by") == -1) {
@@ -513,8 +503,16 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             }
         }
 
-        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th>`);
+        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th>`);
         if (headerModifier) header = headerModifier(header);
+        const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+        showHideAll.style["cursor"] = "pointer";
+        showHideAll.showAll = true;
+        showHideAll.addEventListener("click", () => {
+            showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
+            table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+            showHideAll.showAll = !showHideAll.showAll;
+        });
         const thead = dom("thead", ``);
         thead.appendChild(header);
         table.appendChild(thead);
@@ -530,7 +528,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             return num < limit;
         });
         console.log("Building DOM took: " + (performance.now() - now) / 1000.0 + " secs");
-        numResults.innerHTML = "Resultate: " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
+        numResults.innerHTML = "<strong>Resultate:</strong> " + hits.length + (num < hits.length ? ", " + num + " angezeigt" : "");
         lastHits = hits;
     };
 
@@ -544,9 +542,9 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 maxPrice.value = 100;
             }
             if (query?.charAt(0) == "!") {
-                parentElement.querySelectorAll(".filters").forEach((f) => (f.style.display = "none"));
+                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.add("hide"));
             } else {
-                parentElement.querySelectorAll(".filters").forEach((f) => (f.style = undefined));
+                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.remove("hide"));
             }
             setQuery();
             search(searchInput.value);
@@ -561,15 +559,31 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     maxPrice.addEventListener("change", () => search(searchInput.value));
     exact.addEventListener("change", () => search(searchInput.value));
 
-    return () => search(searchInput.value);
+    return {
+        searchInput,
+        links,
+        queryLink,
+        jsonLink,
+        chart,
+        exact,
+        table,
+        budgetBrands,
+        bio,
+        allCheckbox,
+        storeCheckboxes,
+        minPrice,
+        maxPrice,
+        numResults,
+        sort,
+    };
 }
 
 function showChart(canvasDom, items, chartType) {
     if (items.length == 0) {
-        canvasDom.style.display = "none";
+        canvasDom.classList.add("hide");
         return;
     } else {
-        canvasDom.style.display = "block";
+        canvasDom.classList.remove("hide");
     }
 
     const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));
@@ -682,7 +696,6 @@ function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
     const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));
     let uniqueDates = [...new Set(allDates)];
     uniqueDates.sort();
-    uniqueDates = uniqueDates.filter((date) => date >= startDate && date <= endDate);
 
     const allPrices = items.map((product) => {
         let price = null;
@@ -704,6 +717,7 @@ function calculateOverallPriceChanges(items, todayOnly, startDate, endDate) {
 
     const priceChanges = [];
     for (let i = 0; i < uniqueDates.length; i++) {
+        if (uniqueDates[i] < startDate || uniqueDates[i] > endDate) continue;
         let price = 0;
         for (let j = 0; j < allPrices.length; j++) {
             price += allPrices[j][i];
@@ -971,9 +985,6 @@ function stem(word) {
 
 function vector(tokens) {
     const vector = {};
-    /*for (const token of tokens) {
-        vector[token] = (vector[token] || 0) + 1;
-    }*/
     for (token of tokens) {
         if (token.length > 3) {
             for (let i = 0; i < token.length - 3; i++) {
@@ -1025,10 +1036,6 @@ function magnitude(vector) {
     return Math.sqrt(sumOfSquares);
 }
 
-function deepCopy(obj) {
-    return JSON.parse(JSON.stringify(obj));
-}
-
 function similaritySortItems(items) {
     if (items.length == 0) return items;
     sortedItems = [items.shift()];
@@ -1065,90 +1072,6 @@ function vectorizeItems(items) {
     });
 }
 
-function cluster(items, maxTime) {
-    if (!maxTime) maxTime = 0.25;
-
-    // Tokenize, stem, and vectorize item names
-    vectorizeItems(items);
-
-    // Split by store and sort by number of items in descending order
-    const itemsPerStore = [];
-    for (const store of STORE_KEYS) {
-        const storeItems = items.filter((item) => item.store === store);
-        if (storeItems.length > 0) itemsPerStore.push(storeItems);
-    }
-    itemsPerStore.sort((a, b) => b.length - a.length);
-    itemsPerStore.forEach((items) => console.log(items[0].store + ", " + items.length));
-
-    // Take the store with the most items, then try to find the best match
-    // from each of the other stores
-    const baseStore = itemsPerStore.shift();
-    itemsPerStore.push(baseStore);
-    const otherItems = itemsPerStore.flat();
-
-    let clusters = [];
-    for (item of baseStore) {
-        clusters.push({ centroid: deepCopy(item.vector), item, items: [] });
-    }
-
-    const now = performance.now();
-    let maxIterations = 100;
-    while (maxIterations-- > 0) {
-        for (item of otherItems) {
-            let maxSimilarity = -1;
-            let nearestCluster = null;
-            for (cluster of clusters) {
-                const similarity = dotProduct(cluster.centroid, item.vector);
-                if (similarity > maxSimilarity) {
-                    maxSimilarity = similarity;
-                    nearestCluster = cluster;
-                    item.similarity = similarity;
-                }
-            }
-            nearestCluster.items.push(item);
-        }
-
-        const newClusters = [];
-        for (cluster of clusters) {
-            const newCluster = { centroid: {}, item: cluster.item, items: [] };
-            for (item of cluster.items) {
-                addVector(newCluster.centroid, item.vector);
-            }
-            if (cluster.items.length > 0) {
-                scaleVector(newCluster.centroid, 1 / cluster.items.length);
-                normalizeVector(newCluster.centroid);
-            }
-            newClusters.push(newCluster);
-        }
-
-        const time = (performance.now() - now) / 1000;
-        console.log(maxIterations + ", time " + time);
-        if (JSON.stringify(clusters) == JSON.stringify(newClusters) || maxIterations == 1 || time > maxTime) {
-            break;
-        }
-
-        clusters = newClusters;
-    }
-
-    const finalClusters = [];
-    for (cluster of clusters) {
-        cluster.items = similaritySortItems(cluster.items);
-        finalClusters.push(cluster);
-    }
-
-    return finalClusters;
-}
-
-function flattenClusters(clusters) {
-    const items = [];
-    for (cluster of clusters) {
-        for (item of cluster.items) {
-            items.push(item);
-        }
-    }
-    return items;
-}
-
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
@@ -1167,3 +1090,24 @@ try {
 } catch (e) {
     // hax
 }
+
+function setupLiveEdit() {
+    if (window.location.host.indexOf("localhost") < 0 && window.location.host.indexOf("127.0.0.1") < 0) return;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.onload = () => {
+        let lastChangeTimestamp = null;
+        let socket = io({ transports: ["websocket"] });
+        socket.on("connect", () => console.log("Connected"));
+        socket.on("disconnect", () => console.log("Disconnected"));
+        socket.on("message", (timestamp) => {
+            if (lastChangeTimestamp != timestamp) {
+                setTimeout(() => location.reload(), 100);
+                lastChangeTimestamp = timestamp;
+            }
+        });
+    };
+    script.src = "js/socket.io.js";
+    document.body.appendChild(script);
+}
+setupLiveEdit();

@@ -3,19 +3,12 @@ const utils = require("./utils");
 
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
-const conversions = {
-    "": {unit: "stk", factor: 1},
-    "dosen": {unit: "stk", factor: 1},
-    "blatt": {unit: "stk", factor: 1},
-    "flasche": {unit: "stk", factor: 1},
-    "flaschen": {unit: "stk", factor: 1},
-    "l": {unit: "ml", factor: 1000},
-    "liter": {unit: "ml", factor: 1000},
-    "ml": {unit: "ml", factor: 1},
-    "g": {unit: "g", factor: 1},
-    "kg": {unit: "g", factor: 1000},
-    "stk.": {unit: "stk", factor: 1},
-    "pkg.": {unit: "stk", factor: 1},
+const units = {
+    "": { unit: "stk", factor: 1 },
+    dosen: { unit: "stk", factor: 1 },
+    flasche: { unit: "stk", factor: 1 },
+    flaschen: { unit: "stk", factor: 1 },
+    "pkg.": { unit: "stk", factor: 1 },
 };
 
 exports.getCanonical = function (item, today) {
@@ -43,20 +36,24 @@ exports.getCanonical = function (item, today) {
         unit = unit.split("-")[0];
     }
 
-    return utils.convertUnit({
-        id: item.productId,
-        name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
-        price: item.price.price,
-        priceHistory: [{ date: today, price: item.price.price }],
-        unit,
-        quantity,
-        url: item.canonicalUrl,
-    }, conversions, 'lidl');
-}
+    return utils.convertUnit(
+        {
+            id: item.productId,
+            name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
+            price: item.price.price,
+            priceHistory: [{ date: today, price: item.price.price }],
+            unit,
+            quantity,
+            url: item.canonicalUrl,
+        },
+        units,
+        "lidl"
+    );
+};
 
-exports.fetchData = async function() {
+exports.fetchData = async function () {
     const LIDL_SEARCH = `https://www.lidl.at/p/api/gridboxes/AT/de/?max=${HITS}`;
-    return (await axios.get(LIDL_SEARCH)).data.filter(item => !!item.price.price);
-}
+    return (await axios.get(LIDL_SEARCH)).data.filter((item) => !!item.price.price);
+};
 
-exports.urlBase = "https://www.lidl.at"
+exports.urlBase = "https://www.lidl.at";

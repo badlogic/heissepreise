@@ -73,10 +73,16 @@ async function load() {
     document.querySelector("#end").value = currentDate();
 
     const filtersStore = document.querySelector("#filters-store");
-    filtersStore.innerHTML = STORE_KEYS.map(
-        (store) => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`
-    ).join(" ");
-    filtersStore.querySelectorAll("input").forEach((input) => input.addEventListener("change", () => showCart(cart)));
+    filtersStore.innerHTML =
+        `<label><input id="all" type="checkbox" checked="true"><strong>Alle</strong></label>` +
+        STORE_KEYS.map((store) => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
+    filtersStore.querySelectorAll("input").forEach((input) => {
+        if (input.id == "all") return;
+        input.addEventListener("change", () => showResults(items, currentDate()));
+    });
+    filtersStore.querySelector("#all").addEventListener("change", () => {
+        STORE_KEYS.forEach((store) => (filtersStore.querySelector(`#${store}`).checked = filtersStore.querySelector("#all").checked));
+    });
     document.querySelector("#filter").addEventListener("input", () => showCart(cart));
     showCart(cart);
 }
@@ -107,7 +113,7 @@ function showSearch(cart, items) {
         null,
         null,
         (header) => {
-            header.append(dom("th", ""));
+            header.innerHTML += "<th></th>";
             return header;
         },
         (item, itemDom) => {
@@ -123,6 +129,7 @@ function showSearch(cart, items) {
             return itemDom;
         }
     );
+    searchDom.querySelector("input").setAttribute("placeholder", "Produkte suchen und hinzufügen...");
 }
 
 function updateCharts(canvasDom, items) {
@@ -145,6 +152,14 @@ function updateCharts(canvasDom, items) {
 }
 
 function showCart(cart) {
+    if (cart.items.length == 0) {
+        document.querySelector("#noproducts").classList.remove("hide");
+        document.querySelector("#hasproducts").classList.add("hide");
+    } else {
+        document.querySelector("#noproducts").classList.add("hide");
+        document.querySelector("#hasproducts").classList.remove("hide");
+    }
+
     let link = encodeURIComponent(cart.name) + ";";
     for (cartItem of cart.items) {
         link += cartItem.store + cartItem.id + ";";
@@ -162,7 +177,15 @@ function showCart(cart) {
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
-    const header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis</th><th></th></tr>`);
+    header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th><th></th></tr>`);
+    const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+    showHideAll.style["cursor"] = "pointer";
+    showHideAll.showAll = true;
+    showHideAll.addEventListener("click", () => {
+        showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
+        itemTable.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+        showHideAll.showAll = !showHideAll.showAll;
+    });
     itemTable.append(header);
 
     items.forEach((cartItem, idx) => {
@@ -171,16 +194,16 @@ function showCart(cart) {
         const cell = dom(
             "td",
             `
-            <input type="checkbox">
+            <label><input type="checkbox">📈</label>
             <input type="button" value="-">
-            <input type="button" value="⬆️">
-            <input type="button" value="⬇️">
+            <input type="button" value="▲">
+            <input type="button" value="▼">
         `
         );
 
         if (cartItem.chart) cell.children[0].setAttribute("checked", true);
         cell.children[0].addEventListener("change", () => {
-            cartItem.chart = cell.children[0].checked;
+            cartItem.chart = cell.children[0].children[0].checked;
             shoppingCarts.save();
             updateCharts(canvasDom, items);
         });

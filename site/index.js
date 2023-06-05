@@ -26,47 +26,60 @@ async function load() {
     document.querySelector("#start").value = getOldestDate(items);
     document.querySelector("#end").value = currentDate();
 
-    newSearchComponent(
+    let chartEnabled = false;
+    let search = newSearchComponent(
         document.querySelector("#search"),
         items,
         (hits) => {
             items.forEach((item) => (item.chart = false));
-            if (hits.length > 0) {
-                chartDom.classList.remove("hide");
-            } else {
+            if (!chartEnabled) {
                 chartDom.classList.add("hide");
+            } else {
+                if (hits.length > 0) {
+                    chartDom.classList.remove("hide");
+                } else {
+                    chartDom.classList.add("hide");
+                }
+                updateCharts(canvasDom, hits);
             }
-            updateCharts(canvasDom, hits);
             lastHits = hits;
             return hits;
         },
         null,
         (header) => {
-            header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis 📈</th><th></th>`);
-            const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
-            showHideAll.style["cursor"] = "pointer";
-            showHideAll.showAll = true;
-            showHideAll.addEventListener("click", () => {
-                document
-                    .querySelectorAll(".priceinfo")
-                    .forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
-                showHideAll.showAll = !showHideAll.showAll;
-            });
+            header.innerHTML += "<th></th>";
             return header;
         },
         (item, itemDom, items, setQuery) => {
             const checked = (item.chart = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`));
             const dataId = item.store + ":" + item.id;
-            const cell = dom("td", `<input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">`);
+            const cell = dom("td", `<label><input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">📈</label>`);
             itemDom.appendChild(cell);
             const handleClick = (eventShouldSetQuery = false) => {
-                item.chart = cell.children[0].checked;
+                item.chart = cell.children[0].children[0].checked;
+                if (item.chart && !search.chart.checked) {
+                    search.chart.checked = true;
+                    search.chart.dispatchEvent(new Event("change"));
+                }
                 updateCharts(canvasDom, lastHits);
                 !!eventShouldSetQuery && setQuery();
             };
             cell.children[0].addEventListener("click", handleClick);
             checked && handleClick();
             return itemDom;
+        },
+        (checked) => {
+            chartEnabled = checked;
+            if (checked) {
+                if (lastHits.length > 0) {
+                    chartDom.classList.remove("hide");
+                    updateCharts(canvasDom, lastHits);
+                } else {
+                    chartDom.classList.add("hide");
+                }
+            } else {
+                chartDom.classList.add("hide");
+            }
         }
     );
     const query = getQueryParameter("q");

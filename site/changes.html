@@ -1,41 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Heisse Preise</title>
-        <link
-            rel="icon"
-            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🔥</text></svg>"
-        />
-        <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
+%%_templates/_header.html%% %%_templates/_menu.html%%
 
-    <body>
-        <div class="column">
-            <h2>Heisse Preise</h2>
-            <div class="filters">
-                <a href="index.html">Produktsuche</a>
-                <a href="changes.html"><strong>Tagespreisänderungen</strong></a>
-                <a href="carts.html">Warenkörbe</a>
-            </div>
-            <div class="filters">
-                <label
-                    >Preisänderungen am
-                    <select id="dates"></select
-                ></label>
-            </div>
-            <div class="filters">
-                <label><input id="increases" type="checkbox" checked="true" />Teurer</label>
-                <label><input id="decreases" type="checkbox" checked="true" />Billiger</label>
-                <label><input id="fullhistory" type="checkbox" checked="true" />Gesamte Preishistorie</label>
-            </div>
-            <div id="results"></div>
-            <table id="result"></table>
+<div class="column">
+    <h2>Preisänderungen</h2>
+    <div class="filters-container">
+        <div class="filters">
+            <label>
+                <input type="radio" id="date" name="type" value="date" checked /> Datum
+                <select id="dates"></select>
+            </label>
+            <label><input type="radio" id="cheaper" name="type" value="cheaper" /> Billiger seit letzter Änderung</label>
         </div>
-        <script src="alasql.js"></script>
-        <script src="utils.js"></script>
-        <script src="changes.js"></script>
-    </body>
-</html>
+        <input id="filter" class="search" type="text" placeholder="Filtern..." />
+        <div class="filters" id="filters-store"></div>
+        <div class="filters" id="filters-changes">
+            <label><input id="increases" type="checkbox" checked="true" /> Teurer</label>
+            <label><input id="decreases" type="checkbox" checked="true" /> Billiger</label>
+        </div>
+        <div id="numresults"></div>
+    </div>
+    <table id="result" class="hide"></table>
+</div>
+
+<script src="js/alasql.js"></script>
+<script src="utils.js"></script>
+<script src="changes.js"></script>
+
+%%_templates/_footer.html%%

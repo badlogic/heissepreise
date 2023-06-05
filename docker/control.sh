@@ -30,7 +30,7 @@ pushd $dir > /dev/null
 case "$1" in
 start)
 	git pull
-	./fixup.sh
+	# ./fixup.sh
 	docker-compose -p heisse-preise -f docker-compose.base.yml -f docker-compose.prod.yml build
 	docker-compose -p heisse-preise -f docker-compose.base.yml -f docker-compose.prod.yml up -d
 	;;
