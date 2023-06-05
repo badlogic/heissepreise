@@ -30,13 +30,18 @@ exports.getCanonical = function (item, today) {
     }
 
     let fallback;
-    if (!today.startsWith("2020")) {
-        // Needed for Dossier data
+    if (item.masterValues["price-per-unit"]) {
         let [unitPrice, unit_] = item.masterValues["price-per-unit"].split("/");
         unitPrice = parseFloat(unitPrice.replace("€", ""));
-        const fallback = {
+        fallback = {
             quantity: parseFloat((price / unitPrice).toFixed(3)),
             unit: unit_.toLowerCase(),
+        };
+    } else {
+        // Needed for Dossier data
+        fallback = {
+            quantity: 1,
+            unit: "kg",
         };
     }
 
