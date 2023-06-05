@@ -29,12 +29,16 @@ exports.getCanonical = function (item, today) {
         unit = q[1];
     }
 
-    let [unitPrice, unit_] = item.masterValues["price-per-unit"].split("/");
-    unitPrice = parseFloat(unitPrice.replace("€", ""));
-    const fallback = {
-        quantity: parseFloat((price / unitPrice).toFixed(3)),
-        unit: unit_.toLowerCase(),
-    };
+    let fallback;
+    if (!today.startsWith("2020")) {
+        // Needed for Dossier data
+        let [unitPrice, unit_] = item.masterValues["price-per-unit"].split("/");
+        unitPrice = parseFloat(unitPrice.replace("€", ""));
+        const fallback = {
+            quantity: parseFloat((price / unitPrice).toFixed(3)),
+            unit: unit_.toLowerCase(),
+        };
+    }
 
     return utils.convertUnit(
         {
