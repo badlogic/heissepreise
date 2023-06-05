@@ -3,15 +3,15 @@ shoppingCarts.load();
 
 async function load() {
     const items = await loadItems();
-    lookup = {};
-    for (item of items) {
+    const lookup = {};
+    for (const item of items) {
         lookup[item.store + item.id] = item;
     }
 
     // Update carts with latest price info
-    for (cart of shoppingCarts.carts) {
+    for (const cart of shoppingCarts.carts) {
         const items = [];
-        for (cartItem of cart.items) {
+        for (const cartItem of cart.items) {
             const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
             items.push(item);
@@ -21,7 +21,7 @@ async function load() {
     shoppingCarts.save();
 
     if (shoppingCarts.carts.findIndex((cart) => cart.name === "Momentum Eigenmarken Vergleich") == -1) {
-        response = await fetch("momentum-cart.json");
+        response = await fetch("data/momentum-cart.json");
         momentumCart = await response.json();
         shoppingCarts.carts.unshift(momentumCart);
         shoppingCarts.save();
@@ -60,7 +60,7 @@ async function load() {
             const importedCarts = JSON.parse(contents);
             for (const importedCart of importedCarts) {
                 const items = [];
-                for (cartItem of importedCart.items) {
+                for (const cartItem of importedCart.items) {
                     const item = lookup[cartItem.store + cartItem.id];
                     if (!item) continue;
                     items.push(item);
@@ -98,7 +98,7 @@ function showCarts(lookup) {
             <th>Name</th>
             <th>Produkte</th>
             <th>Preis</th>
-            <th></th>
+            <th>Aktionen</th>
         </tr>
     `
         )
@@ -108,7 +108,7 @@ function showCarts(lookup) {
         let oldPrice = 0;
         let currPrice = 0;
         let link = encodeURIComponent(cart.name) + ";";
-        for (cartItem of cart.items) {
+        for (const cartItem of cart.items) {
             const item = lookup[cartItem.store + cartItem.id];
             if (!item) continue;
             oldPrice += item.priceHistory[item.priceHistory.length - 1].price;
@@ -116,52 +116,38 @@ function showCarts(lookup) {
             link += item.store + item.id + ";";
         }
         const increase = oldPrice != 0 ? Math.round(((currPrice - oldPrice) / oldPrice) * 100) : 0;
+        const cartUrl = `cart.html?name=${encodeURIComponent(cart.name)}`;
 
-        const row = dom("tr", ``);
-
-        const nameDom = dom("td", `<a href="cart.html?name=${encodeURIComponent(cart.name)}">${cart.name}</a>`);
-        nameDom.setAttribute("data-label", "Name");
-        row.appendChild(nameDom);
-
-        const itemsDom = dom("td", cart.items.length);
-        itemsDom.setAttribute("data-label", "Produkte");
-        row.appendChild(itemsDom);
-
-        const priceDom = dom(
-            "td",
-            `<span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${(increase > 0 ? "+" : "") + increase + "%"}`
+        const row = dom(
+            "tr",
+            `
+            <td data-label="Name"><a href="${cartUrl}">${cart.name}</a></td>
+            <td data-label="Produkte">${cart.items.length}</td>
+            <td data-label="Preis">
+                <span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${
+                (increase > 0 ? "+" : "") + increase + "%"
+            }</span>
+            </td>
+            <td>
+                <div class="cartactions">
+                    <a href="cart.html?cart=${link}">Teilen</a>
+                    <a class="cartjson" href="">JSON</a>
+                    ${cart.name != "Momentum Eigenmarken Vergleich" ? `<input class="cartdelete" type="button" value="Löschen">` : ""}
+                </div>
+            </td>
+        `
         );
-        priceDom.setAttribute("data-label", "Preis");
-        row.appendChild(priceDom);
-
-        const actionsDom = dom("div", "");
-        actionsDom.classList.add("cartactions");
-        const linkDom = dom("a", "Teilen");
-        linkDom.setAttribute("href", "cart.html?cart=" + link);
-        actionsDom.appendChild(linkDom);
-
-        const jsonDom = dom("a", "JSON");
-        jsonDom.setAttribute("href", "");
-        jsonDom.addEventListener("click", (event) => {
+        row.querySelector("td").addEventListener("click", () => (location.href = cartUrl));
+        row.querySelector(".cartjson").addEventListener("click", (event) => {
             event.preventDefault();
             downloadFile(cart.name + ".json", JSON.stringify(cart, null, 2));
         });
-        actionsDom.appendChild(jsonDom);
-
         if (cart.name != "Momentum Eigenmarken Vergleich") {
-            let deleteButton = dom("input");
-            deleteButton.setAttribute("type", "button");
-            deleteButton.setAttribute("value", "Löschen");
-            actionsDom.appendChild(deleteButton);
-
-            deleteButton.addEventListener("click", () => {
+            row.querySelector(".cartdelete").addEventListener("click", () => {
                 shoppingCarts.remove(cart.name);
                 showCarts(lookup);
             });
         }
-        const actionsCell = dom("td", "");
-        actionsCell.append(actionsDom);
-        row.appendChild(actionsCell);
         cartsTable.appendChild(row);
     });
 }
