@@ -23,7 +23,7 @@ exports.getCanonical = function (item, today) {
         else if (description.endsWith("im topf")) [quantity, unit] = [1, "kg"];
         else [quantity, unit] = [1, "stk."];
     } else {
-        const s = description.replace(" EINWEG", "").replace(" MEHRWEG", "").trim().replace(".", "");
+        const s = description.replace(" EINWEG", "").replace(" MEHRWEG", "").replace("per kg", "1 kg").trim().replace(".", "");
         const q = utils.parseUnitAndQuantityAtEnd(s);
         quantity = q[0];
         unit = q[1];
