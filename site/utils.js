@@ -380,12 +380,20 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     // Find quantity/unit query
     let newTokens = [];
     let unitQueries = [];
+    const operators = ["<", "<=", ">", ">="];
     for (let i = 0; i < tokens.length; i++) {
         const token = tokens[i];
         let unit = UNITS[token];
         if (unit && i > 0 && /^\d+(\.\d+)?$/.test(tokens[i - 1])) {
             newTokens.pop();
+            let operator = "=";
+            if (i > 1 && operators.includes(tokens[i - 2])) {
+                newTokens.pop();
+                operator = tokens[i - 2];
+            }
+
             unitQueries.push({
+                operator,
                 quantity: Number.parseFloat(tokens[i - 1]) * unit.factor,
                 unit: unit.unit,
             });
@@ -427,7 +435,32 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
             if (bio && !item.bio) continue;
             let allUnitsMatched = true;
             for (const query of unitQueries) {
-                if (query.unit != item.unit || query.quantity != item.quantity) {
+                if (query.unit != item.unit) {
+                    allUnitsMatched = false;
+                    break;
+                }
+
+                if (query.operator == "=" && !(item.quantity == query.quantity)) {
+                    allUnitsMatched = false;
+                    break;
+                }
+
+                if (query.operator == "<" && !(item.quantity < query.quantity)) {
+                    allUnitsMatched = false;
+                    break;
+                }
+
+                if (query.operator == "<=" && !(item.quantity <= query.quantity)) {
+                    allUnitsMatched = false;
+                    break;
+                }
+
+                if (query.operator == ">" && !(item.quantity > query.quantity)) {
+                    allUnitsMatched = false;
+                    break;
+                }
+
+                if (query.operator == ">=" && !(item.quantity >= query.quantity)) {
                     allUnitsMatched = false;
                     break;
                 }
