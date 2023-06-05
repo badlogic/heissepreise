@@ -12,11 +12,6 @@ exports.getCanonical = function (item, today) {
     // try to read quantity and unit from product name
     const name = item.ProductName;
     let [quantity, unit] = utils.parseUnitAndQuantityAtEnd(name);
-    if (units[unit] === undefined) {
-        // fallback: use given quantity and unit (including packaging)
-        quantity = item.Unit;
-        unit = item.UnitType;
-    }
 
     return utils.convertUnit(
         {
@@ -31,7 +26,11 @@ exports.getCanonical = function (item, today) {
             url: `${item.CategorySEOName}/${item.SEOName}`,
         },
         units,
-        "hofer"
+        "hofer",
+        {
+            quantity: item.Unit,
+            unit: item.UnitType,
+        }
     );
 };
 
