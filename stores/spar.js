@@ -23,20 +23,25 @@ exports.getCanonical = function (item, today) {
         else if (description.endsWith("im topf")) [quantity, unit] = [1, "kg"];
         else [quantity, unit] = [1, "stk."];
     } else {
-        const s = description.replace(" EINWEG", "").replace(" MEHRWEG", "").trim().replace(".", "");
+        const s = description.replace(" EINWEG", "").replace(" MEHRWEG", "").replace("per kg", "1 kg").trim().replace(".", "");
         const q = utils.parseUnitAndQuantityAtEnd(s);
         quantity = q[0];
         unit = q[1];
     }
 
     let fallback;
-    if (!today.startsWith("2020")) {
-        // Needed for Dossier data
+    if (item.masterValues["price-per-unit"]) {
         let [unitPrice, unit_] = item.masterValues["price-per-unit"].split("/");
         unitPrice = parseFloat(unitPrice.replace("€", ""));
-        const fallback = {
+        fallback = {
             quantity: parseFloat((price / unitPrice).toFixed(3)),
             unit: unit_.toLowerCase(),
+        };
+    } else {
+        // Needed for Dossier data
+        fallback = {
+            quantity: 1,
+            unit: "kg",
         };
     }
 
@@ -44,7 +49,7 @@ exports.getCanonical = function (item, today) {
         {
             id: item.masterValues["code-internal"],
             sparId: item.masterValues["product-number"],
-            name: item.masterValues.title + " " + (item.masterValues["short-description"] ?? item.masterValues.name).toLowerCase(),
+            name: item.masterValues.title + " " + (item.masterValues["short-description"] ?? item.masterValues.name),
             price,
             priceHistory: [{ date: today, price }],
             unit,
