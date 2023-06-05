@@ -4,11 +4,11 @@ if [[ $repository_name == *.github.io ]]; then
   echo "Name ends with github.io"
 else
   echo "Name does not end with github.io, not generating pages"
-  # exit
+  exit
 fi
 
 npm install
-node pages.js docs
+node pages.js
 
 pushd docs
 git add *
