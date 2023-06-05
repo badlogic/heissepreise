@@ -24,7 +24,7 @@ exports.globalUnits = {
     wg: { unit: "wg", factor: 1 },
 };
 
-exports.convertUnit = function (item, units, store) {
+exports.convertUnit = function (item, units, store, fallback) {
     if (typeof item.quantity == "string") item.quantity = parseFloat(item.quantity.replace(",", "."));
 
     let unit = item.unit;
@@ -32,7 +32,12 @@ exports.convertUnit = function (item, units, store) {
 
     const conv = unit in exports.globalUnits ? exports.globalUnits[unit] : units[unit];
     if (conv === undefined) {
-        console.error(`Unknown unit in ${store}: '${unit}' in item ${item.name}`);
+        if (fallback) {
+            item.quantity = fallback.quantity;
+            item.unit = fallback.unit;
+        } else {
+            console.error(`Unknown unit in ${store}: '${unit}' in item ${item.name}`);
+        }
         return item;
     }
 

@@ -200,6 +200,7 @@ exports.updateData = async function (dataDir, done) {
                 try {
                     const storeItems = await stores[store].fetchData();
                     writeJSON(`${dataDir}/${store}-${today}.json`, storeItems, FILE_COMPRESSOR);
+                    // const storeItems = readJSON(`${dataDir}/${store}-${today}.json.${FILE_COMPRESSOR}`);
                     const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
                     console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
                     resolve(storeItemsCanonical);

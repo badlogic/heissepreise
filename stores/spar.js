@@ -28,13 +28,13 @@ exports.getCanonical = function (item, today) {
         quantity = q[0];
         unit = q[1];
     }
-    if (!(unit in units) && !(unit in utils.globalUnits)) {
-        // use price per unit to calculate quantity (less accurate)
-        let [unitPrice, unit_] = item.masterValues["price-per-unit"].split("/");
-        unitPrice = parseFloat(unitPrice.replace("€", ""));
-        quantity = parseFloat((price / unitPrice).toFixed(3));
-        unit = unit_.toLowerCase();
-    }
+
+    let [unitPrice, unit_] = item.masterValues["price-per-unit"].split("/");
+    unitPrice = parseFloat(unitPrice.replace("€", ""));
+    const fallback = {
+        quantity: parseFloat((price / unitPrice).toFixed(3)),
+        unit: unit_.toLowerCase(),
+    };
 
     return utils.convertUnit(
         {
@@ -50,7 +50,8 @@ exports.getCanonical = function (item, today) {
             url: item.masterValues.url,
         },
         units,
-        "spar"
+        "spar",
+        fallback
     );
 };
 
