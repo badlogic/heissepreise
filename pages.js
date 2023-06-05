@@ -28,8 +28,8 @@ function deleteFiles(folderPath) {
         deleteFiles(outputDir);
         template.generateSite("site", outputDir, false);
 
-        analysis.migrateCompression(dataDir, ".json", ".json.br");
-        analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
+        const data = analysis.readJSON(`${dataDir}/latest-canonical.json`);
+        analysis.writeJSON(`${dataDir}/latest-canonical.json`, data, analysis.FILE_COMPRESSOR);
         await analysis.updateData(dataDir);
 
         const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
@@ -41,7 +41,7 @@ function deleteFiles(folderPath) {
             const filePath = path.join(dataDir, file);
             if (fs.statSync(filePath).isFile() && !file.startsWith("latest-canonical")) fs.unlinkSync(filePath);
         });
-        analysis.migrateCompression(dataDir, ".json.br", ".json");
+        analysis.migrateCompression(dataDir, `.json.${analysis.FILE_COMPRESSOR}`, ".json");
     } catch (e) {
         console.error(e);
         process.exit(1);
