@@ -45,6 +45,12 @@ exports.getCanonical = function (item, today) {
         };
     }
 
+    const isWeighted = item.masterValues["item-type"] === "WeightProduct";
+    if (isWeighted) {
+        unit = fallback.unit;
+        quantity = fallback.quantity;
+    }
+
     return utils.convertUnit(
         {
             id: item.masterValues["code-internal"],
@@ -54,7 +60,7 @@ exports.getCanonical = function (item, today) {
             priceHistory: [{ date: today, price }],
             unit,
             quantity,
-            isWeighted: item.masterValues["item-type"] === "WeightProduct",
+            isWeighted,
             bio: item.masterValues.biolevel === "Bio",
             url: item.masterValues.url,
         },

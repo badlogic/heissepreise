@@ -91,10 +91,11 @@ async function load() {
 
     filtersStore.querySelectorAll("input").forEach((input) => {
         if (input.id == "all") return;
-        input.addEventListener("change", () => showResults(items, currentDate()));
+        input.addEventListener("change", () => showCart(cart));
     });
     filtersStore.querySelector("#all").addEventListener("change", () => {
         STORE_KEYS.forEach((store) => (filtersStore.querySelector(`#${store}`).checked = filtersStore.querySelector("#all").checked));
+        showCart(cart);
     });
     document.querySelector("#filter").addEventListener("input", () => showCart(cart));
     showCart(cart);
@@ -183,7 +184,7 @@ function showCart(cart) {
     }
 
     document.querySelector("#cartname").innerHTML =
-        "Warenkorb '" + cart.name + `' <a class="text-sm text-primary block" href="cart.html?cart=${link}">Teilen</a>`;
+        "Warenkorb '" + cart.name + `' <a class="text-sm text-primary block hover:underline" href="cart.html?cart=${link}">Teilen</a>`;
     const canvasDom = document.querySelector("#chart");
     let items = filter(cart.items);
     if (items.length == cart.items.length) {
@@ -191,6 +192,10 @@ function showCart(cart) {
     } else {
         document.querySelector("#numitems").innerText = `${items.length} / ${cart.items.length} Artikel`;
     }
+    document.querySelector("#json").addEventListener("click", (event) => {
+        event.preventDefault();
+        downloadFile("items.json", JSON.stringify(items, null, 2));
+    });
     updateCharts(canvasDom, items);
 
     const itemTable = document.querySelector("#cartitems");

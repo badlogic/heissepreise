@@ -422,7 +422,7 @@ const UNITS = {
 
 function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPrice, exact, bio) {
     query = query.trim();
-    if (query.length < 3) return [];
+    if (query.length < 3 || checkedStores.length == 0) return [];
 
     if (query.charAt(0) == "!") {
         query = query.substring(1);
@@ -583,8 +583,8 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 <div class="flex gap-2 items-center">
                     <span id="numresults-${id}"></span>
                     <span>
-                        <a id="querylink-${id}" class="querylink text-primary underline">Teilen</a>
-                        <a id="json-${id}" class="text-primary underline" href="">JSON</a>
+                        <a id="querylink-${id}" class="querylink text-primary font-medium hover:underline">Teilen</a>
+                        <a id="json-${id}" class="text-primary font-medium hover:underline" href="">JSON</a>
                     </span>
                     <div class="hidden">
                         ${customCheckbox(`chart-${id}`, `Diagramm`, "false", "gray", "gray")}
@@ -755,7 +755,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
-    allCheckbox.addEventListener("change", () => storeCheckboxes.forEach((store) => (store.checked = allCheckbox.checked)));
+    allCheckbox.addEventListener("change", () => {
+        storeCheckboxes.forEach((store) => (store.checked = allCheckbox.checked));
+        search(searchInput.value);
+    });
     storeCheckboxes.map((store) => store.addEventListener("change", () => search(searchInput.value)));
     sort.addEventListener("change", () => search(searchInput.value));
     minPrice.addEventListener("change", () => search(searchInput.value));
@@ -1186,22 +1189,6 @@ function stem(word) {
     return word;
 }
 
-function vector(tokens) {
-    const vector = {};
-    for (token of tokens) {
-        if (token.length > 3) {
-            for (let i = 0; i < token.length - 3; i++) {
-                let trigram = token.substring(i, i + 3);
-                vector[trigram] = (vector[trigram] || 0) + 1;
-            }
-        } else {
-            vector[token] = (vector[token] || 0) + 1;
-        }
-    }
-    normalizeVector(vector);
-    return vector;
-}
-
 function dotProduct(vector1, vector2) {
     let product = 0;
     for (const key in vector1) {
@@ -1239,40 +1226,109 @@ function magnitude(vector) {
     return Math.sqrt(sumOfSquares);
 }
 
+function findMostSimilarItem(refItem, items) {
+    let maxSimilarity = -1;
+    let similarItem = null;
+    let similarItemIdx = -1;
+    items.forEach((item, idx) => {
+        let similarity = dotProduct(refItem.vector, item.vector);
+        if (similarity > maxSimilarity) {
+            maxSimilarity = similarity;
+            similarItem = item;
+            similarItemIdx = idx;
+        }
+    });
+    return {
+        similarity: maxSimilarity,
+        item: similarItem,
+        index: similarItemIdx,
+    };
+}
+
+function findMostSimilarItems(refItem, items, k = 5, accept = (ref, item) => true) {
+    let topSimilarItems = [];
+    let topSimilarities = [];
+
+    items.forEach((item, idx) => {
+        if (!accept(refItem, item)) return;
+        let similarity = dotProduct(refItem.vector, item.vector);
+
+        if (topSimilarItems.length < k) {
+            topSimilarItems.push(item);
+            topSimilarities.push(similarity);
+        } else {
+            let minSimilarity = Math.min(...topSimilarities);
+            let minIndex = topSimilarities.indexOf(minSimilarity);
+
+            if (similarity > minSimilarity) {
+                topSimilarItems[minIndex] = item;
+                topSimilarities[minIndex] = similarity;
+            }
+        }
+    });
+
+    let similarItemsWithIndices = topSimilarItems.map((item, index) => {
+        return {
+            similarity: topSimilarities[index],
+            item: item,
+            index: items.indexOf(item),
+        };
+    });
+
+    return similarItemsWithIndices;
+}
+
 function similaritySortItems(items) {
     if (items.length == 0) return items;
     sortedItems = [items.shift()];
     let refItem = sortedItems[0];
     while (items.length > 0) {
-        let maxSimilarity = -1;
-        let similarItem = null;
-        let similarItemIdx = -1;
-        items.forEach((item, idx) => {
-            let similarity = dotProduct(refItem.vector, item.vector);
-            if (similarity > maxSimilarity) {
-                maxSimilarity = similarity;
-                similarItem = item;
-                similarItemIdx = idx;
-            }
-        });
-        sortedItems.push(similarItem);
-        items.splice(similarItemIdx, 1);
-        refItem = similarItem;
+        const similarItem = findMostSimilarItem(refItem, items);
+        sortedItems.push(similarItem.item);
+        items.splice(similarItem.index, 1);
+        refItem = similarItem.item;
     }
     return sortedItems;
 }
 
-function vectorizeItems(items) {
-    items.forEach((item) => {
-        let name = item.name
-            .toLowerCase()
-            .replace(/[^\w\s]|_/g, "")
-            .replace("-", " ");
-        item.tokens = name.split(/\s+/).map((token) => stem(token));
+const NGRAM = 4;
+function vector(tokens) {
+    const vector = {};
+    for (token of tokens) {
+        if (token.length > NGRAM) {
+            for (let i = 0; i < token.length - NGRAM; i++) {
+                let trigram = token.substring(i, i + NGRAM);
+                vector[trigram] = (vector[trigram] || 0) + 1;
+            }
+        } else {
+            vector[token] = (vector[token] || 0) + 1;
+        }
+    }
+    normalizeVector(vector);
+    return vector;
+}
+
+function vectorizeItem(item, useUnit = true, useStem = true) {
+    const isNumber = /^\d+\.\d+$/;
+    let name = item.name
+        .toLowerCase()
+        .replace(/[^\w\s]|_/g, "")
+        .replace("-", " ")
+        .replace(",", " ");
+    item.tokens = name
+        .split(/\s+/)
+        .filter((token) => !globalStopwords.includes(token))
+        .filter((token) => !isNumber.test(token))
+        .map((token) => (useStem ? stem(token) : token));
+    if (useUnit) {
         if (item.quantity) item.tokens.push("" + item.quantity);
         if (item.unit) item.tokens.push(item.unit);
-        item.vector = vector(item.tokens);
-    });
+    }
+    item.vector = vector(item.tokens);
+}
+
+function vectorizeItems(items, useUnit = true, accept = () => {}) {
+    items.forEach((item) => vectorizeItem(item, useUnit));
 }
 
 function isMobile() {
@@ -1287,9 +1343,10 @@ try {
     exports.scaleVector = scaleVector;
     exports.normalizeVector = normalizeVector;
     exports.stem = stem;
-    exports.cluster = cluster;
-    exports.flattenClusters = flattenClusters;
+    exports.vectorizeItem = vectorizeItem;
     exports.vectorizeItems = vectorizeItems;
+    exports.findMostSimilarItem = findMostSimilarItem;
+    exports.findMostSimilarItems = findMostSimilarItems;
     exports.similaritySortItems = similaritySortItems;
 } catch (e) {
     // hax
@@ -1317,3 +1374,712 @@ if (typeof window !== "undefined") {
     }
     setupLiveEdit();
 }
+
+const globalStopwords = [
+    "ab",
+    "aber",
+    "alle",
+    "allein",
+    "allem",
+    "allen",
+    "aller",
+    "allerdings",
+    "allerlei",
+    "alles",
+    "allmählich",
+    "allzu",
+    "als",
+    "alsbald",
+    "also",
+    "am",
+    "an",
+    "and",
+    "ander",
+    "andere",
+    "anderem",
+    "anderen",
+    "anderer",
+    "andererseits",
+    "anderes",
+    "anderm",
+    "andern",
+    "andernfalls",
+    "anders",
+    "anstatt",
+    "auch",
+    "auf",
+    "aus",
+    "ausgenommen",
+    "ausser",
+    "ausserdem",
+    "außer",
+    "außerdem",
+    "außerhalb",
+    "bald",
+    "bei",
+    "beide",
+    "beiden",
+    "beiderlei",
+    "beides",
+    "beim",
+    "beinahe",
+    "bereits",
+    "besonders",
+    "besser",
+    "beträchtlich",
+    "bevor",
+    "bezüglich",
+    "bin",
+    "bis",
+    "bisher",
+    "bislang",
+    "bist",
+    "bloß",
+    "bsp.",
+    "bzw",
+    "ca",
+    "ca.",
+    "content",
+    "da",
+    "dabei",
+    "dadurch",
+    "dafür",
+    "dagegen",
+    "daher",
+    "dahin",
+    "damals",
+    "damit",
+    "danach",
+    "daneben",
+    "dann",
+    "daran",
+    "darauf",
+    "daraus",
+    "darin",
+    "darum",
+    "darunter",
+    "darüber",
+    "darüberhinaus",
+    "das",
+    "dass",
+    "dasselbe",
+    "davon",
+    "davor",
+    "dazu",
+    "daß",
+    "dein",
+    "deine",
+    "deinem",
+    "deinen",
+    "deiner",
+    "deines",
+    "dem",
+    "demnach",
+    "demselben",
+    "den",
+    "denen",
+    "denn",
+    "dennoch",
+    "denselben",
+    "der",
+    "derart",
+    "derartig",
+    "derem",
+    "deren",
+    "derer",
+    "derjenige",
+    "derjenigen",
+    "derselbe",
+    "derselben",
+    "derzeit",
+    "des",
+    "deshalb",
+    "desselben",
+    "dessen",
+    "desto",
+    "deswegen",
+    "dich",
+    "die",
+    "diejenige",
+    "dies",
+    "diese",
+    "dieselbe",
+    "dieselben",
+    "diesem",
+    "diesen",
+    "dieser",
+    "dieses",
+    "diesseits",
+    "dir",
+    "direkt",
+    "direkte",
+    "direkten",
+    "direkter",
+    "doch",
+    "dort",
+    "dorther",
+    "dorthin",
+    "drauf",
+    "drin",
+    "drunter",
+    "drüber",
+    "du",
+    "dunklen",
+    "durch",
+    "durchaus",
+    "eben",
+    "ebenfalls",
+    "ebenso",
+    "eher",
+    "eigenen",
+    "eigenes",
+    "eigentlich",
+    "ein",
+    "eine",
+    "einem",
+    "einen",
+    "einer",
+    "einerseits",
+    "eines",
+    "einfach",
+    "einführen",
+    "einführte",
+    "einführten",
+    "eingesetzt",
+    "einig",
+    "einige",
+    "einigem",
+    "einigen",
+    "einiger",
+    "einigermaßen",
+    "einiges",
+    "einmal",
+    "eins",
+    "einseitig",
+    "einseitige",
+    "einseitigen",
+    "einseitiger",
+    "einst",
+    "einstmals",
+    "einzig",
+    "entsprechend",
+    "entweder",
+    "er",
+    "erst",
+    "es",
+    "etc",
+    "etliche",
+    "etwa",
+    "etwas",
+    "euch",
+    "euer",
+    "eure",
+    "eurem",
+    "euren",
+    "eurer",
+    "eures",
+    "falls",
+    "fast",
+    "ferner",
+    "folgende",
+    "folgenden",
+    "folgender",
+    "folgendes",
+    "folglich",
+    "fuer",
+    "für",
+    "gab",
+    "ganze",
+    "ganzem",
+    "ganzen",
+    "ganzer",
+    "ganzes",
+    "gar",
+    "gegen",
+    "gemäss",
+    "ggf",
+    "gleich",
+    "gleichwohl",
+    "gleichzeitig",
+    "glücklicherweise",
+    "gänzlich",
+    "hab",
+    "habe",
+    "haben",
+    "haette",
+    "hast",
+    "hat",
+    "hatte",
+    "hatten",
+    "hattest",
+    "hattet",
+    "heraus",
+    "herein",
+    "hier",
+    "hier",
+    "hinter",
+    "hiermit",
+    "hiesige",
+    "hin",
+    "hinein",
+    "hinten",
+    "hinter",
+    "hinterher",
+    "http",
+    "hätt",
+    "hätte",
+    "hätten",
+    "höchstens",
+    "ich",
+    "igitt",
+    "ihm",
+    "ihn",
+    "ihnen",
+    "ihr",
+    "ihre",
+    "ihrem",
+    "ihren",
+    "ihrer",
+    "ihres",
+    "im",
+    "immer",
+    "immerhin",
+    "in",
+    "indem",
+    "indessen",
+    "infolge",
+    "innen",
+    "innerhalb",
+    "ins",
+    "insofern",
+    "inzwischen",
+    "irgend",
+    "irgendeine",
+    "irgendwas",
+    "irgendwen",
+    "irgendwer",
+    "irgendwie",
+    "irgendwo",
+    "ist",
+    "ja",
+    "je",
+    "jed",
+    "jede",
+    "jedem",
+    "jeden",
+    "jedenfalls",
+    "jeder",
+    "jederlei",
+    "jedes",
+    "jedoch",
+    "jemand",
+    "jene",
+    "jenem",
+    "jenen",
+    "jener",
+    "jenes",
+    "jenseits",
+    "jetzt",
+    "jährig",
+    "jährige",
+    "jährigen",
+    "jähriges",
+    "kam",
+    "kann",
+    "kannst",
+    "kaum",
+    "kein",
+    "keine",
+    "keinem",
+    "keinen",
+    "keiner",
+    "keinerlei",
+    "keines",
+    "keineswegs",
+    "klar",
+    "klare",
+    "klaren",
+    "klares",
+    "klein",
+    "kleinen",
+    "kleiner",
+    "kleines",
+    "koennen",
+    "koennt",
+    "koennte",
+    "koennten",
+    "komme",
+    "kommen",
+    "kommt",
+    "konkret",
+    "konkrete",
+    "konkreten",
+    "konkreter",
+    "konkretes",
+    "können",
+    "könnt",
+    "künftig",
+    "leider",
+    "machen",
+    "man",
+    "manche",
+    "manchem",
+    "manchen",
+    "mancher",
+    "mancherorts",
+    "manches",
+    "manchmal",
+    "mehr",
+    "mehrere",
+    "mein",
+    "meine",
+    "meinem",
+    "meinen",
+    "meiner",
+    "meines",
+    "mich",
+    "mir",
+    "mit",
+    "mithin",
+    "muessen",
+    "muesst",
+    "muesste",
+    "muss",
+    "musst",
+    "musste",
+    "mussten",
+    "muß",
+    "mußt",
+    "müssen",
+    "müsste",
+    "müssten",
+    "müßt",
+    "müßte",
+    "nach",
+    "nachdem",
+    "nachher",
+    "nachhinein",
+    "nahm",
+    "natürlich",
+    "neben",
+    "nebenan",
+    "nehmen",
+    "nein",
+    "nicht",
+    "nichts",
+    "nie",
+    "niemals",
+    "niemand",
+    "nirgends",
+    "nirgendwo",
+    "noch",
+    "nun",
+    "nur",
+    "nächste",
+    "nämlich",
+    "nötigenfalls",
+    "ob",
+    "oben",
+    "oberhalb",
+    "obgleich",
+    "obschon",
+    "obwohl",
+    "oder",
+    "oft",
+    "per",
+    "plötzlich",
+    "schließlich",
+    "schon",
+    "sehr",
+    "sehrwohl",
+    "seid",
+    "sein",
+    "seine",
+    "seinem",
+    "seinen",
+    "seiner",
+    "seines",
+    "seit",
+    "seitdem",
+    "seither",
+    "selber",
+    "selbst",
+    "sich",
+    "sicher",
+    "sicherlich",
+    "sie",
+    "sind",
+    "so",
+    "sobald",
+    "sodass",
+    "sofort",
+    "sofern",
+    "sog",
+    "sogar",
+    "solange",
+    "solch",
+    "solche",
+    "solchem",
+    "solchen",
+    "solcher",
+    "solches",
+    "soll",
+    "sollen",
+    "sollst",
+    "sollt",
+    "sollte",
+    "sollten",
+    "somit",
+    "sondern",
+    "sonst",
+    "sonstige",
+    "sonstigen",
+    "sonstiger",
+    "sonstiges",
+    "sooft",
+    "soviel",
+    "soweit",
+    "sowie",
+    "sowieso",
+    "sowohl",
+    "später",
+    "statt",
+    "stattfinden",
+    "stattfand",
+    "stattgefunden",
+    "steht",
+    "stets",
+    "such",
+    "suche",
+    "suchen",
+    "tatsächlich",
+    "tatsächlichen",
+    "tatsächlicher",
+    "tatsächliches",
+    "tatsächlich",
+    "tatsächlichen",
+    "tatsächlicher",
+    "tatsächliches",
+    "tief",
+    "tiefer",
+    "trotz",
+    "trotzdem",
+    "tun",
+    "über",
+    "überall",
+    "überallhin",
+    "überdies",
+    "überhaupt",
+    "übrig",
+    "übrigens",
+    "um",
+    "umso",
+    "umsoweniger",
+    "unbedingt",
+    "und",
+    "unmöglich",
+    "unnötig",
+    "unser",
+    "unsere",
+    "unserem",
+    "unseren",
+    "unserer",
+    "unseres",
+    "unserseits",
+    "unter",
+    "unterhalb",
+    "unterhalb",
+    "untereinander",
+    "untergebracht",
+    "unterhalb",
+    "unterhalb",
+    "unterhalb",
+    "unterhalb",
+    "unterhalb",
+    "unterhalb",
+    "unterschiedlich",
+    "unterschiedliche",
+    "unterschiedlichen",
+    "unterschiedlicher",
+    "unterschiedliches",
+    "unterschiedlich",
+    "unterschiedliche",
+    "unterschiedlichen",
+    "unterschiedlicher",
+    "unterschiedliches",
+    "unzwar",
+    "usw",
+    "usw.",
+    "vermag",
+    "vermögen",
+    "vermutlich",
+    "verrate",
+    "verraten",
+    "verrätst",
+    "verschieden",
+    "verschiedene",
+    "verschiedenen",
+    "verschiedener",
+    "verschiedenes",
+    "versorgen",
+    "versorgt",
+    "versorgte",
+    "versorgten",
+    "viel",
+    "viele",
+    "vielem",
+    "vielen",
+    "vieler",
+    "vieles",
+    "vielleicht",
+    "vielmals",
+    "vier",
+    "vierte",
+    "viertel",
+    "vierten",
+    "vierter",
+    "viertes",
+    "vom",
+    "von",
+    "vor",
+    "vorbei",
+    "vorgestern",
+    "vorher",
+    "vorüber",
+    "wach",
+    "wachen",
+    "wahrend",
+    "wann",
+    "war",
+    "warauf",
+    "ward",
+    "waren",
+    "warst",
+    "wart",
+    "warum",
+    "was",
+    "weder",
+    "weil",
+    "weiter",
+    "weitere",
+    "weiterem",
+    "weiteren",
+    "weiterer",
+    "weiteres",
+    "weiterhin",
+    "weitgehend",
+    "welche",
+    "welchem",
+    "welchen",
+    "welcher",
+    "welches",
+    "wem",
+    "wen",
+    "wenig",
+    "wenige",
+    "wenigem",
+    "wenigen",
+    "weniger",
+    "wenigstens",
+    "wenn",
+    "wenngleich",
+    "wer",
+    "werde",
+    "werden",
+    "werdet",
+    "weshalb",
+    "wessen",
+    "wichtig",
+    "wie",
+    "wieder",
+    "wiederum",
+    "wieso",
+    "will",
+    "willst",
+    "wir",
+    "wird",
+    "wirklich",
+    "wirst",
+    "wissen",
+    "wo",
+    "woanders",
+    "wohl",
+    "woher",
+    "wohin",
+    "wohingegen",
+    "wohl",
+    "wohlweislich",
+    "wollen",
+    "wollt",
+    "wollte",
+    "wollten",
+    "womit",
+    "woraufhin",
+    "woraus",
+    "woraussichtlich",
+    "worauf",
+    "woraus",
+    "worin",
+    "worüber",
+    "wovon",
+    "wovor",
+    "wozu",
+    "während",
+    "währenddessen",
+    "wär",
+    "wäre",
+    "wären",
+    "wärst",
+    "wäre",
+    "wären",
+    "wärst",
+    "würde",
+    "würden",
+    "würdest",
+    "würdet",
+    "zB",
+    "z.b.",
+    "zehn",
+    "zeigen",
+    "zeitweise",
+    "zu",
+    "zufolge",
+    "zugleich",
+    "zuletzt",
+    "zum",
+    "zumal",
+    "zumeist",
+    "zunächst",
+    "zur",
+    "zurück",
+    "zurückgehend",
+    "zurückgehen",
+    "zurückgegangen",
+    "zurückgekommen",
+    "zurückgekommen",
+    "zurückgekommen",
+    "zurückgekommen",
+    "zurückgezogen",
+    "zusammen",
+    "zusätzlich",
+    "zusammen",
+    "zuvor",
+    "zuviel",
+    "zuweilen",
+    "zwanzig",
+    "zwar",
+    "zwei",
+    "zweite",
+    "zweiten",
+    "zweiter",
+    "zweites",
+    "zwischen",
+    "zwischendurch",
+    "zwölf",
+    "überall",
+    "überallhin",
+    "überdies",
+    "überhaupt",
+    "übrig",
+    "übrigens",
+];
