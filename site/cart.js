@@ -78,10 +78,11 @@ async function load() {
         STORE_KEYS.map((store) => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
     filtersStore.querySelectorAll("input").forEach((input) => {
         if (input.id == "all") return;
-        input.addEventListener("change", () => showResults(items, currentDate()));
+        input.addEventListener("change", () => showCart(cart));
     });
     filtersStore.querySelector("#all").addEventListener("change", () => {
         STORE_KEYS.forEach((store) => (filtersStore.querySelector(`#${store}`).checked = filtersStore.querySelector("#all").checked));
+        showCart(cart);
     });
     document.querySelector("#filter").addEventListener("input", () => showCart(cart));
     showCart(cart);
