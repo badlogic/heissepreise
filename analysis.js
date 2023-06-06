@@ -90,6 +90,33 @@ function mergePriceHistory(oldItems, items) {
     return items;
 }
 
+function compareItems(refItems, items) {
+    const changes = [];
+    const lookup = {};
+    for (let refItem of refItems) lookup[refItem.store + refItem.id] = refItem;
+
+    for (let item of items) {
+        const refItem = lookup[item.store + item.id] ?? {};
+        const itemChanges = {};
+        for (let key of Object.keys(item)) {
+            const ref = (refItem[key] ?? "").toString();
+            const now = (item[key] ?? "").toString();
+            // second checks remove comparison artifacts for invalid prices
+            if (now !== ref && !(now == "NaN" && ref == "")) {
+                itemChanges[key] = "" + ref + " -> " + now;
+            }
+        }
+
+        if (Object.keys(itemChanges).length) {
+            itemChanges.name = itemChanges.name ?? refItem.name;
+            itemChanges.store = itemChanges.store ?? refItem.store;
+            changes.push(itemChanges);
+        }
+    }
+    console.log(`Compared with reference file: ${changes.length} items changed`);
+    return changes;
+}
+
 function sortItems(items) {
     items.sort((a, b) => {
         if (a.store < b.store) {
@@ -218,6 +245,12 @@ exports.updateData = async function (dataDir, done) {
         const oldItems = readJSON(`${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`);
         mergePriceHistory(oldItems, items);
         console.log("Merged price history");
+    }
+
+    if (fs.existsSync(`${dataDir}/latest-canonical-reference.json.${FILE_COMPRESSOR}`)) {
+        const refItems = readJSON(`${dataDir}/latest-canonical-reference.json.${FILE_COMPRESSOR}`);
+        const changes = compareItems(refItems, items);
+        writeJSON(`${dataDir}/latest-canonical-changes.json`, changes, FILE_COMPRESSOR);
     }
 
     sortItems(items);
