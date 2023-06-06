@@ -133,9 +133,6 @@ function showSearch(cart, items) {
         (item, itemDom) => {
             const cell = dom("td", `<input type="button" class="ml-auto ${buttonClass}" value="+">`);
             cell.children[0].addEventListener("click", () => {
-                console.log("added");
-                console.log(item);
-                console.log(cart);
                 cart.items.push(item);
                 shoppingCarts.save();
                 document.querySelector("#start").value = getOldestDate(cart.items);
@@ -183,8 +180,10 @@ function showCart(cart) {
         link += cartItem.store + cartItem.id + ";";
     }
 
-    document.querySelector("#cartname").innerHTML =
-        "Warenkorb '" + cart.name + `' <a class="text-sm text-primary block hover:underline" href="cart.html?cart=${link}">Teilen</a>`;
+    document.querySelector("#cartname").innerHTML = `
+        Warenkorb '${cart.name}' <a class="text-sm text-primary block hover:underline" href="cart.html?cart=${link}">Teilen</a>
+    `;
+
     const canvasDom = document.querySelector("#chart");
     let items = filter(cart.items);
     if (items.length == cart.items.length) {
