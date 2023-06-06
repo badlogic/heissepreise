@@ -22,37 +22,16 @@
                     <a href="carts.html">Warenkörbe</a>
                 </div>
 
-                <div id="cart" class="cart column">
-                    <h2 id="cartname"></h2>
-                    <div id="noproducts" class="hide">Noch keine Produkte im Warenkorb</div>
-                    <div id="hasproducts" class="column hide">
-                        <input type="button" id="save" value="Speichern" class="hide" />
-                        <div class="filters-container chart">
-                            <canvas class="chart" id="chart"></canvas>
-                            <div class="filters">
-                                <label><input type="checkbox" id="sum" checked /> Preissumme Warenkorb</label>
-                                <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
-                                <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
-                            </div>
-                            <div>
-                                <input id="start" type="date" /> -
-                                <input id="end" type="date" />
-                            </div>
-                        </div>
-                        <div class="filters-container">
-                            <input id="filter" class="search" placeholder="Filtern..." />
-                            <div class="filters" id="filters-store"></div>
-                            <div class="filters"><span id="numitems"></span> <a id="json" href="">JSON</a></div>
-                        </div>
-                        <table id="cartitems"></table>
-                    </div>
+                <div class="column" style="max-width: 400px; margin: 0 auto">
+                    <h2>Impressum</h2>
+                    <p>
+                        <strong>Angaben gemäß § 25 Mediengesetz (Österreich)</strong><br /><br />
+                        <b>Medieninhaber:</b> Mario Zechner<br />
+                        <b>Kontakt:</b> <a href="mailto:badlogicgames@gmail.com">badlogicgames@gmail.com</a><br />
+                        <b>Adresse:</b> Schörgelgasse 3, 8042 Graz, Österreich
+                    </p>
+                    <p>Diese nicht-kommerzielle Seite dient KonsumentInnen dazu, Preise von Produkten im Lebensmittelhandel vergleichen zu können.</p>
                 </div>
-                <div id="search" class="column"></div>
-
-                <script src="js/alasql.js"></script>
-                <script src="js/chart.js"></script>
-                <script src="utils.js"></script>
-                <script src="cart.js"></script>
             </div>
             <div class="disclaimer">
                 <p>
