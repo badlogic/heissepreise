@@ -225,9 +225,14 @@ exports.updateData = async function (dataDir, done) {
             new Promise(async (resolve) => {
                 const start = performance.now();
                 try {
-                    const storeItems = await stores[store].fetchData();
-                    writeJSON(`${dataDir}/${store}-${today}.json`, storeItems, FILE_COMPRESSOR);
-                    // const storeItems = readJSON(`${dataDir}/${store}-${today}.json.${FILE_COMPRESSOR}`);
+                    const rawDataFile = `${dataDir}/${store}-${today}.json`;
+                    let storeItems;
+                    if ("SKIP_FETCHING_STORE_DATA" in process.env && fs.existsSync(rawDataFile + "." + FILE_COMPRESSOR))
+                        storeItems = readJSON(rawDataFile + "." + FILE_COMPRESSOR);
+                    else {
+                        storeItems = await stores[store].fetchData();
+                        writeJSON(rawDataFile, storeItems, FILE_COMPRESSOR);
+                    }
                     const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
                     console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
                     resolve(storeItemsCanonical);
