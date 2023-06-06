@@ -368,7 +368,7 @@ const UNITS = {
 
 function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPrice, exact, bio) {
     query = query.trim();
-    if (query.length < 3) return [];
+    if (query.length < 3 || checkedStores.length == 0) return [];
 
     if (query.charAt(0) == "!") {
         query = query.substring(1);
@@ -657,7 +657,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     });
     budgetBrands.addEventListener("change", () => search(searchInput.value));
     bio.addEventListener("change", () => search(searchInput.value));
-    allCheckbox.addEventListener("change", () => storeCheckboxes.forEach((store) => (store.checked = allCheckbox.checked)));
+    allCheckbox.addEventListener("change", () => {
+        storeCheckboxes.forEach((store) => (store.checked = allCheckbox.checked));
+        search(searchInput.value);
+    });
     storeCheckboxes.map((store) => store.addEventListener("change", () => search(searchInput.value)));
     sort.addEventListener("change", () => search(searchInput.value));
     minPrice.addEventListener("change", () => search(searchInput.value));
