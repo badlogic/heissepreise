@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full w-full">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,10 +9,24 @@
             rel="icon"
             href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🔥</text></svg>"
         />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#c9543a',
+                        },
+                        scale: {
+                            flip: '-1',
+                        },
+                    }
+                }
+            }
+        </script>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
 
-    <body>
-        <div class="container">
-            <div class="content">
-                <h2 class="header">🔥 Heisse Preise</h2>
+    <body class="w-full min-h-full flex flex-col">
+        <div class="max-w-6xl mx-auto lg:py-4 flex-1 w-full">
+            <h2 class="bg-primary lg:rounded-t-xl text-center text-white p-3 uppercase text-2xl font-bold">🔥 Heisse Preise 🔥</h2>

@@ -1,6 +1,9 @@
 const shoppingCarts = new ShoppingCarts();
 shoppingCarts.load();
 
+const buttonClass =
+    "border w-6 h-6 flex items-center justify-center bg-white hover:shadow cursor-pointer rounded leading-none hover:scale-110 transition-transform duration-200";
+
 async function load() {
     const items = await loadItems();
     const lookup = {};
@@ -42,7 +45,7 @@ async function load() {
             if (item) cart.items.push(item);
         }
         let saveButton = document.querySelector("#save");
-        saveButton.classList.remove("hide");
+        saveButton.classList.remove("hidden");
         saveButton.addEventListener("click", () => {
             let index = shoppingCarts.carts.findIndex((c) => c.name === cart.name);
             if (index != -1) {
@@ -64,18 +67,28 @@ async function load() {
     if (cart.name != "Momentum Eigenmarken Vergleich" && !cart.linked) showSearch(cart, items);
 
     const canvasDom = document.querySelector("#chart");
+
+    document.querySelector("#sum-container").innerHTML = customCheckbox(`sum`, "Preissumme Gesamt", true, "gray", "gray");
+    document.querySelector("#sumstores-container").innerHTML = customCheckbox(`sumstores`, "Preissumme pro Kette", true, "gray", "gray");
+    document.querySelector("#todayonly-container").innerHTML = customCheckbox(`todayonly`, "Nur heutige Preise", false, "gray", "gray");
+
     document.querySelector("#sum").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
     document.querySelector("#sumstores").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
     document.querySelector("#todayonly").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
     document.querySelector("#start").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
     document.querySelector("#end").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
+
     document.querySelector("#start").value = getOldestDate(cart.items);
     document.querySelector("#end").value = currentDate();
 
     const filtersStore = document.querySelector("#filters-store");
-    filtersStore.innerHTML =
-        `<label><input id="all" type="checkbox" checked="true"><strong>Alle</strong></label>` +
-        STORE_KEYS.map((store) => `<label><input id="${store}" type="checkbox" checked="true">${stores[store].name}</label>`).join(" ");
+    filtersStore.innerHTML = `
+        ${customCheckbox("all", "<strong>Alle</strong>", true, "gray", "gray")}
+        ${STORE_KEYS.map((store) =>
+            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color2, "gray")
+        ).join(" ")}
+    `;
+
     filtersStore.querySelectorAll("input").forEach((input) => {
         if (input.id == "all") return;
         input.addEventListener("change", () => showResults(items, currentDate()));
@@ -117,14 +130,18 @@ function showSearch(cart, items) {
             return header;
         },
         (item, itemDom) => {
-            const cell = dom("td", `<input type="button" value="+">`);
+            const cell = dom("td", `<input type="button" class="ml-auto ${buttonClass}" value="+">`);
             cell.children[0].addEventListener("click", () => {
+                console.log("added");
+                console.log(item);
+                console.log(cart);
                 cart.items.push(item);
                 shoppingCarts.save();
                 document.querySelector("#start").value = getOldestDate(cart.items);
                 document.querySelector("#end").value = currentDate();
                 showCart(cart);
             });
+            cell.classList.add("order-6");
             itemDom.appendChild(cell);
             return itemDom;
         }
@@ -153,11 +170,11 @@ function updateCharts(canvasDom, items) {
 
 function showCart(cart) {
     if (cart.items.length == 0) {
-        document.querySelector("#noproducts").classList.remove("hide");
-        document.querySelector("#hasproducts").classList.add("hide");
+        document.querySelector("#noproducts").classList.remove("hidden");
+        document.querySelector("#hasproducts").classList.add("hidden");
     } else {
-        document.querySelector("#noproducts").classList.add("hide");
-        document.querySelector("#hasproducts").classList.remove("hide");
+        document.querySelector("#noproducts").classList.add("hidden");
+        document.querySelector("#hasproducts").classList.remove("hidden");
     }
 
     let link = encodeURIComponent(cart.name) + ";";
@@ -165,7 +182,8 @@ function showCart(cart) {
         link += cartItem.store + cartItem.id + ";";
     }
 
-    document.querySelector("#cartname").innerHTML = "Warenkorb '" + cart.name + `' <a href="cart.html?cart=${link}">Teilen</a>`;
+    document.querySelector("#cartname").innerHTML =
+        "Warenkorb '" + cart.name + `' <a class="text-sm text-primary block" href="cart.html?cart=${link}">Teilen</a>`;
     const canvasDom = document.querySelector("#chart");
     let items = filter(cart.items);
     if (items.length == cart.items.length) {
@@ -177,13 +195,21 @@ function showCart(cart) {
 
     const itemTable = document.querySelector("#cartitems");
     itemTable.innerHTML = "";
-    header = dom("thead", `<tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th><th></th></tr>`);
-    const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+    header = dom(
+        "thead",
+        `<tr class="bg-primary text-white text-left hidden md:table-row uppercase text-sm">
+            <th class="text-center">Kette</th>
+            <th>Name</th>
+            <th>Preis <span class="expander">+</span></th>
+            <th></th>
+        </tr>`
+    );
+    const showHideAll = header.querySelectorAll("th:nth-child(3)")[0];
     showHideAll.style["cursor"] = "pointer";
     showHideAll.showAll = true;
     showHideAll.addEventListener("click", () => {
         showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
-        itemTable.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+        itemTable.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
         showHideAll.showAll = !showHideAll.showAll;
     });
     itemTable.append(header);
@@ -194,12 +220,16 @@ function showCart(cart) {
         const cell = dom(
             "td",
             `
-            <label><input type="checkbox">📈</label>
-            <input type="button" value="-">
-            <input type="button" value="▲">
-            <input type="button" value="▼">
+            <label>
+                <input type="checkbox" class="hidden peer">
+                <span class="peer-checked:bg-blue-700 bg-transparent rounded p-1 text-sm">📈</span>
+            </label>
+            <input type="button" class="ml-auto ${buttonClass}" value="-">
+            <input type="button" class="${buttonClass}" value="▲">
+            <input type="button" class="${buttonClass}" value="▼">
         `
         );
+        cell.classList.add("order-5", "flex", "items-center", "p-1");
 
         if (cartItem.chart) cell.children[0].setAttribute("checked", true);
         cell.children[0].addEventListener("change", () => {
@@ -235,7 +265,7 @@ function showCart(cart) {
                 showCart(cart);
             });
         } else {
-            cell.querySelectorAll("input[type='button']").forEach((button) => button.classList.add("hide"));
+            cell.querySelectorAll("input[type='button']").forEach((button) => button.classList.add("hidden"));
         }
 
         itemDom.append(cell);

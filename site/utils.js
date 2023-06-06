@@ -3,60 +3,70 @@ const stores = {
         name: "Billa",
         budgetBrands: ["clever"],
         color: "rgb(255 255 225)",
+        color2: "yellow",
         getUrl: (item) => `https://shop.billa.at${item.url}`,
     },
     spar: {
         name: "Spar",
         budgetBrands: ["s-budget"],
         color: "rgb(225 244 225)",
+        color2: "green",
         getUrl: (item) => `https://www.interspar.at/shop/lebensmittel${item.url}`,
     },
     hofer: {
         name: "Hofer",
         budgetBrands: ["milfina"],
         color: "rgb(230 230 255)",
+        color2: "purple",
         getUrl: (item) => `https://www.roksh.at/hofer/produkte/${item.url}`,
     },
     lidl: {
         name: "Lidl",
         budgetBrands: ["milbona"],
         color: "rgb(255 225 225)",
+        color2: "pink",
         getUrl: (item) => `https://www.lidl.at${item.url}`,
     },
     mpreis: {
         name: "MPREIS",
         budgetBrands: [],
         color: "rgb(255 230 230)",
+        color2: "rose",
         getUrl: (item) => `https://www.mpreis.at/shop/p/${item.id}`,
     },
     dm: {
         name: "DM",
         budgetBrands: ["balea"],
         color: "rgb(255 240 230)",
+        color2: "orange",
         getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
         color: "rgb(179, 217, 255)",
+        color2: "blue",
         getUrl: (item) => `https://shop.unimarkt.at/${item.url}`,
     },
     penny: {
         name: "Penny",
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "rgb(255, 180, 180)",
+        color2: "purple",
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
     },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],
         color: "rgb(236 254 253)",
+        color2: "teal",
         getUrl: (item) => `https://www.dm.de/product-p${item.id}.html`,
     },
     reweDe: {
         name: "REWE DE",
         budgetBrands: ["ja!"],
         color: "rgb(236 231 225)",
+        color2: "stone",
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
     },
 };
@@ -271,9 +281,9 @@ class ShoppingCarts {
 
 function itemToStoreLink(item) {
     if (STORE_KEYS.includes(item.store)) {
-        return `<a target="_blank" class="itemname itemname--${item.store}" rel="noopener noreferrer nofollow" href="${item.url}">${item.name}</a>`;
+        return `<a target="_blank" class="hover:underline" rel="noopener noreferrer nofollow" href="${item.url}">${item.name}</a>`;
     }
-    return `<span class="itemname itemname--${item.store} itemname--nolink">${item.name}</span>`;
+    return `<span>${item.name}</span>`;
 }
 
 function itemToDOM(item) {
@@ -283,49 +293,93 @@ function itemToDOM(item) {
         quantity = parseFloat((0.001 * quantity).toFixed(2));
         unit = unit == "ml" ? "l" : "kg";
     }
-    let increase = "";
+    let percentageChange = "";
     if (item.priceHistory.length > 1) {
-        let percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
-        increase = `<span class="${percentageChange > 0 ? "increase" : "decrease"}">${
-            percentageChange > 0 ? "+" + percentageChange : percentageChange
-        }%</span>`;
+        percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
     }
 
     let priceHistory = "";
+    let priceBase = 200 / item.priceHistory[0].price;
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
         const currPrice = item.priceHistory[i].price;
         const lastPrice = item.priceHistory[i + 1] ? item.priceHistory[i + 1].price : currPrice;
         const increase = Math.round(((currPrice - lastPrice) / lastPrice) * 100);
-        let priceColor = "black";
-        if (increase > 0) priceColor = "red";
-        if (increase < 0) priceColor = "green";
-        priceHistory += `<span style="color: ${priceColor}">${date} ${currPrice} ${increase > 0 ? "+" + increase : increase}%</span>`;
-        if (i != item.priceHistory.length - 1) priceHistory += "<br>";
+
+        priceHistory += `<tr>
+            <td class="font-medium">${date}</td>
+            <td>
+                <div style="width: ${priceBase * currPrice}px" 
+                    class="text-sm text-white px-1 ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
+                    € ${currPrice}
+                </div>
+            </td>
+            ${
+                increase > 0
+                    ? `<td class="text-right text-red-500"> + ${increase}%</td>`
+                    : increase < 0
+                    ? `<td class="text-right text-green-500"> ${increase}%</td>`
+                    : `<td class="text-right"> ${increase}%</td>`
+            }
+            </tr>`;
     }
 
     const row = dom(
         "tr",
         `
-        <td data-label="Kette">${item.store}</td>
-        <td data-label="Name">${itemToStoreLink(item)}</td>
-        <td data-label="Menge">${(item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`}
-        <td data-label="Preis">
-            ${Number(item.price).toFixed(2)} ${increase} ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}
-            <div class="priceinfo hide">${priceHistory}</div>
+        <td class="md:text-center p-1 order-2 uppercase font-medium align-top" data-label="Kette">${item.store}</td>
+        <td class="font-bold md:font-normal text-gray-800 md:bg-white p-1 order-1 col-span-3 hover:bg-gray-100" data-label="Name">
+            <div class="flex items-center">${itemToStoreLink(item)} <small class="ml-auto">${
+            (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`
+        }</small></div>
+            <table class="priceinfo hidden text-sm mt-2" aria-hidden="true">
+                ${priceHistory}
+            </table>
+        </td>
+        <td class="p-1 order-3 text-left whitespace-nowrap align-top" data-label="Preis">
+            <span>€ ${Number(item.price).toFixed(2)}</span>
+            <span class="${percentageChange > 0 ? "text-red-500" : percentageChange < 0 ? "text-green-500" : "hidden"}">
+                ${percentageChange > 0 ? "+" + percentageChange : percentageChange}%
+            </span>
+            ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}
+            <span class="text-sm cursor-pointer chevron">▼</span>
         </td>
     `
     );
-    row.style["background"] = stores[item.store]?.color;
+    // row.style["background"] = stores[item.store]?.color;
+    row.classList.add(
+        "bg-" + stores[item.store]?.color2 + "-200/50",
+        "grid",
+        "grid-cols-3",
+        "col-span-3",
+        "md:table-row",
+        "border-b",
+        "border-" + stores[item.store]?.color2 + "-200",
+        "rounded-xl",
+        "mb-3",
+        "border",
+        "overflow-hidden",
+        "group",
+        percentageChange > 0 ? "increased" : percentageChange < 0 ? "decreased" : "neutral"
+    );
 
     row.querySelectorAll('td[data-label="Preis"]').forEach((priceDom) => {
         priceDom.style["cursor"] = "pointer";
-        priceDom.addEventListener("click", () => {
-            const pricesDom = priceDom.querySelector(".priceinfo");
-            if (pricesDom.classList.contains("hide")) {
-                pricesDom.classList.remove("hide");
+        priceDom.addEventListener("click", (event) => {
+            let target = event.target;
+            if (!target.classList.contains("chevron")) {
+                target = target.querySelector("chevron");
+            }
+
+            const pricesDom = priceDom.parentNode.querySelector(".priceinfo");
+            if (pricesDom.classList.contains("hidden")) {
+                pricesDom.classList.remove("hidden");
+                pricesDom.ariaHidden = false;
+                target.innerHTML = "▲";
             } else {
-                pricesDom.classList.add("hide");
+                pricesDom.classList.add("hidden");
+                pricesDom.ariaHidden = true;
+                target.innerHTML = "▼";
             }
         });
     });
@@ -471,52 +525,84 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     return hits;
 }
 
+function customCheckbox(id, label, checked, bgColor, color) {
+    let isChecked = typeof checked === "boolean" ? (checked ? "checked" : "") : checked;
+    return `
+        <label class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-${bgColor}-200 border border-${bgColor}-400 hover:bg-${bgColor}-400 px-2 py-1 text-xs font-medium text-${color}-600 transition-all duration-200 hover:scale-105">
+            <input id="${id}" type="checkbox" ${isChecked} class="hidden peer">
+            <svg class="h-2 w-2 stroke-${color}-600 fill-${color}-100 peer-checked:fill-${color}-600" viewBox="0 0 6 6">
+                <circle cx="3" cy="3" r="2" />
+            </svg>
+           ${label}
+        </label>
+    `;
+}
+
 function newSearchComponent(parentElement, items, searched, filter, headerModifier, itemDomModifier, chartCallback) {
     let id = componentId++;
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
-        <div class="filters-container">
-            <input id="search-${id}" class="search" type="text" placeholder="Produkte suchen...">
-            <div class="filters">
-                <label><input id="all-${id}" type="checkbox" checked="true"><strong>Alle</strong></label>
-                ${STORE_KEYS.map(
-                    (store) =>
-                        `<label><input id="${store}-${id}" type="checkbox" ${stores[store].name.toLowerCase().endsWith("de") ? "" : "checked"}>${
-                            stores[store].name
-                        }</label>`
+        <div class="bg-stone-200 rounded-xl p-4 max-w-4xl mx-auto md:mb-12 md:mt-6">
+            <input id="search-${id}" class="search rounded-lg px-2 py-1 w-full mb-4" type="text" placeholder="Produkte suchen...">
+            <div class="flex gap-2 flex-wrap justify-center py-4 px-8">
+                ${customCheckbox(`all-${id}`, " <strong>Alle</strong>", true, "gray", "gray")}
+                ${STORE_KEYS.map((store) =>
+                    customCheckbox(
+                        `${store}-${id}`,
+                        stores[store].name,
+                        stores[store].name.toLowerCase().endsWith("de") ? false : true,
+                        stores[store].color2,
+                        "gray"
+                    )
                 ).join(" ")}
             </div>
-            <div class="filters" style="margin-bottom: 0em">
-                <label>
-                    <input id="budgetBrands-${id}" type="checkbox"> Nur
-                    <abbr title="${BUDGET_BRANDS.map((budgetBrand) => budgetBrand.toUpperCase()).join(", ")}">
+            <div class="flex items-center justify-center flex-wrap gap-2">
+
+                ${customCheckbox(
+                    `budgetBrands-${id}`,
+                    `Nur <abbr title="${BUDGET_BRANDS.map((budgetBrand) => budgetBrand.toUpperCase()).join(", ")}">
                         Diskont-Eigenmarken
-                    </abbr>
+                    </abbr>`,
+                    false,
+                    "gray",
+                    "gray"
+                )}
+                ${customCheckbox(`bio-${id}`, `Nur Bio`, false, "gray", "gray")}
+                ${customCheckbox(`exact-${id}`, `Exaktes Wort`, false, "gray", "gray")}
+
+                <label class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600">
+                    Preis € <input class="w-12" id="minprice-${id}" type="number" min="0" value="0">
+                    -
+                    <input class="w-12" id="maxprice-${id}" type="number" min="0" value="100">
                 </label>
-                <label><input id="bio-${id}" type="checkbox"> Nur Bio</label>
-                <label><input id="exact-${id}" type="checkbox"> Exaktes Wort</label>
-                <label>Min € <input id="minprice-${id}" type="number" min="0" value="0"></label>
-                <label>Max € <input id="maxprice-${id}" type="number" min="0" value="100"></label>
             </div>
-            <div id="links-${id}" class="results hide">
-                <label>Sortieren <select id="sort-${id}">
+            
+        </div>
+        <div id="result-container-${id}" class="flex hidden px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
+            <div id="links-${id}" class="results hidden">
+                <div class="flex gap-2 items-center">
+                    <span id="numresults-${id}"></span>
+                    <span>
+                        <a id="querylink-${id}" class="querylink text-primary underline">Teilen</a>
+                        <a id="json-${id}" class="text-primary underline" href="">JSON</a>
+                    </span>
+                    <div class="hidden">
+                        ${customCheckbox(`chart-${id}`, `Diagramm`, "false", "gray", "gray")}
+                    </div>
+                </div>
+            </div>
+            <label>
+                Sortieren 
+                <select id="sort-${id}">
                     <option value="priceasc">Preis aufsteigend</option>
                     <option value="pricedesc">Preis absteigend</option>
                     <option value="quantityasc">Menge aufsteigend</option>
                     <option value="quantitydesc">Menge absteigend</option>
                     <option value="namesim">Namensähnlichkeit</option>
-                </select></label>
-                <div class="row">
-                    <span id="numresults-${id}"></span>
-                    <strong>
-                        <a id="querylink-${id}" class="querylink">Teilen</a>
-                        <a id="json-${id}" href="">JSON</a>
-                    </strong>
-                    <label class="hide"><input id="chart-${id}" type="checkbox"> Diagramm</input>
-                </div>
-            </div>
+                </select>
+            </label>
         </div>
-        <table id="result-${id}" class="searchresults"></table>
+        <table id="result-${id}" class="searchresults rounded-b-xl overflow-hidden w-full text-left"></table>
     `;
 
     const searchInput = parentElement.querySelector(`#search-${id}`);
@@ -525,6 +611,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const jsonLink = parentElement.querySelector(`#json-${id}`);
     const chart = parentElement.querySelector(`#chart-${id}`);
     const exact = parentElement.querySelector(`#exact-${id}`);
+    const resultContainer = parentElement.querySelector(`#result-container-${id}`);
     const table = parentElement.querySelector(`#result-${id}`);
     const budgetBrands = parentElement.querySelector(`#budgetBrands-${id}`);
     const bio = parentElement.querySelector(`#bio-${id}`);
@@ -536,7 +623,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const sort = parentElement.querySelector(`#sort-${id}`);
 
     if (chartCallback) {
-        chart.parentElement.classList.remove("hide");
+        chart.parentElement.parentElement.classList.remove("hidden");
         chart.addEventListener("change", () => chartCallback(chart.checked));
     }
 
@@ -549,10 +636,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     const setQuery = () => {
         const query = searchInput.value.trim();
         if (query.length === 0) {
-            links.classList.add("hide");
+            links.classList.add("hidden");
             return;
         }
-        links.classList.remove("hide");
+        links.classList.remove("hidden");
         const inputs = [...table.querySelectorAll("input:checked")];
         let checked = inputs.length ? inputs.map((item) => item.dataset.id) : getQueryParameter("c");
         if (typeof checked === "string") checked = [checked];
@@ -583,8 +670,10 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
         table.innerHTML = "";
         if (hits.length == 0) {
             numResults.innerHTML = "<strong>Resultate:</strong> 0";
+            resultContainer.classList.add("hidden");
             return;
         }
+        resultContainer.classList.remove("hidden");
         if (query.trim().charAt(0) != "!" || query.trim().toLowerCase().indexOf("order by") == -1) {
             if (sort.value == "priceasc") {
                 hits.sort((a, b) => a.price - b.price);
@@ -608,14 +697,23 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             }
         }
 
-        let header = dom("tr", `<th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th>`);
+        let header = dom(
+            "tr",
+            `
+            <th class="text-center">Kette</th>
+            <th>Name</th>
+            <th>Preis <span class="expander">+</span></th>
+            `
+        );
+        header.classList.add("bg-primary", "text-white", "hidden", "md:table-row", "uppercase", "text-sm");
+
         if (headerModifier) header = headerModifier(header);
-        const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+        const showHideAll = header.querySelectorAll("th:nth-child(3)")[0];
         showHideAll.style["cursor"] = "pointer";
         showHideAll.showAll = true;
         showHideAll.addEventListener("click", () => {
             showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
-            table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+            table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
             showHideAll.showAll = !showHideAll.showAll;
         });
         const thead = dom("thead", ``);
@@ -647,9 +745,9 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 maxPrice.value = 100;
             }
             if (query?.charAt(0) == "!") {
-                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.add("hide"));
+                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.add("hidden"));
             } else {
-                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.remove("hide"));
+                parentElement.querySelectorAll(".filters").forEach((f) => f.classList.remove("hidden"));
             }
             setQuery();
             search(searchInput.value);
@@ -684,11 +782,11 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
 }
 
 function showChart(canvasDom, items, chartType) {
-    if (items.length == 0) {
-        canvasDom.classList.add("hide");
+    if (items.length === 0) {
+        canvasDom.classList.add("hidden");
         return;
     } else {
-        canvasDom.classList.remove("hide");
+        canvasDom.classList.remove("hidden");
     }
 
     const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));

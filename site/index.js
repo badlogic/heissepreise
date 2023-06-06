@@ -18,9 +18,15 @@ async function load() {
     const chartDom = document.querySelector("#chart");
     const canvasDom = chartDom.querySelector("canvas");
     let lastHits = null;
+
+    document.querySelector("#sum-container").innerHTML = customCheckbox(`sum`, "Preissumme Gesamt", false, "gray", "gray");
+    document.querySelector("#sumstores-container").innerHTML = customCheckbox(`sumstores`, "Preissumme pro Kette", false, "gray", "gray");
+    document.querySelector("#todayonly-container").innerHTML = customCheckbox(`todayonly`, "Nur heutige Preise", false, "gray", "gray");
+
     document.querySelector("#sum").addEventListener("change", () => updateCharts(canvasDom, lastHits));
     document.querySelector("#sumstores").addEventListener("change", () => updateCharts(canvasDom, lastHits));
     document.querySelector("#todayonly").addEventListener("change", () => updateCharts(canvasDom, lastHits));
+
     document.querySelector("#start").addEventListener("change", () => updateCharts(canvasDom, lastHits));
     document.querySelector("#end").addEventListener("change", () => updateCharts(canvasDom, lastHits));
     document.querySelector("#start").value = getOldestDate(items);
@@ -33,12 +39,12 @@ async function load() {
         (hits) => {
             items.forEach((item) => (item.chart = false));
             if (!chartEnabled) {
-                chartDom.classList.add("hide");
+                chartDom.classList.add("hidden");
             } else {
                 if (hits.length > 0) {
-                    chartDom.classList.remove("hide");
+                    chartDom.classList.remove("hidden");
                 } else {
-                    chartDom.classList.add("hide");
+                    chartDom.classList.add("hidden");
                 }
                 updateCharts(canvasDom, hits);
             }
@@ -53,8 +59,16 @@ async function load() {
         (item, itemDom, items, setQuery) => {
             const checked = (item.chart = (getQueryParameter("c") ?? []).includes(`${item.store}:${item.id}`));
             const dataId = item.store + ":" + item.id;
-            const cell = dom("td", `<label><input type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">📈</label>`);
+            const cell = dom(
+                "td",
+                `<label class="flex">
+                    <input class="hidden peer" type="checkbox" ${checked ? "checked" : ""} data-id="${dataId}">
+                    <span class="ml-auto peer-checked:bg-blue-700 bg-transparent rounded p-1 text-sm transform group-[.decreased]:scale-x-flip hover:scale-110 cursor-pointer">📈</span>
+                </label>`
+            );
+            cell.classList.add("order-4", "text-right");
             itemDom.appendChild(cell);
+
             const handleClick = (eventShouldSetQuery = false) => {
                 item.chart = cell.children[0].children[0].checked;
                 if (item.chart && !search.chart.checked) {
@@ -64,7 +78,7 @@ async function load() {
                 updateCharts(canvasDom, lastHits);
                 !!eventShouldSetQuery && setQuery();
             };
-            cell.children[0].addEventListener("click", handleClick);
+            cell.addEventListener("click", handleClick);
             checked && handleClick();
             return itemDom;
         },
@@ -72,13 +86,13 @@ async function load() {
             chartEnabled = checked;
             if (checked) {
                 if (lastHits.length > 0) {
-                    chartDom.classList.remove("hide");
+                    chartDom.classList.remove("hidden");
                     updateCharts(canvasDom, lastHits);
                 } else {
-                    chartDom.classList.add("hide");
+                    chartDom.classList.add("hidden");
                 }
             } else {
-                chartDom.classList.add("hide");
+                chartDom.classList.add("hidden");
             }
         }
     );
