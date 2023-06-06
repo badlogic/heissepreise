@@ -42,8 +42,6 @@ const HITS = Math.floor(30000 + Math.random() * 2000);
                         const canonicalItem = stores.billa.getCanonical(item);
                         canonicalItem.categoryCode = `${categoryCode}${subCategoryCode}`;
                         canonicalItem.categoryName = `${categoryName.name} > ${subCategoryName}`;
-                        if (canonicalItem.name.toLowerCase().indexOf("erdapfel")) canonicalItem.name + " kartoffel";
-                        if (canonicalItem.name.toLowerCase().indexOf("erdäpfel")) canonicalItem.name + " kartoffeln";
                         subCategory.items.push(canonicalItem);
                     } catch (e) {
                         // Ignore super tiles
@@ -64,24 +62,26 @@ const HITS = Math.floor(30000 + Math.random() * 2000);
     for (const category of categories) {
         for (const subCategory of category.subCategories) {
             for (const item of subCategory.items) {
+                if (item.name.toLowerCase().indexOf("erdapfel") >= 0) item.name += " kartoffel";
+                if (item.name.toLowerCase().indexOf("erdäpfel") >= 0) item.name += " kartoffeln";
                 items.push(item);
                 lookup[item.id] = item;
             }
         }
     }
 
-    const vectorize = true;
+    const useUnits = true;
     console.log("Vectorizing items");
-    siteUtils.vectorizeItems(items, vectorize);
+    siteUtils.vectorizeItems(items, useUnits);
 
     console.log("Categorizing items");
     const file = process?.argv?.[2] ?? "site/data/momentum-cart.json";
     let momentumItems = analysis.readJSON(file);
     if (momentumItems.items) momentumItems = momentumItems.items;
-    siteUtils.vectorizeItems(momentumItems, vectorize);
+    siteUtils.vectorizeItems(momentumItems, useUnits);
     const start = performance.now();
     for (const item of momentumItems) {
-        const similar = siteUtils.findMostSimilarItems(item, items, 9);
+        const similar = siteUtils.findMostSimilarItems(item, items, 9, (ref, other) => ref.unit == other.unit);
         console.log(`${item.name}`);
         similar.sort((a, b) => b.similarity - a.similarity);
         similar.forEach((s) => console.log(`${s.item.categoryName}, ${s.item.name}, ${s.similarity}`));
