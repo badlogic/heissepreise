@@ -40,8 +40,29 @@ exports.getCanonical = function (item, today) {
 };
 
 exports.fetchData = async function () {
-    const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}`;
-    return (await axios.get(BILLA_SEARCH)).data.tiles;
+    let items = [];
+
+    for (let i = 1; i <= utils.globalCategories.length; i++) {
+        const category = utils.globalCategories[i - 1];
+        const categoryCode = i < 10 ? "" + i : String.fromCharCode("A".charCodeAt(0) + (i - 10));
+
+        for (let j = 1; j <= category.subcategories.length; j++) {
+            const subCategoryCode = j < 10 ? "" + j : String.fromCharCode("A".charCodeAt(0) + (j - 10));
+            const code = `B2-${categoryCode}${subCategoryCode}`;
+
+            const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}&category=${code}`;
+            const data = (await axios.get(BILLA_SEARCH)).data;
+            data.tiles.forEach((item) => {
+                try {
+                    exports.getCanonical(item);
+                    items.push(item);
+                } catch (e) {
+                    // Ignore super tiles
+                }
+            });
+        }
+    }
+    return items;
 };
 
 exports.urlBase = "https://shop.billa.at";
