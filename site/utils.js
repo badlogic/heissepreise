@@ -289,7 +289,7 @@ function itemToDOM(item) {
     }
 
     let priceHistory = "";
-    let priceBase = 200 / item.priceHistory[0].price;
+    let priceBase = 150 / item.priceHistory[0].price;
     for (let i = 0; i < item.priceHistory.length; i++) {
         const date = item.priceHistory[i].date;
         const currPrice = item.priceHistory[i].price;
@@ -300,7 +300,7 @@ function itemToDOM(item) {
             <td class="font-medium">${date}</td>
             <td>
                 <div style="width: ${priceBase * currPrice}px" 
-                    class="text-sm text-white px-1 ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
+                    class="text-xs md:text-sm text-white px-1 ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
                     € ${currPrice}
                 </div>
             </td>
@@ -322,11 +322,11 @@ function itemToDOM(item) {
             <div class="flex items-center">${itemToStoreLink(item)} <small class="ml-auto">${
             (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`
         }</small></div>
-            <table class="priceinfo hidden text-sm mt-2" aria-hidden="true">
+            <table class="priceinfo hidden text-xs md:text-sm mt-2" aria-hidden="true">
                 ${priceHistory}
             </table>
         </td>
-        <td class="p-1 order-3 text-left whitespace-nowrap align-top" data-label="Preis">
+        <td class="p-1 order-3 text-left whitespace-nowrap align-top z-20" data-label="Preis">
             <span>€ ${Number(item.price).toFixed(2)}</span>
             <span class="${percentageChange > 0 ? "text-red-500" : percentageChange < 0 ? "text-green-500" : "hidden"}">
                 ${percentageChange > 0 ? "+" + percentageChange : percentageChange}%
@@ -568,9 +568,9 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
             </div>
             
         </div>
-        <div id="result-container-${id}" class="flex hidden px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
+        <div id="result-container-${id}" class="flex flex-col md:flex-row gap-4 hidden px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
             <div id="links-${id}" class="results hidden">
-                <div class="flex gap-2 items-center">
+                <div class="flex flex-col md:flex-row gap-2 items-center">
                     <span id="numresults-${id}"></span>
                     <span>
                         <a id="querylink-${id}" class="querylink text-primary font-medium hover:underline">Teilen</a>
