@@ -1141,38 +1141,81 @@ function magnitude(vector) {
     return Math.sqrt(sumOfSquares);
 }
 
+function findMostSimilarItem(refItem, items) {
+    let maxSimilarity = -1;
+    let similarItem = null;
+    let similarItemIdx = -1;
+    items.forEach((item, idx) => {
+        let similarity = dotProduct(refItem.vector, item.vector);
+        if (similarity > maxSimilarity) {
+            maxSimilarity = similarity;
+            similarItem = item;
+            similarItemIdx = idx;
+        }
+    });
+    return {
+        similarity: maxSimilarity,
+        item: similarItem,
+        index: similarItemIdx,
+    };
+}
+
+function findMostSimilarItems(refItem, items, k = 5) {
+    let topSimilarItems = [];
+    let topSimilarities = [];
+
+    items.forEach((item, idx) => {
+        let similarity = dotProduct(refItem.vector, item.vector);
+
+        if (topSimilarItems.length < k) {
+            topSimilarItems.push(item);
+            topSimilarities.push(similarity);
+        } else {
+            let minSimilarity = Math.min(...topSimilarities);
+            let minIndex = topSimilarities.indexOf(minSimilarity);
+
+            if (similarity > minSimilarity) {
+                topSimilarItems[minIndex] = item;
+                topSimilarities[minIndex] = similarity;
+            }
+        }
+    });
+
+    let similarItemsWithIndices = topSimilarItems.map((item, index) => {
+        return {
+            similarity: topSimilarities[index],
+            item: item,
+            index: items.indexOf(item),
+        };
+    });
+
+    return similarItemsWithIndices;
+}
+
 function similaritySortItems(items) {
     if (items.length == 0) return items;
     sortedItems = [items.shift()];
     let refItem = sortedItems[0];
     while (items.length > 0) {
-        let maxSimilarity = -1;
-        let similarItem = null;
-        let similarItemIdx = -1;
-        items.forEach((item, idx) => {
-            let similarity = dotProduct(refItem.vector, item.vector);
-            if (similarity > maxSimilarity) {
-                maxSimilarity = similarity;
-                similarItem = item;
-                similarItemIdx = idx;
-            }
-        });
-        sortedItems.push(similarItem);
-        items.splice(similarItemIdx, 1);
-        refItem = similarItem;
+        const similarItem = findMostSimilarItem(refItem, items).item;
+        sortedItems.push(similarItem.item);
+        items.splice(similarItem.index, 1);
+        refItem = similarItem.item;
     }
     return sortedItems;
 }
 
-function vectorizeItems(items) {
+function vectorizeItems(items, useUnit = true) {
     items.forEach((item) => {
         let name = item.name
             .toLowerCase()
             .replace(/[^\w\s]|_/g, "")
             .replace("-", " ");
         item.tokens = name.split(/\s+/).map((token) => stem(token));
-        if (item.quantity) item.tokens.push("" + item.quantity);
-        if (item.unit) item.tokens.push(item.unit);
+        if (useUnit) {
+            if (item.quantity) item.tokens.push("" + item.quantity);
+            if (item.unit) item.tokens.push(item.unit);
+        }
         item.vector = vector(item.tokens);
     });
 }
@@ -1189,9 +1232,9 @@ try {
     exports.scaleVector = scaleVector;
     exports.normalizeVector = normalizeVector;
     exports.stem = stem;
-    exports.cluster = cluster;
-    exports.flattenClusters = flattenClusters;
     exports.vectorizeItems = vectorizeItems;
+    exports.findMostSimilarItem = findMostSimilarItem;
+    exports.findMostSimilarItems = findMostSimilarItems;
     exports.similaritySortItems = similaritySortItems;
 } catch (e) {
     // hax
