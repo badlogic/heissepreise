@@ -173,6 +173,10 @@ function showCart(cart) {
     } else {
         document.querySelector("#numitems").innerText = `${items.length} / ${cart.items.length} Artikel`;
     }
+    document.querySelector("#json").addEventListener("click", (event) => {
+        event.preventDefault();
+        downloadFile("items.json", JSON.stringify(items, null, 2));
+    });
     updateCharts(canvasDom, items);
 
     const itemTable = document.querySelector("#cartitems");
