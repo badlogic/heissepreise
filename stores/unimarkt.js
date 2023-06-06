@@ -32,6 +32,7 @@ exports.fetchData = async function () {
         "getraenke",
         "lebensmittel",
         "suesses-snacks",
+        "haushalt"
     ];
 
     let unimarktItems = [];
