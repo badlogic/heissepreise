@@ -51,7 +51,7 @@ async function load() {
     filtersStore.innerHTML = `
         ${customCheckbox(`all`, "<strong>Alle</strong>", true, "gray", "gray")}
         ${STORE_KEYS.map((store) =>
-            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color2, "gray")
+            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color, "gray")
         ).join(" ")}
     `;
     filtersStore.querySelector("#all").addEventListener("change", () => {

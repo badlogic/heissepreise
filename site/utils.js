@@ -2,71 +2,61 @@ const stores = {
     billa: {
         name: "Billa",
         budgetBrands: ["clever"],
-        color: "rgb(255 255 225)",
-        color2: "yellow",
+        color: "yellow",
         getUrl: (item) => `https://shop.billa.at${item.url}`,
     },
     spar: {
         name: "Spar",
         budgetBrands: ["s-budget"],
-        color: "rgb(225 244 225)",
-        color2: "green",
+        color: "green",
         getUrl: (item) => `https://www.interspar.at/shop/lebensmittel${item.url}`,
     },
     hofer: {
         name: "Hofer",
         budgetBrands: ["milfina"],
-        color: "rgb(230 230 255)",
-        color2: "purple",
+        color: "purple",
         getUrl: (item) => `https://www.roksh.at/hofer/produkte/${item.url}`,
     },
     lidl: {
         name: "Lidl",
         budgetBrands: ["milbona"],
-        color: "rgb(255 225 225)",
-        color2: "pink",
+        color: "pink",
         getUrl: (item) => `https://www.lidl.at${item.url}`,
     },
     mpreis: {
         name: "MPREIS",
         budgetBrands: [],
-        color: "rgb(255 230 230)",
-        color2: "rose",
+        color: "rose",
         getUrl: (item) => `https://www.mpreis.at/shop/p/${item.id}`,
     },
     dm: {
         name: "DM",
         budgetBrands: ["balea"],
-        color: "rgb(255 240 230)",
-        color2: "orange",
+        color: "orange",
         getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
-        color: "rgb(179, 217, 255)",
-        color2: "blue",
+        color: "blue",
         getUrl: (item) => `https://shop.unimarkt.at/${item.url}`,
     },
     penny: {
         name: "Penny",
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
-        color: "rgb(255, 180, 180)",
-        color2: "purple",
+        color: "purple",
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
     },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],
-        color: "rgb(236 254 253)",
-        color2: "teal",
+        color: "teal",
         getUrl: (item) => `https://www.dm.de/product-p${item.id}.html`,
     },
     reweDe: {
         name: "REWE DE",
         budgetBrands: ["ja!"],
-        color: "rgb(236 231 225)",
-        color2: "stone",
+        color: "stone",
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
     },
 };
@@ -346,15 +336,15 @@ function itemToDOM(item) {
         </td>
     `
     );
-    // row.style["background"] = stores[item.store]?.color;
+
     row.classList.add(
-        "bg-" + stores[item.store]?.color2 + "-200/50",
+        "bg-" + stores[item.store]?.color + "-200/50",
         "grid",
         "grid-cols-3",
         "col-span-3",
         "md:table-row",
         "border-b",
-        "border-" + stores[item.store]?.color2 + "-200",
+        "border-" + stores[item.store]?.color + "-200",
         "rounded-xl",
         "mb-3",
         "border",
@@ -551,7 +541,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                         `${store}-${id}`,
                         stores[store].name,
                         stores[store].name.toLowerCase().endsWith("de") ? false : true,
-                        stores[store].color2,
+                        stores[store].color,
                         "gray"
                     )
                 ).join(" ")}
