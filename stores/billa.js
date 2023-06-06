@@ -40,7 +40,9 @@ exports.getCanonical = function (item, today) {
 };
 
 exports.fetchData = async function () {
-    let items = [];
+    const items = [];
+    const lookup = {};
+    let numDuplicates = 0;
 
     for (let i = 1; i <= utils.globalCategories.length; i++) {
         const category = utils.globalCategories[i - 1];
@@ -54,7 +56,12 @@ exports.fetchData = async function () {
             const data = (await axios.get(BILLA_SEARCH)).data;
             data.tiles.forEach((item) => {
                 try {
-                    exports.getCanonical(item);
+                    const canonicalItem = exports.getCanonical(item);
+                    if (lookup[canonicalItem.id]) {
+                        numDuplicates++;
+                        return;
+                    }
+                    lookup[canonicalItem.id] = item;
                     items.push(item);
                 } catch (e) {
                     // Ignore super tiles
@@ -62,6 +69,7 @@ exports.fetchData = async function () {
             });
         }
     }
+    console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
     return items;
 };
 

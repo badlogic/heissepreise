@@ -1088,22 +1088,6 @@ function stem(word) {
     return word;
 }
 
-function vector(tokens) {
-    const vector = {};
-    for (token of tokens) {
-        if (token.length > 3) {
-            for (let i = 0; i < token.length - 3; i++) {
-                let trigram = token.substring(i, i + 3);
-                vector[trigram] = (vector[trigram] || 0) + 1;
-            }
-        } else {
-            vector[token] = (vector[token] || 0) + 1;
-        }
-    }
-    normalizeVector(vector);
-    return vector;
-}
-
 function dotProduct(vector1, vector2) {
     let product = 0;
     for (const key in vector1) {
@@ -1198,7 +1182,7 @@ function similaritySortItems(items) {
     sortedItems = [items.shift()];
     let refItem = sortedItems[0];
     while (items.length > 0) {
-        const similarItem = findMostSimilarItem(refItem, items).item;
+        const similarItem = findMostSimilarItem(refItem, items);
         sortedItems.push(similarItem.item);
         items.splice(similarItem.index, 1);
         refItem = similarItem.item;
@@ -1206,15 +1190,35 @@ function similaritySortItems(items) {
     return sortedItems;
 }
 
-function vectorizeItem(item, useUnit = true) {
+const NGRAM = 4;
+function vector(tokens) {
+    const vector = {};
+    for (token of tokens) {
+        if (token.length > NGRAM) {
+            for (let i = 0; i < token.length - NGRAM; i++) {
+                let trigram = token.substring(i, i + NGRAM);
+                vector[trigram] = (vector[trigram] || 0) + 1;
+            }
+        } else {
+            vector[token] = (vector[token] || 0) + 1;
+        }
+    }
+    normalizeVector(vector);
+    return vector;
+}
+
+function vectorizeItem(item, useUnit = true, useStem = true) {
+    const isNumber = /^\d+\.\d+$/;
     let name = item.name
         .toLowerCase()
         .replace(/[^\w\s]|_/g, "")
-        .replace("-", " ");
+        .replace("-", " ")
+        .replace(",", " ");
     item.tokens = name
         .split(/\s+/)
         .filter((token) => !globalStopwords.includes(token))
-        .map((token) => stem(token));
+        .filter((token) => !isNumber.test(token))
+        .map((token) => (useStem ? stem(token) : token));
     if (useUnit) {
         if (item.quantity) item.tokens.push("" + item.quantity);
         if (item.unit) item.tokens.push(item.unit);
