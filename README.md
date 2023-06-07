@@ -102,7 +102,7 @@ The project has a somewhat peculiar Docker Compose setup in `docker/` tailored t
 
 ## Raw Data
 
-You can also get the [raw data](https://heisse-preise.io/api/index). The raw data is returned as a JSON array of items. An item has the following fields:
+You can also get the [raw data](https://heisse-preise.io/data/latest-canonical.json). The raw data is returned as a JSON array of items. An item has the following fields:
 
 -   `store`: (`billa`, `spar`, `hofer`, `dm`, `lidl`, `mpreis`)
 -   `name`: the product name.

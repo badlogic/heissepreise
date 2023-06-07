@@ -9,6 +9,7 @@ const compression = require("compression");
 
 function copyItemsToSite(dataDir) {
     const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
+    analysis.writeJSON(`site/output/data/latest-canonical.json`, items);
     for (const store of analysis.STORE_KEYS) {
         const storeItems = items.filter((item) => item.store === store);
         analysis.writeJSON(`site/output/data/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
