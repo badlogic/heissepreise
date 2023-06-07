@@ -2,9 +2,9 @@
 set -e
 
 npm install
-if [ -z "$DEV" ]; then
+if [ -z "$DEV" ] || [ "$NODE_ENV" = "production" ]; then
 	echo "Running in prod."
-	node server.js
+	npm run start
 else
 	echo "Running in dev."
 	npm run dev
