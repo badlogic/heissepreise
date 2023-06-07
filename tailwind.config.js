@@ -1,12 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./site/**/*.{html,js}"],
-    safelist: [
-        {
-            pattern: /(bg|border|text)-(yellow|green|purple|pink|rose|orange|blue|purple|teal|stone)-(200)/,
-            variants: ["md", "lg", "hover"],
-        },
-    ],
+    content: ["./site/**/*.{html,js,css}"],
     theme: {
         extend: {
             colors: {

@@ -5,3 +5,171 @@
 canvas.hidden {
     display: none !important;
 }
+
+/* Product table */
+thead > tr {
+    @apply bg-primary text-white text-left hidden md:table-row uppercase text-sm;
+}
+.item {
+    @apply mb-3 overflow-hidden;
+    @apply grid grid-cols-3 col-span-3;
+    @apply md:table-row;
+    @apply border border-b rounded-xl;
+}
+
+.item > td[data-label="Kette"] {
+    @apply p-1 uppercase font-medium align-top;
+    @apply md:text-center;
+    @apply order-2;
+}
+.item > td[data-label="Name"] {
+    @apply p-1 font-bold text-gray-800;
+    @apply md:font-normal md:bg-white;
+    @apply md:hover:bg-gray-100;
+    @apply order-1 col-span-3;
+}
+.item > td[data-label="Preis"] {
+    @apply p-1 text-left whitespace-nowrap align-top z-20;
+    @apply order-3;
+}
+.item > td:nth-child(4) {
+    @apply order-4 text-right;
+}
+.item > td.action {
+    @apply order-5 flex items-center p-1;
+}
+
+.item .chevron {
+    @apply text-sm cursor-pointer;
+}
+/* additional info table */
+.priceinfo {
+    @apply text-xs  mt-2;
+    @apply md:text-sm;
+}
+.priceinfo tr > td:nth-child(1) {
+    @apply font-medium;
+}
+.priceinfo .price-line {
+    @apply text-xs  text-white px-1;
+    @apply md:text-sm;
+}
+
+.btn-action {
+    @apply w-6 h-6;
+    @apply flex items-center justify-center bg-white;
+    @apply cursor-pointer hover:shadow hover:scale-110;
+    @apply border rounded leading-none;
+    @apply transition-transform duration-200;
+}
+
+/* colors */
+.item.red {
+    @apply bg-red-200/50;
+    @apply border-red-200;
+}
+.item.yellow {
+    @apply bg-yellow-200/50;
+    @apply border-yellow-200;
+}
+.item.green {
+    @apply bg-green-200/50;
+    @apply border-green-200;
+}
+.item.purple {
+    @apply bg-purple-200/50;
+    @apply border-purple-200;
+}
+.item.pink {
+    @apply bg-pink-200/50;
+    @apply border-pink-200;
+}
+.item.rose {
+    @apply bg-rose-200/50;
+    @apply border-rose-200;
+}
+.item.orange {
+    @apply bg-orange-200/50;
+    @apply border-orange-200;
+}
+.item.blue {
+    @apply bg-blue-200/50;
+    @apply border-blue-200;
+}
+.item.purple {
+    @apply bg-purple-200/50;
+    @apply border-purple-200;
+}
+.item.teal {
+    @apply bg-teal-200/50;
+    @apply border-teal-200;
+}
+.item.stone {
+    @apply bg-gray-200/50;
+    @apply border-gray-200;
+}
+
+/* checkbox */
+.customcheckbox {
+    @apply inline-flex items-center gap-x-1 px-2 py-1;
+    @apply text-xs font-medium text-gray-600;
+    @apply cursor-pointer hover:bg-gray-400 hover:scale-105;
+    @apply border rounded-full bg-gray-200 border-gray-400;
+    @apply transition-all duration-200;
+}
+/* colors */
+.customcheckbox.red {
+    @apply bg-red-200;
+    @apply border-red-400;
+    @apply hover:bg-red-400;
+}
+.customcheckbox.yellow {
+    @apply bg-yellow-200;
+    @apply border-yellow-400;
+    @apply hover:bg-yellow-400;
+}
+.customcheckbox.green {
+    @apply bg-green-200;
+    @apply border-green-400;
+    @apply hover:bg-green-400;
+}
+.customcheckbox.purple {
+    @apply bg-purple-200;
+    @apply border-purple-400;
+    @apply hover:bg-purple-400;
+}
+.customcheckbox.pink {
+    @apply bg-pink-200;
+    @apply border-pink-400;
+    @apply hover:bg-pink-400;
+}
+.customcheckbox.rose {
+    @apply bg-rose-200;
+    @apply border-rose-400;
+    @apply hover:bg-rose-400;
+}
+.customcheckbox.orange {
+    @apply bg-orange-200;
+    @apply border-orange-400;
+    @apply hover:bg-orange-400;
+}
+.customcheckbox.blue {
+    @apply bg-blue-200;
+    @apply border-blue-400;
+    @apply hover:bg-blue-400;
+}
+.customcheckbox.purple {
+    @apply bg-purple-200;
+    @apply border-purple-400;
+    @apply hover:bg-purple-400;
+}
+.customcheckbox.teal {
+    @apply bg-teal-200;
+    @apply border-teal-400;
+    @apply hover:bg-teal-400;
+}
+.customcheckbox.stone {
+    @apply bg-stone-200;
+    @apply border-stone-400;
+    @apply hover:bg-stone-400;
+}
