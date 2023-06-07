@@ -64,6 +64,9 @@ const stores = {
 const STORE_KEYS = Object.keys(stores);
 const BUDGET_BRANDS = [...new Set([].concat(...Object.values(stores).map((store) => store.budgetBrands)))];
 
+// how many chars to enter before search is triggered
+const MIN_QUERY_LENGTH = 3;
+
 /**
  * @description Returns the current date in ISO format
  * @returns {string} ISO date string in format YYYY-MM-DD
@@ -412,7 +415,7 @@ const UNITS = {
 
 function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPrice, exact, bio) {
     query = query.trim();
-    if (query.length < 3 || checkedStores.length == 0) return [];
+    if (query.length < MIN_QUERY_LENGTH || checkedStores.length == 0) return [];
 
     if (query.charAt(0) == "!") {
         query = query.substring(1);
@@ -533,7 +536,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <div class="bg-stone-200 rounded-xl p-4 max-w-4xl mx-auto md:mb-12 md:mt-6">
-            <input id="search-${id}" class="search rounded-lg px-2 py-1 w-full mb-4" type="text" placeholder="Produkte suchen...">
+            <input id="search-${id}" class="search rounded-lg px-2 py-1 w-full mb-4" type="text" placeholder="Produkte suchen... (mind. ${MIN_QUERY_LENGTH} Zeichen)">
             <div class="flex gap-2 flex-wrap justify-center py-4 px-8">
                 ${customCheckbox(`all-${id}`, " <strong>Alle</strong>", true, "gray", "gray")}
                 ${STORE_KEYS.map((store) =>
