@@ -6,7 +6,8 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "DEV=true nodemon --watch server.js --inspect-brk=0.0.0.0:9230 server.js",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "build": "npx tailwindcss -o site/style.css --minify"
   },
   "repository": {
     "type": "git",
@@ -29,8 +30,11 @@
     "socket.io": "^4.6.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
     "husky": "^8.0.3",
+    "postcss": "^8.4.24",
     "prettier": "^2.8.8",
-    "pretty-quick": "^3.1.3"
+    "pretty-quick": "^3.1.3",
+    "tailwindcss": "^3.3.2"
   }
 }

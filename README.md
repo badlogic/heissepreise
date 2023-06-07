@@ -12,7 +12,7 @@ You can also get the [raw data](https://heisse-preise.io/api/index). The raw dat
 -   `quantity`: quantity the product is sold at for the given price
 -   `bio`: whether this product is classified as organic/"Bio"
 
-The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `index.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
+The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `server.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
 
 ## Run via NodeJS
 
@@ -22,7 +22,7 @@ Install NodeJS, then run this in a shell of your choice.
 git clone https://github.com/badlogic/heissepreise
 cd heissepreise
 npm install
-node index.js
+node server.js
 ```
 
 The first time you run this, the data needs to be fetched from the stores. You should see log out put like this.
@@ -40,7 +40,7 @@ Example app listening on port 3000
 ```
 
 Once the app is listening per default on port 3000, open <http://localhost:3000> in your browser.\
-**Note**: If you want to start on a different port add it as the third parameter, e.g. `node index.js 3001` will map to port `3001`.
+**Note**: If you want to start on a different port add it as the third parameter, e.g. `node server.js 3001` will map to port `3001`.
 
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
 
