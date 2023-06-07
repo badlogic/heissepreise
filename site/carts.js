@@ -30,7 +30,8 @@ async function load() {
     const newCartButton = document.querySelector("#newcart");
     newCartButton.addEventListener("click", () => {
         let name = prompt("Name für Warenkorb eingeben:");
-        if (name.length === 0) return;
+        if (!name || name.trim().length == 0) return;
+        name = name.trim();
         for (cart of shoppingCarts.carts) {
             if (cart.name === name) {
                 alert("Warenkorb mit Namen '" + name + "' existiert bereits");
