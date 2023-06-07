@@ -2,19 +2,26 @@
 
 A terrible grocery price search "app". Fetches data from big Austrian grocery chains daily and lets you search them. See <https://heisse-preise.io>.
 
-You can also get the [raw data](https://heisse-preise.io/api/index). The raw data is returned as a JSON array of items. An item has the following fields:
-
--   `store`: (`billa`, `spar`, `hofer`, `dm`, `lidl`, `mpreis`)
--   `name`: the product name.
--   `price`: the current price in €.
--   `priceHistory`: an array of `{ date: "yyyy-mm-dd", price: number }` objects, sorted in descending order of date.
--   `unit`: unit the product is sold at. May be undefined.
--   `quantity`: quantity the product is sold at for the given price
--   `bio`: whether this product is classified as organic/"Bio"
-
 The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `server.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
 
-## Run via NodeJS
+Contents:
+
+-   [Requirements](#requirements)
+-   [Running](#running)
+    -   [Development](#development)
+    -   [Production](#production)
+    -   [Configuration](#configuration)
+    -   [Via GitHub pages \& GitHub workflows](#via-github-pages--github-workflows)
+    -   [Docker](#docker)
+-   [Raw Data](#raw-data)
+
+## Requirements
+
+-   Node.js
+
+## Running
+
+### Development
 
 Install NodeJS, then run this in a shell of your choice.
 
@@ -22,7 +29,7 @@ Install NodeJS, then run this in a shell of your choice.
 git clone https://github.com/badlogic/heissepreise
 cd heissepreise
 npm install
-node server.js
+npm run dev
 ```
 
 The first time you run this, the data needs to be fetched from the stores. You should see log out put like this.
@@ -36,19 +43,33 @@ Fetched BILLA data, took 52.95784649944306 seconds
 Fetched HOFER data, took 64.83968291568756 seconds
 Fetched DM data, took 438.77065160000324 seconds
 Merged price history
-Example app listening on port 3000
+App listening on port 3000
 ```
 
 Once the app is listening per default on port 3000, open <http://localhost:3000> in your browser.\
-**Note**: If you want to start on a different port add it as the third parameter, e.g. `node server.js 3001` will map to port `3001`.
 
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
+
+### Production
+
+Install the dependencies as per above, then simply run:
+
+```
+npm run start
+```
 
 ### Frontend
 
 To build the `site/style.css` file, make sure to run `npm run build`. This will create a css file based on the tailwind styles used. You can continue to write normal CSS in the `site/tailwind.css` if you want.
 
-## Run via GitHub pages & GitHub workflows
+### Configuration
+
+You can pass the following options to the `server.js` script:
+
+-   `-p`, `--port`: the port to listen on, defaults to the `PORT` environment variable, if set, or `3000`
+-   `-l`, `--live-reload`: whether to enable live reload, defaults to `true` when `NODE_ENV` is `development`. Cannot be used in production.
+
+### Via GitHub pages & GitHub workflows
 
 Create a GitHub account and pick a username. Below, we assume your user name is `hotprices123`. **Replace `hotprices123` with your real username everywhere you see it below**
 
@@ -79,6 +100,18 @@ To get the latest code changes from this repository into your fork:
 
 Your site will now use the latest source code changes from this repository. It will be automatically updated and is usually live under `https://hotprices123.github.io` within 10-15 minutes.
 
-## Docker
+### Docker
 
 The project has a somewhat peculiar Docker Compose setup in `docker/` tailored to my infrastructure. You can entirely ignore it.
+
+## Raw Data
+
+You can also get the [raw data](https://heisse-preise.io/data/latest-canonical.json). The raw data is returned as a JSON array of items. An item has the following fields:
+
+-   `store`: (`billa`, `spar`, `hofer`, `dm`, `lidl`, `mpreis`)
+-   `name`: the product name.
+-   `price`: the current price in €.
+-   `priceHistory`: an array of `{ date: "yyyy-mm-dd", price: number }` objects, sorted in descending order of date.
+-   `unit`: unit the product is sold at. May be undefined.
+-   `quantity`: quantity the product is sold at for the given price
+-   `bio`: whether this product is classified as organic/"Bio"
