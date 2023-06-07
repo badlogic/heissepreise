@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "prepare": "husky install",
-    "dev": "NODE_ENV=development PORT=$PORT nodemon server.js",
+    "dev": "NODE_ENV=development PORT=$PORT node server.js",
     "start": "NODE_ENV=production PORT=$PORT node server.js",
     "format": "npx prettier --write ."
   },

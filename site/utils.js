@@ -448,8 +448,6 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
             newTokens.push(token);
         }
     }
-    console.log(JSON.stringify(unitQueries, null, 2));
-    console.log(newTokens);
     tokens = newTokens;
 
     let hits = [];
