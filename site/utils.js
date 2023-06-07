@@ -299,7 +299,7 @@ function itemToDOM(item) {
         priceHistory += `<tr>
             <td class="font-medium">${date}</td>
             <td>
-                <div style="width: ${priceBase * currPrice}px" 
+                <div style="width: ${priceBase * currPrice}px"
                     class="text-xs md:text-sm text-white px-1 ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
                     € ${currPrice}
                 </div>
@@ -365,11 +365,11 @@ function itemToDOM(item) {
             if (pricesDom.classList.contains("hidden")) {
                 pricesDom.classList.remove("hidden");
                 pricesDom.ariaHidden = false;
-                target.innerHTML = "▲";
+                if (target) target.innerHTML = "▲";
             } else {
                 pricesDom.classList.add("hidden");
                 pricesDom.ariaHidden = true;
-                target.innerHTML = "▼";
+                if (target) target.innerHTML = "▼";
             }
         });
     });
@@ -566,7 +566,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                     <input class="w-12" id="maxprice-${id}" type="number" min="0" value="100">
                 </label>
             </div>
-            
+
         </div>
         <div id="result-container-${id}" class="flex flex-col md:flex-row gap-4 hidden px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
             <div id="links-${id}" class="results hidden">
@@ -582,7 +582,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 </div>
             </div>
             <label>
-                Sortieren 
+                Sortieren
                 <select id="sort-${id}">
                     <option value="priceasc">Preis aufsteigend</option>
                     <option value="pricedesc">Preis absteigend</option>
