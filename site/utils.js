@@ -64,6 +64,9 @@ const stores = {
 const STORE_KEYS = Object.keys(stores);
 const BUDGET_BRANDS = [...new Set([].concat(...Object.values(stores).map((store) => store.budgetBrands)))];
 
+// how many chars to enter before search is triggered
+const MIN_QUERY_LENGTH = 3;
+
 /**
  * @description Returns the current date in ISO format
  * @returns {string} ISO date string in format YYYY-MM-DD
@@ -299,7 +302,7 @@ function itemToDOM(item) {
         priceHistory += `<tr>
             <td class="font-medium">${date}</td>
             <td>
-                <div style="width: ${priceBase * currPrice}px" 
+                <div style="width: ${priceBase * currPrice}px"
                     class="text-xs md:text-sm text-white px-1 ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
                     € ${currPrice}
                 </div>
@@ -365,11 +368,11 @@ function itemToDOM(item) {
             if (pricesDom.classList.contains("hidden")) {
                 pricesDom.classList.remove("hidden");
                 pricesDom.ariaHidden = false;
-                target.innerHTML = "▲";
+                if (target) target.innerHTML = "▲";
             } else {
                 pricesDom.classList.add("hidden");
                 pricesDom.ariaHidden = true;
-                target.innerHTML = "▼";
+                if (target) target.innerHTML = "▼";
             }
         });
     });
@@ -412,7 +415,7 @@ const UNITS = {
 
 function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPrice, exact, bio) {
     query = query.trim();
-    if (query.length < 3 || checkedStores.length == 0) return [];
+    if (query.length < MIN_QUERY_LENGTH || checkedStores.length == 0) return [];
 
     if (query.charAt(0) == "!") {
         query = query.substring(1);
@@ -533,7 +536,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
     parentElement.innerHTML = "";
     parentElement.innerHTML = `
         <div class="bg-stone-200 rounded-xl p-4 max-w-4xl mx-auto md:mb-12 md:mt-6">
-            <input id="search-${id}" class="search rounded-lg px-2 py-1 w-full mb-4" type="text" placeholder="Produkte suchen...">
+            <input id="search-${id}" class="search rounded-lg px-2 py-1 w-full mb-4" type="text" placeholder="Produkte suchen... (mind. ${MIN_QUERY_LENGTH} Zeichen)">
             <div class="flex gap-2 flex-wrap justify-center py-4 px-8">
                 ${customCheckbox(`all-${id}`, " <strong>Alle</strong>", true, "gray", "gray")}
                 ${STORE_KEYS.map((store) =>
@@ -566,7 +569,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                     <input class="w-12" id="maxprice-${id}" type="number" min="0" value="100">
                 </label>
             </div>
-            
+
         </div>
         <div id="result-container-${id}" class="flex flex-col md:flex-row gap-4 hidden px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
             <div id="links-${id}" class="results hidden">
@@ -582,7 +585,7 @@ function newSearchComponent(parentElement, items, searched, filter, headerModifi
                 </div>
             </div>
             <label>
-                Sortieren 
+                Sortieren
                 <select id="sort-${id}">
                     <option value="priceasc">Preis aufsteigend</option>
                     <option value="pricedesc">Preis absteigend</option>
