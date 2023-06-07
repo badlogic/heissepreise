@@ -1,31 +1,40 @@
 %%_templates/_header.html%% %%_templates/_menu.html%%
 
-<div id="cart" class="cart column">
-    <h2 id="cartname"></h2>
-    <div id="noproducts" class="hide">Noch keine Produkte im Warenkorb</div>
-    <div id="hasproducts" class="column hide">
-        <input type="button" id="save" value="Speichern" class="hide" />
-        <div class="filters-container chart">
-            <canvas class="chart" id="chart"></canvas>
-            <div class="filters">
-                <label><input type="checkbox" id="sum" checked /> Preissumme Warenkorb</label>
-                <label><input type="checkbox" id="sumstores" checked /> Preissumme pro Kette</label>
-                <label><input type="checkbox" id="todayonly" /> Nur heutige Preise</label>
+<div class="w-full relative px-4">
+    <div id="cart">
+        <h1 class="text-2xl font-bold pb-2 pt-8 text-center" id="cartname"></h1>
+        <div id="noproducts" class="hidden text-center text-gray-600">Noch keine Produkte im Warenkorb</div>
+        <div id="hasproducts" class="column hidden">
+            <input type="button" id="save" value="Speichern" class="hidden" />
+            <div class="bg-stone-200 rounded-xl p-4 max-w-4xl mx-auto md:mb-12 md:mt-6">
+                <canvas class="bg-white rounded-lg py-4" id="chart"></canvas>
+                <div class="filters flex items-center flex-wrap justify-center gap-2 pt-2">
+                    <div id="sum-container"></div>
+                    <div id="sumstores-container"></div>
+                    <div id="todayonly-container"></div>
+                    <div
+                        class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600"
+                    >
+                        <input id="start" type="date" />
+                        -
+                        <input id="end" type="date" />
+                    </div>
+                </div>
             </div>
-            <div>
-                <input id="start" type="date" /> -
-                <input id="end" type="date" />
+            <div class="bg-stone-200 rounded-xl p-4 max-w-4xl mx-auto md:mb-12 md:mt-6">
+                <div>
+                    <input id="filter" class="search rounded-lg px-2 py-1 w-full mb-4" placeholder="Filtern..." />
+                    <div class="filters flex justify-center gap-2 flex-wrap" id="filters-store"></div>
+                </div>
             </div>
+            <div class="px-4 py-2 my-4 text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100">
+                <span id="numitems"></span> <a id="json" href="" class="text-primary font-medium hover:underline">JSON</a>
+            </div>
+            <table id="cartitems" class="w-full"></table>
         </div>
-        <div class="filters-container">
-            <input id="filter" class="search" placeholder="Filtern..." />
-            <div class="filters" id="filters-store"></div>
-            <div class="filters"><span id="numitems"></span> <a id="json" href="">JSON</a></div>
-        </div>
-        <table id="cartitems"></table>
     </div>
+    <div id="search" class="w-full"></div>
 </div>
-<div id="search" class="column"></div>
 
 <script src="js/alasql.js"></script>
 <script src="js/chart.js"></script>

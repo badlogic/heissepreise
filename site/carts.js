@@ -94,11 +94,11 @@ function showCarts(lookup) {
         dom(
             "thead",
             `
-        <tr>
-            <th>Name</th>
-            <th>Produkte</th>
-            <th>Preis</th>
-            <th>Aktionen</th>
+        <tr class="bg-primary text-left hidden md:table-row uppercase text-sm text-white">
+            <th class="px-2">Name</th>
+            <th class="px-2">Produkte</th>
+            <th class="px-2">Preis</th>
+            <th class="px-2">Aktionen</th>
         </tr>
     `
         )
@@ -121,22 +121,28 @@ function showCarts(lookup) {
         const row = dom(
             "tr",
             `
-            <td data-label="Name"><a href="${cartUrl}">${cart.name}</a></td>
-            <td data-label="Produkte">${cart.items.length}</td>
-            <td data-label="Preis">
+            <td class="px-2 col-span-3" data-label="Name"><a class="hover:underline" href="${cartUrl}">${cart.name}</a></td>
+            <td class="px-2" data-label="Produkte"><span class="md:hidden text-sm">Produkte: </span>${cart.items.length}</td>
+            <td class="px-2 col-span-2" data-label="Preis">
+                <span class="md:hidden text-sm">Preisänderungen: </span>
                 <span style="color: ${currPrice > oldPrice ? "red" : "green"}">${currPrice.toFixed(2)} ${
                 (increase > 0 ? "+" : "") + increase + "%"
             }</span>
             </td>
-            <td>
-                <div class="cartactions">
-                    <a href="cart.html?cart=${link}">Teilen</a>
-                    <a class="cartjson" href="">JSON</a>
-                    ${cart.name != "Momentum Eigenmarken Vergleich" ? `<input class="cartdelete" type="button" value="Löschen">` : ""}
+            <td class="px-2 col-span-3">
+                <div class="cartactions flex gap-4">
+                    <a class="text-primary hover:underline text-sm font-medium" href="cart.html?cart=${link}">Teilen</a>
+                    <a class="cartjson text-primary hover:underline text-sm font-medium" href="">JSON</a>
+                    ${
+                        cart.name != "Momentum Eigenmarken Vergleich"
+                            ? `<input class="cartdelete ml-auto text-red-500 hover:underline text-sm font-medium" type="button" value="Löschen">`
+                            : ""
+                    }
                 </div>
             </td>
         `
         );
+        row.classList.add("grid", "grid-cols-3", "hover:bg-gray-100", "border", "border-gray-200", "rounded-md", "p-2", "md:table-row");
         row.querySelector("td").addEventListener("click", () => (location.href = cartUrl));
         row.querySelector(".cartjson").addEventListener("click", (event) => {
             event.preventDefault();

@@ -2,7 +2,9 @@ const axios = require("axios");
 const utils = require("./utils");
 const HTMLParser = require("node-html-parser");
 
-const units = {};
+const units = {
+    mbe: { unit: "wg", factor: 1 },
+};
 
 exports.getCanonical = function (item, today) {
     let [quantity, unit] = utils.parseUnitAndQuantityAtEnd(item.unit.replace("/ EINWEG", "").replace("/ MEHRWEG", ""));
@@ -18,7 +20,11 @@ exports.getCanonical = function (item, today) {
             url: item.canonicalUrl,
         },
         units,
-        "unimarkt"
+        "unimarkt",
+        {
+            unit: "stk",
+            quantity: 1,
+        }
     );
 };
 
@@ -32,7 +38,7 @@ exports.fetchData = async function () {
         "getraenke",
         "lebensmittel",
         "suesses-snacks",
-        "haushalt"
+        "haushalt",
     ];
 
     let unimarktItems = [];

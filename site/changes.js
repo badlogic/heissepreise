@@ -48,33 +48,38 @@ async function load() {
     });
 
     const filtersStore = document.querySelector("#filters-store");
-    filtersStore.innerHTML =
-        `<label><input id="all" type="checkbox" checked="true"><strong>Alle</strong></label>` +
-        STORE_KEYS.map(
-            (store) =>
-                `<label><input id="${store}" type="checkbox" ${stores[store].name.toLowerCase().endsWith("de") ? "" : "checked"}>${
-                    stores[store].name
-                }</label>`
-        ).join(" ");
+    filtersStore.innerHTML = `
+        ${customCheckbox(`all`, "<strong>Alle</strong>", true, "gray", "gray")}
+        ${STORE_KEYS.map((store) =>
+            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color, "gray")
+        ).join(" ")}
+    `;
     filtersStore.querySelector("#all").addEventListener("change", () => {
         const checked = filtersStore.querySelector("#all").checked;
         STORE_KEYS.forEach((store) => (filtersStore.querySelector(`#${store}`).checked = checked));
         showResults(items);
     });
+
+    document.querySelector("#filters-changes").innerHTML = `
+        ${customCheckbox(`increases`, "Teurer", true, "gray", "gray")}
+        ${customCheckbox(`decreases`, "Billiger", true, "gray", "gray")}
+    `;
+
     document.querySelectorAll("input").forEach((input) => {
         if (input.id == "all" && input.id != "type") return;
         input.addEventListener("change", () => showResults(items));
     });
+
     let timeoutId;
     document.querySelector("#filter").addEventListener("input", () => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
             if (document.querySelector("#filter").value.trim().startsWith("!")) {
-                document.querySelector("#filters-store").classList.add("hide");
-                document.querySelector("#filters-changes").classList.add("hide");
+                document.querySelector("#filters-store").classList.add("hidden");
+                document.querySelector("#filters-changes").classList.add("hidden");
             } else {
-                document.querySelector("#filters-store").classList.remove("hide");
-                document.querySelector("#filters-changes").classList.remove("hide");
+                document.querySelector("#filters-store").classList.remove("hidden");
+                document.querySelector("#filters-changes").classList.remove("hidden");
             }
             showResults(items);
         }, 50);
@@ -88,9 +93,9 @@ function showResults(items) {
     let today = null;
     if (document.querySelector("#date").checked) {
         today = document.querySelector("#dates").value;
-        if (!query.startsWith("!")) document.querySelector("#filters-changes").classList.remove("hide");
+        if (!query.startsWith("!")) document.querySelector("#filters-changes").classList.remove("hidden");
     } else {
-        document.querySelector("#filters-changes").classList.add("hide");
+        document.querySelector("#filters-changes").classList.add("hidden");
     }
     const increases = document.querySelector("#increases").checked;
     const decreases = document.querySelector("#decreases").checked;
@@ -126,16 +131,22 @@ function showResults(items) {
     if (changedItems.length == 0) return;
     const header = dom(
         "thead",
-        `
-        <tr><th>Kette</th><th>Name</th><th>Menge</th><th>Preis <span class="expander">+</span></th></tr>
+        `<tr class="bg-primary text-left hidden md:table-row uppercase text-sm text-white">
+            <th class="text-center">Kette</th>
+            <th>Name</th>
+            <th class="flex text-nowrap">
+                <span>Preis </span>
+                <span class="expander">+</span>
+            </th>
+        </tr>
     `
     );
-    const showHideAll = header.querySelectorAll("th:nth-child(4)")[0];
+    const showHideAll = header.querySelectorAll("th:nth-child(3)")[0];
     showHideAll.style["cursor"] = "pointer";
     showHideAll.showAll = true;
     showHideAll.addEventListener("click", () => {
         showHideAll.querySelector(".expander").innerText = showHideAll.querySelector(".expander").innerText == "+" ? "-" : "+";
-        table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hide") : el.classList.add("hide")));
+        table.querySelectorAll(".priceinfo").forEach((el) => (showHideAll.showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
         showHideAll.showAll = !showHideAll.showAll;
     });
 
@@ -147,7 +158,7 @@ function showResults(items) {
         table.appendChild(itemDom);
     }
 
-    table.classList.remove("hide");
+    table.classList.remove("hidden");
 }
 
 load();
