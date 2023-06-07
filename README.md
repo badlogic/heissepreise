@@ -44,6 +44,10 @@ Once the app is listening per default on port 3000, open <http://localhost:3000>
 
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
 
+### Frontend
+
+To build the `site/style.css` file, make sure to run `npm run build`. This will create a css file based on the tailwind styles used. You can continue to write normal CSS in the `site/tailwind.css` if you want.
+
 ## Run via GitHub pages & GitHub workflows
 
 Create a GitHub account and pick a username. Below, we assume your user name is `hotprices123`. **Replace `hotprices123` with your real username everywhere you see it below**
