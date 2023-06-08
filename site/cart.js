@@ -1,9 +1,6 @@
 const shoppingCarts = new ShoppingCarts();
 shoppingCarts.load();
 
-const buttonClass =
-    "border w-6 h-6 flex items-center justify-center bg-white hover:shadow cursor-pointer rounded leading-none hover:scale-110 transition-transform duration-200";
-
 async function load() {
     const items = await loadItems();
     const lookup = {};
@@ -68,9 +65,9 @@ async function load() {
 
     const canvasDom = document.querySelector("#chart");
 
-    document.querySelector("#sum-container").innerHTML = customCheckbox(`sum`, "Preissumme Gesamt", true, "gray", "gray");
-    document.querySelector("#sumstores-container").innerHTML = customCheckbox(`sumstores`, "Preissumme pro Kette", true, "gray", "gray");
-    document.querySelector("#todayonly-container").innerHTML = customCheckbox(`todayonly`, "Nur heutige Preise", false, "gray", "gray");
+    document.querySelector("#sum-container").innerHTML = customCheckbox(`sum`, "Preissumme Gesamt", true, "gray");
+    document.querySelector("#sumstores-container").innerHTML = customCheckbox(`sumstores`, "Preissumme pro Kette", true, "gray");
+    document.querySelector("#todayonly-container").innerHTML = customCheckbox(`todayonly`, "Nur heutige Preise", false, "gray");
 
     document.querySelector("#sum").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
     document.querySelector("#sumstores").addEventListener("change", () => updateCharts(canvasDom, filter(cart.items)));
@@ -83,9 +80,9 @@ async function load() {
 
     const filtersStore = document.querySelector("#filters-store");
     filtersStore.innerHTML = `
-        ${customCheckbox("all", "<strong>Alle</strong>", true, "gray", "gray")}
+        ${customCheckbox("all", "<strong>Alle</strong>", true, "gray")}
         ${STORE_KEYS.map((store) =>
-            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color, "gray")
+            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color)
         ).join(" ")}
     `;
 
@@ -131,7 +128,7 @@ function showSearch(cart, items) {
             return header;
         },
         (item, itemDom) => {
-            const cell = dom("td", `<input type="button" class="ml-auto ${buttonClass}" value="+">`);
+            const cell = dom("td", `<input type="button" class="ml-auto btn-action" value="+">`);
             cell.children[0].addEventListener("click", () => {
                 cart.items.push(item);
                 shoppingCarts.save();
@@ -201,7 +198,7 @@ function showCart(cart) {
     itemTable.innerHTML = "";
     header = dom(
         "thead",
-        `<tr class="bg-primary text-white text-left hidden md:table-row uppercase text-sm">
+        `<tr>
             <th class="text-center">Kette</th>
             <th>Name</th>
             <th>Preis <span class="expander">+</span></th>
@@ -226,14 +223,14 @@ function showCart(cart) {
             `
             <label>
                 <input type="checkbox" class="hidden peer">
-                <span class="peer-checked:bg-blue-700 bg-transparent rounded p-1 text-sm">📈</span>
+                <span class="peer-checked:bg-blue-700 btn-action">📈</span>
             </label>
-            <input type="button" class="ml-auto ${buttonClass}" value="-">
-            <input type="button" class="${buttonClass}" value="▲">
-            <input type="button" class="${buttonClass}" value="▼">
+            <input type="button" class="ml-auto btn-action" value="-">
+            <input type="button" class="btn-action" value="▲">
+            <input type="button" class="btn-action" value="▼">
         `
         );
-        cell.classList.add("order-5", "flex", "items-center", "p-1");
+        cell.classList.add("action");
 
         if (cartItem.chart) cell.children[0].setAttribute("checked", true);
         cell.children[0].addEventListener("change", () => {
