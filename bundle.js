@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const chokidar = require("chokidar");
 const esbuild = require("esbuild");
+const { exec } = require("child_process");
+const { promisify } = require("util");
 
 function deleteDirectory(directory) {
     if (fs.existsSync(directory)) {
@@ -34,16 +36,19 @@ function replaceFileContents(string, fileDir) {
     });
 }
 
-function processFile(inputFile, outputFile) {
-    console.log(`${inputFile} -> ${outputFile}`);
+function processFile(inputFile, outputFile, filter) {
     const fileDir = path.dirname(inputFile);
     const data = fs.readFileSync(inputFile, "utf8");
-    if (data.includes(`require("`)) return;
+    if (filter(inputFile, false, data)) {
+        console.log(`${inputFile} omitted by filter`);
+        return;
+    }
+    console.log(`${inputFile} -> ${outputFile}`);
     const replacedData = replaceFileContents(data, fileDir);
     fs.writeFileSync(outputFile, replacedData);
 }
 
-function generateSite(inputDir, outputDir, deleteOutput) {
+function generateSite(inputDir, outputDir, deleteOutput, filter) {
     if (deleteOutput) {
         deleteDirectory(outputDir);
     }
@@ -51,24 +56,26 @@ function generateSite(inputDir, outputDir, deleteOutput) {
 
     const files = fs.readdirSync(inputDir);
     files.forEach((file) => {
+        const filePath = path.join(inputDir, file);
+        const isDir = fs.statSync(filePath).isDirectory();
         if (file.startsWith("_")) return;
 
-        const filePath = path.join(inputDir, file);
-        if (fs.statSync(filePath).isDirectory()) {
+        if (isDir) {
+            if (filter(filePath, true, null)) return;
             if (path.resolve(filePath) == path.resolve(outputDir)) return;
             const subOutputDir = path.join(outputDir, file);
             fs.mkdirSync(subOutputDir, { recursive: true });
-            generateSite(filePath, subOutputDir, deleteOutput);
+            generateSite(filePath, subOutputDir, deleteOutput, filter);
         } else {
             const inputFile = filePath;
             const outputFile = path.join(outputDir, file);
-            processFile(inputFile, outputFile);
+            processFile(inputFile, outputFile, filter);
         }
     });
 }
 
-function generateSiteAndWatch(inputDir, outputDir, deleteDir = true, watch = false) {
-    generateSite(inputDir, outputDir, deleteDir);
+async function bundleHTML(inputDir, outputDir, deleteDir = true, watch = false, filter) {
+    generateSite(inputDir, outputDir, deleteDir, filter);
     if (!watch) return;
 
     const watcher = chokidar.watch(inputDir, { ignored: /(^|[\/\\])\../ });
@@ -78,12 +85,22 @@ function generateSiteAndWatch(inputDir, outputDir, deleteDir = true, watch = fal
         if (initialScan) return;
         if (path.resolve(filePath).startsWith(path.resolve(outputDir))) return;
         console.log(`File ${filePath} has been ${event}`);
-        generateSite(inputDir, outputDir, false);
+        generateSite(inputDir, outputDir, false, filter);
     });
     console.log(`Watching directory for changes: ${inputDir}`);
 }
 
-async function bundle(inputDir, outputDir, liveReload) {
+async function bundleCSS(inputFile, outputFile, watch = false) {
+    const execAsync = promisify(exec);
+    if (!watch) {
+        execAsync(`npx tailwindcss -i ${inputFile} -o ${outputFile} --minify`);
+        console.log("Generated JS");
+    } else {
+        execAsync(`npx tailwindcss -i ${inputFile} -o ${outputFile} --watch`);
+    }
+}
+
+async function bundleJS(inputDir, outputDir, watch) {
     let buildContext = await esbuild.context({
         entryPoints: {
             "carts-new": `${inputDir}/carts-new.js`,
@@ -93,14 +110,30 @@ async function bundle(inputDir, outputDir, liveReload) {
         outdir: outputDir,
         logLevel: "debug",
     });
-    if (!liveReload) {
+    if (!watch) {
         await buildContext.rebuild();
+        console.log("Generated JS");
     } else {
         buildContext.watch();
     }
-    generateSiteAndWatch(inputDir, outputDir, false, liveReload);
+}
+
+async function bundle(inputDir, outputDir, watch) {
+    const promises = [];
+
+    promises.push(bundleCSS(path.join(inputDir, "tailwind.css"), path.join(outputDir, "style.css"), watch));
+    promises.push(bundleJS(inputDir, outputDir, watch));
+    promises.push(
+        bundleHTML(inputDir, outputDir, false, watch, (filePath, isDir, data) => {
+            if (isDir) return false;
+            if (filePath.endsWith("tailwind.css")) return true;
+            if (data.includes(`require("`)) return true;
+            return false;
+        })
+    );
+
+    if (!watch) await Promise.all(promises);
 }
 
 exports.deleteDirectory = deleteDirectory;
-exports.generateSite = generateSiteAndWatch;
 exports.bundle = bundle;

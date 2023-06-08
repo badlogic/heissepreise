@@ -7,10 +7,7 @@
     "prepare": "husky install",
     "dev": "NODE_ENV=development PORT=$PORT node server.js",
     "start": "NODE_ENV=production PORT=$PORT node server.js",
-    "format": "npx prettier --write .",
-    "bundle": "bundle.js",
-    "build": "npx tailwindcss -i site/tailwind.css -o site/style.css --minify",
-    "css": "npx tailwindcss -i site/tailwind.css -o site/style.css --watch"
+    "format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
