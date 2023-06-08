@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "prepare": "husky install",
-    "dev": "NODE_ENV=development PORT=$PORT node server.js",
-    "start": "NODE_ENV=production PORT=$PORT node server.js",
+    "dev": "cross-env NODE_ENV=development PORT=$PORT node server.js",
+    "start": "cross-env NODE_ENV=production PORT=$PORT node server.js",
     "format": "npx prettier --write ."
   },
   "repository": {
@@ -28,14 +28,15 @@
     "node-html-parser": "^6.1.5"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
     "concurrently": "^8.1.0",
+    "cross-env": "^7.0.3",
     "esbuild": "^0.17.19",
     "husky": "^8.0.3",
-    "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3",
-    "socket.io": "^4.6.2"
+    "socket.io": "^4.6.2",
+    "tailwindcss": "^3.3.2"
   }
 }
