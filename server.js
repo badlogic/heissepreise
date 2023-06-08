@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
-const chokidar = require("chokidar");
 const analysis = require("./analysis");
-const template = require("./template");
+const bundle = require("./bundle");
+const chokidar = require("chokidar");
 const express = require("express");
 const compression = require("compression");
 
@@ -37,21 +37,6 @@ function scheduleFunction(hour, minute, second, func) {
     }, delay);
 }
 
-function generateSiteAndWatch(inputDir, outputDir) {
-    template.generateSite(inputDir, outputDir, true);
-    const watcher = chokidar.watch(inputDir, { ignored: /(^|[\/\\])\../ });
-
-    let initialScan = true;
-    watcher.on("ready", () => (initialScan = false));
-    watcher.on("all", (event, filePath) => {
-        if (initialScan) return;
-        if (path.resolve(filePath).startsWith(path.resolve(outputDir))) return;
-        console.log(`File ${filePath} has been ${event}`);
-        template.generateSite(inputDir, outputDir, false);
-    });
-    console.log(`Watching directory for changes: ${inputDir}`);
-}
-
 (async () => {
     const dataDir = "data";
 
@@ -81,7 +66,11 @@ function generateSiteAndWatch(inputDir, outputDir) {
         fs.mkdirSync(dataDir);
     }
 
-    generateSiteAndWatch("site", "site/output");
+    const outputDir = "site/output";
+    bundle.deleteDirectory(outputDir);
+    fs.mkdirSync(outputDir);
+    fs.mkdirSync(outputDir + "/data");
+    bundle.bundle("site", outputDir, liveReload);
 
     analysis.migrateCompression(dataDir, ".json", ".json.br");
     analysis.migrateCompression(dataDir, ".json.gz", ".json.br");

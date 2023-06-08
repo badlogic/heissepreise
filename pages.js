@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const analysis = require("./analysis.js");
-const template = require("./template.js");
+const bundle = require("./bundle.js");
 const outputDir = path.resolve("docs");
 const dataDir = path.join(outputDir, "data");
 
@@ -26,7 +26,7 @@ function deleteFiles(folderPath) {
     try {
         if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
         deleteFiles(outputDir);
-        template.generateSite("site", outputDir, false);
+        bundle.bundle("site", outputDir, false);
 
         const data = analysis.readJSON(`${dataDir}/latest-canonical.json`);
         analysis.writeJSON(`${dataDir}/latest-canonical.json`, data, analysis.FILE_COMPRESSOR);
