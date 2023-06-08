@@ -75,7 +75,7 @@ function parseArguments() {
     bundle.deleteDirectory(outputDir);
     fs.mkdirSync(outputDir);
     fs.mkdirSync(outputDir + "/data");
-    await bundle.bundle("site", outputDir, liveReload);
+    bundle.bundle("site", outputDir, liveReload);
 
     analysis.migrateCompression(dataDir, ".json", ".json.br");
     analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
