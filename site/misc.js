@@ -39,8 +39,15 @@ exports.downloadJSON = (filename, content) => {
     URL.revokeObjectURL(element.href);
 };
 
-exports.dom = (html) => {
-    const div = document.createElement("div");
-    element.innerHTML = html;
-    return element.children[0];
+exports.dom = (element, innerHTML) => {
+    const el = document.createElement(element);
+    el.innerHTML = innerHTML;
+    return el;
+};
+
+exports.getDynamicElements = (dom) => {
+    const elements = dom.querySelectorAll("[x-id]");
+    const result = {};
+    elements.forEach((element) => (result[element.getAttribute("x-id")] = element));
+    return result;
 };
