@@ -1,7 +1,9 @@
 const fs = require("fs");
+const fsAsync = require("fs").promises;
 const zlib = require("zlib");
 const stores = require("./stores");
 const { FILE } = require("dns");
+const { promisify } = require("util");
 
 const STORE_KEYS = Object.keys(stores);
 exports.STORE_KEYS = STORE_KEYS;
@@ -24,6 +26,17 @@ function readJSON(file) {
     return JSON.parse(data);
 }
 exports.readJSON = readJSON;
+
+async function readJSONAsync(file) {
+    const gunzipAsync = promisify(zlib.gunzip);
+    const brotliDecompressAsync = promisify(zlib.brotliDecompress);
+
+    let data = await fsAsync.readFile(file);
+    if (file.endsWith(".gz")) data = await gunzipAsync(data);
+    if (file.endsWith(".br")) data = await brotliDecompressAsync(data);
+    return JSON.parse(data);
+}
+exports.readJSONAsync = readJSONAsync;
 
 function writeJSON(file, data, fileCompressor = false, spacer = 2, compressData = false) {
     if (compressData) data = compress(data);
@@ -228,7 +241,7 @@ exports.updateData = async function (dataDir, done) {
                     const rawDataFile = `${dataDir}/${store}-${today}.json`;
                     let storeItems;
                     if ("SKIP_FETCHING_STORE_DATA" in process.env && fs.existsSync(rawDataFile + "." + FILE_COMPRESSOR))
-                        storeItems = readJSON(rawDataFile + "." + FILE_COMPRESSOR);
+                        storeItems = await readJSONAsync(rawDataFile + "." + FILE_COMPRESSOR);
                     else {
                         storeItems = await stores[store].fetchData();
                         writeJSON(rawDataFile, storeItems, FILE_COMPRESSOR);

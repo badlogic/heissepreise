@@ -37,9 +37,7 @@ function scheduleFunction(hour, minute, second, func) {
     }, delay);
 }
 
-(async () => {
-    const dataDir = "data";
-
+function parseArguments() {
     const args = process.argv.slice(2);
     let port = process.env.PORT !== undefined && process.env.PORT != "" ? parseInt(process.env.PORT) : 3000;
     let liveReload = process.env.NODE_ENV === "development" || false;
@@ -62,6 +60,13 @@ function scheduleFunction(hour, minute, second, func) {
         }
     }
 
+    return { port, liveReload };
+}
+
+(async () => {
+    const dataDir = "data";
+    const { port, liveReload } = parseArguments();
+
     if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir);
     }
@@ -70,7 +75,7 @@ function scheduleFunction(hour, minute, second, func) {
     bundle.deleteDirectory(outputDir);
     fs.mkdirSync(outputDir);
     fs.mkdirSync(outputDir + "/data");
-    bundle.bundle("site", outputDir, liveReload);
+    await bundle.bundle("site", outputDir, liveReload);
 
     analysis.migrateCompression(dataDir, ".json", ".json.br");
     analysis.migrateCompression(dataDir, ".json.gz", ".json.br");

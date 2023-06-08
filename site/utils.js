@@ -844,7 +844,7 @@ function showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endD
 
     if (sum && items.length > 0) {
         itemsToShow.push({
-            name: "Preissumme Warenkorb",
+            name: "Preissumme Gesamt",
             priceHistory: calculateOverallPriceChanges(items, todayOnly, startDate, endDate),
         });
     }
