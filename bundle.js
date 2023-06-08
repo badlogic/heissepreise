@@ -109,6 +109,7 @@ async function bundleJS(inputDir, outputDir, watch) {
         sourcemap: true,
         outdir: outputDir,
         logLevel: "debug",
+        minify: !watch,
     });
     if (!watch) {
         await buildContext.rebuild();
