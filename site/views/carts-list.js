@@ -5,7 +5,7 @@ class CartsList extends View {
     constructor() {
         super();
         this.innerHTML = /*html*/ `
-            <table>
+            <table class="w-full">
                 <thead>
                     <tr class="bg-primary text-left hidden md:table-row uppercase text-sm text-white">
                         <th class="px-2">Name</th>
