@@ -103,7 +103,8 @@ async function bundleCSS(inputFile, outputFile, watch = false) {
 async function bundleJS(inputDir, outputDir, watch) {
     let buildContext = await esbuild.context({
         entryPoints: {
-            "carts-new": `${inputDir}/carts-new.js`,
+            carts: `${inputDir}/carts.js`,
+            "changes-new": `${inputDir}/changes-new.js`,
         },
         bundle: true,
         sourcemap: true,

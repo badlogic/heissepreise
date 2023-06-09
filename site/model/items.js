@@ -1,4 +1,5 @@
 const { stores, STORE_KEYS } = require("./stores");
+const { Model } = require("./model");
 
 function decompress(compressedItems) {
     const items = [];
@@ -42,63 +43,83 @@ function decompress(compressedItems) {
     return items;
 }
 
-exports.items = [];
-exports.lookup = {};
-
-exports.load = async () => {
-    now = performance.now();
-    const compressedItemsPerStore = [];
-    for (const store of STORE_KEYS) {
-        compressedItemsPerStore.push(
-            new Promise(async (resolve) => {
-                const now = performance.now();
-                try {
-                    const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
-                    const json = await response.json();
-                    console.log(`Loading compressed items for ${store} took ${(performance.now() - now) / 1000} secs`);
-                    resolve(decompress(json));
-                } catch (e) {
-                    console.error(e);
-                    console.log(
-                        `Error while loading compressed items for ${store}. It took ${(performance.now() - now) / 1000} secs, continueing...`
-                    );
-                    resolve([]);
-                }
-            })
-        );
+class Items extends Model {
+    constructor() {
+        super();
+        this._items = [];
+        this._filteredItems = [];
+        this._lookup = {};
     }
-    const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
-    console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
 
-    const lookup = {};
-    now = performance.now();
-    for (const item of items) {
-        lookup[item.store + item.id] = item;
-        item.search = item.name + " " + item.quantity + " " + item.unit;
-        item.search = item.search.toLowerCase().replace(",", ".");
+    get items() {
+        return this._items;
+    }
 
-        item.numPrices = item.priceHistory.length;
-        item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
-        item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
-        item.date = item.priceHistory[0].date;
-        let highestPriceBefore = -1;
-        let lowestPriceBefore = 100000;
-        for (let i = 1; i < item.priceHistory.length; i++) {
-            const price = item.priceHistory[i];
-            if (i < 10) {
-                item["price" + i] = price.price;
-                item["date" + i] = price.date;
-            }
-            highestPriceBefore = Math.max(highestPriceBefore, price.price);
-            lowestPriceBefore = Math.min(lowestPriceBefore, price.price);
+    get filteredItems() {
+        return this._filteredItems;
+    }
+
+    get lookup() {
+        return this._lookup;
+    }
+
+    async load() {
+        let now = performance.now();
+        const compressedItemsPerStore = [];
+        for (const store of STORE_KEYS) {
+            compressedItemsPerStore.push(
+                new Promise(async (resolve) => {
+                    const now = performance.now();
+                    try {
+                        const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
+                        const json = await response.json();
+                        console.log(`Loading compressed items for ${store} took ${(performance.now() - now) / 1000} secs`);
+                        resolve(decompress(json));
+                    } catch (e) {
+                        console.error(e);
+                        console.log(
+                            `Error while loading compressed items for ${store}. It took ${(performance.now() - now) / 1000} secs, continueing...`
+                        );
+                        resolve([]);
+                    }
+                })
+            );
         }
-        if (highestPriceBefore == -1) highestPriceBefore = item.price;
-        if (lowestPriceBefore == 100000) lowestPriceBefore = item.price;
-        item.highestBefore = highestPriceBefore;
-        item.lowestBefore = lowestPriceBefore;
-    }
-    console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
+        const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
+        console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
 
-    exports.items = items;
-    exports.lookup = lookup;
-};
+        const lookup = {};
+        now = performance.now();
+        for (const item of items) {
+            lookup[item.store + item.id] = item;
+            item.search = item.name + " " + item.quantity + " " + item.unit;
+            item.search = item.search.toLowerCase().replace(",", ".");
+
+            item.numPrices = item.priceHistory.length;
+            item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
+            item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
+            item.date = item.priceHistory[0].date;
+            let highestPriceBefore = -1;
+            let lowestPriceBefore = 100000;
+            for (let i = 1; i < item.priceHistory.length; i++) {
+                const price = item.priceHistory[i];
+                if (i < 10) {
+                    item["price" + i] = price.price;
+                    item["date" + i] = price.date;
+                }
+                highestPriceBefore = Math.max(highestPriceBefore, price.price);
+                lowestPriceBefore = Math.min(lowestPriceBefore, price.price);
+            }
+            if (highestPriceBefore == -1) highestPriceBefore = item.price;
+            if (lowestPriceBefore == 100000) lowestPriceBefore = item.price;
+            item.highestBefore = highestPriceBefore;
+            item.lowestBefore = lowestPriceBefore;
+        }
+        console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
+
+        this._items = items;
+        this._lookup = lookup;
+    }
+}
+
+exports.Items = Items;

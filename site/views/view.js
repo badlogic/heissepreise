@@ -2,7 +2,7 @@ class View extends HTMLElement {
     constructor() {
         super();
         this._model = null;
-        this._listener = (model) => this.render(model);
+        this._listener = () => this.render();
     }
 
     set model(model) {
@@ -12,7 +12,7 @@ class View extends HTMLElement {
         this.render(model);
     }
 
-    render(model) {}
+    render() {}
 }
 
 exports.View = View;

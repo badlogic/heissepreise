@@ -13,7 +13,7 @@ class Model {
     }
 
     notify() {
-        for (const listener of this._listeners) listener(this);
+        for (const listener of this._listeners) listener();
     }
 }
 

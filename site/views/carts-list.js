@@ -55,7 +55,8 @@ class CartsList extends View {
         );
     }
 
-    render(model) {
+    render() {
+        const model = this._model;
         this._tableBody.innerHTML = "";
 
         for (const cart of model.carts) {
