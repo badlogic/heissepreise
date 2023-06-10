@@ -150,8 +150,22 @@ class ItemsFilter extends View {
             const decreased = elements.priceDecreased.checked;
             filteredItems = filteredItems.filter((item) => {
                 if (item.priceHistory.length == 1) return false;
-                if (increased && item.priceHistory[0].price > item.priceHistory[1].price) return true;
-                if (decreased && item.priceHistory[0].price < item.priceHistory[1].price) return true;
+                if (this._filterByPriceChanges && elements.priceChangesToday.checked) {
+                    const today = elements.priceChangesDate.value;
+                    for (let i = 0; i < item.priceHistory.length; i++) {
+                        if (item.priceHistory[i].date == today && i + 1 < item.priceHistory.length) {
+                            if (increased && item.priceHistory[i].price > item.priceHistory[i + 1].price) {
+                                return true;
+                            }
+                            if (decreased && item.priceHistory[i].price < item.priceHistory[i + 1].price) {
+                                return true;
+                            }
+                        }
+                    }
+                } else {
+                    if (increased && item.priceHistory[0].price > item.priceHistory[1].price) return true;
+                    if (decreased && item.priceHistory[0].price < item.priceHistory[1].price) return true;
+                }
                 return false;
             });
         }
@@ -182,11 +196,11 @@ class ItemsFilter extends View {
             filteredItems = queryItems(query, filteredItems);
         }
 
+        console.log("Filtering items took " + (performance.now() - now) / 1000 + " secs");
+
         this.model.removeListener(this._listener);
         this.model.filteredItems = filteredItems;
         this.model.addListener(this._listener);
-
-        console.log("Filtering items took " + (performance.now() - now) / 1000 + " secs");
     }
 
     render() {

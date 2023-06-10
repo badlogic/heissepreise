@@ -53,6 +53,10 @@ if (typeof window !== "undefined") {
     setupLiveEdit();
 }
 
+exports.isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
+
 exports.today = () => {
     const currentDate = new Date();
     const year = currentDate.getFullYear();

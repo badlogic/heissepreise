@@ -1,4 +1,5 @@
-const { downloadJSON, dom, getDynamicElements, onVisibleOnce } = require("../misc");
+const { downloadJSON, dom, getDynamicElements, onVisibleOnce, isMobile } = require("../misc");
+const { vectorizeItems, similaritySortItems } = require("../knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
 
@@ -20,12 +21,13 @@ class ItemsList extends View {
                 </div>
                 <label>
                     Sortieren
-                    <select x-id="sort">
+                    <select x-id="sort" x-change>
                         <option value="price-asc">Preis aufsteigend</option>
                         <option value="price-desc">Preis absteigend</option>
                         <option value="quantity-asc">Menge aufsteigend</option>
                         <option value="quantity-desc">Menge absteigend</option>
-                        <option value="name-similarity">Namensähnlichkeit</option>
+                        <option value="chain-and-name">Kette &amp; Name</option>
+                        <option value="name-similarity" x-id="nameSimilarity" disabled>Namensähnlichkeit</option>
                     </select>
                 </label>
             </div>
@@ -34,7 +36,7 @@ class ItemsList extends View {
                     <tr class="bg-primary text-white hidden md:table-row uppercase text-sm">
                         <th class="text-center">Kette</th>
                         <th>Name</th>
-                        <th class="cursor-pointer">Preis <span x-id="expandPrices">+</span></th>
+                        <th x-id="expandPriceHistories" class="cursor-pointer">Preis +</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -63,6 +65,65 @@ class ItemsList extends View {
             </td>
         `
         );
+
+        const elements = this.elements;
+
+        elements.json.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (!this.model) return;
+            downloadJSON("items.json", this.model.filteredItems);
+        });
+
+        // Cache in a field, so we don't have to call this.elements in each renderItem() call.
+        this._showAllPriceHistories = false;
+        elements.expandPriceHistories.addEventListener("click", () => {
+            const showAll = (this._showAllPriceHistories = !this._showAllPriceHistories);
+            elements.expandPriceHistories.innerText = showAll ? "Preis -" : "Preis +";
+            elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
+        });
+
+        this.addEventListener("change", () => {
+            this.render();
+        });
+    }
+
+    sort(items) {
+        const sortType = this.elements.sort.value;
+        if (sortType == "price-asc") {
+            items.sort((a, b) => a.price - b.price);
+        } else if (sortType == "price-desc") {
+            items.sort((a, b) => b.price - a.price);
+        } else if (sortType == "quantity-asc") {
+            items.sort((a, b) => {
+                if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
+                return a.quantity - b.quantity;
+            });
+        } else if (sortType == "quantity-desc") {
+            items.sort((a, b) => {
+                if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
+                return b.quantity - a.quantity;
+            });
+        } else if (sortType == "chain-and-name") {
+            items.sort((a, b) => {
+                if (a.store < b.store) {
+                    return -1;
+                } else if (a.store > b.store) {
+                    return 1;
+                }
+
+                if (a.name < b.name) {
+                    return -1;
+                } else if (a.name > b.name) {
+                    return 1;
+                }
+
+                return 0;
+            });
+        } else {
+            vectorizeItems(items);
+            items = similaritySortItems(items);
+        }
+        return items;
     }
 
     renderItem(item) {
@@ -139,12 +200,20 @@ class ItemsList extends View {
                 }
             });
         });
+        if (this._showAllPriceHistories) elements.priceHistory.classList.remove("hidden");
         return itemDom;
     }
 
     render() {
-        const items = this.model.filteredItems;
         const elements = this.elements;
+        if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1000)) {
+            elements.nameSimilarity.removeAttribute("disabled");
+        } else {
+            elements.nameSimilarity.setAttribute("disabled", "true");
+            if (elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
+        }
+
+        const items = this.sort([...this.model.filteredItems]);
         elements.numItems.innerHTML =
             "<strong>Resultate:</strong> " + items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
         const tableBody = elements.tableBody;
