@@ -11,26 +11,25 @@ class CartsList extends View {
                         <th class="px-2">Name</th>
                         <th class="px-2">Produkte</th>
                         <th class="px-2">Preis</th>
-                        <th class="px-2">Aktionen</th>
+                        <th class="px-2"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody x-id="tableBody">
                 </tbody>
             </table>
         `;
-        this._tableBody = this.querySelector("tbody");
 
         this._cartsListItemTemplate = dom(
             "tr",
             /*html*/ `
-            <td class="px-2 col-span-3" data-label="Name">
+            <td class="px-2 col-span-3">
                 <a x-id="name" class="hover:underline"></a>
             </td>
-            <td class="px-2" data-label="Produkte">
+            <td class="px-2">
                 <span class="md:hidden text-sm">Produkte: </span>
                 <span x-id="numProducts"></span>
             </td>
-            <td class="px-2 col-span-2" data-label="Preis">
+            <td class="px-2 col-span-2">
                 <span class="md:hidden text-sm">Preisänderungen: </span>
                 <span x-id="price"></span>
             </td>
@@ -43,21 +42,12 @@ class CartsList extends View {
             </td>
         `
         );
-        this._cartsListItemTemplate.classList.add(
-            "grid",
-            "grid-cols-3",
-            "hover:bg-gray-100",
-            "border",
-            "border-gray-200",
-            "rounded-md",
-            "p-2",
-            "md:table-row"
-        );
+        this._cartsListItemTemplate.setAttribute("class", "grid grid-cols-3 hover:bg-gray-100 border border-gray-200 rounded-md p-2 md:table-row");
     }
 
     render() {
         const model = this._model;
-        this._tableBody.innerHTML = "";
+        const tableBody = this.elements.tableBody;
 
         for (const cart of model.carts) {
             let oldPrice = 0;
@@ -79,7 +69,7 @@ class CartsList extends View {
             elements.price.innerText = `${currPrice.toFixed(2)} ${(increase > 0 ? "+" : "") + increase + "%"}`;
             elements.price.style.color = currPrice > oldPrice ? "red" : "green";
             elements.share.href = shareLink;
-            elements.json.addEventListener("click", () => {
+            elements.json.addEventListener("click", (event) => {
                 event.preventDefault();
                 downloadJSON(cart.name + ".json", cart);
             });
@@ -88,7 +78,7 @@ class CartsList extends View {
             } else {
                 elements.delete.addEventListener("click", () => model.remove(cart.name));
             }
-            this._tableBody.append(cartListItem);
+            tableBody.append(cartListItem);
         }
     }
 }
