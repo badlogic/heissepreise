@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/badlogic/heissepreise#readme",
   "dependencies": {
+    "alasql": "^4.0.4",
     "axios": "^1.4.0",
     "chokidar": "^3.5.3",
     "compression": "^1.7.4",

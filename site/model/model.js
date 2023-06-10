@@ -12,8 +12,10 @@ class Model {
         if (index != -1) this._listeners.splice(index, 1);
     }
 
-    notify() {
-        for (const listener of this._listeners) listener();
+    notify(exclude) {
+        for (const listener of this._listeners) {
+            if (listener != exclude) listener();
+        }
     }
 }
 

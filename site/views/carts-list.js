@@ -19,7 +19,7 @@ class CartsList extends View {
             </table>
         `;
 
-        this._cartsListItemTemplate = dom(
+        this._cartTemplate = dom(
             "tr",
             /*html*/ `
             <td class="px-2 col-span-3">
@@ -42,7 +42,7 @@ class CartsList extends View {
             </td>
         `
         );
-        this._cartsListItemTemplate.setAttribute("class", "grid grid-cols-3 hover:bg-gray-100 border border-gray-200 rounded-md p-2 md:table-row");
+        this._cartTemplate.setAttribute("class", "grid grid-cols-3 hover:bg-gray-100 border border-gray-200 rounded-md p-2 md:table-row");
     }
 
     render() {
@@ -61,7 +61,7 @@ class CartsList extends View {
             const increase = oldPrice != 0 ? Math.round(((currPrice - oldPrice) / oldPrice) * 100) : 0;
             const cartUrl = `cart.html?name=${encodeURIComponent(cart.name)}`;
 
-            const cartListItem = this._cartsListItemTemplate.cloneNode(true);
+            const cartListItem = this._cartTemplate.cloneNode(true);
             const elements = getDynamicElements(cartListItem);
             elements.name.href = cartUrl;
             elements.name.innerText = cart.name;

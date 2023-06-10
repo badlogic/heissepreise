@@ -83,7 +83,19 @@ class View extends HTMLElement {
                 element.addEventListener("click", handler);
             }
             if (element.hasAttribute("x-input")) {
-                element.addEventListener("click", handler);
+                element.addEventListener("input", handler);
+            }
+            if (element.hasAttribute("x-input-debounce")) {
+                const DEBOUNCE_MS = 50;
+                let timeoutId = 0;
+                const debounceHandler = (event) => {
+                    event.stopPropagation();
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        this.fireChangeEvent();
+                    }, DEBOUNCE_MS);
+                };
+                element.addEventListener("input", debounceHandler);
             }
         }
     }

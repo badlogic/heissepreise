@@ -59,6 +59,11 @@ class Items extends Model {
         return this._filteredItems;
     }
 
+    set filteredItems(newItems) {
+        this._filteredItems = newItems;
+        this.notify();
+    }
+
     get lookup() {
         return this._lookup;
     }
@@ -115,6 +120,23 @@ class Items extends Model {
             item.highestBefore = highestPriceBefore;
             item.lowestBefore = lowestPriceBefore;
         }
+
+        items.sort((a, b) => {
+            if (a.store < b.store) {
+                return -1;
+            } else if (a.store > b.store) {
+                return 1;
+            }
+
+            if (a.name < b.name) {
+                return -1;
+            } else if (a.name > b.name) {
+                return 1;
+            }
+
+            return 0;
+        });
+
         console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
 
         this._items = items;

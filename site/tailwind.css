@@ -181,7 +181,6 @@ thead > tr {
     @apply p-4;
     @apply max-w-4xl;
     @apply mx-auto;
-    @apply md:mb-12;
     @apply md:mt-6;
     @apply block;
 }
