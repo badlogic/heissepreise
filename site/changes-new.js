@@ -3,5 +3,9 @@ require("./views");
 
 (async () => {
     await model.load();
-    document.querySelector("items-filter").model(model.items);
+    const itemsFilter = document.querySelector("items-filter");
+    itemsFilter.model = model.items;
+    itemsFilter.addEventListener("change", (event) => {
+        console.log("Filter changed: " + event.target.getAttribute("x-id"));
+    });
 })();

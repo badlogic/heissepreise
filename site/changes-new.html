@@ -2,9 +2,8 @@
 
 <div class="w-full relative px-4 flex-1">
     <h1 class="text-2xl font-bold pb-2 pt-8 text-center">Preisänderungen</h1>
-    <items-filter class="bg-stone-200 rounded-xl p-4 max-w-4xl mx-auto md:mb-12 md:mt-6"></items-filter>
-    <div class="px-4 py-2 my-4 text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100" id="numresults"></div>
-    <table id="result" class="hidden w-full"></table>
+    <items-filter x-id="items-filter" pricechanges pricedirection stores placeholder="Filtern... (mind. 3 Zeichen)"></items-filter>
+    <items-list></items-list>
 </div>
 
 <script src="changes-new.js"></script>
