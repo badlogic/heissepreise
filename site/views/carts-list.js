@@ -1,4 +1,4 @@
-const { downloadJSON, dom, getDynamicElements } = require("../misc");
+const { downloadJSON, dom } = require("../misc");
 const { View } = require("./view");
 
 class CartsList extends View {
@@ -62,7 +62,7 @@ class CartsList extends View {
             const cartUrl = `cart.html?name=${encodeURIComponent(cart.name)}`;
 
             const cartListItem = this._cartTemplate.cloneNode(true);
-            const elements = getDynamicElements(cartListItem);
+            const elements = View.elements(cartListItem);
             elements.name.href = cartUrl;
             elements.name.innerText = cart.name;
             elements.numProducts.innerText = cart.items.length;

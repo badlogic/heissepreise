@@ -6,11 +6,34 @@ class View extends HTMLElement {
         this._disableChangeEvent = false;
     }
 
-    get elements() {
-        const elements = this.querySelectorAll("[x-id]");
+    static traverse(element, parents, filter, childrenProcessed) {
+        if (!element) return;
+
+        if (element.getAttribute("x-id")) {
+            if (filter(parents, element)) parents.push(element);
+            else return;
+        }
+
+        const childNodes = element.childNodes;
+        for (let i = 0; i < childNodes.length; i++) {
+            const child = childNodes[i];
+            if (child.nodeType === Node.ELEMENT_NODE) {
+                View.traverse(child, parents, filter, childrenProcessed);
+            }
+        }
+        if (parents.length > 0) parents.pop();
+        childrenProcessed(parents, element);
+    }
+
+    static elements(view) {
+        const elements = view.querySelectorAll("[x-id]");
         const result = {};
         elements.forEach((element) => (result[element.getAttribute("x-id")] = element));
         return result;
+    }
+
+    get elements() {
+        return View.elements(this);
     }
 
     set model(model) {
@@ -76,14 +99,18 @@ class View extends HTMLElement {
         const elements = this.elements;
         for (const key of Object.keys(elements)) {
             const element = elements[key];
+            if (element._handlerSet) continue;
             if (element.hasAttribute("x-change")) {
                 element.addEventListener("change", handler);
+                element._handlerSet = true;
             }
             if (element.hasAttribute("x-click")) {
                 element.addEventListener("click", handler);
+                element._handlerSet = true;
             }
             if (element.hasAttribute("x-input")) {
                 element.addEventListener("input", handler);
+                element._handlerSet = true;
             }
             if (element.hasAttribute("x-input-debounce")) {
                 const DEBOUNCE_MS = 50;
@@ -96,6 +123,7 @@ class View extends HTMLElement {
                     }, DEBOUNCE_MS);
                 };
                 element.addEventListener("input", debounceHandler);
+                element._handlerSet = true;
             }
         }
     }

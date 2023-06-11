@@ -16,7 +16,7 @@ class ItemsFilter extends View {
         const hidePriceDirection = this._filterByPriceDirection ? "" : "hidden";
         const hideStores = this._filterByStores ? "" : "hidden";
         const hideMisc = this._filterByMisc ? "" : "hidden";
-        const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen... (mind. 3 Zeichen)";
+        const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen...";
 
         this.innerHTML = /*html*/ `
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
@@ -107,6 +107,26 @@ class ItemsFilter extends View {
         this.addEventListener("change", () => {
             this.filter();
         });
+
+        let stateParents = [this];
+        View.traverse(
+            this,
+            [],
+            (parents, element) => {
+                if (element.hasAttribute("x-state")) {
+                    console.log(
+                        (stateParents.length > 0 ? stateParents.map((p) => p.getAttribute("x-id")).join(" -> ") + " -> " : "") +
+                            element.getAttribute("x-id")
+                    );
+                    stateParents.push(element);
+                }
+                return true;
+            },
+            (parents, element) => {
+                if (element.hasAttribute("x-state")) stateParents.pop();
+            }
+        );
+        console.log(this.state);
     }
 
     filter() {

@@ -1,4 +1,4 @@
-const { downloadJSON, dom, getDynamicElements, onVisibleOnce, isMobile } = require("../misc");
+const { downloadJSON, dom, onVisibleOnce, isMobile } = require("../misc");
 const { vectorizeItems, similaritySortItems } = require("../knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
@@ -170,7 +170,7 @@ class ItemsList extends View {
             "class",
             `item group ${stores[item.store]?.color} ${percentageChange > 0 ? "increased" : percentageChange < 0 ? "decreased" : "neutral"}`
         );
-        const elements = getDynamicElements(itemDom);
+        const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
         elements.name.href = item.url;
         elements.name.innerText = item.name;

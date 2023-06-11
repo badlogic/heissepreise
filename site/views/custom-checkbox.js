@@ -1,4 +1,4 @@
-const { dom, getDynamicElements } = require("../misc");
+const { dom } = require("../misc");
 const { View } = require("./view");
 
 class CustomCheckbox extends View {
@@ -17,7 +17,7 @@ class CustomCheckbox extends View {
             </label>
         `;
         this.classList.add("customcheckbox");
-        this._checkbox = getDynamicElements(this).checkbox;
+        this._checkbox = View.elements(this).checkbox;
         this.setupEventHandlers();
     }
 

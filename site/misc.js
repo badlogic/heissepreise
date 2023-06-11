@@ -89,20 +89,6 @@ exports.dom = (element, innerHTML) => {
     return el;
 };
 
-/**
- * Searches all children with attribute `x-id` and returns them
- * in an object under keys equal to the `x-id` value.
- *
- * @param {HTMLElement} dom
- * @returns Object storing each child under a key equal to its `x-id`.
- */
-exports.getDynamicElements = (dom) => {
-    const elements = dom.querySelectorAll("[x-id]");
-    const result = {};
-    elements.forEach((element) => (result[element.getAttribute("x-id")] = element));
-    return result;
-};
-
 exports.getBooleanAttribute = (element, name) => {
     return element.hasAttribute(name) && (element.getAttribute(name).length == 0 || element.getAttribute(name) === "true");
 };
