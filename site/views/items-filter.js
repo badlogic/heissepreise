@@ -1,4 +1,4 @@
-const { today, parseNumber, dom, getBooleanAttribute, queryItems } = require("../misc");
+const { today, parseNumber, dom, getBooleanAttribute, queryItems, log, deltaTime } = require("../misc");
 const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
 const { View } = require("./view");
 
@@ -19,7 +19,7 @@ class ItemsFilter extends View {
         const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen...";
 
         this.innerHTML = /*html*/ `
-            <input x-id="query" x-state x-input class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+            <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
 
             <div x-id="stores" class="flex justify-center gap-2 flex-wrap mt-4 ${hideStores}">
                 <custom-checkbox x-id="allStores" label="Alle" checked></custom-checkbox>
@@ -70,7 +70,7 @@ class ItemsFilter extends View {
 
         const elements = this.elements;
 
-        elements.query.addEventListener("input", (event) => {
+        elements.query.addEventListener("input", () => {
             let query = elements.query.value.trim();
             if (query.length > 0 && query.charAt(0) == "!") {
                 elements.stores.classList.add("hidden");
@@ -81,22 +81,19 @@ class ItemsFilter extends View {
             }
         });
 
-        elements.allStores.addEventListener("change", (event) => {
-            event.stopPropagation();
+        elements.allStores.addEventListener("change", () => {
             const checked = elements.allStores.checked;
             STORE_KEYS.forEach((store) => (elements[store].checked = checked));
             this.fireChangeEvent();
         });
 
-        elements.priceChangesToday.addEventListener("change", (event) => {
-            event.stopPropagation();
+        elements.priceChangesToday.addEventListener("change", () => {
             if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
             else elements.priceDirection.classList.add("hidden");
             this.fireChangeEvent();
         });
 
-        elements.priceChangesSinceLast.addEventListener("change", (event) => {
-            event.stopPropagation();
+        elements.priceChangesSinceLast.addEventListener("change", () => {
             if (elements.priceChangesSinceLast.checked) elements.priceDirection.classList.add("hidden");
             else elements.priceDirection.classList.remove("hidden");
             this.fireChangeEvent();
@@ -104,7 +101,7 @@ class ItemsFilter extends View {
 
         this.setupEventHandlers();
 
-        this.addEventListener("x-change", (event) => {
+        this.addEventListener("x-change", () => {
             this.filter();
         });
     }
@@ -112,7 +109,7 @@ class ItemsFilter extends View {
     filter() {
         if (!this.model) return;
 
-        const now = performance.now();
+        const start = performance.now();
         const elements = this.elements;
         this.model.totalItems = this.model.items.length;
         let filteredItems = [...this.model.items];
@@ -193,7 +190,7 @@ class ItemsFilter extends View {
         }
 
         if (query.length > 0) {
-            filteredItems = queryItems(query, filteredItems);
+            filteredItems = queryItems(query, filteredItems, elements.exact.checked);
         }
 
         if (this._lastQuery != query) {
@@ -201,7 +198,7 @@ class ItemsFilter extends View {
         }
         this._lastQuery = query;
 
-        console.log("Filtering items took " + (performance.now() - now) / 1000 + " secs");
+        log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs`);
 
         this.model.removeListener(this._listener);
         this.model.filteredItems = filteredItems;
@@ -209,7 +206,7 @@ class ItemsFilter extends View {
     }
 
     render() {
-        const now = performance.now();
+        const start = performance.now();
         const elements = this.elements;
         const items = this.model.items;
         const dates = {};
@@ -236,7 +233,7 @@ class ItemsFilter extends View {
             priceChangesDates.append(dateDom);
         }
 
-        console.log("Rendering items filter took " + (performance.now() - now) / 1000);
+        log(`ItemsFilter - rendering items filter took ${deltaTime(start)}`);
     }
 
     get checkedStores() {

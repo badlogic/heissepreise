@@ -38,8 +38,6 @@ if (typeof window !== "undefined") {
         script.onload = () => {
             let lastChangeTimestamp = null;
             let socket = io({ transports: ["websocket"] });
-            socket.on("connect", () => console.log("Connected"));
-            socket.on("disconnect", () => console.log("Disconnected"));
             socket.on("message", (timestamp) => {
                 if (lastChangeTimestamp != timestamp) {
                     setTimeout(() => location.reload(), 100);
@@ -87,6 +85,12 @@ exports.dom = (element, innerHTML) => {
     const el = document.createElement(element);
     el.innerHTML = innerHTML;
     return el;
+};
+
+exports.getQueryParameter = (name) => {
+    const url = new URL(window.location.href);
+    const params = url.searchParams.getAll(name);
+    return params.length > 1 ? params : params?.[0];
 };
 
 exports.getBooleanAttribute = (element, name) => {
@@ -219,4 +223,17 @@ exports.onVisibleOnce = (target, callback) => {
         });
     });
     observer.observe(target);
+};
+
+exports.log = (message) => {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+    console.log(`${hours}:${minutes}:${seconds}: ${message}`);
+};
+
+exports.deltaTime = (start) => {
+    return (performance.now() - start) / 1000;
 };

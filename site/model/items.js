@@ -1,3 +1,4 @@
+const { deltaTime, log } = require("../misc");
 const { stores, STORE_KEYS } = require("./stores");
 const { Model } = require("./model");
 
@@ -69,32 +70,29 @@ class Items extends Model {
     }
 
     async load() {
-        let now = performance.now();
+        let start = performance.now();
         const compressedItemsPerStore = [];
         for (const store of STORE_KEYS) {
             compressedItemsPerStore.push(
                 new Promise(async (resolve) => {
-                    const now = performance.now();
+                    const start = performance.now();
                     try {
                         const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
                         const json = await response.json();
-                        console.log(`Loading compressed items for ${store} took ${(performance.now() - now) / 1000} secs`);
+                        log(`Items - loading compressed items for ${store} took ${deltaTime(start)} secs`);
                         resolve(decompress(json));
                     } catch (e) {
-                        console.error(e);
-                        console.log(
-                            `Error while loading compressed items for ${store}. It took ${(performance.now() - now) / 1000} secs, continueing...`
-                        );
+                        log(`Items - error while loading compressed items for ${store} ${e.message}`);
                         resolve([]);
                     }
                 })
             );
         }
         const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
-        console.log("Loading compressed items in parallel took " + (performance.now() - now) / 1000 + " secs");
+        log(`Items - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
 
         const lookup = {};
-        now = performance.now();
+        start = performance.now();
         for (const item of items) {
             lookup[item.store + item.id] = item;
             item.search = item.name + " " + item.quantity + " " + item.unit;
@@ -137,7 +135,7 @@ class Items extends Model {
             return 0;
         });
 
-        console.log("Processing items took " + (performance.now() - now) / 1000 + " secs");
+        log(`Items - processing ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
 
         this._items = items;
         this._lookup = lookup;

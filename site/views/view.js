@@ -1,4 +1,4 @@
-const { getBooleanAttribute } = require("../misc");
+const { getBooleanAttribute, log } = require("../misc");
 
 class View extends HTMLElement {
     constructor() {
@@ -63,20 +63,38 @@ class View extends HTMLElement {
         return this._model;
     }
 
+    static getStateProperty(element) {
+        if (element instanceof HTMLInputElement) {
+            if (element.type === "checkbox" || element.type === "radio") {
+                return "checked";
+            } else {
+                return "value";
+            }
+        } else if (element instanceof HTMLOptionElement) {
+            return "selected";
+        } else if (element instanceof HTMLTextAreaElement || element instanceof HTMLSelectElement) {
+            return "value";
+        } else if (element.localName === "custom-checkbox") {
+            return "checked";
+        } else {
+            return null;
+        }
+    }
+
     get state() {
         const elements = this.elements;
-        const properties = ["checked", "value"];
         const state = {};
         for (const key of Object.keys(elements)) {
             const element = elements[key];
             if (!element.hasAttribute("x-state")) continue;
-            const elementState = {};
-            for (const property of properties) {
-                if (property in element) {
-                    elementState[property] = element[property];
-                }
+            const property = View.getStateProperty(element);
+            if (property == null) {
+                log(`View.state() - Unknown state property for element ${element.getAttribute("x-id")} in ${this.localName}`);
+                continue;
             }
-            state[key] = elementState;
+            if (property in element) {
+                state[key] = element[property];
+            }
         }
         return state;
     }
@@ -84,20 +102,12 @@ class View extends HTMLElement {
     set state(state) {
         const elements = this.elements;
         this._disableChangeEvent = true;
-        for (const key of Object.keys(elements)) {
+        for (const key of Object.keys(state)) {
             const elementState = state[key];
-            if (elementState) {
-                const element = elements[key];
-                for (const property in elementState) {
-                    element[property] = elementState[property];
-                    if (element.localName === "input" && element.getAttribute("type") === "radio") {
-                        const changeEvent = new CustomEvent("x-change", {
-                            bubbles: true,
-                            cancelable: true,
-                        });
-                        element.dispatchEvent(changeEvent);
-                    }
-                }
+            const element = elements[key];
+            if (element) {
+                const property = View.getStateProperty(element);
+                element[property] = elementState;
             }
         }
         this._disableChangeEvent = false;

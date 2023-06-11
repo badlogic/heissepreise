@@ -105,7 +105,7 @@ async function bundleJS(inputDir, outputDir, watch) {
         entryPoints: {
             carts: `${inputDir}/carts.js`,
             "changes-new": `${inputDir}/changes-new.js`,
-            "index-new": `${inputDir}/index-new.js`,
+            index: `${inputDir}/index.js`,
         },
         bundle: true,
         sourcemap: true,

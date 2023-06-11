@@ -1,4 +1,4 @@
-const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute } = require("../misc");
+const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log } = require("../misc");
 const { vectorizeItems, similaritySortItems } = require("../knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
@@ -8,7 +8,6 @@ class ItemsList extends View {
     constructor() {
         super();
 
-        this._share = getBooleanAttribute(this, "share");
         this._json = getBooleanAttribute(this, "json");
         this._chart = getBooleanAttribute(this, "chart");
         this._remove = getBooleanAttribute(this, "remove");
@@ -21,15 +20,14 @@ class ItemsList extends View {
                     <div class="flex flex-col md:flex-row gap-2 items-center">
                         <span x-id="numItems"></span>
                         <span>
-                            <a x-id="shareLink" class="hidden querylink text-primary font-medium hover:underline">Teilen</a>
                             <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
                         </span>
-                        <custom-checkbox x-id="enableChart" label="Diagramm" class="${this._chart}"></custom-checkbox>
+                        <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${this._chart}"></custom-checkbox>
                     </div>
                 </div>
                 <label>
                     Sortieren
-                    <select x-id="sort" x-change>
+                    <select x-id="sort" x-change x-state>
                         <option value="price-asc">Preis aufsteigend</option>
                         <option value="price-desc">Preis absteigend</option>
                         <option value="quantity-asc">Menge aufsteigend</option>
@@ -71,10 +69,6 @@ class ItemsList extends View {
             else elements.chart.classList.add("hidden");
         });
 
-        elements.chart.addEventListener("change", (event) => {
-            event.stopPropagation();
-        });
-
         // Cache in a field, so we don't have to call this.elements in each renderItem() call.
         this._showAllPriceHistories = false;
         elements.expandPriceHistories.addEventListener("click", () => {
@@ -83,7 +77,9 @@ class ItemsList extends View {
             elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
         });
 
-        this.addEventListener("change", () => {
+        this.setupEventHandlers();
+
+        this.addEventListener("x-change", (event) => {
             this.render();
         });
     }
@@ -270,7 +266,6 @@ class ItemsList extends View {
                 document.activeElement.blur();
             });
             elements.chartCheckbox.addEventListener("change", (event) => {
-                event.stopPropagation();
                 item.chart = elements.chartCheckbox.checked;
                 this.elements.chart.render();
             });
@@ -280,12 +275,13 @@ class ItemsList extends View {
     }
 
     render() {
+        const start = performance.now();
         const elements = this.elements;
         if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1000)) {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {
             elements.nameSimilarity.setAttribute("disabled", "true");
-            if (elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
+            if (this.model.filteredItems.length != 0 && elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
         }
 
         const items = this.sort([...this.model.filteredItems]);
@@ -303,7 +299,6 @@ class ItemsList extends View {
         const tableBody = elements.tableBody;
         tableBody.innerHTML = "";
 
-        const now = performance.now();
         let i = 0;
         const batches = [];
         let batch = [];
@@ -329,7 +324,7 @@ class ItemsList extends View {
 
         renderBatch();
 
-        console.log("Rendering items list took " + ((performance.now() - now) / 1000).toFixed(4) + " secs");
+        log(`ItemsList - rendering ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
     }
 }
 
