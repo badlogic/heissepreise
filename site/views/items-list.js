@@ -264,6 +264,7 @@ class ItemsList extends View {
             elements.chartCheckbox.checked = item.chart;
             elements.chartCheckbox.addEventListener("change", (event) => {
                 item.chart = elements.chartCheckbox.checked;
+                if (item.chart && !this.elements.enableChart.checked) this.elements.enableChart.checked = true;
                 this.elements.chart.render();
                 this.fireChangeEvent();
             });

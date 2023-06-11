@@ -34,6 +34,7 @@ require("./views");
         for (const id of d.split(";")) {
             model.items.lookup[id].chart = true;
         }
+        itemsFilter.fireChangeEvent();
     }
     itemsFilter.filter();
 })();
