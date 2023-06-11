@@ -193,10 +193,10 @@ class ItemsFilter extends View {
             filteredItems = queryItems(query, filteredItems, elements.exact.checked);
         }
 
-        if (this._lastQuery != query) {
+        if (this.model.lastQuery != query) {
             filteredItems.forEach((item) => (item.chart = false));
         }
-        this._lastQuery = query;
+        this.model.lastQuery = query;
 
         log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs`);
 

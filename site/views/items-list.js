@@ -262,12 +262,10 @@ class ItemsList extends View {
 
         if (this._chart) {
             elements.chartCheckbox.checked = item.chart;
-            elements.chartCheckbox.addEventListener("click", () => {
-                document.activeElement.blur();
-            });
             elements.chartCheckbox.addEventListener("change", (event) => {
                 item.chart = elements.chartCheckbox.checked;
                 this.elements.chart.render();
+                this.fireChangeEvent();
             });
         }
         if (this._showAllPriceHistories) elements.priceHistory.classList.remove("hidden");
@@ -284,7 +282,13 @@ class ItemsList extends View {
             if (this.model.filteredItems.length != 0 && elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
         }
 
-        const items = this.sort([...this.model.filteredItems]);
+        const items = [...this.model.filteredItems];
+        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!") {
+            elements.sort.parentElement.classList.add("hidden");
+        } else {
+            elements.sort.parentElement.classList.remove("hidden");
+            this.sort(items);
+        }
         if (items.length == 0) {
             elements.chart.classList.add("hidden");
             elements.options.classList.add("hidden");
