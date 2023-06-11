@@ -48,6 +48,7 @@ class CartsList extends View {
     render() {
         const model = this._model;
         const tableBody = this.elements.tableBody;
+        tableBody.innerHTML = "";
 
         for (const cart of model.carts) {
             let oldPrice = 0;
