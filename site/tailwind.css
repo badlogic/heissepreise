@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-canvas.hidden {
+*.hidden {
     display: none !important;
 }
 
@@ -183,4 +183,8 @@ thead > tr {
     @apply mx-auto;
     @apply md:mt-6;
     @apply block;
+}
+
+.hidden {
+    display: none !important;
 }

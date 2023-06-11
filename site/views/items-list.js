@@ -1,11 +1,19 @@
-const { downloadJSON, dom, onVisibleOnce, isMobile } = require("../misc");
+const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute } = require("../misc");
 const { vectorizeItems, similaritySortItems } = require("../knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
+const { ItemsChart } = require("./items-chart");
 
 class ItemsList extends View {
     constructor() {
         super();
+
+        this._share = getBooleanAttribute(this, "share");
+        this._json = getBooleanAttribute(this, "json");
+        this._chart = getBooleanAttribute(this, "chart");
+        this._remove = getBooleanAttribute(this, "remove");
+        this._remove = getBooleanAttribute(this, "add");
+        this._updown = getBooleanAttribute(this, "updown");
 
         this.innerHTML = /*html*/ `
             <div class="flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
@@ -13,10 +21,10 @@ class ItemsList extends View {
                     <div class="flex flex-col md:flex-row gap-2 items-center">
                         <span x-id="numItems"></span>
                         <span>
-                            <a x-id="shareLink" class="querylink text-primary font-medium hover:underline">Teilen</a>
-                            <a x-id="json" class="text-primary font-medium hover:underline" href="">JSON</a>
+                            <a x-id="shareLink" class="hidden querylink text-primary font-medium hover:underline">Teilen</a>
+                            <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
                         </span>
-                        <custom-checkbox x-id="chart" label="Diagramm"></custom-checkbox>
+                        <custom-checkbox x-id="enableChart" label="Diagramm" class="${this._chart}"></custom-checkbox>
                     </div>
                 </div>
                 <label>
@@ -31,6 +39,7 @@ class ItemsList extends View {
                     </select>
                 </label>
             </div>
+            <items-chart x-id="chart" class="hidden"></items-chart>
             <table class="rounded-b-xl overflow-hidden w-full text-left">
                 <thead>
                     <tr class="bg-primary text-white hidden md:table-row uppercase text-sm">
@@ -45,33 +54,25 @@ class ItemsList extends View {
             </table>
         `;
 
-        this._itemTemplate = dom(
-            "tr",
-            /*html*/ `
-            <td x-id="store" data-label="Kette"></td>
-            <td data-label="Name">
-                <div class="flex items-center">
-                    <a x-id="name" target="_blank" class="hover:underline" rel="noopener noreferrer nofollow" href=""></a>
-                    <small x-id="quantity" class="ml-auto"></small>
-                </div>
-                <table x-id="priceHistory" class="priceinfo hidden" aria-hidden="true">
-                </table>
-            </td>
-            <td data-label="Preis">
-                <span x-id="price"></span>
-                <span x-id="percentageChange"></span>
-                <span x-id="numPrices"></span>
-                <span class="chevron">▼</span>
-            </td>
-        `
-        );
-
         const elements = this.elements;
+
+        if (!this._share) elements.shareLink.classList.remove("hidden");
+        if (!this._json) elements.json.classList.remove("hidden");
+        if (!this._chart) elements.chart.classList.remove("hidden");
 
         elements.json.addEventListener("click", (event) => {
             event.preventDefault();
             if (!this.model) return;
-            downloadJSON("items.json", this.model.filteredItems);
+            this.download(this.model.filteredItems);
+        });
+
+        elements.enableChart.addEventListener("change", () => {
+            if (elements.enableChart.checked) elements.chart.classList.remove("hidden");
+            else elements.chart.classList.add("hidden");
+        });
+
+        elements.chart.addEventListener("change", (event) => {
+            event.stopPropagation();
         });
 
         // Cache in a field, so we don't have to call this.elements in each renderItem() call.
@@ -85,6 +86,34 @@ class ItemsList extends View {
         this.addEventListener("change", () => {
             this.render();
         });
+    }
+
+    set model(model) {
+        super.model = model;
+        this.elements.chart.model = model;
+    }
+
+    get model() {
+        return super.model;
+    }
+
+    download(items) {
+        const cleanedItems = [];
+        items.forEach((item) => {
+            cleanedItems.push({
+                store: item.store,
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                priceHistory: item.priceHistory,
+                isWeighted: item.isWeighted,
+                unit: item.unit,
+                quantity: item.quantity,
+                bio: item.bio,
+                url: item.url,
+            });
+        });
+        downloadJSON("items.json", cleanedItems);
     }
 
     sort(items) {
@@ -127,6 +156,39 @@ class ItemsList extends View {
     }
 
     renderItem(item) {
+        if (!this._itemTemplate) {
+            this._itemTemplate = dom(
+                "tr",
+                /*html*/ `
+                <td x-id="store" data-label="Kette"></td>
+                <td data-label="Name">
+                    <div class="flex items-center">
+                        <a x-id="name" target="_blank" class="hover:underline" rel="noopener noreferrer nofollow" href=""></a>
+                        <small x-id="quantity" class="ml-auto"></small>
+                    </div>
+                    <table x-id="priceHistory" class="priceinfo hidden" aria-hidden="true">
+                    </table>
+                </td>
+                <td data-label="Preis">
+                    <span x-id="price"></span>
+                    <span x-id="percentageChange"></span>
+                    <span x-id="numPrices"></span>
+                    <span class="chevron">▼</span>
+                </td>
+                <td class="action">
+                    <label x-id="chart" class="${this._chart ? "" : "hidden"}">
+                        <input x-id="chartCheckbox" type="checkbox" class="hidden peer">
+                        <span class="peer-checked:bg-blue-700 btn-action">📈</span>
+                    </label>
+                    <input x-id="add" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="+">
+                    <input x-id="remove" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="-">
+                    <input x-id="up" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▲">
+                    <input x-id="down" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▼">
+                </td>
+            `
+            );
+        }
+
         let quantity = item.quantity || "";
         let unit = item.unit || "";
         if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
@@ -170,6 +232,7 @@ class ItemsList extends View {
             "class",
             `item group ${stores[item.store]?.color} ${percentageChange > 0 ? "increased" : percentageChange < 0 ? "decreased" : "neutral"}`
         );
+        itemDom.setAttribute("x-notraverse", "true");
         const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
         elements.name.href = item.url;
@@ -200,6 +263,18 @@ class ItemsList extends View {
                 }
             });
         });
+
+        if (this._chart) {
+            elements.chartCheckbox.checked = item.chart;
+            elements.chartCheckbox.addEventListener("click", () => {
+                document.activeElement.blur();
+            });
+            elements.chartCheckbox.addEventListener("change", (event) => {
+                event.stopPropagation();
+                item.chart = elements.chartCheckbox.checked;
+                this.elements.chart.render();
+            });
+        }
         if (this._showAllPriceHistories) elements.priceHistory.classList.remove("hidden");
         return itemDom;
     }

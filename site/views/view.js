@@ -1,3 +1,5 @@
+const { getBooleanAttribute } = require("../misc");
+
 class View extends HTMLElement {
     constructor() {
         super();
@@ -26,9 +28,23 @@ class View extends HTMLElement {
     }
 
     static elements(view) {
-        const elements = view.querySelectorAll("[x-id]");
+        let elements = [...view.querySelectorAll("[x-id]")];
+        elements = elements.filter((el) => {
+            let parent = el.parentElement;
+            while (parent != view) {
+                if (parent instanceof View) return false;
+                if (getBooleanAttribute(parent, "x-notraverse")) return false;
+                parent = parent.parentElement;
+            }
+            return true;
+        });
         const result = {};
-        elements.forEach((element) => (result[element.getAttribute("x-id")] = element));
+        elements.forEach((element) => {
+            if (result[element.getAttribute("x-id")]) {
+                console.log(`Duplicate element x-id ${element.getAttribute("x-id")} in ${view.localName}`);
+            }
+            result[element.getAttribute("x-id")] = element;
+        });
         return result;
     }
 

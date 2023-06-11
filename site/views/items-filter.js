@@ -19,7 +19,7 @@ class ItemsFilter extends View {
         const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen...";
 
         this.innerHTML = /*html*/ `
-            <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+            <input x-id="query" x-state x-input class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
 
             <div x-id="stores" class="flex justify-center gap-2 flex-wrap mt-4 ${hideStores}">
                 <custom-checkbox x-id="allStores" label="Alle" checked></custom-checkbox>
@@ -104,29 +104,9 @@ class ItemsFilter extends View {
 
         this.setupEventHandlers();
 
-        this.addEventListener("change", () => {
+        this.addEventListener("change", (event) => {
             this.filter();
         });
-
-        let stateParents = [this];
-        View.traverse(
-            this,
-            [],
-            (parents, element) => {
-                if (element.hasAttribute("x-state")) {
-                    console.log(
-                        (stateParents.length > 0 ? stateParents.map((p) => p.getAttribute("x-id")).join(" -> ") + " -> " : "") +
-                            element.getAttribute("x-id")
-                    );
-                    stateParents.push(element);
-                }
-                return true;
-            },
-            (parents, element) => {
-                if (element.hasAttribute("x-state")) stateParents.pop();
-            }
-        );
-        console.log(this.state);
     }
 
     filter() {
@@ -215,6 +195,11 @@ class ItemsFilter extends View {
         if (query.length > 0) {
             filteredItems = queryItems(query, filteredItems);
         }
+
+        if (this._lastQuery != query) {
+            filteredItems.forEach((item) => (item.chart = false));
+        }
+        this._lastQuery = query;
 
         console.log("Filtering items took " + (performance.now() - now) / 1000 + " secs");
 
