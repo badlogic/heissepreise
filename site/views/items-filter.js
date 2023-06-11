@@ -104,7 +104,7 @@ class ItemsFilter extends View {
 
         this.setupEventHandlers();
 
-        this.addEventListener("change", (event) => {
+        this.addEventListener("x-change", (event) => {
             this.filter();
         });
     }

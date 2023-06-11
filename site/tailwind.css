@@ -185,6 +185,10 @@ thead > tr {
     @apply block;
 }
 
+.items-list {
+    @apply max-w-4xl;
+}
+
 .hidden {
     display: none !important;
 }

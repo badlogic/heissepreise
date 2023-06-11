@@ -16,7 +16,7 @@ class ItemsList extends View {
         this._updown = getBooleanAttribute(this, "updown");
 
         this.innerHTML = /*html*/ `
-            <div class="flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
+            <div x-id="options" class="hidden flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
                 <div>
                     <div class="flex flex-col md:flex-row gap-2 items-center">
                         <span x-id="numItems"></span>
@@ -40,9 +40,9 @@ class ItemsList extends View {
                 </label>
             </div>
             <items-chart x-id="chart" class="hidden"></items-chart>
-            <table class="rounded-b-xl overflow-hidden w-full text-left">
+            <table x-id="itemsTable" class="hidden rounded-b-xl overflow-hidden w-full text-left">
                 <thead>
-                    <tr class="bg-primary text-white hidden md:table-row uppercase text-sm">
+                    <tr class="bg-primary text-white md:table-row uppercase text-sm">
                         <th class="text-center">Kette</th>
                         <th>Name</th>
                         <th x-id="expandPriceHistories" class="cursor-pointer">Preis +</th>
@@ -56,9 +56,9 @@ class ItemsList extends View {
 
         const elements = this.elements;
 
-        if (!this._share) elements.shareLink.classList.remove("hidden");
-        if (!this._json) elements.json.classList.remove("hidden");
-        if (!this._chart) elements.chart.classList.remove("hidden");
+        if (this._share) elements.shareLink.classList.remove("hidden");
+        if (this._json) elements.json.classList.remove("hidden");
+        if (this._chart) elements.enableChart.classList.remove("hidden");
 
         elements.json.addEventListener("click", (event) => {
             event.preventDefault();
@@ -289,6 +289,15 @@ class ItemsList extends View {
         }
 
         const items = this.sort([...this.model.filteredItems]);
+        if (items.length == 0) {
+            elements.chart.classList.add("hidden");
+            elements.options.classList.add("hidden");
+            elements.itemsTable.classList.add("hidden");
+        } else {
+            if (elements.enableChart.checked) elements.chart.classList.remove("hidden");
+            elements.options.classList.remove("hidden");
+            elements.itemsTable.classList.remove("hidden");
+        }
         elements.numItems.innerHTML =
             "<strong>Resultate:</strong> " + items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
         const tableBody = elements.tableBody;

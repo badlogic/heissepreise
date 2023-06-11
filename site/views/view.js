@@ -91,7 +91,7 @@ class View extends HTMLElement {
                 for (const property in elementState) {
                     element[property] = elementState[property];
                     if (element.localName === "input" && element.getAttribute("type") === "radio") {
-                        const changeEvent = new CustomEvent("change", {
+                        const changeEvent = new CustomEvent("x-change", {
                             bubbles: true,
                             cancelable: true,
                         });
@@ -107,10 +107,7 @@ class View extends HTMLElement {
     render() {}
 
     setupEventHandlers() {
-        const handler = (event) => {
-            event.stopPropagation();
-            this.fireChangeEvent();
-        };
+        const handler = (event) => this.fireChangeEvent();
 
         const elements = this.elements;
         for (const key of Object.keys(elements)) {
@@ -132,7 +129,6 @@ class View extends HTMLElement {
                 const DEBOUNCE_MS = 50;
                 let timeoutId = 0;
                 const debounceHandler = (event) => {
-                    event.stopPropagation();
                     clearTimeout(timeoutId);
                     timeoutId = setTimeout(() => {
                         this.fireChangeEvent();
@@ -146,7 +142,7 @@ class View extends HTMLElement {
 
     fireChangeEvent() {
         if (this._disableChangeEvent) return;
-        const event = new CustomEvent("change", {
+        const event = new CustomEvent("x-change", {
             bubbles: true,
             cancelable: true,
         });
