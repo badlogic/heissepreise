@@ -49,9 +49,9 @@ async function load() {
 
     const filtersStore = document.querySelector("#filters-store");
     filtersStore.innerHTML = `
-        ${customCheckbox(`all`, "<strong>Alle</strong>", true, "gray", "gray")}
+        ${customCheckbox(`all`, "<strong>Alle</strong>", true, "gray")}
         ${STORE_KEYS.map((store) =>
-            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color, "gray")
+            customCheckbox(store, stores[store].name, stores[store].name.toLowerCase().endsWith("de") ? false : true, stores[store].color)
         ).join(" ")}
     `;
     filtersStore.querySelector("#all").addEventListener("change", () => {
@@ -61,8 +61,8 @@ async function load() {
     });
 
     document.querySelector("#filters-changes").innerHTML = `
-        ${customCheckbox(`increases`, "Teurer", true, "gray", "gray")}
-        ${customCheckbox(`decreases`, "Billiger", true, "gray", "gray")}
+        ${customCheckbox(`increases`, "Teurer", true, "gray")}
+        ${customCheckbox(`decreases`, "Billiger", true, "gray")}
     `;
 
     document.querySelectorAll("input").forEach((input) => {
@@ -131,7 +131,7 @@ function showResults(items) {
     if (changedItems.length == 0) return;
     const header = dom(
         "thead",
-        `<tr class="bg-primary text-left hidden md:table-row uppercase text-sm text-white">
+        `<tr>
             <th class="text-center">Kette</th>
             <th>Name</th>
             <th class="flex text-nowrap">

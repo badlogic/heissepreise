@@ -5,67 +5,11 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "restore",
-			"program": "${workspaceFolder}/restore",
-			"request": "launch",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
-			"type": "node"
-		},
-		{
-			"name": "stuff",
-			"program": "${workspaceFolder}/stuff.js",
-			"request": "launch",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
-			"type": "node"
-		},
-		{
-			"name": "analysis",
-			"program": "${workspaceFolder}/analysis.js",
-			"request": "launch",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
-			"type": "node"
-		},
-		{
 			"type": "pwa-chrome",
 			"request": "launch",
-			"name": "client",
-			"url": "http://localhost:3001",
-			"webRoot": "${workspaceFolder}/site"
-		},
-		{
-			"type": "pwa-chrome",
-			"request": "launch",
-			"name": "client2",
+			"name": "frontend",
 			"url": "http://localhost:3000",
-			"webRoot": "${workspaceFolder}/site"
+			"webRoot": "${workspaceFolder}/site/output"
 		},
-		{
-			"type": "node",
-			"request": "attach",
-			"name": "server",
-			"port": 9230,
-			"address": "localhost",
-			"localRoot": "${workspaceFolder}",
-			"remoteRoot": "/heisse-preise",
-			"protocol": "inspector",
-			"restart": true,
-			"continueOnAttach": true
-		},
-	],
-	"compounds": [
-		{
-			"name": "client-server",
-			"configurations": [
-				"client",
-				"server"
-			],
-			"stopAll": true
-		}
 	]
 }

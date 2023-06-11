@@ -300,10 +300,10 @@ function itemToDOM(item) {
         const increase = Math.round(((currPrice - lastPrice) / lastPrice) * 100);
 
         priceHistory += `<tr>
-            <td class="font-medium">${date}</td>
+            <td>${date}</td>
             <td>
                 <div style="width: ${priceBase * currPrice}px"
-                    class="text-xs md:text-sm text-white px-1 ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
+                    class="price-line ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
                     € ${currPrice}
                 </div>
             </td>
@@ -320,39 +320,33 @@ function itemToDOM(item) {
     const row = dom(
         "tr",
         `
-        <td class="md:text-center p-1 order-2 uppercase font-medium align-top" data-label="Kette">${item.store}</td>
-        <td class="font-bold md:font-normal text-gray-800 md:bg-white p-1 order-1 col-span-3 hover:bg-gray-100" data-label="Name">
-            <div class="flex items-center">${itemToStoreLink(item)} <small class="ml-auto">${
-            (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`
-        }</small></div>
-            <table class="priceinfo hidden text-xs md:text-sm mt-2" aria-hidden="true">
+        <td data-label="Kette">${item.store}</td>
+        <td data-label="Name">
+            <div class="flex items-center">
+                ${itemToStoreLink(item)}
+                <small class="ml-auto">
+                ${(item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`}
+                </small>
+            </div>
+            <table class="priceinfo hidden" aria-hidden="true">
                 ${priceHistory}
             </table>
         </td>
-        <td class="p-1 order-3 text-left whitespace-nowrap align-top z-20" data-label="Preis">
+        <td data-label="Preis">
             <span>€ ${Number(item.price).toFixed(2)}</span>
             <span class="${percentageChange > 0 ? "text-red-500" : percentageChange < 0 ? "text-green-500" : "hidden"}">
                 ${percentageChange > 0 ? "+" + percentageChange : percentageChange}%
             </span>
             ${item.priceHistory.length > 1 ? "(" + (item.priceHistory.length - 1) + ")" : ""}
-            <span class="text-sm cursor-pointer chevron">▼</span>
+            <span class="chevron">▼</span>
         </td>
     `
     );
 
     row.classList.add(
-        "bg-" + stores[item.store]?.color + "-200/50",
-        "grid",
-        "grid-cols-3",
-        "col-span-3",
-        "md:table-row",
-        "border-b",
-        "border-" + stores[item.store]?.color + "-200",
-        "rounded-xl",
-        "mb-3",
-        "border",
-        "overflow-hidden",
+        "item",
         "group",
+        stores[item.store]?.color,
         percentageChange > 0 ? "increased" : percentageChange < 0 ? "decreased" : "neutral"
     );
 
@@ -448,8 +442,6 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
             newTokens.push(token);
         }
     }
-    console.log(JSON.stringify(unitQueries, null, 2));
-    console.log(newTokens);
     tokens = newTokens;
 
     let hits = [];
@@ -518,12 +510,12 @@ function searchItems(items, query, checkedStores, budgetBrands, minPrice, maxPri
     return hits;
 }
 
-function customCheckbox(id, label, checked, bgColor, color) {
+function customCheckbox(id, label, checked, bgColor) {
     let isChecked = typeof checked === "boolean" ? (checked ? "checked" : "") : checked;
     return `
-        <label class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-${bgColor}-200 border border-${bgColor}-400 hover:bg-${bgColor}-400 px-2 py-1 text-xs font-medium text-${color}-600 transition-all duration-200 hover:scale-105">
+        <label class="customcheckbox ${bgColor}">
             <input id="${id}" type="checkbox" ${isChecked} class="hidden peer">
-            <svg class="h-2 w-2 stroke-${color}-600 fill-${color}-100 peer-checked:fill-${color}-600" viewBox="0 0 6 6">
+            <svg class="h-2 w-2 stroke-gray-600 fill-gray-100 peer-checked:fill-gray-600" viewBox="0 0 6 6">
                 <circle cx="3" cy="3" r="2" />
             </svg>
            ${label}
@@ -852,7 +844,7 @@ function showCharts(canvasDom, items, sum, sumStores, todayOnly, startDate, endD
 
     if (sum && items.length > 0) {
         itemsToShow.push({
-            name: "Preissumme Warenkorb",
+            name: "Preissumme Gesamt",
             priceHistory: calculateOverallPriceChanges(items, todayOnly, startDate, endDate),
         });
     }

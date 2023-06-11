@@ -58,6 +58,10 @@ Install the dependencies as per above, then simply run:
 npm run start
 ```
 
+### Frontend
+
+To build the `site/style.css` file, make sure to run `npm run build`. This will create a css file based on the tailwind styles used. You can continue to write normal CSS in the `site/tailwind.css` if you want.
+
 ### Configuration
 
 You can pass the following options to the `server.js` script:
