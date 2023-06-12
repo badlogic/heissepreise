@@ -49,7 +49,7 @@ class CartHeader extends View {
                 carts.push(cart);
             }
             // model.carts.save();
-            location.href = "/cart.html?name=" + encodeURIComponent(cart.name);
+            location.href = location.pathname + "?name=" + encodeURIComponent(cart.name);
         });
     }
 
