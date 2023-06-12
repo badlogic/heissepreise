@@ -109,6 +109,11 @@ thead > tr {
     @apply border-gray-200;
 }
 
+.item.emerald {
+    @apply bg-emerald-900/50;
+    @apply border-emerald-600;
+}
+
 /* checkbox */
 .customcheckbox {
     @apply inline-flex items-center gap-x-1 px-2 py-1;

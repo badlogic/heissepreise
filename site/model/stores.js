@@ -74,7 +74,7 @@ exports.stores = {
     sparSi: {
         name: "Spar SI",
         budgetBrands: ["s-budget"],
-        color: "green",
+        color: "emerald",
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/${item.url}`,
     },

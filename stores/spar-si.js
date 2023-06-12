@@ -6,6 +6,7 @@ const units = {
     "100ml": { unit: "ml", factor: 100 },
     "500ml": { unit: "ml", factor: 100 },
     "100g": { unit: "g", factor: 100 },
+    kos: { unit: "stk", factor: 1 },
 };
 
 exports.getCanonical = function (item, today) {
@@ -16,14 +17,15 @@ exports.getCanonical = function (item, today) {
     } else {
         price = item.masterValues.price;
     }
-    let description = item.masterValues["short-description-3"] ?? item.masterValues["short-description-2"];
-    if (!description || description.length == 0) {
-        description = (item.masterValues["short-description"] ?? item.masterValues.name).toLowerCase();
-        if (description.endsWith("per kg")) [quantity, unit] = [1, "kg"];
-        else if (description.endsWith("im topf")) [quantity, unit] = [1, "kg"];
-        else [quantity, unit] = [1, "stk."];
+
+    const s = item.masterValues.title.replace(" EINWEG", "").replace(" MEHRWEG", "").replace("per kg", "1 kg").trim().replace(".", "");
+    let tokens = s.split(" ");
+    const lastToken = tokens[tokens.length - 1];
+    const match = /(\d+)\/(\d+)/.exec(lastToken);
+    if (match) {
+        quantity = match[1];
+        unit = "stk";
     } else {
-        const s = description.replace(" EINWEG", "").replace(" MEHRWEG", "").replace("per kg", "1 kg").trim().replace(".", "");
         const q = utils.parseUnitAndQuantityAtEnd(s);
         quantity = q[0];
         unit = q[1];
@@ -51,11 +53,16 @@ exports.getCanonical = function (item, today) {
         quantity = fallback.quantity;
     }
 
+    let name = item.masterValues.title;
+    tokens = item.masterValues.title.split(",");
+    if (tokens.length >= 3) {
+        name = tokens[1] + " " + tokens[0] + " " + tokens.slice(2).join(" ");
+    }
+
     return utils.convertUnit(
         {
             id: item.masterValues["code-internal"],
-            sparId: item.masterValues["product-number"],
-            name: item.masterValues.title + " " + (item.masterValues["short-description"] ?? item.masterValues.name),
+            name,
             price,
             priceHistory: [{ date: today, price }],
             unit,

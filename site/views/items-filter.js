@@ -180,7 +180,7 @@ class ItemsFilter extends View {
                 const minPrice = parseNumber(elements.minPrice.value, 0);
                 const maxPrice = parseNumber(elements.maxPrice.value, 100);
                 filteredItems = filteredItems.filter((item) => {
-                    if (budgetBrands && !BUDGET_BRANDS.some((budgetBrand) => item.name.toLowerCase().startsWith(budgetBrand))) return false;
+                    if (budgetBrands && !BUDGET_BRANDS.some((budgetBrand) => item.name.toLowerCase().indexOf(budgetBrand) >= 0)) return false;
                     if (bio && !item.bio) return false;
                     if (minPrice > item.price) return false;
                     if (maxPrice < item.price) return false;
