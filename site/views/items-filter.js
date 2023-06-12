@@ -29,7 +29,7 @@ class ItemsFilter extends View {
                             x-id="${store}" x-state x-change
                             label="${stores[store].name}"
                             class="${stores[store].color}"
-                            checked
+                            ${stores[store].defaultChecked ? "checked" : ""}
                         ></custom-checkbox>`
                 ).join("")}
             </div>
@@ -252,7 +252,12 @@ class ItemsFilter extends View {
                 return value;
             })
             .join(";");
-        const disabledStores = STORE_KEYS.filter((store) => !state[store]).join(";");
+        const disabledStores = STORE_KEYS.filter((storeName) => {
+            const store = state[storeName];
+            if (stores[storeName].defaultChecked && !store) return true;
+            if (!stores[storeName].defaultChecked && store) return true;
+            return false;
+        }).join(";");
         if (disabledStores.length > 0) return shareableState + ";" + disabledStores;
         else return shareableState;
     }
@@ -272,7 +277,8 @@ class ItemsFilter extends View {
             });
         if (storeIndex < values.length) {
             for (let i = storeIndex; i < values.length; i++) {
-                state[values[i]] = false;
+                const storeName = values[i];
+                state[storeName] = !stores[storeName].defaultChecked;
             }
         }
         this.state = state;
