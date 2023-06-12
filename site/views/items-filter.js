@@ -168,7 +168,7 @@ class ItemsFilter extends View {
         }
 
         // Don't apply store and misc filters if query is an alasql query.
-        if (query.length > 0 && query.charAt(0) != "!") {
+        if (query.charAt(0) != "!") {
             if (this._filterByStores) {
                 const checkedStores = this.checkedStores;
                 filteredItems = filteredItems.filter((item) => checkedStores.includes(item.store));

@@ -1,3 +1,5 @@
+const allSpacesRegex = / /g;
+
 exports.stores = {
     billa: {
         name: "Billa",
@@ -57,7 +59,7 @@ exports.stores = {
         name: "REWE DE",
         budgetBrands: ["ja!"],
         color: "stone",
-        getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
+        getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(allSpacesRegex, "-")}/${item.id}`,
     },
 };
 
