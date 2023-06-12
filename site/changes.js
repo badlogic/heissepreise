@@ -7,6 +7,7 @@ require("./views");
     const itemsFilter = document.querySelector("items-filter");
     const itemsList = document.querySelector("items-list");
     const itemsChart = document.querySelector("items-chart");
+    itemsList.elements.sort.value = "store-and-name";
     itemsFilter.model = itemsList.model = model.items;
 
     const stateToUrl = (event) => {
@@ -27,6 +28,7 @@ require("./views");
     const l = getQueryParameter("l");
     const c = getQueryParameter("c");
     const d = getQueryParameter("d");
+
     if (f) itemsFilter.shareableState = f;
     if (l) itemsList.shareableState = l;
     if (c) itemsChart.shareableState = c;

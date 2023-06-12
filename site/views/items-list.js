@@ -36,7 +36,7 @@ class ItemsList extends View {
                         <option value="price-desc">Preis absteigend</option>
                         <option value="quantity-asc">Menge aufsteigend</option>
                         <option value="quantity-desc">Menge absteigend</option>
-                        <option value="chain-and-name">Kette &amp; Name</option>
+                        <option value="store-and-name">Kette &amp; Name</option>
                         <option value="name-similarity" x-id="nameSimilarity" disabled>Namensähnlichkeit</option>
                     </select>
                 </label>
@@ -136,7 +136,7 @@ class ItemsList extends View {
                 if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
                 return b.quantity - a.quantity;
             });
-        } else if (sortType == "chain-and-name") {
+        } else if (sortType == "store-and-name") {
             items.sort((a, b) => {
                 if (a.store < b.store) {
                     return -1;
