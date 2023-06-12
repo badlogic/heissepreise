@@ -61,6 +61,12 @@ exports.stores = {
         color: "stone",
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(allSpacesRegex, "-")}/${item.id}`,
     },
+    sparSi: {
+        name: "Spar SI",
+        budgetBrands: ["s-budget"],
+        color: "green",
+        getUrl: (item) => `https://www.spar.si/online/${item.url}`,
+    },
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);

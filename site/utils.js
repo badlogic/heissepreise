@@ -59,6 +59,12 @@ const stores = {
         color: "stone",
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(/ /g, "-")}/${item.id}`,
     },
+    sparSi: {
+        name: "Spar SI",
+        budgetBrands: ["s-budget"],
+        color: "green",
+        getUrl: (item) => `https://www.spar.si/online/${item.url}`,
+    },
 };
 
 const STORE_KEYS = Object.keys(stores);
