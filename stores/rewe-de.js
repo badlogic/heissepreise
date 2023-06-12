@@ -102,7 +102,7 @@ exports.fetchData = async function () {
     } catch (e) {
         console.log("Failed to fetch REWE-DE data, either CURL is not installed, or CloudFlare protection kicked in.");
         const compressedItems = (await axios.get("https://heissepreise.github.io/data/latest-canonical.reweDe.compressed.json")).data;
-        const items = decompress.decompress(compressedItems);
+        const items = decompress(compressedItems);
         for (const item of items) {
             item.isCanonical = true;
         }
