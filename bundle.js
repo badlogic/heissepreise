@@ -104,7 +104,7 @@ async function bundleJS(inputDir, outputDir, watch) {
     let buildContext = await esbuild.context({
         entryPoints: {
             carts: `${inputDir}/carts.js`,
-            "changes-new": `${inputDir}/changes-new.js`,
+            changes: `${inputDir}/changes.js`,
             index: `${inputDir}/index.js`,
         },
         bundle: true,

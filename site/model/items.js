@@ -69,30 +69,9 @@ class Items extends Model {
         return this._lookup;
     }
 
-    async load() {
-        let start = performance.now();
-        const compressedItemsPerStore = [];
-        for (const store of STORE_KEYS) {
-            compressedItemsPerStore.push(
-                new Promise(async (resolve) => {
-                    const start = performance.now();
-                    try {
-                        const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
-                        const json = await response.json();
-                        log(`Items - loading compressed items for ${store} took ${deltaTime(start)} secs`);
-                        resolve(decompress(json));
-                    } catch (e) {
-                        log(`Items - error while loading compressed items for ${store} ${e.message}`);
-                        resolve([]);
-                    }
-                })
-            );
-        }
-        const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
-        log(`Items - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
-
+    processItems(items) {
         const lookup = {};
-        start = performance.now();
+        const start = performance.now();
         for (const item of items) {
             lookup[item.store + item.id] = item;
             item.search = item.name + " " + item.quantity + " " + item.unit;
@@ -136,9 +115,33 @@ class Items extends Model {
         });
 
         log(`Items - processing ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
-
         this._items = items;
         this._lookup = lookup;
+    }
+
+    async load() {
+        let start = performance.now();
+        const compressedItemsPerStore = [];
+        for (const store of STORE_KEYS) {
+            compressedItemsPerStore.push(
+                new Promise(async (resolve) => {
+                    const start = performance.now();
+                    try {
+                        const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
+                        const json = await response.json();
+                        log(`Items - loading compressed items for ${store} took ${deltaTime(start)} secs`);
+                        resolve(decompress(json));
+                    } catch (e) {
+                        log(`Items - error while loading compressed items for ${store} ${e.message}`);
+                        resolve([]);
+                    }
+                })
+            );
+        }
+        const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
+        log(`Items - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
+
+        this.processItems(items);
     }
 }
 
