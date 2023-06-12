@@ -41,7 +41,7 @@ class View extends HTMLElement {
         const result = {};
         elements.forEach((element) => {
             if (result[element.getAttribute("x-id")]) {
-                console.log(`Duplicate element x-id ${element.getAttribute("x-id")} in ${view.localName}`);
+                log(`View - Duplicate element x-id ${element.getAttribute("x-id")} in ${view.localName}`);
             }
             result[element.getAttribute("x-id")] = element;
         });

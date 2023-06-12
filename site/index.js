@@ -17,7 +17,8 @@ require("./views");
             .filter((item) => item.chart)
             .map((item) => item.store + item.id)
             .join(";");
-        history.pushState({}, null, location.pathname + "?f=" + filterState + "&l=" + listState + "&c=" + chartState + "&d=" + chartedItems);
+
+        history.replaceState({}, null, location.pathname + "?f=" + filterState + "&l=" + listState + "&c=" + chartState + "&d=" + chartedItems);
     };
 
     itemsFilter.addEventListener("x-change", stateToUrl);

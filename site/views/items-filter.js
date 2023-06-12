@@ -11,6 +11,7 @@ class ItemsFilter extends View {
         this._filterByPriceDirection = getBooleanAttribute(this, "pricedirection");
         this._filterByStores = getBooleanAttribute(this, "stores");
         this._filterByMisc = getBooleanAttribute(this, "misc");
+        this._noChartClear = getBooleanAttribute(this, "nochartclear");
 
         const hidePriceChanges = this._filterByPriceChanges ? "" : "hidden";
         const hidePriceDirection = this._filterByPriceDirection ? "" : "hidden";
@@ -76,8 +77,8 @@ class ItemsFilter extends View {
                 elements.stores.classList.add("hidden");
                 elements.misc.classList.add("hidden");
             } else {
-                elements.stores.classList.remove("hidden");
-                elements.misc.classList.remove("hidden");
+                if (!hideStores) elements.stores.classList.remove("hidden");
+                if (!hideMisc) elements.misc.classList.remove("hidden");
             }
         });
 
@@ -193,7 +194,7 @@ class ItemsFilter extends View {
             filteredItems = queryItems(query, filteredItems, elements.exact.checked);
         }
 
-        if (this.model.lastQuery != query) {
+        if (this.model.lastQuery != query && !this._noChartClear) {
             filteredItems.forEach((item) => (item.chart = false));
         }
         this.model.lastQuery = query;

@@ -11,21 +11,25 @@ class ItemsList extends View {
         this._json = getBooleanAttribute(this, "json");
         this._chart = getBooleanAttribute(this, "chart");
         this._remove = getBooleanAttribute(this, "remove");
-        this._remove = getBooleanAttribute(this, "add");
+        this._add = getBooleanAttribute(this, "add");
         this._updown = getBooleanAttribute(this, "updown");
+        this._noSort = getBooleanAttribute(this, "nosort");
+        const hideSort = this._noSort ? "hidden" : "";
 
         this.innerHTML = /*html*/ `
             <div x-id="options" class="hidden flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
                 <div>
                     <div class="flex flex-col md:flex-row gap-2 items-center">
-                        <span x-id="numItems"></span>
+                        <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
                         <span>
                             <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
                         </span>
-                        <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${this._chart}"></custom-checkbox>
+                        <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
+                            this._chart ? "" : "hidden"
+                        }"></custom-checkbox>
                     </div>
                 </div>
-                <label>
+                <label class="${hideSort}">
                     Sortieren
                     <select x-id="sort" x-change x-state>
                         <option value="price-asc">Preis aufsteigend</option>
@@ -180,7 +184,7 @@ class ItemsList extends View {
                         <input x-id="chartCheckbox" type="checkbox" class="hidden peer">
                         <span class="peer-checked:bg-blue-700 btn-action">📈</span>
                     </label>
-                    <input x-id="add" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="+">
+                    <input x-id="add" type="button" class="${this._add ? "" : "hidden"} btn-action" value="+">
                     <input x-id="remove" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="-">
                     <input x-id="up" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▲">
                     <input x-id="down" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▼">
@@ -277,6 +281,53 @@ class ItemsList extends View {
                 this.fireChangeEvent();
             });
         }
+
+        if (this.model.items.length != this.model.filteredItems.length) {
+            elements.up.classList.add("hidden");
+            elements.down.classList.add("hidden");
+        }
+
+        elements.add.addEventListener("click", () => {
+            if (this._addCallback) this._addCallback(item);
+        });
+
+        elements.remove.addEventListener("click", () => {
+            let index = this.model.items.indexOf(item);
+            if (index >= 0) this.model.items.splice(index, 1);
+            index = this.model.filteredItems.indexOf(item);
+            if (index >= 0) this.model.filteredItems.splice(index, 1);
+            itemDom.remove();
+            this.elements.chart.render();
+
+            if (this._removeCallback) this._removeCallback(item);
+        });
+
+        elements.up.addEventListener("click", () => {
+            const index = itemDom.rowIndex - 1;
+            if (index == 0) return;
+            let otherItem = this.model.items[index - 1];
+            this.model.items[index - 1] = item;
+            this.model.items[index] = otherItem;
+
+            let rowBefore = this.elements.tableBody.rows[index - 1];
+            this.elements.tableBody.insertBefore(itemDom, rowBefore);
+
+            if (this._upCallback) this._upCallback(item);
+        });
+
+        elements.down.addEventListener("click", () => {
+            const index = itemDom.rowIndex - 1;
+            if (index == this.model.items.length - 1) return;
+            let otherItem = this.model.items[index + 1];
+            this.model.items[index + 1] = item;
+            this.model.items[index] = otherItem;
+
+            let rowAfter = this.elements.tableBody.rows[index + 1];
+            this.elements.tableBody.insertBefore(rowAfter, itemDom);
+
+            if (this._downCallback) this._downCallback(item);
+        });
+
         if (this._showAllPriceHistories) elements.priceHistory.classList.remove("hidden");
         return itemDom;
     }
@@ -295,8 +346,10 @@ class ItemsList extends View {
         if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!") {
             elements.sort.parentElement.classList.add("hidden");
         } else {
-            elements.sort.parentElement.classList.remove("hidden");
-            items = this.sort(items);
+            if (!this._noSort) {
+                elements.sort.parentElement.classList.remove("hidden");
+                items = this.sort(items);
+            }
         }
         if (items.length == 0) {
             elements.chart.classList.add("hidden");
@@ -307,21 +360,20 @@ class ItemsList extends View {
             elements.options.classList.remove("hidden");
             elements.itemsTable.classList.remove("hidden");
         }
-        elements.numItems.innerHTML =
-            "<strong>Resultate:</strong> " + items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
+        elements.numItems.innerHTML = items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
         const tableBody = elements.tableBody;
         tableBody.innerHTML = "";
 
         let i = 0;
         const batches = [];
         let batch = [];
-        for (const item of items) {
+        items.forEach((item, index) => {
             if (batch.length == 100) {
                 batches.push(batch);
                 batch = [];
             }
             batch.push(item);
-        }
+        });
         if (batch.length > 0) batches.push(batch);
 
         const renderBatch = () => {
@@ -338,6 +390,22 @@ class ItemsList extends View {
         renderBatch();
 
         log(`ItemsList - rendering ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
+    }
+
+    set addCallback(callback) {
+        this._addCallback = callback;
+    }
+
+    set removeCallback(callback) {
+        this._removeCallback = callback;
+    }
+
+    set upCallback(callback) {
+        this._upCallback = callback;
+    }
+
+    set downCallback(callback) {
+        this._downCallback = callback;
     }
 }
 
