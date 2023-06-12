@@ -2,7 +2,7 @@ const axios = require("axios");
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const utils = require("./utils");
-const decompress = require("../site/utils");
+const { decompress } = require("../site/model/items");
 
 const units = {
     beutel: { unit: "stk", factor: 1 },

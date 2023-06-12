@@ -1,4 +1,4 @@
-const { downloadJSON, dom } = require("../misc");
+const { downloadJSON, dom } = require("../js/misc");
 const { View } = require("./view");
 
 class CartsList extends View {

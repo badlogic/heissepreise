@@ -1,4 +1,4 @@
-const misc = require("../misc");
+const misc = require("../js/misc");
 const { Model } = require("./model");
 
 class Carts extends Model {

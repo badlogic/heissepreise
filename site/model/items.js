@@ -1,4 +1,4 @@
-const { deltaTime, log } = require("../misc");
+const { deltaTime, log } = require("../js/misc");
 const { stores, STORE_KEYS } = require("./stores");
 const { Model } = require("./model");
 
@@ -145,4 +145,5 @@ class Items extends Model {
     }
 }
 
+exports.decompress = decompress;
 exports.Items = Items;

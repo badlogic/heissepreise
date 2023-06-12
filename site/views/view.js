@@ -1,4 +1,4 @@
-const { getBooleanAttribute, log } = require("../misc");
+const { getBooleanAttribute, log } = require("../js/misc");
 
 class View extends HTMLElement {
     constructor() {

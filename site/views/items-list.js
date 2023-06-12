@@ -1,5 +1,5 @@
-const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log } = require("../misc");
-const { vectorizeItems, similaritySortItems } = require("../knn");
+const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log } = require("../js/misc");
+const { vectorizeItems, similaritySortItems } = require("../js/knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
 const { ItemsChart } = require("./items-chart");

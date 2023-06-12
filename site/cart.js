@@ -1,4 +1,4 @@
-const { getQueryParameter } = require("./misc");
+const { getQueryParameter } = require("./js/misc");
 const models = require("./model");
 const { Model } = require("./model/model");
 const { View } = require("./views/view");
@@ -49,7 +49,7 @@ class CartHeader extends View {
                 carts.push(cart);
             }
             // model.carts.save();
-            location.href = "/cart-new.html?name=" + encodeURIComponent(cart.name);
+            location.href = "/cart.html?name=" + encodeURIComponent(cart.name);
         });
     }
 
@@ -65,7 +65,7 @@ class CartHeader extends View {
             for (const cartItem of cart.items) {
                 link += cartItem.store + cartItem.id + ";";
             }
-            elements.share.href = "cart-new.html?cart=" + link;
+            elements.share.href = "cart.html?cart=" + link;
         }
     }
 }

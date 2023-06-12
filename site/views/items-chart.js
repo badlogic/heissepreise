@@ -1,5 +1,5 @@
 const { STORE_KEYS } = require("../model/stores");
-const { today, log, deltaTime } = require("../misc");
+const { today, log, deltaTime } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
 const { Chart, registerables } = require("chart.js");

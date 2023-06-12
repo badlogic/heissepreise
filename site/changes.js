@@ -1,4 +1,4 @@
-const { getQueryParameter } = require("./misc");
+const { getQueryParameter } = require("./js/misc");
 const model = require("./model");
 require("./views");
 

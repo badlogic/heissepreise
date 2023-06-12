@@ -1,4 +1,4 @@
-const { downloadJSON } = require("./misc");
+const { downloadJSON } = require("./js/misc");
 const model = require("./model");
 require("./views");
 
