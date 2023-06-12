@@ -283,12 +283,12 @@ class ItemsList extends View {
             if (this.model.filteredItems.length != 0 && elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
         }
 
-        const items = [...this.model.filteredItems];
+        let items = [...this.model.filteredItems];
         if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!") {
             elements.sort.parentElement.classList.add("hidden");
         } else {
             elements.sort.parentElement.classList.remove("hidden");
-            this.sort(items);
+            items = this.sort(items);
         }
         if (items.length == 0) {
             elements.chart.classList.add("hidden");
@@ -329,7 +329,7 @@ class ItemsList extends View {
 
         renderBatch();
 
-        log(`ItemsList - rendering ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
+        log(`ItemsList - rendering ${items.length} items took ${deltaTime(start).toFixed(4)} secs`, true);
     }
 }
 
