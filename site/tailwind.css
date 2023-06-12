@@ -179,6 +179,11 @@ thead > tr {
     @apply hover:bg-stone-400;
 }
 
+.customcheckbox.emerald {
+    @apply bg-emerald-600/50;
+    @apply border-emerald-500;
+}
+
 /* items filter */
 .items-filter {
     @apply bg-stone-200;
