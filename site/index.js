@@ -10,9 +10,9 @@ require("./views");
     itemsFilter.model = itemsList.model = model.items;
 
     const stateToUrl = (event) => {
-        const filterState = JSON.stringify(itemsFilter.state);
-        const listState = JSON.stringify(itemsList.state);
-        const chartState = JSON.stringify(itemsChart.state);
+        const filterState = itemsFilter.shareableState;
+        const listState = itemsList.shareableState;
+        const chartState = itemsChart.shareableState;
         const chartedItems = model.items.filteredItems
             .filter((item) => item.chart)
             .map((item) => item.store + item.id)
@@ -27,9 +27,9 @@ require("./views");
     const l = getQueryParameter("l");
     const c = getQueryParameter("c");
     const d = getQueryParameter("d");
-    if (f) itemsFilter.state = JSON.parse(f);
-    if (l) itemsList.state = JSON.parse(l);
-    if (c) itemsChart.state = JSON.parse(c);
+    if (f) itemsFilter.shareableState = f;
+    if (l) itemsList.shareableState = l;
+    if (c) itemsChart.shareableState = c;
     if (d) {
         for (const id of d.split(";")) {
             model.items.lookup[id].chart = true;

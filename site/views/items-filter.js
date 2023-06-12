@@ -42,13 +42,8 @@ class ItemsFilter extends View {
                     </select>
                 </label>
                 <label>
-                    <input x-id="priceChangesSinceLast" x-state type="radio" name="type" /> Billiger seit letzter Änderung
+                    <input x-id="priceChangesCheaper" x-state type="radio" name="type" /> Billiger seit letzter Änderung
                 </label>
-            </div>
-
-            <div x-id="priceDirection" class="flex justify-center gap-2 mt-4 ${this._hideMisc ? "" : "mb-4"} ${hidePriceDirection}">
-                <custom-checkbox x-id="priceIncreased" x-state x-change label="Teurer" checked class="gray"></custom-checkbox>
-                <custom-checkbox x-id="priceDecreased" x-state x-change label="Billiger" checked class="gray"></custom-checkbox>
             </div>
 
             <div x-id="misc" class="flex items-center justify-center flex-wrap gap-2 mt-4 ${hideMisc}">
@@ -64,6 +59,11 @@ class ItemsFilter extends View {
                     -
                     <input x-id="maxPrice" x-state x-input-debounce class="w-12" type="number" min="0" value="100">
                 </label>
+            </div>
+
+            <div x-id="priceDirection" class="flex justify-center gap-2 mt-4 ${this._hideMisc ? "" : "mb-4"} ${hidePriceDirection}">
+                <custom-checkbox x-id="priceIncreased" x-state x-change label="Teurer" checked class="gray"></custom-checkbox>
+                <custom-checkbox x-id="priceDecreased" x-state x-change label="Billiger" checked class="gray"></custom-checkbox>
             </div>
         `;
         this.classList.add("items-filter");
@@ -93,8 +93,8 @@ class ItemsFilter extends View {
             this.fireChangeEvent();
         });
 
-        elements.priceChangesSinceLast.addEventListener("change", () => {
-            if (elements.priceChangesSinceLast.checked) elements.priceDirection.classList.add("hidden");
+        elements.priceChangesCheaper.addEventListener("change", () => {
+            if (elements.priceChangesCheaper.checked) elements.priceDirection.classList.add("hidden");
             else elements.priceDirection.classList.remove("hidden");
             this.fireChangeEvent();
         });
@@ -238,6 +238,44 @@ class ItemsFilter extends View {
 
     get checkedStores() {
         return STORE_KEYS.filter((store) => this.elements[store].checked);
+    }
+
+    get shareableState() {
+        const state = this.state;
+        const shareableState = Object.keys(state)
+            .sort()
+            .filter((el) => !STORE_KEYS.includes(el))
+            .map((el) => {
+                let value = state[el];
+                if (value === true) value = ".";
+                if (value === false) value = "-";
+                return value;
+            })
+            .join(";");
+        const disabledStores = STORE_KEYS.filter((store) => !state[store]).join(";");
+        if (disabledStores.length > 0) return shareableState + ";" + disabledStores;
+        else return shareableState;
+    }
+
+    set shareableState(shareableState) {
+        const values = shareableState.split(";");
+        const state = this.state;
+        let storeIndex = -1;
+        Object.keys(state)
+            .sort()
+            .filter((el) => !STORE_KEYS.includes(el))
+            .forEach((el, index) => {
+                if (values[index] === ".") state[el] = true;
+                else if (values[index] === "-") state[el] = false;
+                else state[el] = values[index];
+                storeIndex = index + 1;
+            });
+        if (storeIndex < values.length) {
+            for (let i = storeIndex; i < values.length; i++) {
+                state[values[i]] = false;
+            }
+        }
+        this.state = state;
     }
 }
 

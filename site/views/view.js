@@ -114,6 +114,33 @@ class View extends HTMLElement {
         this.fireChangeEvent();
     }
 
+    get shareableState() {
+        const state = this.state;
+        const shareableState = Object.keys(state)
+            .sort()
+            .map((el) => {
+                let value = state[el];
+                if (value === true) value = ".";
+                if (value === false) value = "-";
+                return value;
+            })
+            .join(";");
+        return shareableState;
+    }
+
+    set shareableState(shareableState) {
+        const values = shareableState.split(";");
+        const state = this.state;
+        Object.keys(state)
+            .sort()
+            .forEach((el, index) => {
+                if (values[index] === ".") state[el] = true;
+                else if (values[index] === "-") state[el] = false;
+                else state[el] = values[index];
+            });
+        this.state = state;
+    }
+
     render() {}
 
     setupEventHandlers() {
