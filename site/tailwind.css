@@ -110,8 +110,8 @@ thead > tr {
 }
 
 .item.emerald {
-    @apply bg-emerald-900/50;
-    @apply border-emerald-600;
+    @apply bg-emerald-600/50;
+    @apply border-emerald-500;
 }
 
 /* checkbox */
