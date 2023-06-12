@@ -80,6 +80,10 @@ class ItemsList extends View {
         this.setupEventHandlers();
 
         this.addEventListener("x-change", (event) => {
+            if (this._ignoreChange) {
+                this._ignoreChange = false;
+                return;
+            }
             this.render();
         });
     }
@@ -266,6 +270,7 @@ class ItemsList extends View {
                 item.chart = elements.chartCheckbox.checked;
                 if (item.chart && !this.elements.enableChart.checked) this.elements.enableChart.checked = true;
                 this.elements.chart.render();
+                this._ignoreChange = true;
                 this.fireChangeEvent();
             });
         }
@@ -329,7 +334,7 @@ class ItemsList extends View {
 
         renderBatch();
 
-        log(`ItemsList - rendering ${items.length} items took ${deltaTime(start).toFixed(4)} secs`, true);
+        log(`ItemsList - rendering ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
     }
 }
 

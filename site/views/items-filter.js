@@ -198,7 +198,7 @@ class ItemsFilter extends View {
         }
         this.model.lastQuery = query;
 
-        log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`, true);
+        log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`);
 
         this.model.removeListener(this._listener);
         this.model.filteredItems = filteredItems;
@@ -233,7 +233,7 @@ class ItemsFilter extends View {
             priceChangesDates.append(dateDom);
         }
 
-        log(`ItemsFilter - rendering items filter took ${deltaTime(start)}`, true);
+        log(`ItemsFilter - rendering items filter took ${deltaTime(start)}`);
     }
 
     get checkedStores() {
