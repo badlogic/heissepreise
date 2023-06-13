@@ -73,6 +73,7 @@ function mergePriceHistory(oldItems, items) {
 
     const lookup = {};
     for (oldItem of oldItems) {
+        if (stores[oldItem.store]?.onlyLatest ?? true) continue;
         lookup[oldItem.store + oldItem.id] = oldItem;
     }
 
@@ -190,17 +191,18 @@ exports.replay = function (rawDataDir) {
         return dateA - dateB;
     };
 
-    const getFilteredFilesFor = (store) =>
+    const getFilteredFilesFor = (store, onlyLatest = false) =>
         files
             .filter((file) => file.indexOf(`${store}-`) == 0)
             .sort(dateSort)
+            .filter((_, i) => (!onlyLatest || !i))
             .map((file) => rawDataDir + "/" + file);
 
     const storeFiles = {};
     const canonicalFiles = {};
 
     for (const store of STORE_KEYS) {
-        storeFiles[store] = getFilteredFilesFor(store);
+        storeFiles[store] = getFilteredFilesFor(store, stores[store].onlyLatest);
         canonicalFiles[store] = storeFiles[store].map((file) => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
         canonicalFiles[store].reverse();
     }

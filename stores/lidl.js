@@ -57,3 +57,5 @@ exports.fetchData = async function () {
 };
 
 exports.urlBase = "https://www.lidl.at";
+
+exports.onlyLatest = true;
