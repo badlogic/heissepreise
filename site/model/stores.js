@@ -24,7 +24,7 @@ exports.stores = {
     },
     lidl: {
         name: "Lidl",
-        budgetBrands: ["milbona"],
+        budgetBrands: ["milbona", "alpengut", "cien", "livarno", "wiesentaler"],
         color: "pink",
         defaultChecked: true,
         getUrl: (item) => `https://www.lidl.at${item.url}`,

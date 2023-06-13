@@ -2,7 +2,6 @@ const fs = require("fs");
 const fsAsync = require("fs").promises;
 const zlib = require("zlib");
 const stores = require("./stores");
-const { FILE } = require("dns");
 const { promisify } = require("util");
 
 const STORE_KEYS = Object.keys(stores);
@@ -179,8 +178,6 @@ exports.compress = compress;
 /// Given a directory of raw data of the form `$store-$date.json`, constructs
 /// a canonical list of all products and their historical price data.
 exports.replay = function (rawDataDir) {
-    const today = currentDate();
-
     const files = fs
         .readdirSync(rawDataDir)
         .filter((file) => file.indexOf("canonical") == -1 && STORE_KEYS.some((store) => file.indexOf(`${store}-`) == 0));
@@ -195,7 +192,7 @@ exports.replay = function (rawDataDir) {
         files
             .filter((file) => file.indexOf(`${store}-`) == 0)
             .sort(dateSort)
-            .filter((_, i) => (!onlyLatest || !i))
+            .filter((_, i) => !onlyLatest || !i)
             .map((file) => rawDataDir + "/" + file);
 
     const storeFiles = {};
