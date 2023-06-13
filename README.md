@@ -14,6 +14,7 @@ Contents:
     -   [Via GitHub pages \& GitHub workflows](#via-github-pages--github-workflows)
     -   [Docker](#docker)
 -   [Raw Data](#raw-data)
+-   [Historical Data](#historical-data)
 
 ## Requirements
 
@@ -115,3 +116,10 @@ You can also get the [raw data](https://heisse-preise.io/data/latest-canonical.j
 -   `unit`: unit the product is sold at. May be undefined.
 -   `quantity`: quantity the product is sold at for the given price
 -   `bio`: whether this product is classified as organic/"Bio"
+
+## Historical Data
+
+The live site at [heisse-preise.io](https://heisse-preise.io) feature historical data from:
+
+-   [Dossier](https://www.dossier.at/dossiers/supermaerkte/quellen/anatomie-eines-supermarkts-die-methodik/)
+-   [@h4ez](https://twitter.com/h43z/status/1668643843875512321), who runs [preisinflation.online](https://t.co/9sb8vZGdlN), another grocery price tracer.
