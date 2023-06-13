@@ -104,8 +104,9 @@ async function bundleJS(inputDir, outputDir, watch) {
     let buildContext = await esbuild.context({
         entryPoints: {
             carts: `${inputDir}/carts.js`,
-            "changes-new": `${inputDir}/changes-new.js`,
-            "index-new": `${inputDir}/index-new.js`,
+            cart: `${inputDir}/cart.js`,
+            changes: `${inputDir}/changes.js`,
+            index: `${inputDir}/index.js`,
         },
         bundle: true,
         sourcemap: true,
@@ -124,12 +125,12 @@ async function bundleJS(inputDir, outputDir, watch) {
 async function bundle(inputDir, outputDir, watch) {
     const promises = [];
 
-    promises.push(bundleCSS(path.join(inputDir, "tailwind.css"), path.join(outputDir, "style.css"), watch));
+    promises.push(bundleCSS(path.join(inputDir, "style.css"), path.join(outputDir, "style.css"), watch));
     promises.push(bundleJS(inputDir, outputDir, watch));
     promises.push(
         bundleHTML(inputDir, outputDir, false, watch, (filePath, isDir, data) => {
             if (isDir) return false;
-            if (filePath.endsWith("tailwind.css")) return true;
+            if (filePath.endsWith("style.css")) return true;
             if (data.includes(`require("`)) return true;
             return false;
         })

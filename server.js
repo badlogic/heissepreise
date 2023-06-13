@@ -89,7 +89,7 @@ function parseArguments() {
         await analysis.updateData(dataDir);
         copyItemsToSite(dataDir);
     }
-    scheduleFunction(7, 0, 0, async () => {
+    scheduleFunction(5, 0, 0, async () => {
         items = await analysis.updateData(dataDir);
         copyItemsToSite(dataDir);
     });

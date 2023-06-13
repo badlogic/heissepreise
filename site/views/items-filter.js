@@ -1,4 +1,4 @@
-const { today, parseNumber, dom, getBooleanAttribute, queryItems } = require("../misc");
+const { today, parseNumber, dom, getBooleanAttribute, queryItems, log, deltaTime } = require("../js/misc");
 const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
 const { View } = require("./view");
 
@@ -11,6 +11,7 @@ class ItemsFilter extends View {
         this._filterByPriceDirection = getBooleanAttribute(this, "pricedirection");
         this._filterByStores = getBooleanAttribute(this, "stores");
         this._filterByMisc = getBooleanAttribute(this, "misc");
+        this._noChartClear = getBooleanAttribute(this, "nochartclear");
 
         const hidePriceChanges = this._filterByPriceChanges ? "" : "hidden";
         const hidePriceDirection = this._filterByPriceDirection ? "" : "hidden";
@@ -19,7 +20,7 @@ class ItemsFilter extends View {
         const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen...";
 
         this.innerHTML = /*html*/ `
-            <input x-id="query" x-state x-input class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+            <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
 
             <div x-id="stores" class="flex justify-center gap-2 flex-wrap mt-4 ${hideStores}">
                 <custom-checkbox x-id="allStores" label="Alle" checked></custom-checkbox>
@@ -29,7 +30,7 @@ class ItemsFilter extends View {
                             x-id="${store}" x-state x-change
                             label="${stores[store].name}"
                             class="${stores[store].color}"
-                            checked
+                            ${stores[store].defaultChecked ? "checked" : ""}
                         ></custom-checkbox>`
                 ).join("")}
             </div>
@@ -42,13 +43,8 @@ class ItemsFilter extends View {
                     </select>
                 </label>
                 <label>
-                    <input x-id="priceChangesSinceLast" x-state type="radio" name="type" /> Billiger seit letzter Änderung
+                    <input x-id="priceChangesCheaper" x-state type="radio" name="type" /> Billiger seit letzter Änderung
                 </label>
-            </div>
-
-            <div x-id="priceDirection" class="flex justify-center gap-2 mt-4 ${this._hideMisc ? "" : "mb-4"} ${hidePriceDirection}">
-                <custom-checkbox x-id="priceIncreased" x-state x-change label="Teurer" checked class="gray"></custom-checkbox>
-                <custom-checkbox x-id="priceDecreased" x-state x-change label="Billiger" checked class="gray"></custom-checkbox>
             </div>
 
             <div x-id="misc" class="flex items-center justify-center flex-wrap gap-2 mt-4 ${hideMisc}">
@@ -65,46 +61,48 @@ class ItemsFilter extends View {
                     <input x-id="maxPrice" x-state x-input-debounce class="w-12" type="number" min="0" value="100">
                 </label>
             </div>
+
+            <div x-id="priceDirection" class="flex justify-center gap-2 mt-4 ${this._hideMisc ? "" : "mb-4"} ${hidePriceDirection}">
+                <custom-checkbox x-id="priceIncreased" x-state x-change label="Teurer" checked class="gray"></custom-checkbox>
+                <custom-checkbox x-id="priceDecreased" x-state x-change label="Billiger" checked class="gray"></custom-checkbox>
+            </div>
         `;
         this.classList.add("items-filter");
 
         const elements = this.elements;
 
-        elements.query.addEventListener("input", (event) => {
+        elements.query.addEventListener("input", () => {
             let query = elements.query.value.trim();
             if (query.length > 0 && query.charAt(0) == "!") {
                 elements.stores.classList.add("hidden");
                 elements.misc.classList.add("hidden");
             } else {
-                elements.stores.classList.remove("hidden");
-                elements.misc.classList.remove("hidden");
+                if (!hideStores) elements.stores.classList.remove("hidden");
+                if (!hideMisc) elements.misc.classList.remove("hidden");
             }
         });
 
-        elements.allStores.addEventListener("change", (event) => {
-            event.stopPropagation();
+        elements.allStores.addEventListener("change", () => {
             const checked = elements.allStores.checked;
             STORE_KEYS.forEach((store) => (elements[store].checked = checked));
             this.fireChangeEvent();
         });
 
-        elements.priceChangesToday.addEventListener("change", (event) => {
-            event.stopPropagation();
+        elements.priceChangesToday.addEventListener("change", () => {
             if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
             else elements.priceDirection.classList.add("hidden");
             this.fireChangeEvent();
         });
 
-        elements.priceChangesSinceLast.addEventListener("change", (event) => {
-            event.stopPropagation();
-            if (elements.priceChangesSinceLast.checked) elements.priceDirection.classList.add("hidden");
+        elements.priceChangesCheaper.addEventListener("change", () => {
+            if (elements.priceChangesCheaper.checked) elements.priceDirection.classList.add("hidden");
             else elements.priceDirection.classList.remove("hidden");
             this.fireChangeEvent();
         });
 
         this.setupEventHandlers();
 
-        this.addEventListener("change", (event) => {
+        this.addEventListener("x-change", () => {
             this.filter();
         });
     }
@@ -112,7 +110,7 @@ class ItemsFilter extends View {
     filter() {
         if (!this.model) return;
 
-        const now = performance.now();
+        const start = performance.now();
         const elements = this.elements;
         this.model.totalItems = this.model.items.length;
         let filteredItems = [...this.model.items];
@@ -171,7 +169,7 @@ class ItemsFilter extends View {
         }
 
         // Don't apply store and misc filters if query is an alasql query.
-        if (query.length > 0 && query.charAt(0) != "!") {
+        if (query.charAt(0) != "!") {
             if (this._filterByStores) {
                 const checkedStores = this.checkedStores;
                 filteredItems = filteredItems.filter((item) => checkedStores.includes(item.store));
@@ -183,7 +181,7 @@ class ItemsFilter extends View {
                 const minPrice = parseNumber(elements.minPrice.value, 0);
                 const maxPrice = parseNumber(elements.maxPrice.value, 100);
                 filteredItems = filteredItems.filter((item) => {
-                    if (budgetBrands && !BUDGET_BRANDS.some((budgetBrand) => item.name.toLowerCase().startsWith(budgetBrand))) return false;
+                    if (budgetBrands && !BUDGET_BRANDS.some((budgetBrand) => item.name.toLowerCase().indexOf(budgetBrand) >= 0)) return false;
                     if (bio && !item.bio) return false;
                     if (minPrice > item.price) return false;
                     if (maxPrice < item.price) return false;
@@ -193,15 +191,15 @@ class ItemsFilter extends View {
         }
 
         if (query.length > 0) {
-            filteredItems = queryItems(query, filteredItems);
+            filteredItems = queryItems(query, filteredItems, elements.exact.checked);
         }
 
-        if (this._lastQuery != query) {
+        if (this.model.lastQuery != query && !this._noChartClear) {
             filteredItems.forEach((item) => (item.chart = false));
         }
-        this._lastQuery = query;
+        this.model.lastQuery = query;
 
-        console.log("Filtering items took " + (performance.now() - now) / 1000 + " secs");
+        log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`);
 
         this.model.removeListener(this._listener);
         this.model.filteredItems = filteredItems;
@@ -209,7 +207,7 @@ class ItemsFilter extends View {
     }
 
     render() {
-        const now = performance.now();
+        const start = performance.now();
         const elements = this.elements;
         const items = this.model.items;
         const dates = {};
@@ -236,11 +234,55 @@ class ItemsFilter extends View {
             priceChangesDates.append(dateDom);
         }
 
-        console.log("Rendering items filter took " + (performance.now() - now) / 1000);
+        log(`ItemsFilter - rendering items filter took ${deltaTime(start)}`);
     }
 
     get checkedStores() {
         return STORE_KEYS.filter((store) => this.elements[store].checked);
+    }
+
+    get shareableState() {
+        const state = this.state;
+        const shareableState = Object.keys(state)
+            .sort()
+            .filter((el) => !STORE_KEYS.includes(el))
+            .map((el) => {
+                let value = state[el];
+                if (value === true) value = ".";
+                if (value === false) value = "-";
+                return value;
+            })
+            .join(";");
+        const disabledStores = STORE_KEYS.filter((storeName) => {
+            const store = state[storeName];
+            if (stores[storeName].defaultChecked && !store) return true;
+            if (!stores[storeName].defaultChecked && store) return true;
+            return false;
+        }).join(";");
+        if (disabledStores.length > 0) return shareableState + ";" + disabledStores;
+        else return shareableState;
+    }
+
+    set shareableState(shareableState) {
+        const values = shareableState.split(";");
+        const state = this.state;
+        let storeIndex = -1;
+        Object.keys(state)
+            .sort()
+            .filter((el) => !STORE_KEYS.includes(el))
+            .forEach((el, index) => {
+                if (values[index] === ".") state[el] = true;
+                else if (values[index] === "-") state[el] = false;
+                else state[el] = values[index];
+                storeIndex = index + 1;
+            });
+        if (storeIndex < values.length) {
+            for (let i = storeIndex; i < values.length; i++) {
+                const storeName = values[i];
+                state[storeName] = !stores[storeName].defaultChecked;
+            }
+        }
+        this.state = state;
     }
 }
 

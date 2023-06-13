@@ -1,4 +1,4 @@
-const { downloadJSON } = require("./misc");
+const { downloadJSON } = require("./js/misc");
 const model = require("./model");
 require("./views");
 
@@ -11,7 +11,7 @@ function newCart() {
         return;
     }
     model.carts.add(name);
-    location.href = `/cart.html?name=${encodeURIComponent(name)}`;
+    location.href = `${location.pathname}?name=${encodeURIComponent(name)}`;
 }
 
 function importCarts(importedCarts) {

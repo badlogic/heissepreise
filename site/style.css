@@ -109,6 +109,11 @@ thead > tr {
     @apply border-gray-200;
 }
 
+.item.emerald {
+    @apply bg-emerald-600/50;
+    @apply border-emerald-500;
+}
+
 /* checkbox */
 .customcheckbox {
     @apply inline-flex items-center gap-x-1 px-2 py-1;
@@ -174,6 +179,11 @@ thead > tr {
     @apply hover:bg-stone-400;
 }
 
+.customcheckbox.emerald {
+    @apply bg-emerald-600/50;
+    @apply border-emerald-500;
+}
+
 /* items filter */
 .items-filter {
     @apply bg-stone-200;
@@ -183,6 +193,10 @@ thead > tr {
     @apply mx-auto;
     @apply md:mt-6;
     @apply block;
+}
+
+.items-list {
+    @apply max-w-4xl;
 }
 
 .hidden {

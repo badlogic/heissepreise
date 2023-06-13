@@ -1,4 +1,4 @@
-const { dom } = require("../misc");
+const { dom } = require("../js/misc");
 const { View } = require("./view");
 
 class CustomCheckbox extends View {

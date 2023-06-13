@@ -1,5 +1,5 @@
 const { STORE_KEYS } = require("../model/stores");
-const { today } = require("../misc");
+const { today, log, deltaTime } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
 const { Chart, registerables } = require("chart.js");
@@ -13,20 +13,20 @@ class ItemsChart extends View {
             <div class="bg-stone-200 p-4 mx-auto">
                 <canvas x-id="canvas" class="bg-white rounded-lg py-4"></canvas>
                 <div class="filters flex items-center flex-wrap justify-center gap-2 pt-2">
-                    <custom-checkbox x-id="sumTotal" x-change label="Preissumme Gesamt"></custom-checkbox>
-                    <custom-checkbox x-id="sumStores" x-change label="Preissumme Ketten"></custom-checkbox>
-                    <custom-checkbox x-id="onlyToday" x-change label="Nur heutige Preise"></custom-checkbox>
+                    <custom-checkbox x-id="sumTotal" x-change x-state label="Preissumme Gesamt"></custom-checkbox>
+                    <custom-checkbox x-id="sumStores" x-change x-state label="Preissumme Ketten"></custom-checkbox>
+                    <custom-checkbox x-id="onlyToday" x-change x-state label="Nur heutige Preise"></custom-checkbox>
                     <div
                         class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600">
-                        <input x-id="startDate" x-change type="date" value="2020-01-01" />
+                        <input x-id="startDate" x-change x-state type="date" value="2020-01-01" />
                         -
-                        <input x-id="endDate" x-change type="date" value="${today()}"/>
+                        <input x-id="endDate" x-change x-state type="date" value="${today()}"/>
                     </div>
                 </div>
             </div>
         `;
         this.setupEventHandlers();
-        this.addEventListener("change", () => {
+        this.addEventListener("x-change", () => {
             this.render();
         });
     }
@@ -140,6 +140,7 @@ class ItemsChart extends View {
 
     render() {
         if (!this.model) return;
+        const start = performance.now();
         const items = this.model.filteredItems;
         const elements = this.elements;
         const onlyToday = this.elements.onlyToday.checked;
@@ -177,9 +178,8 @@ class ItemsChart extends View {
             }
         });
 
-        console.log("Items to show " + itemsToShow.length);
-
         this.renderChart(itemsToShow, onlyToday ? "bar" : "line");
+        log(`ItemsChart - charted ${itemsToShow.length} items in ${deltaTime(start).toFixed(2)} secs`);
     }
 }
 customElements.define("items-chart", ItemsChart);

@@ -1,5 +1,5 @@
-const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute } = require("../misc");
-const { vectorizeItems, similaritySortItems } = require("../knn");
+const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log } = require("../js/misc");
+const { vectorizeItems, similaritySortItems } = require("../js/knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
 const { ItemsChart } = require("./items-chart");
@@ -8,41 +8,43 @@ class ItemsList extends View {
     constructor() {
         super();
 
-        this._share = getBooleanAttribute(this, "share");
         this._json = getBooleanAttribute(this, "json");
         this._chart = getBooleanAttribute(this, "chart");
         this._remove = getBooleanAttribute(this, "remove");
-        this._remove = getBooleanAttribute(this, "add");
+        this._add = getBooleanAttribute(this, "add");
         this._updown = getBooleanAttribute(this, "updown");
+        this._noSort = getBooleanAttribute(this, "nosort");
+        const hideSort = this._noSort ? "hidden" : "";
 
         this.innerHTML = /*html*/ `
-            <div class="flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
+            <div x-id="options" class="hidden flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
                 <div>
                     <div class="flex flex-col md:flex-row gap-2 items-center">
-                        <span x-id="numItems"></span>
+                        <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
                         <span>
-                            <a x-id="shareLink" class="hidden querylink text-primary font-medium hover:underline">Teilen</a>
                             <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
                         </span>
-                        <custom-checkbox x-id="enableChart" label="Diagramm" class="${this._chart}"></custom-checkbox>
+                        <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
+                            this._chart ? "" : "hidden"
+                        }"></custom-checkbox>
                     </div>
                 </div>
-                <label>
+                <label class="${hideSort}">
                     Sortieren
-                    <select x-id="sort" x-change>
+                    <select x-id="sort" x-change x-state>
                         <option value="price-asc">Preis aufsteigend</option>
                         <option value="price-desc">Preis absteigend</option>
                         <option value="quantity-asc">Menge aufsteigend</option>
                         <option value="quantity-desc">Menge absteigend</option>
-                        <option value="chain-and-name">Kette &amp; Name</option>
+                        <option value="store-and-name">Kette &amp; Name</option>
                         <option value="name-similarity" x-id="nameSimilarity" disabled>Namensähnlichkeit</option>
                     </select>
                 </label>
             </div>
             <items-chart x-id="chart" class="hidden"></items-chart>
-            <table class="rounded-b-xl overflow-hidden w-full text-left">
+            <table x-id="itemsTable" class="hidden rounded-b-xl overflow-hidden w-full text-left">
                 <thead>
-                    <tr class="bg-primary text-white hidden md:table-row uppercase text-sm">
+                    <tr class="bg-primary text-white md:table-row uppercase text-sm">
                         <th class="text-center">Kette</th>
                         <th>Name</th>
                         <th x-id="expandPriceHistories" class="cursor-pointer">Preis +</th>
@@ -56,9 +58,9 @@ class ItemsList extends View {
 
         const elements = this.elements;
 
-        if (!this._share) elements.shareLink.classList.remove("hidden");
-        if (!this._json) elements.json.classList.remove("hidden");
-        if (!this._chart) elements.chart.classList.remove("hidden");
+        if (this._share) elements.shareLink.classList.remove("hidden");
+        if (this._json) elements.json.classList.remove("hidden");
+        if (this._chart) elements.enableChart.classList.remove("hidden");
 
         elements.json.addEventListener("click", (event) => {
             event.preventDefault();
@@ -71,10 +73,6 @@ class ItemsList extends View {
             else elements.chart.classList.add("hidden");
         });
 
-        elements.chart.addEventListener("change", (event) => {
-            event.stopPropagation();
-        });
-
         // Cache in a field, so we don't have to call this.elements in each renderItem() call.
         this._showAllPriceHistories = false;
         elements.expandPriceHistories.addEventListener("click", () => {
@@ -83,7 +81,13 @@ class ItemsList extends View {
             elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
         });
 
-        this.addEventListener("change", () => {
+        this.setupEventHandlers();
+
+        this.addEventListener("x-change", (event) => {
+            if (this._ignoreChange) {
+                this._ignoreChange = false;
+                return;
+            }
             this.render();
         });
     }
@@ -132,7 +136,7 @@ class ItemsList extends View {
                 if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
                 return b.quantity - a.quantity;
             });
-        } else if (sortType == "chain-and-name") {
+        } else if (sortType == "store-and-name") {
             items.sort((a, b) => {
                 if (a.store < b.store) {
                     return -1;
@@ -180,7 +184,7 @@ class ItemsList extends View {
                         <input x-id="chartCheckbox" type="checkbox" class="hidden peer">
                         <span class="peer-checked:bg-blue-700 btn-action">📈</span>
                     </label>
-                    <input x-id="add" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="+">
+                    <input x-id="add" type="button" class="${this._add ? "" : "hidden"} btn-action" value="+">
                     <input x-id="remove" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="-">
                     <input x-id="up" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▲">
                     <input x-id="down" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▼">
@@ -266,45 +270,110 @@ class ItemsList extends View {
 
         if (this._chart) {
             elements.chartCheckbox.checked = item.chart;
-            elements.chartCheckbox.addEventListener("click", () => {
-                document.activeElement.blur();
-            });
             elements.chartCheckbox.addEventListener("change", (event) => {
-                event.stopPropagation();
                 item.chart = elements.chartCheckbox.checked;
+                if (item.chart && !this.elements.enableChart.checked) {
+                    this.elements.enableChart.checked = true;
+                    this.elements.chart.classList.remove("hidden");
+                }
                 this.elements.chart.render();
+                this._ignoreChange = true;
+                this.fireChangeEvent();
             });
         }
+
+        if (this.model.items.length != this.model.filteredItems.length) {
+            elements.up.classList.add("hidden");
+            elements.down.classList.add("hidden");
+        }
+
+        elements.add.addEventListener("click", () => {
+            if (this._addCallback) this._addCallback(item);
+        });
+
+        elements.remove.addEventListener("click", () => {
+            let index = this.model.items.indexOf(item);
+            if (index >= 0) this.model.items.splice(index, 1);
+            index = this.model.filteredItems.indexOf(item);
+            if (index >= 0) this.model.filteredItems.splice(index, 1);
+            itemDom.remove();
+            this.elements.chart.render();
+
+            if (this._removeCallback) this._removeCallback(item);
+        });
+
+        elements.up.addEventListener("click", () => {
+            const index = itemDom.rowIndex - 1;
+            if (index == 0) return;
+            let otherItem = this.model.items[index - 1];
+            this.model.items[index - 1] = item;
+            this.model.items[index] = otherItem;
+
+            let rowBefore = this.elements.tableBody.rows[index - 1];
+            this.elements.tableBody.insertBefore(itemDom, rowBefore);
+
+            if (this._upCallback) this._upCallback(item);
+        });
+
+        elements.down.addEventListener("click", () => {
+            const index = itemDom.rowIndex - 1;
+            if (index == this.model.items.length - 1) return;
+            let otherItem = this.model.items[index + 1];
+            this.model.items[index + 1] = item;
+            this.model.items[index] = otherItem;
+
+            let rowAfter = this.elements.tableBody.rows[index + 1];
+            this.elements.tableBody.insertBefore(rowAfter, itemDom);
+
+            if (this._downCallback) this._downCallback(item);
+        });
+
         if (this._showAllPriceHistories) elements.priceHistory.classList.remove("hidden");
         return itemDom;
     }
 
     render() {
+        const start = performance.now();
         const elements = this.elements;
-        if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1000)) {
+        if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1500)) {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {
             elements.nameSimilarity.setAttribute("disabled", "true");
-            if (elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
+            if (this.model.filteredItems.length != 0 && elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
         }
 
-        const items = this.sort([...this.model.filteredItems]);
-        elements.numItems.innerHTML =
-            "<strong>Resultate:</strong> " + items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
+        let items = [...this.model.filteredItems];
+        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!") {
+            elements.sort.parentElement.classList.add("hidden");
+        } else {
+            if (!this._noSort) {
+                elements.sort.parentElement.classList.remove("hidden");
+                items = this.sort(items);
+            }
+        }
+        if (items.length == 0) {
+            elements.chart.classList.add("hidden");
+            elements.options.classList.add("hidden");
+            elements.itemsTable.classList.add("hidden");
+        } else {
+            if (elements.enableChart.checked) elements.chart.classList.remove("hidden");
+            elements.options.classList.remove("hidden");
+            elements.itemsTable.classList.remove("hidden");
+        }
+        elements.numItems.innerHTML = items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
         const tableBody = elements.tableBody;
         tableBody.innerHTML = "";
 
-        const now = performance.now();
         let i = 0;
         const batches = [];
         let batch = [];
-        for (const item of items) {
+        items.forEach((item, index) => {
             if (batch.length == 100) {
                 batches.push(batch);
                 batch = [];
             }
             batch.push(item);
-        }
+        });
         if (batch.length > 0) batches.push(batch);
 
         const renderBatch = () => {
@@ -320,7 +389,23 @@ class ItemsList extends View {
 
         renderBatch();
 
-        console.log("Rendering items list took " + ((performance.now() - now) / 1000).toFixed(4) + " secs");
+        log(`ItemsList - rendering ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
+    }
+
+    set addCallback(callback) {
+        this._addCallback = callback;
+    }
+
+    set removeCallback(callback) {
+        this._removeCallback = callback;
+    }
+
+    set upCallback(callback) {
+        this._upCallback = callback;
+    }
+
+    set downCallback(callback) {
+        this._downCallback = callback;
     }
 }
 

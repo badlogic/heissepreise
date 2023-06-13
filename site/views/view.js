@@ -1,4 +1,4 @@
-const { getBooleanAttribute } = require("../misc");
+const { getBooleanAttribute, log } = require("../js/misc");
 
 class View extends HTMLElement {
     constructor() {
@@ -41,7 +41,7 @@ class View extends HTMLElement {
         const result = {};
         elements.forEach((element) => {
             if (result[element.getAttribute("x-id")]) {
-                console.log(`Duplicate element x-id ${element.getAttribute("x-id")} in ${view.localName}`);
+                log(`View - Duplicate element x-id ${element.getAttribute("x-id")} in ${view.localName}`);
             }
             result[element.getAttribute("x-id")] = element;
         });
@@ -63,20 +63,38 @@ class View extends HTMLElement {
         return this._model;
     }
 
+    static getStateProperty(element) {
+        if (element instanceof HTMLInputElement) {
+            if (element.type === "checkbox" || element.type === "radio") {
+                return "checked";
+            } else {
+                return "value";
+            }
+        } else if (element instanceof HTMLOptionElement) {
+            return "selected";
+        } else if (element instanceof HTMLTextAreaElement || element instanceof HTMLSelectElement) {
+            return "value";
+        } else if (element.localName === "custom-checkbox") {
+            return "checked";
+        } else {
+            return null;
+        }
+    }
+
     get state() {
         const elements = this.elements;
-        const properties = ["checked", "value"];
         const state = {};
         for (const key of Object.keys(elements)) {
             const element = elements[key];
             if (!element.hasAttribute("x-state")) continue;
-            const elementState = {};
-            for (const property of properties) {
-                if (property in element) {
-                    elementState[property] = element[property];
-                }
+            const property = View.getStateProperty(element);
+            if (property == null) {
+                log(`View.state() - Unknown state property for element ${element.getAttribute("x-id")} in ${this.localName}`);
+                continue;
             }
-            state[key] = elementState;
+            if (property in element) {
+                state[key] = element[property];
+            }
         }
         return state;
     }
@@ -84,33 +102,49 @@ class View extends HTMLElement {
     set state(state) {
         const elements = this.elements;
         this._disableChangeEvent = true;
-        for (const key of Object.keys(elements)) {
+        for (const key of Object.keys(state)) {
             const elementState = state[key];
-            if (elementState) {
-                const element = elements[key];
-                for (const property in elementState) {
-                    element[property] = elementState[property];
-                    if (element.localName === "input" && element.getAttribute("type") === "radio") {
-                        const changeEvent = new CustomEvent("change", {
-                            bubbles: true,
-                            cancelable: true,
-                        });
-                        element.dispatchEvent(changeEvent);
-                    }
-                }
+            const element = elements[key];
+            if (element) {
+                const property = View.getStateProperty(element);
+                element[property] = elementState;
             }
         }
         this._disableChangeEvent = false;
         this.fireChangeEvent();
     }
 
+    get shareableState() {
+        const state = this.state;
+        const shareableState = Object.keys(state)
+            .sort()
+            .map((el) => {
+                let value = state[el];
+                if (value === true) value = ".";
+                if (value === false) value = "-";
+                return value;
+            })
+            .join(";");
+        return shareableState;
+    }
+
+    set shareableState(shareableState) {
+        const values = shareableState.split(";");
+        const state = this.state;
+        Object.keys(state)
+            .sort()
+            .forEach((el, index) => {
+                if (values[index] === ".") state[el] = true;
+                else if (values[index] === "-") state[el] = false;
+                else state[el] = values[index];
+            });
+        this.state = state;
+    }
+
     render() {}
 
     setupEventHandlers() {
-        const handler = (event) => {
-            event.stopPropagation();
-            this.fireChangeEvent();
-        };
+        const handler = (event) => this.fireChangeEvent();
 
         const elements = this.elements;
         for (const key of Object.keys(elements)) {
@@ -132,7 +166,6 @@ class View extends HTMLElement {
                 const DEBOUNCE_MS = 50;
                 let timeoutId = 0;
                 const debounceHandler = (event) => {
-                    event.stopPropagation();
                     clearTimeout(timeoutId);
                     timeoutId = setTimeout(() => {
                         this.fireChangeEvent();
@@ -146,7 +179,7 @@ class View extends HTMLElement {
 
     fireChangeEvent() {
         if (this._disableChangeEvent) return;
-        const event = new CustomEvent("change", {
+        const event = new CustomEvent("x-change", {
             bubbles: true,
             cancelable: true,
         });
