@@ -123,13 +123,25 @@ class ItemsChart extends View {
                 datasets: datasets,
             },
             options: {
+                interaction: {
+                    intersect: false,
+                    mode: "index",
+                },
+                layout: {
+                    padding: 20,
+                },
                 responsive: true,
                 aspectRation: 16 / 9,
                 scales: {
                     y: {
-                        title: {
-                            display: true,
-                            text: "EURO",
+                        ticks: {
+                            callback: function (value, index, ticks) {
+                                return value.toLocaleString("de-DE", {
+                                    minimumFractionDigits: 2,
+                                    style: "currency",
+                                    currency: "EUR",
+                                });
+                            },
                         },
                     },
                 },
