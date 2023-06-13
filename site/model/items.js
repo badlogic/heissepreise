@@ -6,6 +6,7 @@ function decompress(compressedItems) {
     const items = [];
     const storeLookup = compressedItems.stores;
     const data = compressedItems.data;
+    const dates = compressedItems.dates;
     const numItems = compressedItems.n;
     let i = 0;
     while (items.length < numItems) {
@@ -15,7 +16,7 @@ function decompress(compressedItems) {
         const numPrices = data[i++];
         const prices = [];
         for (let j = 0; j < numPrices; j++) {
-            const date = data[i++];
+            const date = dates[data[i++]];
             const price = data[i++];
             prices.push({
                 date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),

@@ -153,8 +153,17 @@ function compress(items) {
     const compressed = {
         stores: STORE_KEYS,
         n: items.length,
+        dates: [],
         data: [],
     };
+    const uniqueDates = {};
+    for (const item of items) {
+        item.priceHistory.forEach((price) => (uniqueDates[price.date.replaceAll("-", "")] = 0));
+    }
+    const dates = (compressed.dates = Object.keys(uniqueDates).sort());
+    dates.forEach((date, index) => {
+        uniqueDates[date] = index;
+    });
     const data = compressed.data;
     for (item of items) {
         data.push(STORE_KEYS.indexOf(item.store));
@@ -162,7 +171,7 @@ function compress(items) {
         data.push(item.name);
         data.push(item.priceHistory.length);
         for (price of item.priceHistory) {
-            data.push(price.date.replaceAll("-", ""));
+            data.push(uniqueDates[price.date.replaceAll("-", "")]);
             data.push(price.price);
         }
         data.push(item.unit);
