@@ -197,6 +197,21 @@ class ItemsList extends View {
             );
         }
 
+        let price = item.priceHistory[0].price;
+        let unitPrice = item.priceHistory[0].unitPrice;
+        let prevPrice = item.priceHistory[1] ? item.priceHistory[1].price : -1;
+        if (this.model.priceChangesToday) {
+            // any item we get with this filter will have a history length >= 2
+            for (let i = 0; i < item.priceHistory.length; i++) {
+                if (item.priceHistory[i].date == this.model.priceChangesToday) {
+                    price = item.priceHistory[i].price;
+                    unitPrice = item.priceHistory[i].unitPrice;
+                    prevPrice = item.priceHistory[i + 1].price;
+                    break;
+                }
+            }
+        }
+
         let quantity = item.quantity || "";
         let unit = item.unit || "";
         if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
@@ -204,25 +219,27 @@ class ItemsList extends View {
             unit = unit == "ml" ? "l" : "kg";
         }
         let percentageChange = "";
-        if (item.priceHistory.length > 1) {
-            percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
+        if (prevPrice != -1) {
+            percentageChange = Math.round(((price - prevPrice) / prevPrice) * 100);
         }
-        let unitPrice = this.elements.unitPrice.checked;
+
+        let showUnitPrice = this.elements.unitPrice.checked;
         let priceUnit = "";
-        if (unitPrice) {
+        if (showUnitPrice) {
             if (item.unit == "g") priceUnit = " / kg";
             else if (item.unit == "ml") priceUnit = " / l";
             else priceUnit = " / stk";
         }
 
         let priceHistory = "";
-        let priceBase = 150 / (unitPrice ? item.priceHistory[0].unitPrice : item.priceHistory[0].price);
+        let priceBase = 150 / (showUnitPrice ? unitPrice : price);
 
         for (let i = 0; i < item.priceHistory.length; i++) {
             const date = item.priceHistory[i].date;
-            const currPrice = unitPrice ? item.priceHistory[i].unitPrice : item.priceHistory[i].price;
+            const textBold = this.model.priceChangesToday && this.model.priceChangesToday == date ? "bold" : "";
+            const currPrice = showUnitPrice ? item.priceHistory[i].unitPrice : item.priceHistory[i].price;
             const lastPrice = item.priceHistory[i + 1]
-                ? unitPrice
+                ? showUnitPrice
                     ? item.priceHistory[i + 1].unitPrice
                     : item.priceHistory[i + 1].price
                 : currPrice;
@@ -230,19 +247,19 @@ class ItemsList extends View {
 
             priceHistory += `
                     <tr>
-                        <td>${date}</td>
+                        <td class="${textBold}">${date}</td>
                         <td>
                             <div style="width: ${priceBase * currPrice}px"
-                                class="price-line ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
+                                class="${textBold} price-line ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
                                 € ${currPrice.toFixed(2)} ${priceUnit}
                             </div>
                         </td>
                         ${
                             increase > 0
-                                ? `<td class="text-right text-red-500"> + ${increase}%</td>`
+                                ? `<td class="text-right ${textBold} text-red-500"> + ${increase}%</td>`
                                 : increase < 0
-                                ? `<td class="text-right text-green-500"> ${increase}%</td>`
-                                : `<td class="text-right"> ${increase}%</td>`
+                                ? `<td class="text-right ${textBold} text-green-500"> ${increase}%</td>`
+                                : `<td class="text-right ${textBold}"> ${increase}%</td>`
                         }
                     </tr>`;
         }
@@ -258,7 +275,7 @@ class ItemsList extends View {
         elements.name.href = item.url;
         elements.name.innerText = item.name;
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
-        elements.price.innerText = `€ ${Number(unitPrice ? item.unitPrice : item.price).toFixed(2)} ${priceUnit}`;
+        elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;
         elements.percentageChange.classList.add(percentageChange > 0 ? "text-red-500" : percentageChange < 0 ? "text-green-500" : "hidden");
         elements.percentageChange.innerText = `${percentageChange > 0 ? "+" + percentageChange : percentageChange}%`;
@@ -383,7 +400,7 @@ class ItemsList extends View {
         let i = 0;
         const batches = [];
         let batch = [];
-        items.forEach((item, index) => {
+        items.forEach((item) => {
             if (batch.length == 100) {
                 batches.push(batch);
                 batch = [];
