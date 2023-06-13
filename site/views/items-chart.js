@@ -84,14 +84,14 @@ class ItemsChart extends View {
             canvasDom.classList.remove("hidden");
         }
 
-        const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));
+        const allDates = items.flatMap((item) => item.priceHistory.map((price) => price.date));
         const uniqueDates = [...new Set(allDates)];
         uniqueDates.sort();
 
-        const datasets = items.map((product) => {
+        const datasets = items.map((item) => {
             let price = null;
             const prices = uniqueDates.map((date) => {
-                const priceObj = product.priceHistory.find((item) => item.date === date);
+                const priceObj = item.priceHistory.find((item) => item.date === date);
                 if (!price && priceObj) price = priceObj.price;
                 return priceObj ? priceObj.price : null;
             });
@@ -105,7 +105,7 @@ class ItemsChart extends View {
             }
 
             return {
-                label: (product.store ? product.store + " " : "") + product.name,
+                label: (item.store ? item.store + " " : "") + item.name,
                 data: prices,
             };
         });
