@@ -77,16 +77,20 @@ class Items extends Model {
             item.search = item.name + " " + item.quantity + " " + item.unit;
             item.search = item.search.toLowerCase().replace(",", ".");
 
+            item.unitPrice = (item.price / item.quantity) * (item.unit == "g" || item.unit == "ml" ? 1000 : 1);
             item.numPrices = item.priceHistory.length;
             item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
             item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
             item.date = item.priceHistory[0].date;
             let highestPriceBefore = -1;
             let lowestPriceBefore = 100000;
-            for (let i = 1; i < item.priceHistory.length; i++) {
+            for (let i = 0; i < item.priceHistory.length; i++) {
                 const price = item.priceHistory[i];
+                price.unitPrice = (price.price / item.quantity) * (item.unit == "g" || item.unit == "ml" ? 1000 : 1);
+                if (i == 0) continue;
                 if (i < 10) {
                     item["price" + i] = price.price;
+                    item["unitPrice" + i] = price.unitPrice;
                     item["date" + i] = price.date;
                 }
                 highestPriceBefore = Math.max(highestPriceBefore, price.price);

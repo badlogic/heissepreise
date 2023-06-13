@@ -27,6 +27,8 @@ class ItemsList extends View {
                         <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
                             this._chart ? "" : "hidden"
                         }"></custom-checkbox>
+                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType" checked> Verkauspreis</label>
+                        <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType"> Mengenpreis</label>
                     </div>
                 </div>
                 <label class="${hideSort}">
@@ -123,9 +125,11 @@ class ItemsList extends View {
     sort(items) {
         const sortType = this.elements.sort.value;
         if (sortType == "price-asc") {
-            items.sort((a, b) => a.price - b.price);
+            if (this.elements.salesPrice.checked) items.sort((a, b) => a.price - b.price);
+            else items.sort((a, b) => a.unitPrice - b.unitPrice);
         } else if (sortType == "price-desc") {
-            items.sort((a, b) => b.price - a.price);
+            if (this.elements.salesPrice.checked) items.sort((a, b) => b.price - a.price);
+            else items.sort((a, b) => b.salesPrice - a.salesPrice);
         } else if (sortType == "quantity-asc") {
             items.sort((a, b) => {
                 if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
@@ -203,13 +207,25 @@ class ItemsList extends View {
         if (item.priceHistory.length > 1) {
             percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
         }
+        let unitPrice = this.elements.unitPrice.checked;
+        let priceUnit = "";
+        if (unitPrice) {
+            if (item.unit == "g") priceUnit = " / kg";
+            else if (item.unit == "ml") priceUnit = " / l";
+            else priceUnit = " / stk";
+        }
 
         let priceHistory = "";
-        let priceBase = 150 / item.priceHistory[0].price;
+        let priceBase = 150 / (unitPrice ? item.priceHistory[0].unitPrice : item.priceHistory[0].price);
+
         for (let i = 0; i < item.priceHistory.length; i++) {
             const date = item.priceHistory[i].date;
-            const currPrice = item.priceHistory[i].price;
-            const lastPrice = item.priceHistory[i + 1] ? item.priceHistory[i + 1].price : currPrice;
+            const currPrice = unitPrice ? item.priceHistory[i].unitPrice : item.priceHistory[i].price;
+            const lastPrice = item.priceHistory[i + 1]
+                ? unitPrice
+                    ? item.priceHistory[i + 1].unitPrice
+                    : item.priceHistory[i + 1].price
+                : currPrice;
             const increase = Math.round(((currPrice - lastPrice) / lastPrice) * 100);
 
             priceHistory += `
@@ -218,7 +234,7 @@ class ItemsList extends View {
                         <td>
                             <div style="width: ${priceBase * currPrice}px"
                                 class="price-line ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
-                                € ${currPrice}
+                                € ${currPrice.toFixed(2)} ${priceUnit}
                             </div>
                         </td>
                         ${
@@ -242,7 +258,7 @@ class ItemsList extends View {
         elements.name.href = item.url;
         elements.name.innerText = item.name;
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
-        elements.price.innerText = `€ ${Number(item.price).toFixed(2)}`;
+        elements.price.innerText = `€ ${Number(unitPrice ? item.unitPrice : item.price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;
         elements.percentageChange.classList.add(percentageChange > 0 ? "text-red-500" : percentageChange < 0 ? "text-green-500" : "hidden");
         elements.percentageChange.innerText = `${percentageChange > 0 ? "+" + percentageChange : percentageChange}%`;
