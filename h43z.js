@@ -1,11 +1,12 @@
 const fs = require("fs");
 const analysis = require("./analysis");
 const Database = require("better-sqlite3");
-const db = new Database("/Users/badlogic/Downloads/shops.db", { verbose: console.log });
-let items = [];
-const lookup = {};
 
-if (!fs.existsSync("h43z.json")) {
+exports.importH43zData = (sqliteFile, outputFile) => {
+    const db = new Database(sqliteFile, { verbose: console.log });
+    let items = [];
+    const lookup = {};
+
     let stmt = db.prepare("select * from product");
     for (const row of stmt.iterate()) {
         const item = {
@@ -48,50 +49,58 @@ if (!fs.existsSync("h43z.json")) {
         item.priceHistory.reverse();
         item.price = item.priceHistory[0];
     });
-    analysis.writeJSON("h43z.json", items);
-}
-
-items = analysis.readJSON("h43z.json");
-items.forEach((item) => {
-    // item.priceHistory = item.priceHistory.filter(price => price.date > "2020-01-01")
-});
-const currItems = analysis.readJSON("data/latest-canonical.json.br");
-const currLookup = {};
-currItems.forEach((item) => (currLookup[item.store + (item.sparId ? item.sparId : item.id)] = item));
-let missingItems = {
-    spar: 0,
-    billa: 0,
+    analysis.writeJSON(outputFile, items);
 };
-let foundItems = {
-    spar: 0,
-    billa: 0,
-};
-for (item of items) {
-    const i = lookup[item.id];
-    const currItem = currLookup[item.store + item.id];
-    if (!currItem) {
-        missingItems[item.store]++;
-    } else {
-        foundItems[item.store]++;
-        const oldHistory = [...currItem.priceHistory];
-        currItem.priceHistory.push(...item.priceHistory);
-        currItem.priceHistory.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        const mergedHistory = [];
-        currItem.priceHistory.forEach((price) => {
-            if (mergedHistory.length == 0) {
-                mergedHistory.push(price);
-                return;
-            }
-            if (mergedHistory[mergedHistory.length - 1].price != price.price) {
-                mergedHistory.push(price);
-            }
-        });
-        mergedHistory.reverse();
-        currItem.priceHistory = mergedHistory;
+exports.mergeWithLatestCanonical = (h43zFile, latestCanonicalFile) => {
+    const items = analysis.readJSON(h43zFile);
+    const lookup = {};
+    items.forEach((item) => {
+        // item.priceHistory = item.priceHistory.filter(price => price.date > "2020-01-01")
+        lookup[item.id] = item;
+    });
+    const currItems = analysis.readJSON(latestCanonicalFile + "." + analysis.FILE_COMPRESSOR);
+    const currLookup = {};
+    currItems.forEach((item) => (currLookup[item.store + (item.sparId ? item.sparId : item.id)] = item));
+    let missingItems = {
+        spar: 0,
+        billa: 0,
+    };
+    let foundItems = {
+        spar: 0,
+        billa: 0,
+    };
+    for (item of items) {
+        const i = lookup[item.id];
+        const currItem = currLookup[item.store + item.id];
+        if (!currItem) {
+            missingItems[item.store]++;
+        } else {
+            foundItems[item.store]++;
+            const oldHistory = [...currItem.priceHistory];
+            currItem.priceHistory.push(...item.priceHistory);
+            currItem.priceHistory.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            const mergedHistory = [];
+            currItem.priceHistory.forEach((price) => {
+                if (mergedHistory.length == 0) {
+                    mergedHistory.push(price);
+                    return;
+                }
+                if (mergedHistory[mergedHistory.length - 1].price != price.price) {
+                    mergedHistory.push(price);
+                }
+            });
+            mergedHistory.reverse();
+            currItem.priceHistory = mergedHistory;
+        }
     }
+    console.log(JSON.stringify(missingItems, null, 2));
+    console.log(JSON.stringify(foundItems, null, 2));
+    analysis.writeJSON(latestCanonicalFile, currItems, analysis.FILE_COMPRESSOR);
+};
+
+if (require.main === module) {
+    exports.importH43zData("/Users/badlogic/Downloads/shops.db", "h43z.json");
+    exports.mergeWithLatestCanonical("h43z.json", "data/latest-canonical.json");
 }
-console.log(JSON.stringify(missingItems, null, 2));
-console.log(JSON.stringify(foundItems, null, 2));
-analysis.writeJSON("h43z.compressed.json", items, false, 0, true);
-analysis.writeJSON("data/latest-canonical.h43z.json", currItems, analysis.FILE_COMPRESSOR);

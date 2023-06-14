@@ -20,7 +20,7 @@ class ItemsChart extends View {
                     <custom-checkbox x-id="onlyToday" x-change x-state label="Nur heutige Preise"></custom-checkbox>
                     <div
                         class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600">
-                        <input x-id="startDate" x-change x-state type="date" value="2020-01-01" />
+                        <input x-id="startDate" x-change x-state type="date" value="2017-01-01" />
                         -
                         <input x-id="endDate" x-change x-state type="date" value="${today()}"/>
                     </div>
@@ -42,38 +42,45 @@ class ItemsChart extends View {
             return [{ date: today(), price: sum }];
         }
 
-        const allDates = items.flatMap((product) => product.priceHistory.map((item) => item.date));
+        const allDates = items.flatMap((product) =>
+            product.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate).map((item) => item.date)
+        );
         let uniqueDates = [...new Set(allDates)];
         uniqueDates.sort();
 
-        const allPrices = items.map((product) => {
+        let priceChanges = new Array(uniqueDates.length);
+        for (let i = 0; i < uniqueDates.length; i++) {
+            priceChanges[i] = { date: uniqueDates[i], price: 0 };
+        }
+        const priceScratch = new Array(uniqueDates.length);
+        items.forEach((product) => {
             let price = null;
-            const prices = uniqueDates.map((date) => {
-                const priceObj = product.priceHistory.find((item) => item.date === date);
+            priceScratch.fill(null);
+            if (!product.priceHistoryLookup) {
+                product.priceHistoryLookup = {};
+                product.priceHistory.forEach((price) => (product.priceHistoryLookup[price.date] = price));
+            }
+            for (let i = 0; i < uniqueDates.length; i++) {
+                const priceObj = product.priceHistoryLookup[uniqueDates[i]];
                 if (!price && priceObj) price = priceObj.price;
-                return priceObj ? priceObj.price : null;
-            });
+                priceScratch[i] = priceObj ? priceObj.price : null;
+            }
 
-            for (let i = 0; i < prices.length; i++) {
-                if (!prices[i]) {
-                    prices[i] = price;
+            for (let i = 0; i < priceScratch.length; i++) {
+                if (!priceScratch[i]) {
+                    priceScratch[i] = price;
                 } else {
-                    price = prices[i];
+                    price = priceScratch[i];
                 }
             }
-            return prices;
+
+            for (let i = 0; i < priceScratch.length; i++) {
+                const price = priceScratch[i];
+                priceChanges[i].price += price;
+            }
         });
 
-        const priceChanges = [];
-        for (let i = 0; i < uniqueDates.length; i++) {
-            if (uniqueDates[i] < startDate || uniqueDates[i] > endDate) continue;
-            let price = 0;
-            for (let j = 0; j < allPrices.length; j++) {
-                price += allPrices[j][i];
-            }
-            priceChanges.push({ date: uniqueDates[i], price });
-        }
-
+        priceChanges = priceChanges.filter((price) => price.date >= startDate && price.date <= endDate);
         return priceChanges;
     }
 
@@ -94,6 +101,7 @@ class ItemsChart extends View {
         const uniqueDates = [...new Set(allDates)];
         uniqueDates.sort();
 
+        const now = performance.now();
         const datasets = items.map((item) => {
             let price = null;
             const prices = uniqueDates.map((date) => {
@@ -142,11 +150,9 @@ class ItemsChart extends View {
                 // stepped: "before"
             };
 
-            const data = dataset.data;
-            for (let i = 0; i < data.length; i++) {}
-
             return dataset;
         });
+        log("ItemsChart - Calculating datasets took " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
 
         const ctx = canvasDom.getContext("2d");
         let scrollTop = -1;
@@ -202,13 +208,16 @@ class ItemsChart extends View {
         const itemsToShow = [];
 
         if (elements.sumTotal.checked && items.length > 0) {
+            const now = performance.now();
             itemsToShow.push({
                 name: "Preissumme Gesamt",
                 priceHistory: this.calculateOverallPriceChanges(items, onlyToday, startDate, endDate),
             });
+            log("ItemsChart - Calculating overall sum total " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
         }
 
         if (elements.sumStores.checked && items.length > 0) {
+            const now = performance.now();
             STORE_KEYS.forEach((store) => {
                 const storeItems = items.filter((item) => item.store === store);
                 if (storeItems.length > 0) {
@@ -218,6 +227,7 @@ class ItemsChart extends View {
                     });
                 }
             });
+            log("ItemsChart - Calculating overall sum per store took " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
         }
 
         items.forEach((item) => {

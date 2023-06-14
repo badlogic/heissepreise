@@ -111,6 +111,10 @@ exports.queryItems = (query, items, exactWord) => {
         else return priceHistory.some((price) => price.date >= date && price.date <= endDate);
     };
 
+    alasql.fn.hasPriceChangeLike = (priceHistory, date) => {
+        return priceHistory.some((price) => price.date.indexOf(date) >= 0);
+    };
+
     if (query.charAt(0) == "!") {
         query = query.substring(1);
         try {
