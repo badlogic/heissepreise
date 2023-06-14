@@ -14,3 +14,4 @@ tmp-dir/
 site/data/latest-canonical*.json*
 site/output
 copy
+.env
