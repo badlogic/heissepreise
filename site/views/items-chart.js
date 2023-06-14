@@ -2,7 +2,9 @@ const { STORE_KEYS } = require("../model/stores");
 const { today, log, deltaTime } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
+const moment = require("moment");
 const { Chart, registerables } = require("chart.js");
+require("chartjs-adapter-moment");
 Chart.register(...registerables);
 
 class ItemsChart extends View {
@@ -84,7 +86,11 @@ class ItemsChart extends View {
             canvasDom.classList.remove("hidden");
         }
 
-        const allDates = items.flatMap((item) => item.priceHistory.map((price) => price.date));
+        const startDate = this.elements.startDate.value;
+        const endDate = this.elements.endDate.value;
+        const allDates = items.flatMap((item) =>
+            item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate).map((price) => price.date)
+        );
         const uniqueDates = [...new Set(allDates)];
         uniqueDates.sort();
 
@@ -92,22 +98,54 @@ class ItemsChart extends View {
             let price = null;
             const prices = uniqueDates.map((date) => {
                 const priceObj = item.priceHistory.find((item) => item.date === date);
-                if (!price && priceObj) price = priceObj.price;
-                return priceObj ? priceObj.price : null;
+                if (!price && priceObj) price = priceObj;
+                return priceObj;
             });
+
+            const firstIndex = item.priceHistory.indexOf(price);
 
             for (let i = 0; i < prices.length; i++) {
                 if (prices[i] == null) {
-                    prices[i] = price;
+                    if (i == 0) {
+                        if (firstIndex < item.priceHistory.length - 1) {
+                            price = item.priceHistory[firstIndex + 1];
+                            prices[i] = price;
+                        }
+                    } else {
+                        prices[i] = price;
+                    }
                 } else {
                     price = prices[i];
                 }
             }
 
-            return {
+            const dedupPrices = [];
+            prices.forEach((price, index) => {
+                if (price == null) return;
+                if (dedupPrices.length == 0) {
+                    dedupPrices.push({ price: price.price, date: uniqueDates[index] });
+                } else {
+                    const lastPrice = dedupPrices[dedupPrices.length - 1];
+                    if (lastPrice.date == price.date && lastPrice.price == price.price) return;
+                    dedupPrices.push({ price: price.price, date: uniqueDates[index] });
+                }
+            });
+
+            const dataset = {
                 label: (item.store ? item.store + " " : "") + item.name,
-                data: prices,
+                data: dedupPrices.map((price, index) => {
+                    return {
+                        x: moment(price.date),
+                        y: price.price,
+                    };
+                }),
+                // stepped: "before"
             };
+
+            const data = dataset.data;
+            for (let i = 0; i < data.length; i++) {}
+
+            return dataset;
         });
 
         const ctx = canvasDom.getContext("2d");
@@ -119,13 +157,28 @@ class ItemsChart extends View {
         canvasDom.lastChart = new Chart(ctx, {
             type: chartType ? chartType : "line",
             data: {
-                labels: uniqueDates,
                 datasets: datasets,
             },
             options: {
                 responsive: true,
                 aspectRation: 16 / 9,
                 scales: {
+                    x: {
+                        type: "time",
+                        adapters: {
+                            date: moment,
+                        },
+                        time: {
+                            unit: "day",
+                            displayFormats: {
+                                day: "YYYY-MM-D",
+                            },
+                        },
+                        title: {
+                            display: true,
+                            text: "Date",
+                        },
+                    },
                     y: {
                         title: {
                             display: true,
@@ -169,12 +222,11 @@ class ItemsChart extends View {
 
         items.forEach((item) => {
             if (item.chart) {
-                itemsToShow.push({
+                const chartItem = {
                     name: item.store + " " + item.name,
-                    priceHistory: onlyToday
-                        ? [{ date: today(), price: item.price }]
-                        : item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate),
-                });
+                    priceHistory: onlyToday ? [{ date: today(), price: item.price }] : item.priceHistory,
+                };
+                itemsToShow.push(chartItem);
             }
         });
 
