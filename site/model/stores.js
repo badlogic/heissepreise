@@ -36,6 +36,13 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.mpreis.at/shop/p/${item.id}`,
     },
+    metro: {
+        name: "METRO",
+        budgetBrands: ["aro", "Metro Chef", "S-Budget"],
+        color: "blue",
+        defaultChecked: true,
+        getUrl: (item) => `https://shop.metro.at/shop/1/${item.id}`,
+    },
     dm: {
         name: "DM",
         budgetBrands: ["balea"],
