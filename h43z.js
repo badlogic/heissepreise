@@ -26,7 +26,7 @@ if (!fs.existsSync("h43z.json")) {
     }
     console.log(items.length + " products");
 
-    stmt = db.prepare("select * from pricehistory order by date desc");
+    stmt = db.prepare("select * from pricehistory order by date asc");
     let i = 0;
     let unknown = 0;
     for (const row of stmt.iterate()) {
@@ -45,6 +45,7 @@ if (!fs.existsSync("h43z.json")) {
 
     items = items.filter((item) => item.priceHistory.length > 0);
     items.forEach((item) => {
+        item.priceHistory.reverse();
         item.price = item.priceHistory[0];
     });
     analysis.writeJSON("h43z.json", items);
@@ -72,7 +73,22 @@ for (item of items) {
         missingItems[item.store]++;
     } else {
         foundItems[item.store]++;
-        currItem.priceHistory = item.priceHistory;
+        const oldHistory = [...currItem.priceHistory];
+        currItem.priceHistory.push(...item.priceHistory);
+        currItem.priceHistory.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        const mergedHistory = [];
+        currItem.priceHistory.forEach((price) => {
+            if (mergedHistory.length == 0) {
+                mergedHistory.push(price);
+                return;
+            }
+            if (mergedHistory[mergedHistory.length - 1].price != price.price) {
+                mergedHistory.push(price);
+            }
+        });
+        mergedHistory.reverse();
+        currItem.priceHistory = mergedHistory;
     }
 }
 console.log(JSON.stringify(missingItems, null, 2));
