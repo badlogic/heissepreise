@@ -376,7 +376,7 @@ class ItemsList extends View {
         }
 
         let items = [...this.model.filteredItems];
-        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!") {
+        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!" && this.model.lastQuery.toLowerCase().indexOf("order by") >= 0) {
             elements.sort.parentElement.classList.add("hidden");
         } else {
             if (!this._noSort) {
