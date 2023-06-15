@@ -4,6 +4,7 @@ const analysis = require("./analysis.js");
 const bundle = require("./bundle.js");
 const outputDir = path.resolve("docs");
 const dataDir = path.join(outputDir, "data");
+const { execSync } = require("child_process");
 
 function deleteFiles(folderPath) {
     const files = fs.readdirSync(folderPath);
@@ -41,6 +42,12 @@ function deleteFiles(folderPath) {
             const filePath = path.join(dataDir, file);
             if (fs.statSync(filePath).isFile() && !file.startsWith("latest-canonical")) fs.unlinkSync(filePath);
         });
+        try {
+            const output = execSync(`ls -lah ${dataDir}`).toString();
+            console.log(output);
+        } catch (error) {
+            console.error(`Error executing command: ${error}`);
+        }
         analysis.migrateCompression(dataDir, `.json.${analysis.FILE_COMPRESSOR}`, ".json");
     } catch (e) {
         console.error(e);
