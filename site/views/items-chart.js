@@ -112,26 +112,19 @@ class ItemsChart extends View {
         const now = performance.now();
         const datasets = items.map((item) => {
             let price = null;
-            const prices = uniqueDates.map((date) => {
+            let prices = uniqueDates.map((date) => {
                 const priceObj = item.priceHistory.find((item) => item.date === date);
                 if (!price && priceObj) price = priceObj;
                 return priceObj;
             });
 
-            const firstIndex = item.priceHistory.indexOf(price);
-
+            let lastPrice = null;
             for (let i = 0; i < prices.length; i++) {
-                if (prices[i] == null) {
-                    if (i == 0) {
-                        if (firstIndex < item.priceHistory.length - 1) {
-                            price = item.priceHistory[firstIndex + 1];
-                            prices[i] = price;
-                        }
-                    } else {
-                        prices[i] = price;
-                    }
+                const price = prices[i];
+                if (price) {
+                    lastPrice = price;
                 } else {
-                    price = prices[i];
+                    if (lastPrice) prices[i] = lastPrice;
                 }
             }
 
@@ -142,7 +135,6 @@ class ItemsChart extends View {
                     dedupPrices.push({ price: price.price, date: uniqueDates[index] });
                 } else {
                     const lastPrice = dedupPrices[dedupPrices.length - 1];
-                    if (lastPrice.date == price.date && lastPrice.price == price.price) return;
                     dedupPrices.push({ price: price.price, date: uniqueDates[index] });
                 }
             });
