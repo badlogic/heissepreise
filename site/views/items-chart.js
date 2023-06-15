@@ -103,45 +103,14 @@ class ItemsChart extends View {
 
         const startDate = this.elements.startDate.value;
         const endDate = this.elements.endDate.value;
-        const allDates = items.flatMap((item) =>
-            item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate).map((price) => price.date)
-        );
-        const uniqueDates = [...new Set(allDates)];
-        uniqueDates.sort();
 
         const now = performance.now();
         const datasets = items.map((item) => {
-            let price = null;
-            let prices = uniqueDates.map((date) => {
-                const priceObj = item.priceHistory.find((item) => item.date === date);
-                if (!price && priceObj) price = priceObj;
-                return priceObj;
-            });
-
-            let lastPrice = null;
-            for (let i = 0; i < prices.length; i++) {
-                const price = prices[i];
-                if (price) {
-                    lastPrice = price;
-                } else {
-                    if (lastPrice) prices[i] = lastPrice;
-                }
-            }
-
-            const dedupPrices = [];
-            prices.forEach((price, index) => {
-                if (price == null) return;
-                if (dedupPrices.length == 0) {
-                    dedupPrices.push({ price: price.price, date: uniqueDates[index] });
-                } else {
-                    const lastPrice = dedupPrices[dedupPrices.length - 1];
-                    dedupPrices.push({ price: price.price, date: uniqueDates[index] });
-                }
-            });
+            const prices = item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate);
 
             const dataset = {
                 label: (item.store ? item.store + " " : "") + item.name,
-                data: dedupPrices.map((price) => {
+                data: prices.map((price) => {
                     return {
                         x: moment(price.date),
                         y: price.price,
@@ -149,7 +118,7 @@ class ItemsChart extends View {
                 }),
             };
             if (settings.chartType == "stepped") {
-                dataset.stepped = "before";
+                dataset.stepped = "after";
             }
 
             return dataset;
@@ -168,10 +137,6 @@ class ItemsChart extends View {
                 datasets: datasets,
             },
             options: {
-                interaction: {
-                    intersect: false,
-                    mode: "index",
-                },
                 layout: {
                     padding: 20,
                 },
