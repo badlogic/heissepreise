@@ -27,7 +27,7 @@ class ItemsList extends View {
                         <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
                             this._chart ? "" : "hidden"
                         }"></custom-checkbox>
-                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType" checked> Verkauspreis</label>
+                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType" checked> Verkaufspreis</label>
                         <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType"> Mengenpreis</label>
                     </div>
                 </div>
