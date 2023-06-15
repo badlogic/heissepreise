@@ -130,7 +130,7 @@ exports.queryItems = (query, items, exactWord) => {
     // Find quantity/unit query
     let newTokens = [];
     let unitQueries = [];
-    const operators = ["<", "<=", ">", ">="];
+    const operators = ["<", "<=", ">", ">=", "="];
     for (let i = 0; i < tokens.length; i++) {
         const token = tokens[i];
         let unit = UNITS[token];
