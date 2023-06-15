@@ -153,8 +153,17 @@ function compress(items) {
     const compressed = {
         stores: STORE_KEYS,
         n: items.length,
+        dates: [],
         data: [],
     };
+    const uniqueDates = {};
+    for (const item of items) {
+        item.priceHistory.forEach((price) => (uniqueDates[price.date.replaceAll("-", "")] = 0));
+    }
+    const dates = (compressed.dates = Object.keys(uniqueDates).sort());
+    dates.forEach((date, index) => {
+        uniqueDates[date] = index;
+    });
     const data = compressed.data;
     for (item of items) {
         data.push(STORE_KEYS.indexOf(item.store));
@@ -162,7 +171,7 @@ function compress(items) {
         data.push(item.name);
         data.push(item.priceHistory.length);
         for (price of item.priceHistory) {
-            data.push(price.date.replaceAll("-", ""));
+            data.push(uniqueDates[price.date.replaceAll("-", "")]);
             data.push(price.price);
         }
         data.push(item.unit);
@@ -201,7 +210,10 @@ exports.replay = function (rawDataDir) {
 
     for (const store of STORE_KEYS) {
         storeFiles[store] = getFilteredFilesFor(store);
-        canonicalFiles[store] = storeFiles[store].map((file) => getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+        canonicalFiles[store] = storeFiles[store].map((file) => {
+            console.log(`Creating canonical items for ${file}`);
+            return getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]);
+        });
         canonicalFiles[store].reverse();
     }
 
@@ -223,6 +235,7 @@ exports.replay = function (rawDataDir) {
     let curr = null;
     for (let i = 1; i < allFilesCanonical.length; i++) {
         curr = allFilesCanonical[i];
+        console.log(`Merging ${i}/${allFilesCanonical.length} canonical files.`);
         mergePriceHistory(prev, curr);
         prev = curr;
     }
