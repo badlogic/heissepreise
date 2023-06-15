@@ -118,7 +118,7 @@ class ItemsChart extends View {
                 }),
             };
             if (settings.chartType == "stepped") {
-                dataset.stepped = "after";
+                dataset.stepped = "before";
             }
 
             return dataset;
