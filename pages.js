@@ -29,8 +29,10 @@ function deleteFiles(folderPath) {
         deleteFiles(outputDir);
         bundle.bundle("site", outputDir, false);
 
-        const data = analysis.readJSON(`${dataDir}/latest-canonical.json`);
-        analysis.writeJSON(`${dataDir}/latest-canonical.json`, data, analysis.FILE_COMPRESSOR);
+        if (fs.existsSync(`${dataDir}/latest-canonical.json`)) {
+            const data = analysis.readJSON(`${dataDir}/latest-canonical.json`);
+            analysis.writeJSON(`${dataDir}/latest-canonical.json`, data, analysis.FILE_COMPRESSOR);
+        }
         await analysis.updateData(dataDir);
 
         const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
