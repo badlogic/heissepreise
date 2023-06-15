@@ -10,6 +10,7 @@ fi
 npm install
 node pages.js
 
+set -e
 pushd docs
 git add *
 git commit -am "Updated $(date +'%Y-%m-%d')"

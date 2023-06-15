@@ -7,3 +7,4 @@ latest-canonical*.json
 momentum-cart.json
 package-lock.json
 site/_templates
+docs/
