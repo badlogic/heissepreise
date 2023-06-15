@@ -22,13 +22,14 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.roksh.at/hofer/produkte/${item.url}`,
     },
-    lidl: {
+    // Disabled as they only give us discounted products.
+    /*lidl: {
         name: "Lidl",
         budgetBrands: ["milbona"],
         color: "pink",
         defaultChecked: true,
         getUrl: (item) => `https://www.lidl.at${item.url}`,
-    },
+    },*/
     mpreis: {
         name: "MPREIS",
         budgetBrands: [],

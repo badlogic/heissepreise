@@ -3,24 +3,25 @@ const { stores, STORE_KEYS } = require("./stores");
 const { Model } = require("./model");
 
 function decompress(compressedItems) {
-    const items = [];
     const storeLookup = compressedItems.stores;
     const data = compressedItems.data;
+    const dates = compressedItems.dates;
     const numItems = compressedItems.n;
+    const items = new Array(numItems);
     let i = 0;
-    while (items.length < numItems) {
+    for (let l = 0; l < numItems; l++) {
         const store = storeLookup[data[i++]];
         const id = data[i++];
         const name = data[i++];
         const numPrices = data[i++];
-        const prices = [];
+        const prices = new Array(numPrices);
         for (let j = 0; j < numPrices; j++) {
-            const date = data[i++];
+            const date = dates[data[i++]];
             const price = data[i++];
-            prices.push({
+            prices[j] = {
                 date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
                 price,
-            });
+            };
         }
         const unit = data[i++];
         const quantity = data[i++];
@@ -28,7 +29,7 @@ function decompress(compressedItems) {
         const bio = data[i++] == 1;
         const url = stores[store].getUrl({ id, name, url: data[i++] });
 
-        items.push({
+        items[l] = {
             store,
             id,
             name,
@@ -39,7 +40,7 @@ function decompress(compressedItems) {
             quantity,
             bio,
             url,
-        });
+        };
     }
     return items;
 }
@@ -77,16 +78,20 @@ class Items extends Model {
             item.search = item.name + " " + item.quantity + " " + item.unit;
             item.search = item.search.toLowerCase().replace(",", ".");
 
+            item.unitPrice = (item.price / item.quantity) * (item.unit == "g" || item.unit == "ml" ? 1000 : 1);
             item.numPrices = item.priceHistory.length;
             item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
             item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
             item.date = item.priceHistory[0].date;
             let highestPriceBefore = -1;
             let lowestPriceBefore = 100000;
-            for (let i = 1; i < item.priceHistory.length; i++) {
+            for (let i = 0; i < item.priceHistory.length; i++) {
                 const price = item.priceHistory[i];
+                price.unitPrice = (price.price / item.quantity) * (item.unit == "g" || item.unit == "ml" ? 1000 : 1);
+                if (i == 0) continue;
                 if (i < 10) {
                     item["price" + i] = price.price;
+                    item["unitPrice" + i] = price.unitPrice;
                     item["date" + i] = price.date;
                 }
                 highestPriceBefore = Math.max(highestPriceBefore, price.price);

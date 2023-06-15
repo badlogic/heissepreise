@@ -106,6 +106,7 @@ async function bundleJS(inputDir, outputDir, watch) {
             carts: `${inputDir}/carts.js`,
             cart: `${inputDir}/cart.js`,
             changes: `${inputDir}/changes.js`,
+            settings: `${inputDir}/settings.js`,
             index: `${inputDir}/index.js`,
         },
         bundle: true,

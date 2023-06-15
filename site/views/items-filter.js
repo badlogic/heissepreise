@@ -1,5 +1,6 @@
 const { today, parseNumber, dom, getBooleanAttribute, queryItems, log, deltaTime } = require("../js/misc");
 const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
+const { settings } = require("../model");
 const { View } = require("./view");
 
 class ItemsFilter extends View {
@@ -23,14 +24,16 @@ class ItemsFilter extends View {
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
 
             <div x-id="stores" class="flex justify-center gap-2 flex-wrap mt-4 ${hideStores}">
-                <custom-checkbox x-id="allStores" label="Alle" checked></custom-checkbox>
+                <custom-checkbox x-id="allStores" label="Alle" ${
+                    Object.values(stores).every((store) => store.defaultChecked) ? "checked" : ""
+                }></custom-checkbox>
                 ${STORE_KEYS.map(
                     (store) => /*html*/ `
                         <custom-checkbox
                             x-id="${store}" x-state x-change
                             label="${stores[store].name}"
                             class="${stores[store].color}"
-                            ${stores[store].defaultChecked ? "checked" : ""}
+                            ${settings[store] ? "checked" : ""}
                         ></custom-checkbox>`
                 ).join("")}
             </div>
@@ -82,11 +85,24 @@ class ItemsFilter extends View {
             }
         });
 
-        elements.allStores.addEventListener("change", () => {
+        const handleChangeAll = () => {
             const checked = elements.allStores.checked;
             STORE_KEYS.forEach((store) => (elements[store].checked = checked));
             this.fireChangeEvent();
-        });
+        };
+
+        const storeElements = STORE_KEYS.map((store) => elements[store]);
+
+        storeElements.forEach((store) =>
+            store.addEventListener("change", () => {
+                const allChecked = storeElements.every((store) => store.checked);
+                elements.allStores.removeEventListener("change", handleChangeAll);
+                elements.allStores.checked = allChecked;
+                elements.allStores.addEventListener("change", handleChangeAll);
+            })
+        );
+
+        elements.allStores.addEventListener("change", handleChangeAll);
 
         elements.priceChangesToday.addEventListener("change", () => {
             if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
@@ -122,9 +138,11 @@ class ItemsFilter extends View {
             return;
         }
 
+        this.model.lastDate = null;
         if (this._filterByPriceChanges) {
             if (elements.priceChangesToday.checked) {
                 const today = elements.priceChangesDate.value;
+                this.model.priceChangesToday = today;
                 filteredItems = filteredItems.filter((item) => {
                     if (item.priceHistory.length == 1) return false;
                     for (let i = 0; i < item.priceHistory.length; i++) {
@@ -194,7 +212,7 @@ class ItemsFilter extends View {
             filteredItems = queryItems(query, filteredItems, elements.exact.checked);
         }
 
-        if (this.model.lastQuery != query && !this._noChartClear) {
+        if (this.model.lastQuery && this.model.lastQuery != query && !this._noChartClear) {
             filteredItems.forEach((item) => (item.chart = false));
         }
         this.model.lastQuery = query;

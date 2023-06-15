@@ -106,6 +106,15 @@ exports.parseNumber = (value, defaultValue) => {
 };
 
 exports.queryItems = (query, items, exactWord) => {
+    alasql.fn.hasPriceChange = (priceHistory, date, endDate) => {
+        if (!endDate) return priceHistory.some((price) => price.date == date);
+        else return priceHistory.some((price) => price.date >= date && price.date <= endDate);
+    };
+
+    alasql.fn.hasPriceChangeLike = (priceHistory, date) => {
+        return priceHistory.some((price) => price.date.indexOf(date) >= 0);
+    };
+
     if (query.charAt(0) == "!") {
         query = query.substring(1);
         try {

@@ -27,6 +27,8 @@ class ItemsList extends View {
                         <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
                             this._chart ? "" : "hidden"
                         }"></custom-checkbox>
+                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType" checked> Verkaufspreis</label>
+                        <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType"> Mengenpreis</label>
                     </div>
                 </div>
                 <label class="${hideSort}">
@@ -123,9 +125,11 @@ class ItemsList extends View {
     sort(items) {
         const sortType = this.elements.sort.value;
         if (sortType == "price-asc") {
-            items.sort((a, b) => a.price - b.price);
+            if (this.elements.salesPrice.checked) items.sort((a, b) => a.price - b.price);
+            else items.sort((a, b) => a.unitPrice - b.unitPrice);
         } else if (sortType == "price-desc") {
-            items.sort((a, b) => b.price - a.price);
+            if (this.elements.salesPrice.checked) items.sort((a, b) => b.price - a.price);
+            else items.sort((a, b) => b.salesPrice - a.salesPrice);
         } else if (sortType == "quantity-asc") {
             items.sort((a, b) => {
                 if (a.unit != b.unit) return a.unit.localeCompare(b.unit);
@@ -193,6 +197,21 @@ class ItemsList extends View {
             );
         }
 
+        let price = item.priceHistory[0].price;
+        let unitPrice = item.priceHistory[0].unitPrice;
+        let prevPrice = item.priceHistory[1] ? item.priceHistory[1].price : -1;
+        if (this.model.priceChangesToday) {
+            // any item we get with this filter will have a history length >= 2
+            for (let i = 0; i < item.priceHistory.length; i++) {
+                if (item.priceHistory[i].date == this.model.priceChangesToday) {
+                    price = item.priceHistory[i].price;
+                    unitPrice = item.priceHistory[i].unitPrice;
+                    prevPrice = item.priceHistory[i + 1].price;
+                    break;
+                }
+            }
+        }
+
         let quantity = item.quantity || "";
         let unit = item.unit || "";
         if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
@@ -200,33 +219,47 @@ class ItemsList extends View {
             unit = unit == "ml" ? "l" : "kg";
         }
         let percentageChange = "";
-        if (item.priceHistory.length > 1) {
-            percentageChange = Math.round(((item.priceHistory[0].price - item.priceHistory[1].price) / item.priceHistory[1].price) * 100);
+        if (prevPrice != -1) {
+            percentageChange = Math.round(((price - prevPrice) / prevPrice) * 100);
+        }
+
+        let showUnitPrice = this.elements.unitPrice.checked;
+        let priceUnit = "";
+        if (showUnitPrice) {
+            if (item.unit == "g") priceUnit = " / kg";
+            else if (item.unit == "ml") priceUnit = " / l";
+            else priceUnit = " / stk";
         }
 
         let priceHistory = "";
-        let priceBase = 150 / item.priceHistory[0].price;
+        let priceBase = 150 / (showUnitPrice ? unitPrice : price);
+
         for (let i = 0; i < item.priceHistory.length; i++) {
             const date = item.priceHistory[i].date;
-            const currPrice = item.priceHistory[i].price;
-            const lastPrice = item.priceHistory[i + 1] ? item.priceHistory[i + 1].price : currPrice;
+            const textBold = this.model.priceChangesToday && this.model.priceChangesToday == date ? "bold" : "";
+            const currPrice = showUnitPrice ? item.priceHistory[i].unitPrice : item.priceHistory[i].price;
+            const lastPrice = item.priceHistory[i + 1]
+                ? showUnitPrice
+                    ? item.priceHistory[i + 1].unitPrice
+                    : item.priceHistory[i + 1].price
+                : currPrice;
             const increase = Math.round(((currPrice - lastPrice) / lastPrice) * 100);
 
             priceHistory += `
                     <tr>
-                        <td>${date}</td>
+                        <td class="${textBold}">${date}</td>
                         <td>
                             <div style="width: ${priceBase * currPrice}px"
-                                class="price-line ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
-                                € ${currPrice}
+                                class="${textBold} price-line ${increase > 0 ? "bg-red-500" : "bg-green-500"}">
+                                € ${currPrice.toFixed(2)} ${priceUnit}
                             </div>
                         </td>
                         ${
                             increase > 0
-                                ? `<td class="text-right text-red-500"> + ${increase}%</td>`
+                                ? `<td class="text-right ${textBold} text-red-500"> + ${increase}%</td>`
                                 : increase < 0
-                                ? `<td class="text-right text-green-500"> ${increase}%</td>`
-                                : `<td class="text-right"> ${increase}%</td>`
+                                ? `<td class="text-right ${textBold} text-green-500"> ${increase}%</td>`
+                                : `<td class="text-right ${textBold}"> ${increase}%</td>`
                         }
                     </tr>`;
         }
@@ -242,7 +275,7 @@ class ItemsList extends View {
         elements.name.href = item.url;
         elements.name.innerText = item.name;
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
-        elements.price.innerText = `€ ${Number(item.price).toFixed(2)}`;
+        elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;
         elements.percentageChange.classList.add(percentageChange > 0 ? "text-red-500" : percentageChange < 0 ? "text-green-500" : "hidden");
         elements.percentageChange.innerText = `${percentageChange > 0 ? "+" + percentageChange : percentageChange}%`;
@@ -335,6 +368,7 @@ class ItemsList extends View {
     render() {
         const start = performance.now();
         const elements = this.elements;
+        if (!this.model) return;
         if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1500)) {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {
@@ -343,7 +377,7 @@ class ItemsList extends View {
         }
 
         let items = [...this.model.filteredItems];
-        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!") {
+        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!" && this.model.lastQuery.toLowerCase().indexOf("order by") >= 0) {
             elements.sort.parentElement.classList.add("hidden");
         } else {
             if (!this._noSort) {
@@ -367,7 +401,7 @@ class ItemsList extends View {
         let i = 0;
         const batches = [];
         let batch = [];
-        items.forEach((item, index) => {
+        items.forEach((item) => {
             if (batch.length == 100) {
                 batches.push(batch);
                 batch = [];

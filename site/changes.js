@@ -8,7 +8,6 @@ require("./views");
     const itemsList = document.querySelector("items-list");
     const itemsChart = document.querySelector("items-chart");
     itemsList.elements.sort.value = "store-and-name";
-    itemsFilter.model = itemsList.model = model.items;
 
     const stateToUrl = (event) => {
         const filterState = itemsFilter.shareableState;
@@ -36,7 +35,7 @@ require("./views");
         for (const id of d.split(";")) {
             model.items.lookup[id].chart = true;
         }
-        itemsFilter.fireChangeEvent();
     }
-    itemsFilter.filter();
+    itemsFilter.model = itemsList.model = model.items;
+    itemsFilter.fireChangeEvent();
 })();
