@@ -23,7 +23,9 @@ class ItemsFilter extends View {
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
 
             <div x-id="stores" class="flex justify-center gap-2 flex-wrap mt-4 ${hideStores}">
-                <custom-checkbox x-id="allStores" label="Alle" checked></custom-checkbox>
+                <custom-checkbox x-id="allStores" label="Alle" ${
+                    Object.values(stores).every((store) => store.defaultChecked) ? "checked" : ""
+                }></custom-checkbox>
                 ${STORE_KEYS.map(
                     (store) => /*html*/ `
                         <custom-checkbox
@@ -82,11 +84,24 @@ class ItemsFilter extends View {
             }
         });
 
-        elements.allStores.addEventListener("change", () => {
+        const handleChangeAll = () => {
             const checked = elements.allStores.checked;
             STORE_KEYS.forEach((store) => (elements[store].checked = checked));
             this.fireChangeEvent();
-        });
+        };
+
+        const storeElements = STORE_KEYS.map((store) => elements[store]);
+
+        storeElements.forEach((store) =>
+            store.addEventListener("change", () => {
+                const allChecked = storeElements.every((store) => store.checked);
+                elements.allStores.removeEventListener("change", handleChangeAll);
+                elements.allStores.checked = allChecked;
+                elements.allStores.addEventListener("change", handleChangeAll);
+            })
+        );
+
+        elements.allStores.addEventListener("change", handleChangeAll);
 
         elements.priceChangesToday.addEventListener("change", () => {
             if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
