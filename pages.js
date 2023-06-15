@@ -51,7 +51,7 @@ function deleteFiles(folderPath) {
             console.error(`Error executing command: ${error}`);
         }
         // analysis.migrateCompression(dataDir, `.json.${analysis.FILE_COMPRESSOR}`, ".json");
-        analysis.writeJSON(`${dataDir}/latest-canonical.json`, data, analysis.FILE_COMPRESSOR);
+        analysis.writeJSON(`${dataDir}/latest-canonical.json`, data, false);
     } catch (e) {
         console.error(e);
         process.exit(1);
