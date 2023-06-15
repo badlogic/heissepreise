@@ -118,7 +118,9 @@ class ItemsChart extends View {
                 }),
             };
             if (settings.chartType == "stepped") {
-                dataset.stepped = "before";
+                // I don't know why this is necessary...
+                if (dataset.label.startsWith("Preissumme")) dataset.stepped = "before";
+                else dataset.stepped = "after";
             }
 
             return dataset;
