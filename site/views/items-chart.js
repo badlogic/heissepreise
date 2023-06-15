@@ -172,6 +172,13 @@ class ItemsChart extends View {
                 datasets: datasets,
             },
             options: {
+                interaction: {
+                    intersect: false,
+                    mode: "index",
+                },
+                layout: {
+                    padding: 20,
+                },
                 animation: false,
                 responsive: true,
                 maintainAspectRatio: false,
@@ -193,9 +200,14 @@ class ItemsChart extends View {
                         },
                     },
                     y: {
-                        title: {
-                            display: true,
-                            text: "EURO",
+                        ticks: {
+                            callback: function (value, index, ticks) {
+                                return value.toLocaleString("de-DE", {
+                                    minimumFractionDigits: 2,
+                                    style: "currency",
+                                    currency: "EUR",
+                                });
+                            },
                         },
                     },
                 },
