@@ -122,4 +122,4 @@ You can also get the [raw data](https://heisse-preise.io/data/latest-canonical.j
 The live site at [heisse-preise.io](https://heisse-preise.io) feature historical data from:
 
 -   [Dossier](https://www.dossier.at/dossiers/supermaerkte/quellen/anatomie-eines-supermarkts-die-methodik/)
--   [@h4ez](http://h.43z.one), who runs [preisinflation.online](https://t.co/9sb8vZGdlN), another grocery price tracer.
+-   [@h43z](https://h.43z.one), who runs [preisinflation.online](https://inflation.43z.one), another grocery price tracker.
