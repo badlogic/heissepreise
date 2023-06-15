@@ -51,9 +51,11 @@ function deleteFiles(folderPath) {
             console.error(`Error executing command: ${error}`);
         }
         // analysis.migrateCompression(dataDir, `.json.${analysis.FILE_COMPRESSOR}`, ".json");
-        analysis.writeJSON(`${dataDir}/latest-canonical.json`, data, false);
+        fs.unlinkSync(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
+        analysis.writeJSON(`${dataDir}/latest-canonical.json`, items, false);
+        console.log("done");
     } catch (e) {
         console.error(e);
-        process.exit(1);
     }
+    process.exit(1);
 })();
