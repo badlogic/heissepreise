@@ -122,9 +122,11 @@ class ItemsFilter extends View {
             return;
         }
 
+        this.model.lastDate = null;
         if (this._filterByPriceChanges) {
             if (elements.priceChangesToday.checked) {
                 const today = elements.priceChangesDate.value;
+                this.model.priceChangesToday = today;
                 filteredItems = filteredItems.filter((item) => {
                     if (item.priceHistory.length == 1) return false;
                     for (let i = 0; i < item.priceHistory.length; i++) {

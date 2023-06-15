@@ -199,6 +199,10 @@ thead > tr {
     @apply max-w-4xl;
 }
 
+.bold {
+    font-weight: 900 !important;
+}
+
 .hidden {
     display: none !important;
 }
