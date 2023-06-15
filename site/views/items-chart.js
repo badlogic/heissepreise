@@ -1,4 +1,5 @@
 const { STORE_KEYS } = require("../model/stores");
+const { settings } = require("../model");
 const { today, log, deltaTime } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
@@ -30,6 +31,7 @@ class ItemsChart extends View {
                 </div>
             </div>
         `;
+        this.elements.startDate.value = settings.startDate;
         this.setupEventHandlers();
         this.addEventListener("x-change", () => {
             this.render();
@@ -147,14 +149,16 @@ class ItemsChart extends View {
 
             const dataset = {
                 label: (item.store ? item.store + " " : "") + item.name,
-                data: dedupPrices.map((price, index) => {
+                data: dedupPrices.map((price) => {
                     return {
                         x: moment(price.date),
                         y: price.price,
                     };
                 }),
-                stepped: "before",
             };
+            if (settings.chartType == "stepped") {
+                dataset.stepped = "before";
+            }
 
             return dataset;
         });

@@ -1,5 +1,6 @@
 const { today, parseNumber, dom, getBooleanAttribute, queryItems, log, deltaTime } = require("../js/misc");
 const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
+const { settings } = require("../model");
 const { View } = require("./view");
 
 class ItemsFilter extends View {
@@ -32,7 +33,7 @@ class ItemsFilter extends View {
                             x-id="${store}" x-state x-change
                             label="${stores[store].name}"
                             class="${stores[store].color}"
-                            ${stores[store].defaultChecked ? "checked" : ""}
+                            ${settings[store] ? "checked" : ""}
                         ></custom-checkbox>`
                 ).join("")}
             </div>

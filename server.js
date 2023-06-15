@@ -8,6 +8,10 @@ const express = require("express");
 const compression = require("compression");
 
 function copyItemsToSite(dataDir) {
+    fs.copyFileSync(
+        `${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`,
+        `site/output/data/latest-canonical.json.${analysis.FILE_COMPRESSOR}`
+    );
     const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
     analysis.writeJSON(`site/output/data/latest-canonical.json`, items);
     for (const store of analysis.STORE_KEYS) {
