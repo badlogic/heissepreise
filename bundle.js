@@ -132,6 +132,7 @@ async function bundle(inputDir, outputDir, watch) {
         bundleHTML(inputDir, outputDir, false, watch, (filePath, isDir, data) => {
             if (isDir) return false;
             if (filePath.endsWith("style.css")) return true;
+            if (data.includes(`require("`)) return true;
             return false;
         })
     );
