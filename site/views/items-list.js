@@ -368,6 +368,7 @@ class ItemsList extends View {
     render() {
         const start = performance.now();
         const elements = this.elements;
+        if (!this.model) return;
         if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1500)) {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {

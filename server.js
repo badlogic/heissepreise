@@ -105,11 +105,15 @@ function parseArguments() {
         const sockets = [];
         const io = socketIO(server);
         io.on("connection", (socket) => sockets.push(socket));
+        let timeoutId = 0;
         chokidar.watch("site/output").on("all", () => {
-            lastChangeTimestamp = Date.now();
-            for (let i = 0; i < sockets.length; i++) {
-                sockets[i].send(`${lastChangeTimestamp}`);
-            }
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                lastChangeTimestamp = Date.now();
+                for (let i = 0; i < sockets.length; i++) {
+                    sockets[i].send(`${lastChangeTimestamp}`);
+                }
+            }, 500);
         });
     }
 })();

@@ -13,7 +13,10 @@ class ItemsChart extends View {
 
         this.innerHTML = /*html*/ `
             <div class="bg-stone-200 p-4 mx-auto">
-                <canvas x-id="canvas" class="bg-white rounded-lg py-4"></canvas>
+                <div class="w-full  h-[calc(100vw*0.66)] md:h-[calc(100vw*0.5)] lg:h-[calc(100vw*0.30)]" style="position: relative;">
+                    <canvas x-id="canvas" class="bg-white rounded-lg py-4"></canvas>
+                    <div x-id="noData" class="hidden flex items-center justify-center h-full">Keine Daten ausgewählt</div>
+                </div>
                 <div class="filters flex items-center flex-wrap justify-center gap-2 pt-2">
                     <custom-checkbox x-id="sumTotal" x-change x-state label="Preissumme Gesamt"></custom-checkbox>
                     <custom-checkbox x-id="sumStores" x-change x-state label="Preissumme Ketten"></custom-checkbox>
@@ -86,11 +89,14 @@ class ItemsChart extends View {
 
     renderChart(items, chartType) {
         const canvasDom = this.elements.canvas;
+        const noData = this.elements.noData;
         if (items.length === 0) {
             canvasDom.classList.add("hidden");
+            noData.classList.remove("hidden");
             return;
         } else {
             canvasDom.classList.remove("hidden");
+            noData.classList.add("hidden");
         }
 
         const startDate = this.elements.startDate.value;
@@ -147,7 +153,7 @@ class ItemsChart extends View {
                         y: price.price,
                     };
                 }),
-                // stepped: "before"
+                stepped: "before",
             };
 
             return dataset;
@@ -166,8 +172,9 @@ class ItemsChart extends View {
                 datasets: datasets,
             },
             options: {
+                animation: false,
                 responsive: true,
-                aspectRation: 16 / 9,
+                maintainAspectRatio: false,
                 scales: {
                     x: {
                         type: "time",

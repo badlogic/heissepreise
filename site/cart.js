@@ -121,11 +121,8 @@ function loadCart() {
         cartFilter.elements[store].checked = true;
     });
     cartList.elements.numItemsLabel.innerHTML = "<strong>Artikel:</strong>";
-    cartList.model = cartFilter.model = cart;
     cartList.elements.enableChart.checked = true;
     cartList.elements.chart.elements.sumStores.checked = true;
-    cartList.fireChangeEvent();
-    cartList.elements.chart.fireChangeEvent();
 
     if (cart.items.length == 0) {
         elements.noItems.classList.remove("hidden");
@@ -140,7 +137,6 @@ function loadCart() {
 
     const productsFilter = elements.productsFilter;
     const productsList = elements.productsList;
-    productsList.model = productsFilter.model = models.items;
     if (!cart.linked) {
         productsFilter.classList.remove("hidden");
         productsList.classList.remove("hidden");
@@ -153,4 +149,7 @@ function loadCart() {
         cartFilter.classList.remove("hidden");
         cartList.classList.remove("hidden");
     };
+
+    cartList.model = cartFilter.model = cart;
+    productsList.model = productsFilter.model = models.items;
 })();

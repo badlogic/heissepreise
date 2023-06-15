@@ -196,7 +196,7 @@ class ItemsFilter extends View {
             filteredItems = queryItems(query, filteredItems, elements.exact.checked);
         }
 
-        if (this.model.lastQuery != query && !this._noChartClear) {
+        if (this.model.lastQuery && this.model.lastQuery != query && !this._noChartClear) {
             filteredItems.forEach((item) => (item.chart = false));
         }
         this.model.lastQuery = query;

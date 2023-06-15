@@ -3,25 +3,25 @@ const { stores, STORE_KEYS } = require("./stores");
 const { Model } = require("./model");
 
 function decompress(compressedItems) {
-    const items = [];
     const storeLookup = compressedItems.stores;
     const data = compressedItems.data;
     const dates = compressedItems.dates;
     const numItems = compressedItems.n;
+    const items = new Array(numItems);
     let i = 0;
-    while (items.length < numItems) {
+    for (let l = 0; l < numItems; l++) {
         const store = storeLookup[data[i++]];
         const id = data[i++];
         const name = data[i++];
         const numPrices = data[i++];
-        const prices = [];
+        const prices = new Array(numPrices);
         for (let j = 0; j < numPrices; j++) {
             const date = dates[data[i++]];
             const price = data[i++];
-            prices.push({
+            prices[j] = {
                 date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
                 price,
-            });
+            };
         }
         const unit = data[i++];
         const quantity = data[i++];
@@ -29,7 +29,7 @@ function decompress(compressedItems) {
         const bio = data[i++] == 1;
         const url = stores[store].getUrl({ id, name, url: data[i++] });
 
-        items.push({
+        items[l] = {
             store,
             id,
             name,
@@ -40,7 +40,7 @@ function decompress(compressedItems) {
             quantity,
             bio,
             url,
-        });
+        };
     }
     return items;
 }

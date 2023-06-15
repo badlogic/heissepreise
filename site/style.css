@@ -36,7 +36,7 @@ thead > tr {
     @apply order-4 text-right;
 }
 .item > td.action {
-    @apply order-5 flex items-center p-1;
+    @apply order-5 flex justify-end p-1;
 }
 
 .item .chevron {
