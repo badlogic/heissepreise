@@ -1,4 +1,4 @@
-const { getQueryParameter } = require("./js/misc");
+const { getQueryParameter, today } = require("./js/misc");
 const models = require("./model");
 const { Model } = require("./model/model");
 const { View } = require("./views/view");
@@ -42,8 +42,19 @@ class CartHeader extends View {
             const cart = this.model.cart;
             let index = carts.findIndex((c) => c.name === cart.name);
             if (index != -1) {
-                if (confirm("Existierenden Warenkorb '" + cart.name + " überschreiben?")) {
-                    carts[index] = cart;
+                let newName = cart.name;
+                while (true) {
+                    newName = prompt(
+                        "Warenkorb '" + cart.name + " existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben",
+                        cart.name + today()
+                    );
+                    if (!newName || newName.trim().length == 0) return;
+                    newName = newName.trim();
+                    if (newName != cart.name) {
+                        cart.name = newName;
+                        carts.push(cart);
+                        break;
+                    }
                 }
             } else {
                 carts.push(cart);
@@ -65,7 +76,7 @@ class CartHeader extends View {
             for (const cartItem of cart.items) {
                 link += cartItem.store + cartItem.id + ";";
             }
-            elements.share.href = "cart.html?cart=" + link + (this.stateToUrl ? stateToUrl() : "");
+            elements.share.href = "cart.html?cart=" + link + (this.stateToUrl ? this.stateToUrl() : "");
         }
     }
 }
