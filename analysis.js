@@ -150,6 +150,13 @@ function sortItems(items) {
 
 function compressBinary(items) {
     const buffer = [];
+    buffer.push(STORE_KEYS.length);
+    for (const key of STORE_KEYS) {
+        const nameBuffer = Buffer.from(key, "utf8");
+        const nameLengthBuffer = Buffer.allocUnsafe(2);
+        nameLengthBuffer.writeUInt16LE(nameBuffer.length, 0);
+        buffer.push(...nameLengthBuffer, ...nameBuffer);
+    }
 
     for (const item of items) {
         // Serialize 'bio', 'isWeighted', and 'unit' into a single byte

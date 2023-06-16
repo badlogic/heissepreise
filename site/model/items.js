@@ -10,6 +10,16 @@ function decompressBinary(buffer) {
     const baseDate = new Date("2000-01-01");
     const textDecoder = new TextDecoder("utf-8");
 
+    const numStores = view.getUint8(offset++);
+    const stores = [];
+    for (let i = 0; i < numStores; i++) {
+        const nameLength = view.getUint16(offset, true);
+        offset += 2;
+        const nameBuffer = new Uint8Array(buffer, offset, nameLength);
+        stores.push(textDecoder.decode(nameBuffer));
+        offset += nameLength;
+    }
+
     while (offset < buffer.byteLength) {
         const obj = {};
 
@@ -28,7 +38,7 @@ function decompressBinary(buffer) {
         offset += 4;
 
         // Deserialize 'store' as a byte
-        obj.store = STORE_KEYS[view.getUint8(offset++)];
+        obj.store = stores[view.getUint8(offset++)];
 
         // Deserialize 'name' as UTF-8 with 2 bytes encoding the string length
         const nameLength = view.getUint16(offset, true);
