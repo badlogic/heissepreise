@@ -1,4 +1,4 @@
-const { deltaTime, log } = require("../js/misc");
+const { deltaTime, log, isoDate } = require("../js/misc");
 const { stores, STORE_KEYS } = require("./stores");
 const { Model } = require("./model");
 const { Settings } = require("./settings");
@@ -61,11 +61,10 @@ function decompressBinary(buffer) {
             // Deserialize days as a 32-bit integer
             const daysSince2000 = view.getInt32(offset, true);
             offset += 4;
-
             // Calculate the date from days since 2000-01-01
-            const entryDate = new Date(baseDate.getTime() + daysSince2000 * 24 * 60 * 60 * 1000);
+            const dateStr = isoDate(daysSince2000);
 
-            obj.priceHistory[i] = { date: entryDate.toISOString().substring(0, 10), price };
+            obj.priceHistory[i] = { date: dateStr, price };
         }
 
         objects.push(obj);
@@ -143,14 +142,15 @@ class Items extends Model {
     }
 
     processItems(items) {
-        const lookup = {};
+        const lookup = new Set();
         const start = performance.now();
         for (const item of items) {
             lookup[item.store + item.id] = item;
             item.search = item.name + " " + item.quantity + " " + item.unit;
             item.search = item.search.toLowerCase().replace(",", ".");
 
-            item.unitPrice = (item.price / item.quantity) * (item.unit == "g" || item.unit == "ml" ? 1000 : 1);
+            const unitPriceFactor = item.unit == "g" || item.unit == "ml" ? 1000 : 1;
+            item.unitPrice = (item.price / item.quantity) * unitPriceFactor;
             item.numPrices = item.priceHistory.length;
             item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
             item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
@@ -159,7 +159,7 @@ class Items extends Model {
             let lowestPriceBefore = 100000;
             for (let i = 0; i < item.priceHistory.length; i++) {
                 const price = item.priceHistory[i];
-                price.unitPrice = (price.price / item.quantity) * (item.unit == "g" || item.unit == "ml" ? 1000 : 1);
+                price.unitPrice = (price.price / item.quantity) * unitPriceFactor;
                 if (i == 0) continue;
                 if (i < 10) {
                     item["price" + i] = price.price;
@@ -201,6 +201,7 @@ class Items extends Model {
         const settings = new Settings();
         const compressedItemsPerStore = [];
         for (const store of STORE_KEYS) {
+            // if (["reweDe", "dmDe", "sparSi"].includes(store)) continue;
             compressedItemsPerStore.push(
                 new Promise(async (resolve) => {
                     let start = performance.now();
@@ -234,6 +235,7 @@ class Items extends Model {
         log(`Items - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
 
         this.processItems(items);
+        log(`Items - total loading took ${deltaTime(start).toFixed(4)} secs`);
     }
 }
 
