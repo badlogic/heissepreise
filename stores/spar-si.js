@@ -69,7 +69,6 @@ exports.getCanonical = function (item, today) {
             quantity,
             isWeighted,
             bio: item.masterValues.biolevel === "Bio",
-            url: item.masterValues.url,
         },
         units,
         "sparSi",

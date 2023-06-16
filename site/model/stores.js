@@ -6,14 +6,14 @@ exports.stores = {
         budgetBrands: ["clever"],
         color: "yellow",
         defaultChecked: true,
-        getUrl: (item) => `https://shop.billa.at${item.url}`,
+        getUrl: (item) => `https://shop.billa.at/produkte/${item.id}`,
     },
     spar: {
         name: "Spar",
         budgetBrands: ["s-budget"],
         color: "green",
         defaultChecked: true,
-        getUrl: (item) => `https://www.interspar.at/shop/lebensmittel${item.url}`,
+        getUrl: (item) => `https://www.interspar.at/shop/lebensmittel/p/${item.id}`,
     },
     hofer: {
         name: "Hofer",
@@ -56,7 +56,7 @@ exports.stores = {
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "purple",
         defaultChecked: true,
-        getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
+        getUrl: (item) => `https://www.penny.at/produkte/${item.id}`,
     },
     dmDe: {
         name: "DM DE",
@@ -77,7 +77,7 @@ exports.stores = {
         budgetBrands: ["s-budget"],
         color: "emerald",
         defaultChecked: false,
-        getUrl: (item) => `https://www.spar.si/online/${item.url}`,
+        getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
     },
 };
 

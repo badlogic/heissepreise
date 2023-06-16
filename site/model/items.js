@@ -20,8 +20,22 @@ function decompressBinary(buffer) {
         offset += nameLength;
     }
 
+    const numWords = view.getUint32(offset, true);
+    offset += 4;
+    const words = new Array(numWords);
+    for (let i = 0; i < numWords; i++) {
+        const nameLength = view.getUint8(offset++);
+        const nameBuffer = new Uint8Array(buffer, offset, nameLength);
+        words[i] = textDecoder.decode(nameBuffer);
+        offset += nameLength;
+    }
+
     while (offset < buffer.byteLength) {
         const obj = {};
+        const idLength = view.getUint8(offset++);
+        const idBuffer = new Uint8Array(buffer, offset, idLength);
+        obj.id = textDecoder.decode(idBuffer);
+        offset += idLength;
 
         const flagsByte = view.getUint8(offset++);
         obj.bio = (flagsByte & 1) !== 0;
@@ -33,11 +47,17 @@ function decompressBinary(buffer) {
 
         obj.store = stores[view.getUint8(offset++)];
 
-        const nameLength = view.getUint16(offset, true);
-        offset += 2;
-        const nameBuffer = new Uint8Array(buffer, offset, nameLength);
-        obj.name = textDecoder.decode(nameBuffer);
-        offset += nameLength;
+        let name = "";
+        const numTokens = view.getUint8(offset++);
+        for (let i = 0; i < numTokens; i++) {
+            const b1 = view.getUint8(offset++);
+            const b2 = view.getUint8(offset++);
+            const b3 = view.getUint8(offset++);
+            const tokenId = (b3 << 16) | (b2 << 8) | b1;
+            name += words[tokenId];
+            if (i < numTokens - 1) name += " ";
+        }
+        obj.name = name;
 
         const urlLength = view.getUint16(offset, true);
         offset += 2;

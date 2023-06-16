@@ -16,7 +16,7 @@ exports.getCanonical = function (item, today) {
     let unit = item.contentUnit || item.basePriceUnit;
     return utils.convertUnit(
         {
-            id: item.gtin,
+            id: "" + item.gtin,
             name: `${item.brandName} ${item.title}`,
             price: item.price.value,
             priceHistory: [{ date: today, price: item.price.value }],

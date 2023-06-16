@@ -288,7 +288,7 @@ class ItemsList extends View {
         itemDom.setAttribute("x-notraverse", "true");
         const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
-        elements.name.href = item.url;
+        elements.name.href = stores[item.store].getUrl(item);
         elements.name.innerText = item.name;
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
         elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;

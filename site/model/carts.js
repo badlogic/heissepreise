@@ -16,8 +16,9 @@ class Carts extends Model {
         const carts = (this._carts = val ? JSON.parse(val) : []);
 
         // Add Momentum cart if it is not in the list of carts
-        if (!carts.some((cart) => cart.name === "Momentum Eigenmarken Vergleich")) {
-            const momentumCart = await misc.fetchJSON("data/momentum-cart.json");
+        if (!localStorage.getItem("updatedMomentum") || !carts.some((cart) => cart.name === "Momentum Eigenmarken Vergleich")) {
+            localStorage.setItem("updatedMomentum", "true");
+            const momentumCart = await misc.fetchJSON("data/momentum-cart.new.json");
             carts.unshift(momentumCart);
         }
 

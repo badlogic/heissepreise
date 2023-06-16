@@ -53,8 +53,7 @@ exports.getCanonical = function (item, today) {
 
     return utils.convertUnit(
         {
-            id: item.masterValues["code-internal"],
-            sparId: item.masterValues["product-number"],
+            id: item.masterValues["product-number"],
             name: item.masterValues.title + " " + (item.masterValues["short-description"] ?? item.masterValues.name),
             price,
             priceHistory: [{ date: today, price }],
@@ -62,7 +61,6 @@ exports.getCanonical = function (item, today) {
             quantity,
             isWeighted,
             bio: item.masterValues.biolevel === "Bio",
-            url: item.masterValues.url,
         },
         units,
         "spar",

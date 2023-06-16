@@ -159,7 +159,36 @@ function compressBinary(items) {
         buffer.push(...nameLengthBuffer, ...nameBuffer);
     }
 
+    const dictionary = {};
+    const words = [];
+    let id = 0;
     for (const item of items) {
+        const tokens = item.name.split(/\s+/);
+        for (const token of tokens) {
+            if (!dictionary[token]) {
+                dictionary[token] = id++;
+                words.push(token);
+                if (token.length > 256) {
+                    console.log("Dictionary word > 256 characters: " + token);
+                }
+            }
+        }
+    }
+
+    const numWordsBuffer = Buffer.allocUnsafe(4);
+    numWordsBuffer.writeUint32LE(id, 0);
+    buffer.push(...numWordsBuffer);
+    for (const word of words) {
+        const wordBuffer = Buffer.from(word, "utf8");
+        buffer.push(wordBuffer.length);
+        buffer.push(...wordBuffer);
+    }
+
+    for (const item of items) {
+        const idBuffer = Buffer.from("" + item.id, "utf8");
+        buffer.push(idBuffer.length);
+        buffer.push(...idBuffer);
+
         let flagsByte = 0;
         if (item.bio) flagsByte |= 1;
         if (item.isWeighted) flagsByte |= 2;
@@ -178,10 +207,20 @@ function compressBinary(items) {
         const storeByte = STORE_KEYS.findIndex((store) => store == item.store);
         buffer.push(storeByte);
 
-        const nameBuffer = Buffer.from(item.name, "utf8");
-        const nameLengthBuffer = Buffer.allocUnsafe(2);
-        nameLengthBuffer.writeUInt16LE(nameBuffer.length, 0);
-        buffer.push(...nameLengthBuffer, ...nameBuffer);
+        const tokenIds = item.name.split(/\s+/).map((token) => {
+            const id = dictionary[token];
+            if (id === undefined) {
+                console.log(`Undefined token ${token} ${item.id} - ${item.store} - ${item.name}`);
+            }
+            return id;
+        });
+
+        buffer.push(tokenIds.length);
+        for (const tokenId of tokenIds) {
+            const tokenIdBuffer = Buffer.allocUnsafe(4);
+            tokenIdBuffer.writeUint32LE(tokenId, 0);
+            buffer.push(tokenIdBuffer[0], tokenIdBuffer[1], tokenIdBuffer[2]);
+        }
 
         if (item.url !== undefined) {
             const urlBuffer = Buffer.from(item.url, "utf8");
@@ -189,8 +228,8 @@ function compressBinary(items) {
             urlLengthBuffer.writeUInt16LE(urlBuffer.length, 0);
             buffer.push(...urlLengthBuffer, ...urlBuffer);
         } else {
-            const urlLengthBuffer = Buffer.allocUnsafe(2).fill(0);
-            buffer.push(...urlLengthBuffer);
+            buffer.push(0);
+            buffer.push(0);
         }
 
         const priceHistoryLengthBuffer = Buffer.allocUnsafe(2);

@@ -32,7 +32,6 @@ exports.getCanonical = function (item, today) {
             unit,
             quantity,
             bio: item.data.attributes && item.data.attributes.includes("s_bio"),
-            url: item.data.canonicalPath,
         },
         units,
         "billa"
