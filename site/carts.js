@@ -11,7 +11,7 @@ function newCart() {
         return;
     }
     model.carts.add(name);
-    location.href = `${location.pathname}?name=${encodeURIComponent(name)}`;
+    location.href = `cart.html?name=${encodeURIComponent(name)}`;
 }
 
 function importCarts(importedCarts) {
