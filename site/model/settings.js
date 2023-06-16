@@ -1,7 +1,7 @@
 const { STORE_KEYS, stores } = require("./stores");
 const { Model } = require("./model");
 
-export class Settings extends Model {
+class Settings extends Model {
     constructor() {
         super();
         this.startDate = "2017-01-01";
@@ -9,6 +9,7 @@ export class Settings extends Model {
         STORE_KEYS.forEach((store) => {
             this[store] = stores[store].defaultChecked;
         });
+        this.jsonData = true;
 
         let settings = localStorage.getItem("settings");
         if (settings) {
@@ -30,3 +31,5 @@ export class Settings extends Model {
         localStorage.setItem("settings", JSON.stringify(settings));
     }
 }
+
+exports.Settings = Settings;

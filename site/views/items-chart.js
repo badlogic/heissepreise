@@ -12,6 +12,7 @@ class ItemsChart extends View {
     constructor() {
         super();
 
+        this.unitPrice = false;
         this.innerHTML = /*html*/ `
             <div class="bg-stone-200 p-4 mx-auto">
                 <div class="w-full  h-[calc(100vw*0.66)] md:h-[calc(100vw*0.5)] lg:h-[calc(100vw*0.30)]" style="position: relative;">
@@ -41,9 +42,11 @@ class ItemsChart extends View {
     calculateOverallPriceChanges(items, onlyToday, startDate, endDate) {
         if (items.length == 0) return { dates: [], changes: [] };
 
+        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
+
         if (onlyToday) {
             let sum = 0;
-            for (const item of items) sum += item.price;
+            for (const item of items) sum += getPrice(item);
             return [{ date: today(), price: sum }];
         }
 
@@ -67,8 +70,8 @@ class ItemsChart extends View {
             }
             for (let i = 0; i < uniqueDates.length; i++) {
                 const priceObj = product.priceHistoryLookup[uniqueDates[i]];
-                if (!price && priceObj) price = priceObj.price;
-                priceScratch[i] = priceObj ? priceObj.price : null;
+                if (!price && priceObj) price = getPrice(priceObj);
+                priceScratch[i] = priceObj ? getPrice(priceObj) : null;
             }
 
             for (let i = 0; i < priceScratch.length; i++) {
@@ -90,6 +93,7 @@ class ItemsChart extends View {
     }
 
     renderChart(items, chartType) {
+        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
         const canvasDom = this.elements.canvas;
         const noData = this.elements.noData;
         if (items.length === 0) {
@@ -113,7 +117,7 @@ class ItemsChart extends View {
                 data: prices.map((price) => {
                     return {
                         x: moment(price.date),
-                        y: price.price,
+                        y: getPrice(price),
                     };
                 }),
             };
@@ -212,11 +216,12 @@ class ItemsChart extends View {
             log("ItemsChart - Calculating overall sum per store took " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
         }
 
+        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
         items.forEach((item) => {
             if (item.chart) {
                 const chartItem = {
                     name: item.store + " " + item.name,
-                    priceHistory: onlyToday ? [{ date: today(), price: item.price }] : item.priceHistory,
+                    priceHistory: onlyToday ? [{ date: today(), price: getPrice(item) }] : item.priceHistory,
                 };
                 itemsToShow.push(chartItem);
             }

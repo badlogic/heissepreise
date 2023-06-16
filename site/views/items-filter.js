@@ -129,7 +129,10 @@ class ItemsFilter extends View {
         const start = performance.now();
         const elements = this.elements;
         this.model.totalItems = this.model.items.length;
-        let filteredItems = [...this.model.items];
+        let filteredItems = new Array(this.model.items.length);
+        for (let i = 0; i < this.model.items.length; i++) {
+            filteredItems[i] = this.model.items[i];
+        }
         let query = elements.query.value.trim();
         if (query.length == 0 && this._emptyQuery) {
             this.model.removeListener(this._listener);
@@ -189,8 +192,7 @@ class ItemsFilter extends View {
         // Don't apply store and misc filters if query is an alasql query.
         if (query.charAt(0) != "!") {
             if (this._filterByStores) {
-                const checkedStores = this.checkedStores;
-                filteredItems = filteredItems.filter((item) => checkedStores.includes(item.store));
+                filteredItems = filteredItems.filter((item) => elements[item.store].checked);
             }
 
             if (this._filterByMisc) {
@@ -228,35 +230,33 @@ class ItemsFilter extends View {
         const start = performance.now();
         const elements = this.elements;
         const items = this.model.items;
-        const dates = {};
-        for (const item of items) {
-            if (item.priceHistory.length == 1) continue;
-            for (let i = 0; i < item.priceHistory.length; i++) {
-                const price = item.priceHistory[i];
-                if (i + 1 < item.priceHistory.length) {
-                    if (item.priceHistory[i].price != item.priceHistory[i + 1].price) {
-                        if (i == 0 || item.priceHistory[i].date != item.priceHistory[i - 1].date) {
-                            dates[price.date] = dates[price.date] ? dates[price.date] + 1 : 1;
+        if (this._filterByPriceChanges) {
+            const dates = {};
+            for (const item of items) {
+                if (item.priceHistory.length == 1) continue;
+                for (let i = 0; i < item.priceHistory.length; i++) {
+                    const price = item.priceHistory[i];
+                    if (i + 1 < item.priceHistory.length) {
+                        if (item.priceHistory[i].price != item.priceHistory[i + 1].price) {
+                            if (i == 0 || item.priceHistory[i].date != item.priceHistory[i - 1].date) {
+                                dates[price.date] = dates[price.date] ? dates[price.date] + 1 : 1;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        const priceChangesDates = elements.priceChangesDate;
-        priceChangesDates.innerHTML = "";
-        for (const date of Object.keys(dates).sort((a, b) => b.localeCompare(a))) {
-            const dateDom = dom("option");
-            dateDom.value = date;
-            dateDom.innerText = `${date} (${dates[date]})`;
-            priceChangesDates.append(dateDom);
+            const priceChangesDates = elements.priceChangesDate;
+            priceChangesDates.innerHTML = "";
+            for (const date of Object.keys(dates).sort((a, b) => b.localeCompare(a))) {
+                const dateDom = dom("option");
+                dateDom.value = date;
+                dateDom.innerText = `${date} (${dates[date]})`;
+                priceChangesDates.append(dateDom);
+            }
         }
 
         log(`ItemsFilter - rendering items filter took ${deltaTime(start)}`);
-    }
-
-    get checkedStores() {
-        return STORE_KEYS.filter((store) => this.elements[store].checked);
     }
 
     get shareableState() {

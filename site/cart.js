@@ -48,7 +48,7 @@ class CartHeader extends View {
             } else {
                 carts.push(cart);
             }
-            // model.carts.save();
+            models.carts.save();
             location.href = location.pathname + "?name=" + encodeURIComponent(cart.name);
         });
     }
@@ -65,7 +65,7 @@ class CartHeader extends View {
             for (const cartItem of cart.items) {
                 link += cartItem.store + cartItem.id + ";";
             }
-            elements.share.href = "cart.html?cart=" + link;
+            elements.share.href = "cart.html?cart=" + link + (this.stateToUrl ? stateToUrl() : "");
         }
     }
 }
@@ -150,6 +150,50 @@ function loadCart() {
         cartList.classList.remove("hidden");
     };
 
+    const itemsFilter = cartFilter;
+    const itemsList = cartList;
+    const itemsChart = cartList.querySelector("items-chart");
+    itemsList.elements.sort.value = "store-and-name";
+    let baseUrl = location.href.split("&")[0];
+
+    const stateToUrl = () => {
+        const filterState = itemsFilter.shareableState;
+        const listState = itemsList.shareableState;
+        const chartState = itemsChart.shareableState;
+        const chartedItems = cart.filteredItems
+            .filter((item) => item.chart)
+            .map((item) => item.store + item.id)
+            .join(";");
+        return baseUrl + "&f=" + filterState + "&l=" + listState + "&c=" + chartState + "&d=" + chartedItems;
+    };
+    cartHeader.stateToUrl = stateToUrl;
+    itemsFilter.addEventListener("x-change", () => {
+        const url = stateToUrl();
+        history.pushState({}, null, url);
+        cartHeader.render();
+    });
+    itemsList.addEventListener("x-change", () => {
+        const url = stateToUrl();
+        history.pushState({}, null, url);
+        cartHeader.render();
+    });
+
+    const f = getQueryParameter("f");
+    const l = getQueryParameter("l");
+    const c = getQueryParameter("c");
+    const d = getQueryParameter("d");
+
+    if (f) itemsFilter.shareableState = f;
+    if (l) itemsList.shareableState = l;
+    if (c) itemsChart.shareableState = c;
+    if (d) {
+        cart.items.lookup = {};
+        for (const item of cart.items) cart.items.lookup[item.store + item.id] = item;
+        for (const id of d.split(";")) {
+            cart.items.lookup[id].chart = true;
+        }
+    }
     cartList.model = cartFilter.model = cart;
     productsList.model = productsFilter.model = models.items;
+    if (c || d) itemsChart.render();
 })();

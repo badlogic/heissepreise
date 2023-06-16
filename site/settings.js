@@ -37,6 +37,8 @@ class SettingsView extends View {
                         <option value="lines">Linien</option>
                     </select>
                 </label>
+                <custom-checkbox x-id="useJson" x-change x-state checked label="Daten als JSON downloaden">
+                </custom-checkbox>
             </div>
         `;
         this.setupEventHandlers();

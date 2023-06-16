@@ -5,6 +5,8 @@ const { View } = require("./view");
 const { ItemsChart } = require("./items-chart");
 
 class ItemsList extends View {
+    static priceTypeId = 0;
+
     constructor() {
         super();
 
@@ -27,8 +29,10 @@ class ItemsList extends View {
                         <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
                             this._chart ? "" : "hidden"
                         }"></custom-checkbox>
-                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType" checked> Verkaufspreis</label>
-                        <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType"> Mengenpreis</label>
+                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType${
+                            ItemsList.priceTypeId
+                        }" checked> Verkaufspreis</label>
+                        <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType${ItemsList.priceTypeId++}"> Mengenpreis</label>
                     </div>
                 </div>
                 <label class="${hideSort}">
@@ -81,6 +85,18 @@ class ItemsList extends View {
             const showAll = (this._showAllPriceHistories = !this._showAllPriceHistories);
             elements.expandPriceHistories.innerText = showAll ? "Preis -" : "Preis +";
             elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
+        });
+
+        elements.chart.unitPrice = elements.unitPrice.checked;
+
+        elements.unitPrice.addEventListener("change", () => {
+            elements.chart.unitPrice = elements.unitPrice.checked;
+            elements.chart.render();
+        });
+
+        elements.salesPrice.addEventListener("change", () => {
+            elements.chart.unitPrice = elements.unitPrice.checked;
+            elements.chart.render();
         });
 
         this.setupEventHandlers();
@@ -369,6 +385,7 @@ class ItemsList extends View {
         const start = performance.now();
         const elements = this.elements;
         if (!this.model) return;
+        elements.chart.unitPrice = elements.unitPrice.checked;
         if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1500)) {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {
