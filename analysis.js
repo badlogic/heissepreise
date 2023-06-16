@@ -4,6 +4,7 @@ const zlib = require("zlib");
 const stores = require("./stores");
 const { FILE } = require("dns");
 const { promisify } = require("util");
+const { dateToUint16 } = require("./site/js/misc");
 
 const STORE_KEYS = Object.keys(stores);
 exports.STORE_KEYS = STORE_KEYS;
@@ -159,7 +160,6 @@ function compressBinary(items) {
     }
 
     for (const item of items) {
-        // Serialize 'bio', 'isWeighted', and 'unit' into a single byte
         let flagsByte = 0;
         if (item.bio) flagsByte |= 1;
         if (item.isWeighted) flagsByte |= 2;
@@ -167,27 +167,22 @@ function compressBinary(items) {
         if (item.unit === "stk") flagsByte |= 8;
         buffer.push(flagsByte);
 
-        // Serialize 'quantity' as a 4-byte float
-        const quantityBuffer = Buffer.allocUnsafe(4);
-        quantityBuffer.writeFloatLE(item.quantity, 0);
+        const quantityBuffer = Buffer.allocUnsafe(2);
+        let quantity = Math.min(64000, item.quantity);
+        if (quantity > 64000) {
+            console.log(`Item quantity > 64000 ${item.id} - ${item.store} - ${item.name}`);
+        }
+        quantityBuffer.writeUint16LE(quantity, 0);
         buffer.push(...quantityBuffer);
 
-        // Serialize 'price' as a 4-byte float
-        const priceBuffer = Buffer.allocUnsafe(4);
-        priceBuffer.writeFloatLE(item.price, 0);
-        buffer.push(...priceBuffer);
-
-        // Serialize 'store' as a byte
         const storeByte = STORE_KEYS.findIndex((store) => store == item.store);
         buffer.push(storeByte);
 
-        // Serialize 'name' as UTF-8 with 2 bytes encoding the string length
         const nameBuffer = Buffer.from(item.name, "utf8");
         const nameLengthBuffer = Buffer.allocUnsafe(2);
         nameLengthBuffer.writeUInt16LE(nameBuffer.length, 0);
         buffer.push(...nameLengthBuffer, ...nameBuffer);
 
-        // Serialize 'url' as UTF-8 with 2 bytes encoding the string length
         if (item.url !== undefined) {
             const urlBuffer = Buffer.from(item.url, "utf8");
             const urlLengthBuffer = Buffer.allocUnsafe(2);
@@ -198,95 +193,30 @@ function compressBinary(items) {
             buffer.push(...urlLengthBuffer);
         }
 
-        // Serialize 'priceHistory' array
         const priceHistoryLengthBuffer = Buffer.allocUnsafe(2);
         priceHistoryLengthBuffer.writeUInt16LE(item.priceHistory.length, 0);
         buffer.push(...priceHistoryLengthBuffer);
 
         for (const priceEntry of item.priceHistory) {
-            // Serialize price as a 4-byte float
-            const priceEntryBuffer = Buffer.allocUnsafe(4);
-            priceEntryBuffer.writeFloatLE(priceEntry.price, 0);
+            const priceEntryBuffer = Buffer.allocUnsafe(2);
+            if (priceEntry.price == 999) priceEntry.price = 9.99;
+            let price = Math.round(priceEntry.price * 100);
+            if (price > 64000) {
+                console.log(`Item price > 64000 ${item.id} - ${item.store} - ${item.name}`);
+                price = 64000;
+            }
+            priceEntryBuffer.writeUint16LE(price, 0);
             buffer.push(...priceEntryBuffer);
 
-            // Calculate the days since 2000-01-01
-            const entryDate = new Date(priceEntry.date);
-            const baseDate = new Date("2000-01-01");
-            const daysSince2000 = Math.floor((entryDate - baseDate) / (1000 * 60 * 60 * 24));
-
-            // Serialize days as a 32-bit integer
-            const daysBuffer = Buffer.allocUnsafe(4);
-            daysBuffer.writeInt32LE(daysSince2000, 0);
-            buffer.push(...daysBuffer);
+            const dateBuffer = Buffer.allocUnsafe(2);
+            dateBuffer.writeUint16LE(dateToUint16(priceEntry.date), 0);
+            buffer.push(...dateBuffer);
         }
     }
 
     return Buffer.from(buffer);
 }
 exports.compressBinary = compressBinary;
-
-function decompressBinary(buffer) {
-    const objects = [];
-    let offset = 0;
-
-    while (offset < buffer.length) {
-        const obj = {};
-
-        // Deserialize 'bio', 'isWeighted', and 'unit' from the single byte
-        const flagsByte = buffer[offset++];
-        obj.bio = (flagsByte & 1) !== 0;
-        obj.isWeighted = (flagsByte & 2) !== 0;
-        obj.unit = (flagsByte & 4) !== 0 ? "ml" : (flagsByte & 8) !== 0 ? "stk" : "g";
-
-        // Deserialize 'quantity' as a 4-byte float
-        obj.quantity = buffer.readFloatLE(offset);
-        offset += 4;
-
-        // Deserialize 'price' as a 4-byte float
-        obj.price = buffer.readFloatLE(offset);
-        offset += 4;
-
-        // Deserialize 'store' as a byte
-        obj.store = STORE_KEYS[buffer[offset++]];
-
-        // Deserialize 'name' as UTF-8 with 2 bytes encoding the string length
-        const nameLength = buffer.readUInt16LE(offset);
-        offset += 2;
-        obj.name = buffer.toString("utf8", offset, offset + nameLength);
-        offset += nameLength;
-
-        // Deserialize 'url' as UTF-8 with 2 bytes encoding the string length (or undefined if length is 0)
-        const urlLength = buffer.readUInt16LE(offset);
-        offset += 2;
-        obj.url = urlLength !== 0 ? buffer.toString("utf8", offset, offset + urlLength) : undefined;
-        offset += urlLength;
-
-        // Deserialize 'priceHistory' array
-        const priceHistoryLength = buffer.readUInt16LE(offset);
-        offset += 2;
-        obj.priceHistory = [];
-
-        for (let i = 0; i < priceHistoryLength; i++) {
-            // Deserialize price as a 4-byte float
-            const price = buffer.readFloatLE(offset);
-            offset += 4;
-
-            // Deserialize days as a 32-bit integer
-            const daysSince2000 = buffer.readInt32LE(offset);
-            offset += 4;
-
-            // Calculate the date from days since 2000-01-01
-            const baseDate = new Date("2000-01-01");
-            const entryDate = new Date(baseDate.getTime() + daysSince2000 * 24 * 60 * 60 * 1000);
-
-            obj.priceHistory.push({ date: entryDate.toISOString().substring(0, 10), price });
-        }
-
-        objects.push(obj);
-    }
-
-    return objects;
-}
 
 // Keep this in sync with utils.js:decompress
 function compress(items) {

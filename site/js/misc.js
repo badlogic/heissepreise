@@ -63,44 +63,16 @@ exports.today = () => {
     return `${year}-${month}-${day}`;
 };
 
-exports.isoDate = (daysSince2000) => {
-    // Number of days in each month (non-leap year)
-    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+exports.dateToUint16 = (dateString) => {
+    const [year, month, day] = dateString.split("-").map(Number);
+    return (((year - 2000) << 9) | (month << 5) | day) & 0xffff;
+};
 
-    // Number of days in each month (leap year)
-    const daysInMonthLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-    // Start date: January 1, 2000
-    const startYear = 2000;
-    const startMonth = 1;
-    const startDay = 1;
-
-    // Calculate the number of leap years
-    const numLeapYears = Math.floor(daysSince2000 / 365) - Math.floor((startYear - 2000) / 4);
-
-    // Calculate the number of non-leap years
-    const numNonLeapYears = Math.floor(daysSince2000 / 365) - numLeapYears;
-
-    // Calculate the number of days remaining after accounting for years
-    const remainingDays = daysSince2000 - (numLeapYears * 366 + numNonLeapYears * 365);
-
-    // Determine the current year
-    const currentYear = startYear + numLeapYears * 4 + numNonLeapYears;
-    const isLeapYear = currentYear % 4 === 0 && (currentYear % 100 !== 0 || currentYear % 400 === 0);
-    const daysInMonthArray = isLeapYear ? daysInMonthLeap : daysInMonth;
-
-    // Determine the current month and day
-    let currentMonth = 1;
-    let currentDay = remainingDays + 1;
-    for (const days of daysInMonthArray) {
-        if (currentDay <= days) {
-            break;
-        }
-        currentMonth++;
-        currentDay -= days;
-    }
-
-    return `${currentYear}-${currentMonth.toString().padStart(2, "0")}-${currentDay.toString().padStart(2, "0")}`;
+exports.uint16ToDate = (encodedDate) => {
+    const year = (encodedDate >> 9) + 2000;
+    const month = (encodedDate >> 5) & 0xf;
+    const day = encodedDate & 0x1f;
+    return `${year}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
 };
 
 exports.fetchJSON = async (url) => {

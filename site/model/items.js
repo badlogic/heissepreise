@@ -1,4 +1,4 @@
-const { deltaTime, log, isoDate } = require("../js/misc");
+const { deltaTime, log, uint16ToDate } = require("../js/misc");
 const { stores, STORE_KEYS } = require("./stores");
 const { Model } = require("./model");
 const { Settings } = require("./settings");
@@ -23,31 +23,22 @@ function decompressBinary(buffer) {
     while (offset < buffer.byteLength) {
         const obj = {};
 
-        // Deserialize 'bio', 'isWeighted', and 'unit' from the single byte
         const flagsByte = view.getUint8(offset++);
         obj.bio = (flagsByte & 1) !== 0;
         obj.isWeighted = (flagsByte & 2) !== 0;
         obj.unit = (flagsByte & 4) !== 0 ? "ml" : (flagsByte & 8) !== 0 ? "stk" : "g";
 
-        // Deserialize 'quantity' as a 4-byte float
-        obj.quantity = view.getFloat32(offset, true);
-        offset += 4;
+        obj.quantity = view.getUint16(offset, true);
+        offset += 2;
 
-        // Deserialize 'price' as a 4-byte float
-        obj.price = view.getFloat32(offset, true);
-        offset += 4;
-
-        // Deserialize 'store' as a byte
         obj.store = stores[view.getUint8(offset++)];
 
-        // Deserialize 'name' as UTF-8 with 2 bytes encoding the string length
         const nameLength = view.getUint16(offset, true);
         offset += 2;
         const nameBuffer = new Uint8Array(buffer, offset, nameLength);
         obj.name = textDecoder.decode(nameBuffer);
         offset += nameLength;
 
-        // Deserialize 'url' as UTF-8 with 2 bytes encoding the string length (or undefined if length is 0)
         const urlLength = view.getUint16(offset, true);
         offset += 2;
         if (urlLength !== 0) {
@@ -58,24 +49,21 @@ function decompressBinary(buffer) {
         }
         offset += urlLength;
 
-        // Deserialize 'priceHistory' array
         const priceHistoryLength = view.getUint16(offset, true);
         offset += 2;
         obj.priceHistory = new Array(priceHistoryLength);
 
         for (let i = 0; i < priceHistoryLength; i++) {
-            // Deserialize price as a 4-byte float
-            const price = view.getFloat32(offset, true);
-            offset += 4;
+            const price = view.getUint16(offset, true) / 100;
+            offset += 2;
 
-            // Deserialize days as a 32-bit integer
-            const daysSince2000 = view.getInt32(offset, true);
-            offset += 4;
-            // Calculate the date from days since 2000-01-01
-            const dateStr = isoDate(daysSince2000);
+            const date = uint16ToDate(view.getUint16(offset, true));
+            offset += 2;
 
-            obj.priceHistory[i] = { date: dateStr, price };
+            obj.priceHistory[i] = { date, price };
         }
+
+        obj.price = obj.priceHistory[0].price;
 
         objects.push(obj);
     }
