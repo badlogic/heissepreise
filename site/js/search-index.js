@@ -1,17 +1,46 @@
-const { readJSON, writeJSON } = require("../../analysis");
-const { stem } = require("../js/stem");
+const { start } = require("repl");
 const { deltaTime } = require("./misc");
+const { stem } = require("./stem");
+const { hyphenateSync } = require("hyphen/de");
 
 const whitespaceRegex = /[^\p{Letter}\s]|_/gu;
 const whitespaceRegex2 = /\s+/;
 const isNumber = /^\d+\.\d+$/;
 
+let dictionary = new Set();
+
 exports.tokenize = (str) => {
     const name = str.toLowerCase().replace(whitespaceRegex, " ").replace("erdapfel", "kartoffel").replace("erdäpfel", "kartoffeln");
     return name
         .split(whitespaceRegex2)
-        .map((token) => stem(token))
-        .filter((token) => !isNumber.test(token) && token.length > 0);
+        .filter((token) => !isNumber.test(token) && token.length > 0)
+        .flatMap((token) => {
+            const hyphens = hyphenateSync(token, { hyphenChar: "*" }).split("*");
+            const newTokens = [];
+
+            let i = 0;
+            while (i < hyphens.length) {
+                let longestMatch = null;
+                let nextIndex = -1;
+                let match = "";
+                for (let j = i; j < hyphens.length; j++) {
+                    match += hyphens[j];
+                    if (dictionary.has(match)) {
+                        longestMatch = match;
+                        nextIndex = j + 1;
+                    }
+                }
+                if (!longestMatch) {
+                    i++;
+                } else {
+                    newTokens.push(longestMatch);
+                    i = nextIndex;
+                }
+            }
+
+            return [token, ...newTokens];
+        })
+        .map((token) => stem(token));
 };
 
 exports.index = (items) => {
@@ -73,9 +102,6 @@ exports.index = (items) => {
         index.words[key].idf = Math.max(Math.log10(num / denom), 0.01);
     }
 
-    // console.log(index);
-    console.log(`Words: ${Object.keys(index.words).length}`);
-    console.log(`Building index took: ${deltaTime(start)}`);
     return index;
 };
 
@@ -112,15 +138,29 @@ exports.search = (index, query) => {
 };
 
 if (require.main === module) {
+    const fs = require("fs");
+    const { readJSON } = require("../../analysis");
+
     let items = readJSON("data/latest-canonical.json.br");
     if (items.items) items = items.items;
+
+    const dictionaryItems = fs
+        .readFileSync("site/data/dictionary-de.txt")
+        .toString()
+        .split("\n")
+        .filter((line) => !line.includes("#"));
+    dictionary = new Set(dictionaryItems);
+
     console.log("Indexing ...");
-    const index = this.index(items);
+    const start = performance.now();
+    const index = exports.index(items);
+    console.log(`Building index took: ${deltaTime(start)}`);
+    console.log(`Words: ${Object.keys(index.words).length}`);
 
     const readline = require("readline-sync");
     while (true) {
         const query = readline.question("> ");
-        const result = this.search(index, query);
+        const result = exports.search(index, query);
         for (let i = 0; i < Math.min(result.length, 20); i++) {
             const doc = result[i];
             console.log(`${doc.score} ${doc.body}`);
