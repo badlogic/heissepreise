@@ -40,6 +40,7 @@ exports.getCanonical = function (item, today) {
         {
             id: item.productId,
             name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
+            description: item.keyfacts?.description ?? "",
             price: item.price.price,
             priceHistory: [{ date: today, price: item.price.price }],
             unit,

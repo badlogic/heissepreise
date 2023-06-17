@@ -26,6 +26,7 @@ exports.getCanonical = function (item, today) {
         {
             id: item.data.articleId,
             name: item.data.name,
+            description: item.data.description ?? "",
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
             isWeighted: item.data.isWeightArticle,

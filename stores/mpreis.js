@@ -31,6 +31,7 @@ exports.getCanonical = function (item, today) {
         {
             id: item.code,
             name: item.name[0],
+            description: item.mixins?.productCustomAttributes?.longDescription ?? "",
             isWeighted,
             price: isWeighted ? item.prices[0].effectiveAmount : item.prices[0].presentationPrice.effectiveAmount,
             priceHistory: [{ date: today, price: item.prices[0].presentationPrice.effectiveAmount }],

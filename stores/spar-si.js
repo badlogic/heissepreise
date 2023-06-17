@@ -62,6 +62,7 @@ exports.getCanonical = function (item, today) {
     return utils.convertUnit(
         {
             id: item.masterValues["code-internal"],
+            // description: "", not available
             name,
             price,
             priceHistory: [{ date: today, price }],

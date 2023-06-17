@@ -18,6 +18,7 @@ exports.getCanonical = function (item, today) {
         {
             id: "" + item.gtin,
             name: `${item.brandName} ${item.title}`,
+            // description: "", not available
             price: item.price.value,
             priceHistory: [{ date: today, price: item.price.value }],
             unit,

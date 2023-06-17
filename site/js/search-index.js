@@ -57,7 +57,7 @@ exports.index = (items) => {
 
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
-        const tokens = this.tokenize(item.name);
+        const tokens = this.tokenize(item.name + " " + (item.description ?? ""));
         const doc = {
             id: item.store + item.id,
             body: item.name,
@@ -93,6 +93,7 @@ exports.index = (items) => {
         index.docs.push(doc);
         index.totalDocLength += tokens.length;
         index.averageDocLength = index.totalDocLength / index.docs.length;
+        if (i % 1000 == 0) console.log(`indexed ${i}/${items.length}`);
     }
 
     var keys = Object.keys(index.words);
@@ -161,7 +162,7 @@ if (require.main === module) {
     while (true) {
         const query = readline.question("> ");
         const result = exports.search(index, query);
-        for (let i = 0; i < Math.min(result.length, 20); i++) {
+        for (let i = 0; i < Math.min(result.length, 50); i++) {
             const doc = result[i];
             console.log(`${doc.score} ${doc.body}`);
         }
