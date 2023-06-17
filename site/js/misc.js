@@ -117,7 +117,7 @@ exports.parseNumber = (value, defaultValue) => {
     }
 };
 
-exports.queryItems = (query, items, exactWord) => {
+exports.queryItemsAlasql = (query, items) => {
     alasql.fn.hasPriceChange = (priceHistory, date, endDate) => {
         if (!endDate) return priceHistory.some((price) => price.date == date);
         else return priceHistory.some((price) => price.date >= date && price.date <= endDate);
@@ -127,16 +127,16 @@ exports.queryItems = (query, items, exactWord) => {
         return priceHistory.some((price) => price.date.indexOf(date) >= 0);
     };
 
-    if (query.charAt(0) == "!") {
-        query = query.substring(1);
-        try {
-            return alasql("select * from ? where " + query, [items]);
-        } catch (e) {
-            console.error(e);
-            return [];
-        }
+    query = query.substring(1);
+    try {
+        return alasql("select * from ? where " + query, [items]);
+    } catch (e) {
+        console.error(e);
+        return [];
     }
+};
 
+exports.queryItems = (query, items, exactWord) => {
     let tokens = query.split(/\s+/).map((token) => token.toLowerCase().replace(",", "."));
 
     // Find quantity/unit query

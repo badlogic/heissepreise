@@ -29,8 +29,8 @@
     "compression": "^1.7.4",
     "express": "^4.18.2",
     "moment": "^2.29.4",
-    "n-readlines": "^1.0.1",
-    "node-html-parser": "^6.1.5"
+    "node-html-parser": "^6.1.5",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

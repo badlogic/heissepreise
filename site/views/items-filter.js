@@ -211,7 +211,11 @@ class ItemsFilter extends View {
         }
 
         if (query.length > 0) {
-            filteredItems = queryItems(query, filteredItems, elements.exact.checked);
+            if (query.charAt(0) == "!") {
+                filteredItems = queryItemsAlasql(query, filteredItems);
+            } else {
+                filteredItems = queryItems(query, filteredItems, elements.exact.checked);
+            }
         }
 
         if (this.model.lastQuery && this.model.lastQuery != query && !this._noChartClear) {
