@@ -19,6 +19,7 @@ class Settings extends Model {
             }
         }
         this.jsonData = true;
+        log(`Settings - using JSON: ${this.jsonData}`);
     }
 
     save() {

@@ -222,8 +222,8 @@ class Items extends Model {
         let start = performance.now();
         const settings = new Settings();
         const compressedItemsPerStore = [];
+        log(`Items - load using JSON: ${this.jsonData}`);
         for (const store of STORE_KEYS) {
-            // if (["reweDe", "dmDe", "sparSi"].includes(store)) continue;
             compressedItemsPerStore.push(
                 new Promise(async (resolve) => {
                     let start = performance.now();
