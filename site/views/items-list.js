@@ -420,7 +420,7 @@ class ItemsList extends View {
         const batches = [];
         let batch = [];
         items.forEach((item) => {
-            if (batch.length == 100) {
+            if (batch.length == 25) {
                 batches.push(batch);
                 batch = [];
             }
