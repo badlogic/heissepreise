@@ -1,4 +1,4 @@
-const { today, parseNumber, dom, getBooleanAttribute, queryItems, log, deltaTime } = require("../js/misc");
+const { today, parseNumber, dom, getBooleanAttribute, queryItems, queryItemsAlasql, log, deltaTime } = require("../js/misc");
 const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
 const { settings } = require("../model");
 const { View } = require("./view");

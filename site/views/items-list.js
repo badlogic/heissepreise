@@ -126,6 +126,7 @@ class ItemsList extends View {
                 store: item.store,
                 id: item.id,
                 name: item.name,
+                category: item.category,
                 price: item.price,
                 priceHistory: item.priceHistory,
                 isWeighted: item.isWeighted,

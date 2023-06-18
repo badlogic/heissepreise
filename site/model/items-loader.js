@@ -100,30 +100,21 @@ function decompress(compressedItems) {
     const numItems = compressedItems.n;
     const items = new Array(numItems);
     let i = 0;
-    const strings = new Map();
-    const internString = (string) => {
-        if (strings.has(string)) {
-            return strings.get(string);
-        } else {
-            strings.set(string, string);
-            return string;
-        }
-    };
     for (let l = 0; l < numItems; l++) {
         const store = storeLookup[data[i++]];
-        const id = internString(data[i++]);
-        const name = internString(data[i++]);
+        const id = data[i++];
+        const name = data[i++];
         const numPrices = data[i++];
         const prices = new Array(numPrices);
         for (let j = 0; j < numPrices; j++) {
             const date = dates[data[i++]];
             const price = data[i++];
             prices[j] = {
-                date: internString(date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8)),
+                date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
                 price,
             };
         }
-        const unit = internString(data[i++]);
+        const unit = data[i++];
         const quantity = data[i++];
         const isWeighted = data[i++] == 1;
         const bio = data[i++] == 1;
@@ -148,36 +139,85 @@ function decompress(compressedItems) {
 function processItems(items) {
     const lookup = {};
     const start = performance.now();
-    for (const item of items) {
+    const interns = new Map();
+    const intern = (value) => {
+        if (interns.has(value)) {
+            return interns.get(value);
+        } else {
+            interns.set(value, value);
+            return value;
+        }
+    };
+
+    const getters = {
+        unitPrice: {
+            get() {
+                const unitPriceFactor = this.unit == "g" || this.unit == "ml" ? 1000 : 1;
+                return (this.price / this.quantity) * unitPriceFactor;
+            },
+        },
+        numPrices: {
+            get() {
+                return this.priceHistory.length;
+            },
+        },
+        date: {
+            get() {
+                return this.priceHistory[0].date;
+            },
+        },
+        priceOldest: {
+            get() {
+                return this.priceHistory[this.priceHistory.length - 1].price;
+            },
+        },
+        dateOldest: {
+            get() {
+                return this.priceHistory[this.priceHistory.length - 1].date;
+            },
+        },
+    };
+
+    for (let i = 1; i < 3; i++) {
+        (getters[`price${i}`] = {
+            get() {
+                return this.priceHistory[i] ? this.priceHistory[i].price : 0;
+            },
+        }),
+            (getters[`date${i}`] = {
+                get() {
+                    return this.priceHistory[i] ? this.priceHistory[i].date : null;
+                },
+            });
+    }
+
+    items.forEach((item) => {
         lookup[item.store + item.id] = item;
+        for (const getter in getters) {
+            Object.defineProperty(item, getter, getters[getter]);
+        }
+
+        item.store = intern(item.store);
+        item.id = intern(item.id);
+        item.name = intern(item.name);
+        item.category = intern(item.category);
+        item.price = intern(item.price);
+        for (const price of item.priceHistory) {
+            price.date = intern(price.date);
+            price.price = intern(price.price);
+        }
+        item.unit = intern(item.unit);
+        item.quantity = intern(item.quantity);
+
         item.search = item.name + " " + item.quantity + " " + item.unit;
-        item.search = item.search.toLowerCase().replace(",", ".");
+        item.search = intern(item.search.toLowerCase().replace(",", "."));
 
         const unitPriceFactor = item.unit == "g" || item.unit == "ml" ? 1000 : 1;
-        item.unitPrice = (item.price / item.quantity) * unitPriceFactor;
-        item.numPrices = item.priceHistory.length;
-        item.priceOldest = item.priceHistory[item.priceHistory.length - 1].price;
-        item.dateOldest = item.priceHistory[item.priceHistory.length - 1].date;
-        item.date = item.priceHistory[0].date;
-        let highestPriceBefore = -1;
-        let lowestPriceBefore = 100000;
         for (let i = 0; i < item.priceHistory.length; i++) {
             const price = item.priceHistory[i];
             price.unitPrice = (price.price / item.quantity) * unitPriceFactor;
-            if (i == 0) continue;
-            if (i < 10) {
-                item["price" + i] = price.price;
-                item["unitPrice" + i] = price.unitPrice;
-                item["date" + i] = price.date;
-            }
-            highestPriceBefore = Math.max(highestPriceBefore, price.price);
-            lowestPriceBefore = Math.min(lowestPriceBefore, price.price);
         }
-        if (highestPriceBefore == -1) highestPriceBefore = item.price;
-        if (lowestPriceBefore == 100000) lowestPriceBefore = item.price;
-        item.highestBefore = highestPriceBefore;
-        item.lowestBefore = lowestPriceBefore;
-    }
+    });
 
     items.sort((a, b) => {
         if (a.store < b.store) {
