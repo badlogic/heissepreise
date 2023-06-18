@@ -186,14 +186,14 @@ function processItems(items) {
         return 0;
     });
 
-    log(`Items - processing ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
+    log(`Loader - processing ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
     return { items, lookup };
 }
 
 exports.loadItems = async (settings) => {
     let start = performance.now();
     const compressedItemsPerStore = [];
-    log(`Items - load using JSON: ${settings.useJson}`);
+    log(`Loader - load using JSON: ${settings.useJson}`);
     for (const store of STORE_KEYS) {
         compressedItemsPerStore.push(
             new Promise(async (resolve) => {
@@ -203,32 +203,32 @@ exports.loadItems = async (settings) => {
                     if (useJSON) {
                         const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
                         const json = await response.json();
-                        log(`Items - loading compressed items for ${store} took ${deltaTime(start)} secs`);
+                        log(`Loader - loading compressed items for ${store} took ${deltaTime(start)} secs`);
                         start = performance.now();
                         let items = decompress(json);
-                        log(`Items - Decompressing items for ${store} took ${deltaTime(start)} secs`);
+                        log(`Loader - Decompressing items for ${store} took ${deltaTime(start)} secs`);
                         resolve(items);
                     } else {
                         const response = await fetch(`data/latest-canonical.${store}.bin.json`);
                         const binary = await response.arrayBuffer();
-                        log(`Items - loading compressed binary items for ${store} took ${deltaTime(start)} secs`);
+                        log(`Loader - loading compressed binary items for ${store} took ${deltaTime(start)} secs`);
                         start = performance.now();
                         let items = decompressBinary(binary);
-                        log(`Items - Decompressing items for ${store} took ${deltaTime(start)} secs`);
+                        log(`Loader - Decompressing items for ${store} took ${deltaTime(start)} secs`);
                         resolve(items);
                     }
                 } catch (e) {
-                    log(`Items - error while loading compressed items for ${store} ${e.message}`);
+                    log(`Loader - error while loading compressed items for ${store} ${e.message}`);
                     resolve([]);
                 }
             })
         );
     }
     const items = [].concat(...(await Promise.all(compressedItemsPerStore)));
-    log(`Items - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
+    log(`Loader - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
 
     const result = processItems(items);
-    log(`Items - total loading took ${deltaTime(start).toFixed(4)} secs`);
+    log(`Loader - total loading took ${deltaTime(start).toFixed(4)} secs`);
 
     return result;
 };
