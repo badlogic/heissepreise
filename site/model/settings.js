@@ -10,7 +10,7 @@ class Settings extends Model {
         STORE_KEYS.forEach((store) => {
             this[store] = stores[store].defaultChecked;
         });
-        this.jsonData = true;
+        this.useJson = true;
 
         let settings = localStorage.getItem("settings");
         if (settings) {
@@ -19,8 +19,8 @@ class Settings extends Model {
                 this[prop] = settings[prop];
             }
         }
-        this.jsonData = true;
-        log(`Settings - using JSON: ${this.jsonData}`);
+        this.useJson = true;
+        log(`Settings - using JSON: ${this.useJson}`);
     }
 
     save() {
