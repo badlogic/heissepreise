@@ -18,7 +18,7 @@ class ItemsFilter extends View {
         const hidePriceDirection = this._filterByPriceDirection ? "" : "hidden";
         const hideStores = this._filterByStores ? "" : "hidden";
         const hideMisc = this._filterByMisc ? "" : "hidden";
-        const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen...";
+        const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen... (min. 3 Zeichen)";
 
         this.innerHTML = /*html*/ `
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />

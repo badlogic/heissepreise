@@ -137,6 +137,8 @@ exports.queryItemsAlasql = (query, items) => {
 };
 
 exports.queryItems = (query, items, exactWord) => {
+    query = query.trim();
+    if (query.length < 3) return [];
     let tokens = query.split(/\s+/).map((token) => token.toLowerCase().replace(",", "."));
 
     // Find quantity/unit query
