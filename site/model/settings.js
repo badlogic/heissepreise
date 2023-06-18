@@ -9,7 +9,7 @@ class Settings extends Model {
         STORE_KEYS.forEach((store) => {
             this[store] = stores[store].defaultChecked;
         });
-        this.jsonData = false;
+        this.jsonData = true;
 
         let settings = localStorage.getItem("settings");
         if (settings) {
@@ -18,6 +18,7 @@ class Settings extends Model {
                 this[prop] = settings[prop];
             }
         }
+        this.jsonData = true;
     }
 
     save() {
