@@ -37,14 +37,13 @@ exports.getCanonical = function (item, today) {
     let categoryCode = billaCategory.replace("B2-", "").substring(0, 2);
     let [ci, cj] = fromCategoryCode(categoryCode);
     categoryCode = toCategoryCode(ci - 1, cj - 1);
-    const category = getCategory(categoryCode);
 
     return utils.convertUnit(
         {
             id: item.data.articleId,
             name: item.data.name,
             description: item.data.description ?? "",
-            category,
+            categoryCode,
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
             isWeighted: item.data.isWeightArticle,

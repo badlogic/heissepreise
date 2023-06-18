@@ -15,7 +15,7 @@ exports.getCanonical = function (item, today) {
     let unit = item.contentUnit || item.basePriceUnit;
     return utils.convertUnit(
         {
-            id: item.gtin,
+            id: String(item.gtin),
             name: `${item.brandName} ${item.title}`,
             // description: "", not available
             price: item.price.value,
