@@ -118,7 +118,7 @@ function decompress(compressedItems) {
         const quantity = data[i++];
         const isWeighted = data[i++] == 1;
         const bio = data[i++] == 1;
-        const url = stores[store].getUrl({ id, name, url: data[i++] });
+        const url = data[i++];
 
         items[l] = {
             store,

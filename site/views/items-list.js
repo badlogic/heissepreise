@@ -132,7 +132,7 @@ class ItemsList extends View {
                 unit: item.unit,
                 quantity: item.quantity,
                 bio: item.bio,
-                url: item.url,
+                url: stores[item.store].getUrl(item),
             });
         });
         downloadJSON("items.json", cleanedItems);

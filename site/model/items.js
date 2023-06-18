@@ -1,6 +1,6 @@
 const { Model } = require("./model");
 const { Settings } = require("./settings");
-const { loadItems } = require("./loader");
+const { loadItems } = require("./items-loader");
 
 class Items extends Model {
     constructor() {
@@ -32,7 +32,7 @@ class Items extends Model {
         if (window.Worker && false) {
             const self = this;
             return new Promise((resolve, reject) => {
-                const loader = new Worker("loader.js");
+                const loader = new Worker("items-loader.js");
                 loader.onmessage = (event) => {
                     self._items = event.data.items;
                     self._lookup = event.data.lookup;

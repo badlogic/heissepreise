@@ -108,7 +108,7 @@ async function bundleJS(inputDir, outputDir, watch) {
             changes: `${inputDir}/changes.js`,
             settings: `${inputDir}/settings.js`,
             index: `${inputDir}/index.js`,
-            loader: `${inputDir}/model/loader.js`,
+            "items-loader": `${inputDir}/model/items-loader.js`,
         },
         bundle: true,
         sourcemap: true,
