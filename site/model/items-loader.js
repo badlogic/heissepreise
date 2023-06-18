@@ -248,7 +248,7 @@ exports.loadItems = async (settings) => {
             new Promise(async (resolve) => {
                 let start = performance.now();
                 try {
-                    const useJSON = settings.useJson;
+                    const useJSON = true; // settings.useJson;
                     if (useJSON) {
                         const response = await fetch(`data/latest-canonical.${store}.compressed.json`);
                         const json = await response.json();
