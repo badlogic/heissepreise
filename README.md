@@ -47,7 +47,7 @@ Merged price history
 App listening on port 3000
 ```
 
-Once the app is listening per default on port 3000, open <http://localhost:3000> in your browser.\
+Once the app is listening per default on port 3000, open <http://localhost:3000> in your browser.
 
 Subsequent starts will fetch the data asynchronously, so you can start working immediately.
 

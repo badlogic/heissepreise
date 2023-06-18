@@ -13,7 +13,6 @@ function copyItemsToSite(dataDir) {
     for (const store of analysis.STORE_KEYS) {
         const storeItems = items.filter((item) => item.store === store);
         analysis.writeJSON(`site/output/data/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
-        fs.writeFileSync(`site/output/data/latest-canonical.${store}.bin.json`, analysis.compressBinary(storeItems));
     }
 }
 

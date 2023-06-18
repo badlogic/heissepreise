@@ -63,18 +63,6 @@ exports.today = () => {
     return `${year}-${month}-${day}`;
 };
 
-exports.dateToUint16 = (dateString) => {
-    const [year, month, day] = dateString.split("-").map(Number);
-    return (((year - 2000) << 9) | (month << 5) | day) & 0xffff;
-};
-
-exports.uint16ToDate = (encodedDate) => {
-    const year = (encodedDate >> 9) + 2000;
-    const month = (encodedDate >> 5) & 0xf;
-    const day = encodedDate & 0x1f;
-    return `${year}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
-};
-
 exports.fetchJSON = async (url) => {
     const response = await fetch(url);
     return await response.json();
