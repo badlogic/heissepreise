@@ -193,7 +193,10 @@ function compressBinary(items) {
         if (item.bio) flagsByte |= 1;
         if (item.isWeighted) flagsByte |= 2;
         if (item.unit === "ml") flagsByte |= 4;
-        if (item.unit === "stk") flagsByte |= 8;
+        if (item.unit === "g") flagsByte |= 8;
+        if (item.unit === "stk") flagsByte |= 16;
+        if (item.unit === "cm") flagsByte |= 32;
+        if (item.unit === "wg") flagsByte |= 64;
         buffer.push(flagsByte);
 
         const quantityBuffer = Buffer.allocUnsafe(2);

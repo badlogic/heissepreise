@@ -1,5 +1,6 @@
 const axios = require("axios");
 const utils = require("./utils");
+const { toCategoryCode, fromCategoryCode, getCategory } = require("../site/model/categories");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const units = {
@@ -22,11 +23,28 @@ exports.getCanonical = function (item, today) {
         if (grammage) [quantity, unit] = grammage.trim().split(" ").splice(0, 2);
     }
 
+    let billaCategory = null;
+    for (const groupId of item.data.articleGroupIds) {
+        if (billaCategory == null) {
+            billaCategory = groupId;
+            continue;
+        }
+
+        if (groupId.charCodeAt(3) < billaCategory.charCodeAt(3)) {
+            billaCategory = groupId;
+        }
+    }
+    let categoryCode = billaCategory.replace("B2-", "").substring(0, 2);
+    let [ci, cj] = fromCategoryCode(categoryCode);
+    categoryCode = toCategoryCode(ci - 1, cj - 1);
+    const category = getCategory(categoryCode);
+
     return utils.convertUnit(
         {
             id: item.data.articleId,
             name: item.data.name,
             description: item.data.description ?? "",
+            category,
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
             isWeighted: item.data.isWeightArticle,

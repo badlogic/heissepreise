@@ -40,7 +40,11 @@ function decompressBinary(buffer) {
         const flagsByte = view.getUint8(offset++);
         obj.bio = (flagsByte & 1) !== 0;
         obj.isWeighted = (flagsByte & 2) !== 0;
-        obj.unit = (flagsByte & 4) !== 0 ? "ml" : (flagsByte & 8) !== 0 ? "stk" : "g";
+        if (flagsByte & 4) obj.unit = "ml";
+        if (flagsByte & 8) obj.unit = "g";
+        if (flagsByte & 16) obj.unit = "stk";
+        if (flagsByte & 32) obj.unit = "cm";
+        if (flagsByte & 64) obj.unit = "wg";
 
         obj.quantity = view.getUint16(offset, true);
         offset += 2;
