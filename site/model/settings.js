@@ -1,5 +1,6 @@
 const { STORE_KEYS, stores } = require("./stores");
 const { Model } = require("./model");
+const { log } = require("../js/misc");
 
 class Settings extends Model {
     constructor() {
