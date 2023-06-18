@@ -100,21 +100,30 @@ function decompress(compressedItems) {
     const numItems = compressedItems.n;
     const items = new Array(numItems);
     let i = 0;
+    const strings = new Map();
+    const internString = (string) => {
+        if (strings.has(string)) {
+            return strings.get(string);
+        } else {
+            strings.set(string, string);
+            return string;
+        }
+    };
     for (let l = 0; l < numItems; l++) {
         const store = storeLookup[data[i++]];
-        const id = data[i++];
-        const name = data[i++];
+        const id = internString(data[i++]);
+        const name = internString(data[i++]);
         const numPrices = data[i++];
         const prices = new Array(numPrices);
         for (let j = 0; j < numPrices; j++) {
             const date = dates[data[i++]];
             const price = data[i++];
             prices[j] = {
-                date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
+                date: internString(date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8)),
                 price,
             };
         }
-        const unit = data[i++];
+        const unit = internString(data[i++]);
         const quantity = data[i++];
         const isWeighted = data[i++] == 1;
         const bio = data[i++] == 1;
