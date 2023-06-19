@@ -22,17 +22,21 @@ class ItemsList extends View {
             <div x-id="options" class="hidden flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
                 <div>
                     <div class="flex flex-col md:flex-row gap-2 items-center">
-                        <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
-                        <span>
-                            <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
-                        </span>
-                        <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
-                            this._chart ? "" : "hidden"
-                        }"></custom-checkbox>
-                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType${
-                            ItemsList.priceTypeId
-                        }" checked> Verkaufspreis</label>
-                        <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType${ItemsList.priceTypeId++}"> Mengenpreis</label>
+                        <div class="flex flex-row gap-2 items-center">
+                            <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
+                            <span>
+                                <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
+                            </span>
+                            <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
+                                this._chart ? "" : "hidden"
+                            }"></custom-checkbox>
+                        </div>
+                        <div class="flex flex-row gap-2 items-center">
+                            <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType${
+                                ItemsList.priceTypeId
+                            }" checked> Verkaufspreis</label>
+                            <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType${ItemsList.priceTypeId++}"> Mengenpreis</label>
+                        </div>
                     </div>
                 </div>
                 <label class="${hideSort}">

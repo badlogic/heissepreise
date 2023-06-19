@@ -1,6 +1,6 @@
 const { STORE_KEYS } = require("../model/stores");
 const { settings } = require("../model");
-const { today, log, deltaTime } = require("../js/misc");
+const { today, log, deltaTime, isMobile } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
 const moment = require("moment");
@@ -14,9 +14,9 @@ class ItemsChart extends View {
 
         this.unitPrice = false;
         this.innerHTML = /*html*/ `
-            <div class="bg-stone-200 p-4 mx-auto">
-                <div class="w-full  h-[calc(100vw*0.66)] md:h-[calc(100vw*0.5)] lg:h-[calc(100vw*0.30)]" style="position: relative;">
-                    <canvas x-id="canvas" class="bg-white rounded-lg py-4"></canvas>
+            <div class="bg-stone-200 p-4 mx-auto md:rounded-none md:mb-0 rounded-xl mb-4">
+                <div class="w-full  h-[calc(100vh*0.50)] md:h-[calc(100vh*0.60)] lg:h-[calc(100vh*0.60)]" style="position: relative;">
+                    <canvas x-id="canvas" class="bg-white rounded-lg"></canvas>
                     <div x-id="noData" class="hidden flex items-center justify-center h-full">Keine Daten ausgewählt</div>
                 </div>
                 <div class="filters flex items-center flex-wrap justify-center gap-2 pt-2">
@@ -144,7 +144,7 @@ class ItemsChart extends View {
             },
             options: {
                 layout: {
-                    padding: 20,
+                    padding: 16,
                 },
                 animation: false,
                 responsive: true,
