@@ -2,19 +2,7 @@
 
 A terrible grocery price search "app". Fetches data from big Austrian grocery chains daily and lets you search them. See <https://heisse-preise.io>.
 
-The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `server.js`). The front end is a least-effort vanilla HTML/JS search form (see sources in `site/`).
-
-Contents:
-
--   [Requirements](#requirements)
--   [Running](#running)
-    -   [Development](#development)
-    -   [Production](#production)
-    -   [Configuration](#configuration)
-    -   [Via GitHub pages \& GitHub workflows](#via-github-pages--github-workflows)
-    -   [Docker](#docker)
--   [Raw Data](#raw-data)
--   [Historical Data](#historical-data)
+The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `server.js`). The front end is a least-effort vanilla HTML/JS app (see sources in `site/`).
 
 ## Requirements
 
