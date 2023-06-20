@@ -14,6 +14,7 @@ function copyItemsToSite(dataDir) {
         const storeItems = items.filter((item) => item.store === store);
         analysis.writeJSON(`site/output/data/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
     }
+    console.log("Copied latest items to site.");
 }
 
 function scheduleFunction(hour, minute, second, func) {

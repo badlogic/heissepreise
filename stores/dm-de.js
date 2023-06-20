@@ -93,4 +93,8 @@ exports.fetchData = async function () {
     return dmItems;
 };
 
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
+
 exports.urlBase = "https://www.dm.de/product-p";

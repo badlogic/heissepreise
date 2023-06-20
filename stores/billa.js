@@ -23,27 +23,11 @@ exports.getCanonical = function (item, today) {
         if (grammage) [quantity, unit] = grammage.trim().split(" ").splice(0, 2);
     }
 
-    let billaCategory = null;
-    for (const groupId of item.data.articleGroupIds) {
-        if (billaCategory == null) {
-            billaCategory = groupId;
-            continue;
-        }
-
-        if (groupId.charCodeAt(3) < billaCategory.charCodeAt(3)) {
-            billaCategory = groupId;
-        }
-    }
-    let categoryCode = billaCategory.replace("B2-", "").substring(0, 2);
-    let [ci, cj] = fromCategoryCode(categoryCode);
-    categoryCode = toCategoryCode(ci - 1, cj - 1);
-
     return utils.convertUnit(
         {
             id: item.data.articleId,
             name: item.data.name,
             description: item.data.description ?? "",
-            categoryCode,
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
             isWeighted: item.data.isWeightArticle,
@@ -88,6 +72,29 @@ exports.fetchData = async function () {
     }
     console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
     return items;
+};
+
+exports.initializeCategoryMapping = async () => {
+    // FIXME check if categories have changed.
+    console.log("No mapping for Billa");
+};
+
+exports.mapCategory = (rawItem) => {
+    let billaCategory = null;
+    for (const groupId of rawItem.data.articleGroupIds) {
+        if (billaCategory == null) {
+            billaCategory = groupId;
+            continue;
+        }
+
+        if (groupId.charCodeAt(3) < billaCategory.charCodeAt(3)) {
+            billaCategory = groupId;
+        }
+    }
+    let categoryCode = billaCategory.replace("B2-", "").substring(0, 2);
+    let [ci, cj] = fromCategoryCode(categoryCode);
+    categoryCode = toCategoryCode(ci - 1, cj - 1);
+    return categoryCode;
 };
 
 exports.urlBase = "https://shop.billa.at";

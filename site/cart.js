@@ -207,5 +207,6 @@ function loadCart() {
     cartList.model = cartFilter.model = cart;
     productsList.model = productsFilter.model = models.items;
     if (c || d) itemsChart.render();
+    cartFilter.filter();
     document.querySelector('[x-id="loader"]').classList.add("hidden");
 })();

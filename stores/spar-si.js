@@ -83,4 +83,8 @@ exports.fetchData = async function () {
     return rawItems?.hits || rawItems;
 };
 
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
+
 exports.urlBase = "https://www.spar.si/online";

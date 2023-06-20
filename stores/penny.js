@@ -47,4 +47,8 @@ exports.fetchData = async function () {
     return result;
 };
 
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
+
 exports.urlBase = "https://www.penny.at/produkte/";

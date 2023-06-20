@@ -67,4 +67,8 @@ exports.fetchData = async function () {
     return unimarktItems;
 };
 
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
+
 exports.urlBase = "https://shop.unimarkt.at";

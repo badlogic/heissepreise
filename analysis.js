@@ -2,9 +2,7 @@ const fs = require("fs");
 const fsAsync = require("fs").promises;
 const zlib = require("zlib");
 const stores = require("./stores");
-const { FILE } = require("dns");
 const { promisify } = require("util");
-const { dateToUint16 } = require("./site/js/misc");
 
 const STORE_KEYS = Object.keys(stores);
 exports.STORE_KEYS = STORE_KEYS;
@@ -149,7 +147,7 @@ function sortItems(items) {
     });
 }
 
-// Keep this in sync with utils.js:decompress
+// Keep this in sync with items.js:decompress
 function compress(items) {
     const compressed = {
         stores: STORE_KEYS,
@@ -170,6 +168,7 @@ function compress(items) {
         data.push(STORE_KEYS.indexOf(item.store));
         data.push(item.id);
         data.push(item.name);
+        data.push(item.category ?? "A0");
         data.push(item.priceHistory.length);
         for (price of item.priceHistory) {
             data.push(uniqueDates[price.date.replaceAll("-", "")]);
@@ -179,7 +178,7 @@ function compress(items) {
         data.push(item.quantity);
         data.push(item.isWeighted ? 1 : 0);
         data.push(item.bio ? 1 : 0);
-        data.push(item.url?.replace(stores[item.store].urlBase, ""));
+        data.push(item.url?.replace(stores[item.store].urlBase, "") ?? "");
     }
     return compressed;
 }
@@ -210,10 +209,11 @@ exports.replay = function (rawDataDir) {
     const canonicalFiles = {};
 
     for (const store of STORE_KEYS) {
+        stores[store].generateCategoryMapping();
         storeFiles[store] = getFilteredFilesFor(store);
         canonicalFiles[store] = storeFiles[store].map((file) => {
             console.log(`Creating canonical items for ${file}`);
-            return getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]);
+            getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]);
         });
         canonicalFiles[store].reverse();
     }
@@ -248,6 +248,8 @@ exports.updateData = async function (dataDir, done) {
     console.log("Fetching data for date: " + today);
     const storeFetchPromises = [];
     for (const store of STORE_KEYS) {
+        await stores[store].initializeCategoryMapping();
+
         storeFetchPromises.push(
             new Promise(async (resolve) => {
                 const start = performance.now();
@@ -261,7 +263,18 @@ exports.updateData = async function (dataDir, done) {
                         writeJSON(rawDataFile, storeItems, FILE_COMPRESSOR);
                     }
                     const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
-                    console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
+                    let numUncategorized = 0;
+                    for (let i = 0; i < storeItemsCanonical.length; i++) {
+                        const rawItem = storeItems[i];
+                        const item = storeItemsCanonical[i];
+                        item.category = stores[store].mapCategory(rawItem);
+                        if (item.category == null) numUncategorized++;
+                    }
+                    console.log(
+                        `Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds, ${numUncategorized}/${
+                            storeItemsCanonical.length
+                        } items without category.`
+                    );
                     resolve(storeItemsCanonical);
                 } catch (e) {
                     console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);

@@ -111,4 +111,8 @@ exports.fetchData = async function () {
     }
 };
 
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
+
 exports.urlBase = "";

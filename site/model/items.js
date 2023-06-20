@@ -175,6 +175,7 @@ class Items extends Model {
             const store = storeLookup[data[i++]];
             const id = data[i++];
             const name = data[i++];
+            const category = data[i++];
             const numPrices = data[i++];
             const prices = new Array(numPrices);
             for (let j = 0; j < numPrices; j++) {
@@ -195,6 +196,7 @@ class Items extends Model {
                 store,
                 id,
                 name,
+                category,
                 price: prices[0].price,
                 priceHistory: prices,
                 isWeighted,

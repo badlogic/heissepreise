@@ -1,5 +1,6 @@
 const { today, parseNumber, dom, getBooleanAttribute, queryItems, queryItemsAlasql, log, deltaTime } = require("../js/misc");
 const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
+const { fromCategoryCode, categories } = require("../model/categories");
 const { settings } = require("../model");
 const { View } = require("./view");
 
@@ -69,6 +70,19 @@ class ItemsFilter extends View {
                 <custom-checkbox x-id="priceIncreased" x-state x-change label="Teurer" checked class="gray"></custom-checkbox>
                 <custom-checkbox x-id="priceDecreased" x-state x-change label="Billiger" checked class="gray"></custom-checkbox>
             </div>
+
+            <div x-id="categories" class="flex justify-center gap-2 flex-wrap mt-4 hidden">
+                    ${categories
+                        .map(
+                            (category, index) => /*html*/ `
+                        <custom-checkbox
+                            x-id="category-${index}" x-state x-change
+                            label="${category.name}"
+                            checked
+                        ></custom-checkbox>`
+                        )
+                        .join("")}
+            </div>
         `;
         this.classList.add("items-filter");
 
@@ -102,7 +116,7 @@ class ItemsFilter extends View {
             })
         );
 
-        elements.allStores.addEventListener("change", handleChangeAll);
+        elements.allStores.addEventListener("x-change", handleChangeAll);
 
         elements.priceChangesToday.addEventListener("change", () => {
             if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
@@ -218,10 +232,41 @@ class ItemsFilter extends View {
             }
         }
 
-        if (this.model.lastQuery && this.model.lastQuery != query && !this._noChartClear) {
+        let queryChanged = this.model.lastQuery && this.model.lastQuery != query;
+        if (queryChanged && !this._noChartClear) {
             filteredItems.forEach((item) => (item.chart = false));
         }
         this.model.lastQuery = query;
+
+        if (this.model.numItemsBeforeCategories != filteredItems.length) queryChanged = true;
+        this.model.numItemsBeforeCategories = filteredItems.length; // This is not entirely correct, but I'm too lazy...
+        const filteredCategories = {};
+        filteredItems.forEach((item) => {
+            const category = categories[fromCategoryCode(item.category)[0]];
+            filteredCategories[category.index] = filteredCategories[category.index] ? filteredCategories[category.index] + 1 : 1;
+        });
+        for (const category of categories) {
+            const checkbox = elements["category-" + category.index];
+            if (filteredCategories[category.index] > 0) {
+                if (queryChanged) checkbox.checked = true;
+                checkbox.label = `${category.name} (${filteredCategories[category.index]})`;
+                checkbox.classList.remove("hidden");
+            } else {
+                if (queryChanged) checkbox.checked = false;
+                checkbox.classList.add("hidden");
+            }
+        }
+
+        if (Object.keys(filteredCategories).length == 0) {
+            elements.categories.classList.add("hidden");
+        } else {
+            elements.categories.classList.remove("hidden");
+        }
+
+        filteredItems = filteredItems.filter((item) => {
+            const category = categories[fromCategoryCode(item.category)[0]];
+            return elements["category-" + category.index].checked;
+        });
 
         log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`);
 

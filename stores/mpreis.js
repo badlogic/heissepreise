@@ -58,4 +58,8 @@ exports.fetchData = async function () {
     return mpreisItems;
 };
 
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
+
 exports.urlBase = "https://www.mpreis.at/shop/p/";

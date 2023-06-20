@@ -149,6 +149,8 @@ exports.categories = [
     },
 ];
 
+exports.categories.forEach((category, index) => (category.index = index));
+
 exports.toCategoryCode = (i, j) => {
     return (
         (i < 10 ? "" + i : String.fromCharCode("A".charCodeAt(0) + (i - 10))) + (j < 10 ? "" + j : String.fromCharCode("A".charCodeAt(0) + (j - 10)))
@@ -156,7 +158,7 @@ exports.toCategoryCode = (i, j) => {
 };
 
 exports.fromCategoryCode = (code) => {
-    if (code.length != 2) return [exports.categories.length - 1, 0];
+    if (!code || code.length != 2) return [exports.categories.length - 1, 0];
     const codeI = code.charCodeAt(0);
     const codeJ = code.charCodeAt(1);
     return [

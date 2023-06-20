@@ -57,4 +57,8 @@ exports.fetchData = async function () {
     return (await axios.get(LIDL_SEARCH)).data.filter((item) => !!item.price.price);
 };
 
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
+
 exports.urlBase = "https://www.lidl.at";
