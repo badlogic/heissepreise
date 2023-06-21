@@ -41,7 +41,7 @@ class Items extends Model {
                         const json = await response.json();
                         log(`Loader - loading compressed items for ${store} took ${deltaTime(start)} secs`);
                         start = performance.now();
-                        let items = decompress(json);
+                        let items = exports.decompress(json);
                         log(`Loader - Decompressing items for ${store} took ${deltaTime(start)} secs`);
                         resolve(items);
                     } catch (e) {
