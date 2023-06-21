@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
 const utils = require("./utils");
+const analysis = require("../analysis");
 
 const units = {
     "": { unit: "stk", factor: 1 },
@@ -86,26 +87,24 @@ exports.getCategories = async () => {
 
 exports.urlBase = "https://www.roksh.at/hofer/produkte/";
 
-exports.initializeCategoryMapping = async () => {};
-
-exports.mapCategory = (rawItem) => {};
-
-exports.generateCategoryMapping = async (rawItems) => {
-    const { categories } = await exports.getCategories();
+exports.initializeCategoryMapping = async () => {
+    // This is unfortunate, but the API doesn't return all categories
+    const rawItems = analysis.readJSON("data/hofer-2023-06-21.json.br"); // await exports.fetchData();
+    const rawCategories = (await exports.getCategories()).categories;
     const lookup = {};
     const processCategory = (category) => {
         lookup[category.ProgID] = {
-            category: category.ProgID,
-            url: category.Url,
-            code: "",
-            numItems: 0,
+            id: category.ProgID,
+            description: category.CategoryName,
+            url: "https://www.roksh.at/" + category.Url,
+            code: null,
         };
 
         for (const child of category.ChildList) {
             processCategory(child);
         }
     };
-    for (const category of categories) {
+    for (const category of rawCategories) {
         processCategory(category);
     }
 
@@ -115,28 +114,17 @@ exports.generateCategoryMapping = async (rawItems) => {
             console.log(`Couldn't find category '${item.CategorySEOName}' for Hofer product ${item.ProductName}`);
             total++;
             lookup[item.CategorySEOName] = {
-                category: item.CategorySEOName,
-                url: "",
+                id: item.CategorySEOName,
+                url: "https://www.roksh.at/hofer/angebot/" + item.CategorySEOName,
                 code: "",
-                numItems: 1,
             };
         } else {
             const category = lookup[item.CategorySEOName];
-            category.item = item;
-            category.numItems++;
         }
     }
-    const output = Object.keys(lookup).map((key) => lookup[key]);
-    const oldCategories = path.join(__dirname, "hofer-categories.json");
-    fs.writeFileSync(path.join(__dirname, "hofer-categories.json"), JSON.stringify(output, null, 2));
+    exports.categories = [];
+    Object.keys(lookup).forEach((key) => exports.categories.push(lookup[key]));
+    utils.mergeAndSaveCategories("hofer", exports.categories);
 };
 
-// Generate JSON for category mapping in stores/hofer-categories.json
-if (require.main === module) {
-    (async () => {
-        const { readJSON } = require("../analysis");
-        // const rawItems = await this.fetchData();
-        const rawItems = readJSON("data/hofer-2023-06-20.json.br");
-        await exports.generateCategoryMapping(rawItems);
-    })();
-}
+exports.mapCategory = (rawItem) => {};

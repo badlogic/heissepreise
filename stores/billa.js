@@ -1,6 +1,6 @@
 const axios = require("axios");
 const utils = require("./utils");
-const { toCategoryCode, fromCategoryCode, getCategory } = require("../site/model/categories");
+const { categories, toCategoryCode, fromCategoryCode, getCategory } = require("../site/model/categories");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const units = {
@@ -45,8 +45,8 @@ exports.fetchData = async function () {
     const lookup = {};
     let numDuplicates = 0;
 
-    for (let i = 1; i <= utils.globalCategories.length; i++) {
-        const category = utils.globalCategories[i - 1];
+    for (let i = 1; i <= categories.length; i++) {
+        const category = categories[i - 1];
         const categoryCode = i < 10 ? "" + i : String.fromCharCode("A".charCodeAt(0) + (i - 10));
 
         for (let j = 1; j <= category.subcategories.length; j++) {
