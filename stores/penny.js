@@ -26,6 +26,7 @@ exports.getCanonical = function (item, today) {
             unit,
             quantity,
             bio: item.name.toLowerCase().includes("bio") && !item.name.toLowerCase().includes("fabio"),
+            url: item.sku.replace("-", ""),
         },
         units,
         "penny"

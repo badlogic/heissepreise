@@ -78,7 +78,6 @@ class ItemsFilter extends View {
                         <custom-checkbox
                             x-id="category-${index}" x-state x-change
                             label="${category.name}"
-                            checked
                         ></custom-checkbox>`
                         )
                         .join("")}
@@ -248,11 +247,11 @@ class ItemsFilter extends View {
         for (const category of categories) {
             const checkbox = elements["category-" + category.index];
             if (filteredCategories[category.index] > 0) {
-                if (queryChanged) checkbox.checked = true;
+                if (queryChanged) checkbox.checked = false;
                 checkbox.label = `${category.name} (${filteredCategories[category.index]})`;
                 checkbox.classList.remove("hidden");
             } else {
-                if (queryChanged) checkbox.checked = false;
+                if (queryChanged) checkbox.checked = true;
                 checkbox.classList.add("hidden");
             }
         }
@@ -261,12 +260,19 @@ class ItemsFilter extends View {
             elements.categories.classList.add("hidden");
         } else {
             elements.categories.classList.remove("hidden");
+            let numEnabledCategories = 0;
+            Object.keys(filteredCategories).forEach((categoryIndex) => {
+                if (elements["category-" + categoryIndex].checked) {
+                    numEnabledCategories++;
+                }
+            });
+            if (numEnabledCategories > 0) {
+                filteredItems = filteredItems.filter((item) => {
+                    const category = categories[fromCategoryCode(item.category)[0]];
+                    return elements["category-" + category.index].checked;
+                });
+            }
         }
-
-        filteredItems = filteredItems.filter((item) => {
-            const category = categories[fromCategoryCode(item.category)[0]];
-            return elements["category-" + category.index].checked;
-        });
 
         log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`);
 

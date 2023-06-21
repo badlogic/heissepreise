@@ -56,7 +56,7 @@ exports.stores = {
         budgetBrands: ["bravo", "echt bio!", "san fabio", "federike", "blik", "berida", "today", "ich bin österreich"],
         color: "purple",
         defaultChecked: true,
-        getUrl: (item) => `https://www.penny.at/produkte/${item.id}`,
+        getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
         removeOld: true,
     },
     dmDe: {
