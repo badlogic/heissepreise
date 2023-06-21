@@ -1,5 +1,6 @@
 const axios = require("axios");
 const utils = require("./utils");
+const { readJSON } = require("../analysis");
 
 const units = {
     grm: { unit: "g", factor: 1 },
@@ -58,8 +59,59 @@ exports.fetchData = async function () {
     return mpreisItems;
 };
 
-exports.initializeCategoryMapping = async () => {};
+function categoriesToPath(rawItem) {
+    if (!rawItem.categories) return null;
+    const traversePath = (category, result) => {
+        if (category.name == "ProductRoot") return;
+        if (category.parent) traversePath(category.parent, result);
+        result.push({ name: category.name, id: category.id });
+    };
+    const pathElements = [];
+    traversePath(rawItem.category, pathElements);
+    const lastIndex = Math.min(3, pathElements.length) - 1;
+    const result =
+        pathElements
+            .slice(0, lastIndex + 1)
+            .map((el) => el.name)
+            .join(" -> ") +
+        "-" +
+        pathElements[lastIndex].id;
+    return result;
+}
 
-exports.mapCategory = (rawItem) => {};
+exports.initializeCategoryMapping = async (rawItems) => {
+    rawItems = rawItems ?? (await exports.fetchData());
+
+    const categoryLookup = {};
+    for (const rawItem of rawItems) {
+        if (rawItem.categories) {
+            const path = categoriesToPath(rawItem);
+            categoryLookup[path] = {
+                id: path,
+                code: null,
+                url: "https://www.mpreis.at/shop/c/" + path.match(/(\d+)$/)[1],
+            };
+        }
+    }
+    let categories = [];
+    Object.keys(categoryLookup).forEach((key) => categories.push(categoryLookup[key]));
+    categories.sort((a, b) => b.id.localeCompare(a.id));
+    categories = utils.mergeAndSaveCategories("mpreis", categories);
+    exports.categoryLookup = {};
+    for (const category of categories) {
+        exports.categoryLookup[category.id] = category;
+    }
+};
+
+exports.mapCategory = (rawItem) => {
+    const path = categoriesToPath(rawItem);
+    return exports.categoryLookup[path];
+};
 
 exports.urlBase = "https://www.mpreis.at/shop/p/";
+
+if (require.main == module) {
+    (async () => {
+        await exports.initializeCategoryMapping(readJSON("data/mpreis-2023-06-21.json.br"));
+    })();
+}

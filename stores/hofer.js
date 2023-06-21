@@ -87,9 +87,8 @@ exports.getCategories = async () => {
 
 exports.urlBase = "https://www.roksh.at/hofer/produkte/";
 
-exports.initializeCategoryMapping = async () => {
-    // This is unfortunate, but the API doesn't return all categories
-    const rawItems = analysis.readJSON("data/hofer-2023-06-21.json.br"); // await exports.fetchData();
+exports.initializeCategoryMapping = async (rawItems) => {
+    rawItems = rawItems ?? (await exports.fetchData());
     const rawCategories = (await exports.getCategories()).categories;
     const lookup = {};
     const processCategory = (category) => {
@@ -108,11 +107,9 @@ exports.initializeCategoryMapping = async () => {
         processCategory(category);
     }
 
-    let total = 0;
     for (const item of rawItems) {
         if (!lookup[item.CategorySEOName]) {
-            console.log(`Couldn't find category '${item.CategorySEOName}' for Hofer product ${item.ProductName}`);
-            total++;
+            // console.log(`Couldn't find category '${item.CategorySEOName}' for Hofer product ${item.ProductName}`);
             lookup[item.CategorySEOName] = {
                 id: item.CategorySEOName,
                 url: "https://www.roksh.at/hofer/angebot/" + item.CategorySEOName,
@@ -122,9 +119,16 @@ exports.initializeCategoryMapping = async () => {
             const category = lookup[item.CategorySEOName];
         }
     }
-    exports.categories = [];
-    Object.keys(lookup).forEach((key) => exports.categories.push(lookup[key]));
-    utils.mergeAndSaveCategories("hofer", exports.categories);
+    let categories = [];
+    Object.keys(lookup).forEach((key) => categories.push(lookup[key]));
+    categories = utils.mergeAndSaveCategories("hofer", categories);
+    exports.categoryLookup = {};
+    for (const category of categories) {
+        exports.categoryLookup[category.id] = category;
+    }
 };
 
-exports.mapCategory = (rawItem) => {};
+exports.mapCategory = (rawItem) => {
+    const category = exports.categoryLookup[rawItem.CategorySEOName];
+    return category?.code;
+};

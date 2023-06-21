@@ -1,9 +1,6 @@
 const axios = require("axios");
-const fs = require("fs");
-const path = require("path");
 const utils = require("./utils");
 const HTMLParser = require("node-html-parser");
-const { readJSON } = require("../analysis");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const units = {
