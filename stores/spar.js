@@ -2,6 +2,8 @@ const axios = require("axios");
 const utils = require("./utils");
 const HTMLParser = require("node-html-parser");
 const HITS = Math.floor(30000 + Math.random() * 2000);
+const fs = require("fs");
+const path = require("path");
 
 const units = {
     "100ml": { unit: "ml", factor: 100 },
