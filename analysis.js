@@ -2,6 +2,7 @@ const fs = require("fs");
 const fsAsync = require("fs").promises;
 const zlib = require("zlib");
 const stores = require("./stores");
+const model = require("./site/model/stores");
 const { promisify } = require("util");
 
 const STORE_KEYS = Object.keys(stores);
@@ -92,9 +93,17 @@ function mergePriceHistory(oldItems, items) {
     }
 
     console.log(`${Object.keys(lookup).length} not in latest list.`);
+    let removed = {};
     for (key of Object.keys(lookup)) {
-        items.push(lookup[key]);
+        const item = lookup[key];
+        if (model.stores[item.store]?.removeOld) {
+            removed[item.store] = removed[item.store] ? removed[item.store] + 1 : 1;
+        } else {
+            items.push(item);
+        }
     }
+    console.log("Removed items for discount-only stores");
+    console.log(JSON.stringify(removed, null, 2));
 
     sortItems(items);
     console.log(`Items: ${items.length}`);

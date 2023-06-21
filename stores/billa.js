@@ -76,7 +76,6 @@ exports.fetchData = async function () {
 
 exports.initializeCategoryMapping = async () => {
     // FIXME check if categories have changed.
-    console.log("No mapping for Billa");
 };
 
 exports.mapCategory = (rawItem) => {
