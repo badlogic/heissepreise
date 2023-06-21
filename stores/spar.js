@@ -97,7 +97,7 @@ exports.initializeCategoryMapping = async () => {
             });
     } catch (e) {
         console.log("Couldn't fetch SPAR categories.");
-        const mappingFile = path.join(__dirname, `${store}-categories.json`);
+        const mappingFile = path.join(__dirname, `spar-categories.json`);
         categories = JSON.parse(fs.readFileSync(mappingFile));
     }
     utils.mergeAndSaveCategories("spar", categories);
