@@ -105,7 +105,7 @@ exports.initializeCategoryMapping = async (rawItems) => {
 
 exports.mapCategory = (rawItem) => {
     const path = categoriesToPath(rawItem);
-    return exports.categoryLookup[path];
+    return exports.categoryLookup[path]?.code;
 };
 
 exports.urlBase = "https://www.mpreis.at/shop/p/";

@@ -4,7 +4,7 @@
 // field. E.g. "Obst & Gemüse > Salate" has the code "13", "Kühlwaren > Tofu" has the code "4C"
 exports.categories = [
     {
-        name: "Obst & Gemüse",
+        name: "🍌🥑 Obst & Gemüse",
         subcategories: [
             /*00*/ "Obst",
             /*01*/ "Gemüse",
@@ -13,7 +13,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Brot & Gebäck",
+        name: "🍞🥐 Brot & Gebäck",
         subcategories: [
             /*10*/ "Aufbackbrötchen & Toast",
             /*11*/ "Brot & Gebäck",
@@ -23,7 +23,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Getränke",
+        name: "🥤🍺 Getränke",
         subcategories: [
             /*20*/ "Alkoholfreie Getränke",
             /*21*/ "Bier & Radler",
@@ -35,7 +35,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Kühlwaren",
+        name: "🥚🥛🥩 Kühlwaren",
         subcategories: [
             /*30*/ "Schnelle Küche",
             /*31*/ "Eier",
@@ -52,7 +52,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Tiefkühl",
+        name: "🧊🍦 Tiefkühl",
         subcategories: [
             /*40*/ "Eis",
             /*41*/ "Unbekannt", // Not available in Billa hierarchy, left blank
@@ -65,7 +65,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Grundnahrungsmittel",
+        name: "🌾 Grundnahrungsmittel",
         subcategories: [
             /*50*/ "Asia & Mexican Produkte",
             /*51*/ "Baby",
@@ -86,7 +86,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Süßes & Salziges",
+        name: "🍫🍿 Süßes & Salziges",
         subcategories: [
             /*60*/ "Biskotten & Eiswaffeln",
             /*61*/ "Für kluge Naschkatzen",
@@ -96,7 +96,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Pflege",
+        name: "👄👶 Pflege",
         subcategories: [
             /*70*/ "Baby",
             /*71*/ "Damenhygiene",
@@ -114,7 +114,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Haushalt",
+        name: "🧹🧺 Haushalt",
         subcategories: [
             /*80*/ "Büro- & Schulartikel",
             /*81*/ "Garten",
@@ -135,7 +135,7 @@ exports.categories = [
         ],
     },
     {
-        name: "Haustier",
+        name: "🐶🐱 Haustier",
         subcategories: [
             /*90*/ "Hunde",
             /*91*/ "Katzen",

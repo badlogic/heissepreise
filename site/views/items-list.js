@@ -294,7 +294,7 @@ class ItemsList extends View {
         const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
         elements.name.href = stores[item.store].getUrl(item);
-        elements.name.innerText = item.name;
+        elements.name.innerText = item.name + (item.unavailable ? " 💀" : "");
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
         elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;

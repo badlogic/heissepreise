@@ -99,6 +99,7 @@ function mergePriceHistory(oldItems, items) {
         if (model.stores[item.store]?.removeOld) {
             removed[item.store] = removed[item.store] ? removed[item.store] + 1 : 1;
         } else {
+            item.unavailable = true;
             items.push(item);
         }
     }
@@ -178,6 +179,7 @@ function compress(items) {
         data.push(item.id);
         data.push(item.name);
         data.push(item.category ?? "A0");
+        data.push(item.unavailable ? 1 : 0);
         data.push(item.priceHistory.length);
         for (price of item.priceHistory) {
             data.push(uniqueDates[price.date.replaceAll("-", "")]);

@@ -78,6 +78,7 @@ class ItemsFilter extends View {
                         <custom-checkbox
                             x-id="category-${index}" x-state x-change
                             label="${category.name}"
+                            class="indigo"
                         ></custom-checkbox>`
                         )
                         .join("")}
@@ -272,6 +273,20 @@ class ItemsFilter extends View {
                     return elements["category-" + category.index].checked;
                 });
             }
+        }
+
+        if (query.length > 0 && query.charAt(0) == "!") {
+            elements.stores.classList.add("hidden");
+            elements.priceChanges.classList.add("hidden");
+            elements.misc.classList.add("hidden");
+            elements.priceDirection.classList.add("hidden");
+            elements.categories.classList.add("hidden");
+        } else {
+            if (this._filterByStores) elements.stores.classList.remove("hidden");
+            if (this._filterByPriceChanges) elements.priceChanges.classList.add("hidden");
+            if (this._filterByMisc) elements.misc.classList.add("hidden");
+            if (this._filterByPriceDirection) elements.priceDirection.classList.add("hidden");
+            elements.categories.classList.add("hidden");
         }
 
         log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`);

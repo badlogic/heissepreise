@@ -183,6 +183,11 @@ thead > tr {
     @apply bg-emerald-600/50;
     @apply border-emerald-500;
 }
+.customcheckbox.indigo {
+    @apply bg-indigo-200;
+    @apply border-indigo-300;
+    @apply hover:bg-indigo-300;
+}
 
 /* items filter */
 .items-filter {

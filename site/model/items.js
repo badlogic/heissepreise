@@ -176,6 +176,7 @@ class Items extends Model {
             const id = data[i++];
             const name = data[i++];
             const category = data[i++];
+            const unavailable = data[i++] == 1;
             const numPrices = data[i++];
             const prices = new Array(numPrices);
             for (let j = 0; j < numPrices; j++) {
@@ -197,6 +198,7 @@ class Items extends Model {
                 id,
                 name,
                 category,
+                unavailable,
                 price: prices[0].price,
                 priceHistory: prices,
                 isWeighted,
