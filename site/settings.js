@@ -21,22 +21,23 @@ class SettingsView extends View {
                             ></custom-checkbox>`
                     ).join("")}
                 </div>
-                <label
-                    >Start-Datum für Diagramme
+                <div class="flex flex-row gap-2">
+                    Start-Datum für Diagramme
                     <input
                         x-id="startDate"
                         x-change
                         x-state
                         type="date"
-                        class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600"
-                /></label>
-                <label>
+                        class="flex-grow cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600">
+                </div>
+                <div class="flex flex-row gap-2">
                     Diagramm Typ
-                    <select x-id="chartType" x-change x-state>
+                    <select x-id="chartType" x-change x-state class="flex-grow">
                         <option value="stepped">Stufen</option>
                         <option value="lines">Linien</option>
                     </select>
-                </label>
+                </div>
+                <custom-checkbox x-id="onlyAvailable" x-state x-change label="Nur verfügbare Produkte anzeigen" checked></custom-checkbox>
             </div>
         `;
         this.setupEventHandlers();

@@ -180,6 +180,10 @@ class ItemsFilter extends View {
             return;
         }
 
+        if (settings.onlyAvailable) {
+            filteredItems = filteredItems.filter((item) => !item.unavailable);
+        }
+
         this.model.lastDate = null;
         if (this._filterByPriceChanges) {
             if (elements.priceChangesToday.checked) {
