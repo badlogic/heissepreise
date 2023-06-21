@@ -77,20 +77,26 @@ exports.fetchData = async function () {
 };
 
 exports.initializeCategoryMapping = async () => {
-    const result = (await axios.get("https://www.interspar.at/shop/lebensmittel/")).data;
-    const root = HTMLParser.parse(result);
-    let categories = Array.from(root.querySelectorAll(`.flyout-categories__link`))
-        .filter((el) => !(el.innerText.toLowerCase().includes("übersicht") || el.innerText.toLowerCase().includes("zurück")))
-        .map((el) => {
-            const paths = el.attributes.href.split("/");
-            const id = paths[paths.length - 2];
-            return {
-                id,
-                description: el.innerText.trim(),
-                url: `https://www.interspar.at/shop/lebensmittel/c/${id}`,
-                code: null,
-            };
-        });
+    let categories = null;
+    try {
+        const result = (await axios.get("https://www.interspar.at/shop/lebensmittel/")).data;
+        const root = HTMLParser.parse(result);
+        categories = Array.from(root.querySelectorAll(`.flyout-categories__link`))
+            .filter((el) => !(el.innerText.toLowerCase().includes("übersicht") || el.innerText.toLowerCase().includes("zurück")))
+            .map((el) => {
+                const paths = el.attributes.href.split("/");
+                const id = paths[paths.length - 2];
+                return {
+                    id,
+                    description: el.innerText.trim(),
+                    url: `https://www.interspar.at/shop/lebensmittel/c/${id}`,
+                    code: null,
+                };
+            });
+    } catch (e) {
+        console.log("Couldn't fetch SPAR categories.");
+        categories = [];
+    }
     utils.mergeAndSaveCategories("spar", categories);
     exports.categoryLookup = {};
     for (const category of categories) {
