@@ -273,7 +273,7 @@ class ItemsFilter extends View {
         }
         this.model.lastQuery = query;
 
-        if (this.model.numItemsBeforeCategories != filteredItems.length) queryChanged = true;
+        if (this.model.numItemsBeforeCategories && this.model.numItemsBeforeCategories != filteredItems.length) queryChanged = true;
         this.model.numItemsBeforeCategories = filteredItems.length; // This is not entirely correct, but I'm too lazy...
         const filteredCategories = {};
         filteredItems.forEach((item) => {
