@@ -137,6 +137,26 @@ class ItemsFilter extends View {
         });
     }
 
+    setVisibility(query, numCategories, elements) {
+        if (query.length > 0 && query.charAt(0) == "!") {
+            elements.stores.classList.add("hidden");
+            elements.priceChanges.classList.add("hidden");
+            elements.misc.classList.add("hidden");
+            elements.priceDirection.classList.add("hidden");
+            elements.categories.classList.add("hidden");
+        } else {
+            if (this._filterByStores) elements.stores.classList.remove("hidden");
+            if (this._filterByPriceChanges) elements.priceChanges.classList.remove("hidden");
+            if (this._filterByMisc) elements.misc.classList.remove("hidden");
+            if (this._filterByPriceDirection) elements.priceDirection.classList.remove("hidden");
+            if (this.model.filteredItems.length > 0 && numCategories != 0) {
+                elements.categories.classList.remove("hidden");
+            } else {
+                elements.categories.classList.add("hidden");
+            }
+        }
+    }
+
     filter() {
         if (!this.model) return;
 
@@ -149,6 +169,7 @@ class ItemsFilter extends View {
         }
         let query = elements.query.value.trim();
         if (query.length == 0 && this._emptyQuery) {
+            this.setVisibility(query, 0, elements);
             this.model.removeListener(this._listener);
             this.model.filteredItems = [];
             this.model.addListener(this._listener);
@@ -257,10 +278,7 @@ class ItemsFilter extends View {
             }
         }
 
-        if (Object.keys(filteredCategories).length == 0) {
-            elements.categories.classList.add("hidden");
-        } else {
-            elements.categories.classList.remove("hidden");
+        if (Object.keys(filteredCategories).length != 0) {
             let numEnabledCategories = 0;
             Object.keys(filteredCategories).forEach((categoryIndex) => {
                 if (elements["category-" + categoryIndex].checked) {
@@ -275,25 +293,13 @@ class ItemsFilter extends View {
             }
         }
 
-        if (query.length > 0 && query.charAt(0) == "!") {
-            elements.stores.classList.add("hidden");
-            elements.priceChanges.classList.add("hidden");
-            elements.misc.classList.add("hidden");
-            elements.priceDirection.classList.add("hidden");
-            elements.categories.classList.add("hidden");
-        } else {
-            if (this._filterByStores) elements.stores.classList.remove("hidden");
-            if (this._filterByPriceChanges) elements.priceChanges.classList.add("hidden");
-            if (this._filterByMisc) elements.misc.classList.add("hidden");
-            if (this._filterByPriceDirection) elements.priceDirection.classList.add("hidden");
-            elements.categories.classList.add("hidden");
-        }
-
         log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`);
 
         this.model.removeListener(this._listener);
         this.model.filteredItems = filteredItems;
         this.model.addListener(this._listener);
+
+        this.setVisibility(query, Object.keys(filteredCategories).length, elements);
     }
 
     render() {

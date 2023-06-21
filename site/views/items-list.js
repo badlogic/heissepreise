@@ -78,7 +78,7 @@ class ItemsList extends View {
             this.download(this.model.filteredItems);
         });
 
-        elements.enableChart.addEventListener("change", () => {
+        elements.enableChart.addEventListener("x-change", () => {
             if (elements.enableChart.checked) elements.chart.classList.remove("hidden");
             else elements.chart.classList.add("hidden");
         });
