@@ -24,6 +24,9 @@ class ItemsFilter extends View {
         this.innerHTML = /*html*/ `
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
 
+            <div x-id="sqlError" class="hidden mt-4 p-4">
+            </div>
+
             <div x-id="stores" class="flex justify-center gap-2 flex-wrap mt-4 ${hideStores}">
                 <custom-checkbox x-id="allStores" label="Alle" ${
                     Object.values(stores).every((store) => store.defaultChecked) ? "checked" : ""
@@ -162,6 +165,7 @@ class ItemsFilter extends View {
 
         const start = performance.now();
         const elements = this.elements;
+        elements.sqlError.classList.add("hidden");
         this.model.totalItems = this.model.items.length;
         let filteredItems = new Array(this.model.items.length);
         for (let i = 0; i < this.model.items.length; i++) {
@@ -247,7 +251,13 @@ class ItemsFilter extends View {
 
         if (query.length > 0) {
             if (query.charAt(0) == "!") {
-                filteredItems = queryItemsAlasql(query, filteredItems);
+                try {
+                    filteredItems = queryItemsAlasql(query, filteredItems);
+                } catch (e) {
+                    elements.sqlError.classList.remove("hidden");
+                    elements.sqlError.innerText = e.message;
+                    filteredItems = [];
+                }
             } else {
                 filteredItems = queryItems(query, filteredItems, elements.exact.checked);
             }
