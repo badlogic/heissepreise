@@ -1,0 +1,3002 @@
+[
+  {
+    "id": "F16",
+    "description": "Regionalität",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16",
+    "code": null
+  },
+  {
+    "id": "F16-1",
+    "description": "Kühlregal",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-1",
+    "code": null
+  },
+  {
+    "id": "F16-1-1",
+    "description": "Milchprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-1-1",
+    "code": null
+  },
+  {
+    "id": "F16-2",
+    "description": "Vorratsschrank",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-2",
+    "code": null
+  },
+  {
+    "id": "F16-2-1",
+    "description": "Grundnahrungsmittel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-2-1",
+    "code": null
+  },
+  {
+    "id": "F16-3",
+    "description": "Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-3",
+    "code": null
+  },
+  {
+    "id": "F16-4",
+    "description": "alkoholische Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-4",
+    "code": null
+  },
+  {
+    "id": "F16-4-1",
+    "description": "Bier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-4-1",
+    "code": null
+  },
+  {
+    "id": "F16-4-2",
+    "description": "Wein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-4-2",
+    "code": null
+  },
+  {
+    "id": "F16-4-3",
+    "description": "Spirituosen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-4-3",
+    "code": null
+  },
+  {
+    "id": "F16-5",
+    "description": "Fisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F16-5",
+    "code": null
+  },
+  {
+    "id": "F17",
+    "description": "vegan & vegetarisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17",
+    "code": null
+  },
+  {
+    "id": "F17-1",
+    "description": "Veggie Produkte gekühlt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1",
+    "code": null
+  },
+  {
+    "id": "F17-1-1",
+    "description": "Pflanzlich & laktosefrei",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1-1",
+    "code": null
+  },
+  {
+    "id": "F17-1-2",
+    "description": "Veggie Gerichte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1-2",
+    "code": null
+  },
+  {
+    "id": "F17-1-3",
+    "description": "Veggie Laibchen & Bratlinge",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1-3",
+    "code": null
+  },
+  {
+    "id": "F17-1-4",
+    "description": "Veggie Aufstriche & Käseersatz",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1-4",
+    "code": null
+  },
+  {
+    "id": "F17-1-5",
+    "description": "Fleischalternativen & Wurstersatz",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1-5",
+    "code": null
+  },
+  {
+    "id": "F17-1-6",
+    "description": "Tofu",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1-6",
+    "code": null
+  },
+  {
+    "id": "F17-1-7",
+    "description": "Sojaprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-1-7",
+    "code": null
+  },
+  {
+    "id": "F17-2",
+    "description": "Veggie Produkte ungekühlt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-2",
+    "code": null
+  },
+  {
+    "id": "F17-2-1",
+    "description": "Reformprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-2-1",
+    "code": null
+  },
+  {
+    "id": "F17-2-2",
+    "description": "Nahrungsergänzung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-2-2",
+    "code": null
+  },
+  {
+    "id": "F17-2-3",
+    "description": "Sojadrinks, Getreidedrinks & Desserts",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-2-3",
+    "code": null
+  },
+  {
+    "id": "F17-2-4",
+    "description": "Tofu & Soja",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-2-4",
+    "code": null
+  },
+  {
+    "id": "F1",
+    "description": "Obst & Gemüse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1",
+    "code": null
+  },
+  {
+    "id": "F1-1",
+    "description": "Frischgemüse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1",
+    "code": "01"
+  },
+  {
+    "id": "F1-1-1",
+    "description": "Salat",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-1",
+    "code": null
+  },
+  {
+    "id": "F1-1-2",
+    "description": "Tomaten & Gurken",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-2",
+    "code": null
+  },
+  {
+    "id": "F1-1-3",
+    "description": "Paprika & Pfefferoni",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-3",
+    "code": null
+  },
+  {
+    "id": "F1-1-4",
+    "description": "Wurzelgemüse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-4",
+    "code": null
+  },
+  {
+    "id": "F1-1-5",
+    "description": "Kräuter",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-5",
+    "code": null
+  },
+  {
+    "id": "F1-1-6",
+    "description": "Kartoffeln, Zwiebeln & Co.",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-6",
+    "code": null
+  },
+  {
+    "id": "F1-1-7",
+    "description": "Zucchini, Melanzani & Co.",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-7",
+    "code": null
+  },
+  {
+    "id": "F1-1-8",
+    "description": "Broccoli & Kohl",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-8",
+    "code": null
+  },
+  {
+    "id": "F1-1-9",
+    "description": "Hülsenfrüchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-9",
+    "code": null
+  },
+  {
+    "id": "F1-1-10",
+    "description": "Pilze",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-10",
+    "code": null
+  },
+  {
+    "id": "F1-1-11",
+    "description": "Spargel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-1-11",
+    "code": null
+  },
+  {
+    "id": "F1-2",
+    "description": "Frischobst",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2",
+    "code": "00"
+  },
+  {
+    "id": "F1-2-1",
+    "description": "Äpfel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-1",
+    "code": null
+  },
+  {
+    "id": "F1-2-2",
+    "description": "Birnen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-2",
+    "code": null
+  },
+  {
+    "id": "F1-2-3",
+    "description": "Steinobst",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-3",
+    "code": null
+  },
+  {
+    "id": "F1-2-4",
+    "description": "Beeren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-4",
+    "code": null
+  },
+  {
+    "id": "F1-2-5",
+    "description": "Trauben",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-5",
+    "code": null
+  },
+  {
+    "id": "F1-2-6",
+    "description": "Bananen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-6",
+    "code": null
+  },
+  {
+    "id": "F1-2-7",
+    "description": "Zitrusfrüchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-7",
+    "code": null
+  },
+  {
+    "id": "F1-2-8",
+    "description": "Melonen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-8",
+    "code": null
+  },
+  {
+    "id": "F1-2-9",
+    "description": "Exotische Früchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-2-9",
+    "code": null
+  },
+  {
+    "id": "F1-3",
+    "description": "Obst-, Gemüse- & Salat-Zubereitungen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-3",
+    "code": "01"
+  },
+  {
+    "id": "F1-3-1",
+    "description": "Gemüse- & Salat-Zubereitungen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-3-1",
+    "code": null
+  },
+  {
+    "id": "F1-4",
+    "description": "Saisonartikel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-4",
+    "code": "01"
+  },
+  {
+    "id": "F1-5",
+    "description": "Obst- & Gemüsekisten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-5",
+    "code": "00"
+  },
+  {
+    "id": "F2",
+    "description": "Kühlregal",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2",
+    "code": null
+  },
+  {
+    "id": "F2-1",
+    "description": "Molkerei & Eier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1",
+    "code": "34"
+  },
+  {
+    "id": "F2-1-1",
+    "description": "Milch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1-1",
+    "code": "34"
+  },
+  {
+    "id": "F2-1-2",
+    "description": "Milchgetränk",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1-2",
+    "code": "34"
+  },
+  {
+    "id": "F2-1-3",
+    "description": "Eiskaffee",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1-3",
+    "code": "20"
+  },
+  {
+    "id": "F2-1-4",
+    "description": "Produkte auf Pflanzenbasis",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1-4",
+    "code": "5D"
+  },
+  {
+    "id": "F2-1-5",
+    "description": "Rahm, Schlagobers & Topfen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1-5",
+    "code": "34"
+  },
+  {
+    "id": "F2-1-7",
+    "description": "Butter, Margarine & Fette",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1-7",
+    "code": "34"
+  },
+  {
+    "id": "F2-1-8",
+    "description": "Eier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-1-8",
+    "code": "31"
+  },
+  {
+    "id": "F2-2",
+    "description": "Joghurt & Desserts",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-2",
+    "code": "34"
+  },
+  {
+    "id": "F2-2-1",
+    "description": "Desserts",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-2-1",
+    "code": null
+  },
+  {
+    "id": "F2-2-2",
+    "description": "Pudding",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-2-2",
+    "code": null
+  },
+  {
+    "id": "F2-2-3",
+    "description": "Fruchtjoghurt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-2-3",
+    "code": null
+  },
+  {
+    "id": "F2-2-4",
+    "description": "Naturjoghurt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-2-4",
+    "code": null
+  },
+  {
+    "id": "F2-2-5",
+    "description": "Milchsnack",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-2-5",
+    "code": null
+  },
+  {
+    "id": "F2-3",
+    "description": "Käse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3",
+    "code": "33"
+  },
+  {
+    "id": "F2-3-1",
+    "description": "Hartkäse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-1",
+    "code": null
+  },
+  {
+    "id": "F2-3-2",
+    "description": "Schnittkäse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-2",
+    "code": null
+  },
+  {
+    "id": "F2-3-3",
+    "description": "Weichkäse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-3",
+    "code": null
+  },
+  {
+    "id": "F2-3-4",
+    "description": "Frischkäse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-4",
+    "code": null
+  },
+  {
+    "id": "F2-3-5",
+    "description": "Schmelzkäse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-5",
+    "code": null
+  },
+  {
+    "id": "F2-3-6",
+    "description": "Sauermilchkäse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-6",
+    "code": null
+  },
+  {
+    "id": "F2-3-7",
+    "description": "Käse in Scheiben",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-7",
+    "code": null
+  },
+  {
+    "id": "F2-3-8",
+    "description": "Käse gerieben",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-8",
+    "code": null
+  },
+  {
+    "id": "F2-3-9",
+    "description": "Käse für die warme Küche",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-3-9",
+    "code": null
+  },
+  {
+    "id": "F2-4",
+    "description": "Aufstriche & Salate",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-4",
+    "code": "33"
+  },
+  {
+    "id": "F2-4-1",
+    "description": "Aufstriche",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-4-1",
+    "code": null
+  },
+  {
+    "id": "F2-4-2",
+    "description": "Gabelbissen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-4-2",
+    "code": null
+  },
+  {
+    "id": "F2-4-3",
+    "description": "Feinkostsalate",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-4-3",
+    "code": null
+  },
+  {
+    "id": "F2-5",
+    "description": "Fertiggerichte, Snacks & Teige",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5",
+    "code": "30"
+  },
+  {
+    "id": "F2-5-1",
+    "description": "Sandwiches & Snacks",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-1",
+    "code": null
+  },
+  {
+    "id": "F2-5-2",
+    "description": "Baguette & Pizzen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-2",
+    "code": null
+  },
+  {
+    "id": "F2-5-3",
+    "description": "Hausmannskost",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-3",
+    "code": null
+  },
+  {
+    "id": "F2-5-4",
+    "description": "Internationale Küche",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-4",
+    "code": null
+  },
+  {
+    "id": "F2-5-5",
+    "description": "Fertigsuppen & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-5",
+    "code": null
+  },
+  {
+    "id": "F2-5-6",
+    "description": "Fertignudeln & Teigwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-6",
+    "code": null
+  },
+  {
+    "id": "F2-5-7",
+    "description": "Süßspeisen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-7",
+    "code": null
+  },
+  {
+    "id": "F2-5-8",
+    "description": "Teige",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-5-8",
+    "code": null
+  },
+  {
+    "id": "F2-6",
+    "description": "Vegetarisch, Tofu, Soja & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6",
+    "code": "3B"
+  },
+  {
+    "id": "F2-6-1",
+    "description": "Produkte auf Pflanzenbasis & Laktosefrei",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-1",
+    "code": null
+  },
+  {
+    "id": "F2-6-2",
+    "description": "Vegetarische Mahlzeiten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-2",
+    "code": null
+  },
+  {
+    "id": "F2-6-3",
+    "description": "Vegetarische Aufstriche & Dip Saucen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-3",
+    "code": null
+  },
+  {
+    "id": "F2-6-4",
+    "description": "Vegetarische Laibchen & Bratlinge",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-4",
+    "code": null
+  },
+  {
+    "id": "F2-6-5",
+    "description": "Vegetarische Fleisch- & Wurstwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-5",
+    "code": null
+  },
+  {
+    "id": "F2-6-6",
+    "description": "Tofu",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-6",
+    "code": null
+  },
+  {
+    "id": "F2-6-7",
+    "description": "Vegetarischer Aufschnitt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-7",
+    "code": null
+  },
+  {
+    "id": "F2-6-8",
+    "description": "Alternativen auf Soja Basis",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F2-6-8",
+    "code": null
+  },
+  {
+    "id": "F3",
+    "description": "Wurst, Fleisch & Fisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3",
+    "code": null
+  },
+  {
+    "id": "F3-1",
+    "description": "Wurst & Selchwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1",
+    "code": "37"
+  },
+  {
+    "id": "F3-1-1",
+    "description": "Salami",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-1",
+    "code": null
+  },
+  {
+    "id": "F3-1-2",
+    "description": "Dauerwurst",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-2",
+    "code": null
+  },
+  {
+    "id": "F3-1-3",
+    "description": "Rohwurst",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-3",
+    "code": null
+  },
+  {
+    "id": "F3-1-4",
+    "description": "Spezialitäten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-4",
+    "code": null
+  },
+  {
+    "id": "F3-1-5",
+    "description": "Streichwurst & Pasteten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-5",
+    "code": null
+  },
+  {
+    "id": "F3-1-6",
+    "description": "Würstel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-6",
+    "code": null
+  },
+  {
+    "id": "F3-1-7",
+    "description": "Schinken & Prosciutto",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-7",
+    "code": null
+  },
+  {
+    "id": "F3-1-8",
+    "description": "Speck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-8",
+    "code": null
+  },
+  {
+    "id": "F3-1-9",
+    "description": "Aufschnitt & Stangenwurst",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-9",
+    "code": null
+  },
+  {
+    "id": "F3-1-10",
+    "description": "Leberkäse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-10",
+    "code": null
+  },
+  {
+    "id": "F3-1-11",
+    "description": "Sülzen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-11",
+    "code": null
+  },
+  {
+    "id": "F3-1-12",
+    "description": "Selchwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-12",
+    "code": null
+  },
+  {
+    "id": "F3-1-13",
+    "description": "Schmalz, Grammeln & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-1-13",
+    "code": null
+  },
+  {
+    "id": "F3-2",
+    "description": "Frischfleisch & -Geflügel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2",
+    "code": "32"
+  },
+  {
+    "id": "F3-2-1",
+    "description": "Schwein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2-1",
+    "code": null
+  },
+  {
+    "id": "F3-2-2",
+    "description": "Rind",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2-2",
+    "code": null
+  },
+  {
+    "id": "F3-2-3",
+    "description": "Kalb",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2-3",
+    "code": null
+  },
+  {
+    "id": "F3-2-5",
+    "description": "Sonstige Fleischprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2-5",
+    "code": null
+  },
+  {
+    "id": "F3-2-6",
+    "description": "Huhn",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2-6",
+    "code": null
+  },
+  {
+    "id": "F3-2-7",
+    "description": "Pute",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2-7",
+    "code": null
+  },
+  {
+    "id": "F3-2-8",
+    "description": "Sonstiges Geflügel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-2-8",
+    "code": null
+  },
+  {
+    "id": "F3-3",
+    "description": "Fisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3",
+    "code": "39"
+  },
+  {
+    "id": "F3-3-1",
+    "description": "Fischfeinkost, Marinaden & Kaviar",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3-1",
+    "code": null
+  },
+  {
+    "id": "F3-3-2",
+    "description": "Räucherlachs",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3-2",
+    "code": null
+  },
+  {
+    "id": "F3-3-3",
+    "description": "Räucherforelle",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3-3",
+    "code": null
+  },
+  {
+    "id": "F3-3-4",
+    "description": "Sonstige Fische geräuchert",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3-4",
+    "code": null
+  },
+  {
+    "id": "F3-3-5",
+    "description": "Meeresfische & -früchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3-5",
+    "code": null
+  },
+  {
+    "id": "F3-3-6",
+    "description": "Sushi",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3-6",
+    "code": null
+  },
+  {
+    "id": "F3-3-7",
+    "description": "Frischfisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F3-3-7",
+    "code": null
+  },
+  {
+    "id": "F4",
+    "description": "Vorratsschrank",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4",
+    "code": null
+  },
+  {
+    "id": "F4-1",
+    "description": "Feinkost & Konserven",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-1",
+    "code": "57"
+  },
+  {
+    "id": "F4-1-1",
+    "description": "Gemüse & Sauergemüse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-1-1",
+    "code": null
+  },
+  {
+    "id": "F4-1-2",
+    "description": "Obst",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-1-2",
+    "code": null
+  },
+  {
+    "id": "F4-1-3",
+    "description": "Fisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-1-3",
+    "code": null
+  },
+  {
+    "id": "F4-1-4",
+    "description": "Pikante Aufstriche & Pasteten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-1-4",
+    "code": null
+  },
+  {
+    "id": "F4-1-5",
+    "description": "Fertiggerichte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-1-5",
+    "code": null
+  },
+  {
+    "id": "F4-1-6",
+    "description": "Suppen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-1-6",
+    "code": null
+  },
+  {
+    "id": "F4-2",
+    "description": "Frühstück",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-2",
+    "code": "56"
+  },
+  {
+    "id": "F4-2-1",
+    "description": "Konfitüre",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-2-1",
+    "code": "56"
+  },
+  {
+    "id": "F4-2-2",
+    "description": "Honig",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-2-2",
+    "code": "56"
+  },
+  {
+    "id": "F4-2-3",
+    "description": "Nuss- & Schokoaufstriche",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-2-3",
+    "code": "56"
+  },
+  {
+    "id": "F4-2-4",
+    "description": "Cerealien & Müsli",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-2-4",
+    "code": "5A"
+  },
+  {
+    "id": "F4-3",
+    "description": "Grundnahrungsmittel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3",
+    "code": "5F"
+  },
+  {
+    "id": "F4-3-1",
+    "description": "Gewürze",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-1",
+    "code": "55"
+  },
+  {
+    "id": "F4-3-2",
+    "description": "Saucen & Würze",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-2",
+    "code": "5C"
+  },
+  {
+    "id": "F4-3-3",
+    "description": "Saucen Süß",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-3",
+    "code": "5C"
+  },
+  {
+    "id": "F4-3-4",
+    "description": "Senf & Kren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-4",
+    "code": "5C"
+  },
+  {
+    "id": "F4-3-5",
+    "description": "Ketchup & Mayonnaise",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-5",
+    "code": "5C"
+  },
+  {
+    "id": "F4-3-6",
+    "description": "Essig",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-6",
+    "code": "53"
+  },
+  {
+    "id": "F4-3-7",
+    "description": "Öl",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-7",
+    "code": "53"
+  },
+  {
+    "id": "F4-3-8",
+    "description": "Dressing & Croutons",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-8",
+    "code": "5C"
+  },
+  {
+    "id": "F4-3-9",
+    "description": "Zucker",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-9",
+    "code": "5E"
+  },
+  {
+    "id": "F4-3-10",
+    "description": "Salz",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-3-10",
+    "code": "55"
+  },
+  {
+    "id": "F4-4",
+    "description": "Beilagen & Basisprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4",
+    "code": "5B"
+  },
+  {
+    "id": "F4-4-1",
+    "description": "Teigwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-1",
+    "code": "5B"
+  },
+  {
+    "id": "F4-4-2",
+    "description": "Reis",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-2",
+    "code": "5B"
+  },
+  {
+    "id": "F4-4-3",
+    "description": "Kartoffelprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-3",
+    "code": "5F"
+  },
+  {
+    "id": "F4-4-4",
+    "description": "Samen & Hülsenfrüchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-4",
+    "code": "57"
+  },
+  {
+    "id": "F4-4-5",
+    "description": "Fix- & Basisprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-5",
+    "code": "5F"
+  },
+  {
+    "id": "F4-4-7",
+    "description": "Saucen & Würze",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-7",
+    "code": "5C"
+  },
+  {
+    "id": "F4-4-8",
+    "description": "Einkochen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-8",
+    "code": "52"
+  },
+  {
+    "id": "F4-4-10",
+    "description": "Desserts",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-10",
+    "code": "58"
+  },
+  {
+    "id": "F4-4-6",
+    "description": "Suppen & Bouillons",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-4-6",
+    "code": "54"
+  },
+  {
+    "id": "F4-5",
+    "description": "Getreideprodukte & Backen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-5",
+    "code": null
+  },
+  {
+    "id": "F4-5-1",
+    "description": "Mehl",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-5-1",
+    "code": "59"
+  },
+  {
+    "id": "F4-5-2",
+    "description": "Grieß & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-5-2",
+    "code": "59"
+  },
+  {
+    "id": "F4-5-3",
+    "description": "Getreideprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-5-3",
+    "code": "59"
+  },
+  {
+    "id": "F4-5-4",
+    "description": "Backmischungen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-5-4",
+    "code": "52"
+  },
+  {
+    "id": "F4-5-5",
+    "description": "Backzutaten & Hilfsmittel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-5-5",
+    "code": "52"
+  },
+  {
+    "id": "F4-5-6",
+    "description": "Verfeinerungen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-5-6",
+    "code": "52"
+  },
+  {
+    "id": "F4-6",
+    "description": "Trockenfrüchte, Nüsse & Kerne",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-6",
+    "code": "03"
+  },
+  {
+    "id": "F4-6-1",
+    "description": "Trockenfrüchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-6-1",
+    "code": null
+  },
+  {
+    "id": "F4-6-2",
+    "description": "Nüsse & Kerne",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-6-2",
+    "code": null
+  },
+  {
+    "id": "F4-7",
+    "description": "Reform & Nahrungsergänzung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-7",
+    "code": "5D"
+  },
+  {
+    "id": "F4-7-1",
+    "description": "Reformprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-7-1",
+    "code": null
+  },
+  {
+    "id": "F4-7-2",
+    "description": "Nahrungsergänzung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-7-2",
+    "code": null
+  },
+  {
+    "id": "F4-7-3",
+    "description": "Soja-, Getreidedrinks & Desserts",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-7-3",
+    "code": null
+  },
+  {
+    "id": "F4-7-4",
+    "description": "Tofu & Soja ungekühlt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-7-4",
+    "code": null
+  },
+  {
+    "id": "F4-8",
+    "description": "Asien & Mexiko",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F4-8",
+    "code": "50"
+  },
+  {
+    "id": "F5",
+    "description": "Süßwaren & Knabbereien",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5",
+    "code": null
+  },
+  {
+    "id": "F5-1",
+    "description": "Süßwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1",
+    "code": "64"
+  },
+  {
+    "id": "F5-1-1",
+    "description": "Kekse & Biskotten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-1",
+    "code": null
+  },
+  {
+    "id": "F5-1-2",
+    "description": "Waffeln & Schnitten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-2",
+    "code": null
+  },
+  {
+    "id": "F5-1-3",
+    "description": "Kaugummi",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-3",
+    "code": null
+  },
+  {
+    "id": "F5-1-4",
+    "description": "Pralinen & Dragees",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-4",
+    "code": null
+  },
+  {
+    "id": "F5-1-5",
+    "description": "Schokolade",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-5",
+    "code": null
+  },
+  {
+    "id": "F5-1-6",
+    "description": "Riegel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-6",
+    "code": null
+  },
+  {
+    "id": "F5-1-7",
+    "description": "Bonbons & Pastillen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-7",
+    "code": null
+  },
+  {
+    "id": "F5-1-8",
+    "description": "Fruchtgummi",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-8",
+    "code": null
+  },
+  {
+    "id": "F5-1-9",
+    "description": "Schoko- & Schaumzuckerware",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-9",
+    "code": null
+  },
+  {
+    "id": "F5-1-10",
+    "description": "Lebkuchen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-10",
+    "code": null
+  },
+  {
+    "id": "F5-1-11",
+    "description": "Saisonartikel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-11",
+    "code": null
+  },
+  {
+    "id": "F5-1-12",
+    "description": "Sonstige Süßwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-1-12",
+    "code": null
+  },
+  {
+    "id": "F5-2",
+    "description": "Knabbergebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-2",
+    "code": "63"
+  },
+  {
+    "id": "F5-2-1",
+    "description": "Chips & Snips",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-2-1",
+    "code": null
+  },
+  {
+    "id": "F5-2-2",
+    "description": "Nachos & Dips",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-2-2",
+    "code": null
+  },
+  {
+    "id": "F5-2-3",
+    "description": "Nüsse & Kerne",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-2-3",
+    "code": null
+  },
+  {
+    "id": "F5-2-4",
+    "description": "Laugengebäck & Salzgebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-2-4",
+    "code": null
+  },
+  {
+    "id": "F5-2-5",
+    "description": "Popcorn",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-2-5",
+    "code": null
+  },
+  {
+    "id": "F5-2-6",
+    "description": "Reiswaffeln & mehr",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F5-2-6",
+    "code": null
+  },
+  {
+    "id": "F6",
+    "description": "Brot & Gebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6",
+    "code": null
+  },
+  {
+    "id": "F6-1",
+    "description": "Aufbackware Brot & Gebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-1",
+    "code": "10"
+  },
+  {
+    "id": "F6-2",
+    "description": "Brot",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2",
+    "code": "11"
+  },
+  {
+    "id": "F6-2-1",
+    "description": "Schwarzbrot",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-1",
+    "code": null
+  },
+  {
+    "id": "F6-2-2",
+    "description": "Spezialbrot",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-2",
+    "code": null
+  },
+  {
+    "id": "F6-2-3",
+    "description": "Vollkornbrot",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-3",
+    "code": null
+  },
+  {
+    "id": "F6-2-4",
+    "description": "Weiß- & Halbweißbrot",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-4",
+    "code": null
+  },
+  {
+    "id": "F6-2-5",
+    "description": "Toast",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-5",
+    "code": null
+  },
+  {
+    "id": "F6-2-6",
+    "description": "Baguette & Ciabatta",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-6",
+    "code": null
+  },
+  {
+    "id": "F6-2-7",
+    "description": "Sonstiges Brot",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-7",
+    "code": null
+  },
+  {
+    "id": "F6-3",
+    "description": "Gebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3",
+    "code": "11"
+  },
+  {
+    "id": "F6-3-1",
+    "description": "Semmel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-1",
+    "code": null
+  },
+  {
+    "id": "F6-3-2",
+    "description": "Salzstangerl",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-2",
+    "code": null
+  },
+  {
+    "id": "F6-3-3",
+    "description": "Korn- & Vollkorngebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-3",
+    "code": null
+  },
+  {
+    "id": "F6-3-4",
+    "description": "Laugengebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-4",
+    "code": null
+  },
+  {
+    "id": "F6-3-5",
+    "description": "Sonstiges Kleingebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-5",
+    "code": null
+  },
+  {
+    "id": "F6-4",
+    "description": "Feinbackwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4",
+    "code": "12"
+  },
+  {
+    "id": "F6-4-1",
+    "description": "Croissant & Plundergebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-1",
+    "code": null
+  },
+  {
+    "id": "F6-4-2",
+    "description": "Strudel & Hefeteiggebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-2",
+    "code": null
+  },
+  {
+    "id": "F6-4-3",
+    "description": "Zöpfe",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-3",
+    "code": null
+  },
+  {
+    "id": "F6-4-4",
+    "description": "Kuchen & Torten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-4",
+    "code": null
+  },
+  {
+    "id": "F6-4-5",
+    "description": "Rouladen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-5",
+    "code": null
+  },
+  {
+    "id": "F6-4-6",
+    "description": "Schnitten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-6",
+    "code": null
+  },
+  {
+    "id": "F6-4-7",
+    "description": "Kekse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-7",
+    "code": null
+  },
+  {
+    "id": "F6-4-9",
+    "description": "Sonstige Konditoreiwaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-9",
+    "code": null
+  },
+  {
+    "id": "F6-4-11",
+    "description": "Saisonware",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-11",
+    "code": null
+  },
+  {
+    "id": "F6-5",
+    "description": "Knäckebrot & Zwieback",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-5",
+    "code": "12"
+  },
+  {
+    "id": "F6-5-1",
+    "description": "Knäckebrot, Grissini & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-5-1",
+    "code": null
+  },
+  {
+    "id": "F6-5-2",
+    "description": "Zwieback",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-5-2",
+    "code": null
+  },
+  {
+    "id": "F6-6",
+    "description": "Brösel & Semmelwürfel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-6",
+    "code": "14"
+  },
+  {
+    "id": "F7",
+    "description": "Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7",
+    "code": null
+  },
+  {
+    "id": "F7-1",
+    "description": "Softdrinks & Säfte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1",
+    "code": "20"
+  },
+  {
+    "id": "F7-1-1",
+    "description": "Fruchtsäfte & Nektare",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-1",
+    "code": null
+  },
+  {
+    "id": "F7-1-2",
+    "description": "Fruchtsäfte gespritzt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-2",
+    "code": null
+  },
+  {
+    "id": "F7-1-3",
+    "description": "Cola & Limonaden",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-3",
+    "code": null
+  },
+  {
+    "id": "F7-1-4",
+    "description": "Tonic & Bitter Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-4",
+    "code": null
+  },
+  {
+    "id": "F7-1-5",
+    "description": "Eistee & Getränke auf Teebasis",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-5",
+    "code": null
+  },
+  {
+    "id": "F7-1-6",
+    "description": "Sirupe",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-6",
+    "code": null
+  },
+  {
+    "id": "F7-1-7",
+    "description": "Smoothies & gekühlte Säfte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-7",
+    "code": null
+  },
+  {
+    "id": "F7-1-8",
+    "description": "Sport- & isotonische Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-8",
+    "code": null
+  },
+  {
+    "id": "F7-1-9",
+    "description": "Energy Drinks",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-1-9",
+    "code": null
+  },
+  {
+    "id": "F7-2",
+    "description": "Mineral- & Tafelwasser",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-2",
+    "code": "26"
+  },
+  {
+    "id": "F7-2-1",
+    "description": "Mineralwasser",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-2-1",
+    "code": null
+  },
+  {
+    "id": "F7-2-3",
+    "description": "Fruchtiges Mineralwasser",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-2-3",
+    "code": null
+  },
+  {
+    "id": "F7-3",
+    "description": "Kaffee",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-3",
+    "code": "22"
+  },
+  {
+    "id": "F7-3-2",
+    "description": "Ganze Bohnen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-3-2",
+    "code": null
+  },
+  {
+    "id": "F7-3-3",
+    "description": "Gemahlen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-3-3",
+    "code": null
+  },
+  {
+    "id": "F7-3-4",
+    "description": "Kapseln & Pads",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-3-4",
+    "code": null
+  },
+  {
+    "id": "F7-3-5",
+    "description": "löslich",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-3-5",
+    "code": null
+  },
+  {
+    "id": "F7-4",
+    "description": "Tee",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-4",
+    "code": "22"
+  },
+  {
+    "id": "F7-4-1",
+    "description": "Früchtetee",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-4-1",
+    "code": null
+  },
+  {
+    "id": "F7-4-2",
+    "description": "Kräutertee",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-4-2",
+    "code": null
+  },
+  {
+    "id": "F7-4-3",
+    "description": "Grüner & Weißer Tee",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-4-3",
+    "code": null
+  },
+  {
+    "id": "F7-4-4",
+    "description": "Schwarzer Tee",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-4-4",
+    "code": null
+  },
+  {
+    "id": "F7-5",
+    "description": "Kakao",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-5",
+    "code": "22"
+  },
+  {
+    "id": "F7-6",
+    "description": "Bier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6",
+    "code": "21"
+  },
+  {
+    "id": "F7-6-1",
+    "description": "Lager/Märzen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-1",
+    "code": null
+  },
+  {
+    "id": "F7-6-2",
+    "description": "Schankbier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-2",
+    "code": null
+  },
+  {
+    "id": "F7-6-3",
+    "description": "Obersorten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-3",
+    "code": null
+  },
+  {
+    "id": "F7-6-4",
+    "description": "Pils",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-4",
+    "code": null
+  },
+  {
+    "id": "F7-6-5",
+    "description": "Bockbier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-5",
+    "code": null
+  },
+  {
+    "id": "F7-6-6",
+    "description": "Unfiltriert/Zwickl Bier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-6",
+    "code": null
+  },
+  {
+    "id": "F7-6-7",
+    "description": "Dunkles Bier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-7",
+    "code": null
+  },
+  {
+    "id": "F7-6-8",
+    "description": "Spezialbier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-8",
+    "code": null
+  },
+  {
+    "id": "F7-6-9",
+    "description": "Weizenbier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-9",
+    "code": null
+  },
+  {
+    "id": "F7-6-10",
+    "description": "Sonstige Biere",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-10",
+    "code": null
+  },
+  {
+    "id": "F7-6-11",
+    "description": "Alkoholreduziertes Bier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-11",
+    "code": null
+  },
+  {
+    "id": "F7-6-12",
+    "description": "Alkoholfreies Bier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-12",
+    "code": null
+  },
+  {
+    "id": "F7-6-13",
+    "description": "Radler",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-13",
+    "code": null
+  },
+  {
+    "id": "F7-6-14",
+    "description": "Craft Beer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-14",
+    "code": null
+  },
+  {
+    "id": "F7-7",
+    "description": "Wein & Schaumwein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7",
+    "code": null
+  },
+  {
+    "id": "F7-7-1",
+    "description": "Rotwein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-1",
+    "code": "25"
+  },
+  {
+    "id": "F7-7-2",
+    "description": "Weißwein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-2",
+    "code": "25"
+  },
+  {
+    "id": "F7-7-3",
+    "description": "Rosewein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-3",
+    "code": "25"
+  },
+  {
+    "id": "F7-7-4",
+    "description": "Dessertwein, Sherry & Port",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-4",
+    "code": "25"
+  },
+  {
+    "id": "F7-7-5",
+    "description": "Sekt & Champagner",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-5",
+    "code": "23"
+  },
+  {
+    "id": "F7-7-6",
+    "description": "Frizzante & Prosecco",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-6",
+    "code": "23"
+  },
+  {
+    "id": "F7-7-7",
+    "description": "Cider & Fruchtschaumwein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-7",
+    "code": "25"
+  },
+  {
+    "id": "F7-7-8",
+    "description": "Weinhaltige Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-8",
+    "code": "25"
+  },
+  {
+    "id": "F7-7-9",
+    "description": "Alkoholfreier Wein & Schaumwein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-7-9",
+    "code": "25"
+  },
+  {
+    "id": "F7-8",
+    "description": "Spirituosen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8",
+    "code": "24"
+  },
+  {
+    "id": "F7-8-1",
+    "description": "Whisky/Whiskey",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-1",
+    "code": null
+  },
+  {
+    "id": "F7-8-2",
+    "description": "Weinbrand",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-2",
+    "code": null
+  },
+  {
+    "id": "F7-8-3",
+    "description": "Vodka",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-3",
+    "code": null
+  },
+  {
+    "id": "F7-8-4",
+    "description": "Rum",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-4",
+    "code": null
+  },
+  {
+    "id": "F7-8-5",
+    "description": "Edelbrände",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-5",
+    "code": null
+  },
+  {
+    "id": "F7-8-6",
+    "description": "Tequila & Gin",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-6",
+    "code": null
+  },
+  {
+    "id": "F7-8-7",
+    "description": "Liköre",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-7",
+    "code": null
+  },
+  {
+    "id": "F7-8-8",
+    "description": "Wermut",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-8",
+    "code": null
+  },
+  {
+    "id": "F7-8-9",
+    "description": "Bittergetränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-9",
+    "code": null
+  },
+  {
+    "id": "F7-8-10",
+    "description": "Premixes",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-10",
+    "code": null
+  },
+  {
+    "id": "F7-8-11",
+    "description": "Heißgetränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-11",
+    "code": null
+  },
+  {
+    "id": "F8",
+    "description": "Tiefkühlung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8",
+    "code": null
+  },
+  {
+    "id": "F8-1",
+    "description": "Fleisch, Fisch & Meeresfrüchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1",
+    "code": "42"
+  },
+  {
+    "id": "F8-1-1",
+    "description": "Schwein",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-1",
+    "code": "42"
+  },
+  {
+    "id": "F8-1-2",
+    "description": "Rind & Wild",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-2",
+    "code": "42"
+  },
+  {
+    "id": "F8-1-3",
+    "description": "Gans & Ente",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-3",
+    "code": "42"
+  },
+  {
+    "id": "F8-1-4",
+    "description": "Huhn & Pute",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-4",
+    "code": "42"
+  },
+  {
+    "id": "F8-1-5",
+    "description": "Fisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-5",
+    "code": "43"
+  },
+  {
+    "id": "F8-1-6",
+    "description": "Meeresfrüchte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-6",
+    "code": "43"
+  },
+  {
+    "id": "F8-2",
+    "description": "Gemüse, Obst & Kartoffelprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-2",
+    "code": "41"
+  },
+  {
+    "id": "F8-2-1",
+    "description": "Gemüse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-2-1",
+    "code": "44"
+  },
+  {
+    "id": "F8-2-2",
+    "description": "Kräuter & Pilze",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-2-2",
+    "code": "44"
+  },
+  {
+    "id": "F8-2-3",
+    "description": "Obst",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-2-3",
+    "code": "47"
+  },
+  {
+    "id": "F8-2-4",
+    "description": "Pommes Frites",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-2-4",
+    "code": "45"
+  },
+  {
+    "id": "F8-2-5",
+    "description": "Kroketten & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-2-5",
+    "code": "45"
+  },
+  {
+    "id": "F8-3",
+    "description": "Fertiggerichte & Teige",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-3",
+    "code": "42"
+  },
+  {
+    "id": "F8-3-1",
+    "description": "Fisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-3-1",
+    "code": null
+  },
+  {
+    "id": "F8-3-2",
+    "description": "Gemüse",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-3-2",
+    "code": null
+  },
+  {
+    "id": "F8-3-3",
+    "description": "Traditionelle Gerichte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-3-3",
+    "code": null
+  },
+  {
+    "id": "F8-3-4",
+    "description": "Internationale Gerichte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-3-4",
+    "code": null
+  },
+  {
+    "id": "F8-3-5",
+    "description": "Knödel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-3-5",
+    "code": null
+  },
+  {
+    "id": "F8-3-8",
+    "description": "Tiefkühlteige",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-3-8",
+    "code": null
+  },
+  {
+    "id": "F8-4",
+    "description": "Pizza, Baguette & Gebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-4",
+    "code": null
+  },
+  {
+    "id": "F8-4-1",
+    "description": "Baguette",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-4-1",
+    "code": "46"
+  },
+  {
+    "id": "F8-4-2",
+    "description": "Pizzasnacks",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-4-2",
+    "code": "46"
+  },
+  {
+    "id": "F8-4-3",
+    "description": "American Style Pizza",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-4-3",
+    "code": "46"
+  },
+  {
+    "id": "F8-4-4",
+    "description": "Italian Style Pizza",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-4-4",
+    "code": "46"
+  },
+  {
+    "id": "F8-4-5",
+    "description": "Tiefkühl Gebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-4-5",
+    "code": "46"
+  },
+  {
+    "id": "F8-5",
+    "description": "Mehlspeisen & Eis",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5",
+    "code": "42"
+  },
+  {
+    "id": "F8-5-1",
+    "description": "Süße Knödel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-1",
+    "code": "47"
+  },
+  {
+    "id": "F8-5-2",
+    "description": "Strudel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-2",
+    "code": "47"
+  },
+  {
+    "id": "F8-5-3",
+    "description": "Nudeln",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-3",
+    "code": "47"
+  },
+  {
+    "id": "F8-5-5",
+    "description": "Sonstige klassische Mehlspeisen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-5",
+    "code": "47"
+  },
+  {
+    "id": "F8-5-6",
+    "description": "Torten, Kuchen & Desserts",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-6",
+    "code": "47"
+  },
+  {
+    "id": "F8-5-7",
+    "description": "Eisbecher",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-7",
+    "code": "40"
+  },
+  {
+    "id": "F8-5-8",
+    "description": "Eis am Stiel & Stanitzel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-8",
+    "code": "40"
+  },
+  {
+    "id": "F8-5-10",
+    "description": "Eis",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-10",
+    "code": "40"
+  },
+  {
+    "id": "F9",
+    "description": "Baby",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9",
+    "code": null
+  },
+  {
+    "id": "F9-1",
+    "description": "Babynahrung & Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1",
+    "code": "51"
+  },
+  {
+    "id": "F9-1-1",
+    "description": "Milchfertignahrung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1-1",
+    "code": "51"
+  },
+  {
+    "id": "F9-1-2",
+    "description": "Breie",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1-2",
+    "code": "51"
+  },
+  {
+    "id": "F9-1-3",
+    "description": "Menüs",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1-3",
+    "code": "51"
+  },
+  {
+    "id": "F9-1-4",
+    "description": "Gemüse & Gemüsemischungen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1-4",
+    "code": "51"
+  },
+  {
+    "id": "F9-1-5",
+    "description": "Früchte, Mischungen & Desserts",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1-5",
+    "code": "51"
+  },
+  {
+    "id": "F9-1-6",
+    "description": "Snacks",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1-6",
+    "code": "51"
+  },
+  {
+    "id": "F9-1-7",
+    "description": "Getränke",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-1-7",
+    "code": "51"
+  },
+  {
+    "id": "F9-2",
+    "description": "Flaschen & Sauger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-2",
+    "code": "70"
+  },
+  {
+    "id": "F9-2-2",
+    "description": "Sauger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-2-2",
+    "code": "70"
+  },
+  {
+    "id": "F9-3",
+    "description": "Pflege & Windeln",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-3",
+    "code": "60"
+  },
+  {
+    "id": "F9-3-1",
+    "description": "Windeln",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-3-1",
+    "code": null
+  },
+  {
+    "id": "F9-3-2",
+    "description": "Babytücher",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-3-2",
+    "code": null
+  },
+  {
+    "id": "F9-3-3",
+    "description": "Lotionen, Creme, Öl & Puder",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-3-3",
+    "code": null
+  },
+  {
+    "id": "F9-3-4",
+    "description": "Bad & Reinigung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-3-4",
+    "code": null
+  },
+  {
+    "id": "F9-3-7",
+    "description": "Essen & Trinken",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-3-7",
+    "code": null
+  },
+  {
+    "id": "F9-3-8",
+    "description": "Pflege & Sicherheit",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F9-3-8",
+    "code": null
+  },
+  {
+    "id": "F10",
+    "description": "Tiere",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10",
+    "code": null
+  },
+  {
+    "id": "F10-1",
+    "description": "Tiernahrung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-1",
+    "code": "92"
+  },
+  {
+    "id": "F10-1-1",
+    "description": "Hund",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-1-1",
+    "code": "90"
+  },
+  {
+    "id": "F10-1-2",
+    "description": "Katze",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-1-2",
+    "code": "91"
+  },
+  {
+    "id": "F10-1-3",
+    "description": "Nager",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-1-3",
+    "code": "92"
+  },
+  {
+    "id": "F10-1-4",
+    "description": "Vögel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-1-4",
+    "code": "93"
+  },
+  {
+    "id": "F10-1-5",
+    "description": "Fisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-1-5",
+    "code": null
+  },
+  {
+    "id": "F10-2",
+    "description": "Tierzubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-2",
+    "code": null
+  },
+  {
+    "id": "F10-2-1",
+    "description": "Hund",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-2-1",
+    "code": "90"
+  },
+  {
+    "id": "F10-2-2",
+    "description": "Katze",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-2-2",
+    "code": "91"
+  },
+  {
+    "id": "F10-3",
+    "description": "Heu, Streu & Co.",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-3",
+    "code": null
+  },
+  {
+    "id": "F10-3-1",
+    "description": "Heimtier Heu",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-3-1",
+    "code": "92"
+  },
+  {
+    "id": "F10-3-2",
+    "description": "Heimtier Streu",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-3-2",
+    "code": "91"
+  },
+  {
+    "id": "F10-3-3",
+    "description": "Heimtier Sand",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-3-3",
+    "code": "91"
+  },
+  {
+    "id": "F10-3-4",
+    "description": "Heimtier sonstige Verbrauchsstoffe",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F10-3-4",
+    "code": "90"
+  },
+  {
+    "id": "F11",
+    "description": "Beauty",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11",
+    "code": null
+  },
+  {
+    "id": "F11-1",
+    "description": "Kosmetik & Düfte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-1",
+    "code": null
+  },
+  {
+    "id": "F11-1-1",
+    "description": "Nagellackentferner & -härter",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-1-1",
+    "code": "75"
+  },
+  {
+    "id": "F11-1-2",
+    "description": "Düfte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-1-2",
+    "code": "72"
+  },
+  {
+    "id": "F11-2",
+    "description": "Haare",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-2",
+    "code": "73"
+  },
+  {
+    "id": "F11-2-1",
+    "description": "Shampoo",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-2-1",
+    "code": null
+  },
+  {
+    "id": "F11-2-2",
+    "description": "Conditioner",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-2-2",
+    "code": null
+  },
+  {
+    "id": "F11-2-3",
+    "description": "Haarstyling",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-2-3",
+    "code": null
+  },
+  {
+    "id": "F11-2-4",
+    "description": "Colorationen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-2-4",
+    "code": null
+  },
+  {
+    "id": "F11-2-5",
+    "description": "Stylinggeräte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-2-5",
+    "code": null
+  },
+  {
+    "id": "F11-3",
+    "description": "Mund & Zahn",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-3",
+    "code": "76"
+  },
+  {
+    "id": "F11-3-1",
+    "description": "Zahncreme",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-3-1",
+    "code": null
+  },
+  {
+    "id": "F11-3-2",
+    "description": "Handzahnbürsten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-3-2",
+    "code": null
+  },
+  {
+    "id": "F11-3-3",
+    "description": "Elektrische Zahnpflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-3-3",
+    "code": null
+  },
+  {
+    "id": "F11-3-4",
+    "description": "Zahnersatzpflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-3-4",
+    "code": null
+  },
+  {
+    "id": "F11-3-5",
+    "description": "Mundwasser & Spülung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-3-5",
+    "code": null
+  },
+  {
+    "id": "F11-3-6",
+    "description": "Zusatzpflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-3-6",
+    "code": null
+  },
+  {
+    "id": "F11-4",
+    "description": "Körper & Gesicht",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4",
+    "code": null
+  },
+  {
+    "id": "F11-4-1",
+    "description": "Baden & Duschen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-1",
+    "code": "78"
+  },
+  {
+    "id": "F11-4-2",
+    "description": "Seifen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-2",
+    "code": "78"
+  },
+  {
+    "id": "F11-4-3",
+    "description": "Händedesinfektion",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-3",
+    "code": "74"
+  },
+  {
+    "id": "F11-4-4",
+    "description": "Deodorants",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-4",
+    "code": "72"
+  },
+  {
+    "id": "F11-4-5",
+    "description": "Hautpflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-5",
+    "code": "75"
+  },
+  {
+    "id": "F11-4-6",
+    "description": "Fußpflege & Zubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-6",
+    "code": "7B"
+  },
+  {
+    "id": "F11-4-7",
+    "description": "Rasur & Haarentfernung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-7",
+    "code": "77"
+  },
+  {
+    "id": "F11-4-8",
+    "description": "Sonnen- & Insektenschutz",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-4-8",
+    "code": "79"
+  },
+  {
+    "id": "F11-5",
+    "description": "Gesundheit",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-5",
+    "code": "8F"
+  },
+  {
+    "id": "F11-5-1",
+    "description": "Desinfektionsmittel & Gesichtsmasken",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-5-1",
+    "code": "74"
+  },
+  {
+    "id": "F11-5-2",
+    "description": "Kondome & Gleitmittel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-5-2",
+    "code": "7A"
+  },
+  {
+    "id": "F11-5-3",
+    "description": "Wundversorgung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-5-3",
+    "code": "74"
+  },
+  {
+    "id": "F11-5-4",
+    "description": "Massage- & Einreibemittel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-5-4",
+    "code": "75"
+  },
+  {
+    "id": "F11-5-5",
+    "description": "Kontaktlinsenzubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-5-5",
+    "code": null
+  },
+  {
+    "id": "F11-5-6",
+    "description": "Sonstige Gesundheitsprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-5-6",
+    "code": null
+  },
+  {
+    "id": "F11-6",
+    "description": "Reisegrößen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F11-6",
+    "code": null
+  },
+  {
+    "id": "F12",
+    "description": "Haushalt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12",
+    "code": null
+  },
+  {
+    "id": "F12-1",
+    "description": "Haushaltspapier & Hygiene",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-1",
+    "code": null
+  },
+  {
+    "id": "F12-1-1",
+    "description": "Taschentücher",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-1-1",
+    "code": "89"
+  },
+  {
+    "id": "F12-1-3",
+    "description": "Watte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-1-3",
+    "code": "75"
+  },
+  {
+    "id": "F12-1-4",
+    "description": "Damenhygiene",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-1-4",
+    "code": "71"
+  },
+  {
+    "id": "F12-1-5",
+    "description": "Küchenrollen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-1-5",
+    "code": "84"
+  },
+  {
+    "id": "F12-1-6",
+    "description": "Toilettenpapier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-1-6",
+    "code": "84"
+  },
+  {
+    "id": "F12-1-7",
+    "description": "Inkontinenz",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-1-7",
+    "code": "71"
+  },
+  {
+    "id": "F12-2",
+    "description": "Putzen & Reinigen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2",
+    "code": null
+  },
+  {
+    "id": "F12-2-1",
+    "description": "Geschirrreiniger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-1",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-2",
+    "description": "Allzweckreiniger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-2",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-3",
+    "description": "WC Reiniger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-3",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-4",
+    "description": "Bodenpflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-4",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-5",
+    "description": "Glasreiniger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-5",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-6",
+    "description": "Küchenreiniger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-6",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-7",
+    "description": "Metallpflege & Entkalker",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-7",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-8",
+    "description": "Badreiniger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-8",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-9",
+    "description": "Hygienereiniger & Desinfektion",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-9",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-10",
+    "description": "Abflussreiniger",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-10",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-11",
+    "description": "Möbelpflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-11",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-12",
+    "description": "Schuhpflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-12",
+    "code": "8B"
+  },
+  {
+    "id": "F12-2-13",
+    "description": "Putzutensilien",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-13",
+    "code": "88"
+  },
+  {
+    "id": "F12-2-14",
+    "description": "Lufterfrischer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-2-14",
+    "code": "87"
+  },
+  {
+    "id": "F12-3",
+    "description": "Elektrische Putzgeräte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-3",
+    "code": null
+  },
+  {
+    "id": "F12-3-1",
+    "description": "Staubsauger & Reinigungsgeräte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-3-1",
+    "code": "88"
+  },
+  {
+    "id": "F12-3-2",
+    "description": "Staubbeutel & Zubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-3-2",
+    "code": "86"
+  },
+  {
+    "id": "F12-4",
+    "description": "Waschen, Trocknen & Bügeln",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4",
+    "code": "8A"
+  },
+  {
+    "id": "F12-4-1",
+    "description": "Waschmittel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-1",
+    "code": null
+  },
+  {
+    "id": "F12-4-2",
+    "description": "Weichspüler",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-2",
+    "code": null
+  },
+  {
+    "id": "F12-4-3",
+    "description": "Fleckenentferner & Textilfarben",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-3",
+    "code": null
+  },
+  {
+    "id": "F12-4-4",
+    "description": "Wäschestärke, -desinfektion & Imprägnieren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-4",
+    "code": null
+  },
+  {
+    "id": "F12-4-5",
+    "description": "Wasserenthärter",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-5",
+    "code": null
+  },
+  {
+    "id": "F12-4-6",
+    "description": "Textilerfrischer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-6",
+    "code": null
+  },
+  {
+    "id": "F12-4-7",
+    "description": "Waschzubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-7",
+    "code": null
+  },
+  {
+    "id": "F12-4-8",
+    "description": "Bügeln",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-4-8",
+    "code": null
+  },
+  {
+    "id": "F12-5",
+    "description": "Haushaltszubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5",
+    "code": null
+  },
+  {
+    "id": "F12-5-1",
+    "description": "Kleiderbügel & Türhaken",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-1",
+    "code": null
+  },
+  {
+    "id": "F12-5-2",
+    "description": "Putzutensilien",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-2",
+    "code": "88"
+  },
+  {
+    "id": "F12-5-3",
+    "description": "Aufbewahrung & Abfalleimer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-3",
+    "code": "8C"
+  },
+  {
+    "id": "F12-5-4",
+    "description": "Akkus, Batterien & Ladegeräte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-4",
+    "code": "85"
+  },
+  {
+    "id": "F12-5-5",
+    "description": "Beleuchtung & Taschenlampen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-5",
+    "code": "85"
+  },
+  {
+    "id": "F12-5-6",
+    "description": "Technik & Elektronik",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-6",
+    "code": null
+  },
+  {
+    "id": "F12-5-7",
+    "description": "Nähen & Kurzware",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-7",
+    "code": null
+  },
+  {
+    "id": "F12-5-8",
+    "description": "Grillen & Zubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-8",
+    "code": null
+  },
+  {
+    "id": "F12-5-9",
+    "description": "Pflanzenpflege & Insektenschutz",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-9",
+    "code": "8D"
+  },
+  {
+    "id": "F12-5-10",
+    "description": "Kerzen, Raumdüfte & Anzündhilfe",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-10",
+    "code": "87"
+  },
+  {
+    "id": "F12-5-11",
+    "description": "Papier, Schule & Büro",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-11",
+    "code": "80"
+  },
+  {
+    "id": "F12-5-12",
+    "description": "Party- & Festtagsartikel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-12",
+    "code": "83"
+  },
+  {
+    "id": "F12-5-13",
+    "description": "Autopflege",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-5-13",
+    "code": null
+  },
+  {
+    "id": "F12-6",
+    "description": "Spielware",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-6",
+    "code": "8E"
+  },
+  {
+    "id": "F12-7",
+    "description": "Regenschirme",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-7",
+    "code": null
+  },
+  {
+    "id": "F13",
+    "description": "Küche & Tisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13",
+    "code": null
+  },
+  {
+    "id": "F13-1",
+    "description": "Kochgeschirr",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-1",
+    "code": "83"
+  },
+  {
+    "id": "F13-1-1",
+    "description": "Töpfe & Deckel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-1-1",
+    "code": "83"
+  },
+  {
+    "id": "F13-1-2",
+    "description": "Pfannen & Deckel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-1-2",
+    "code": "83"
+  },
+  {
+    "id": "F13-1-3",
+    "description": "Sets & Garnituren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-1-3",
+    "code": "83"
+  },
+  {
+    "id": "F13-1-4",
+    "description": "Fondue-Sets, Plattengrill, Raclette & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-1-4",
+    "code": "83"
+  },
+  {
+    "id": "F13-1-5",
+    "description": "Bräter & Auflaufformen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-1-5",
+    "code": "83"
+  },
+  {
+    "id": "F13-2",
+    "description": "Gedeckter Tisch",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-2",
+    "code": "83"
+  },
+  {
+    "id": "F13-2-1",
+    "description": "Essbesteck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-2-1",
+    "code": "83"
+  },
+  {
+    "id": "F13-2-2",
+    "description": "Gläser & Glaswaren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-2-2",
+    "code": "83"
+  },
+  {
+    "id": "F13-2-3",
+    "description": "Porzellan",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-2-3",
+    "code": "83"
+  },
+  {
+    "id": "F13-2-4",
+    "description": "Servietten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-2-4",
+    "code": "89"
+  },
+  {
+    "id": "F13-2-5",
+    "description": "Tischdecken & Läufer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-2-5",
+    "code": "83"
+  },
+  {
+    "id": "F13-3",
+    "description": "Backen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-3",
+    "code": "83"
+  },
+  {
+    "id": "F13-3-1",
+    "description": "Backblech & Formen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-3-1",
+    "code": "83"
+  },
+  {
+    "id": "F13-3-2",
+    "description": "Backzubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-3-2",
+    "code": "83"
+  },
+  {
+    "id": "F13-4",
+    "description": "Küchenhelfer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-1",
+    "description": "Rühren",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-1",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-3",
+    "description": "Küchenwaagen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-3",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-4",
+    "description": "Messbecher",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-4",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-5",
+    "description": "Schälen & Zerteilen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-5",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-6",
+    "description": "Siebe & Trichter",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-6",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-7",
+    "description": "Weinzubehör",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-7",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-8",
+    "description": "Reiben",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-8",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-9",
+    "description": "Bratenwender & Schaumlöffel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-9",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-10",
+    "description": "Suppenkelle & Löffel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-10",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-11",
+    "description": "Sonstige Küchenhelfer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-11",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-12",
+    "description": "Schneidebretter, Untersetzer & Tablett",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-12",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-13",
+    "description": "Messer",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-13",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-14",
+    "description": "Salz- & Pfeffermühlen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-14",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-15",
+    "description": "Kunststoffgeschirr",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-15",
+    "code": "83"
+  },
+  {
+    "id": "F13-4-16",
+    "description": "Einkochen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-4-16",
+    "code": "83"
+  },
+  {
+    "id": "F13-5",
+    "description": "Folien, Säcke & Filter",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-5",
+    "code": "86"
+  },
+  {
+    "id": "F13-6",
+    "description": "Aufbewahrung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-6",
+    "code": "8C"
+  },
+  {
+    "id": "F13-7",
+    "description": "Sodaprodukte & Sahneaufbereitung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-7",
+    "code": "83"
+  },
+  {
+    "id": "F13-7-1",
+    "description": "Sodamaker & Sodaprodukte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-7-1",
+    "code": "83"
+  },
+  {
+    "id": "F13-7-2",
+    "description": "Sahneaufbereitung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-7-2",
+    "code": "83"
+  },
+  {
+    "id": "F13-8",
+    "description": "Küchenwäsche",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-8",
+    "code": "83"
+  },
+  {
+    "id": "F13-9",
+    "description": "Trink- & Isolierflaschen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-9",
+    "code": "83"
+  },
+  {
+    "id": "F13-10",
+    "description": "Wasseraufbereitung",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-10",
+    "code": "83"
+  },
+  {
+    "id": "F13-11",
+    "description": "Einweggeschirr & Strohhalme",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-11",
+    "code": "83"
+  },
+  {
+    "id": "F13-12",
+    "description": "Party- & Festtagsartikel",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-12",
+    "code": "83"
+  },
+  {
+    "id": "F13-13",
+    "description": "Elektrische Küchengeräte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-1",
+    "description": "Kaffeemaschinen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-1",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-2",
+    "description": "Fondue-Sets, Plattengrill, Raclette & Co",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-2",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-3",
+    "description": "Mikrowelle & Kleinküchen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-3",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-4",
+    "description": "Mixer & Küchenmaschinen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-4",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-6",
+    "description": "Wasserkocher",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-6",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-8",
+    "description": "Entsafter & Zitruspressen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-8",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-9",
+    "description": "Elektrische Schneidegeräte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-9",
+    "code": "83"
+  },
+  {
+    "id": "F13-13-10",
+    "description": "Toaster",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-10",
+    "code": "83"
+  },
+  {
+    "id": "F14",
+    "description": "Geschenkideen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F14",
+    "code": null
+  },
+  {
+    "id": "F15",
+    "description": "Partyservice",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F15",
+    "code": null
+  }
+]

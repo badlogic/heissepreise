@@ -2,7 +2,7 @@ const fs = require("fs");
 const axios = require("axios");
 const analysis = require("./analysis");
 const stores = require("./stores");
-const utils = require("./stores/utils");
+const { categories } = require("./site/model/categories");
 const siteUtils = require("./site/utils");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
@@ -13,8 +13,8 @@ const HITS = Math.floor(30000 + Math.random() * 2000);
     if (!fs.existsSync("categories.json")) {
         const lookup = {};
         categories = [];
-        for (let i = 1; i <= utils.globalCategories.length; i++) {
-            const categoryName = utils.globalCategories[i - 1];
+        for (let i = 1; i <= categories.length; i++) {
+            const categoryName = categories[i - 1];
             const categoryCode = i < 10 ? "" + i : String.fromCharCode("A".charCodeAt(0) + (i - 10));
 
             const category = {

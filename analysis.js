@@ -2,7 +2,7 @@ const fs = require("fs");
 const fsAsync = require("fs").promises;
 const zlib = require("zlib");
 const stores = require("./stores");
-const { FILE } = require("dns");
+const model = require("./site/model/stores");
 const { promisify } = require("util");
 
 const STORE_KEYS = Object.keys(stores);
@@ -93,9 +93,18 @@ function mergePriceHistory(oldItems, items) {
     }
 
     console.log(`${Object.keys(lookup).length} not in latest list.`);
+    let removed = {};
     for (key of Object.keys(lookup)) {
-        items.push(lookup[key]);
+        const item = lookup[key];
+        if (model.stores[item.store]?.removeOld) {
+            removed[item.store] = removed[item.store] ? removed[item.store] + 1 : 1;
+        } else {
+            item.unavailable = true;
+            items.push(item);
+        }
     }
+    console.log("Removed items for discount-only stores");
+    console.log(JSON.stringify(removed, null, 2));
 
     sortItems(items);
     console.log(`Items: ${items.length}`);
@@ -148,7 +157,7 @@ function sortItems(items) {
     });
 }
 
-// Keep this in sync with utils.js:decompress
+// Keep this in sync with items.js:decompress
 function compress(items) {
     const compressed = {
         stores: STORE_KEYS,
@@ -169,6 +178,8 @@ function compress(items) {
         data.push(STORE_KEYS.indexOf(item.store));
         data.push(item.id);
         data.push(item.name);
+        data.push(item.category ?? "A0");
+        data.push(item.unavailable ? 1 : 0);
         data.push(item.priceHistory.length);
         for (price of item.priceHistory) {
             data.push(uniqueDates[price.date.replaceAll("-", "")]);
@@ -178,7 +189,7 @@ function compress(items) {
         data.push(item.quantity);
         data.push(item.isWeighted ? 1 : 0);
         data.push(item.bio ? 1 : 0);
-        data.push(item.url?.replace(stores[item.store].urlBase, ""));
+        data.push(item.url?.replace(stores[item.store].urlBase, "") ?? "");
     }
     return compressed;
 }
@@ -186,7 +197,7 @@ exports.compress = compress;
 
 /// Given a directory of raw data of the form `$store-$date.json`, constructs
 /// a canonical list of all products and their historical price data.
-exports.replay = function (rawDataDir) {
+exports.replay = async (rawDataDir) => {
     const today = currentDate();
 
     const files = fs
@@ -209,10 +220,18 @@ exports.replay = function (rawDataDir) {
     const canonicalFiles = {};
 
     for (const store of STORE_KEYS) {
+        await stores[store].initializeCategoryMapping();
         storeFiles[store] = getFilteredFilesFor(store);
         canonicalFiles[store] = storeFiles[store].map((file) => {
             console.log(`Creating canonical items for ${file}`);
-            return getCanonicalFor(store, readJSON(file), file.match(/\d{4}-\d{2}-\d{2}/)[0]);
+            const rawItems = readJSON(file);
+            const items = getCanonicalFor(store, rawItems, file.match(/\d{4}-\d{2}-\d{2}/)[0]);
+            for (let i = 0; i < items.length; i++) {
+                const rawItem = rawItems[i];
+                const item = items[i];
+                item.category = stores[store].mapCategory(rawItem);
+            }
+            return items;
         });
         canonicalFiles[store].reverse();
     }
@@ -252,16 +271,30 @@ exports.updateData = async function (dataDir, done) {
                 const start = performance.now();
                 try {
                     const rawDataFile = `${dataDir}/${store}-${today}.json`;
-                    let storeItems;
+                    let rawItems;
                     if ("SKIP_FETCHING_STORE_DATA" in process.env && fs.existsSync(rawDataFile + "." + FILE_COMPRESSOR))
-                        storeItems = await readJSONAsync(rawDataFile + "." + FILE_COMPRESSOR);
+                        rawItems = await readJSONAsync(rawDataFile + "." + FILE_COMPRESSOR);
                     else {
-                        storeItems = await stores[store].fetchData();
-                        writeJSON(rawDataFile, storeItems, FILE_COMPRESSOR);
+                        rawItems = await stores[store].fetchData();
+                        writeJSON(rawDataFile, rawItems, FILE_COMPRESSOR);
                     }
-                    const storeItemsCanonical = getCanonicalFor(store, storeItems, today);
-                    console.log(`Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds`);
-                    resolve(storeItemsCanonical);
+                    const items = getCanonicalFor(store, rawItems, today);
+
+                    await stores[store].initializeCategoryMapping(rawItems);
+                    let numUncategorized = 0;
+                    for (let i = 0; i < items.length; i++) {
+                        const rawItem = rawItems[i];
+                        const item = items[i];
+                        item.category = stores[store].mapCategory(rawItem);
+                        if (item.category == null) numUncategorized++;
+                    }
+
+                    console.log(
+                        `Fetched ${store.toUpperCase()} data, took ${(performance.now() - start) / 1000} seconds, ${numUncategorized}/${
+                            items.length
+                        } items without category.`
+                    );
+                    resolve(items);
                 } catch (e) {
                     console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
                     resolve([]);

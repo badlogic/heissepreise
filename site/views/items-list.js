@@ -5,6 +5,8 @@ const { View } = require("./view");
 const { ItemsChart } = require("./items-chart");
 
 class ItemsList extends View {
+    static priceTypeId = 0;
+
     constructor() {
         super();
 
@@ -20,15 +22,21 @@ class ItemsList extends View {
             <div x-id="options" class="hidden flex flex-col md:flex-row gap-4 px-4 py-2 my-4 justify-between items-center text-sm border rounded-xl md:mt-8 md:rounded-b-none md:mb-0 bg-gray-100 ">
                 <div>
                     <div class="flex flex-col md:flex-row gap-2 items-center">
-                        <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
-                        <span>
-                            <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
-                        </span>
-                        <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
-                            this._chart ? "" : "hidden"
-                        }"></custom-checkbox>
-                        <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType" checked> Verkaufspreis</label>
-                        <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType"> Mengenpreis</label>
+                        <div class="flex flex-row gap-2 items-center">
+                            <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
+                            <span>
+                                <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
+                            </span>
+                            <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
+                                this._chart ? "" : "hidden"
+                            }"></custom-checkbox>
+                        </div>
+                        <div class="flex flex-row gap-2 items-center">
+                            <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType${
+                                ItemsList.priceTypeId
+                            }" checked> Verkaufspreis</label>
+                            <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType${ItemsList.priceTypeId++}"> Mengenpreis</label>
+                        </div>
                     </div>
                 </div>
                 <label class="${hideSort}">
@@ -70,7 +78,7 @@ class ItemsList extends View {
             this.download(this.model.filteredItems);
         });
 
-        elements.enableChart.addEventListener("change", () => {
+        elements.enableChart.addEventListener("x-change", () => {
             if (elements.enableChart.checked) elements.chart.classList.remove("hidden");
             else elements.chart.classList.add("hidden");
         });
@@ -81,6 +89,18 @@ class ItemsList extends View {
             const showAll = (this._showAllPriceHistories = !this._showAllPriceHistories);
             elements.expandPriceHistories.innerText = showAll ? "Preis -" : "Preis +";
             elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
+        });
+
+        elements.chart.unitPrice = elements.unitPrice.checked;
+
+        elements.unitPrice.addEventListener("change", () => {
+            elements.chart.unitPrice = elements.unitPrice.checked;
+            elements.chart.render();
+        });
+
+        elements.salesPrice.addEventListener("change", () => {
+            elements.chart.unitPrice = elements.unitPrice.checked;
+            elements.chart.render();
         });
 
         this.setupEventHandlers();
@@ -110,13 +130,14 @@ class ItemsList extends View {
                 store: item.store,
                 id: item.id,
                 name: item.name,
+                category: item.category,
                 price: item.price,
                 priceHistory: item.priceHistory,
                 isWeighted: item.isWeighted,
                 unit: item.unit,
                 quantity: item.quantity,
                 bio: item.bio,
-                url: item.url,
+                url: stores[item.store].getUrl(item),
             });
         });
         downloadJSON("items.json", cleanedItems);
@@ -272,8 +293,8 @@ class ItemsList extends View {
         itemDom.setAttribute("x-notraverse", "true");
         const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
-        elements.name.href = item.url;
-        elements.name.innerText = item.name;
+        elements.name.href = stores[item.store].getUrl(item);
+        elements.name.innerText = item.name + (item.unavailable ? " 💀" : "");
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
         elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;
@@ -369,6 +390,7 @@ class ItemsList extends View {
         const start = performance.now();
         const elements = this.elements;
         if (!this.model) return;
+        elements.chart.unitPrice = elements.unitPrice.checked;
         if (this.model.filteredItems.length != 0 && this.model.filteredItems.length <= (isMobile() ? 200 : 1500)) {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {
@@ -402,7 +424,7 @@ class ItemsList extends View {
         const batches = [];
         let batch = [];
         items.forEach((item) => {
-            if (batch.length == 100) {
+            if (batch.length == 25) {
                 batches.push(batch);
                 batch = [];
             }

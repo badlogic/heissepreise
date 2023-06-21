@@ -1,4 +1,4 @@
-const { getBooleanAttribute, log } = require("../js/misc");
+const { getBooleanAttribute, log, isMobile } = require("../js/misc");
 
 class View extends HTMLElement {
     constructor() {
@@ -163,7 +163,7 @@ class View extends HTMLElement {
                 element._handlerSet = true;
             }
             if (element.hasAttribute("x-input-debounce")) {
-                const DEBOUNCE_MS = 50;
+                const DEBOUNCE_MS = isMobile() ? 150 : 50;
                 let timeoutId = 0;
                 const debounceHandler = (event) => {
                     clearTimeout(timeoutId);

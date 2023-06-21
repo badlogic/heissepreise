@@ -40,6 +40,7 @@ exports.getCanonical = function (item, today) {
         {
             id: item.productId,
             name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
+            description: item.keyfacts?.description ?? "",
             price: item.price.price,
             priceHistory: [{ date: today, price: item.price.price }],
             unit,
@@ -55,5 +56,9 @@ exports.fetchData = async function () {
     const LIDL_SEARCH = `https://www.lidl.at/p/api/gridboxes/AT/de/?max=${HITS}`;
     return (await axios.get(LIDL_SEARCH)).data.filter((item) => !!item.price.price);
 };
+
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
 
 exports.urlBase = "https://www.lidl.at";

@@ -1,5 +1,6 @@
-const { today, parseNumber, dom, getBooleanAttribute, queryItems, log, deltaTime } = require("../js/misc");
+const { today, parseNumber, dom, getBooleanAttribute, queryItems, queryItemsAlasql, log, deltaTime } = require("../js/misc");
 const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
+const { fromCategoryCode, categories } = require("../model/categories");
 const { settings } = require("../model");
 const { View } = require("./view");
 
@@ -18,7 +19,7 @@ class ItemsFilter extends View {
         const hidePriceDirection = this._filterByPriceDirection ? "" : "hidden";
         const hideStores = this._filterByStores ? "" : "hidden";
         const hideMisc = this._filterByMisc ? "" : "hidden";
-        const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen...";
+        const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen... (min. 3 Zeichen)";
 
         this.innerHTML = /*html*/ `
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
@@ -69,6 +70,19 @@ class ItemsFilter extends View {
                 <custom-checkbox x-id="priceIncreased" x-state x-change label="Teurer" checked class="gray"></custom-checkbox>
                 <custom-checkbox x-id="priceDecreased" x-state x-change label="Billiger" checked class="gray"></custom-checkbox>
             </div>
+
+            <div x-id="categories" class="flex justify-center gap-2 flex-wrap mt-4 hidden">
+                    ${categories
+                        .map(
+                            (category, index) => /*html*/ `
+                        <custom-checkbox
+                            x-id="category-${index}" x-state x-change
+                            label="${category.name}"
+                            class="indigo"
+                        ></custom-checkbox>`
+                        )
+                        .join("")}
+            </div>
         `;
         this.classList.add("items-filter");
 
@@ -102,7 +116,7 @@ class ItemsFilter extends View {
             })
         );
 
-        elements.allStores.addEventListener("change", handleChangeAll);
+        elements.allStores.addEventListener("x-change", handleChangeAll);
 
         elements.priceChangesToday.addEventListener("change", () => {
             if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
@@ -123,15 +137,39 @@ class ItemsFilter extends View {
         });
     }
 
+    setVisibility(query, numCategories, elements) {
+        if (query.length > 0 && query.charAt(0) == "!") {
+            elements.stores.classList.add("hidden");
+            elements.priceChanges.classList.add("hidden");
+            elements.misc.classList.add("hidden");
+            elements.priceDirection.classList.add("hidden");
+            elements.categories.classList.add("hidden");
+        } else {
+            if (this._filterByStores) elements.stores.classList.remove("hidden");
+            if (this._filterByPriceChanges) elements.priceChanges.classList.remove("hidden");
+            if (this._filterByMisc) elements.misc.classList.remove("hidden");
+            if (this._filterByPriceDirection) elements.priceDirection.classList.remove("hidden");
+            if (this.model.filteredItems.length > 0 && numCategories != 0) {
+                elements.categories.classList.remove("hidden");
+            } else {
+                elements.categories.classList.add("hidden");
+            }
+        }
+    }
+
     filter() {
         if (!this.model) return;
 
         const start = performance.now();
         const elements = this.elements;
         this.model.totalItems = this.model.items.length;
-        let filteredItems = [...this.model.items];
+        let filteredItems = new Array(this.model.items.length);
+        for (let i = 0; i < this.model.items.length; i++) {
+            filteredItems[i] = this.model.items[i];
+        }
         let query = elements.query.value.trim();
         if (query.length == 0 && this._emptyQuery) {
+            this.setVisibility(query, 0, elements);
             this.model.removeListener(this._listener);
             this.model.filteredItems = [];
             this.model.addListener(this._listener);
@@ -189,8 +227,7 @@ class ItemsFilter extends View {
         // Don't apply store and misc filters if query is an alasql query.
         if (query.charAt(0) != "!") {
             if (this._filterByStores) {
-                const checkedStores = this.checkedStores;
-                filteredItems = filteredItems.filter((item) => checkedStores.includes(item.store));
+                filteredItems = filteredItems.filter((item) => elements[item.store].checked);
             }
 
             if (this._filterByMisc) {
@@ -209,54 +246,93 @@ class ItemsFilter extends View {
         }
 
         if (query.length > 0) {
-            filteredItems = queryItems(query, filteredItems, elements.exact.checked);
+            if (query.charAt(0) == "!") {
+                filteredItems = queryItemsAlasql(query, filteredItems);
+            } else {
+                filteredItems = queryItems(query, filteredItems, elements.exact.checked);
+            }
         }
 
-        if (this.model.lastQuery && this.model.lastQuery != query && !this._noChartClear) {
+        let queryChanged = this.model.lastQuery && this.model.lastQuery != query;
+        if (queryChanged && !this._noChartClear) {
             filteredItems.forEach((item) => (item.chart = false));
         }
         this.model.lastQuery = query;
+
+        if (this.model.numItemsBeforeCategories != filteredItems.length) queryChanged = true;
+        this.model.numItemsBeforeCategories = filteredItems.length; // This is not entirely correct, but I'm too lazy...
+        const filteredCategories = {};
+        filteredItems.forEach((item) => {
+            const category = categories[fromCategoryCode(item.category)[0]];
+            filteredCategories[category.index] = filteredCategories[category.index] ? filteredCategories[category.index] + 1 : 1;
+        });
+        for (const category of categories) {
+            const checkbox = elements["category-" + category.index];
+            if (filteredCategories[category.index] > 0) {
+                if (queryChanged) checkbox.checked = false;
+                checkbox.label = `${category.name} (${filteredCategories[category.index]})`;
+                checkbox.classList.remove("hidden");
+            } else {
+                if (queryChanged) checkbox.checked = true;
+                checkbox.classList.add("hidden");
+            }
+        }
+
+        if (Object.keys(filteredCategories).length != 0) {
+            let numEnabledCategories = 0;
+            Object.keys(filteredCategories).forEach((categoryIndex) => {
+                if (elements["category-" + categoryIndex].checked) {
+                    numEnabledCategories++;
+                }
+            });
+            if (numEnabledCategories > 0) {
+                filteredItems = filteredItems.filter((item) => {
+                    const category = categories[fromCategoryCode(item.category)[0]];
+                    return elements["category-" + category.index].checked;
+                });
+            }
+        }
 
         log(`ItemsFilter - Filtering ${this.model.items.length} took ${deltaTime(start).toFixed(4)} secs, ${filteredItems.length} results.`);
 
         this.model.removeListener(this._listener);
         this.model.filteredItems = filteredItems;
         this.model.addListener(this._listener);
+
+        this.setVisibility(query, Object.keys(filteredCategories).length, elements);
     }
 
     render() {
         const start = performance.now();
         const elements = this.elements;
         const items = this.model.items;
-        const dates = {};
-        for (const item of items) {
-            if (item.priceHistory.length == 1) continue;
-            for (let i = 0; i < item.priceHistory.length; i++) {
-                const price = item.priceHistory[i];
-                if (i + 1 < item.priceHistory.length) {
-                    if (item.priceHistory[i].price != item.priceHistory[i + 1].price) {
-                        if (i == 0 || item.priceHistory[i].date != item.priceHistory[i - 1].date) {
-                            dates[price.date] = dates[price.date] ? dates[price.date] + 1 : 1;
+        if (this._filterByPriceChanges) {
+            const dates = {};
+            for (const item of items) {
+                if (item.priceHistory.length == 1) continue;
+                for (let i = 0; i < item.priceHistory.length; i++) {
+                    const price = item.priceHistory[i];
+                    if (i + 1 < item.priceHistory.length) {
+                        if (item.priceHistory[i].price != item.priceHistory[i + 1].price) {
+                            if (i == 0 || item.priceHistory[i].date != item.priceHistory[i - 1].date) {
+                                dates[price.date] = dates[price.date] ? dates[price.date] + 1 : 1;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        const priceChangesDates = elements.priceChangesDate;
-        priceChangesDates.innerHTML = "";
-        for (const date of Object.keys(dates).sort((a, b) => b.localeCompare(a))) {
-            const dateDom = dom("option");
-            dateDom.value = date;
-            dateDom.innerText = `${date} (${dates[date]})`;
-            priceChangesDates.append(dateDom);
+            const priceChangesDates = elements.priceChangesDate;
+            priceChangesDates.innerHTML = "";
+            for (const date of Object.keys(dates).sort((a, b) => b.localeCompare(a))) {
+                const dateDom = dom("option");
+                dateDom.value = date;
+                dateDom.innerText = `${date} (${dates[date]})`;
+                priceChangesDates.append(dateDom);
+            }
         }
 
         log(`ItemsFilter - rendering items filter took ${deltaTime(start)}`);
-    }
-
-    get checkedStores() {
-        return STORE_KEYS.filter((store) => this.elements[store].checked);
     }
 
     get shareableState() {

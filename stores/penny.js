@@ -19,13 +19,14 @@ exports.getCanonical = function (item, today) {
         {
             id: item.productId,
             name: item.name,
+            // description: "", not available
             price: item.price.regular.value / 100,
             priceHistory: [{ date: today, price: item.price.regular.value / 100 }],
             isWeighted: item.isWeightArticle,
             unit,
             quantity,
             bio: item.name.toLowerCase().includes("bio") && !item.name.toLowerCase().includes("fabio"),
-            url: item.slug,
+            url: item.sku.replace("-", ""),
         },
         units,
         "penny"
@@ -46,5 +47,9 @@ exports.fetchData = async function () {
     }
     return result;
 };
+
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
 
 exports.urlBase = "https://www.penny.at/produkte/";

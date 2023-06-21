@@ -12,6 +12,7 @@ exports.getCanonical = function (item, today) {
         {
             id: item.id,
             name: item.name,
+            // description: "", not available
             price: item.price,
             priceHistory: [{ date: today, price: item.price }],
             quantity,
@@ -65,5 +66,9 @@ exports.fetchData = async function () {
     }
     return unimarktItems;
 };
+
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
 
 exports.urlBase = "https://shop.unimarkt.at";

@@ -1,4 +1,4 @@
-const { downloadJSON } = require("./js/misc");
+const { downloadJSON, today } = require("./js/misc");
 const model = require("./model");
 require("./views");
 
@@ -11,29 +11,50 @@ function newCart() {
         return;
     }
     model.carts.add(name);
-    location.href = `${location.pathname}?name=${encodeURIComponent(name)}`;
+    location.href = `cart.html?name=${encodeURIComponent(name)}`;
+}
+
+function isIterable(obj) {
+    return typeof obj[Symbol.iterator] === "function";
+}
+
+function importCart(importedCart) {
+    const items = [];
+    for (const cartItem of importedCart.items) {
+        const item = model.items.lookup[cartItem.store + cartItem.id];
+        if (!item) continue;
+        items.push(item);
+    }
+    importedCart.items = items;
+
+    const index = model.carts.carts.findIndex((cart) => cart.name === importedCart.name);
+    if (index != -1) {
+        let newName = importedCart.name;
+        while (true) {
+            newName = prompt(
+                "Warenkorb '" + importedCart.name + " existiert bereits. Bitte einen anderen Namen für den zu importierenden Warenkorb eingeben",
+                importedCart.name + today()
+            );
+            if (!newName || newName.trim().length == 0) return;
+            newName = newName.trim();
+            if (newName != importedCart.name) {
+                importedCart.name = newName;
+                model.carts.carts.push(importedCart);
+                break;
+            }
+        }
+    } else {
+        model.carts.carts.push(importedCart);
+    }
+    model.carts.save();
 }
 
 function importCarts(importedCarts) {
-    for (const importedCart of importedCarts) {
-        const items = [];
-        for (const cartItem of importedCart.items) {
-            const item = model.items.lookup[cartItem.store + cartItem.id];
-            if (!item) continue;
-            items.push(item);
-        }
-        importedCart.items = items;
-
-        const index = model.carts.carts.findIndex((cart) => cart.name === importedCart.name);
-        if (index != -1) {
-            if (confirm("Existierenden Warenkorb '" + importedCart.name + " überschreiben?")) {
-                model.carts.carts[index] = importedCart;
-            }
-        } else {
-            model.carts.carts.push(importedCart);
-        }
+    if (isIterable(importedCarts)) {
+        importedCarts.forEach((cart) => importCart(cart));
+    } else {
+        importCart(importedCarts);
     }
-    model.carts.save();
 }
 
 (async () => {
@@ -50,4 +71,5 @@ function importCarts(importedCarts) {
         };
         reader.readAsText(event.target.files[0]);
     });
+    document.querySelector('[x-id="loader"]').classList.add("hidden");
 })();

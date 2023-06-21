@@ -6,14 +6,14 @@ exports.stores = {
         budgetBrands: ["clever"],
         color: "yellow",
         defaultChecked: true,
-        getUrl: (item) => `https://shop.billa.at${item.url}`,
+        getUrl: (item) => `https://shop.billa.at/produkte/${item.id}`,
     },
     spar: {
         name: "Spar",
         budgetBrands: ["s-budget"],
         color: "green",
         defaultChecked: true,
-        getUrl: (item) => `https://www.interspar.at/shop/lebensmittel${item.url}`,
+        getUrl: (item) => `https://www.interspar.at/shop/lebensmittel/p/${item.id}`,
     },
     hofer: {
         name: "Hofer",
@@ -22,14 +22,14 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.roksh.at/hofer/produkte/${item.url}`,
     },
-    // Disabled as they only give us discounted products.
-    /*lidl: {
+    lidl: {
         name: "Lidl",
         budgetBrands: ["milbona"],
         color: "pink",
         defaultChecked: true,
         getUrl: (item) => `https://www.lidl.at${item.url}`,
-    },*/
+        removeOld: true,
+    },
     mpreis: {
         name: "MPREIS",
         budgetBrands: [],
@@ -57,6 +57,7 @@ exports.stores = {
         color: "purple",
         defaultChecked: true,
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
+        removeOld: true,
     },
     dmDe: {
         name: "DM DE",
@@ -72,13 +73,14 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(allSpacesRegex, "-")}/${item.id}`,
     },
-    sparSi: {
+    // Disabled as it just polutes search results
+    /*sparSi: {
         name: "Spar SI",
         budgetBrands: ["s-budget"],
         color: "emerald",
         defaultChecked: false,
-        getUrl: (item) => `https://www.spar.si/online/${item.url}`,
-    },
+        getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
+    },*/
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);

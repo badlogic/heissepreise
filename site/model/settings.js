@@ -1,7 +1,8 @@
 const { STORE_KEYS, stores } = require("./stores");
 const { Model } = require("./model");
+const { log } = require("../js/misc");
 
-export class Settings extends Model {
+class Settings extends Model {
     constructor() {
         super();
         this.startDate = "2017-01-01";
@@ -30,3 +31,5 @@ export class Settings extends Model {
         localStorage.setItem("settings", JSON.stringify(settings));
     }
 }
+
+exports.Settings = Settings;

@@ -12,7 +12,6 @@ exports.importH43zData = (sqliteFile, outputFile) => {
         const item = {
             store: row.shop == "billa" ? "billa" : "spar",
             id: row.product_id,
-            sparId: row.sparId,
             name: row.name,
             price: 0,
             priceHistory: [],
@@ -61,7 +60,7 @@ exports.mergeWithLatestCanonical = (h43zFile, latestCanonicalFile) => {
     });
     const currItems = analysis.readJSON(latestCanonicalFile + "." + analysis.FILE_COMPRESSOR);
     const currLookup = {};
-    currItems.forEach((item) => (currLookup[item.store + (item.sparId ? item.sparId : item.id)] = item));
+    currItems.forEach((item) => (currLookup[item.store + item.id] = item));
     let missingItems = {
         spar: 0,
         billa: 0,

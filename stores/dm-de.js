@@ -15,8 +15,9 @@ exports.getCanonical = function (item, today) {
     let unit = item.contentUnit || item.basePriceUnit;
     return utils.convertUnit(
         {
-            id: item.gtin,
+            id: String(item.gtin),
             name: `${item.brandName} ${item.title}`,
+            // description: "", not available
             price: item.price.value,
             priceHistory: [{ date: today, price: item.price.value }],
             unit,
@@ -91,5 +92,9 @@ exports.fetchData = async function () {
     }
     return dmItems;
 };
+
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
 
 exports.urlBase = "https://www.dm.de/product-p";

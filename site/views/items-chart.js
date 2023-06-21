@@ -1,6 +1,6 @@
 const { STORE_KEYS } = require("../model/stores");
 const { settings } = require("../model");
-const { today, log, deltaTime } = require("../js/misc");
+const { today, log, deltaTime, isMobile } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
 const moment = require("moment");
@@ -12,10 +12,11 @@ class ItemsChart extends View {
     constructor() {
         super();
 
+        this.unitPrice = false;
         this.innerHTML = /*html*/ `
-            <div class="bg-stone-200 p-4 mx-auto">
-                <div class="w-full  h-[calc(100vw*0.66)] md:h-[calc(100vw*0.5)] lg:h-[calc(100vw*0.30)]" style="position: relative;">
-                    <canvas x-id="canvas" class="bg-white rounded-lg py-4"></canvas>
+            <div class="bg-stone-200 p-4 mx-auto md:rounded-none md:mb-0 rounded-xl mb-4">
+                <div class="w-full  h-[calc(100vh*0.50)] md:h-[calc(100vh*0.60)] lg:h-[calc(100vh*0.60)]" style="position: relative;">
+                    <canvas x-id="canvas" class="bg-white rounded-lg"></canvas>
                     <div x-id="noData" class="hidden flex items-center justify-center h-full">Keine Daten ausgewählt</div>
                 </div>
                 <div class="filters flex items-center flex-wrap justify-center gap-2 pt-2">
@@ -41,9 +42,11 @@ class ItemsChart extends View {
     calculateOverallPriceChanges(items, onlyToday, startDate, endDate) {
         if (items.length == 0) return { dates: [], changes: [] };
 
+        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
+
         if (onlyToday) {
             let sum = 0;
-            for (const item of items) sum += item.price;
+            for (const item of items) sum += getPrice(item);
             return [{ date: today(), price: sum }];
         }
 
@@ -67,8 +70,8 @@ class ItemsChart extends View {
             }
             for (let i = 0; i < uniqueDates.length; i++) {
                 const priceObj = product.priceHistoryLookup[uniqueDates[i]];
-                if (!price && priceObj) price = priceObj.price;
-                priceScratch[i] = priceObj ? priceObj.price : null;
+                if (!price && priceObj) price = getPrice(priceObj);
+                priceScratch[i] = priceObj ? getPrice(priceObj) : null;
             }
 
             for (let i = 0; i < priceScratch.length; i++) {
@@ -90,6 +93,7 @@ class ItemsChart extends View {
     }
 
     renderChart(items, chartType) {
+        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
         const canvasDom = this.elements.canvas;
         const noData = this.elements.noData;
         if (items.length === 0) {
@@ -103,61 +107,24 @@ class ItemsChart extends View {
 
         const startDate = this.elements.startDate.value;
         const endDate = this.elements.endDate.value;
-        const allDates = items.flatMap((item) =>
-            item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate).map((price) => price.date)
-        );
-        const uniqueDates = [...new Set(allDates)];
-        uniqueDates.sort();
 
         const now = performance.now();
         const datasets = items.map((item) => {
-            let price = null;
-            const prices = uniqueDates.map((date) => {
-                const priceObj = item.priceHistory.find((item) => item.date === date);
-                if (!price && priceObj) price = priceObj;
-                return priceObj;
-            });
-
-            const firstIndex = item.priceHistory.indexOf(price);
-
-            for (let i = 0; i < prices.length; i++) {
-                if (prices[i] == null) {
-                    if (i == 0) {
-                        if (firstIndex < item.priceHistory.length - 1) {
-                            price = item.priceHistory[firstIndex + 1];
-                            prices[i] = price;
-                        }
-                    } else {
-                        prices[i] = price;
-                    }
-                } else {
-                    price = prices[i];
-                }
-            }
-
-            const dedupPrices = [];
-            prices.forEach((price, index) => {
-                if (price == null) return;
-                if (dedupPrices.length == 0) {
-                    dedupPrices.push({ price: price.price, date: uniqueDates[index] });
-                } else {
-                    const lastPrice = dedupPrices[dedupPrices.length - 1];
-                    if (lastPrice.date == price.date && lastPrice.price == price.price) return;
-                    dedupPrices.push({ price: price.price, date: uniqueDates[index] });
-                }
-            });
+            const prices = item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate);
 
             const dataset = {
                 label: (item.store ? item.store + " " : "") + item.name,
-                data: dedupPrices.map((price) => {
+                data: prices.map((price) => {
                     return {
                         x: moment(price.date),
-                        y: price.price,
+                        y: getPrice(price),
                     };
                 }),
             };
             if (settings.chartType == "stepped") {
-                dataset.stepped = "before";
+                // I don't know why this is necessary...
+                if (dataset.label.startsWith("Preissumme")) dataset.stepped = "before";
+                else dataset.stepped = "after";
             }
 
             return dataset;
@@ -176,12 +143,8 @@ class ItemsChart extends View {
                 datasets: datasets,
             },
             options: {
-                interaction: {
-                    intersect: false,
-                    mode: "index",
-                },
                 layout: {
-                    padding: 20,
+                    padding: 16,
                 },
                 animation: false,
                 responsive: true,
@@ -253,11 +216,12 @@ class ItemsChart extends View {
             log("ItemsChart - Calculating overall sum per store took " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
         }
 
+        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
         items.forEach((item) => {
             if (item.chart) {
                 const chartItem = {
                     name: item.store + " " + item.name,
-                    priceHistory: onlyToday ? [{ date: today(), price: item.price }] : item.priceHistory,
+                    priceHistory: onlyToday ? [{ date: today(), price: getPrice(item) }] : item.priceHistory,
                 };
                 itemsToShow.push(chartItem);
             }

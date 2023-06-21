@@ -62,6 +62,7 @@ exports.getCanonical = function (item, today) {
     return utils.convertUnit(
         {
             id: item.masterValues["code-internal"],
+            // description: "", not available
             name,
             price,
             priceHistory: [{ date: today, price }],
@@ -69,7 +70,6 @@ exports.getCanonical = function (item, today) {
             quantity,
             isWeighted,
             bio: item.masterValues.biolevel === "Bio",
-            url: item.masterValues.url,
         },
         units,
         "sparSi",
@@ -82,5 +82,9 @@ exports.fetchData = async function () {
     const rawItems = (await axios.get(SPAR_SEARCH)).data.hits;
     return rawItems?.hits || rawItems;
 };
+
+exports.initializeCategoryMapping = async () => {};
+
+exports.mapCategory = (rawItem) => {};
 
 exports.urlBase = "https://www.spar.si/online";

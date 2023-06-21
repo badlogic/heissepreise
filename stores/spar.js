@@ -1,6 +1,9 @@
 const axios = require("axios");
 const utils = require("./utils");
+const HTMLParser = require("node-html-parser");
 const HITS = Math.floor(30000 + Math.random() * 2000);
+const fs = require("fs");
+const path = require("path");
 
 const units = {
     "100ml": { unit: "ml", factor: 100 },
@@ -53,16 +56,15 @@ exports.getCanonical = function (item, today) {
 
     return utils.convertUnit(
         {
-            id: item.masterValues["code-internal"],
-            sparId: item.masterValues["product-number"],
+            id: item.masterValues["product-number"],
             name: item.masterValues.title + " " + (item.masterValues["short-description"] ?? item.masterValues.name),
+            description: item.masterValues["marketing-text"] ?? "",
             price,
             priceHistory: [{ date: today, price }],
             unit,
             quantity,
             isWeighted,
             bio: item.masterValues.biolevel === "Bio",
-            url: item.masterValues.url,
         },
         units,
         "spar",
@@ -76,4 +78,74 @@ exports.fetchData = async function () {
     return rawItems?.hits || rawItems;
 };
 
+exports.initializeCategoryMapping = async () => {
+    let categories = null;
+    try {
+        const result = (await axios.get("https://www.interspar.at/shop/lebensmittel/")).data;
+        const root = HTMLParser.parse(result);
+        categories = Array.from(root.querySelectorAll(`.flyout-categories__link`))
+            .filter((el) => !(el.innerText.toLowerCase().includes("übersicht") || el.innerText.toLowerCase().includes("zurück")))
+            .map((el) => {
+                const paths = el.attributes.href.split("/");
+                const id = paths[paths.length - 2];
+                return {
+                    id,
+                    description: el.innerText.trim(),
+                    url: `https://www.interspar.at/shop/lebensmittel/c/${id}`,
+                    code: null,
+                };
+            });
+    } catch (e) {
+        console.log("Couldn't fetch SPAR categories.");
+        const mappingFile = path.join(__dirname, `spar-categories.json`);
+        categories = JSON.parse(fs.readFileSync(mappingFile));
+    }
+    utils.mergeAndSaveCategories("spar", categories);
+    exports.categoryLookup = {};
+    for (const category of categories) {
+        exports.categoryLookup[category.id] = category;
+    }
+};
+
+exports.mapCategory = (rawItem) => {
+    if (!rawItem.masterValues["category-path"]) return null;
+
+    const categoryLookup = exports.categoryLookup;
+    if (!categoryLookup) throw Error("Category mapping for spar not initialized.");
+    const regex = /F(\d+)-(\d+)/g;
+    const categoryPaths = rawItem.masterValues["category-path"]
+        .filter((p) => {
+            const match = regex.exec(p);
+            if (match == null) return false;
+            if (Number.parseInt(match[1]) > 13) return false;
+            return true;
+        })
+        .map((p) => p[0]);
+    if (categoryPaths.length == 0) return null;
+    categoryPaths.sort((a, b) => b.length - a.length);
+    let categoryCode = null;
+    for (const path of categoryPaths) {
+        if (categoryLookup[path]) {
+            categoryCode = categoryLookup[path];
+            break;
+        }
+    }
+    const longestPath = categoryPaths[0].split("-");
+    for (let i = longestPath.length; i > 0; i--) {
+        const path = longestPath.slice(0, i).join("-");
+        if (categoryLookup[path] && categoryLookup[path].code) {
+            categoryCode = categoryLookup[path];
+            break;
+        }
+    }
+
+    return categoryCode.code;
+};
+
 exports.urlBase = "https://www.interspar.at/shop/lebensmittel";
+
+if (require.main == module) {
+    (async () => {
+        await exports.generateCategoryMapping();
+    })();
+}

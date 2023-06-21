@@ -38,4 +38,5 @@ require("./views");
     }
     itemsFilter.model = itemsList.model = model.items;
     itemsFilter.fireChangeEvent();
+    document.querySelector('[x-id="loader"]').classList.add("hidden");
 })();

@@ -1,5 +1,6 @@
 const axios = require("axios");
 const utils = require("./utils");
+const { categories, toCategoryCode, fromCategoryCode, getCategory } = require("../site/model/categories");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const units = {
@@ -26,13 +27,13 @@ exports.getCanonical = function (item, today) {
         {
             id: item.data.articleId,
             name: item.data.name,
+            description: item.data.description ?? "",
             price: item.data.price.final,
             priceHistory: [{ date: today, price: item.data.price.final }],
             isWeighted: item.data.isWeightArticle,
             unit,
             quantity,
             bio: item.data.attributes && item.data.attributes.includes("s_bio"),
-            url: item.data.canonicalPath,
         },
         units,
         "billa"
@@ -44,8 +45,8 @@ exports.fetchData = async function () {
     const lookup = {};
     let numDuplicates = 0;
 
-    for (let i = 1; i <= utils.globalCategories.length; i++) {
-        const category = utils.globalCategories[i - 1];
+    for (let i = 1; i <= categories.length; i++) {
+        const category = categories[i - 1];
         const categoryCode = i < 10 ? "" + i : String.fromCharCode("A".charCodeAt(0) + (i - 10));
 
         for (let j = 1; j <= category.subcategories.length; j++) {
@@ -71,6 +72,28 @@ exports.fetchData = async function () {
     }
     console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
     return items;
+};
+
+exports.initializeCategoryMapping = async () => {
+    // FIXME check if categories have changed.
+};
+
+exports.mapCategory = (rawItem) => {
+    let billaCategory = null;
+    for (const groupId of rawItem.data.articleGroupIds) {
+        if (billaCategory == null) {
+            billaCategory = groupId;
+            continue;
+        }
+
+        if (groupId.charCodeAt(3) < billaCategory.charCodeAt(3)) {
+            billaCategory = groupId;
+        }
+    }
+    let categoryCode = billaCategory.replace("B2-", "").substring(0, 2);
+    let [ci, cj] = fromCategoryCode(categoryCode);
+    categoryCode = toCategoryCode(ci - 1, cj - 1);
+    return categoryCode;
 };
 
 exports.urlBase = "https://shop.billa.at";

@@ -40,7 +40,7 @@ function processFile(inputFile, outputFile, filter) {
     const fileDir = path.dirname(inputFile);
     const data = fs.readFileSync(inputFile, "utf8");
     if (filter(inputFile, false, data)) {
-        console.log(`${inputFile} omitted by filter`);
+        // console.log(`${inputFile} omitted by filter`);
         return;
     }
     console.log(`${inputFile} -> ${outputFile}`);
@@ -132,6 +132,8 @@ async function bundle(inputDir, outputDir, watch) {
         bundleHTML(inputDir, outputDir, false, watch, (filePath, isDir, data) => {
             if (isDir) return false;
             if (filePath.endsWith("style.css")) return true;
+            if (filePath.endsWith(".js") && !filePath.includes("socket.io.js")) return true;
+            if (data.includes(`require("`)) return true;
             return false;
         })
     );
