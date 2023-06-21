@@ -41,7 +41,7 @@ class Items extends Model {
                         const json = await response.json();
                         log(`Loader - loading compressed items for ${store} took ${deltaTime(start)} secs`);
                         start = performance.now();
-                        let items = this.decompress(json);
+                        let items = decompress(json);
                         log(`Loader - Decompressing items for ${store} took ${deltaTime(start)} secs`);
                         resolve(items);
                     } catch (e) {
@@ -163,53 +163,53 @@ class Items extends Model {
         log(`Loader - processing ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
         return { items, lookup };
     }
-
-    decompress(compressedItems) {
-        const storeLookup = compressedItems.stores;
-        const data = compressedItems.data;
-        const dates = compressedItems.dates;
-        const numItems = compressedItems.n;
-        const items = new Array(numItems);
-        let i = 0;
-        for (let l = 0; l < numItems; l++) {
-            const store = storeLookup[data[i++]];
-            const id = data[i++];
-            const name = data[i++];
-            const category = data[i++];
-            const unavailable = data[i++] == 1;
-            const numPrices = data[i++];
-            const prices = new Array(numPrices);
-            for (let j = 0; j < numPrices; j++) {
-                const date = dates[data[i++]];
-                const price = data[i++];
-                prices[j] = {
-                    date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
-                    price,
-                };
-            }
-            const unit = data[i++];
-            const quantity = data[i++];
-            const isWeighted = data[i++] == 1;
-            const bio = data[i++] == 1;
-            const url = data[i++];
-
-            items[l] = {
-                store,
-                id,
-                name,
-                category,
-                unavailable,
-                price: prices[0].price,
-                priceHistory: prices,
-                isWeighted,
-                unit,
-                quantity,
-                bio,
-                url,
-            };
-        }
-        return items;
-    }
 }
 
 exports.Items = Items;
+
+exports.decompress = (compressedItems) => {
+    const storeLookup = compressedItems.stores;
+    const data = compressedItems.data;
+    const dates = compressedItems.dates;
+    const numItems = compressedItems.n;
+    const items = new Array(numItems);
+    let i = 0;
+    for (let l = 0; l < numItems; l++) {
+        const store = storeLookup[data[i++]];
+        const id = data[i++];
+        const name = data[i++];
+        const category = data[i++];
+        const unavailable = data[i++] == 1;
+        const numPrices = data[i++];
+        const prices = new Array(numPrices);
+        for (let j = 0; j < numPrices; j++) {
+            const date = dates[data[i++]];
+            const price = data[i++];
+            prices[j] = {
+                date: date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8),
+                price,
+            };
+        }
+        const unit = data[i++];
+        const quantity = data[i++];
+        const isWeighted = data[i++] == 1;
+        const bio = data[i++] == 1;
+        const url = data[i++];
+
+        items[l] = {
+            store,
+            id,
+            name,
+            category,
+            unavailable,
+            price: prices[0].price,
+            priceHistory: prices,
+            isWeighted,
+            unit,
+            quantity,
+            bio,
+            url,
+        };
+    }
+    return items;
+};
