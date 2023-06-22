@@ -14,11 +14,13 @@ class ItemsFilter extends View {
         this._filterByStores = getBooleanAttribute(this, "stores");
         this._filterByMisc = getBooleanAttribute(this, "misc");
         this._noChartClear = getBooleanAttribute(this, "nochartclear");
+        this._availableOption = getBooleanAttribute(this, "availableoption");
 
         const hidePriceChanges = this._filterByPriceChanges ? "" : "hidden";
         const hidePriceDirection = this._filterByPriceDirection ? "" : "hidden";
         const hideStores = this._filterByStores ? "" : "hidden";
         const hideMisc = this._filterByMisc ? "" : "hidden";
+        const hideAvailableObption = this._availableOption ? "" : "hidden";
         const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen... (min. 3 Zeichen)";
 
         this.innerHTML = /*html*/ `
@@ -180,9 +182,9 @@ class ItemsFilter extends View {
             return;
         }
 
-        if (settings.onlyAvailable) {
+        /*if (settings.onlyAvailable) {
             filteredItems = filteredItems.filter((item) => !item.unavailable);
-        }
+        }*/
 
         this.model.lastDate = null;
         if (this._filterByPriceChanges) {
