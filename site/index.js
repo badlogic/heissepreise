@@ -3,6 +3,10 @@ const model = require("./model");
 require("./views");
 
 (async () => {
+    if (location.href.includes("heissepreise.github.io")) {
+        location.href = "https://heisse-preise.io";
+    }
+
     await model.load();
     const itemsFilter = document.querySelector("items-filter");
     const itemsList = document.querySelector("items-list");
