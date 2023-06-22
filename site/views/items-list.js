@@ -184,6 +184,16 @@ class ItemsList extends View {
         return items;
     }
 
+    highlightMatches(keywords, name) {
+        let highlightedName = name;
+        for (let i = 0; i < keywords.length; i++) {
+            const string = keywords[i];
+            const regex = new RegExp(string, "gi");
+            highlightedName = highlightedName.replace(regex, "<strong>$&</strong>");
+        }
+        return `${highlightedName}`;
+    }
+
     renderItem(item) {
         if (!this._itemTemplate) {
             this._itemTemplate = dom(
@@ -294,7 +304,7 @@ class ItemsList extends View {
         const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
         elements.name.href = stores[item.store].getUrl(item);
-        elements.name.innerText = item.name + (item.unavailable ? " 💀" : "");
+        elements.name.innerHTML = this.highlightMatches(this.model.lastQueryTokens ?? [], item.name) + (item.unavailable ? " 💀" : "");
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
         elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;

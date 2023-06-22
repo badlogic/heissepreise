@@ -262,9 +262,12 @@ class ItemsFilter extends View {
                     elements.sqlError.classList.remove("hidden");
                     elements.sqlError.innerText = e.message;
                     filteredItems = [];
+                    this.lastQueryTokens = [];
                 }
             } else {
-                filteredItems = queryItems(query, filteredItems, elements.exact.checked);
+                const result = queryItems(query, filteredItems, elements.exact.checked);
+                filteredItems = result.items;
+                this.model.lastQueryTokens = result.queryTokens;
             }
         }
 

@@ -212,7 +212,7 @@ exports.queryItems = (query, items, exactWord) => {
             if (allUnitsMatched) hits.push(item);
         }
     }
-    return hits;
+    return { items: hits, queryTokens: tokens.filter((token) => !token.startsWith("-")) };
 };
 
 exports.onVisibleOnce = (target, callback) => {
