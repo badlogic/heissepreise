@@ -10,6 +10,7 @@ class Settings extends Model {
         STORE_KEYS.forEach((store) => {
             this[store] = stores[store].defaultChecked;
         });
+        this.onlyAvailable = true;
 
         let settings = localStorage.getItem("settings");
         if (settings) {

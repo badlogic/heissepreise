@@ -73,6 +73,7 @@ function mergePriceHistory(oldItems, items) {
 
     const lookup = {};
     for (oldItem of oldItems) {
+        delete oldItem.unavailable;
         lookup[oldItem.store + oldItem.id] = oldItem;
     }
 

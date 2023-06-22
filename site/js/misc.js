@@ -116,12 +116,7 @@ exports.queryItemsAlasql = (query, items) => {
     };
 
     query = query.substring(1);
-    try {
-        return alasql("select * from ? where " + query, [items]);
-    } catch (e) {
-        console.error(e);
-        return [];
-    }
+    return alasql("select * from ? where " + query, [items]);
 };
 
 exports.queryItems = (query, items, exactWord) => {

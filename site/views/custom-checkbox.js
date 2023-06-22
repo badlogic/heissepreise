@@ -15,7 +15,7 @@ class CustomCheckbox extends View {
                 </svg>
                 ${
                     this.hasAttribute("abbr")
-                        ? `<abbr x-id="label" title="${abbr}"><span x-id="label">${label}</span></abbr>`
+                        ? `<abbr title="${abbr}"><span x-id="label">${label}</span></abbr>`
                         : `<span x-id="label">${label}</span>`
                 }
             </label>

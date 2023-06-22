@@ -1,6 +1,5 @@
 const axios = require("axios");
 const utils = require("./utils");
-const { readJSON } = require("../analysis");
 
 const units = {
     grm: { unit: "g", factor: 1 },
@@ -109,9 +108,3 @@ exports.mapCategory = (rawItem) => {
 };
 
 exports.urlBase = "https://www.mpreis.at/shop/p/";
-
-if (require.main == module) {
-    (async () => {
-        await exports.initializeCategoryMapping(readJSON("data/mpreis-2023-06-21.json.br"));
-    })();
-}

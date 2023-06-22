@@ -14,15 +14,20 @@ class ItemsFilter extends View {
         this._filterByStores = getBooleanAttribute(this, "stores");
         this._filterByMisc = getBooleanAttribute(this, "misc");
         this._noChartClear = getBooleanAttribute(this, "nochartclear");
+        this._availableOption = getBooleanAttribute(this, "availableoption");
 
         const hidePriceChanges = this._filterByPriceChanges ? "" : "hidden";
         const hidePriceDirection = this._filterByPriceDirection ? "" : "hidden";
         const hideStores = this._filterByStores ? "" : "hidden";
         const hideMisc = this._filterByMisc ? "" : "hidden";
+        const hideAvailableObption = this._availableOption ? "" : "hidden";
         const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen... (min. 3 Zeichen)";
 
         this.innerHTML = /*html*/ `
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+
+            <div x-id="sqlError" class="hidden mt-4 p-4">
+            </div>
 
             <div x-id="stores" class="flex justify-center gap-2 flex-wrap mt-4 ${hideStores}">
                 <custom-checkbox x-id="allStores" label="Alle" ${
@@ -119,14 +124,10 @@ class ItemsFilter extends View {
         elements.allStores.addEventListener("x-change", handleChangeAll);
 
         elements.priceChangesToday.addEventListener("change", () => {
-            if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
-            else elements.priceDirection.classList.add("hidden");
             this.fireChangeEvent();
         });
 
         elements.priceChangesCheaper.addEventListener("change", () => {
-            if (elements.priceChangesCheaper.checked) elements.priceDirection.classList.add("hidden");
-            else elements.priceDirection.classList.remove("hidden");
             this.fireChangeEvent();
         });
 
@@ -148,7 +149,10 @@ class ItemsFilter extends View {
             if (this._filterByStores) elements.stores.classList.remove("hidden");
             if (this._filterByPriceChanges) elements.priceChanges.classList.remove("hidden");
             if (this._filterByMisc) elements.misc.classList.remove("hidden");
-            if (this._filterByPriceDirection) elements.priceDirection.classList.remove("hidden");
+            if (this._filterByPriceDirection) {
+                if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
+                else elements.priceDirection.classList.add("hidden");
+            }
             if (this.model.filteredItems.length > 0 && numCategories != 0) {
                 elements.categories.classList.remove("hidden");
             } else {
@@ -162,6 +166,7 @@ class ItemsFilter extends View {
 
         const start = performance.now();
         const elements = this.elements;
+        elements.sqlError.classList.add("hidden");
         this.model.totalItems = this.model.items.length;
         let filteredItems = new Array(this.model.items.length);
         for (let i = 0; i < this.model.items.length; i++) {
@@ -175,6 +180,10 @@ class ItemsFilter extends View {
             this.model.addListener(this._listener);
             return;
         }
+
+        /*if (settings.onlyAvailable) {
+            filteredItems = filteredItems.filter((item) => !item.unavailable);
+        }*/
 
         this.model.lastDate = null;
         if (this._filterByPriceChanges) {
@@ -247,7 +256,13 @@ class ItemsFilter extends View {
 
         if (query.length > 0) {
             if (query.charAt(0) == "!") {
-                filteredItems = queryItemsAlasql(query, filteredItems);
+                try {
+                    filteredItems = queryItemsAlasql(query, filteredItems);
+                } catch (e) {
+                    elements.sqlError.classList.remove("hidden");
+                    elements.sqlError.innerText = e.message;
+                    filteredItems = [];
+                }
             } else {
                 filteredItems = queryItems(query, filteredItems, elements.exact.checked);
             }
@@ -259,7 +274,7 @@ class ItemsFilter extends View {
         }
         this.model.lastQuery = query;
 
-        if (this.model.numItemsBeforeCategories != filteredItems.length) queryChanged = true;
+        if (this.model.numItemsBeforeCategories && this.model.numItemsBeforeCategories != filteredItems.length) queryChanged = true;
         this.model.numItemsBeforeCategories = filteredItems.length; // This is not entirely correct, but I'm too lazy...
         const filteredCategories = {};
         filteredItems.forEach((item) => {

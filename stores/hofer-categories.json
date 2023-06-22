@@ -629,13 +629,13 @@
     "code": "20"
   },
   {
-    "id": "smoothies",
-    "url": "https://www.roksh.at/hofer/angebot/smoothies",
+    "id": "sirupe",
+    "url": "https://www.roksh.at/hofer/angebot/sirupe",
     "code": "20"
   },
   {
-    "id": "sirupe",
-    "url": "https://www.roksh.at/hofer/angebot/sirupe",
+    "id": "smoothies",
+    "url": "https://www.roksh.at/hofer/angebot/smoothies",
     "code": "20"
   },
   {
@@ -657,6 +657,21 @@
     "id": "haarpflege",
     "url": "https://www.roksh.at/hofer/angebot/haarpflege",
     "code": "73"
+  },
+  {
+    "id": "herrenkosmetik-rasur",
+    "url": "https://www.roksh.at/hofer/angebot/herrenkosmetik-rasur",
+    "code": "77"
+  },
+  {
+    "id": "sonnenpflege",
+    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
+    "code": "79"
+  },
+  {
+    "id": "deodorants",
+    "url": "https://www.roksh.at/hofer/angebot/deodorants",
+    "code": "72"
   },
   {
     "id": "herrenkosmetik-rasur",
