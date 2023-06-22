@@ -124,14 +124,10 @@ class ItemsFilter extends View {
         elements.allStores.addEventListener("x-change", handleChangeAll);
 
         elements.priceChangesToday.addEventListener("change", () => {
-            if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
-            else elements.priceDirection.classList.add("hidden");
             this.fireChangeEvent();
         });
 
         elements.priceChangesCheaper.addEventListener("change", () => {
-            if (elements.priceChangesCheaper.checked) elements.priceDirection.classList.add("hidden");
-            else elements.priceDirection.classList.remove("hidden");
             this.fireChangeEvent();
         });
 
@@ -153,7 +149,10 @@ class ItemsFilter extends View {
             if (this._filterByStores) elements.stores.classList.remove("hidden");
             if (this._filterByPriceChanges) elements.priceChanges.classList.remove("hidden");
             if (this._filterByMisc) elements.misc.classList.remove("hidden");
-            if (this._filterByPriceDirection) elements.priceDirection.classList.remove("hidden");
+            if (this._filterByPriceDirection) {
+                if (elements.priceChangesToday.checked) elements.priceDirection.classList.remove("hidden");
+                else elements.priceDirection.classList.add("hidden");
+            }
             if (this.model.filteredItems.length > 0 && numCategories != 0) {
                 elements.categories.classList.remove("hidden");
             } else {
