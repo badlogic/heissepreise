@@ -3,6 +3,18 @@ const model = require("./model");
 require("./views");
 
 (async () => {
+    document.querySelector('[x-id="videoTutorial"]').addEventListener("click", (event) => {
+        event.preventDefault();
+        const container = document.querySelector(".video-container");
+        if (container.innerHTML.trim().length == 0) {
+            container.innerHTML = `<iframe style="width: 100%; height: 100%" src="https://www.youtube.com/embed/2u-T85yMKGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+            container.classList.remove("hidden");
+        } else {
+            container.innerHTML = "";
+            container.classList.add("hidden");
+        }
+    });
+
     await model.load();
     const itemsFilter = document.querySelector("items-filter");
     const itemsList = document.querySelector("items-list");
