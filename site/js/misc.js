@@ -120,9 +120,10 @@ exports.queryItemsAlasql = (query, items) => {
 };
 
 exports.queryItems = (query, items, exactWord) => {
-    query = query.trim();
-    if (query.length < 3) return [];
-    let tokens = query.split(/\s+/).map((token) => token.toLowerCase().replace(",", "."));
+    query = query.trim().replace(",", ".").toLowerCase();
+    if (query.length < 3) return { items: [], queryTokens: [] };
+    const regex = /([A-Za-z-][A-Za-z0-9-]*)|(>=|<=|=|>|<)|(\d+(\.\d+)?)/g;
+    let tokens = query.match(regex);
 
     // Find quantity/unit query
     let newTokens = [];
