@@ -2,12 +2,11 @@
 
 <div class="w-full max-w-5-xl relative px-4 flex-1">
     <div class="flex flex-row w-full justify-center font-bold text-primary gap-4 mt-4">
-        <a x-id="videoTutorial" href="">🎥 Video Anleitung</a>
+        <a class="border rounded-md" href="https://www.youtube.com/watch?v=2u-T85yMKGI">🎥 Video Anleitung</a>
         <a href="https://docs.google.com/document/d/1Q5OWJOICXjSzTEIHBZgJl1p3FsiWFO0lzXIuwGbXBck/edit?usp=sharing" target="_blank"
             >📖 Text Anleitung</a
         >
     </div>
-    <div class="video-container mt-4 flex flex-row justify-center hidden p-4" style="aspect-ratio: 16 / 9; width: 100%"></div>
     <h1 class="text-2xl font-bold pb-2 pt-8 text-center">Produktsuche</h1>
     <items-filter x-id="items-filter" emptyquery stores misc></items-filter>
     <items-list share json chart></items-list>
