@@ -16,7 +16,7 @@ function copyItemsToSite(dataDir) {
         analysis.writeJSON(`site/output/data/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
     }
     const csvItems = csv.itemsToCSV(items);
-    fs.writeFileSync("data/latest-canonical.csv", csvItems, "utf-8");
+    fs.writeFileSync("site/output/data/latest-canonical.csv", csvItems, "utf-8");
     console.log("Copied latest items to site.");
 }
 
