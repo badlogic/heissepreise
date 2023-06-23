@@ -2970,12 +2970,6 @@
     "code": "83"
   },
   {
-    "id": "F13-13-8",
-    "description": "Entsafter & Zitruspressen",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-8",
-    "code": "83"
-  },
-  {
     "id": "F13-13-9",
     "description": "Elektrische Schneidegeräte",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-9",
@@ -2998,5 +2992,11 @@
     "description": "Partyservice",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F15",
     "code": null
+  },
+  {
+    "id": "F13-13-8",
+    "description": "Entsafter & Zitruspressen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-8",
+    "code": "83"
   }
 ]

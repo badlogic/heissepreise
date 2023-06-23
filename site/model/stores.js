@@ -73,14 +73,13 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(allSpacesRegex, "-")}/${item.id}`,
     },
-    // Disabled as it just polutes search results
-    /*sparSi: {
+    sparSi: {
         name: "Spar SI",
         budgetBrands: ["s-budget"],
         color: "emerald",
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
-    },*/
+    },
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);

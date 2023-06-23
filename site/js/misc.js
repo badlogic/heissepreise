@@ -1,4 +1,5 @@
 const alasql = require("alasql");
+const { stores, BUDGET_BRANDS } = require("../model/stores");
 
 const UNITS = {
     "stk.": { unit: "stk", factor: 1 },
@@ -69,8 +70,11 @@ exports.fetchJSON = async (url) => {
 };
 
 exports.downloadJSON = (filename, content) => {
-    const json = JSON.stringify(content, null, 2);
-    const blob = new Blob([json], { type: "text/plain" });
+    exports.downloadFile(filename, JSON.stringify(content, null, 2));
+};
+
+exports.downloadFile = (filename, content) => {
+    const blob = new Blob([content], { type: "text/plain" });
     const element = document.createElement("a");
     element.href = URL.createObjectURL(blob);
     element.download = filename;
@@ -244,4 +248,29 @@ exports.log = (message, trace = false) => {
 
 exports.deltaTime = (start) => {
     return (performance.now() - start) / 1000;
+};
+
+exports.itemsToCSV = (items) => {
+    let result = "store;id;name;priceDate;price;isBudgetBrand;quantity;unit;isWeighted;isBio;isAvailable;url\n";
+    for (const item of items) {
+        if (item.store == "lidl" || item.store == "penny") continue;
+        let rowFront = "";
+        rowFront += item.store + ";";
+        rowFront += `"${item.id}"` + ";";
+        rowFront += item.name.replace(";", " ") + ";";
+
+        let rowBack = ";";
+        rowBack += BUDGET_BRANDS.some((budgetBrand) => item.name.toLowerCase().indexOf(budgetBrand) >= 0) + ";";
+        rowBack += item.quantity + ";";
+        rowBack += item.unit + ";";
+        rowBack += (item.isWeighted ?? false) + ";";
+        rowBack += (item.bio ?? false) + ";";
+        rowBack += !(item.unavailable ?? false) + ";";
+        rowBack += stores[item.store].getUrl(item) + ";";
+
+        for (const price of item.priceHistory) {
+            result += rowFront + price.date + ";" + price.price + rowBack + "\n";
+        }
+    }
+    return result;
 };

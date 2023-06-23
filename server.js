@@ -3,6 +3,7 @@ const path = require("path");
 const http = require("http");
 const analysis = require("./analysis");
 const bundle = require("./bundle");
+const csv = require("./site/js/misc");
 const chokidar = require("chokidar");
 const express = require("express");
 const compression = require("compression");
@@ -14,6 +15,8 @@ function copyItemsToSite(dataDir) {
         const storeItems = items.filter((item) => item.store === store);
         analysis.writeJSON(`site/output/data/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
     }
+    const csvItems = csv.itemsToCSV(items);
+    fs.writeFileSync("data/latest-canonical.csv", csvItems, "utf-8");
     console.log("Copied latest items to site.");
 }
 

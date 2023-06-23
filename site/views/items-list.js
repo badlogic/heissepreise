@@ -1,4 +1,4 @@
-const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log } = require("../js/misc");
+const { downloadJSON, downloadFile, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log, itemsToCSV } = require("../js/misc");
 const { vectorizeItems, similaritySortItems } = require("../js/knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
@@ -26,6 +26,7 @@ class ItemsList extends View {
                             <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
                             <span>
                                 <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
+                                <a x-id="csv" class="hidden text-primary font-medium hover:underline" href="">CSV</a>
                             </span>
                             <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
                                 this._chart ? "" : "hidden"
@@ -70,9 +71,16 @@ class ItemsList extends View {
 
         if (this._share) elements.shareLink.classList.remove("hidden");
         if (this._json) elements.json.classList.remove("hidden");
+        if (this._json) elements.csv.classList.remove("hidden");
         if (this._chart) elements.enableChart.classList.remove("hidden");
 
         elements.json.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (!this.model) return;
+            this.download(this.model.filteredItems);
+        });
+
+        elements.csv.addEventListener("click", (event) => {
             event.preventDefault();
             if (!this.model) return;
             this.download(this.model.filteredItems);
@@ -123,7 +131,7 @@ class ItemsList extends View {
         return super.model;
     }
 
-    download(items) {
+    download(items, json) {
         const cleanedItems = [];
         items.forEach((item) => {
             cleanedItems.push({
@@ -137,10 +145,15 @@ class ItemsList extends View {
                 unit: item.unit,
                 quantity: item.quantity,
                 bio: item.bio,
+                available: !(item.unavailable ?? false),
                 url: stores[item.store].getUrl(item),
             });
         });
-        downloadJSON("items.json", cleanedItems);
+        if (json) {
+            downloadJSON("items.json", cleanedItems);
+        } else {
+            downloadFile("items.csv", itemsToCSV(cleanedItems));
+        }
     }
 
     sort(items) {
