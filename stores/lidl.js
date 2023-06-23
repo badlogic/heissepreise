@@ -36,16 +36,19 @@ exports.getCanonical = function (item, today) {
         unit = unit.split("-")[0];
     }
 
+    const name = `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`;
+
     return utils.convertUnit(
         {
             id: item.productId,
-            name: `${item.keyfacts?.supplementalDescription?.concat(" ") ?? ""}${item.fullTitle}`,
+            name,
             description: item.keyfacts?.description ?? "",
             price: item.price.price,
             priceHistory: [{ date: today, price: item.price.price }],
             unit,
             quantity,
             url: item.canonicalUrl,
+            bio: name.toLowerCase().includes("bio"),
         },
         units,
         "lidl"

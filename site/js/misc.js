@@ -120,9 +120,10 @@ exports.queryItemsAlasql = (query, items) => {
 };
 
 exports.queryItems = (query, items, exactWord) => {
-    query = query.trim();
-    if (query.length < 3) return [];
-    let tokens = query.split(/\s+/).map((token) => token.toLowerCase().replace(",", "."));
+    query = query.trim().replace(",", ".").toLowerCase();
+    if (query.length < 3) return { items: [], queryTokens: [] };
+    const regex = /([\p{L}-][\p{L}\p{N}-]*)|(>=|<=|=|>|<)|(\d+(\.\d+)?)/gu;
+    let tokens = query.match(regex);
 
     // Find quantity/unit query
     let newTokens = [];
@@ -212,7 +213,7 @@ exports.queryItems = (query, items, exactWord) => {
             if (allUnitsMatched) hits.push(item);
         }
     }
-    return hits;
+    return { items: hits, queryTokens: tokens.filter((token) => !token.startsWith("-")) };
 };
 
 exports.onVisibleOnce = (target, callback) => {
