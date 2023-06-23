@@ -339,6 +339,9 @@ class ItemsList extends View {
                 if (item.chart && !this.elements.enableChart.checked) {
                     this.elements.enableChart.checked = true;
                     this.elements.chart.classList.remove("hidden");
+                } else if (!item.chart && this.elements.enableChart.checked) {
+                    this.elements.enableChart.checked = false;
+                    this.elements.chart.classList.add("hidden");
                 }
                 this.elements.chart.render();
                 this._ignoreChange = true;
