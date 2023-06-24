@@ -57,19 +57,19 @@
     "id": "pudding-creme-desserts",
     "description": "Kühlprodukte -> Milchprodukte -> Pudding & Desserts",
     "url": "https://shop.unimarkt.at/pudding-creme-desserts",
-    "code": "3A"
+    "code": "34"
   },
   {
     "id": "milchsnacks",
     "description": "Kühlprodukte -> Milchprodukte -> Milchsnacks",
     "url": "https://shop.unimarkt.at/milchsnacks",
-    "code": "3A"
+    "code": "34"
   },
   {
     "id": "butter-margarine-speisefette",
     "description": "Kühlprodukte -> Butter. Margarine & Speisefette",
     "url": "https://shop.unimarkt.at/butter-margarine-speisefette",
-    "code": "3A"
+    "code": "34"
   },
   {
     "id": "frischkaese-aufstriche",
@@ -309,7 +309,7 @@
     "id": "alkopop",
     "description": "Getränke -> Spirituosen -> Alkopop",
     "url": "https://shop.unimarkt.at/alkopop",
-    "code": null
+    "code": "24"
   },
   {
     "id": "vodka",
@@ -489,7 +489,7 @@
     "id": "suppeneinlagen",
     "description": "Lebensmittel -> Nudeln & andere Teigwaren -> Suppeneinlagen",
     "url": "https://shop.unimarkt.at/suppeneinlagen",
-    "code": null
+    "code": "5B"
   },
   {
     "id": "nudeln-pasta",
@@ -567,7 +567,7 @@
     "id": "suppen-bouillon-saucen",
     "description": "Lebensmittel -> Fixprodukte -> Suppen. Bouillon. Saucen",
     "url": "https://shop.unimarkt.at/suppen-bouillon-saucen",
-    "code": "5C"
+    "code": "54"
   },
   {
     "id": "basis-fixprodukte",
@@ -579,19 +579,19 @@
     "id": "beilagenmischung",
     "description": "Lebensmittel -> Fixprodukte -> Beilagenmischung",
     "url": "https://shop.unimarkt.at/beilagenmischung",
-    "code": null
+    "code": "5F"
   },
   {
     "id": "vegan-vegetarisch",
     "description": "Lebensmittel -> Spezialnahrung -> Vegan & vegetarisch",
     "url": "https://shop.unimarkt.at/vegan-vegetarisch",
-    "code": null
+    "code": "5D"
   },
   {
     "id": "nahrungsergaenzung",
     "description": "Lebensmittel -> Spezialnahrung -> Nahrungsergänzung",
     "url": "https://shop.unimarkt.at/nahrungsergaenzung",
-    "code": null
+    "code": "5D"
   },
   {
     "id": "tafelschokolade",
@@ -663,13 +663,13 @@
     "id": "nuesse-kerne",
     "description": "Süßes & Snacks -> Knabbereien -> Nüsse & Kerne",
     "url": "https://shop.unimarkt.at/nuesse-kerne",
-    "code": "63"
+    "code": "03"
   },
   {
     "id": "koerperpflege",
     "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Körperpflege",
     "url": "https://shop.unimarkt.at/koerperpflege",
-    "code": "78"
+    "code": "75"
   },
   {
     "id": "haarpflege",
@@ -687,7 +687,7 @@
     "id": "wattestaebchen-wattepads-pflaster",
     "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Wattestäbchen. Wattepads & Pflaster",
     "url": "https://shop.unimarkt.at/wattestaebchen-wattepads-pflaster",
-    "code": "74"
+    "code": "75"
   },
   {
     "id": "rasierartikel-zubehoer",
@@ -717,7 +717,7 @@
     "id": "toilettartikel",
     "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Toilettartikel",
     "url": "https://shop.unimarkt.at/toilettartikel",
-    "code": null
+    "code": "84"
   },
   {
     "id": "taschentuecher",
@@ -801,13 +801,13 @@
     "id": "servietten",
     "description": "Haushalt -> Haushaltszubehör -> Servietten",
     "url": "https://shop.unimarkt.at/servietten",
-    "code": "83"
+    "code": "89"
   },
   {
     "id": "saecke-folien",
     "description": "Haushalt -> Haushaltszubehör -> Säcke & Folien",
     "url": "https://shop.unimarkt.at/saecke-folien",
-    "code": "83"
+    "code": "86"
   },
   {
     "id": "kaffeefilter",
@@ -843,18 +843,18 @@
     "id": "tiernahrung",
     "description": "Haushalt -> Tiernahrung & -zubehör -> Tiernahrung",
     "url": "https://shop.unimarkt.at/tiernahrung",
-    "code": null
+    "code": "90"
   },
   {
     "id": "tierzubehoer",
     "description": "Haushalt -> Tiernahrung & -zubehör -> Tierzubehör",
     "url": "https://shop.unimarkt.at/tierzubehoer",
-    "code": null
+    "code": "92"
   },
   {
     "id": "blumenerde-duenger",
     "description": "Haushalt -> Blumenerde & Dünger",
     "url": "https://shop.unimarkt.at/blumenerde-duenger",
-    "code": null
+    "code": "81"
   }
 ]
