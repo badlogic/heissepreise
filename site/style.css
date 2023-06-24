@@ -211,31 +211,26 @@ thead > tr {
 }
 
 .wrapper {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    gap: 0.5em;
-    z-index: 1;
+    @apply flex justify-center items-center;
+    @apply relative text-center mx-auto my-0 gap-2;
+    @apply w-full z-[1];
 }
+
 .wrapper--search label {
-    cursor: pointer;
+    @apply cursor-pointer;
 }
 .wrapper--search abbr {
-    text-decoration: none;
+    @apply no-underline;
 }
 .wrapper--sticky {
-    flex-direction: column;
-    position: sticky;
-    top: 4em;
-    z-index: 1;
-    padding: 1em;
+    @apply flex-col z-[1] p-1 gap-0;
 }
 
 .toggle:not(:checked) ~ .wrapper--sticky,
 .toggle:not(:checked) ~ .wrapper--sticky * {
-    display: none;
+    @apply hidden;
+}
+
+.sticky ~ items-list > items-chart > .sticky {
+    @apply top-[4.5em];
 }
