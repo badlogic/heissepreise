@@ -38,14 +38,16 @@ function replaceFileContents(string, fileDir) {
 
 function processFile(inputFile, outputFile, filter) {
     const fileDir = path.dirname(inputFile);
-    const data = fs.readFileSync(inputFile, "utf8");
-    if (filter(inputFile, false, data)) {
-        // console.log(`${inputFile} omitted by filter`);
-        return;
+    if (inputFile.includes(".mp3")) {
+        const data = fs.readFileSync(inputFile);
+        fs.writeFileSync(outputFile, data);
+    } else {
+        const data = fs.readFileSync(inputFile, "utf8");
+        if (filter(inputFile, false, data)) return;
+        const replacedData = replaceFileContents(data, fileDir);
+        fs.writeFileSync(outputFile, replacedData);
     }
     console.log(`${inputFile} -> ${outputFile}`);
-    const replacedData = replaceFileContents(data, fileDir);
-    fs.writeFileSync(outputFile, replacedData);
 }
 
 function generateSite(inputDir, outputDir, deleteOutput, filter) {
