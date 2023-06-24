@@ -11,6 +11,8 @@ class Settings extends Model {
             this[store] = stores[store].defaultChecked;
         });
         this.onlyAvailable = true;
+        this.stickyChart = true;
+        this.stickySearch = false;
 
         let settings = localStorage.getItem("settings");
         if (settings) {

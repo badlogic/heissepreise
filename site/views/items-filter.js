@@ -24,7 +24,20 @@ class ItemsFilter extends View {
         const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen... (min. 3 Zeichen)";
 
         this.innerHTML = /*html*/ `
+            ${
+                settings.stickySearch
+                    ? `
+            <div class="wrapper wrapper--search">
+                <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+                <label for="filter-toggle-search"><abbr title="Filter anzeigen/ausblenden">🎚</abbr></label>
+            </div>
+            <input class="toggle toggle--hidden" type="checkbox" id="filter-toggle-search" />
+            <div class="wrapper wrapper--sticky">
+            `
+                    : `
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+            `
+            }
 
             <div x-id="sqlError" class="hidden mt-4 p-4">
             </div>
@@ -88,8 +101,20 @@ class ItemsFilter extends View {
                         )
                         .join("")}
             </div>
+            ${
+                settings.stickySearch
+                    ? `
+            </div>
+            `
+                    : ""
+            }
         `;
         this.classList.add("items-filter");
+
+        if (settings.stickySearch) {
+            this.classList.add("sticky");
+            this.style = "top: -1px;z-index:20;";
+        }
 
         const elements = this.elements;
 
@@ -132,9 +157,11 @@ class ItemsFilter extends View {
         });
 
         this.setupEventHandlers();
+        this.setupStickyChart();
 
         this.addEventListener("x-change", () => {
             this.filter();
+            this.observe();
         });
     }
 
@@ -159,6 +186,35 @@ class ItemsFilter extends View {
                 elements.categories.classList.add("hidden");
             }
         }
+    }
+
+    setupStickyChart() {
+        if (!settings.stickySearch) return;
+        this.observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    const clientRect = entry.target.getBoundingClientRect();
+                    console.log(entry.target, entry.intersectionRatio);
+                    if (entry.intersectionRatio < 0.999 && clientRect.top + clientRect.height < window.innerHeight) {
+                        // Fix Edge issue
+                        entry.target.classList.add("wrapper--pinned");
+                    } else {
+                        entry.target.classList.remove("wrapper--pinned");
+                    }
+                }
+            },
+            {
+                rootMargin: "0px",
+                threshold: 0.999,
+            }
+        );
+        this.observe();
+    }
+
+    observe() {
+        if (this.observer == null) return;
+        this.observer.unobserve(this);
+        this.observer.observe(this);
     }
 
     filter() {

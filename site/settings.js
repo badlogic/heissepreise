@@ -38,6 +38,8 @@ class SettingsView extends View {
                     </select>
                 </div>
                 <custom-checkbox x-id="onlyAvailable" x-state x-change label="Nur verfügbare Produkte anzeigen" checked></custom-checkbox>
+                <custom-checkbox x-id="stickyChart" x-state x-change label="Diagramm immer anzeigen (wenn verfügbar)" checked></custom-checkbox>
+                <custom-checkbox x-id="stickySearch" x-state x-change label="Suche immer anzeigen (wenn verfügbar)"></custom-checkbox>
             </div>
         `;
         this.setupEventHandlers();

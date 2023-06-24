@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-*.hidden {
-    display: none !important;
-}
-
 /* Product table */
 thead > tr {
     @apply bg-primary text-white text-left hidden md:table-row uppercase text-sm;
@@ -208,6 +204,38 @@ thead > tr {
     font-weight: 900 !important;
 }
 
-.hidden {
+*.hidden,
+.hidden,
+.toggle--hidden {
     display: none !important;
+}
+
+.wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 0.5em;
+    z-index: 1;
+}
+.wrapper--search label {
+    cursor: pointer;
+}
+.wrapper--search abbr {
+    text-decoration: none;
+}
+.wrapper--sticky {
+    flex-direction: column;
+    position: sticky;
+    top: 4em;
+    z-index: 1;
+    padding: 1em;
+}
+
+.toggle:not(:checked) ~ .wrapper--sticky,
+.toggle:not(:checked) ~ .wrapper--sticky * {
+    display: none;
 }
