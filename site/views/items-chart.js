@@ -14,8 +14,8 @@ class ItemsChart extends View {
 
         this.unitPrice = false;
         this.innerHTML = /*html*/ `
-            <div class="bg-stone-200 p-4 mx-auto md:rounded-none md:mb-0 rounded-xl mb-4">
-                <div class="w-full  h-[calc(100vh*0.50)] md:h-[calc(100vh*0.60)] lg:h-[calc(100vh*0.60)]" style="position: relative;">
+            <div class="bg-stone-200 p-4 mb-4 mx-auto md:rounded-none md:mb-0 rounded-xl mb-4w ${settings.stickyChart ? "sticky top-0" : ""}">
+                <div class="w-full h-[calc(100vh*0.50)] md:h-[calc(100vh*0.60)] lg:h-[calc(100vh*0.60)]" style="position: relative;">
                     <canvas x-id="canvas" class="bg-white rounded-lg"></canvas>
                     <div x-id="noData" class="hidden flex items-center justify-center h-full">Keine Daten ausgewählt</div>
                 </div>
