@@ -157,11 +157,9 @@ class ItemsFilter extends View {
         });
 
         this.setupEventHandlers();
-        this.setupStickyChart();
 
         this.addEventListener("x-change", () => {
             this.filter();
-            this.observe();
         });
     }
 
@@ -186,35 +184,6 @@ class ItemsFilter extends View {
                 elements.categories.classList.add("hidden");
             }
         }
-    }
-
-    setupStickyChart() {
-        if (!settings.stickySearch) return;
-        this.observer = new IntersectionObserver(
-            (entries) => {
-                for (const entry of entries) {
-                    const clientRect = entry.target.getBoundingClientRect();
-                    console.log(entry.target, entry.intersectionRatio);
-                    if (entry.intersectionRatio < 0.999 && clientRect.top + clientRect.height < window.innerHeight) {
-                        // Fix Edge issue
-                        entry.target.classList.add("wrapper--pinned");
-                    } else {
-                        entry.target.classList.remove("wrapper--pinned");
-                    }
-                }
-            },
-            {
-                rootMargin: "0px",
-                threshold: 0.999,
-            }
-        );
-        this.observe();
-    }
-
-    observe() {
-        if (this.observer == null) return;
-        this.observer.unobserve(this);
-        this.observer.observe(this);
     }
 
     filter() {
