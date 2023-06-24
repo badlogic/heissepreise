@@ -242,3 +242,7 @@ thead > tr {
 .sticky ~ items-list > items-chart > .sticky {
     @apply top-[4.5em];
 }
+
+a {
+    @apply hover:underline;
+}

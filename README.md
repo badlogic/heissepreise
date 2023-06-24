@@ -70,7 +70,7 @@ If you run the project locally, you can use the data from the live site includin
 ```
 cd heisse-preise
 rm data/latest-canonical.*
-curl -O data/latest-canonical.json https://heisse-preise.io/data/latest-canonical.json
+curl -o data/latest-canonical.json https://heisse-preise.io/data/latest-canonical.json
 ```
 
 Restart the server with either `npm run dev` or `npm run start`.
