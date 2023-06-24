@@ -8,9 +8,9 @@ thead > tr {
 }
 .item {
     @apply mb-3 overflow-hidden;
-    @apply grid grid-cols-3 col-span-3;
+    @apply grid grid-cols-3 col-span-3 items-end;
     @apply md:table-row;
-    @apply border border-b rounded-xl;
+    @apply border border-b md:rounded-xl;
 }
 
 .item > td[data-label="Kette"] {
@@ -25,14 +25,22 @@ thead > tr {
     @apply order-1 col-span-3;
 }
 .item > td[data-label="Preis"] {
-    @apply p-1 text-left whitespace-nowrap align-top z-20;
+    @apply p-1 text-left whitespace-nowrap align-top;
     @apply order-3;
 }
 .item > td:nth-child(4) {
     @apply order-4 text-right;
 }
-.item > td.action {
-    @apply order-5 flex justify-end p-1;
+.item > td[data-label="Aktionen"] {
+    @apply order-5 p-1;
+}
+.action {
+    @apply flex justify-end;
+}
+
+.item > td[data-label]::before {
+    @apply content-label font-bold uppercase block bg-primary text-white px-1 -m-1 mb-1 text-sm;
+    @apply md:content-none;
 }
 
 .item .chevron {
@@ -213,7 +221,7 @@ thead > tr {
 .wrapper {
     @apply flex justify-center items-center;
     @apply relative text-center mx-auto my-0 gap-2;
-    @apply w-full z-[1];
+    @apply w-full z-[2];
 }
 
 .wrapper--search label {
@@ -223,7 +231,7 @@ thead > tr {
     @apply no-underline;
 }
 .wrapper--sticky {
-    @apply flex-col z-[1] p-1 gap-0;
+    @apply flex-col z-[2] p-1 gap-0;
 }
 
 .toggle:not(:checked) ~ .wrapper--sticky,

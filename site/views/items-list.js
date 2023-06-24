@@ -58,7 +58,7 @@ class ItemsList extends View {
                     <tr class="bg-primary text-white md:table-row uppercase text-sm">
                         <th class="text-center">Kette</th>
                         <th>Name</th>
-                        <th x-id="expandPriceHistories" class="cursor-pointer">Preis +</th>
+                        <th x-id="expandPriceHistories" class="cursor-pointer">Preis ▼</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -95,7 +95,7 @@ class ItemsList extends View {
         this._showAllPriceHistories = false;
         elements.expandPriceHistories.addEventListener("click", () => {
             const showAll = (this._showAllPriceHistories = !this._showAllPriceHistories);
-            elements.expandPriceHistories.innerText = showAll ? "Preis -" : "Preis +";
+            elements.expandPriceHistories.innerText = showAll ? "Preis ▲" : "Preis ▼";
             elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
         });
 
@@ -227,15 +227,17 @@ class ItemsList extends View {
                     <span x-id="numPrices"></span>
                     <span class="chevron">▼</span>
                 </td>
-                <td class="action">
-                    <label x-id="chart" class="${this._chart ? "" : "hidden"}">
-                        <input x-id="chartCheckbox" type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-blue-700 btn-action">📈</span>
-                    </label>
-                    <input x-id="add" type="button" class="${this._add ? "" : "hidden"} btn-action" value="+">
-                    <input x-id="remove" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="-">
-                    <input x-id="up" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▲">
-                    <input x-id="down" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▼">
+                <td data-label="Aktionen">
+                    <span class="action">
+                        <label x-id="chart" class="${this._chart ? "" : "hidden"}">
+                            <input x-id="chartCheckbox" type="checkbox" class="hidden peer">
+                            <span class="peer-checked:bg-blue-700 btn-action">📈</span>
+                        </label>
+                        <input x-id="add" type="button" class="${this._add ? "" : "hidden"} btn-action" value="+">
+                        <input x-id="remove" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="-">
+                        <input x-id="up" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▲">
+                        <input x-id="down" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▼">
+                    </span>
                 </td>
             `
             );
