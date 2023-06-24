@@ -274,3 +274,17 @@ exports.itemsToCSV = (items) => {
     }
     return result;
 };
+
+/**
+ * @description Formats a number to a locale string with maximum of 2 decimal places with separators
+ * @param {*} number
+ * @returns {string} formatted number
+ * @error returns input if formatting fails
+ */
+exports.numberToLocale = (number) => {
+    try {
+        return number.toLocaleString("at-DE", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    } catch (e) {
+        return number;
+    }
+};

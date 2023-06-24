@@ -1,4 +1,15 @@
-const { downloadJSON, downloadFile, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log, itemsToCSV } = require("../js/misc");
+const {
+    downloadJSON,
+    downloadFile,
+    dom,
+    onVisibleOnce,
+    isMobile,
+    getBooleanAttribute,
+    deltaTime,
+    log,
+    itemsToCSV,
+    numberToLocale,
+} = require("../js/misc");
 const { vectorizeItems, similaritySortItems } = require("../js/knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
@@ -439,7 +450,8 @@ class ItemsList extends View {
             elements.options.classList.remove("hidden");
             elements.itemsTable.classList.remove("hidden");
         }
-        elements.numItems.innerHTML = items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
+        elements.numItems.innerHTML =
+            numberToLocale(items.length) + (this.model.totalItems > items.length ? " / " + numberToLocale(this.model.totalItems) : "");
         const tableBody = elements.tableBody;
         tableBody.innerHTML = "";
 
