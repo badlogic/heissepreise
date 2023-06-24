@@ -1,0 +1,860 @@
+[
+  {
+    "id": "bio-obst-gemuese",
+    "description": "Obst & Gemüse -> Bio Obst & Gemüse",
+    "url": "https://shop.unimarkt.at/bio-obst-gemuese",
+    "code": "00"
+  },
+  {
+    "id": "obst",
+    "description": "Obst & Gemüse -> Obst",
+    "url": "https://shop.unimarkt.at/obst",
+    "code": "00"
+  },
+  {
+    "id": "gemuese",
+    "description": "Obst & Gemüse -> Gemüse",
+    "url": "https://shop.unimarkt.at/gemuese",
+    "code": "01"
+  },
+  {
+    "id": "sauerkraut-kren",
+    "description": "Obst & Gemüse -> Sauerkraut & Kren",
+    "url": "https://shop.unimarkt.at/sauerkraut-kren",
+    "code": "01"
+  },
+  {
+    "id": "milch",
+    "description": "Kühlprodukte -> Milchprodukte -> Milch",
+    "url": "https://shop.unimarkt.at/milch",
+    "code": "34"
+  },
+  {
+    "id": "haltbarmilch",
+    "description": "Kühlprodukte -> Milchprodukte -> Haltbarmilch",
+    "url": "https://shop.unimarkt.at/haltbarmilch",
+    "code": "34"
+  },
+  {
+    "id": "obers-rahm-topfen",
+    "description": "Kühlprodukte -> Milchprodukte -> Obers. Rahm & Topfen",
+    "url": "https://shop.unimarkt.at/obers-rahm-topfen",
+    "code": "34"
+  },
+  {
+    "id": "milch-mix-getraenke",
+    "description": "Kühlprodukte -> Milchprodukte -> Milchgetränke",
+    "url": "https://shop.unimarkt.at/milch-mix-getraenke",
+    "code": "34"
+  },
+  {
+    "id": "joghurt-desserts",
+    "description": "Kühlprodukte -> Milchprodukte -> Joghurt",
+    "url": "https://shop.unimarkt.at/joghurt-desserts",
+    "code": "34"
+  },
+  {
+    "id": "pudding-creme-desserts",
+    "description": "Kühlprodukte -> Milchprodukte -> Pudding & Desserts",
+    "url": "https://shop.unimarkt.at/pudding-creme-desserts",
+    "code": "3A"
+  },
+  {
+    "id": "milchsnacks",
+    "description": "Kühlprodukte -> Milchprodukte -> Milchsnacks",
+    "url": "https://shop.unimarkt.at/milchsnacks",
+    "code": "3A"
+  },
+  {
+    "id": "butter-margarine-speisefette",
+    "description": "Kühlprodukte -> Butter. Margarine & Speisefette",
+    "url": "https://shop.unimarkt.at/butter-margarine-speisefette",
+    "code": "3A"
+  },
+  {
+    "id": "frischkaese-aufstriche",
+    "description": "Kühlprodukte -> Käse & Aufstriche -> Frischkäse & Aufstriche",
+    "url": "https://shop.unimarkt.at/frischkaese-aufstriche",
+    "code": "33"
+  },
+  {
+    "id": "weichkaese",
+    "description": "Kühlprodukte -> Käse & Aufstriche -> Weichkäse",
+    "url": "https://shop.unimarkt.at/weichkaese",
+    "code": "33"
+  },
+  {
+    "id": "schmelzkaese-schnittkaese-hartkaese",
+    "description": "Kühlprodukte -> Käse & Aufstriche -> Schmelzkäse. Schnittkäse. Hartkäse",
+    "url": "https://shop.unimarkt.at/schmelzkaese-schnittkaese-hartkaese",
+    "code": "33"
+  },
+  {
+    "id": "eier",
+    "description": "Kühlprodukte -> Eier",
+    "url": "https://shop.unimarkt.at/eier",
+    "code": "31"
+  },
+  {
+    "id": "fertigteig-frisch",
+    "description": "Kühlprodukte -> Schnelle Küche -> Fertigteig - frisch",
+    "url": "https://shop.unimarkt.at/fertigteig-frisch",
+    "code": "36"
+  },
+  {
+    "id": "schwein",
+    "description": "Fleisch & Wurst -> Fleisch -> Schwein",
+    "url": "https://shop.unimarkt.at/schwein",
+    "code": "32"
+  },
+  {
+    "id": "rind",
+    "description": "Fleisch & Wurst -> Fleisch -> Rind",
+    "url": "https://shop.unimarkt.at/rind",
+    "code": "32"
+  },
+  {
+    "id": "huhn-pute",
+    "description": "Fleisch & Wurst -> Fleisch -> Huhn & Pute",
+    "url": "https://shop.unimarkt.at/huhn-pute",
+    "code": "32"
+  },
+  {
+    "id": "wurstaufschnitt",
+    "description": "Fleisch & Wurst -> Wurst. Schinken & Speck -> Wurstaufschnitt",
+    "url": "https://shop.unimarkt.at/wurstaufschnitt",
+    "code": "37"
+  },
+  {
+    "id": "roh-dauerwurst-salami",
+    "description": "Fleisch & Wurst -> Wurst. Schinken & Speck -> Wurst und Stangenwurst",
+    "url": "https://shop.unimarkt.at/roh-dauerwurst-salami",
+    "code": "37"
+  },
+  {
+    "id": "schinken",
+    "description": "Fleisch & Wurst -> Wurst. Schinken & Speck -> Schinken",
+    "url": "https://shop.unimarkt.at/schinken",
+    "code": "37"
+  },
+  {
+    "id": "speck",
+    "description": "Fleisch & Wurst -> Wurst. Schinken & Speck -> Speck",
+    "url": "https://shop.unimarkt.at/speck",
+    "code": "37"
+  },
+  {
+    "id": "streichwurst-grammeln-mehr",
+    "description": "Fleisch & Wurst -> Wurst. Schinken & Speck -> Streichwurst. Grammeln. Schmalz & Sulz",
+    "url": "https://shop.unimarkt.at/streichwurst-grammeln-mehr",
+    "code": "37"
+  },
+  {
+    "id": "wuerstel",
+    "description": "Fleisch & Wurst -> Würstel",
+    "url": "https://shop.unimarkt.at/wuerstel",
+    "code": "37"
+  },
+  {
+    "id": "spezialitaeten",
+    "description": "Fleisch & Wurst -> Lachs",
+    "url": "https://shop.unimarkt.at/spezialitaeten",
+    "code": "39"
+  },
+  {
+    "id": "aufbackbroetchen-toastbrot-schnittbrot",
+    "description": "Brot & Gebäck -> Aufbackbrötchen. Toastbrot & Schnittbrot",
+    "url": "https://shop.unimarkt.at/aufbackbroetchen-toastbrot-schnittbrot",
+    "code": "10"
+  },
+  {
+    "id": "kuchen-mehlspeisen",
+    "description": "Brot & Gebäck -> Kuchen & Mehlspeisen",
+    "url": "https://shop.unimarkt.at/kuchen-mehlspeisen",
+    "code": "13"
+  },
+  {
+    "id": "semmelbroesel-knoedelbrot",
+    "description": "Brot & Gebäck -> Semmelbrösel & Knödelbrot",
+    "url": "https://shop.unimarkt.at/semmelbroesel-knoedelbrot",
+    "code": "14"
+  },
+  {
+    "id": "knaeckebrot-zwieback",
+    "description": "Brot & Gebäck -> Knäckebrot & Zwieback",
+    "url": "https://shop.unimarkt.at/knaeckebrot-zwieback",
+    "code": "12"
+  },
+  {
+    "id": "mineralwasser-soda",
+    "description": "Getränke -> Mineralwasser & mehr -> Mineralwasser & Soda",
+    "url": "https://shop.unimarkt.at/mineralwasser-soda",
+    "code": "26"
+  },
+  {
+    "id": "wasser-mit-geschmack",
+    "description": "Getränke -> Mineralwasser & mehr -> Wasser mit Geschmack",
+    "url": "https://shop.unimarkt.at/wasser-mit-geschmack",
+    "code": "26"
+  },
+  {
+    "id": "kaffee",
+    "description": "Getränke -> Heißgetränke -> Kaffee",
+    "url": "https://shop.unimarkt.at/kaffee",
+    "code": "22"
+  },
+  {
+    "id": "kakao",
+    "description": "Getränke -> Heißgetränke -> Kakao",
+    "url": "https://shop.unimarkt.at/kakao",
+    "code": "22"
+  },
+  {
+    "id": "tee",
+    "description": "Getränke -> Heißgetränke -> Tee",
+    "url": "https://shop.unimarkt.at/tee",
+    "code": "22"
+  },
+  {
+    "id": "eistee",
+    "description": "Getränke -> Eistee & Eiskaffee -> Eistee",
+    "url": "https://shop.unimarkt.at/eistee",
+    "code": "20"
+  },
+  {
+    "id": "eiskaffee-kaffeemixgetraenke",
+    "description": "Getränke -> Eistee & Eiskaffee -> Eiskaffee & Kaffeemixgetränke",
+    "url": "https://shop.unimarkt.at/eiskaffee-kaffeemixgetraenke",
+    "code": "22"
+  },
+  {
+    "id": "limonaden",
+    "description": "Getränke -> Limonaden & Sirup -> Limonaden",
+    "url": "https://shop.unimarkt.at/limonaden",
+    "code": "20"
+  },
+  {
+    "id": "sirup",
+    "description": "Getränke -> Limonaden & Sirup -> Sirup",
+    "url": "https://shop.unimarkt.at/sirup",
+    "code": "20"
+  },
+  {
+    "id": "energydrinks",
+    "description": "Getränke -> Energydrinks",
+    "url": "https://shop.unimarkt.at/energydrinks",
+    "code": "20"
+  },
+  {
+    "id": "smoothies-direktfruchtsaefte",
+    "description": "Getränke -> Smoothies & Direkt-Fruchtsäfte",
+    "url": "https://shop.unimarkt.at/smoothies-direktfruchtsaefte",
+    "code": "20"
+  },
+  {
+    "id": "fruchtsaefte-nektar",
+    "description": "Getränke -> Fruchtsäfte & Nektar",
+    "url": "https://shop.unimarkt.at/fruchtsaefte-nektar",
+    "code": "20"
+  },
+  {
+    "id": "bier",
+    "description": "Getränke -> Bier. Radler und mehr -> Bier",
+    "url": "https://shop.unimarkt.at/bier",
+    "code": "21"
+  },
+  {
+    "id": "weissbier-bockbier",
+    "description": "Getränke -> Bier. Radler und mehr -> Weißbier & Bockbier",
+    "url": "https://shop.unimarkt.at/weissbier-bockbier",
+    "code": "21"
+  },
+  {
+    "id": "radler",
+    "description": "Getränke -> Bier. Radler und mehr -> Radler",
+    "url": "https://shop.unimarkt.at/radler",
+    "code": "21"
+  },
+  {
+    "id": "alkoholfreies-bier",
+    "description": "Getränke -> Bier. Radler und mehr -> Alkoholfreies Bier",
+    "url": "https://shop.unimarkt.at/alkoholfreies-bier",
+    "code": "21"
+  },
+  {
+    "id": "weisswein",
+    "description": "Getränke -> Wein -> Weißwein",
+    "url": "https://shop.unimarkt.at/weisswein",
+    "code": "25"
+  },
+  {
+    "id": "rotwein",
+    "description": "Getränke -> Wein -> Rotwein",
+    "url": "https://shop.unimarkt.at/rotwein",
+    "code": "25"
+  },
+  {
+    "id": "sekt-spumante",
+    "description": "Getränke -> Sekt & Schaumweine -> Sekt & Spumante",
+    "url": "https://shop.unimarkt.at/sekt-spumante",
+    "code": "23"
+  },
+  {
+    "id": "prosecco-frizzante",
+    "description": "Getränke -> Sekt & Schaumweine -> Prosecco & Frizzante",
+    "url": "https://shop.unimarkt.at/prosecco-frizzante",
+    "code": "23"
+  },
+  {
+    "id": "alkopop",
+    "description": "Getränke -> Spirituosen -> Alkopop",
+    "url": "https://shop.unimarkt.at/alkopop",
+    "code": null
+  },
+  {
+    "id": "vodka",
+    "description": "Getränke -> Spirituosen -> Vodka",
+    "url": "https://shop.unimarkt.at/vodka",
+    "code": "24"
+  },
+  {
+    "id": "rum",
+    "description": "Getränke -> Spirituosen -> Rum",
+    "url": "https://shop.unimarkt.at/rum",
+    "code": "24"
+  },
+  {
+    "id": "scotch-whisky",
+    "description": "Getränke -> Spirituosen -> Scotch & Whiskey",
+    "url": "https://shop.unimarkt.at/scotch-whisky",
+    "code": "24"
+  },
+  {
+    "id": "kraeuterbitter",
+    "description": "Getränke -> Spirituosen -> Kräuterbitter",
+    "url": "https://shop.unimarkt.at/kraeuterbitter",
+    "code": "24"
+  },
+  {
+    "id": "weinbrand-cognac",
+    "description": "Getränke -> Spirituosen -> Weinbrand & Cognac",
+    "url": "https://shop.unimarkt.at/weinbrand-cognac",
+    "code": "24"
+  },
+  {
+    "id": "wermut-sherry",
+    "description": "Getränke -> Spirituosen -> Wermut & Sherry",
+    "url": "https://shop.unimarkt.at/wermut-sherry",
+    "code": "24"
+  },
+  {
+    "id": "gin",
+    "description": "Getränke -> Spirituosen -> Gin",
+    "url": "https://shop.unimarkt.at/gin",
+    "code": "24"
+  },
+  {
+    "id": "schnaps-likoer",
+    "description": "Getränke -> Spirituosen -> Schnaps & Likör",
+    "url": "https://shop.unimarkt.at/schnaps-likoer",
+    "code": "24"
+  },
+  {
+    "id": "marmelade",
+    "description": "Lebensmittel -> Süße Aufstriche -> Marmelade",
+    "url": "https://shop.unimarkt.at/marmelade",
+    "code": "56"
+  },
+  {
+    "id": "honig-ahornsirup",
+    "description": "Lebensmittel -> Süße Aufstriche -> Honig & Ahornsirup",
+    "url": "https://shop.unimarkt.at/honig-ahornsirup",
+    "code": "56"
+  },
+  {
+    "id": "haselnuss-nougatcreme",
+    "description": "Lebensmittel -> Süße Aufstriche -> Haselnuss & Nougatcreme",
+    "url": "https://shop.unimarkt.at/haselnuss-nougatcreme",
+    "code": "56"
+  },
+  {
+    "id": "zucker-suessstoff",
+    "description": "Lebensmittel -> Backzutaten -> Zucker & Süßstoff",
+    "url": "https://shop.unimarkt.at/zucker-suessstoff",
+    "code": "5E"
+  },
+  {
+    "id": "pudding-puddingmixtur",
+    "description": "Lebensmittel -> Backzutaten -> Pudding",
+    "url": "https://shop.unimarkt.at/pudding-puddingmixtur",
+    "code": "5F"
+  },
+  {
+    "id": "nuesse-trockenfruechte",
+    "description": "Lebensmittel -> Backzutaten -> Nüsse & Trockenfrüchte",
+    "url": "https://shop.unimarkt.at/nuesse-trockenfruechte",
+    "code": "03"
+  },
+  {
+    "id": "dekor-glasur-streusel",
+    "description": "Lebensmittel -> Backzutaten -> Dekor. Glasur. Streusel",
+    "url": "https://shop.unimarkt.at/dekor-glasur-streusel",
+    "code": "52"
+  },
+  {
+    "id": "sonstige-backartikel",
+    "description": "Lebensmittel -> Backzutaten -> Sonstige Backartikel",
+    "url": "https://shop.unimarkt.at/sonstige-backartikel",
+    "code": "52"
+  },
+  {
+    "id": "tafeloel-rapsoel-mehr",
+    "description": "Lebensmittel -> Essig. Öl & Dressing -> Tafelöl. Rapsöl & mehr",
+    "url": "https://shop.unimarkt.at/tafeloel-rapsoel-mehr",
+    "code": "53"
+  },
+  {
+    "id": "olivenoel",
+    "description": "Lebensmittel -> Essig. Öl & Dressing -> Olivenöl",
+    "url": "https://shop.unimarkt.at/olivenoel",
+    "code": "53"
+  },
+  {
+    "id": "essig-weinessig-mehr",
+    "description": "Lebensmittel -> Essig. Öl & Dressing -> Essig. Weinessig & mehr",
+    "url": "https://shop.unimarkt.at/essig-weinessig-mehr",
+    "code": "53"
+  },
+  {
+    "id": "balsamicoessig",
+    "description": "Lebensmittel -> Essig. Öl & Dressing -> Balsamicoessig",
+    "url": "https://shop.unimarkt.at/balsamicoessig",
+    "code": "53"
+  },
+  {
+    "id": "dressing-salatmarinade",
+    "description": "Lebensmittel -> Essig. Öl & Dressing -> Dressing & Salatmarinade",
+    "url": "https://shop.unimarkt.at/dressing-salatmarinade",
+    "code": "5C"
+  },
+  {
+    "id": "salz-salzmixtur",
+    "description": "Lebensmittel -> Salz. Gewürze & Würzmittel -> Salz & Salzmixtur",
+    "url": "https://shop.unimarkt.at/salz-salzmixtur",
+    "code": "55"
+  },
+  {
+    "id": "kraeuter-gewuerze",
+    "description": "Lebensmittel -> Salz. Gewürze & Würzmittel -> Kräuter & Gewürze",
+    "url": "https://shop.unimarkt.at/kraeuter-gewuerze",
+    "code": "55"
+  },
+  {
+    "id": "ketchup",
+    "description": "Lebensmittel -> Ketchup. Senf & Saucen -> Ketchup",
+    "url": "https://shop.unimarkt.at/ketchup",
+    "code": "5C"
+  },
+  {
+    "id": "senf",
+    "description": "Lebensmittel -> Ketchup. Senf & Saucen -> Senf. Tafelkren & mehr",
+    "url": "https://shop.unimarkt.at/senf",
+    "code": "5C"
+  },
+  {
+    "id": "mayonaise",
+    "description": "Lebensmittel -> Ketchup. Senf & Saucen -> Mayonnaise",
+    "url": "https://shop.unimarkt.at/mayonaise",
+    "code": "5C"
+  },
+  {
+    "id": "saucen",
+    "description": "Lebensmittel -> Ketchup. Senf & Saucen -> Saucen",
+    "url": "https://shop.unimarkt.at/saucen",
+    "code": "5C"
+  },
+  {
+    "id": "pastasaucen-sugo",
+    "description": "Lebensmittel -> Ketchup. Senf & Saucen -> Pastasaucen & Sugo",
+    "url": "https://shop.unimarkt.at/pastasaucen-sugo",
+    "code": "5B"
+  },
+  {
+    "id": "delikatessen-welt",
+    "description": "Lebensmittel -> Delikatessen aus aller Welt",
+    "url": "https://shop.unimarkt.at/delikatessen-welt",
+    "code": null
+  },
+  {
+    "id": "suppeneinlagen",
+    "description": "Lebensmittel -> Nudeln & andere Teigwaren -> Suppeneinlagen",
+    "url": "https://shop.unimarkt.at/suppeneinlagen",
+    "code": null
+  },
+  {
+    "id": "nudeln-pasta",
+    "description": "Lebensmittel -> Nudeln & andere Teigwaren -> Nudeln & Pasta",
+    "url": "https://shop.unimarkt.at/nudeln-pasta",
+    "code": "5B"
+  },
+  {
+    "id": "mehl-staerke-griess",
+    "description": "Lebensmittel -> Getreide & Hülsenfrüchte -> Mehl. Stärke & Grieß",
+    "url": "https://shop.unimarkt.at/mehl-staerke-griess",
+    "code": "59"
+  },
+  {
+    "id": "huelsenfruechte-haferflocken",
+    "description": "Lebensmittel -> Getreide & Hülsenfrüchte -> Hülsenfrüchte & Haferflocken",
+    "url": "https://shop.unimarkt.at/huelsenfruechte-haferflocken",
+    "code": "5A"
+  },
+  {
+    "id": "risotto-reis-reisgerichte",
+    "description": "Lebensmittel -> Getreide & Hülsenfrüchte -> Risotto. Reis & Reisgerichte",
+    "url": "https://shop.unimarkt.at/risotto-reis-reisgerichte",
+    "code": "5B"
+  },
+  {
+    "id": "muesliriegel",
+    "description": "Lebensmittel -> Müsli. Müsliriegel & Cerealien -> Müsliriegel",
+    "url": "https://shop.unimarkt.at/muesliriegel",
+    "code": "62"
+  },
+  {
+    "id": "muesli",
+    "description": "Lebensmittel -> Müsli. Müsliriegel & Cerealien -> Müsli",
+    "url": "https://shop.unimarkt.at/muesli",
+    "code": "5A"
+  },
+  {
+    "id": "cerealien",
+    "description": "Lebensmittel -> Müsli. Müsliriegel & Cerealien -> Cerealien",
+    "url": "https://shop.unimarkt.at/cerealien",
+    "code": "5A"
+  },
+  {
+    "id": "fleischaufstrich",
+    "description": "Lebensmittel -> Eingelegtes & Konserven -> Fleischaufstrich",
+    "url": "https://shop.unimarkt.at/fleischaufstrich",
+    "code": "57"
+  },
+  {
+    "id": "fischkonserven",
+    "description": "Lebensmittel -> Eingelegtes & Konserven -> Fischkonserven",
+    "url": "https://shop.unimarkt.at/fischkonserven",
+    "code": "57"
+  },
+  {
+    "id": "frucht-gemuesekonserven",
+    "description": "Lebensmittel -> Eingelegtes & Konserven -> Frucht- & Gemüsekonserven",
+    "url": "https://shop.unimarkt.at/frucht-gemuesekonserven",
+    "code": "57"
+  },
+  {
+    "id": "dosengerichte",
+    "description": "Lebensmittel -> Eingelegtes & Konserven -> Dosengerichte",
+    "url": "https://shop.unimarkt.at/dosengerichte",
+    "code": "57"
+  },
+  {
+    "id": "fertiggerichte",
+    "description": "Lebensmittel -> Fertige Gerichte",
+    "url": "https://shop.unimarkt.at/fertiggerichte",
+    "code": "54"
+  },
+  {
+    "id": "suppen-bouillon-saucen",
+    "description": "Lebensmittel -> Fixprodukte -> Suppen. Bouillon. Saucen",
+    "url": "https://shop.unimarkt.at/suppen-bouillon-saucen",
+    "code": "5C"
+  },
+  {
+    "id": "basis-fixprodukte",
+    "description": "Lebensmittel -> Fixprodukte -> Basis- & Fixprodukte",
+    "url": "https://shop.unimarkt.at/basis-fixprodukte",
+    "code": "5F"
+  },
+  {
+    "id": "beilagenmischung",
+    "description": "Lebensmittel -> Fixprodukte -> Beilagenmischung",
+    "url": "https://shop.unimarkt.at/beilagenmischung",
+    "code": null
+  },
+  {
+    "id": "vegan-vegetarisch",
+    "description": "Lebensmittel -> Spezialnahrung -> Vegan & vegetarisch",
+    "url": "https://shop.unimarkt.at/vegan-vegetarisch",
+    "code": null
+  },
+  {
+    "id": "nahrungsergaenzung",
+    "description": "Lebensmittel -> Spezialnahrung -> Nahrungsergänzung",
+    "url": "https://shop.unimarkt.at/nahrungsergaenzung",
+    "code": null
+  },
+  {
+    "id": "tafelschokolade",
+    "description": "Süßes & Snacks -> Schokolade -> Tafelschokolade",
+    "url": "https://shop.unimarkt.at/tafelschokolade",
+    "code": "64"
+  },
+  {
+    "id": "schokoriegel-schokosnacks-dragees",
+    "description": "Süßes & Snacks -> Schokolade -> Schokoriegel. Schoko-Snacks & -Dragees",
+    "url": "https://shop.unimarkt.at/schokoriegel-schokosnacks-dragees",
+    "code": "64"
+  },
+  {
+    "id": "pralinen",
+    "description": "Süßes & Snacks -> Pralinen",
+    "url": "https://shop.unimarkt.at/pralinen",
+    "code": "64"
+  },
+  {
+    "id": "kekse-keksriegel",
+    "description": "Süßes & Snacks -> Waffeln & Kekse -> Kekse & Keksriegel",
+    "url": "https://shop.unimarkt.at/kekse-keksriegel",
+    "code": "64"
+  },
+  {
+    "id": "waffeln-waffelmischungen",
+    "description": "Süßes & Snacks -> Waffeln & Kekse -> Waffeln & Waffelmischungen",
+    "url": "https://shop.unimarkt.at/waffeln-waffelmischungen",
+    "code": "64"
+  },
+  {
+    "id": "bonbons",
+    "description": "Süßes & Snacks -> Bonbons & Kaugummis -> Bonbons",
+    "url": "https://shop.unimarkt.at/bonbons",
+    "code": "64"
+  },
+  {
+    "id": "traubenzucker",
+    "description": "Süßes & Snacks -> Bonbons & Kaugummis -> Traubenzucker",
+    "url": "https://shop.unimarkt.at/traubenzucker",
+    "code": "64"
+  },
+  {
+    "id": "kaubonbons-karamellen",
+    "description": "Süßes & Snacks -> Bonbons & Kaugummis -> Kaubonbons & Karamellen",
+    "url": "https://shop.unimarkt.at/kaubonbons-karamellen",
+    "code": "64"
+  },
+  {
+    "id": "fruchtgummi",
+    "description": "Süßes & Snacks -> Bonbons & Kaugummis -> Fruchtgummi",
+    "url": "https://shop.unimarkt.at/fruchtgummi",
+    "code": "64"
+  },
+  {
+    "id": "kaugummi",
+    "description": "Süßes & Snacks -> Bonbons & Kaugummis -> Kaugummi",
+    "url": "https://shop.unimarkt.at/kaugummi",
+    "code": "64"
+  },
+  {
+    "id": "salzgebaeck-chips-popcorn",
+    "description": "Süßes & Snacks -> Knabbereien -> Salzgebäck. Chips & Popcorn",
+    "url": "https://shop.unimarkt.at/salzgebaeck-chips-popcorn",
+    "code": "63"
+  },
+  {
+    "id": "nuesse-kerne",
+    "description": "Süßes & Snacks -> Knabbereien -> Nüsse & Kerne",
+    "url": "https://shop.unimarkt.at/nuesse-kerne",
+    "code": "63"
+  },
+  {
+    "id": "koerperpflege",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Körperpflege",
+    "url": "https://shop.unimarkt.at/koerperpflege",
+    "code": "78"
+  },
+  {
+    "id": "haarpflege",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Haarpflege",
+    "url": "https://shop.unimarkt.at/haarpflege",
+    "code": "73"
+  },
+  {
+    "id": "mund-zahnpflege",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Mund- & Zahnpflege",
+    "url": "https://shop.unimarkt.at/mund-zahnpflege",
+    "code": "76"
+  },
+  {
+    "id": "wattestaebchen-wattepads-pflaster",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Wattestäbchen. Wattepads & Pflaster",
+    "url": "https://shop.unimarkt.at/wattestaebchen-wattepads-pflaster",
+    "code": "74"
+  },
+  {
+    "id": "rasierartikel-zubehoer",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Rasierartikel & -zubehör",
+    "url": "https://shop.unimarkt.at/rasierartikel-zubehoer",
+    "code": "77"
+  },
+  {
+    "id": "sonnenschutz",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Sonnenschutz",
+    "url": "https://shop.unimarkt.at/sonnenschutz",
+    "code": "79"
+  },
+  {
+    "id": "verhuetung",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Verhütung",
+    "url": "https://shop.unimarkt.at/verhuetung",
+    "code": "7A"
+  },
+  {
+    "id": "damenhygiene",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Damenhygiene",
+    "url": "https://shop.unimarkt.at/damenhygiene",
+    "code": "71"
+  },
+  {
+    "id": "toilettartikel",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Toilettartikel",
+    "url": "https://shop.unimarkt.at/toilettartikel",
+    "code": null
+  },
+  {
+    "id": "taschentuecher",
+    "description": "Haushalt -> Hygiene. Pflege & Kosmetik -> Taschentücher",
+    "url": "https://shop.unimarkt.at/taschentuecher",
+    "code": "89"
+  },
+  {
+    "id": "waschmittel",
+    "description": "Haushalt -> Waschmittel. Weichspüler & mehr -> Waschmittel",
+    "url": "https://shop.unimarkt.at/waschmittel",
+    "code": "8A"
+  },
+  {
+    "id": "weichspueler",
+    "description": "Haushalt -> Waschmittel. Weichspüler & mehr -> Weichspüler",
+    "url": "https://shop.unimarkt.at/weichspueler",
+    "code": "8A"
+  },
+  {
+    "id": "fleckenentferner",
+    "description": "Haushalt -> Waschmittel. Weichspüler & mehr -> Fleckenentferner",
+    "url": "https://shop.unimarkt.at/fleckenentferner",
+    "code": "8A"
+  },
+  {
+    "id": "allzweck-kraftreiniger",
+    "description": "Haushalt -> Haushaltsreiniger -> Allzweck- & Kraftreiniger",
+    "url": "https://shop.unimarkt.at/allzweck-kraftreiniger",
+    "code": "88"
+  },
+  {
+    "id": "spezial-kalkreiniger",
+    "description": "Haushalt -> Haushaltsreiniger -> Spezial- & Kalkreiniger",
+    "url": "https://shop.unimarkt.at/spezial-kalkreiniger",
+    "code": "88"
+  },
+  {
+    "id": "bad-wc-reiniger",
+    "description": "Haushalt -> Haushaltsreiniger -> Bad-. WC-Reiniger & mehr",
+    "url": "https://shop.unimarkt.at/bad-wc-reiniger",
+    "code": "88"
+  },
+  {
+    "id": "glasreiniger",
+    "description": "Haushalt -> Haushaltsreiniger -> Glasreiniger",
+    "url": "https://shop.unimarkt.at/glasreiniger",
+    "code": "88"
+  },
+  {
+    "id": "geschirrreiniger-spuelmittel",
+    "description": "Haushalt -> Haushaltsreiniger -> Geschirrreiniger & Spülmittel",
+    "url": "https://shop.unimarkt.at/geschirrreiniger-spuelmittel",
+    "code": "88"
+  },
+  {
+    "id": "wasserenthaerter-entkalker",
+    "description": "Haushalt -> Haushaltsreiniger -> Wasserenthärter. Entkalker & mehr",
+    "url": "https://shop.unimarkt.at/wasserenthaerter-entkalker",
+    "code": "88"
+  },
+  {
+    "id": "reinigungszubehoer",
+    "description": "Haushalt -> Haushaltsreiniger -> Reinigungszubehör",
+    "url": "https://shop.unimarkt.at/reinigungszubehoer",
+    "code": "88"
+  },
+  {
+    "id": "batterien-leuchtmittel",
+    "description": "Haushalt -> Haushaltszubehör -> Batterien & Leuchtmittel",
+    "url": "https://shop.unimarkt.at/batterien-leuchtmittel",
+    "code": null
+  },
+  {
+    "id": "kuechenrollen",
+    "description": "Haushalt -> Haushaltszubehör -> Küchenrollen",
+    "url": "https://shop.unimarkt.at/kuechenrollen",
+    "code": "84"
+  },
+  {
+    "id": "servietten",
+    "description": "Haushalt -> Haushaltszubehör -> Servietten",
+    "url": "https://shop.unimarkt.at/servietten",
+    "code": "83"
+  },
+  {
+    "id": "saecke-folien",
+    "description": "Haushalt -> Haushaltszubehör -> Säcke & Folien",
+    "url": "https://shop.unimarkt.at/saecke-folien",
+    "code": "83"
+  },
+  {
+    "id": "kaffeefilter",
+    "description": "Haushalt -> Haushaltszubehör -> Kaffeefilter",
+    "url": "https://shop.unimarkt.at/kaffeefilter",
+    "code": "83"
+  },
+  {
+    "id": "lufterfrischer-duftkerzen",
+    "description": "Haushalt -> Haushaltszubehör -> Lufterfrischer & Duftkerzen",
+    "url": "https://shop.unimarkt.at/lufterfrischer-duftkerzen",
+    "code": "87"
+  },
+  {
+    "id": "insektizide",
+    "description": "Haushalt -> Haushaltszubehör -> Insektizide",
+    "url": "https://shop.unimarkt.at/insektizide",
+    "code": "8D"
+  },
+  {
+    "id": "babynahrung-saefte",
+    "description": "Haushalt -> Babynahrung & -pflege -> Babynahrung & -säfte",
+    "url": "https://shop.unimarkt.at/babynahrung-saefte",
+    "code": "51"
+  },
+  {
+    "id": "babypflege-windeln-zubehoer",
+    "description": "Haushalt -> Babynahrung & -pflege -> Babypflege. Windeln & Zubehör",
+    "url": "https://shop.unimarkt.at/babypflege-windeln-zubehoer",
+    "code": "70"
+  },
+  {
+    "id": "tiernahrung",
+    "description": "Haushalt -> Tiernahrung & -zubehör -> Tiernahrung",
+    "url": "https://shop.unimarkt.at/tiernahrung",
+    "code": null
+  },
+  {
+    "id": "tierzubehoer",
+    "description": "Haushalt -> Tiernahrung & -zubehör -> Tierzubehör",
+    "url": "https://shop.unimarkt.at/tierzubehoer",
+    "code": null
+  },
+  {
+    "id": "blumenerde-duenger",
+    "description": "Haushalt -> Blumenerde & Dünger",
+    "url": "https://shop.unimarkt.at/blumenerde-duenger",
+    "code": null
+  }
+]
