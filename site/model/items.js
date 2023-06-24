@@ -2,6 +2,9 @@ const { Model } = require("./model");
 const { STORE_KEYS } = require("./stores");
 const { Settings } = require("./settings");
 const { log, deltaTime } = require("../js/misc");
+const { ProgressBar } = require("../js/progress-bar");
+
+const Bar = new ProgressBar(STORE_KEYS.length);
 
 class Items extends Model {
     constructor() {
@@ -32,6 +35,7 @@ class Items extends Model {
         const settings = new Settings();
         let start = performance.now();
         const compressedItemsPerStore = [];
+
         for (const store of STORE_KEYS) {
             compressedItemsPerStore.push(
                 new Promise(async (resolve) => {
@@ -48,9 +52,11 @@ class Items extends Model {
                         log(`Loader - error while loading compressed items for ${store} ${e.message}`);
                         resolve([]);
                     }
+                    Bar.addStep();
                 })
             );
         }
+
         let items = [].concat(...(await Promise.all(compressedItemsPerStore)));
         log(`Loader - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
 
