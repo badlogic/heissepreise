@@ -40,6 +40,7 @@ function processFile(inputFile, outputFile, filter) {
     const fileDir = path.dirname(inputFile);
     if (inputFile.includes(".mp3")) {
         const data = fs.readFileSync(inputFile);
+        if (filter(inputFile, false, data)) return;
         fs.writeFileSync(outputFile, data);
     } else {
         const data = fs.readFileSync(inputFile, "utf8");
