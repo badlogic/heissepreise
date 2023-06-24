@@ -211,3 +211,7 @@ thead > tr {
 .hidden {
     display: none !important;
 }
+
+a {
+    @apply hover:underline;
+}
