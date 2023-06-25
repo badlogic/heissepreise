@@ -71,5 +71,4 @@ function importCarts(importedCarts) {
         };
         reader.readAsText(event.target.files[0]);
     });
-    document.querySelector('[x-id="loader"]').classList.add("hidden");
 })();
