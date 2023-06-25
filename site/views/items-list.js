@@ -212,7 +212,8 @@ class ItemsList extends View {
         let highlightedName = name;
         for (let i = 0; i < keywords.length; i++) {
             const string = keywords[i];
-            const regex = new RegExp(string, "gi");
+            // check if keyword is not preceded by a < or </
+            const regex = new RegExp(`(?<!<\/?)${string}`, "gi");
             highlightedName = highlightedName.replace(regex, "<strong>$&</strong>");
         }
         return `${highlightedName}`;
@@ -271,9 +272,9 @@ class ItemsList extends View {
 
         let quantity = item.quantity || "";
         let unit = item.unit || "";
-        if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
+        if (quantity >= 1000 && (unit === "g" || unit === "ml")) {
             quantity = parseFloat((0.001 * quantity).toFixed(2));
-            unit = unit == "ml" ? "l" : "kg";
+            unit = unit === "ml" ? "l" : "kg";
         }
         let percentageChange = "";
         if (prevPrice != -1) {
@@ -283,8 +284,8 @@ class ItemsList extends View {
         let showUnitPrice = this.elements.unitPrice.checked;
         let priceUnit = "";
         if (showUnitPrice) {
-            if (item.unit == "g") priceUnit = " / kg";
-            else if (item.unit == "ml") priceUnit = " / l";
+            if (item.unit === "g") priceUnit = " / kg";
+            else if (item.unit === "ml") priceUnit = " / l";
             else priceUnit = " / stk";
         }
 
@@ -394,7 +395,7 @@ class ItemsList extends View {
 
         elements.up.addEventListener("click", () => {
             const index = itemDom.rowIndex - 1;
-            if (index == 0) return;
+            if (index === 0) return;
             let otherItem = this.model.items[index - 1];
             this.model.items[index - 1] = item;
             this.model.items[index] = otherItem;
@@ -407,7 +408,7 @@ class ItemsList extends View {
 
         elements.down.addEventListener("click", () => {
             const index = itemDom.rowIndex - 1;
-            if (index == this.model.items.length - 1) return;
+            if (index === this.model.items.length - 1) return;
             let otherItem = this.model.items[index + 1];
             this.model.items[index + 1] = item;
             this.model.items[index] = otherItem;
@@ -431,11 +432,11 @@ class ItemsList extends View {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {
             elements.nameSimilarity.setAttribute("disabled", "true");
-            if (this.model.filteredItems.length != 0 && elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
+            if (this.model.filteredItems.length != 0 && elements.sort.value === "name-similarity") elements.sort.value = "price-asc";
         }
 
         let items = [...this.model.filteredItems];
-        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!" && this.model.lastQuery.toLowerCase().indexOf("order by") >= 0) {
+        if (this.model.lastQuery && this.model.lastQuery.charAt(0) === "!" && this.model.lastQuery.toLowerCase().indexOf("order by") >= 0) {
             elements.sort.parentElement.classList.add("hidden");
         } else {
             if (!this._noSort) {
@@ -443,7 +444,7 @@ class ItemsList extends View {
                 items = this.sort(items);
             }
         }
-        if (items.length == 0) {
+        if (items.length === 0) {
             elements.chart.classList.add("hidden");
             elements.options.classList.add("hidden");
             elements.itemsTable.classList.add("hidden");
@@ -461,7 +462,7 @@ class ItemsList extends View {
         const batches = [];
         let batch = [];
         items.forEach((item) => {
-            if (batch.length == 25) {
+            if (batch.length === 25) {
                 batches.push(batch);
                 batch = [];
             }

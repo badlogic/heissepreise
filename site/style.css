@@ -246,3 +246,20 @@ thead > tr {
 a {
     @apply hover:underline;
 }
+
+/* loading-bar */
+.progress-bar-container {
+    @apply bg-stone-200 rounded-xl;
+    width: 300px;
+    height: 10px;
+}
+
+.progress-bar {
+    @apply bg-primary rounded-xl;
+    height: 10px;
+    transform: scaleX(0%);
+    will-change: transform;
+    transition: scaleX 0.5s;
+    width: 100%;
+    transform-origin: left center;
+}
