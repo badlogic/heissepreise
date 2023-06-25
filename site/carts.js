@@ -2,6 +2,10 @@ const { downloadJSON, today } = require("./js/misc");
 const model = require("./model");
 require("./views");
 
+const { STORE_KEYS } = require("./model/stores");
+const { ProgressBar } = require("./views/progress-bar");
+const progressBar = new ProgressBar(STORE_KEYS.length);
+
 function newCart() {
     let name = prompt("Name für Warenkorb eingeben:");
     if (!name || name.trim().length == 0) return;
@@ -58,7 +62,7 @@ function importCarts(importedCarts) {
 }
 
 (async () => {
-    await model.load();
+    await model.load(() => progressBar.addStep());
     document.querySelector("#carts").model = model.carts;
     document.querySelector("#new").addEventListener("click", () => newCart());
     document.querySelector("#export").addEventListener("click", () => downloadJSON("carts.json", model.carts.carts));

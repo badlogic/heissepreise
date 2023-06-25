@@ -2,8 +2,12 @@ const { getQueryParameter } = require("./js/misc");
 const model = require("./model");
 require("./views");
 
+const { STORE_KEYS } = require("./model/stores");
+const { ProgressBar } = require("./views/progress-bar");
+const progressBar = new ProgressBar(STORE_KEYS.length);
+
 (async () => {
-    await model.load();
+    await model.load(() => progressBar.addStep());
     const itemsFilter = document.querySelector("items-filter");
     const itemsList = document.querySelector("items-list");
     const itemsChart = document.querySelector("items-chart");

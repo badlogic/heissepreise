@@ -8,7 +8,7 @@ exports.carts = new Carts();
 exports.items = new Items();
 exports.settings = new Settings();
 
-exports.load = async () => {
-    await exports.items.load();
+exports.load = async (progress) => {
+    await exports.items.load(progress);
     await exports.carts.load(exports.items.lookup);
 };

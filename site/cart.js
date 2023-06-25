@@ -4,6 +4,8 @@ const { Model } = require("./model/model");
 const { View } = require("./views/view");
 const { STORE_KEYS, stores } = require("./model/stores");
 require("./views");
+const { ProgressBar } = require("./views/progress-bar");
+const progressBar = new ProgressBar(STORE_KEYS.length);
 
 let carts = null;
 
@@ -118,7 +120,7 @@ function loadCart() {
 }
 
 (async () => {
-    await models.load();
+    await models.load(() => progressBar.addStep());
     carts = models.carts.carts;
     const cart = loadCart();
 
