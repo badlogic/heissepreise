@@ -36,7 +36,16 @@ class Carts extends Model {
     }
 
     save() {
-        localStorage.setItem("carts", JSON.stringify(this._carts, null, 2));
+        const carts = [];
+        for (const cart of this._carts) {
+            carts.push({
+                name: cart.name,
+                items: cart.items.map((item) => {
+                    return { store: item.store, id: item.id };
+                }),
+            });
+        }
+        localStorage.setItem("carts", JSON.stringify(carts, null, 2));
         this.notify();
     }
 

@@ -133,7 +133,7 @@ function loadCart() {
     });
     cartList.elements.numItemsLabel.innerHTML = "<strong>Artikel:</strong>";
     cartList.elements.enableChart.checked = true;
-    cartList.elements.chart.elements.sumStores.checked = true;
+    cartList.elements.chart.elements.sumStores.checked = models.items.length < 2000;
 
     if (cart.items.length == 0) {
         elements.noItems.classList.remove("hidden");
