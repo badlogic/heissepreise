@@ -32,7 +32,8 @@ class Carts extends Model {
             const items = [];
             for (const cartItem of cart.items) {
                 const item = itemsLookup[cartItem.store + cartItem.id];
-                if (item) items.push(item);
+                if (!item) items.push(cartItem);
+                else items.push(item);
             }
             cart.items = items;
         }
