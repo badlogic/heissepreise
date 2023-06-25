@@ -3,6 +3,7 @@ exports.dm = require("./dm");
 exports.dmDe = require("./dm-de");
 exports.hofer = require("./hofer");
 exports.lidl = require("./lidl");
+exports.metro = require("./metro");
 exports.mpreis = require("./mpreis");
 exports.spar = require("./spar");
 exports.sparSi = require("./spar-si");
