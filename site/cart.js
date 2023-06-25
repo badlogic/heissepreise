@@ -134,7 +134,7 @@ function loadCart() {
         cartFilter.elements[store].checked = true;
     });
     cartList.elements.numItemsLabel.innerHTML = "<strong>Artikel:</strong>";
-    cartList.elements.enableChart.checked = true;
+    cartList.elements.enableChart.checked = models.items.length < 2000;
     cartList.elements.chart.elements.sumStores.checked = models.items.length < 2000;
 
     if (cart.items.length == 0) {

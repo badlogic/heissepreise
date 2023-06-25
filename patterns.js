@@ -59,4 +59,10 @@ console.log("Sorted: " + sortedItems.length);
 analysis.writeJSON("patterns/sorted-billa-spar-cart.json", { name: "Billa Spar Sortiert", items: sortedItems });
 console.log("Filtered: " + filteredItems.length);
 analysis.writeJSON("patterns/sorted-billa-spar-filtered-cart.json", { name: "Billa Spar Sortiert Gefiltert", items: filteredItems });
+analysis.writeJSON("site/data/billa-spar-cart.json", {
+    name: "Markenprodukte Billa/Spar",
+    items: filteredItems.map((item) => {
+        return { store: item.store, id: item.id };
+    }),
+});
 fs.writeFileSync("patterns/sorted-billa-spar.txt", result, "utf-8");

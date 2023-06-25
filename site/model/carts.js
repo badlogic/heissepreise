@@ -22,6 +22,11 @@ class Carts extends Model {
             carts.unshift(momentumCart);
         }
 
+        if (!carts.some((cart) => cart.name == "Markenprodukte Billa/Spar")) {
+            const billaSparCart = await misc.fetchJSON("data/billa-spar-cart.json");
+            carts.unshift(billaSparCart);
+        }
+
         // Update items in cart to their latest version.
         for (const cart of carts) {
             const items = [];
