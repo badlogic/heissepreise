@@ -88,7 +88,7 @@ class ItemsList extends View {
         elements.json.addEventListener("click", (event) => {
             event.preventDefault();
             if (!this.model) return;
-            this.download(this.model.filteredItems);
+            this.download(this.model.filteredItems, true);
         });
 
         elements.csv.addEventListener("click", (event) => {
