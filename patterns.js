@@ -1,6 +1,7 @@
 const fs = require("fs");
 const analysis = require("./analysis");
 const knn = require("./site/js/knn");
+const { itemsToCSV } = require("./site/js/misc");
 
 function similaritySort(items, filter, filterA, filterB) {
     const filteredItems = items.filter(filter);
@@ -198,5 +199,8 @@ for (const file of files) {
         cart.items.push(...otherItems);
         // analysis.writeJSON("site/data/" + file, cart);
         console.log(`${file}: ${samePrice}/${items.length / 2} product pairs have the same price.`);
+
+        const csv = itemsToCSV(cart.items);
+        fs.writeFileSync("site/data/" + file.replace(".json", ".csv"), csv, "utf-8");
     }
 }
