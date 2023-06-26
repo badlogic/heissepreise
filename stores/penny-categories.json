@@ -182,7 +182,7 @@
   {
     "id": "Grundnahrungsmittel -> Zucker & Süßstoffe",
     "url": "https://www.penny.at/kategorie/zucker-und-suessstoffe-13069",
-    "code": null
+    "code": "5E"
   },
   {
     "id": "Grundnahrungsmittel -> Müsli & Cerealien",
@@ -192,7 +192,7 @@
   {
     "id": "Grundnahrungsmittel -> Honig, Marmelade & Co.",
     "url": "https://www.penny.at/kategorie/honig-marmelade-und-co-13061",
-    "code": null
+    "code": "56"
   },
   {
     "id": "Grundnahrungsmittel -> Asia Produkte",
@@ -202,7 +202,7 @@
   {
     "id": "Grundnahrungsmittel -> Saucen & Dressings",
     "url": "https://www.penny.at/kategorie/saucen-und-dressings-13067",
-    "code": null
+    "code": "5C"
   },
   {
     "id": "Grundnahrungsmittel -> Spezielle Ernährung",
@@ -292,7 +292,7 @@
   {
     "id": "Haushalt -> Lampen & Batterien",
     "url": "https://www.penny.at/kategorie/lampen-und-batterien-13102",
-    "code": null
+    "code": "85"
   },
   {
     "id": "Pflege",
@@ -317,7 +317,7 @@
   {
     "id": "Pflege -> Haarpflege & Haarfarben",
     "url": "https://www.penny.at/kategorie/haarpflege-und-haarfarben-13080",
-    "code": null
+    "code": "73"
   },
   {
     "id": "Pflege -> Sonnen- & Insektenschutzmittel",
@@ -362,6 +362,6 @@
   {
     "id": "Non-Food -> Küche",
     "url": "https://www.penny.at/kategorie/kueche-13108",
-    "code": null
+    "code": "83"
   }
 ]
