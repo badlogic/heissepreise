@@ -82,6 +82,7 @@ exports.initializeCategoryMapping = async () => {
 
 exports.mapCategory = (rawItem) => {
     const categoryPath = rawItem.parentCategories.filter((path) => path.length > 0 && !path[0].name.includes("ngebot"))[0];
+    if (!categoryPath) return null;
     const categoryName = categoryPath.map((path) => path.name).join(" -> ");
     const category = exports.categoryLookup[categoryName];
     if (category) return category.code;
