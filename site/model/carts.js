@@ -13,13 +13,21 @@ class Carts extends Model {
 
     async load(itemsLookup) {
         const val = localStorage.getItem("carts");
-        const carts = (this._carts = val ? JSON.parse(val) : []);
+        let carts = (this._carts = val ? JSON.parse(val) : []);
 
         // Add Momentum cart if it is not in the list of carts
         if (!localStorage.getItem("updatedMomentum") || !carts.some((cart) => cart.name === "Momentum Eigenmarken Vergleich")) {
             localStorage.setItem("updatedMomentum", "true");
             const momentumCart = await misc.fetchJSON("data/momentum-cart.new.json");
             carts.unshift(momentumCart);
+        }
+
+        if (!localStorage.getItem("updatedKnnCarts")) {
+            localStorage.setItem("updatedKnnCarts", "true");
+            carts = this._carts = carts.filter((cart) => cart.name != "Markenprodukte Billa/Spar");
+            carts = this._carts = carts.filter((cart) => cart.name != "Diskont-Marken Produkte Billa/Spar");
+            carts = this._carts = carts.filter((cart) => cart.name != "Bio Eigenmarken Produkte Billa/Spar");
+            carts = this._carts = carts.filter((cart) => cart.name != "Mittelpreisige Eigenmarken Produkte Billa/Spar");
         }
 
         if (!carts.some((cart) => cart.name == "Markenprodukte Billa/Spar")) {
