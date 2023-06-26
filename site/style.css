@@ -263,3 +263,16 @@ a {
     width: 100%;
     transform-origin: left center;
 }
+
+/* for experiments */
+.tooltip {
+    @apply absolute;
+    @apply bg-black/75;
+    @apply text-white;
+    @apply text-xs;
+    @apply px-2;
+    @apply py-1;
+    @apply rounded;
+    @apply z-10;
+    @apply opacity-0;
+}
