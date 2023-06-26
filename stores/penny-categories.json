@@ -105,6 +105,11 @@
     "code": "33"
   },
   {
+    "id": "Kühlwaren -> Schnelle Küche",
+    "url": "https://www.penny.at/kategorie/schnelle-kueche-13033",
+    "code": null
+  },
+  {
     "id": "Kühlwaren -> Eier",
     "url": "https://www.penny.at/kategorie/eier-13034",
     "code": "31"
@@ -113,6 +118,11 @@
     "id": "Kühlwaren -> Tofu & Vegetarische/Vegane Produkte",
     "url": "https://www.penny.at/kategorie/tofu-und-vegetarischevegane-produkte-13046",
     "code": "3B"
+  },
+  {
+    "id": "Kühlwaren -> Blätterteig & Strudelteig",
+    "url": "https://www.penny.at/kategorie/blaetterteig-und-strudelteig-13043",
+    "code": null
   },
   {
     "id": "Tiefkühl",
@@ -170,14 +180,29 @@
     "code": "53"
   },
   {
+    "id": "Grundnahrungsmittel -> Zucker & Süßstoffe",
+    "url": "https://www.penny.at/kategorie/zucker-und-suessstoffe-13069",
+    "code": null
+  },
+  {
     "id": "Grundnahrungsmittel -> Müsli & Cerealien",
     "url": "https://www.penny.at/kategorie/muesli-und-cerealien-13065",
     "code": "5A"
   },
   {
+    "id": "Grundnahrungsmittel -> Honig, Marmelade & Co.",
+    "url": "https://www.penny.at/kategorie/honig-marmelade-und-co-13061",
+    "code": null
+  },
+  {
     "id": "Grundnahrungsmittel -> Asia Produkte",
     "url": "https://www.penny.at/kategorie/asia-produkte-13056",
     "code": "50"
+  },
+  {
+    "id": "Grundnahrungsmittel -> Saucen & Dressings",
+    "url": "https://www.penny.at/kategorie/saucen-und-dressings-13067",
+    "code": null
   },
   {
     "id": "Grundnahrungsmittel -> Spezielle Ernährung",
@@ -265,6 +290,11 @@
     "code": "89"
   },
   {
+    "id": "Haushalt -> Lampen & Batterien",
+    "url": "https://www.penny.at/kategorie/lampen-und-batterien-13102",
+    "code": null
+  },
+  {
     "id": "Pflege",
     "url": "https://www.penny.at/kategorie/pflege-13076",
     "code": "70"
@@ -285,6 +315,11 @@
     "code": "72"
   },
   {
+    "id": "Pflege -> Haarpflege & Haarfarben",
+    "url": "https://www.penny.at/kategorie/haarpflege-und-haarfarben-13080",
+    "code": null
+  },
+  {
     "id": "Pflege -> Sonnen- & Insektenschutzmittel",
     "url": "https://www.penny.at/kategorie/sonnen-und-insektenschutzmittel-13088",
     "code": "79"
@@ -303,6 +338,11 @@
     "id": "Non-Food -> Spiele, Bücher & Co.",
     "url": "https://www.penny.at/kategorie/spiele-buecher-und-co-13110",
     "code": "8E"
+  },
+  {
+    "id": "Non-Food -> Körbe, Koffer & Co.",
+    "url": "https://www.penny.at/kategorie/koerbe-koffer-und-co-13112",
+    "code": null
   },
   {
     "id": "Non-Food -> Haushalt",
