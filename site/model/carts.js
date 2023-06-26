@@ -32,6 +32,11 @@ class Carts extends Model {
             carts.unshift(budgetCart);
         }
 
+        if (!carts.some((cart) => cart.name == "Bio Eigenmarken Produkte Billa/Spar")) {
+            const budgetCart = await misc.fetchJSON("data/bio-cart.json");
+            carts.unshift(budgetCart);
+        }
+
         // Update items in cart to their latest version.
         for (const cart of carts) {
             const items = [];

@@ -54,7 +54,7 @@ if (!fs.existsSync("patterns/sorted-billa-spar.json")) {
     analysis.writeJSON("patterns/sorted-billa-spar.json", sortedItems);
 }
 
-{
+if (!fs.existsSync("site/data/billa-spar-cart.json")) {
     const sortedItems = analysis.readJSON("patterns/sorted-billa-spar.json");
     const filteredItems = filterSimilarItems(sortedItems);
     analysis.writeJSON("site/data/billa-spar-cart.json", {
@@ -79,11 +79,36 @@ if (!fs.existsSync("patterns/sorted-budget.json")) {
     analysis.writeJSON("patterns/sorted-budget.json", sortedItems);
 }
 
-{
+if (!fs.existsSync("site/data/budget-cart.json")) {
     const sortedItems = analysis.readJSON("patterns/sorted-budget.json");
     const filteredItems = filterSimilarItems(sortedItems);
     analysis.writeJSON("site/data/budget-cart.json", {
         name: "Diskont-Marken Produkte Billa/Spar",
+        items: filteredItems.map((item) => {
+            return { store: item.store, id: item.id };
+        }),
+    });
+}
+
+if (!fs.existsSync("patterns/sorted-bio.json")) {
+    const items = analysis.readJSON("data/latest-canonical.json.br");
+    const sortedItems = similaritySort(
+        items,
+        (item) => {
+            if (!(item.store == "billa" || item.store == "spar")) return false;
+            return ["Ja! Natürlich", "SPAR Natur*pur"].some((str) => item.name.includes(str));
+        },
+        (item) => item.store === "billa",
+        (item) => item.store === "spar"
+    );
+    analysis.writeJSON("patterns/sorted-bio.json", sortedItems);
+}
+
+if (!fs.existsSync("site/data/bio-cart.json")) {
+    const sortedItems = analysis.readJSON("patterns/sorted-bio.json");
+    const filteredItems = filterSimilarItems(sortedItems);
+    analysis.writeJSON("site/data/bio-cart.json", {
+        name: "Bio Eigenmarken Produkte Billa/Spar",
         items: filteredItems.map((item) => {
             return { store: item.store, id: item.id };
         }),
