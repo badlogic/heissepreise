@@ -4665,6 +4665,72 @@
       "search": "clever ei-zwiebel aufstrich 200 g"
     },
     {
+      "store": "spar",
+      "id": "2020002743543",
+      "name": "S-BUDGET Ei-Zwiebel Aufstrich",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.15,
+      "priceHistory": [
+        {
+          "date": "2023-02-22",
+          "price": 1.15,
+          "unitPrice": 5.75
+        },
+        {
+          "date": "2022-12-21",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.15,
+          "unitPrice": 5.75
+        },
+        {
+          "date": "2021-11-03",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2021-04-07",
+          "price": 0.79,
+          "unitPrice": 3.95
+        },
+        {
+          "date": "2020-02-12",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2019-09-17",
+          "price": 0.79,
+          "unitPrice": 3.95
+        },
+        {
+          "date": "2019-07-31",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2019-03-27",
+          "price": 0.79,
+          "unitPrice": 3.95
+        },
+        {
+          "date": "2018-11-09",
+          "price": 0.89,
+          "unitPrice": 4.45
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "s-budget ei-zwiebel aufstrich 200 g"
+    },
+    {
       "store": "billa",
       "id": "00-312736",
       "name": "Clever Eier aus Bodenhaltung M",
@@ -10350,72 +10416,6 @@
       "search": "s-budget linzerstangerl 4 stück 200 g"
     },
     {
-      "store": "spar",
-      "id": "2020002743543",
-      "name": "S-BUDGET Ei-Zwiebel Aufstrich",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.15,
-      "priceHistory": [
-        {
-          "date": "2023-02-22",
-          "price": 1.15,
-          "unitPrice": 5.75
-        },
-        {
-          "date": "2022-12-21",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.15,
-          "unitPrice": 5.75
-        },
-        {
-          "date": "2021-11-03",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2021-04-07",
-          "price": 0.79,
-          "unitPrice": 3.95
-        },
-        {
-          "date": "2020-02-12",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2019-09-17",
-          "price": 0.79,
-          "unitPrice": 3.95
-        },
-        {
-          "date": "2019-07-31",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2019-03-27",
-          "price": 0.79,
-          "unitPrice": 3.95
-        },
-        {
-          "date": "2018-11-09",
-          "price": 0.89,
-          "unitPrice": 4.45
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "s-budget ei-zwiebel aufstrich 200 g"
-    },
-    {
       "store": "billa",
       "id": "00-404127",
       "name": "Clever Maiskeimöl",
@@ -11407,7 +11407,7 @@
       "store": "billa",
       "id": "00-768434",
       "name": "Clever Mineralwasser Still",
-      "category": "20",
+      "category": "26",
       "unavailable": false,
       "price": 0.33,
       "priceHistory": [
@@ -11662,138 +11662,6 @@
       "bio": false,
       "url": "",
       "search": "clever mozzarella 125 g"
-    },
-    {
-      "store": "spar",
-      "id": "2686653",
-      "name": "S-BUDGET Mozzarella",
-      "category": "33",
-      "unavailable": false,
-      "price": 0.99,
-      "priceHistory": [
-        {
-          "date": "2022-11-17",
-          "price": 0.99,
-          "unitPrice": 7.92
-        },
-        {
-          "date": "2022-11-11",
-          "price": 0.89,
-          "unitPrice": 7.12
-        },
-        {
-          "date": "2022-11-08",
-          "price": 0.99,
-          "unitPrice": 7.92
-        },
-        {
-          "date": "2022-09-30",
-          "price": 0.89,
-          "unitPrice": 7.12
-        },
-        {
-          "date": "2022-03-16",
-          "price": 0.69,
-          "unitPrice": 5.52
-        },
-        {
-          "date": "2021-10-13",
-          "price": 0.65,
-          "unitPrice": 5.2
-        },
-        {
-          "date": "2021-04-07",
-          "price": 0.59,
-          "unitPrice": 4.72
-        },
-        {
-          "date": "2020-12-19",
-          "price": 0.65,
-          "unitPrice": 5.2
-        },
-        {
-          "date": "2020-07-31",
-          "price": 0.75,
-          "unitPrice": 6
-        },
-        {
-          "date": "2019-10-19",
-          "price": 0.65,
-          "unitPrice": 5.2
-        },
-        {
-          "date": "2017-10-16",
-          "price": 0.75,
-          "unitPrice": 6
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.65,
-          "unitPrice": 5.2
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 125,
-      "bio": false,
-      "url": "",
-      "search": "s-budget mozzarella 125 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-282175",
-      "name": "Clever Mozzarella Light",
-      "category": "33",
-      "unavailable": false,
-      "price": 0.99,
-      "priceHistory": [
-        {
-          "date": "2022-11-09",
-          "price": 0.99,
-          "unitPrice": 7.92
-        },
-        {
-          "date": "2022-09-06",
-          "price": 0.89,
-          "unitPrice": 7.12
-        },
-        {
-          "date": "2022-06-02",
-          "price": 0.79,
-          "unitPrice": 6.32
-        },
-        {
-          "date": "2022-03-03",
-          "price": 0.69,
-          "unitPrice": 5.52
-        },
-        {
-          "date": "2021-10-22",
-          "price": 0.65,
-          "unitPrice": 5.2
-        },
-        {
-          "date": "2021-04-07",
-          "price": 0.59,
-          "unitPrice": 4.72
-        },
-        {
-          "date": "2019-10-10",
-          "price": 0.65,
-          "unitPrice": 5.2
-        },
-        {
-          "date": "2019-03-27",
-          "price": 0.75,
-          "unitPrice": 6
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 125,
-      "bio": false,
-      "url": "",
-      "search": "clever mozzarella light 125 g"
     },
     {
       "store": "spar",
@@ -13800,6 +13668,67 @@
       "bio": false,
       "url": "",
       "search": "clever rapsöl 1 lt 1000 ml"
+    },
+    {
+      "store": "spar",
+      "id": "2020000850823",
+      "name": "S-BUDGET 100% Reines Rapsöl",
+      "category": "53",
+      "unavailable": false,
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-04-21",
+          "price": 2.99,
+          "unitPrice": 2.99
+        },
+        {
+          "date": "2022-12-21",
+          "price": 3.29,
+          "unitPrice": 3.29
+        },
+        {
+          "date": "2022-09-30",
+          "price": 2.99,
+          "unitPrice": 2.99
+        },
+        {
+          "date": "2022-04-09",
+          "price": 2.25,
+          "unitPrice": 2.25
+        },
+        {
+          "date": "2022-02-16",
+          "price": 1.99,
+          "unitPrice": 1.99
+        },
+        {
+          "date": "2021-11-04",
+          "price": 1.89,
+          "unitPrice": 1.89
+        },
+        {
+          "date": "2021-09-15",
+          "price": 1.99,
+          "unitPrice": 1.99
+        },
+        {
+          "date": "2017-11-29",
+          "price": 1.49,
+          "unitPrice": 1.49
+        },
+        {
+          "date": "2017-05-09",
+          "price": 1.39,
+          "unitPrice": 1.39
+        }
+      ],
+      "isWeighted": false,
+      "unit": "ml",
+      "quantity": 1000,
+      "bio": false,
+      "url": "",
+      "search": "s-budget 100% reines rapsöl 1000 ml"
     },
     {
       "store": "billa",
@@ -16726,93 +16655,6 @@
     },
     {
       "store": "billa",
-      "id": "00-399947",
-      "name": "Clever Spülmittel Balsam",
-      "category": "88",
-      "unavailable": false,
-      "price": 0.99,
-      "priceHistory": [
-        {
-          "date": "2023-03-30",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2023-02-10",
-          "price": 0.95,
-          "unitPrice": 1.9
-        },
-        {
-          "date": "2022-10-13",
-          "price": 1.09,
-          "unitPrice": 2.18
-        },
-        {
-          "date": "2022-07-21",
-          "price": 0.95,
-          "unitPrice": 1.9
-        },
-        {
-          "date": "2022-01-27",
-          "price": 0.89,
-          "unitPrice": 1.78
-        },
-        {
-          "date": "2020-07-29",
-          "price": 0.85,
-          "unitPrice": 1.7
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 500,
-      "bio": false,
-      "url": "",
-      "search": "clever spülmittel balsam 500 ml"
-    },
-    {
-      "store": "spar",
-      "id": "2020001082438",
-      "name": "S-BUDGET Aceto Balsamico di Modena I. G. P.",
-      "category": "5F",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-04-28",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2023-02-14",
-          "price": 1.69,
-          "unitPrice": 3.38
-        },
-        {
-          "date": "2022-01-19",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2018-01-10",
-          "price": 1.19,
-          "unitPrice": 2.38
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.99,
-          "unitPrice": 1.98
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 500,
-      "bio": false,
-      "url": "",
-      "search": "s-budget aceto balsamico di modena i. g. p. 500 ml"
-    },
-    {
-      "store": "billa",
       "id": "00-324192",
       "name": "Clever Stapelchips Meersalz",
       "category": "63",
@@ -17949,7 +17791,7 @@
       "store": "billa",
       "id": "00-720919",
       "name": "Clever Urquelle Mineralwasser Prickelnd",
-      "category": "20",
+      "category": "26",
       "unavailable": false,
       "price": 0.33,
       "priceHistory": [
@@ -18360,67 +18202,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget vollmilch 3.5% fett länger frisch 1000 ml"
-    },
-    {
-      "store": "spar",
-      "id": "2020000850823",
-      "name": "S-BUDGET 100% Reines Rapsöl",
-      "category": "53",
-      "unavailable": false,
-      "price": 2.99,
-      "priceHistory": [
-        {
-          "date": "2023-04-21",
-          "price": 2.99,
-          "unitPrice": 2.99
-        },
-        {
-          "date": "2022-12-21",
-          "price": 3.29,
-          "unitPrice": 3.29
-        },
-        {
-          "date": "2022-09-30",
-          "price": 2.99,
-          "unitPrice": 2.99
-        },
-        {
-          "date": "2022-04-09",
-          "price": 2.25,
-          "unitPrice": 2.25
-        },
-        {
-          "date": "2022-02-16",
-          "price": 1.99,
-          "unitPrice": 1.99
-        },
-        {
-          "date": "2021-11-04",
-          "price": 1.89,
-          "unitPrice": 1.89
-        },
-        {
-          "date": "2021-09-15",
-          "price": 1.99,
-          "unitPrice": 1.99
-        },
-        {
-          "date": "2017-11-29",
-          "price": 1.49,
-          "unitPrice": 1.49
-        },
-        {
-          "date": "2017-05-09",
-          "price": 1.39,
-          "unitPrice": 1.39
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 1000,
-      "bio": false,
-      "url": "",
-      "search": "s-budget 100% reines rapsöl 1000 ml"
     },
     {
       "store": "billa",
