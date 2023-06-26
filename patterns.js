@@ -114,3 +114,31 @@ if (!fs.existsSync("site/data/bio-cart.json")) {
         }),
     });
 }
+
+if (!fs.existsSync("patterns/sorted-midrange.json")) {
+    const items = analysis.readJSON("data/latest-canonical.json.br");
+    const sortedItems = similaritySort(
+        items,
+        (item) => {
+            if (!(item.store == "billa" || item.store == "spar")) return false;
+            return (
+                ["BILLA", "SPAR"].some((str) => item.name.includes(str)) &&
+                !["Ja! Natürlich", "SPAR Natur*pur"].some((str) => item.name.includes(str))
+            );
+        },
+        (item) => item.store === "billa",
+        (item) => item.store === "spar"
+    );
+    analysis.writeJSON("patterns/sorted-midrange.json", sortedItems);
+}
+
+if (!fs.existsSync("site/data/midrange-cart.json")) {
+    const sortedItems = analysis.readJSON("patterns/sorted-midrange.json");
+    const filteredItems = filterSimilarItems(sortedItems);
+    analysis.writeJSON("site/data/midrange-cart.json", {
+        name: "Mittelpreisige Eigenmarken Produkte Billa/Spar",
+        items: filteredItems.map((item) => {
+            return { store: item.store, id: item.id };
+        }),
+    });
+}

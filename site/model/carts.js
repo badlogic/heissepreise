@@ -37,6 +37,11 @@ class Carts extends Model {
             carts.unshift(budgetCart);
         }
 
+        if (!carts.some((cart) => cart.name == "Mittelpreisige Eigenmarken Produkte Billa/Spar")) {
+            const budgetCart = await misc.fetchJSON("data/midrange-cart.json");
+            carts.unshift(budgetCart);
+        }
+
         // Update items in cart to their latest version.
         for (const cart of carts) {
             const items = [];
