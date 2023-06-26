@@ -41,6 +41,7 @@ function filterSimilarItems(items) {
 if (!fs.existsSync("patterns")) fs.mkdirSync("patterns");
 
 if (!fs.existsSync("patterns/sorted-billa-spar.json")) {
+    console.log("Sorting 3rd party brands Billa/Spar");
     const items = analysis.readJSON("data/latest-canonical.json.br");
     const sortedItems = similaritySort(
         items,
@@ -55,6 +56,7 @@ if (!fs.existsSync("patterns/sorted-billa-spar.json")) {
 }
 
 if (!fs.existsSync("site/data/billa-spar-cart.json")) {
+    console.log("Creating cart 3rd party brands Billa/Spar");
     const sortedItems = analysis.readJSON("patterns/sorted-billa-spar.json");
     const filteredItems = filterSimilarItems(sortedItems);
     analysis.writeJSON("site/data/billa-spar-cart.json", {
@@ -66,6 +68,7 @@ if (!fs.existsSync("site/data/billa-spar-cart.json")) {
 }
 
 if (!fs.existsSync("patterns/sorted-budget.json")) {
+    console.log("Sorting budget brands Billa/Spar");
     const items = analysis.readJSON("data/latest-canonical.json.br");
     const sortedItems = similaritySort(
         items,
@@ -80,6 +83,7 @@ if (!fs.existsSync("patterns/sorted-budget.json")) {
 }
 
 if (!fs.existsSync("site/data/budget-cart.json")) {
+    console.log("Creating cart budget brands Billa/Spar");
     const sortedItems = analysis.readJSON("patterns/sorted-budget.json");
     const filteredItems = filterSimilarItems(sortedItems);
     analysis.writeJSON("site/data/budget-cart.json", {
@@ -91,6 +95,7 @@ if (!fs.existsSync("site/data/budget-cart.json")) {
 }
 
 if (!fs.existsSync("patterns/sorted-bio.json")) {
+    console.log("Sorting bio brands Billa/Spar");
     const items = analysis.readJSON("data/latest-canonical.json.br");
     const sortedItems = similaritySort(
         items,
@@ -105,6 +110,7 @@ if (!fs.existsSync("patterns/sorted-bio.json")) {
 }
 
 if (!fs.existsSync("site/data/bio-cart.json")) {
+    console.log("Sorting bio brands Billa/Spar");
     const sortedItems = analysis.readJSON("patterns/sorted-bio.json");
     const filteredItems = filterSimilarItems(sortedItems);
     analysis.writeJSON("site/data/bio-cart.json", {
@@ -116,6 +122,7 @@ if (!fs.existsSync("site/data/bio-cart.json")) {
 }
 
 if (!fs.existsSync("patterns/sorted-midrange.json")) {
+    console.log("Sorting mid-range brands Billa/Spar");
     const items = analysis.readJSON("data/latest-canonical.json.br");
     const sortedItems = similaritySort(
         items,
@@ -133,6 +140,7 @@ if (!fs.existsSync("patterns/sorted-midrange.json")) {
 }
 
 if (!fs.existsSync("site/data/midrange-cart.json")) {
+    console.log("Creating cart mid-range brands Billa/Spar");
     const sortedItems = analysis.readJSON("patterns/sorted-midrange.json");
     const filteredItems = filterSimilarItems(sortedItems);
     analysis.writeJSON("site/data/midrange-cart.json", {
@@ -141,4 +149,54 @@ if (!fs.existsSync("site/data/midrange-cart.json")) {
             return { store: item.store, id: item.id };
         }),
     });
+}
+
+const canonicalItems = analysis.readJSON("data/latest-canonical.json.br");
+const lookup = {};
+canonicalItems.forEach((item) => (lookup[item.store + item.id] = item));
+const files = fs.readdirSync("site/data/");
+for (const file of files) {
+    if (file.endsWith("-cart.json")) {
+        const cart = analysis.readJSON("site/data/" + file);
+        const items = cart.items;
+        if (items.length % 2 != 0) {
+            console.log("Uneven number of items in cart " + file);
+            // throw Error();
+        }
+
+        for (let i = 1; i < items.length; i++) {
+            if (items[i].store == items[i - 1].store) {
+                console.log("--- " + items[i - 1].store + " " + items[i - 1].id + " " + items[i].store + " " + items[i].id);
+            }
+        }
+
+        let samePrice = 0;
+        let samePriceItems = [];
+        let otherItems = [];
+        for (let i = 0; i < items.length; i += 2) {
+            let a = items[i].priceHistory ? items[i] : lookup[items[i].store + items[i].id];
+            let b = items[i + 1].priceHistory ? items[i + 1] : lookup[items[i + 1].store + items[i + 1].id];
+            if (!a || !b) {
+                console.log("Couldn't find item for product pair");
+                throw Error();
+            }
+            if (a.store == b.store) {
+                console.log("Subsequent items from same store. " + a.store + " " + a.id + " " + b.store + " " + b.id);
+                // throw Error();
+            }
+            if (a.price == b.price) {
+                samePrice++;
+                samePriceItems.push(a);
+                samePriceItems.push(b);
+            } else {
+                otherItems.push(a);
+                otherItems.push(b);
+            }
+        }
+        cart.items = [];
+        cart.items.push(...samePriceItems);
+        cart.items.push(...otherItems);
+        // analysis.writeJSON("site/data/" + file, cart);
+        console.log(`${file}: ${samePrice}/${items.length / 2} product pairs have the same price.`);
+    }
 }

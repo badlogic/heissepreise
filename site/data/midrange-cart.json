@@ -1370,338 +1370,6 @@
     },
     {
       "store": "billa",
-      "id": "00-443100",
-      "name": "BILLA Bio Fusilli",
-      "category": "5B",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-06-11",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2023-06-07",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2023-02-07",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2023-02-02",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2023-01-08",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2023-01-05",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2022-12-18",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-12-16",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2022-11-06",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-11-04",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2022-09-08",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-09-05",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2022-07-28",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-07-25",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2022-07-14",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-07-11",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2022-06-03",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-05-30",
-          "price": 0.97,
-          "unitPrice": 1.94
-        },
-        {
-          "date": "2022-05-26",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-01-09",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2022-01-07",
-          "price": 0.74,
-          "unitPrice": 1.48
-        },
-        {
-          "date": "2021-05-27",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2021-05-12",
-          "price": 0.79,
-          "unitPrice": 1.58
-        },
-        {
-          "date": "2021-02-10",
-          "price": 0.99,
-          "unitPrice": 1.98
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 500,
-      "bio": true,
-      "url": "",
-      "search": "billa bio fusilli 500 g"
-    },
-    {
-      "store": "spar",
-      "id": "7365386",
-      "name": "DESPAR Fusilli",
-      "category": "5B",
-      "unavailable": false,
-      "price": 1.59,
-      "priceHistory": [
-        {
-          "date": "2022-10-11",
-          "price": 1.59,
-          "unitPrice": 3.18
-        },
-        {
-          "date": "2022-04-08",
-          "price": 1.49,
-          "unitPrice": 2.98
-        },
-        {
-          "date": "2022-03-30",
-          "price": 1.19,
-          "unitPrice": 2.38
-        },
-        {
-          "date": "2022-02-18",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2022-02-02",
-          "price": 1.19,
-          "unitPrice": 2.38
-        },
-        {
-          "date": "2021-11-10",
-          "price": 1.29,
-          "unitPrice": 2.58
-        },
-        {
-          "date": "2021-09-29",
-          "price": 1.19,
-          "unitPrice": 2.38
-        },
-        {
-          "date": "2021-09-24",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2021-09-08",
-          "price": 0.79,
-          "unitPrice": 1.58
-        },
-        {
-          "date": "2021-06-18",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2021-06-09",
-          "price": 0.79,
-          "unitPrice": 1.58
-        },
-        {
-          "date": "2020-09-04",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2020-08-19",
-          "price": 0.79,
-          "unitPrice": 1.58
-        },
-        {
-          "date": "2020-03-20",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2020-02-26",
-          "price": 0.89,
-          "unitPrice": 1.78
-        },
-        {
-          "date": "2019-11-22",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2019-11-06",
-          "price": 0.66,
-          "unitPrice": 1.32
-        },
-        {
-          "date": "2019-08-15",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2019-07-31",
-          "price": 0.59,
-          "unitPrice": 1.18
-        },
-        {
-          "date": "2019-02-24",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2019-01-12",
-          "price": 0.66,
-          "unitPrice": 1.32
-        },
-        {
-          "date": "2018-11-16",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2018-10-30",
-          "price": 0.59,
-          "unitPrice": 1.18
-        },
-        {
-          "date": "2018-04-20",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2018-04-03",
-          "price": 0.59,
-          "unitPrice": 1.18
-        },
-        {
-          "date": "2018-03-15",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2018-02-28",
-          "price": 0.59,
-          "unitPrice": 1.18
-        },
-        {
-          "date": "2018-02-01",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2018-01-17",
-          "price": 0.66,
-          "unitPrice": 1.32
-        },
-        {
-          "date": "2017-11-30",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2017-11-21",
-          "price": 0.66,
-          "unitPrice": 1.32
-        },
-        {
-          "date": "2017-11-17",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2017-10-30",
-          "price": 0.66,
-          "unitPrice": 1.32
-        },
-        {
-          "date": "2017-10-03",
-          "price": 0.99,
-          "unitPrice": 1.98
-        },
-        {
-          "date": "2017-07-11",
-          "price": 0.66,
-          "unitPrice": 1.32
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.99,
-          "unitPrice": 1.98
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 500,
-      "bio": false,
-      "url": "",
-      "search": "despar fusilli 500 g"
-    },
-    {
-      "store": "billa",
       "id": "00-713536",
       "name": "BILLA Bio Gemüsesuppe",
       "category": "55",
@@ -3360,278 +3028,6 @@
     },
     {
       "store": "billa",
-      "id": "00-516479",
-      "name": "BILLA Genusswelt Sockeye Wildlachs",
-      "category": "39",
-      "unavailable": false,
-      "price": 9.49,
-      "priceHistory": [
-        {
-          "date": "2023-03-11",
-          "price": 9.49,
-          "unitPrice": 94.89999999999999
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 100,
-      "bio": false,
-      "url": "",
-      "search": "billa genusswelt sockeye wildlachs 100 g"
-    },
-    {
-      "store": "spar",
-      "id": "1807332",
-      "name": "SPAR PREMIUM Sockeye Wildlachs",
-      "category": "39",
-      "unavailable": false,
-      "price": 8.99,
-      "priceHistory": [
-        {
-          "date": "2023-04-21",
-          "price": 8.99,
-          "unitPrice": 89.9
-        },
-        {
-          "date": "2023-01-13",
-          "price": 9.49,
-          "unitPrice": 94.89999999999999
-        },
-        {
-          "date": "2022-11-23",
-          "price": 8.49,
-          "unitPrice": 84.9
-        },
-        {
-          "date": "2022-09-30",
-          "price": 9.49,
-          "unitPrice": 94.89999999999999
-        },
-        {
-          "date": "2022-04-29",
-          "price": 8.49,
-          "unitPrice": 84.9
-        },
-        {
-          "date": "2022-03-31",
-          "price": 7.49,
-          "unitPrice": 74.9
-        },
-        {
-          "date": "2022-02-04",
-          "price": 8.49,
-          "unitPrice": 84.9
-        },
-        {
-          "date": "2022-01-14",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2021-11-25",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2021-10-22",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2021-10-07",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2021-04-15",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2021-03-11",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2021-02-19",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2021-02-11",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2021-01-15",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2020-11-25",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2020-05-15",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2020-05-07",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2020-04-24",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2020-03-27",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2020-02-28",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2020-02-20",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2020-01-10",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2019-11-27",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2019-05-02",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2019-04-04",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2019-03-16",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2019-02-28",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2018-10-05",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2018-09-20",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2018-05-18",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2018-05-08",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2018-04-13",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2018-03-08",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2018-02-16",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2018-01-31",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2018-01-05",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2017-11-29",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2017-10-19",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2017-10-09",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2017-06-29",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2017-06-15",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2017-05-18",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2017-05-11",
-          "price": 6.99,
-          "unitPrice": 69.9
-        },
-        {
-          "date": "2017-04-25",
-          "price": 7.99,
-          "unitPrice": 79.9
-        },
-        {
-          "date": "2017-04-20",
-          "price": 6.99,
-          "unitPrice": 69.9
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 100,
-      "bio": false,
-      "url": "",
-      "search": "spar premium sockeye wildlachs 100 g"
-    },
-    {
-      "store": "billa",
       "id": "00-567680",
       "name": "BILLA Genusswelt Tiramisu",
       "category": "34",
@@ -3811,253 +3207,6 @@
       "bio": false,
       "url": "",
       "search": "despar tiramisu 2 x 90g 180 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-457757",
-      "name": "BILLA Haselnüsse Gerieben",
-      "category": "52",
-      "unavailable": false,
-      "price": 2.49,
-      "priceHistory": [
-        {
-          "date": "2023-06-12",
-          "price": 2.49,
-          "unitPrice": 12.450000000000001
-        },
-        {
-          "date": "2023-03-05",
-          "price": 2.29,
-          "unitPrice": 11.45
-        },
-        {
-          "date": "2023-03-01",
-          "price": 1.72,
-          "unitPrice": 8.6
-        },
-        {
-          "date": "2023-02-09",
-          "price": 2.29,
-          "unitPrice": 11.45
-        },
-        {
-          "date": "2022-12-07",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2022-11-24",
-          "price": 1.49,
-          "unitPrice": 7.45
-        },
-        {
-          "date": "2022-10-13",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2022-10-06",
-          "price": 0.99,
-          "unitPrice": 4.949999999999999
-        },
-        {
-          "date": "2022-10-04",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2022-09-21",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2022-07-28",
-          "price": 2.09,
-          "unitPrice": 10.45
-        },
-        {
-          "date": "2022-07-25",
-          "price": 1.57,
-          "unitPrice": 7.850000000000001
-        },
-        {
-          "date": "2022-06-03",
-          "price": 2.09,
-          "unitPrice": 10.45
-        },
-        {
-          "date": "2022-05-30",
-          "price": 1.57,
-          "unitPrice": 7.850000000000001
-        },
-        {
-          "date": "2022-05-23",
-          "price": 2.09,
-          "unitPrice": 10.45
-        },
-        {
-          "date": "2022-04-14",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2022-04-01",
-          "price": 1.32,
-          "unitPrice": 6.6
-        },
-        {
-          "date": "2022-02-17",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2021-12-09",
-          "price": 2.99,
-          "unitPrice": 14.950000000000001
-        },
-        {
-          "date": "2021-11-25",
-          "price": 1.49,
-          "unitPrice": 7.45
-        },
-        {
-          "date": "2021-10-28",
-          "price": 2.99,
-          "unitPrice": 14.950000000000001
-        },
-        {
-          "date": "2021-10-14",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2021-06-16",
-          "price": 2.99,
-          "unitPrice": 14.950000000000001
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "billa haselnüsse gerieben 200 g"
-    },
-    {
-      "store": "spar",
-      "id": "4323389",
-      "name": "SPAR Geriebene Haselnüsse",
-      "category": "52",
-      "unavailable": false,
-      "price": 2.29,
-      "priceHistory": [
-        {
-          "date": "2023-01-17",
-          "price": 2.29,
-          "unitPrice": 11.45
-        },
-        {
-          "date": "2022-12-18",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.59,
-          "unitPrice": 7.95
-        },
-        {
-          "date": "2022-04-28",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2022-04-12",
-          "price": 1.59,
-          "unitPrice": 7.95
-        },
-        {
-          "date": "2022-02-02",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2022-01-19",
-          "price": 2.39,
-          "unitPrice": 11.950000000000001
-        },
-        {
-          "date": "2021-12-20",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2021-09-29",
-          "price": 1.89,
-          "unitPrice": 9.45
-        },
-        {
-          "date": "2021-06-11",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2020-12-23",
-          "price": 2.49,
-          "unitPrice": 12.450000000000001
-        },
-        {
-          "date": "2020-12-16",
-          "price": 2.39,
-          "unitPrice": 11.950000000000001
-        },
-        {
-          "date": "2020-10-08",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2020-09-20",
-          "price": 2.39,
-          "unitPrice": 11.950000000000001
-        },
-        {
-          "date": "2020-06-10",
-          "price": 2.99,
-          "unitPrice": 14.950000000000001
-        },
-        {
-          "date": "2020-05-15",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2020-04-28",
-          "price": 1.59,
-          "unitPrice": 7.95
-        },
-        {
-          "date": "2017-10-03",
-          "price": 1.99,
-          "unitPrice": 9.950000000000001
-        },
-        {
-          "date": "2017-07-18",
-          "price": 2.49,
-          "unitPrice": 12.450000000000001
-        },
-        {
-          "date": "2017-04-20",
-          "price": 2.79,
-          "unitPrice": 13.950000000000001
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "spar geriebene haselnüsse 200 g"
     },
     {
       "store": "billa",
@@ -5510,313 +4659,6 @@
       "bio": false,
       "url": "",
       "search": "spar marmorkuchen 400 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-953957",
-      "name": "BILLA Mozzarella",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-06-22",
-          "price": 1.29,
-          "unitPrice": 10.32
-        },
-        {
-          "date": "2023-05-13",
-          "price": 1.69,
-          "unitPrice": 13.52
-        },
-        {
-          "date": "2023-04-29",
-          "price": 1.19,
-          "unitPrice": 9.52
-        },
-        {
-          "date": "2023-03-05",
-          "price": 1.69,
-          "unitPrice": 13.52
-        },
-        {
-          "date": "2023-03-01",
-          "price": 1.27,
-          "unitPrice": 10.16
-        },
-        {
-          "date": "2022-10-13",
-          "price": 1.69,
-          "unitPrice": 13.52
-        },
-        {
-          "date": "2022-09-30",
-          "price": 0.99,
-          "unitPrice": 7.92
-        },
-        {
-          "date": "2022-09-29",
-          "price": 1.59,
-          "unitPrice": 12.72
-        },
-        {
-          "date": "2022-08-21",
-          "price": 1.49,
-          "unitPrice": 11.92
-        },
-        {
-          "date": "2022-08-06",
-          "price": 0.99,
-          "unitPrice": 7.92
-        },
-        {
-          "date": "2022-07-28",
-          "price": 1.49,
-          "unitPrice": 11.92
-        },
-        {
-          "date": "2022-07-25",
-          "price": 1.12,
-          "unitPrice": 8.96
-        },
-        {
-          "date": "2022-07-21",
-          "price": 1.49,
-          "unitPrice": 11.92
-        },
-        {
-          "date": "2022-06-03",
-          "price": 1.39,
-          "unitPrice": 11.12
-        },
-        {
-          "date": "2022-05-30",
-          "price": 1.04,
-          "unitPrice": 8.32
-        },
-        {
-          "date": "2022-05-21",
-          "price": 1.39,
-          "unitPrice": 11.12
-        },
-        {
-          "date": "2022-04-12",
-          "price": 1.29,
-          "unitPrice": 10.32
-        },
-        {
-          "date": "2022-03-15",
-          "price": 1.15,
-          "unitPrice": 9.2
-        },
-        {
-          "date": "2022-03-06",
-          "price": 0.69,
-          "unitPrice": 5.52
-        },
-        {
-          "date": "2022-03-04",
-          "price": 0.52,
-          "unitPrice": 4.16
-        },
-        {
-          "date": "2022-03-01",
-          "price": 0.69,
-          "unitPrice": 5.52
-        },
-        {
-          "date": "2022-02-17",
-          "price": 1.15,
-          "unitPrice": 9.2
-        },
-        {
-          "date": "2022-02-14",
-          "price": 0.57,
-          "unitPrice": 4.56
-        },
-        {
-          "date": "2022-02-03",
-          "price": 1.15,
-          "unitPrice": 9.2
-        },
-        {
-          "date": "2022-01-30",
-          "price": 0.72,
-          "unitPrice": 5.76
-        },
-        {
-          "date": "2022-01-28",
-          "price": 0.54,
-          "unitPrice": 4.32
-        },
-        {
-          "date": "2022-01-20",
-          "price": 0.72,
-          "unitPrice": 5.76
-        },
-        {
-          "date": "2021-07-22",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2021-07-08",
-          "price": 0.54,
-          "unitPrice": 4.32
-        },
-        {
-          "date": "2021-06-10",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2021-05-27",
-          "price": 0.54,
-          "unitPrice": 4.32
-        },
-        {
-          "date": "2021-03-18",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2021-03-04",
-          "price": 0.79,
-          "unitPrice": 6.32
-        },
-        {
-          "date": "2020-01-01",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2019-10-03",
-          "price": 1.19,
-          "unitPrice": 9.52
-        },
-        {
-          "date": "2019-08-29",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2019-08-14",
-          "price": 0.99,
-          "unitPrice": 7.92
-        },
-        {
-          "date": "2018-07-19",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2018-07-11",
-          "price": 0.99,
-          "unitPrice": 7.92
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 125,
-      "bio": false,
-      "url": "",
-      "search": "billa mozzarella 125 g"
-    },
-    {
-      "store": "spar",
-      "id": "7995545",
-      "name": "DESPAR Mozzarella",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.69,
-      "priceHistory": [
-        {
-          "date": "2022-10-03",
-          "price": 1.69,
-          "unitPrice": 13.52
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.49,
-          "unitPrice": 11.92
-        },
-        {
-          "date": "2022-04-12",
-          "price": 1.29,
-          "unitPrice": 10.32
-        },
-        {
-          "date": "2022-02-01",
-          "price": 1.15,
-          "unitPrice": 9.2
-        },
-        {
-          "date": "2021-06-03",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2021-05-20",
-          "price": 0.54,
-          "unitPrice": 4.32
-        },
-        {
-          "date": "2020-05-29",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2020-05-14",
-          "price": 0.54,
-          "unitPrice": 4.32
-        },
-        {
-          "date": "2019-05-24",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2019-05-09",
-          "price": 0.54,
-          "unitPrice": 4.32
-        },
-        {
-          "date": "2018-05-31",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2018-05-17",
-          "price": 0.54,
-          "unitPrice": 4.32
-        },
-        {
-          "date": "2017-11-11",
-          "price": 1.09,
-          "unitPrice": 8.72
-        },
-        {
-          "date": "2017-06-15",
-          "price": 0.99,
-          "unitPrice": 7.92
-        },
-        {
-          "date": "2017-05-31",
-          "price": 0.49,
-          "unitPrice": 3.92
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.99,
-          "unitPrice": 7.92
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 125,
-      "bio": false,
-      "url": "",
-      "search": "despar mozzarella 125 g"
     },
     {
       "store": "billa",
@@ -8797,6 +7639,1164 @@
       "bio": false,
       "url": "",
       "search": "spar vital wildlachs naturfilets mit haut 2 filets 250g 250 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-443100",
+      "name": "BILLA Bio Fusilli",
+      "category": "5B",
+      "unavailable": false,
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-06-11",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2023-06-07",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2023-02-07",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2023-02-02",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2023-01-08",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2023-01-05",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2022-12-18",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-12-16",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2022-11-06",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-11-04",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2022-09-08",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-09-05",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2022-07-28",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-07-25",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2022-07-14",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-07-11",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2022-06-03",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-05-30",
+          "price": 0.97,
+          "unitPrice": 1.94
+        },
+        {
+          "date": "2022-05-26",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-01-09",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2022-01-07",
+          "price": 0.74,
+          "unitPrice": 1.48
+        },
+        {
+          "date": "2021-05-27",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2021-05-12",
+          "price": 0.79,
+          "unitPrice": 1.58
+        },
+        {
+          "date": "2021-02-10",
+          "price": 0.99,
+          "unitPrice": 1.98
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 500,
+      "bio": true,
+      "url": "",
+      "search": "billa bio fusilli 500 g"
+    },
+    {
+      "store": "spar",
+      "id": "7365386",
+      "name": "DESPAR Fusilli",
+      "category": "5B",
+      "unavailable": false,
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2022-10-11",
+          "price": 1.59,
+          "unitPrice": 3.18
+        },
+        {
+          "date": "2022-04-08",
+          "price": 1.49,
+          "unitPrice": 2.98
+        },
+        {
+          "date": "2022-03-30",
+          "price": 1.19,
+          "unitPrice": 2.38
+        },
+        {
+          "date": "2022-02-18",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2022-02-02",
+          "price": 1.19,
+          "unitPrice": 2.38
+        },
+        {
+          "date": "2021-11-10",
+          "price": 1.29,
+          "unitPrice": 2.58
+        },
+        {
+          "date": "2021-09-29",
+          "price": 1.19,
+          "unitPrice": 2.38
+        },
+        {
+          "date": "2021-09-24",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2021-09-08",
+          "price": 0.79,
+          "unitPrice": 1.58
+        },
+        {
+          "date": "2021-06-18",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2021-06-09",
+          "price": 0.79,
+          "unitPrice": 1.58
+        },
+        {
+          "date": "2020-09-04",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2020-08-19",
+          "price": 0.79,
+          "unitPrice": 1.58
+        },
+        {
+          "date": "2020-03-20",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2020-02-26",
+          "price": 0.89,
+          "unitPrice": 1.78
+        },
+        {
+          "date": "2019-11-22",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2019-11-06",
+          "price": 0.66,
+          "unitPrice": 1.32
+        },
+        {
+          "date": "2019-08-15",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2019-07-31",
+          "price": 0.59,
+          "unitPrice": 1.18
+        },
+        {
+          "date": "2019-02-24",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2019-01-12",
+          "price": 0.66,
+          "unitPrice": 1.32
+        },
+        {
+          "date": "2018-11-16",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2018-10-30",
+          "price": 0.59,
+          "unitPrice": 1.18
+        },
+        {
+          "date": "2018-04-20",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2018-04-03",
+          "price": 0.59,
+          "unitPrice": 1.18
+        },
+        {
+          "date": "2018-03-15",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2018-02-28",
+          "price": 0.59,
+          "unitPrice": 1.18
+        },
+        {
+          "date": "2018-02-01",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2018-01-17",
+          "price": 0.66,
+          "unitPrice": 1.32
+        },
+        {
+          "date": "2017-11-30",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2017-11-21",
+          "price": 0.66,
+          "unitPrice": 1.32
+        },
+        {
+          "date": "2017-11-17",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2017-10-30",
+          "price": 0.66,
+          "unitPrice": 1.32
+        },
+        {
+          "date": "2017-10-03",
+          "price": 0.99,
+          "unitPrice": 1.98
+        },
+        {
+          "date": "2017-07-11",
+          "price": 0.66,
+          "unitPrice": 1.32
+        },
+        {
+          "date": "2017-04-20",
+          "price": 0.99,
+          "unitPrice": 1.98
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 500,
+      "bio": false,
+      "url": "",
+      "search": "despar fusilli 500 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-516479",
+      "name": "BILLA Genusswelt Sockeye Wildlachs",
+      "category": "39",
+      "unavailable": false,
+      "price": 9.49,
+      "priceHistory": [
+        {
+          "date": "2023-03-11",
+          "price": 9.49,
+          "unitPrice": 94.89999999999999
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 100,
+      "bio": false,
+      "url": "",
+      "search": "billa genusswelt sockeye wildlachs 100 g"
+    },
+    {
+      "store": "spar",
+      "id": "1807332",
+      "name": "SPAR PREMIUM Sockeye Wildlachs",
+      "category": "39",
+      "unavailable": false,
+      "price": 8.99,
+      "priceHistory": [
+        {
+          "date": "2023-04-21",
+          "price": 8.99,
+          "unitPrice": 89.9
+        },
+        {
+          "date": "2023-01-13",
+          "price": 9.49,
+          "unitPrice": 94.89999999999999
+        },
+        {
+          "date": "2022-11-23",
+          "price": 8.49,
+          "unitPrice": 84.9
+        },
+        {
+          "date": "2022-09-30",
+          "price": 9.49,
+          "unitPrice": 94.89999999999999
+        },
+        {
+          "date": "2022-04-29",
+          "price": 8.49,
+          "unitPrice": 84.9
+        },
+        {
+          "date": "2022-03-31",
+          "price": 7.49,
+          "unitPrice": 74.9
+        },
+        {
+          "date": "2022-02-04",
+          "price": 8.49,
+          "unitPrice": 84.9
+        },
+        {
+          "date": "2022-01-14",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2021-11-25",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2021-10-22",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2021-10-07",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2021-04-15",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2021-03-11",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2021-02-19",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2021-02-11",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2021-01-15",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2020-11-25",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2020-05-15",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2020-05-07",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2020-04-24",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2020-03-27",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2020-02-28",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2020-02-20",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2020-01-10",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2019-11-27",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2019-05-02",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2019-04-04",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2019-03-16",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2019-02-28",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2018-10-05",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2018-09-20",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2018-05-18",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2018-05-08",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2018-04-13",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2018-03-08",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2018-02-16",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2018-01-31",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2018-01-05",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2017-11-29",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2017-10-19",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2017-10-09",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2017-06-29",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2017-06-15",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2017-05-18",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2017-05-11",
+          "price": 6.99,
+          "unitPrice": 69.9
+        },
+        {
+          "date": "2017-04-25",
+          "price": 7.99,
+          "unitPrice": 79.9
+        },
+        {
+          "date": "2017-04-20",
+          "price": 6.99,
+          "unitPrice": 69.9
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 100,
+      "bio": false,
+      "url": "",
+      "search": "spar premium sockeye wildlachs 100 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-457757",
+      "name": "BILLA Haselnüsse Gerieben",
+      "category": "52",
+      "unavailable": false,
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2023-06-12",
+          "price": 2.49,
+          "unitPrice": 12.450000000000001
+        },
+        {
+          "date": "2023-03-05",
+          "price": 2.29,
+          "unitPrice": 11.45
+        },
+        {
+          "date": "2023-03-01",
+          "price": 1.72,
+          "unitPrice": 8.6
+        },
+        {
+          "date": "2023-02-09",
+          "price": 2.29,
+          "unitPrice": 11.45
+        },
+        {
+          "date": "2022-12-07",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2022-11-24",
+          "price": 1.49,
+          "unitPrice": 7.45
+        },
+        {
+          "date": "2022-10-13",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2022-10-06",
+          "price": 0.99,
+          "unitPrice": 4.949999999999999
+        },
+        {
+          "date": "2022-10-04",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2022-09-21",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2022-07-28",
+          "price": 2.09,
+          "unitPrice": 10.45
+        },
+        {
+          "date": "2022-07-25",
+          "price": 1.57,
+          "unitPrice": 7.850000000000001
+        },
+        {
+          "date": "2022-06-03",
+          "price": 2.09,
+          "unitPrice": 10.45
+        },
+        {
+          "date": "2022-05-30",
+          "price": 1.57,
+          "unitPrice": 7.850000000000001
+        },
+        {
+          "date": "2022-05-23",
+          "price": 2.09,
+          "unitPrice": 10.45
+        },
+        {
+          "date": "2022-04-14",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2022-04-01",
+          "price": 1.32,
+          "unitPrice": 6.6
+        },
+        {
+          "date": "2022-02-17",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2021-12-09",
+          "price": 2.99,
+          "unitPrice": 14.950000000000001
+        },
+        {
+          "date": "2021-11-25",
+          "price": 1.49,
+          "unitPrice": 7.45
+        },
+        {
+          "date": "2021-10-28",
+          "price": 2.99,
+          "unitPrice": 14.950000000000001
+        },
+        {
+          "date": "2021-10-14",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2021-06-16",
+          "price": 2.99,
+          "unitPrice": 14.950000000000001
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "billa haselnüsse gerieben 200 g"
+    },
+    {
+      "store": "spar",
+      "id": "4323389",
+      "name": "SPAR Geriebene Haselnüsse",
+      "category": "52",
+      "unavailable": false,
+      "price": 2.29,
+      "priceHistory": [
+        {
+          "date": "2023-01-17",
+          "price": 2.29,
+          "unitPrice": 11.45
+        },
+        {
+          "date": "2022-12-18",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.59,
+          "unitPrice": 7.95
+        },
+        {
+          "date": "2022-04-28",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2022-04-12",
+          "price": 1.59,
+          "unitPrice": 7.95
+        },
+        {
+          "date": "2022-02-02",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2022-01-19",
+          "price": 2.39,
+          "unitPrice": 11.950000000000001
+        },
+        {
+          "date": "2021-12-20",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2021-09-29",
+          "price": 1.89,
+          "unitPrice": 9.45
+        },
+        {
+          "date": "2021-06-11",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2020-12-23",
+          "price": 2.49,
+          "unitPrice": 12.450000000000001
+        },
+        {
+          "date": "2020-12-16",
+          "price": 2.39,
+          "unitPrice": 11.950000000000001
+        },
+        {
+          "date": "2020-10-08",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2020-09-20",
+          "price": 2.39,
+          "unitPrice": 11.950000000000001
+        },
+        {
+          "date": "2020-06-10",
+          "price": 2.99,
+          "unitPrice": 14.950000000000001
+        },
+        {
+          "date": "2020-05-15",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2020-04-28",
+          "price": 1.59,
+          "unitPrice": 7.95
+        },
+        {
+          "date": "2017-10-03",
+          "price": 1.99,
+          "unitPrice": 9.950000000000001
+        },
+        {
+          "date": "2017-07-18",
+          "price": 2.49,
+          "unitPrice": 12.450000000000001
+        },
+        {
+          "date": "2017-04-20",
+          "price": 2.79,
+          "unitPrice": 13.950000000000001
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "spar geriebene haselnüsse 200 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-953957",
+      "name": "BILLA Mozzarella",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-06-22",
+          "price": 1.29,
+          "unitPrice": 10.32
+        },
+        {
+          "date": "2023-05-13",
+          "price": 1.69,
+          "unitPrice": 13.52
+        },
+        {
+          "date": "2023-04-29",
+          "price": 1.19,
+          "unitPrice": 9.52
+        },
+        {
+          "date": "2023-03-05",
+          "price": 1.69,
+          "unitPrice": 13.52
+        },
+        {
+          "date": "2023-03-01",
+          "price": 1.27,
+          "unitPrice": 10.16
+        },
+        {
+          "date": "2022-10-13",
+          "price": 1.69,
+          "unitPrice": 13.52
+        },
+        {
+          "date": "2022-09-30",
+          "price": 0.99,
+          "unitPrice": 7.92
+        },
+        {
+          "date": "2022-09-29",
+          "price": 1.59,
+          "unitPrice": 12.72
+        },
+        {
+          "date": "2022-08-21",
+          "price": 1.49,
+          "unitPrice": 11.92
+        },
+        {
+          "date": "2022-08-06",
+          "price": 0.99,
+          "unitPrice": 7.92
+        },
+        {
+          "date": "2022-07-28",
+          "price": 1.49,
+          "unitPrice": 11.92
+        },
+        {
+          "date": "2022-07-25",
+          "price": 1.12,
+          "unitPrice": 8.96
+        },
+        {
+          "date": "2022-07-21",
+          "price": 1.49,
+          "unitPrice": 11.92
+        },
+        {
+          "date": "2022-06-03",
+          "price": 1.39,
+          "unitPrice": 11.12
+        },
+        {
+          "date": "2022-05-30",
+          "price": 1.04,
+          "unitPrice": 8.32
+        },
+        {
+          "date": "2022-05-21",
+          "price": 1.39,
+          "unitPrice": 11.12
+        },
+        {
+          "date": "2022-04-12",
+          "price": 1.29,
+          "unitPrice": 10.32
+        },
+        {
+          "date": "2022-03-15",
+          "price": 1.15,
+          "unitPrice": 9.2
+        },
+        {
+          "date": "2022-03-06",
+          "price": 0.69,
+          "unitPrice": 5.52
+        },
+        {
+          "date": "2022-03-04",
+          "price": 0.52,
+          "unitPrice": 4.16
+        },
+        {
+          "date": "2022-03-01",
+          "price": 0.69,
+          "unitPrice": 5.52
+        },
+        {
+          "date": "2022-02-17",
+          "price": 1.15,
+          "unitPrice": 9.2
+        },
+        {
+          "date": "2022-02-14",
+          "price": 0.57,
+          "unitPrice": 4.56
+        },
+        {
+          "date": "2022-02-03",
+          "price": 1.15,
+          "unitPrice": 9.2
+        },
+        {
+          "date": "2022-01-30",
+          "price": 0.72,
+          "unitPrice": 5.76
+        },
+        {
+          "date": "2022-01-28",
+          "price": 0.54,
+          "unitPrice": 4.32
+        },
+        {
+          "date": "2022-01-20",
+          "price": 0.72,
+          "unitPrice": 5.76
+        },
+        {
+          "date": "2021-07-22",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2021-07-08",
+          "price": 0.54,
+          "unitPrice": 4.32
+        },
+        {
+          "date": "2021-06-10",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2021-05-27",
+          "price": 0.54,
+          "unitPrice": 4.32
+        },
+        {
+          "date": "2021-03-18",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2021-03-04",
+          "price": 0.79,
+          "unitPrice": 6.32
+        },
+        {
+          "date": "2020-01-01",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2019-10-03",
+          "price": 1.19,
+          "unitPrice": 9.52
+        },
+        {
+          "date": "2019-08-29",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2019-08-14",
+          "price": 0.99,
+          "unitPrice": 7.92
+        },
+        {
+          "date": "2018-07-19",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2018-07-11",
+          "price": 0.99,
+          "unitPrice": 7.92
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 125,
+      "bio": false,
+      "url": "",
+      "search": "billa mozzarella 125 g"
+    },
+    {
+      "store": "spar",
+      "id": "7995545",
+      "name": "DESPAR Mozzarella",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2022-10-03",
+          "price": 1.69,
+          "unitPrice": 13.52
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.49,
+          "unitPrice": 11.92
+        },
+        {
+          "date": "2022-04-12",
+          "price": 1.29,
+          "unitPrice": 10.32
+        },
+        {
+          "date": "2022-02-01",
+          "price": 1.15,
+          "unitPrice": 9.2
+        },
+        {
+          "date": "2021-06-03",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2021-05-20",
+          "price": 0.54,
+          "unitPrice": 4.32
+        },
+        {
+          "date": "2020-05-29",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2020-05-14",
+          "price": 0.54,
+          "unitPrice": 4.32
+        },
+        {
+          "date": "2019-05-24",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2019-05-09",
+          "price": 0.54,
+          "unitPrice": 4.32
+        },
+        {
+          "date": "2018-05-31",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2018-05-17",
+          "price": 0.54,
+          "unitPrice": 4.32
+        },
+        {
+          "date": "2017-11-11",
+          "price": 1.09,
+          "unitPrice": 8.72
+        },
+        {
+          "date": "2017-06-15",
+          "price": 0.99,
+          "unitPrice": 7.92
+        },
+        {
+          "date": "2017-05-31",
+          "price": 0.49,
+          "unitPrice": 3.92
+        },
+        {
+          "date": "2017-04-20",
+          "price": 0.99,
+          "unitPrice": 7.92
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 125,
+      "bio": false,
+      "url": "",
+      "search": "despar mozzarella 125 g"
     }
   ]
 }

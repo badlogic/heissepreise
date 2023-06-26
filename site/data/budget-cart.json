@@ -657,83 +657,6 @@
     },
     {
       "store": "billa",
-      "id": "00-667911",
-      "name": "Clever Apfelstrudel",
-      "category": "47",
-      "unavailable": false,
-      "price": 1.99,
-      "priceHistory": [
-        {
-          "date": "2022-11-03",
-          "price": 1.99,
-          "unitPrice": 3.3166666666666664
-        },
-        {
-          "date": "2022-02-17",
-          "price": 1.49,
-          "unitPrice": 2.4833333333333334
-        },
-        {
-          "date": "2021-10-11",
-          "price": 1.29,
-          "unitPrice": 2.15
-        },
-        {
-          "date": "2017-04-05",
-          "price": 1.49,
-          "unitPrice": 2.4833333333333334
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 600,
-      "bio": false,
-      "url": "",
-      "search": "clever apfelstrudel 600 g"
-    },
-    {
-      "store": "spar",
-      "id": "7521317",
-      "name": "S-BUDGET Apfelstrudel tiefgefroren, backfertig",
-      "category": "47",
-      "unavailable": false,
-      "price": 1.89,
-      "priceHistory": [
-        {
-          "date": "2023-06-13",
-          "price": 1.89,
-          "unitPrice": 3.15
-        },
-        {
-          "date": "2022-11-01",
-          "price": 1.99,
-          "unitPrice": 3.3166666666666664
-        },
-        {
-          "date": "2022-01-02",
-          "price": 1.49,
-          "unitPrice": 2.4833333333333334
-        },
-        {
-          "date": "2021-10-09",
-          "price": 1.29,
-          "unitPrice": 2.15
-        },
-        {
-          "date": "2017-04-20",
-          "price": 1.49,
-          "unitPrice": 2.4833333333333334
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 600,
-      "bio": false,
-      "url": "",
-      "search": "s-budget apfelstrudel tiefgefroren. backfertig 600 g"
-    },
-    {
-      "store": "billa",
       "id": "00-790114",
       "name": "Clever Artischocken gegrillt",
       "category": "57",
@@ -1597,118 +1520,6 @@
     },
     {
       "store": "billa",
-      "id": "00-297121",
-      "name": "Clever Basmatireis",
-      "category": "5B",
-      "unavailable": false,
-      "price": 2.69,
-      "priceHistory": [
-        {
-          "date": "2023-05-15",
-          "price": 2.69,
-          "unitPrice": 2.69
-        },
-        {
-          "date": "2022-12-15",
-          "price": 2.29,
-          "unitPrice": 2.29
-        },
-        {
-          "date": "2020-05-28",
-          "price": 1.99,
-          "unitPrice": 1.99
-        },
-        {
-          "date": "2020-01-17",
-          "price": 2.19,
-          "unitPrice": 2.19
-        },
-        {
-          "date": "2019-11-30",
-          "price": 2.39,
-          "unitPrice": 2.39
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 1000,
-      "bio": false,
-      "url": "",
-      "search": "clever basmatireis 1000 g"
-    },
-    {
-      "store": "spar",
-      "id": "7979828",
-      "name": "S-BUDGET Basmati Reis",
-      "category": "5B",
-      "unavailable": false,
-      "price": 2.89,
-      "priceHistory": [
-        {
-          "date": "2023-06-06",
-          "price": 2.89,
-          "unitPrice": 2.89
-        },
-        {
-          "date": "2023-02-16",
-          "price": 2.69,
-          "unitPrice": 2.69
-        },
-        {
-          "date": "2023-01-20",
-          "price": 2.29,
-          "unitPrice": 2.29
-        },
-        {
-          "date": "2023-01-07",
-          "price": 1.99,
-          "unitPrice": 1.99
-        },
-        {
-          "date": "2022-11-15",
-          "price": 2.29,
-          "unitPrice": 2.29
-        },
-        {
-          "date": "2022-04-06",
-          "price": 1.99,
-          "unitPrice": 1.99
-        },
-        {
-          "date": "2021-03-24",
-          "price": 1.89,
-          "unitPrice": 1.89
-        },
-        {
-          "date": "2020-03-04",
-          "price": 1.99,
-          "unitPrice": 1.99
-        },
-        {
-          "date": "2018-08-29",
-          "price": 2.19,
-          "unitPrice": 2.19
-        },
-        {
-          "date": "2018-07-04",
-          "price": 2.39,
-          "unitPrice": 2.39
-        },
-        {
-          "date": "2017-04-20",
-          "price": 2.19,
-          "unitPrice": 2.19
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 1000,
-      "bio": false,
-      "url": "",
-      "search": "s-budget basmati reis 1000 g"
-    },
-    {
-      "store": "billa",
       "id": "00-674035",
       "name": "Clever Bergwurst",
       "category": "37",
@@ -1890,58 +1701,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget birnenhälften leicht gezuckert 820 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-489499",
-      "name": "Clever Blattspinat",
-      "category": "44",
-      "unavailable": false,
-      "price": 1.69,
-      "priceHistory": [
-        {
-          "date": "2023-06-06",
-          "price": 1.69,
-          "unitPrice": 2.2533333333333334
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 750,
-      "bio": false,
-      "url": "",
-      "search": "clever blattspinat 750 g"
-    },
-    {
-      "store": "spar",
-      "id": "7581663",
-      "name": "S-BUDGET Blattspinat tiefgekühlt 15 x 50g",
-      "category": "41",
-      "unavailable": false,
-      "price": 1.85,
-      "priceHistory": [
-        {
-          "date": "2023-01-03",
-          "price": 1.85,
-          "unitPrice": 2.466666666666667
-        },
-        {
-          "date": "2022-03-16",
-          "price": 1.69,
-          "unitPrice": 2.2533333333333334
-        },
-        {
-          "date": "2017-04-20",
-          "price": 1.49,
-          "unitPrice": 1.9866666666666666
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 750,
-      "bio": false,
-      "url": "",
-      "search": "s-budget blattspinat tiefgekühlt 15 x 50g 750 g"
     },
     {
       "store": "billa",
@@ -4630,108 +4389,6 @@
     },
     {
       "store": "billa",
-      "id": "00-528814",
-      "name": "Clever Ei-Zwiebel Aufstrich",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-06-14",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2023-02-24",
-          "price": 1.15,
-          "unitPrice": 5.75
-        },
-        {
-          "date": "2022-12-12",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-11-09",
-          "price": 1.15,
-          "unitPrice": 5.75
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "clever ei-zwiebel aufstrich 200 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020002743543",
-      "name": "S-BUDGET Ei-Zwiebel Aufstrich",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.15,
-      "priceHistory": [
-        {
-          "date": "2023-02-22",
-          "price": 1.15,
-          "unitPrice": 5.75
-        },
-        {
-          "date": "2022-12-21",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.15,
-          "unitPrice": 5.75
-        },
-        {
-          "date": "2021-11-03",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2021-04-07",
-          "price": 0.79,
-          "unitPrice": 3.95
-        },
-        {
-          "date": "2020-02-12",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2019-09-17",
-          "price": 0.79,
-          "unitPrice": 3.95
-        },
-        {
-          "date": "2019-07-31",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2019-03-27",
-          "price": 0.79,
-          "unitPrice": 3.95
-        },
-        {
-          "date": "2018-11-09",
-          "price": 0.89,
-          "unitPrice": 4.45
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "s-budget ei-zwiebel aufstrich 200 g"
-    },
-    {
-      "store": "billa",
       "id": "00-312736",
       "name": "Clever Eier aus Bodenhaltung M",
       "category": "31",
@@ -5376,483 +5033,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget emmentaler in scheiben 400 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-534071",
-      "name": "Clever Energy Drink Sugarfree",
-      "category": "20",
-      "unavailable": false,
-      "price": 0.49,
-      "priceHistory": [
-        {
-          "date": "2022-12-15",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2022-11-26",
-          "price": 0.45,
-          "unitPrice": 1.8
-        },
-        {
-          "date": "2022-11-21",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2022-04-11",
-          "price": 0.45,
-          "unitPrice": 1.8
-        },
-        {
-          "date": "2022-02-24",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-05-27",
-          "price": 0.39,
-          "unitPrice": 1.56
-        },
-        {
-          "date": "2020-06-04",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-02-13",
-          "price": 0.39,
-          "unitPrice": 1.56
-        },
-        {
-          "date": "2019-10-03",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2018-06-21",
-          "price": 0.39,
-          "unitPrice": 1.56
-        },
-        {
-          "date": "2018-03-15",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2018-02-15",
-          "price": 0.39,
-          "unitPrice": 1.56
-        },
-        {
-          "date": "2017-12-06",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2017-04-05",
-          "price": 0.39,
-          "unitPrice": 1.56
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 250,
-      "bio": false,
-      "url": "",
-      "search": "clever energy drink sugarfree 250 ml"
-    },
-    {
-      "store": "spar",
-      "id": "7032318",
-      "name": "S-BUDGET Energydrink Sugarfree",
-      "category": "20",
-      "unavailable": false,
-      "price": 0.59,
-      "priceHistory": [
-        {
-          "date": "2023-02-02",
-          "price": 0.59,
-          "unitPrice": 2.36
-        },
-        {
-          "date": "2023-01-18",
-          "price": 0.29,
-          "unitPrice": 1.16
-        },
-        {
-          "date": "2023-01-13",
-          "price": 0.59,
-          "unitPrice": 2.36
-        },
-        {
-          "date": "2022-12-06",
-          "price": 0.29,
-          "unitPrice": 1.16
-        },
-        {
-          "date": "2022-11-10",
-          "price": 0.59,
-          "unitPrice": 2.36
-        },
-        {
-          "date": "2022-10-12",
-          "price": 0.3,
-          "unitPrice": 1.2
-        },
-        {
-          "date": "2022-09-30",
-          "price": 0.55,
-          "unitPrice": 2.2
-        },
-        {
-          "date": "2022-03-31",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2022-03-11",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2022-02-10",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2022-01-14",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-12-07",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2021-11-19",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-11-04",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2021-10-01",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-09-01",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2021-08-13",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-07-22",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2021-07-09",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-06-10",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2021-06-03",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-04-14",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2021-03-12",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2021-02-11",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2021-01-15",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-12-03",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2020-11-13",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-10-15",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2020-09-25",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-08-25",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2020-08-07",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-07-16",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2020-07-10",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-06-25",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2020-06-05",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-04-23",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2020-03-20",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-03-05",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2020-02-14",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2020-01-30",
-          "price": 0.32,
-          "unitPrice": 1.28
-        },
-        {
-          "date": "2020-01-10",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2019-12-05",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2019-11-08",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2019-10-24",
-          "price": 0.32,
-          "unitPrice": 1.28
-        },
-        {
-          "date": "2019-10-11",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2019-09-26",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2019-09-06",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2019-07-25",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2019-05-30",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2019-05-01",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2019-04-12",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2019-03-28",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2019-03-15",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2019-02-28",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2018-11-16",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2018-10-31",
-          "price": 0.32,
-          "unitPrice": 1.28
-        },
-        {
-          "date": "2018-09-14",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2018-08-02",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2018-06-02",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2018-05-17",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2018-04-20",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2018-04-12",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2018-03-07",
-          "price": 0.32,
-          "unitPrice": 1.28
-        },
-        {
-          "date": "2018-02-15",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2018-01-31",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2018-01-12",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2017-12-06",
-          "price": 0.32,
-          "unitPrice": 1.28
-        },
-        {
-          "date": "2017-10-26",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2017-10-09",
-          "price": 0.39,
-          "unitPrice": 1.56
-        },
-        {
-          "date": "2017-07-13",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2017-06-15",
-          "price": 0.24,
-          "unitPrice": 0.96
-        },
-        {
-          "date": "2017-06-02",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2017-05-23",
-          "price": 0.39,
-          "unitPrice": 1.56
-        },
-        {
-          "date": "2017-05-11",
-          "price": 0.49,
-          "unitPrice": 1.96
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.39,
-          "unitPrice": 1.56
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 250,
-      "bio": false,
-      "url": "",
-      "search": "s-budget energydrink sugarfree 250 ml"
     },
     {
       "store": "billa",
@@ -6588,138 +5768,6 @@
     },
     {
       "store": "billa",
-      "id": "00-576272",
-      "name": "Clever Frischkäse Kren",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-05-15",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2023-01-24",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2022-09-01",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-06-15",
-          "price": 1.19,
-          "unitPrice": 5.949999999999999
-        },
-        {
-          "date": "2022-03-03",
-          "price": 1.09,
-          "unitPrice": 5.45
-        },
-        {
-          "date": "2021-08-13",
-          "price": 0.99,
-          "unitPrice": 4.949999999999999
-        },
-        {
-          "date": "2020-01-30",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2019-07-25",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2018-10-09",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2018-07-24",
-          "price": 0.83,
-          "unitPrice": 4.15
-        },
-        {
-          "date": "2018-07-17",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2018-06-16",
-          "price": 0.83,
-          "unitPrice": 4.15
-        },
-        {
-          "date": "2017-08-04",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2017-04-05",
-          "price": 0.75,
-          "unitPrice": 3.75
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "clever frischkäse kren 200 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020003984181",
-      "name": "S-BUDGET Frischkäse- Zubereitung Kren",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.19,
-      "priceHistory": [
-        {
-          "date": "2023-05-15",
-          "price": 1.19,
-          "unitPrice": 5.949999999999999
-        },
-        {
-          "date": "2023-02-22",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2023-01-13",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-03-16",
-          "price": 1.09,
-          "unitPrice": 5.45
-        },
-        {
-          "date": "2021-10-05",
-          "price": 0.99,
-          "unitPrice": 4.949999999999999
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "s-budget frischkäse- zubereitung kren 200 g"
-    },
-    {
-      "store": "billa",
       "id": "00-886678",
       "name": "Clever Frischkäse Kräuter",
       "category": "33",
@@ -6889,382 +5937,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget frischkäsezubereitung kräuter 150 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-320422",
-      "name": "Clever Frischkäse Kräuter",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-02-24",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2023-01-17",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2022-09-01",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-06-15",
-          "price": 1.19,
-          "unitPrice": 5.949999999999999
-        },
-        {
-          "date": "2022-03-03",
-          "price": 1.09,
-          "unitPrice": 5.45
-        },
-        {
-          "date": "2021-08-13",
-          "price": 0.99,
-          "unitPrice": 4.949999999999999
-        },
-        {
-          "date": "2020-01-30",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2019-07-25",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2018-10-09",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2018-07-24",
-          "price": 0.83,
-          "unitPrice": 4.15
-        },
-        {
-          "date": "2018-07-17",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2018-06-16",
-          "price": 0.83,
-          "unitPrice": 4.15
-        },
-        {
-          "date": "2017-08-04",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2017-04-05",
-          "price": 0.75,
-          "unitPrice": 3.75
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "clever frischkäse kräuter 200 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020003984174",
-      "name": "S-BUDGET Frischkäse Zubereitung Kräuter",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.19,
-      "priceHistory": [
-        {
-          "date": "2023-05-15",
-          "price": 1.19,
-          "unitPrice": 5.949999999999999
-        },
-        {
-          "date": "2023-02-22",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2023-01-13",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-03-16",
-          "price": 1.09,
-          "unitPrice": 5.45
-        },
-        {
-          "date": "2021-10-05",
-          "price": 0.99,
-          "unitPrice": 4.949999999999999
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "s-budget frischkäse zubereitung kräuter 200 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-320394",
-      "name": "Clever Frischkäse Natur",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-02-24",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2023-01-17",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2022-09-01",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-06-15",
-          "price": 1.19,
-          "unitPrice": 5.949999999999999
-        },
-        {
-          "date": "2022-03-03",
-          "price": 1.09,
-          "unitPrice": 5.45
-        },
-        {
-          "date": "2021-08-13",
-          "price": 0.99,
-          "unitPrice": 4.949999999999999
-        },
-        {
-          "date": "2020-01-30",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2019-07-25",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2018-10-09",
-          "price": 0.89,
-          "unitPrice": 4.45
-        },
-        {
-          "date": "2018-07-24",
-          "price": 0.83,
-          "unitPrice": 4.15
-        },
-        {
-          "date": "2018-07-17",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2018-06-16",
-          "price": 0.83,
-          "unitPrice": 4.15
-        },
-        {
-          "date": "2017-08-04",
-          "price": 0.85,
-          "unitPrice": 4.25
-        },
-        {
-          "date": "2017-04-05",
-          "price": 0.75,
-          "unitPrice": 3.75
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "clever frischkäse natur 200 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020003984167",
-      "name": "S-BUDGET Frischkäse- Zubereitung Natur",
-      "category": "33",
-      "unavailable": false,
-      "price": 1.19,
-      "priceHistory": [
-        {
-          "date": "2023-05-15",
-          "price": 1.19,
-          "unitPrice": 5.949999999999999
-        },
-        {
-          "date": "2023-02-22",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2023-01-13",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.29,
-          "unitPrice": 6.45
-        },
-        {
-          "date": "2022-03-16",
-          "price": 1.09,
-          "unitPrice": 5.45
-        },
-        {
-          "date": "2021-10-05",
-          "price": 0.99,
-          "unitPrice": 4.949999999999999
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "s-budget frischkäse- zubereitung natur 200 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-854134",
-      "name": "Clever Fruchtcocktail",
-      "category": "57",
-      "unavailable": false,
-      "price": 1.99,
-      "priceHistory": [
-        {
-          "date": "2023-04-29",
-          "price": 1.99,
-          "unitPrice": 2.426829268292683
-        },
-        {
-          "date": "2022-11-29",
-          "price": 1.69,
-          "unitPrice": 2.0609756097560976
-        },
-        {
-          "date": "2022-10-25",
-          "price": 1.99,
-          "unitPrice": 2.426829268292683
-        },
-        {
-          "date": "2022-03-01",
-          "price": 1.69,
-          "unitPrice": 2.0609756097560976
-        },
-        {
-          "date": "2021-04-07",
-          "price": 1.39,
-          "unitPrice": 1.6951219512195121
-        },
-        {
-          "date": "2017-11-28",
-          "price": 1.49,
-          "unitPrice": 1.8170731707317074
-        },
-        {
-          "date": "2017-10-09",
-          "price": 1.39,
-          "unitPrice": 1.6951219512195121
-        },
-        {
-          "date": "2017-07-13",
-          "price": 1.59,
-          "unitPrice": 1.9390243902439026
-        },
-        {
-          "date": "2017-04-05",
-          "price": 1.39,
-          "unitPrice": 1.6951219512195121
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 820,
-      "bio": false,
-      "url": "",
-      "search": "clever fruchtcocktail 820 g"
-    },
-    {
-      "store": "spar",
-      "id": "6619923",
-      "name": "S-BUDGET Fruchtcocktail leicht gezuckert",
-      "category": "57",
-      "unavailable": false,
-      "price": 2.19,
-      "priceHistory": [
-        {
-          "date": "2023-05-23",
-          "price": 2.19,
-          "unitPrice": 2.670731707317073
-        },
-        {
-          "date": "2023-02-28",
-          "price": 1.99,
-          "unitPrice": 2.426829268292683
-        },
-        {
-          "date": "2021-12-01",
-          "price": 1.69,
-          "unitPrice": 2.0609756097560976
-        },
-        {
-          "date": "2021-03-17",
-          "price": 1.39,
-          "unitPrice": 1.6951219512195121
-        },
-        {
-          "date": "2018-02-16",
-          "price": 1.49,
-          "unitPrice": 1.8170731707317074
-        },
-        {
-          "date": "2017-05-09",
-          "price": 1.39,
-          "unitPrice": 1.6951219512195121
-        },
-        {
-          "date": "2017-04-20",
-          "price": 1.59,
-          "unitPrice": 1.9390243902439026
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 820,
-      "bio": false,
-      "url": "",
-      "search": "s-budget fruchtcocktail leicht gezuckert 820 g"
     },
     {
       "store": "billa",
@@ -9912,103 +8584,6 @@
     },
     {
       "store": "billa",
-      "id": "00-309662",
-      "name": "Clever Langkornreis",
-      "category": "5B",
-      "unavailable": false,
-      "price": 1.19,
-      "priceHistory": [
-        {
-          "date": "2023-05-13",
-          "price": 1.19,
-          "unitPrice": 1.19
-        },
-        {
-          "date": "2023-03-10",
-          "price": 1.29,
-          "unitPrice": 1.29
-        },
-        {
-          "date": "2022-11-10",
-          "price": 1.19,
-          "unitPrice": 1.19
-        },
-        {
-          "date": "2022-08-11",
-          "price": 1.09,
-          "unitPrice": 1.09
-        },
-        {
-          "date": "2022-07-28",
-          "price": 0.89,
-          "unitPrice": 0.89
-        },
-        {
-          "date": "2022-05-28",
-          "price": 0.99,
-          "unitPrice": 0.99
-        },
-        {
-          "date": "2022-04-21",
-          "price": 0.85,
-          "unitPrice": 0.85
-        },
-        {
-          "date": "2019-12-11",
-          "price": 0.79,
-          "unitPrice": 0.79
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 1000,
-      "bio": false,
-      "url": "",
-      "search": "clever langkornreis 1000 g"
-    },
-    {
-      "store": "spar",
-      "id": "6481889",
-      "name": "S-BUDGET Langkornreis",
-      "category": "5B",
-      "unavailable": false,
-      "price": 1.29,
-      "priceHistory": [
-        {
-          "date": "2023-02-28",
-          "price": 1.29,
-          "unitPrice": 1.29
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.19,
-          "unitPrice": 1.19
-        },
-        {
-          "date": "2022-04-06",
-          "price": 0.99,
-          "unitPrice": 0.99
-        },
-        {
-          "date": "2017-12-05",
-          "price": 0.79,
-          "unitPrice": 0.79
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.69,
-          "unitPrice": 0.69
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 1000,
-      "bio": false,
-      "url": "",
-      "search": "s-budget langkornreis 1000 g"
-    },
-    {
-      "store": "billa",
       "id": "00-771957",
       "name": "Clever Leberaufstrich",
       "category": "57",
@@ -10126,128 +8701,6 @@
     },
     {
       "store": "billa",
-      "id": "00-736914",
-      "name": "Clever Linsen",
-      "category": "57",
-      "unavailable": true,
-      "price": 0.89,
-      "priceHistory": [
-        {
-          "date": "2022-11-24",
-          "price": 0.89,
-          "unitPrice": 1.1125
-        },
-        {
-          "date": "2022-10-06",
-          "price": 0.79,
-          "unitPrice": 0.9875
-        },
-        {
-          "date": "2022-07-21",
-          "price": 0.99,
-          "unitPrice": 1.2374999999999998
-        },
-        {
-          "date": "2021-10-14",
-          "price": 0.75,
-          "unitPrice": 0.9375
-        },
-        {
-          "date": "2020-08-13",
-          "price": 0.69,
-          "unitPrice": 0.8624999999999999
-        },
-        {
-          "date": "2020-07-16",
-          "price": 0.79,
-          "unitPrice": 0.9875
-        },
-        {
-          "date": "2018-03-01",
-          "price": 0.69,
-          "unitPrice": 0.8624999999999999
-        },
-        {
-          "date": "2017-09-25",
-          "price": 0.67,
-          "unitPrice": 0.8375
-        },
-        {
-          "date": "2017-07-13",
-          "price": 0.69,
-          "unitPrice": 0.8624999999999999
-        },
-        {
-          "date": "2017-04-05",
-          "price": 0.67,
-          "unitPrice": 0.8375
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 800,
-      "bio": false,
-      "url": "",
-      "search": "clever linsen 800 g"
-    },
-    {
-      "store": "spar",
-      "id": "2758800",
-      "name": "S-BUDGET Linsen",
-      "category": "57",
-      "unavailable": false,
-      "price": 0.99,
-      "priceHistory": [
-        {
-          "date": "2023-05-23",
-          "price": 0.99,
-          "unitPrice": 1.2374999999999998
-        },
-        {
-          "date": "2023-02-14",
-          "price": 0.89,
-          "unitPrice": 1.1125
-        },
-        {
-          "date": "2022-04-06",
-          "price": 0.79,
-          "unitPrice": 0.9875
-        },
-        {
-          "date": "2021-10-20",
-          "price": 0.75,
-          "unitPrice": 0.9375
-        },
-        {
-          "date": "2020-07-29",
-          "price": 0.69,
-          "unitPrice": 0.8624999999999999
-        },
-        {
-          "date": "2020-06-17",
-          "price": 0.79,
-          "unitPrice": 0.9875
-        },
-        {
-          "date": "2018-03-30",
-          "price": 0.69,
-          "unitPrice": 0.8624999999999999
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.68,
-          "unitPrice": 0.8500000000000001
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 800,
-      "bio": false,
-      "url": "",
-      "search": "s-budget linsen 800 g"
-    },
-    {
-      "store": "billa",
       "id": "00-299274",
       "name": "Clever Linzerschnitte 3er",
       "category": "13",
@@ -10322,98 +8775,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget 3 linzerschnitten 225 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-283859",
-      "name": "Clever Linzerstangerl",
-      "category": "13",
-      "unavailable": false,
-      "price": 1.59,
-      "priceHistory": [
-        {
-          "date": "2023-01-06",
-          "price": 1.59,
-          "unitPrice": 7.95
-        },
-        {
-          "date": "2022-06-30",
-          "price": 1.49,
-          "unitPrice": 7.45
-        },
-        {
-          "date": "2022-06-15",
-          "price": 1.59,
-          "unitPrice": 7.95
-        },
-        {
-          "date": "2022-05-05",
-          "price": 1.49,
-          "unitPrice": 7.45
-        },
-        {
-          "date": "2022-04-21",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2021-11-11",
-          "price": 1.49,
-          "unitPrice": 7.45
-        },
-        {
-          "date": "2019-08-28",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "clever linzerstangerl 200 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020002106911",
-      "name": "S-BUDGET Linzerstangerl 4 Stück",
-      "category": "12",
-      "unavailable": false,
-      "price": 1.89,
-      "priceHistory": [
-        {
-          "date": "2023-01-17",
-          "price": 1.89,
-          "unitPrice": 9.45
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.79,
-          "unitPrice": 8.95
-        },
-        {
-          "date": "2022-02-02",
-          "price": 1.59,
-          "unitPrice": 7.95
-        },
-        {
-          "date": "2018-09-01",
-          "price": 1.39,
-          "unitPrice": 6.949999999999999
-        },
-        {
-          "date": "2017-12-14",
-          "price": 1.25,
-          "unitPrice": 6.25
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 200,
-      "bio": false,
-      "url": "",
-      "search": "s-budget linzerstangerl 4 stück 200 g"
     },
     {
       "store": "billa",
@@ -11046,138 +9407,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget mega-bar mandel 6 stück 720ml packung 720 ml"
-    },
-    {
-      "store": "billa",
-      "id": "00-414868",
-      "name": "Clever Mayonnaise 25 %",
-      "category": "5C",
-      "unavailable": false,
-      "price": 1.49,
-      "priceHistory": [
-        {
-          "date": "2023-06-07",
-          "price": 1.49,
-          "unitPrice": 5.418181818181819
-        },
-        {
-          "date": "2023-05-22",
-          "price": 1.27,
-          "unitPrice": 4.618181818181818
-        },
-        {
-          "date": "2023-04-15",
-          "price": 1.49,
-          "unitPrice": 5.418181818181819
-        },
-        {
-          "date": "2022-11-10",
-          "price": 1.39,
-          "unitPrice": 5.054545454545454
-        },
-        {
-          "date": "2022-09-19",
-          "price": 1.19,
-          "unitPrice": 4.327272727272727
-        },
-        {
-          "date": "2022-07-28",
-          "price": 0.99,
-          "unitPrice": 3.6
-        },
-        {
-          "date": "2022-03-17",
-          "price": 0.95,
-          "unitPrice": 3.4545454545454546
-        },
-        {
-          "date": "2021-10-14",
-          "price": 0.89,
-          "unitPrice": 3.2363636363636368
-        },
-        {
-          "date": "2018-01-08",
-          "price": 0.79,
-          "unitPrice": 2.872727272727273
-        },
-        {
-          "date": "2017-12-06",
-          "price": 0.89,
-          "unitPrice": 3.2363636363636368
-        },
-        {
-          "date": "2017-04-05",
-          "price": 0.79,
-          "unitPrice": 2.872727272727273
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 275,
-      "bio": false,
-      "url": "",
-      "search": "clever mayonnaise 25 % 275 g"
-    },
-    {
-      "store": "spar",
-      "id": "7284977",
-      "name": "S-BUDGET Mayonnaise 25% Fett",
-      "category": "5C",
-      "unavailable": false,
-      "price": 1.39,
-      "priceHistory": [
-        {
-          "date": "2023-06-20",
-          "price": 1.39,
-          "unitPrice": 5.054545454545454
-        },
-        {
-          "date": "2023-02-28",
-          "price": 1.49,
-          "unitPrice": 5.418181818181819
-        },
-        {
-          "date": "2022-11-15",
-          "price": 1.39,
-          "unitPrice": 5.054545454545454
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.19,
-          "unitPrice": 4.327272727272727
-        },
-        {
-          "date": "2022-02-16",
-          "price": 0.95,
-          "unitPrice": 3.4545454545454546
-        },
-        {
-          "date": "2021-10-06",
-          "price": 0.89,
-          "unitPrice": 3.2363636363636368
-        },
-        {
-          "date": "2021-05-12",
-          "price": 0.79,
-          "unitPrice": 2.872727272727273
-        },
-        {
-          "date": "2021-01-20",
-          "price": 0.89,
-          "unitPrice": 3.2363636363636368
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.79,
-          "unitPrice": 2.872727272727273
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 275,
-      "bio": false,
-      "url": "",
-      "search": "s-budget mayonnaise 25% fett 275 ml"
     },
     {
       "store": "billa",
@@ -12955,63 +11184,6 @@
     },
     {
       "store": "billa",
-      "id": "00-966988",
-      "name": "Clever Pfefferoni mild",
-      "category": "57",
-      "unavailable": true,
-      "price": 1.19,
-      "priceHistory": [
-        {
-          "date": "2019-01-30",
-          "price": 1.19,
-          "unitPrice": 1.983333333333333
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 600,
-      "bio": false,
-      "url": "",
-      "search": "clever pfefferoni mild 600 g"
-    },
-    {
-      "store": "spar",
-      "id": "1194036",
-      "name": "S-BUDGET Pfefferoni mild",
-      "category": "57",
-      "unavailable": false,
-      "price": 1.09,
-      "priceHistory": [
-        {
-          "date": "2023-03-28",
-          "price": 1.09,
-          "unitPrice": 1.8166666666666667
-        },
-        {
-          "date": "2018-10-24",
-          "price": 1.19,
-          "unitPrice": 1.983333333333333
-        },
-        {
-          "date": "2018-07-12",
-          "price": 1.29,
-          "unitPrice": 2.15
-        },
-        {
-          "date": "2017-04-20",
-          "price": 1.19,
-          "unitPrice": 1.983333333333333
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 600,
-      "bio": false,
-      "url": "",
-      "search": "s-budget pfefferoni mild 600 g"
-    },
-    {
-      "store": "billa",
       "id": "00-339652",
       "name": "Clever Pizzakäse Leicht gerieben",
       "category": "33",
@@ -13936,53 +12108,6 @@
     },
     {
       "store": "billa",
-      "id": "00-507295",
-      "name": "Clever Riesengarnelen geschält",
-      "category": "43",
-      "unavailable": false,
-      "price": 4.49,
-      "priceHistory": [
-        {
-          "date": "2023-01-19",
-          "price": 4.49,
-          "unitPrice": 19.955555555555556
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 225,
-      "bio": false,
-      "url": "",
-      "search": "clever riesengarnelen geschält 225 g"
-    },
-    {
-      "store": "spar",
-      "id": "7809538",
-      "name": "S-BUDGET Riesengarnelen tiefgekühlt",
-      "category": "43",
-      "unavailable": false,
-      "price": 4.99,
-      "priceHistory": [
-        {
-          "date": "2022-01-04",
-          "price": 4.99,
-          "unitPrice": 22.177777777777777
-        },
-        {
-          "date": "2017-04-20",
-          "price": 4.49,
-          "unitPrice": 19.955555555555556
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 225,
-      "bio": false,
-      "url": "",
-      "search": "s-budget riesengarnelen tiefgekühlt 225 g"
-    },
-    {
-      "store": "billa",
       "id": "00-829484",
       "name": "Clever Roggenvollkornbrot",
       "category": "11",
@@ -14052,93 +12177,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget roggen-vollkornbrot mit sonnenblumenkernen 500 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-966986",
-      "name": "Clever Rote Rübensalat",
-      "category": "57",
-      "unavailable": false,
-      "price": 1.09,
-      "priceHistory": [
-        {
-          "date": "2022-07-21",
-          "price": 1.09,
-          "unitPrice": 1.626865671641791
-        },
-        {
-          "date": "2022-03-17",
-          "price": 0.99,
-          "unitPrice": 1.4776119402985075
-        },
-        {
-          "date": "2020-02-13",
-          "price": 0.87,
-          "unitPrice": 1.2985074626865671
-        },
-        {
-          "date": "2019-06-12",
-          "price": 0.89,
-          "unitPrice": 1.328358208955224
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 670,
-      "bio": false,
-      "url": "",
-      "search": "clever rote rübensalat 670 g"
-    },
-    {
-      "store": "spar",
-      "id": "2136424",
-      "name": "S-BUDGET Rote Rüben Salat",
-      "category": "57",
-      "unavailable": false,
-      "price": 0.89,
-      "priceHistory": [
-        {
-          "date": "2022-12-21",
-          "price": 0.89,
-          "unitPrice": 1.328358208955224
-        },
-        {
-          "date": "2022-09-30",
-          "price": 1.09,
-          "unitPrice": 1.626865671641791
-        },
-        {
-          "date": "2022-03-30",
-          "price": 0.99,
-          "unitPrice": 1.4776119402985075
-        },
-        {
-          "date": "2022-02-11",
-          "price": 0.89,
-          "unitPrice": 1.328358208955224
-        },
-        {
-          "date": "2021-03-17",
-          "price": 0.85,
-          "unitPrice": 1.2686567164179103
-        },
-        {
-          "date": "2019-02-24",
-          "price": 0.87,
-          "unitPrice": 1.2985074626865671
-        },
-        {
-          "date": "2017-04-20",
-          "price": 0.89,
-          "unitPrice": 1.328358208955224
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 670,
-      "bio": false,
-      "url": "",
-      "search": "s-budget rote rüben salat 670 g"
     },
     {
       "store": "billa",
@@ -14507,220 +12545,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget österreichischer sauerrahm 15% fett 250 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-312931",
-      "name": "Clever Schlemmerfilet Bordelaise",
-      "category": "43",
-      "unavailable": false,
-      "price": 2.99,
-      "priceHistory": [
-        {
-          "date": "2023-05-15",
-          "price": 2.99,
-          "unitPrice": 7.4750000000000005
-        },
-        {
-          "date": "2022-12-15",
-          "price": 2.69,
-          "unitPrice": 6.725
-        },
-        {
-          "date": "2022-09-08",
-          "price": 2.49,
-          "unitPrice": 6.2250000000000005
-        },
-        {
-          "date": "2022-08-05",
-          "price": 2.39,
-          "unitPrice": 5.9750000000000005
-        },
-        {
-          "date": "2022-07-08",
-          "price": 2.29,
-          "unitPrice": 5.725
-        },
-        {
-          "date": "2022-02-04",
-          "price": 1.99,
-          "unitPrice": 4.9750000000000005
-        },
-        {
-          "date": "2021-05-27",
-          "price": 1.89,
-          "unitPrice": 4.725
-        },
-        {
-          "date": "2020-08-06",
-          "price": 1.99,
-          "unitPrice": 4.9750000000000005
-        },
-        {
-          "date": "2020-01-16",
-          "price": 1.89,
-          "unitPrice": 4.725
-        },
-        {
-          "date": "2019-08-21",
-          "price": 2.29,
-          "unitPrice": 5.725
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 400,
-      "bio": false,
-      "url": "",
-      "search": "clever schlemmerfilet bordelaise 400 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020001337743",
-      "name": "S-BUDGET Schlemmerfilet Bordelaise",
-      "category": "42",
-      "unavailable": false,
-      "price": 3.29,
-      "priceHistory": [
-        {
-          "date": "2023-01-17",
-          "price": 3.29,
-          "unitPrice": 8.225
-        },
-        {
-          "date": "2022-09-30",
-          "price": 2.99,
-          "unitPrice": 7.4750000000000005
-        },
-        {
-          "date": "2022-01-11",
-          "price": 2.39,
-          "unitPrice": 5.9750000000000005
-        },
-        {
-          "date": "2019-03-10",
-          "price": 2.29,
-          "unitPrice": 5.725
-        },
-        {
-          "date": "2017-10-10",
-          "price": 1.89,
-          "unitPrice": 4.725
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 400,
-      "bio": false,
-      "url": "",
-      "search": "s-budget schlemmerfilet bordelaise 400 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-312930",
-      "name": "Clever Schlemmerfilet Broccoli",
-      "category": "43",
-      "unavailable": false,
-      "price": 2.99,
-      "priceHistory": [
-        {
-          "date": "2023-04-29",
-          "price": 2.99,
-          "unitPrice": 7.4750000000000005
-        },
-        {
-          "date": "2023-01-19",
-          "price": 2.69,
-          "unitPrice": 6.725
-        },
-        {
-          "date": "2022-09-08",
-          "price": 2.49,
-          "unitPrice": 6.2250000000000005
-        },
-        {
-          "date": "2022-08-04",
-          "price": 2.39,
-          "unitPrice": 5.9750000000000005
-        },
-        {
-          "date": "2022-07-08",
-          "price": 2.29,
-          "unitPrice": 5.725
-        },
-        {
-          "date": "2022-02-04",
-          "price": 1.99,
-          "unitPrice": 4.9750000000000005
-        },
-        {
-          "date": "2021-05-27",
-          "price": 1.89,
-          "unitPrice": 4.725
-        },
-        {
-          "date": "2020-08-06",
-          "price": 1.99,
-          "unitPrice": 4.9750000000000005
-        },
-        {
-          "date": "2020-01-16",
-          "price": 1.89,
-          "unitPrice": 4.725
-        },
-        {
-          "date": "2019-08-21",
-          "price": 2.29,
-          "unitPrice": 5.725
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 400,
-      "bio": false,
-      "url": "",
-      "search": "clever schlemmerfilet broccoli 400 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020001337743",
-      "name": "S-BUDGET Schlemmerfilet Bordelaise",
-      "category": "42",
-      "unavailable": false,
-      "price": 3.29,
-      "priceHistory": [
-        {
-          "date": "2023-01-17",
-          "price": 3.29,
-          "unitPrice": 8.225
-        },
-        {
-          "date": "2022-09-30",
-          "price": 2.99,
-          "unitPrice": 7.4750000000000005
-        },
-        {
-          "date": "2022-01-11",
-          "price": 2.39,
-          "unitPrice": 5.9750000000000005
-        },
-        {
-          "date": "2019-03-10",
-          "price": 2.29,
-          "unitPrice": 5.725
-        },
-        {
-          "date": "2017-10-10",
-          "price": 1.89,
-          "unitPrice": 4.725
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 400,
-      "bio": false,
-      "url": "",
-      "search": "s-budget schlemmerfilet bordelaise 400 g"
     },
     {
       "store": "billa",
@@ -16200,93 +14024,6 @@
     },
     {
       "store": "billa",
-      "id": "00-856700",
-      "name": "Clever Sirup Orangeade",
-      "category": "20",
-      "unavailable": false,
-      "price": 2.49,
-      "priceHistory": [
-        {
-          "date": "2022-11-09",
-          "price": 2.49,
-          "unitPrice": 1.6600000000000001
-        },
-        {
-          "date": "2022-06-10",
-          "price": 1.99,
-          "unitPrice": 1.3266666666666667
-        },
-        {
-          "date": "2022-03-22",
-          "price": 2.15,
-          "unitPrice": 1.4333333333333333
-        },
-        {
-          "date": "2022-02-16",
-          "price": 1.99,
-          "unitPrice": 1.3266666666666667
-        },
-        {
-          "date": "2017-04-05",
-          "price": 1.79,
-          "unitPrice": 1.1933333333333334
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 1500,
-      "bio": false,
-      "url": "",
-      "search": "clever sirup orangeade 1500 ml"
-    },
-    {
-      "store": "spar",
-      "id": "6461386",
-      "name": "S-BUDGET Orangen Sirup",
-      "category": "20",
-      "unavailable": false,
-      "price": 3.49,
-      "priceHistory": [
-        {
-          "date": "2022-11-15",
-          "price": 3.49,
-          "unitPrice": 2.326666666666667
-        },
-        {
-          "date": "2022-10-11",
-          "price": 2.99,
-          "unitPrice": 1.9933333333333334
-        },
-        {
-          "date": "2022-09-30",
-          "price": 2.89,
-          "unitPrice": 1.9266666666666667
-        },
-        {
-          "date": "2022-02-09",
-          "price": 2.69,
-          "unitPrice": 1.7933333333333332
-        },
-        {
-          "date": "2021-10-13",
-          "price": 2.49,
-          "unitPrice": 1.6600000000000001
-        },
-        {
-          "date": "2017-04-20",
-          "price": 1.79,
-          "unitPrice": 1.1933333333333334
-        }
-      ],
-      "isWeighted": false,
-      "unit": "ml",
-      "quantity": 1500,
-      "bio": false,
-      "url": "",
-      "search": "s-budget orangen sirup 1500 ml"
-    },
-    {
-      "store": "billa",
       "id": "00-648894",
       "name": "Clever Soft Orange Cake",
       "category": "64",
@@ -16411,83 +14148,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget soft cake orange 300 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-335709",
-      "name": "Clever Sonnenblumenbrot",
-      "category": "11",
-      "unavailable": false,
-      "price": 1.79,
-      "priceHistory": [
-        {
-          "date": "2023-06-22",
-          "price": 1.79,
-          "unitPrice": 3.58
-        },
-        {
-          "date": "2022-11-18",
-          "price": 1.89,
-          "unitPrice": 3.78
-        },
-        {
-          "date": "2022-03-31",
-          "price": 1.79,
-          "unitPrice": 3.58
-        },
-        {
-          "date": "2021-11-18",
-          "price": 1.69,
-          "unitPrice": 3.38
-        },
-        {
-          "date": "2019-11-06",
-          "price": 1.59,
-          "unitPrice": 3.18
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 500,
-      "bio": false,
-      "url": "",
-      "search": "clever sonnenblumenbrot 500 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020000692386",
-      "name": "S-BUDGET Sonnenblumenbrot",
-      "category": "11",
-      "unavailable": false,
-      "price": 1.99,
-      "priceHistory": [
-        {
-          "date": "2023-01-17",
-          "price": 1.99,
-          "unitPrice": 3.98
-        },
-        {
-          "date": "2022-03-30",
-          "price": 1.79,
-          "unitPrice": 3.58
-        },
-        {
-          "date": "2022-02-02",
-          "price": 1.69,
-          "unitPrice": 3.38
-        },
-        {
-          "date": "2017-04-20",
-          "price": 1.59,
-          "unitPrice": 3.18
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 500,
-      "bio": false,
-      "url": "",
-      "search": "s-budget sonnenblumenbrot 500 g"
     },
     {
       "store": "billa",
@@ -17622,53 +15282,6 @@
       "bio": false,
       "url": "",
       "search": "s-budget vollkorn müsli traube-nuss 1000 g"
-    },
-    {
-      "store": "billa",
-      "id": "00-522502",
-      "name": "Clever Trockenhefe 6er",
-      "category": "52",
-      "unavailable": false,
-      "price": 0.59,
-      "priceHistory": [
-        {
-          "date": "2022-07-20",
-          "price": 0.59,
-          "unitPrice": 14.047619047619047
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 42,
-      "bio": false,
-      "url": "",
-      "search": "clever trockenhefe 6er 42 g"
-    },
-    {
-      "store": "spar",
-      "id": "2020003337277",
-      "name": "S-BUDGET Trockengerm",
-      "category": "52",
-      "unavailable": false,
-      "price": 0.58,
-      "priceHistory": [
-        {
-          "date": "2021-03-03",
-          "price": 0.58,
-          "unitPrice": 13.809523809523808
-        },
-        {
-          "date": "2020-05-21",
-          "price": 0.59,
-          "unitPrice": 14.047619047619047
-        }
-      ],
-      "isWeighted": false,
-      "unit": "g",
-      "quantity": 42,
-      "bio": false,
-      "url": "",
-      "search": "s-budget trockengerm 42 g"
     },
     {
       "store": "billa",
@@ -19242,6 +16855,2393 @@
       "bio": false,
       "url": "",
       "search": "s-budget zwiebel 3000 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-667911",
+      "name": "Clever Apfelstrudel",
+      "category": "47",
+      "unavailable": false,
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2022-11-03",
+          "price": 1.99,
+          "unitPrice": 3.3166666666666664
+        },
+        {
+          "date": "2022-02-17",
+          "price": 1.49,
+          "unitPrice": 2.4833333333333334
+        },
+        {
+          "date": "2021-10-11",
+          "price": 1.29,
+          "unitPrice": 2.15
+        },
+        {
+          "date": "2017-04-05",
+          "price": 1.49,
+          "unitPrice": 2.4833333333333334
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 600,
+      "bio": false,
+      "url": "",
+      "search": "clever apfelstrudel 600 g"
+    },
+    {
+      "store": "spar",
+      "id": "7521317",
+      "name": "S-BUDGET Apfelstrudel tiefgefroren, backfertig",
+      "category": "47",
+      "unavailable": false,
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-06-13",
+          "price": 1.89,
+          "unitPrice": 3.15
+        },
+        {
+          "date": "2022-11-01",
+          "price": 1.99,
+          "unitPrice": 3.3166666666666664
+        },
+        {
+          "date": "2022-01-02",
+          "price": 1.49,
+          "unitPrice": 2.4833333333333334
+        },
+        {
+          "date": "2021-10-09",
+          "price": 1.29,
+          "unitPrice": 2.15
+        },
+        {
+          "date": "2017-04-20",
+          "price": 1.49,
+          "unitPrice": 2.4833333333333334
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 600,
+      "bio": false,
+      "url": "",
+      "search": "s-budget apfelstrudel tiefgefroren. backfertig 600 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-297121",
+      "name": "Clever Basmatireis",
+      "category": "5B",
+      "unavailable": false,
+      "price": 2.69,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.69,
+          "unitPrice": 2.69
+        },
+        {
+          "date": "2022-12-15",
+          "price": 2.29,
+          "unitPrice": 2.29
+        },
+        {
+          "date": "2020-05-28",
+          "price": 1.99,
+          "unitPrice": 1.99
+        },
+        {
+          "date": "2020-01-17",
+          "price": 2.19,
+          "unitPrice": 2.19
+        },
+        {
+          "date": "2019-11-30",
+          "price": 2.39,
+          "unitPrice": 2.39
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 1000,
+      "bio": false,
+      "url": "",
+      "search": "clever basmatireis 1000 g"
+    },
+    {
+      "store": "spar",
+      "id": "7979828",
+      "name": "S-BUDGET Basmati Reis",
+      "category": "5B",
+      "unavailable": false,
+      "price": 2.89,
+      "priceHistory": [
+        {
+          "date": "2023-06-06",
+          "price": 2.89,
+          "unitPrice": 2.89
+        },
+        {
+          "date": "2023-02-16",
+          "price": 2.69,
+          "unitPrice": 2.69
+        },
+        {
+          "date": "2023-01-20",
+          "price": 2.29,
+          "unitPrice": 2.29
+        },
+        {
+          "date": "2023-01-07",
+          "price": 1.99,
+          "unitPrice": 1.99
+        },
+        {
+          "date": "2022-11-15",
+          "price": 2.29,
+          "unitPrice": 2.29
+        },
+        {
+          "date": "2022-04-06",
+          "price": 1.99,
+          "unitPrice": 1.99
+        },
+        {
+          "date": "2021-03-24",
+          "price": 1.89,
+          "unitPrice": 1.89
+        },
+        {
+          "date": "2020-03-04",
+          "price": 1.99,
+          "unitPrice": 1.99
+        },
+        {
+          "date": "2018-08-29",
+          "price": 2.19,
+          "unitPrice": 2.19
+        },
+        {
+          "date": "2018-07-04",
+          "price": 2.39,
+          "unitPrice": 2.39
+        },
+        {
+          "date": "2017-04-20",
+          "price": 2.19,
+          "unitPrice": 2.19
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 1000,
+      "bio": false,
+      "url": "",
+      "search": "s-budget basmati reis 1000 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-489499",
+      "name": "Clever Blattspinat",
+      "category": "44",
+      "unavailable": false,
+      "price": 1.69,
+      "priceHistory": [
+        {
+          "date": "2023-06-06",
+          "price": 1.69,
+          "unitPrice": 2.2533333333333334
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 750,
+      "bio": false,
+      "url": "",
+      "search": "clever blattspinat 750 g"
+    },
+    {
+      "store": "spar",
+      "id": "7581663",
+      "name": "S-BUDGET Blattspinat tiefgekühlt 15 x 50g",
+      "category": "41",
+      "unavailable": false,
+      "price": 1.85,
+      "priceHistory": [
+        {
+          "date": "2023-01-03",
+          "price": 1.85,
+          "unitPrice": 2.466666666666667
+        },
+        {
+          "date": "2022-03-16",
+          "price": 1.69,
+          "unitPrice": 2.2533333333333334
+        },
+        {
+          "date": "2017-04-20",
+          "price": 1.49,
+          "unitPrice": 1.9866666666666666
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 750,
+      "bio": false,
+      "url": "",
+      "search": "s-budget blattspinat tiefgekühlt 15 x 50g 750 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-528814",
+      "name": "Clever Ei-Zwiebel Aufstrich",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-06-14",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2023-02-24",
+          "price": 1.15,
+          "unitPrice": 5.75
+        },
+        {
+          "date": "2022-12-12",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-11-09",
+          "price": 1.15,
+          "unitPrice": 5.75
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "clever ei-zwiebel aufstrich 200 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020002743543",
+      "name": "S-BUDGET Ei-Zwiebel Aufstrich",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.15,
+      "priceHistory": [
+        {
+          "date": "2023-02-22",
+          "price": 1.15,
+          "unitPrice": 5.75
+        },
+        {
+          "date": "2022-12-21",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.15,
+          "unitPrice": 5.75
+        },
+        {
+          "date": "2021-11-03",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2021-04-07",
+          "price": 0.79,
+          "unitPrice": 3.95
+        },
+        {
+          "date": "2020-02-12",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2019-09-17",
+          "price": 0.79,
+          "unitPrice": 3.95
+        },
+        {
+          "date": "2019-07-31",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2019-03-27",
+          "price": 0.79,
+          "unitPrice": 3.95
+        },
+        {
+          "date": "2018-11-09",
+          "price": 0.89,
+          "unitPrice": 4.45
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "s-budget ei-zwiebel aufstrich 200 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-534071",
+      "name": "Clever Energy Drink Sugarfree",
+      "category": "20",
+      "unavailable": false,
+      "price": 0.49,
+      "priceHistory": [
+        {
+          "date": "2022-12-15",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2022-11-26",
+          "price": 0.45,
+          "unitPrice": 1.8
+        },
+        {
+          "date": "2022-11-21",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2022-04-11",
+          "price": 0.45,
+          "unitPrice": 1.8
+        },
+        {
+          "date": "2022-02-24",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-05-27",
+          "price": 0.39,
+          "unitPrice": 1.56
+        },
+        {
+          "date": "2020-06-04",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-02-13",
+          "price": 0.39,
+          "unitPrice": 1.56
+        },
+        {
+          "date": "2019-10-03",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2018-06-21",
+          "price": 0.39,
+          "unitPrice": 1.56
+        },
+        {
+          "date": "2018-03-15",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2018-02-15",
+          "price": 0.39,
+          "unitPrice": 1.56
+        },
+        {
+          "date": "2017-12-06",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2017-04-05",
+          "price": 0.39,
+          "unitPrice": 1.56
+        }
+      ],
+      "isWeighted": false,
+      "unit": "ml",
+      "quantity": 250,
+      "bio": false,
+      "url": "",
+      "search": "clever energy drink sugarfree 250 ml"
+    },
+    {
+      "store": "spar",
+      "id": "7032318",
+      "name": "S-BUDGET Energydrink Sugarfree",
+      "category": "20",
+      "unavailable": false,
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2023-02-02",
+          "price": 0.59,
+          "unitPrice": 2.36
+        },
+        {
+          "date": "2023-01-18",
+          "price": 0.29,
+          "unitPrice": 1.16
+        },
+        {
+          "date": "2023-01-13",
+          "price": 0.59,
+          "unitPrice": 2.36
+        },
+        {
+          "date": "2022-12-06",
+          "price": 0.29,
+          "unitPrice": 1.16
+        },
+        {
+          "date": "2022-11-10",
+          "price": 0.59,
+          "unitPrice": 2.36
+        },
+        {
+          "date": "2022-10-12",
+          "price": 0.3,
+          "unitPrice": 1.2
+        },
+        {
+          "date": "2022-09-30",
+          "price": 0.55,
+          "unitPrice": 2.2
+        },
+        {
+          "date": "2022-03-31",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2022-03-11",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2022-02-10",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2022-01-14",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-12-07",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2021-11-19",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-11-04",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2021-10-01",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-09-01",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2021-08-13",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-07-22",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2021-07-09",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-06-10",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2021-06-03",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-04-14",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2021-03-12",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2021-02-11",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2021-01-15",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-12-03",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2020-11-13",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-10-15",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2020-09-25",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-08-25",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2020-08-07",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-07-16",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2020-07-10",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-06-25",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2020-06-05",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-04-23",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2020-03-20",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-03-05",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2020-02-14",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2020-01-30",
+          "price": 0.32,
+          "unitPrice": 1.28
+        },
+        {
+          "date": "2020-01-10",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2019-12-05",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2019-11-08",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2019-10-24",
+          "price": 0.32,
+          "unitPrice": 1.28
+        },
+        {
+          "date": "2019-10-11",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2019-09-26",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2019-09-06",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2019-07-25",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2019-05-30",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2019-05-01",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2019-04-12",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2019-03-28",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2019-03-15",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2019-02-28",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2018-11-16",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2018-10-31",
+          "price": 0.32,
+          "unitPrice": 1.28
+        },
+        {
+          "date": "2018-09-14",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2018-08-02",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2018-06-02",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2018-05-17",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2018-04-20",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2018-04-12",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2018-03-07",
+          "price": 0.32,
+          "unitPrice": 1.28
+        },
+        {
+          "date": "2018-02-15",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2018-01-31",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2018-01-12",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2017-12-06",
+          "price": 0.32,
+          "unitPrice": 1.28
+        },
+        {
+          "date": "2017-10-26",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2017-10-09",
+          "price": 0.39,
+          "unitPrice": 1.56
+        },
+        {
+          "date": "2017-07-13",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2017-06-15",
+          "price": 0.24,
+          "unitPrice": 0.96
+        },
+        {
+          "date": "2017-06-02",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2017-05-23",
+          "price": 0.39,
+          "unitPrice": 1.56
+        },
+        {
+          "date": "2017-05-11",
+          "price": 0.49,
+          "unitPrice": 1.96
+        },
+        {
+          "date": "2017-04-20",
+          "price": 0.39,
+          "unitPrice": 1.56
+        }
+      ],
+      "isWeighted": false,
+      "unit": "ml",
+      "quantity": 250,
+      "bio": false,
+      "url": "",
+      "search": "s-budget energydrink sugarfree 250 ml"
+    },
+    {
+      "store": "billa",
+      "id": "00-576272",
+      "name": "Clever Frischkäse Kren",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2023-01-24",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2022-09-01",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-06-15",
+          "price": 1.19,
+          "unitPrice": 5.949999999999999
+        },
+        {
+          "date": "2022-03-03",
+          "price": 1.09,
+          "unitPrice": 5.45
+        },
+        {
+          "date": "2021-08-13",
+          "price": 0.99,
+          "unitPrice": 4.949999999999999
+        },
+        {
+          "date": "2020-01-30",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2019-07-25",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2018-10-09",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2018-07-24",
+          "price": 0.83,
+          "unitPrice": 4.15
+        },
+        {
+          "date": "2018-07-17",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2018-06-16",
+          "price": 0.83,
+          "unitPrice": 4.15
+        },
+        {
+          "date": "2017-08-04",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2017-04-05",
+          "price": 0.75,
+          "unitPrice": 3.75
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "clever frischkäse kren 200 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020003984181",
+      "name": "S-BUDGET Frischkäse- Zubereitung Kren",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19,
+          "unitPrice": 5.949999999999999
+        },
+        {
+          "date": "2023-02-22",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2023-01-13",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-03-16",
+          "price": 1.09,
+          "unitPrice": 5.45
+        },
+        {
+          "date": "2021-10-05",
+          "price": 0.99,
+          "unitPrice": 4.949999999999999
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "s-budget frischkäse- zubereitung kren 200 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-320422",
+      "name": "Clever Frischkäse Kräuter",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-02-24",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2023-01-17",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2022-09-01",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-06-15",
+          "price": 1.19,
+          "unitPrice": 5.949999999999999
+        },
+        {
+          "date": "2022-03-03",
+          "price": 1.09,
+          "unitPrice": 5.45
+        },
+        {
+          "date": "2021-08-13",
+          "price": 0.99,
+          "unitPrice": 4.949999999999999
+        },
+        {
+          "date": "2020-01-30",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2019-07-25",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2018-10-09",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2018-07-24",
+          "price": 0.83,
+          "unitPrice": 4.15
+        },
+        {
+          "date": "2018-07-17",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2018-06-16",
+          "price": 0.83,
+          "unitPrice": 4.15
+        },
+        {
+          "date": "2017-08-04",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2017-04-05",
+          "price": 0.75,
+          "unitPrice": 3.75
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "clever frischkäse kräuter 200 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020003984174",
+      "name": "S-BUDGET Frischkäse Zubereitung Kräuter",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19,
+          "unitPrice": 5.949999999999999
+        },
+        {
+          "date": "2023-02-22",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2023-01-13",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-03-16",
+          "price": 1.09,
+          "unitPrice": 5.45
+        },
+        {
+          "date": "2021-10-05",
+          "price": 0.99,
+          "unitPrice": 4.949999999999999
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "s-budget frischkäse zubereitung kräuter 200 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-320394",
+      "name": "Clever Frischkäse Natur",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-02-24",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2023-01-17",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2022-09-01",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-06-15",
+          "price": 1.19,
+          "unitPrice": 5.949999999999999
+        },
+        {
+          "date": "2022-03-03",
+          "price": 1.09,
+          "unitPrice": 5.45
+        },
+        {
+          "date": "2021-08-13",
+          "price": 0.99,
+          "unitPrice": 4.949999999999999
+        },
+        {
+          "date": "2020-01-30",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2019-07-25",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2018-10-09",
+          "price": 0.89,
+          "unitPrice": 4.45
+        },
+        {
+          "date": "2018-07-24",
+          "price": 0.83,
+          "unitPrice": 4.15
+        },
+        {
+          "date": "2018-07-17",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2018-06-16",
+          "price": 0.83,
+          "unitPrice": 4.15
+        },
+        {
+          "date": "2017-08-04",
+          "price": 0.85,
+          "unitPrice": 4.25
+        },
+        {
+          "date": "2017-04-05",
+          "price": 0.75,
+          "unitPrice": 3.75
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "clever frischkäse natur 200 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020003984167",
+      "name": "S-BUDGET Frischkäse- Zubereitung Natur",
+      "category": "33",
+      "unavailable": false,
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 1.19,
+          "unitPrice": 5.949999999999999
+        },
+        {
+          "date": "2023-02-22",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2023-01-13",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.29,
+          "unitPrice": 6.45
+        },
+        {
+          "date": "2022-03-16",
+          "price": 1.09,
+          "unitPrice": 5.45
+        },
+        {
+          "date": "2021-10-05",
+          "price": 0.99,
+          "unitPrice": 4.949999999999999
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "s-budget frischkäse- zubereitung natur 200 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-854134",
+      "name": "Clever Fruchtcocktail",
+      "category": "57",
+      "unavailable": false,
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-04-29",
+          "price": 1.99,
+          "unitPrice": 2.426829268292683
+        },
+        {
+          "date": "2022-11-29",
+          "price": 1.69,
+          "unitPrice": 2.0609756097560976
+        },
+        {
+          "date": "2022-10-25",
+          "price": 1.99,
+          "unitPrice": 2.426829268292683
+        },
+        {
+          "date": "2022-03-01",
+          "price": 1.69,
+          "unitPrice": 2.0609756097560976
+        },
+        {
+          "date": "2021-04-07",
+          "price": 1.39,
+          "unitPrice": 1.6951219512195121
+        },
+        {
+          "date": "2017-11-28",
+          "price": 1.49,
+          "unitPrice": 1.8170731707317074
+        },
+        {
+          "date": "2017-10-09",
+          "price": 1.39,
+          "unitPrice": 1.6951219512195121
+        },
+        {
+          "date": "2017-07-13",
+          "price": 1.59,
+          "unitPrice": 1.9390243902439026
+        },
+        {
+          "date": "2017-04-05",
+          "price": 1.39,
+          "unitPrice": 1.6951219512195121
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 820,
+      "bio": false,
+      "url": "",
+      "search": "clever fruchtcocktail 820 g"
+    },
+    {
+      "store": "spar",
+      "id": "6619923",
+      "name": "S-BUDGET Fruchtcocktail leicht gezuckert",
+      "category": "57",
+      "unavailable": false,
+      "price": 2.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-23",
+          "price": 2.19,
+          "unitPrice": 2.670731707317073
+        },
+        {
+          "date": "2023-02-28",
+          "price": 1.99,
+          "unitPrice": 2.426829268292683
+        },
+        {
+          "date": "2021-12-01",
+          "price": 1.69,
+          "unitPrice": 2.0609756097560976
+        },
+        {
+          "date": "2021-03-17",
+          "price": 1.39,
+          "unitPrice": 1.6951219512195121
+        },
+        {
+          "date": "2018-02-16",
+          "price": 1.49,
+          "unitPrice": 1.8170731707317074
+        },
+        {
+          "date": "2017-05-09",
+          "price": 1.39,
+          "unitPrice": 1.6951219512195121
+        },
+        {
+          "date": "2017-04-20",
+          "price": 1.59,
+          "unitPrice": 1.9390243902439026
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 820,
+      "bio": false,
+      "url": "",
+      "search": "s-budget fruchtcocktail leicht gezuckert 820 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-309662",
+      "name": "Clever Langkornreis",
+      "category": "5B",
+      "unavailable": false,
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2023-05-13",
+          "price": 1.19,
+          "unitPrice": 1.19
+        },
+        {
+          "date": "2023-03-10",
+          "price": 1.29,
+          "unitPrice": 1.29
+        },
+        {
+          "date": "2022-11-10",
+          "price": 1.19,
+          "unitPrice": 1.19
+        },
+        {
+          "date": "2022-08-11",
+          "price": 1.09,
+          "unitPrice": 1.09
+        },
+        {
+          "date": "2022-07-28",
+          "price": 0.89,
+          "unitPrice": 0.89
+        },
+        {
+          "date": "2022-05-28",
+          "price": 0.99,
+          "unitPrice": 0.99
+        },
+        {
+          "date": "2022-04-21",
+          "price": 0.85,
+          "unitPrice": 0.85
+        },
+        {
+          "date": "2019-12-11",
+          "price": 0.79,
+          "unitPrice": 0.79
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 1000,
+      "bio": false,
+      "url": "",
+      "search": "clever langkornreis 1000 g"
+    },
+    {
+      "store": "spar",
+      "id": "6481889",
+      "name": "S-BUDGET Langkornreis",
+      "category": "5B",
+      "unavailable": false,
+      "price": 1.29,
+      "priceHistory": [
+        {
+          "date": "2023-02-28",
+          "price": 1.29,
+          "unitPrice": 1.29
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.19,
+          "unitPrice": 1.19
+        },
+        {
+          "date": "2022-04-06",
+          "price": 0.99,
+          "unitPrice": 0.99
+        },
+        {
+          "date": "2017-12-05",
+          "price": 0.79,
+          "unitPrice": 0.79
+        },
+        {
+          "date": "2017-04-20",
+          "price": 0.69,
+          "unitPrice": 0.69
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 1000,
+      "bio": false,
+      "url": "",
+      "search": "s-budget langkornreis 1000 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-736914",
+      "name": "Clever Linsen",
+      "category": "57",
+      "unavailable": true,
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2022-11-24",
+          "price": 0.89,
+          "unitPrice": 1.1125
+        },
+        {
+          "date": "2022-10-06",
+          "price": 0.79,
+          "unitPrice": 0.9875
+        },
+        {
+          "date": "2022-07-21",
+          "price": 0.99,
+          "unitPrice": 1.2374999999999998
+        },
+        {
+          "date": "2021-10-14",
+          "price": 0.75,
+          "unitPrice": 0.9375
+        },
+        {
+          "date": "2020-08-13",
+          "price": 0.69,
+          "unitPrice": 0.8624999999999999
+        },
+        {
+          "date": "2020-07-16",
+          "price": 0.79,
+          "unitPrice": 0.9875
+        },
+        {
+          "date": "2018-03-01",
+          "price": 0.69,
+          "unitPrice": 0.8624999999999999
+        },
+        {
+          "date": "2017-09-25",
+          "price": 0.67,
+          "unitPrice": 0.8375
+        },
+        {
+          "date": "2017-07-13",
+          "price": 0.69,
+          "unitPrice": 0.8624999999999999
+        },
+        {
+          "date": "2017-04-05",
+          "price": 0.67,
+          "unitPrice": 0.8375
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 800,
+      "bio": false,
+      "url": "",
+      "search": "clever linsen 800 g"
+    },
+    {
+      "store": "spar",
+      "id": "2758800",
+      "name": "S-BUDGET Linsen",
+      "category": "57",
+      "unavailable": false,
+      "price": 0.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-23",
+          "price": 0.99,
+          "unitPrice": 1.2374999999999998
+        },
+        {
+          "date": "2023-02-14",
+          "price": 0.89,
+          "unitPrice": 1.1125
+        },
+        {
+          "date": "2022-04-06",
+          "price": 0.79,
+          "unitPrice": 0.9875
+        },
+        {
+          "date": "2021-10-20",
+          "price": 0.75,
+          "unitPrice": 0.9375
+        },
+        {
+          "date": "2020-07-29",
+          "price": 0.69,
+          "unitPrice": 0.8624999999999999
+        },
+        {
+          "date": "2020-06-17",
+          "price": 0.79,
+          "unitPrice": 0.9875
+        },
+        {
+          "date": "2018-03-30",
+          "price": 0.69,
+          "unitPrice": 0.8624999999999999
+        },
+        {
+          "date": "2017-04-20",
+          "price": 0.68,
+          "unitPrice": 0.8500000000000001
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 800,
+      "bio": false,
+      "url": "",
+      "search": "s-budget linsen 800 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-283859",
+      "name": "Clever Linzerstangerl",
+      "category": "13",
+      "unavailable": false,
+      "price": 1.59,
+      "priceHistory": [
+        {
+          "date": "2023-01-06",
+          "price": 1.59,
+          "unitPrice": 7.95
+        },
+        {
+          "date": "2022-06-30",
+          "price": 1.49,
+          "unitPrice": 7.45
+        },
+        {
+          "date": "2022-06-15",
+          "price": 1.59,
+          "unitPrice": 7.95
+        },
+        {
+          "date": "2022-05-05",
+          "price": 1.49,
+          "unitPrice": 7.45
+        },
+        {
+          "date": "2022-04-21",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2021-11-11",
+          "price": 1.49,
+          "unitPrice": 7.45
+        },
+        {
+          "date": "2019-08-28",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "clever linzerstangerl 200 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020002106911",
+      "name": "S-BUDGET Linzerstangerl 4 Stück",
+      "category": "12",
+      "unavailable": false,
+      "price": 1.89,
+      "priceHistory": [
+        {
+          "date": "2023-01-17",
+          "price": 1.89,
+          "unitPrice": 9.45
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.79,
+          "unitPrice": 8.95
+        },
+        {
+          "date": "2022-02-02",
+          "price": 1.59,
+          "unitPrice": 7.95
+        },
+        {
+          "date": "2018-09-01",
+          "price": 1.39,
+          "unitPrice": 6.949999999999999
+        },
+        {
+          "date": "2017-12-14",
+          "price": 1.25,
+          "unitPrice": 6.25
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 200,
+      "bio": false,
+      "url": "",
+      "search": "s-budget linzerstangerl 4 stück 200 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-414868",
+      "name": "Clever Mayonnaise 25 %",
+      "category": "5C",
+      "unavailable": false,
+      "price": 1.49,
+      "priceHistory": [
+        {
+          "date": "2023-06-07",
+          "price": 1.49,
+          "unitPrice": 5.418181818181819
+        },
+        {
+          "date": "2023-05-22",
+          "price": 1.27,
+          "unitPrice": 4.618181818181818
+        },
+        {
+          "date": "2023-04-15",
+          "price": 1.49,
+          "unitPrice": 5.418181818181819
+        },
+        {
+          "date": "2022-11-10",
+          "price": 1.39,
+          "unitPrice": 5.054545454545454
+        },
+        {
+          "date": "2022-09-19",
+          "price": 1.19,
+          "unitPrice": 4.327272727272727
+        },
+        {
+          "date": "2022-07-28",
+          "price": 0.99,
+          "unitPrice": 3.6
+        },
+        {
+          "date": "2022-03-17",
+          "price": 0.95,
+          "unitPrice": 3.4545454545454546
+        },
+        {
+          "date": "2021-10-14",
+          "price": 0.89,
+          "unitPrice": 3.2363636363636368
+        },
+        {
+          "date": "2018-01-08",
+          "price": 0.79,
+          "unitPrice": 2.872727272727273
+        },
+        {
+          "date": "2017-12-06",
+          "price": 0.89,
+          "unitPrice": 3.2363636363636368
+        },
+        {
+          "date": "2017-04-05",
+          "price": 0.79,
+          "unitPrice": 2.872727272727273
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 275,
+      "bio": false,
+      "url": "",
+      "search": "clever mayonnaise 25 % 275 g"
+    },
+    {
+      "store": "spar",
+      "id": "7284977",
+      "name": "S-BUDGET Mayonnaise 25% Fett",
+      "category": "5C",
+      "unavailable": false,
+      "price": 1.39,
+      "priceHistory": [
+        {
+          "date": "2023-06-20",
+          "price": 1.39,
+          "unitPrice": 5.054545454545454
+        },
+        {
+          "date": "2023-02-28",
+          "price": 1.49,
+          "unitPrice": 5.418181818181819
+        },
+        {
+          "date": "2022-11-15",
+          "price": 1.39,
+          "unitPrice": 5.054545454545454
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.19,
+          "unitPrice": 4.327272727272727
+        },
+        {
+          "date": "2022-02-16",
+          "price": 0.95,
+          "unitPrice": 3.4545454545454546
+        },
+        {
+          "date": "2021-10-06",
+          "price": 0.89,
+          "unitPrice": 3.2363636363636368
+        },
+        {
+          "date": "2021-05-12",
+          "price": 0.79,
+          "unitPrice": 2.872727272727273
+        },
+        {
+          "date": "2021-01-20",
+          "price": 0.89,
+          "unitPrice": 3.2363636363636368
+        },
+        {
+          "date": "2017-04-20",
+          "price": 0.79,
+          "unitPrice": 2.872727272727273
+        }
+      ],
+      "isWeighted": false,
+      "unit": "ml",
+      "quantity": 275,
+      "bio": false,
+      "url": "",
+      "search": "s-budget mayonnaise 25% fett 275 ml"
+    },
+    {
+      "store": "billa",
+      "id": "00-966988",
+      "name": "Clever Pfefferoni mild",
+      "category": "57",
+      "unavailable": true,
+      "price": 1.19,
+      "priceHistory": [
+        {
+          "date": "2019-01-30",
+          "price": 1.19,
+          "unitPrice": 1.983333333333333
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 600,
+      "bio": false,
+      "url": "",
+      "search": "clever pfefferoni mild 600 g"
+    },
+    {
+      "store": "spar",
+      "id": "1194036",
+      "name": "S-BUDGET Pfefferoni mild",
+      "category": "57",
+      "unavailable": false,
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2023-03-28",
+          "price": 1.09,
+          "unitPrice": 1.8166666666666667
+        },
+        {
+          "date": "2018-10-24",
+          "price": 1.19,
+          "unitPrice": 1.983333333333333
+        },
+        {
+          "date": "2018-07-12",
+          "price": 1.29,
+          "unitPrice": 2.15
+        },
+        {
+          "date": "2017-04-20",
+          "price": 1.19,
+          "unitPrice": 1.983333333333333
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 600,
+      "bio": false,
+      "url": "",
+      "search": "s-budget pfefferoni mild 600 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-507295",
+      "name": "Clever Riesengarnelen geschält",
+      "category": "43",
+      "unavailable": false,
+      "price": 4.49,
+      "priceHistory": [
+        {
+          "date": "2023-01-19",
+          "price": 4.49,
+          "unitPrice": 19.955555555555556
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 225,
+      "bio": false,
+      "url": "",
+      "search": "clever riesengarnelen geschält 225 g"
+    },
+    {
+      "store": "spar",
+      "id": "7809538",
+      "name": "S-BUDGET Riesengarnelen tiefgekühlt",
+      "category": "43",
+      "unavailable": false,
+      "price": 4.99,
+      "priceHistory": [
+        {
+          "date": "2022-01-04",
+          "price": 4.99,
+          "unitPrice": 22.177777777777777
+        },
+        {
+          "date": "2017-04-20",
+          "price": 4.49,
+          "unitPrice": 19.955555555555556
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 225,
+      "bio": false,
+      "url": "",
+      "search": "s-budget riesengarnelen tiefgekühlt 225 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-966986",
+      "name": "Clever Rote Rübensalat",
+      "category": "57",
+      "unavailable": false,
+      "price": 1.09,
+      "priceHistory": [
+        {
+          "date": "2022-07-21",
+          "price": 1.09,
+          "unitPrice": 1.626865671641791
+        },
+        {
+          "date": "2022-03-17",
+          "price": 0.99,
+          "unitPrice": 1.4776119402985075
+        },
+        {
+          "date": "2020-02-13",
+          "price": 0.87,
+          "unitPrice": 1.2985074626865671
+        },
+        {
+          "date": "2019-06-12",
+          "price": 0.89,
+          "unitPrice": 1.328358208955224
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 670,
+      "bio": false,
+      "url": "",
+      "search": "clever rote rübensalat 670 g"
+    },
+    {
+      "store": "spar",
+      "id": "2136424",
+      "name": "S-BUDGET Rote Rüben Salat",
+      "category": "57",
+      "unavailable": false,
+      "price": 0.89,
+      "priceHistory": [
+        {
+          "date": "2022-12-21",
+          "price": 0.89,
+          "unitPrice": 1.328358208955224
+        },
+        {
+          "date": "2022-09-30",
+          "price": 1.09,
+          "unitPrice": 1.626865671641791
+        },
+        {
+          "date": "2022-03-30",
+          "price": 0.99,
+          "unitPrice": 1.4776119402985075
+        },
+        {
+          "date": "2022-02-11",
+          "price": 0.89,
+          "unitPrice": 1.328358208955224
+        },
+        {
+          "date": "2021-03-17",
+          "price": 0.85,
+          "unitPrice": 1.2686567164179103
+        },
+        {
+          "date": "2019-02-24",
+          "price": 0.87,
+          "unitPrice": 1.2985074626865671
+        },
+        {
+          "date": "2017-04-20",
+          "price": 0.89,
+          "unitPrice": 1.328358208955224
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 670,
+      "bio": false,
+      "url": "",
+      "search": "s-budget rote rüben salat 670 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-312931",
+      "name": "Clever Schlemmerfilet Bordelaise",
+      "category": "43",
+      "unavailable": false,
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-05-15",
+          "price": 2.99,
+          "unitPrice": 7.4750000000000005
+        },
+        {
+          "date": "2022-12-15",
+          "price": 2.69,
+          "unitPrice": 6.725
+        },
+        {
+          "date": "2022-09-08",
+          "price": 2.49,
+          "unitPrice": 6.2250000000000005
+        },
+        {
+          "date": "2022-08-05",
+          "price": 2.39,
+          "unitPrice": 5.9750000000000005
+        },
+        {
+          "date": "2022-07-08",
+          "price": 2.29,
+          "unitPrice": 5.725
+        },
+        {
+          "date": "2022-02-04",
+          "price": 1.99,
+          "unitPrice": 4.9750000000000005
+        },
+        {
+          "date": "2021-05-27",
+          "price": 1.89,
+          "unitPrice": 4.725
+        },
+        {
+          "date": "2020-08-06",
+          "price": 1.99,
+          "unitPrice": 4.9750000000000005
+        },
+        {
+          "date": "2020-01-16",
+          "price": 1.89,
+          "unitPrice": 4.725
+        },
+        {
+          "date": "2019-08-21",
+          "price": 2.29,
+          "unitPrice": 5.725
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 400,
+      "bio": false,
+      "url": "",
+      "search": "clever schlemmerfilet bordelaise 400 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020001337743",
+      "name": "S-BUDGET Schlemmerfilet Bordelaise",
+      "category": "42",
+      "unavailable": false,
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-01-17",
+          "price": 3.29,
+          "unitPrice": 8.225
+        },
+        {
+          "date": "2022-09-30",
+          "price": 2.99,
+          "unitPrice": 7.4750000000000005
+        },
+        {
+          "date": "2022-01-11",
+          "price": 2.39,
+          "unitPrice": 5.9750000000000005
+        },
+        {
+          "date": "2019-03-10",
+          "price": 2.29,
+          "unitPrice": 5.725
+        },
+        {
+          "date": "2017-10-10",
+          "price": 1.89,
+          "unitPrice": 4.725
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 400,
+      "bio": false,
+      "url": "",
+      "search": "s-budget schlemmerfilet bordelaise 400 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-312930",
+      "name": "Clever Schlemmerfilet Broccoli",
+      "category": "43",
+      "unavailable": false,
+      "price": 2.99,
+      "priceHistory": [
+        {
+          "date": "2023-04-29",
+          "price": 2.99,
+          "unitPrice": 7.4750000000000005
+        },
+        {
+          "date": "2023-01-19",
+          "price": 2.69,
+          "unitPrice": 6.725
+        },
+        {
+          "date": "2022-09-08",
+          "price": 2.49,
+          "unitPrice": 6.2250000000000005
+        },
+        {
+          "date": "2022-08-04",
+          "price": 2.39,
+          "unitPrice": 5.9750000000000005
+        },
+        {
+          "date": "2022-07-08",
+          "price": 2.29,
+          "unitPrice": 5.725
+        },
+        {
+          "date": "2022-02-04",
+          "price": 1.99,
+          "unitPrice": 4.9750000000000005
+        },
+        {
+          "date": "2021-05-27",
+          "price": 1.89,
+          "unitPrice": 4.725
+        },
+        {
+          "date": "2020-08-06",
+          "price": 1.99,
+          "unitPrice": 4.9750000000000005
+        },
+        {
+          "date": "2020-01-16",
+          "price": 1.89,
+          "unitPrice": 4.725
+        },
+        {
+          "date": "2019-08-21",
+          "price": 2.29,
+          "unitPrice": 5.725
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 400,
+      "bio": false,
+      "url": "",
+      "search": "clever schlemmerfilet broccoli 400 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020001337743",
+      "name": "S-BUDGET Schlemmerfilet Bordelaise",
+      "category": "42",
+      "unavailable": false,
+      "price": 3.29,
+      "priceHistory": [
+        {
+          "date": "2023-01-17",
+          "price": 3.29,
+          "unitPrice": 8.225
+        },
+        {
+          "date": "2022-09-30",
+          "price": 2.99,
+          "unitPrice": 7.4750000000000005
+        },
+        {
+          "date": "2022-01-11",
+          "price": 2.39,
+          "unitPrice": 5.9750000000000005
+        },
+        {
+          "date": "2019-03-10",
+          "price": 2.29,
+          "unitPrice": 5.725
+        },
+        {
+          "date": "2017-10-10",
+          "price": 1.89,
+          "unitPrice": 4.725
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 400,
+      "bio": false,
+      "url": "",
+      "search": "s-budget schlemmerfilet bordelaise 400 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-856700",
+      "name": "Clever Sirup Orangeade",
+      "category": "20",
+      "unavailable": false,
+      "price": 2.49,
+      "priceHistory": [
+        {
+          "date": "2022-11-09",
+          "price": 2.49,
+          "unitPrice": 1.6600000000000001
+        },
+        {
+          "date": "2022-06-10",
+          "price": 1.99,
+          "unitPrice": 1.3266666666666667
+        },
+        {
+          "date": "2022-03-22",
+          "price": 2.15,
+          "unitPrice": 1.4333333333333333
+        },
+        {
+          "date": "2022-02-16",
+          "price": 1.99,
+          "unitPrice": 1.3266666666666667
+        },
+        {
+          "date": "2017-04-05",
+          "price": 1.79,
+          "unitPrice": 1.1933333333333334
+        }
+      ],
+      "isWeighted": false,
+      "unit": "ml",
+      "quantity": 1500,
+      "bio": false,
+      "url": "",
+      "search": "clever sirup orangeade 1500 ml"
+    },
+    {
+      "store": "spar",
+      "id": "6461386",
+      "name": "S-BUDGET Orangen Sirup",
+      "category": "20",
+      "unavailable": false,
+      "price": 3.49,
+      "priceHistory": [
+        {
+          "date": "2022-11-15",
+          "price": 3.49,
+          "unitPrice": 2.326666666666667
+        },
+        {
+          "date": "2022-10-11",
+          "price": 2.99,
+          "unitPrice": 1.9933333333333334
+        },
+        {
+          "date": "2022-09-30",
+          "price": 2.89,
+          "unitPrice": 1.9266666666666667
+        },
+        {
+          "date": "2022-02-09",
+          "price": 2.69,
+          "unitPrice": 1.7933333333333332
+        },
+        {
+          "date": "2021-10-13",
+          "price": 2.49,
+          "unitPrice": 1.6600000000000001
+        },
+        {
+          "date": "2017-04-20",
+          "price": 1.79,
+          "unitPrice": 1.1933333333333334
+        }
+      ],
+      "isWeighted": false,
+      "unit": "ml",
+      "quantity": 1500,
+      "bio": false,
+      "url": "",
+      "search": "s-budget orangen sirup 1500 ml"
+    },
+    {
+      "store": "billa",
+      "id": "00-335709",
+      "name": "Clever Sonnenblumenbrot",
+      "category": "11",
+      "unavailable": false,
+      "price": 1.79,
+      "priceHistory": [
+        {
+          "date": "2023-06-22",
+          "price": 1.79,
+          "unitPrice": 3.58
+        },
+        {
+          "date": "2022-11-18",
+          "price": 1.89,
+          "unitPrice": 3.78
+        },
+        {
+          "date": "2022-03-31",
+          "price": 1.79,
+          "unitPrice": 3.58
+        },
+        {
+          "date": "2021-11-18",
+          "price": 1.69,
+          "unitPrice": 3.38
+        },
+        {
+          "date": "2019-11-06",
+          "price": 1.59,
+          "unitPrice": 3.18
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 500,
+      "bio": false,
+      "url": "",
+      "search": "clever sonnenblumenbrot 500 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020000692386",
+      "name": "S-BUDGET Sonnenblumenbrot",
+      "category": "11",
+      "unavailable": false,
+      "price": 1.99,
+      "priceHistory": [
+        {
+          "date": "2023-01-17",
+          "price": 1.99,
+          "unitPrice": 3.98
+        },
+        {
+          "date": "2022-03-30",
+          "price": 1.79,
+          "unitPrice": 3.58
+        },
+        {
+          "date": "2022-02-02",
+          "price": 1.69,
+          "unitPrice": 3.38
+        },
+        {
+          "date": "2017-04-20",
+          "price": 1.59,
+          "unitPrice": 3.18
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 500,
+      "bio": false,
+      "url": "",
+      "search": "s-budget sonnenblumenbrot 500 g"
+    },
+    {
+      "store": "billa",
+      "id": "00-522502",
+      "name": "Clever Trockenhefe 6er",
+      "category": "52",
+      "unavailable": false,
+      "price": 0.59,
+      "priceHistory": [
+        {
+          "date": "2022-07-20",
+          "price": 0.59,
+          "unitPrice": 14.047619047619047
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 42,
+      "bio": false,
+      "url": "",
+      "search": "clever trockenhefe 6er 42 g"
+    },
+    {
+      "store": "spar",
+      "id": "2020003337277",
+      "name": "S-BUDGET Trockengerm",
+      "category": "52",
+      "unavailable": false,
+      "price": 0.58,
+      "priceHistory": [
+        {
+          "date": "2021-03-03",
+          "price": 0.58,
+          "unitPrice": 13.809523809523808
+        },
+        {
+          "date": "2020-05-21",
+          "price": 0.59,
+          "unitPrice": 14.047619047619047
+        }
+      ],
+      "isWeighted": false,
+      "unit": "g",
+      "quantity": 42,
+      "bio": false,
+      "url": "",
+      "search": "s-budget trockengerm 42 g"
     }
   ]
 }
