@@ -153,6 +153,16 @@ if (!fs.existsSync("site/data/midrange-cart.json")) {
 }
 
 const canonicalItems = analysis.readJSON("data/latest-canonical.json.br");
+
+let sumBilla = 0;
+let sumSpar = 0;
+canonicalItems.forEach((item) => {
+    if (item.store == "billa") sumBilla++;
+    if (item.store == "spar") sumSpar++;
+});
+
+console.log("Billa: " + sumBilla + ", Spar: " + sumSpar);
+
 const lookup = {};
 canonicalItems.forEach((item) => (lookup[item.store + item.id] = item));
 const files = fs.readdirSync("site/data/");
@@ -204,3 +214,53 @@ for (const file of files) {
         fs.writeFileSync("site/data/" + file.replace(".json", ".csv"), csv, "utf-8");
     }
 }
+
+(async () => {
+    const readline = require("readline-sync");
+    const { globalUnits } = require("./stores/utils");
+    const pdfjs = require("pdfjs-dist");
+
+    const billaItems = canonicalItems.filter((item) => item.store == "billa");
+    knn.vectorizeItems(billaItems, true);
+    console.log("Generating cart for Billa Preisgesenkt list");
+    const document = await pdfjs.getDocument("patterns/Preisgesenkt_Liste_BILLA_22_6.pdf").promise;
+    const dateRegex = /^(\d{2})\.(\d{2})\.(\d{2})$/;
+    const foundItems = [];
+    let totalItems = 0;
+    for (let i = 1; i <= document.numPages; i++) {
+        const page = await document.getPage(i);
+        const text = await page.getTextContent();
+        const startIndex = text.items.findIndex((item) => item.str == "Preissenkung") + 2;
+        for (let j = startIndex; j < text.items.length; ) {
+            const textItem = { name: text.items[j].str };
+            let quantity = text.items[j + 4].str;
+            const unit = text.items[j + 2].str;
+            const conv = globalUnits[unit.toLowerCase()];
+            if (conv) {
+                quantity = Number.parseFloat(quantity.replace(",", "."));
+                textItem.name += " " + conv.factor * quantity + " " + conv.unit;
+            } else {
+                textItem.name += " " + quantity + " " + unit;
+            }
+            knn.vectorizeItem(textItem);
+            const similar = knn.findMostSimilarItem(textItem, billaItems);
+            const answer = readline.question(textItem.name + " -> " + similar.item.name + " " + similar.item.quantity + " " + similar.item.unit);
+            if (answer.length == 0) {
+                foundItems.push(similar.item);
+            }
+            let k = j + 1;
+            for (; k < text.items.length; k++) {
+                const str = text.items[k].str;
+                if (dateRegex.test(str)) break;
+            }
+            j = k + 2;
+            totalItems++;
+        }
+    }
+    console.log("Found " + foundItems.length + "/" + totalItems + " items");
+    analysis.writeJSON("site/data/preisgesenkt-cart.json", {
+        name: "Billa Preisgesenkt Artikel",
+        items: foundItems,
+    });
+    console.log("Parsed document");
+})();

@@ -49,6 +49,7 @@ exports.globalUnits = {
     m: { unit: "cm", factor: 100 },
     meter: { unit: "cm", factor: 100 },
     g: { unit: "g", factor: 1 },
+    gr: { unit: "g", factor: 1 },
     gramm: { unit: "g", factor: 1 },
     dag: { unit: "g", factor: 10 },
     kg: { unit: "g", factor: 1000 },
@@ -58,6 +59,7 @@ exports.globalUnits = {
     dl: { unit: "ml", factor: 10 },
     cl: { unit: "ml", factor: 100 },
     l: { unit: "ml", factor: 1000 },
+    lt: { unit: "ml", factor: 1000 },
     liter: { unit: "ml", factor: 1000 },
     wg: { unit: "wg", factor: 1 },
 };
