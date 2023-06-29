@@ -387,6 +387,7 @@ class ItemsFilter extends View {
                 let value = state[el];
                 if (value === true) value = ".";
                 if (value === false) value = "-";
+                if (el == "query") value = encodeURIComponent(value);
                 return value;
             })
             .join(";");
@@ -410,6 +411,7 @@ class ItemsFilter extends View {
             .forEach((el, index) => {
                 if (values[index] === ".") state[el] = true;
                 else if (values[index] === "-") state[el] = false;
+                else if (el == "query") state[el] = decodeURIComponent(values[index]);
                 else state[el] = values[index];
                 storeIndex = index + 1;
             });
