@@ -44,6 +44,13 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
+    mueller: {
+        name: "Müller",
+        budgetBrands: ["aveo"],
+        color: "emerald",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.muller.at/${item.url}`,
+    },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
@@ -79,6 +86,20 @@ exports.stores = {
         color: "emerald",
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
+    },
+    mueller: {
+        name: "Müller",
+        budgetBrands: ["aveo"],
+        color: "emerald",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.muller.de/${item.url}`,
+    },
+    muellerDe: {
+        name: "Müller DE",
+        budgetBrands: ["aveo"],
+        color: "stone",
+        defaultChecked: false,
+        getUrl: (item) => `https://www.muller.de/${item.url}`,
     },
     reformstark: {
         name: "Reformstark Martin",

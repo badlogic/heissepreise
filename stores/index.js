@@ -9,4 +9,6 @@ exports.sparSi = require("./spar-si");
 exports.unimarkt = require("./unimarkt");
 exports.reweDe = require("./rewe-de");
 exports.penny = require("./penny");
+exports.mueller = require("./mueller");
+exports.muellerDe = require("./mueller-de");
 exports.reformstark = require("./reformstark");
