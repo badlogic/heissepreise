@@ -87,13 +87,6 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
     },
-    mueller: {
-        name: "Müller",
-        budgetBrands: ["aveo"],
-        color: "emerald",
-        defaultChecked: true,
-        getUrl: (item) => `https://www.muller.de/${item.url}`,
-    },
     muellerDe: {
         name: "Müller DE",
         budgetBrands: ["aveo"],
