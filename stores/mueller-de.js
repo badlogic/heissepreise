@@ -97,8 +97,45 @@ exports.fetchData = async function () {
     return muellerItems;
 };
 
-exports.initializeCategoryMapping = async () => {};
+function getSubcategories(json) {
+    const subcategories = [];
 
-exports.mapCategory = (rawItem) => {};
+    function traverseCategories(categories, parent = "", url) {
+        if (categories.length === 0) {
+            subcategories.push({ id: parent, url: url, code: null });
+            return;
+        }
+
+        for (const category of categories) {
+            const { name, subcategories, url } = category;
+            const current = parent ? `${parent}/${name}` : name;
+            traverseCategories(subcategories, current, url);
+        }
+    }
+
+    traverseCategories(json.subcategories, json.name, json.url);
+
+    return subcategories;
+}
+
+exports.initializeCategoryMapping = async () => {
+    const categories = [];
+
+    const data = (await axios.get(`${exports.urlBase}/ajax/burgermenu/`)).data;
+    data.forEach((category) => {
+        const subcategories = getSubcategories(category);
+        categories.push(...subcategories);
+    });
+
+    utils.mergeAndSaveCategories("mueller-de", categories);
+    exports.categoryLookup = {};
+    for (const category of categories) {
+        exports.categoryLookup[category.id] = category;
+    }
+};
+
+exports.mapCategory = (rawItem) => {
+    return exports.categoryLookup[rawItem.category]?.code;
+};
 
 exports.urlBase = "https://www.mueller.de";
