@@ -80,6 +80,13 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
     },
+    reformstark: {
+        name: "Reformstark Martin",
+        budgetBrands: [],
+        color: "green",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.reformmarkt.com/${item.url}`,
+    },
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);
