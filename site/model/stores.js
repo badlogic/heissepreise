@@ -80,6 +80,20 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
     },
+    mueller: {
+        name: "Müller",
+        budgetBrands: ["aveo"],
+        color: "emerald",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.muller.at/${item.url}`,
+    },
+    muellerDe: {
+        name: "Müller DE",
+        budgetBrands: ["aveo"],
+        color: "stone",
+        defaultChecked: false,
+        getUrl: (item) => `https://www.muller.de/${item.url}`,
+    },
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);
