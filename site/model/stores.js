@@ -49,7 +49,7 @@ exports.stores = {
         budgetBrands: ["aveo"],
         color: "emerald",
         defaultChecked: true,
-        getUrl: (item) => `https://www.muller.at/${item.url}`,
+        getUrl: (item) => `https://www.mueller.at${item.url}`,
     },
     unimarkt: {
         name: "Unimarkt",

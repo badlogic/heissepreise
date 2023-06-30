@@ -180,7 +180,7 @@ exports.decompress = (compressedItems) => {
     for (let l = 0; l < numItems; l++) {
         const store = storeLookup[data[i++]];
         const id = data[i++];
-        const name = data[i++];
+        const name = data[i++].replace("M & M", "M&M");
         const category = data[i++];
         const unavailable = data[i++] == 1;
         const numPrices = data[i++];

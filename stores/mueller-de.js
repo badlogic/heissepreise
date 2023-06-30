@@ -56,7 +56,24 @@ exports.fetchData = async function () {
     });
 
     for (let page of MUELLER_CATEGORY_PAGES) {
-        const response = await axios.get(`${page}?ajax=true&p=1`);
+        let response = await axios.get(`${page}?ajax=true&p=1`, {
+            validateStatus: function (status) {
+                return (status >= 200 && status < 300) || status == 404;
+            },
+        });
+        let backoff = 2000;
+        while (response.status == 404) {
+            response = await axios.get(`${page}?ajax=true&p=1`, {
+                validateStatus: function (status) {
+                    return (status >= 200 && status < 300) || status == 404;
+                },
+            });
+            if (response.status == 404) {
+                console.error(`Couldn't fetch ${page}?ajax=true&p=1, retrying in ${backoff / 1000}s.`);
+                await new Promise((resolve) => setTimeout(resolve, backoff));
+                backoff *= 2;
+            }
+        }
         const plp = response?.data?.productlistresult;
 
         if (plp && plp.products && plp.products.length) {
