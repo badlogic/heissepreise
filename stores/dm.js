@@ -45,8 +45,9 @@ exports.fetchData = async function () {
         "allCategories.id=020000&price.value.from=3&price.value.to=4", //~600 items
         "allCategories.id=020000&price.value.from=4&price.value.to=6", //~800 items
         "allCategories.id=020000&price.value.from=6&price.value.to=10", //~850 items
-        "allCategories.id=020000&price.value.from=10&price.value.to=18", //~900 items
-        "allCategories.id=020000&price.value.from=18", //~960 items (!)
+        "allCategories.id=020000&price.value.from=10&price.value.to=18", //~930 items
+        "allCategories.id=020000&price.value.from=18&price.value.to=70", //~940 items
+        "allCategories.id=020000&price.value.from=70", //~60 items
         "allCategories.id=030000&price.value.to=8", //~900 items
         "allCategories.id=030000&price.value.from=8", //~500 items
         "allCategories.id=040000&price.value.to=2", //~600 items
@@ -80,6 +81,7 @@ exports.fetchData = async function () {
             });
         }
         let items = res.data;
+        console.log(`DM Query matches ${items.count} items, but API only returns first ${items.products.length}. Adjust queries. Query: ${query}`);
         if (items.count > items.products.length) {
             console.warn(
                 `DM Query matches ${items.count} items, but API only returns first ${items.products.length}. Adjust queries. Query: ${query}`
