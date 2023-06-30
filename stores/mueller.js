@@ -101,20 +101,19 @@ exports.fetchData = async function () {
 function getSubcategories(json) {
     const subcategories = [];
 
-    function traverseCategories(categories, parent = "", url) {
-        if (categories.length === 0) {
+    function traverseCategories(categories, parent = "", url, mainCategory) {
+        if (!mainCategory) {
             subcategories.push({ id: parent, url: url, code: null });
-            return;
         }
 
         for (const category of categories) {
             const { name, subcategories, url } = category;
             const current = parent ? `${parent}/${name}` : name;
-            traverseCategories(subcategories, current, url);
+            traverseCategories(subcategories, current, url, false);
         }
     }
 
-    traverseCategories(json.subcategories, json.name, json.url);
+    traverseCategories(json.subcategories, json.name, json.url, true);
 
     return subcategories;
 }
