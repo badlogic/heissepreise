@@ -107,6 +107,8 @@ exports.fetchData = async function () {
         products = products.concat(await getProducts(cid));
     }
 
+    products = [...new Map(products.map((p) => [p.id, p])).values()];
+
     return products;
 };
 
