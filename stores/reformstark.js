@@ -113,14 +113,11 @@ const getSubcategories = function (json) {
     const subcategories = [];
 
     function traverseCategories(categories, parentId = "", parentName = "", url, mainCategory) {
-        if (!mainCategory) {
-            subcategories.push({ id: parentId, desciption: parentName, url: `${exports.urlBase}/${url}.html`, code: null });
-        }
-
         for (const category of categories) {
             const { id, name, children, url_path } = category;
             const currentId = parentId ? `${parentId}-${id}` : id;
             const currentName = parentName ? `${parentName} -> ${name}` : name;
+            subcategories.push({ id: currentId, desciption: currentName, url: `${exports.urlBase}/${url}.html`, code: null });
             if (children && children.length) {
                 traverseCategories(children, currentId, currentName, url_path, false);
             }
@@ -169,8 +166,10 @@ exports.initializeCategoryMapping = async () => {
         await axios.post(`${exports.urlBase}/graphql`, { query: buildCategoryQuery(2) }, { headers: { "Content-Type": "application/json" } })
     ).data?.data?.categoryList;
 
-    const subcategories = getSubcategories(categoryList[0]);
-    categories.push(...subcategories);
+    categoryList[0].children.forEach((child) => {
+        const subcategories = getSubcategories(child);
+        categories.push(...subcategories);
+    });
 
     utils.mergeAndSaveCategories("reformstark", categories);
     exports.categoryLookup = {};

@@ -66,6 +66,13 @@ exports.stores = {
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
         removeOld: true,
     },
+    reformstark: {
+        name: "Reformstark Martin",
+        budgetBrands: [],
+        color: "green",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.reformmarkt.com/${item.url}`,
+    },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],
@@ -93,13 +100,6 @@ exports.stores = {
         color: "stone",
         defaultChecked: false,
         getUrl: (item) => `https://www.muller.de/${item.url}`,
-    },
-    reformstark: {
-        name: "Reformstark Martin",
-        budgetBrands: [],
-        color: "green",
-        defaultChecked: true,
-        getUrl: (item) => `https://www.reformmarkt.com/${item.url}`,
     },
 };
 
