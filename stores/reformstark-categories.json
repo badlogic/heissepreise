@@ -1840,29 +1840,5 @@
     "desciption": "Haushalt & Wohnen -> Pflanzensamen & Dünger",
     "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
     "code": null
-  },
-  {
-    "id": "3",
-    "desciption": "Lebensmittel",
-    "url": "https://www.reformmarkt.com/lebensmittel.html",
-    "code": "50"
-  },
-  {
-    "id": "4",
-    "desciption": "Nahrungsergänzung & Freie Arzneimittel ",
-    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel.html",
-    "code": null
-  },
-  {
-    "id": "5",
-    "desciption": "Kosmetik",
-    "url": "https://www.reformmarkt.com/kosmetik.html",
-    "code": "75"
-  },
-  {
-    "id": "6",
-    "desciption": "Haushalt & Wohnen",
-    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
-    "code": null
   }
 ]
