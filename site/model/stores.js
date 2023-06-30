@@ -66,6 +66,14 @@ exports.stores = {
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
         removeOld: true,
     },
+    gurkerl: {
+        name: "gurkerl",
+        budgetBrands: ["kitchin", "yutto", "fjoru", "miil", "moddia", "dacello", "pappudia", "ubomi", "sutcha"], // taken from https://www.gurkerl.at/c135195-unsere-marken
+        color: "green",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.gurkerl.at/${item.id}`,
+        removeOld: true,
+    },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],
