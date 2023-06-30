@@ -71,7 +71,7 @@ exports.stores = {
         budgetBrands: [],
         color: "green",
         defaultChecked: true,
-        getUrl: (item) => `https://www.reformmarkt.com/${item.url}`,
+        getUrl: (item) => `https://www.reformmarkt.com/catalog/product/view/id/${item.id}`,
     },
     dmDe: {
         name: "DM DE",

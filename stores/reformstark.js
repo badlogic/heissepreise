@@ -27,7 +27,8 @@ exports.getCanonical = function (item, today) {
             quantity,
             unit,
             bio: item.name.toLowerCase().includes("bio"),
-            url: item.canonicalUrl,
+            url: item.canonicalUrl ?? null,
+            unavailable: item.unavailable,
         },
         units,
         "reformstark"
@@ -49,14 +50,15 @@ const buildProductsQuery = function (page) {
     return `query {
         products(search: "", currentPage: ${currentPage}) {
             page_info {
-                current_page,
+                current_page
                 total_pages
             }
             items {
-                id,
-                name
-                canonical_url,
-                meta_description,
+                id
+                name,
+                canonical_url
+                meta_description
+                stock_status
                 price_range {
                     minimum_price {
                         final_price {
@@ -65,7 +67,7 @@ const buildProductsQuery = function (page) {
                     }
                 }
                 categories {
-                    id,
+                    id
                     name
                 }
             }
@@ -97,7 +99,7 @@ exports.fetchData = async function () {
                     price: parseFloat(product.price_range.minimum_price.final_price.value),
                     desciption: product.meta_description,
                     canonicalUrl: product.canonical_url,
-                    canonicalUrl: product.canonical_url,
+                    unavailable: product.stock_status !== "IN_STOCK",
                     category: product.categories.map((category) => category.id).join("-"),
                 };
             });
