@@ -23,7 +23,7 @@ exports.getCanonical = function (item, today) {
             priceHistory: [{ date: today, price: item.price.value }],
             unit,
             quantity,
-            ...((item.brandName === "dmBio" || (item.name ? item.name.startsWith("Bio ") | item.name.startsWith("Bio-") : false)) && { bio: true }),
+            ...((item.brandName === "dmBio" || (item.name && /^Bio[ -]/.test(item.name))) && { bio: true }),
         },
         units,
         "dm"
@@ -81,7 +81,6 @@ exports.fetchData = async function () {
             });
         }
         let items = res.data;
-        console.log(`DM Query matches ${items.count} items, but API only returns first ${items.products.length}. Adjust queries. Query: ${query}`);
         if (items.count > items.products.length) {
             console.warn(
                 `DM Query matches ${items.count} items, but API only returns first ${items.products.length}. Adjust queries. Query: ${query}`
