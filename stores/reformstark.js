@@ -109,8 +109,78 @@ exports.fetchData = async function () {
     return reformstarkItems;
 };
 
-exports.initializeCategoryMapping = async () => {};
+const getSubcategories = function (json) {
+    const subcategories = [];
 
-exports.mapCategory = (rawItem) => {};
+    function traverseCategories(categories, parentId = "", parentName = "", url, mainCategory) {
+        if (!mainCategory) {
+            subcategories.push({ id: parentId, desciption: parentName, url: `${exports.urlBase}/${url}.html`, code: null });
+        }
+
+        for (const category of categories) {
+            const { id, name, children, url_path } = category;
+            const currentId = parentId ? `${parentId}-${id}` : id;
+            const currentName = parentName ? `${parentName} -> ${name}` : name;
+            if (children && children.length) {
+                traverseCategories(children, currentId, currentName, url_path, false);
+            }
+        }
+    }
+
+    traverseCategories(json.children, json.id, json.name, json.url_path, true);
+
+    return subcategories;
+};
+
+const buildCategoryQuery = function (parentCategoryId) {
+    const categoryId = parentCategoryId || 2; // 2 = id of root-category
+    return `query {
+        categoryList(filters: { ids: { eq: "${categoryId}" } }) {
+            id
+            name
+            children {
+                id
+                name
+                url_path
+                children {
+                    id
+                    name
+                    url_path
+                    children {
+                        id
+                        name
+                        url_path
+                        children {
+                            id
+                            name
+                            url_path
+                        }
+                    }
+                }
+            }
+        }
+    }`;
+};
+
+exports.initializeCategoryMapping = async () => {
+    let categories = [];
+
+    let categoryList = (
+        await axios.post(`${exports.urlBase}/graphql`, { query: buildCategoryQuery(2) }, { headers: { "Content-Type": "application/json" } })
+    ).data?.data?.categoryList;
+
+    const subcategories = getSubcategories(categoryList[0]);
+    categories.push(...subcategories);
+
+    utils.mergeAndSaveCategories("reformstark", categories);
+    exports.categoryLookup = {};
+    for (const category of categories) {
+        exports.categoryLookup[category.id] = category;
+    }
+};
+
+exports.mapCategory = (rawItem) => {
+    return exports.categoryLookup[rawItem.category]?.code;
+};
 
 exports.urlBase = "https://www.reformmarkt.com";
