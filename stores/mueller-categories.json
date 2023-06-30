@@ -167,7 +167,7 @@
   {
     "id": "Parfümerie/Pflege",
     "url": "https://www.mueller.at/parfuemerie/pflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Pflege/Gesichtspflege",
@@ -342,12 +342,12 @@
   {
     "id": "Parfümerie/Pflege/Körperpflege/Enthaarung",
     "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/enthaarung/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Pflege/Hand- & Fußpflege",
     "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Pflege/Hand- & Fußpflege/Handpflege",
@@ -362,17 +362,17 @@
   {
     "id": "Parfümerie/Pflege/Hand- & Fußpflege/Nagelpflege",
     "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/nagelpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Pflege/Hand- & Fußpflege/Nagellackentferner",
     "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/nagellackentferner/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Pflege/Herrenpflege",
     "url": "https://www.mueller.at/parfuemerie/pflege/herrenpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Pflege/Herrenpflege/Bartpflege",
@@ -392,7 +392,7 @@
   {
     "id": "Parfümerie/Pflege/Haarpflege",
     "url": "https://www.mueller.at/parfuemerie/pflege/haarpflege/",
-    "code": null
+    "code": "73"
   },
   {
     "id": "Parfümerie/Pflege/Haarpflege/Haarwäsche",
@@ -507,7 +507,7 @@
   {
     "id": "Parfümerie/Accessoires/Haarstyling",
     "url": "https://www.mueller.at/parfuemerie/accessoires/haarstyling/",
-    "code": null
+    "code": "73"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege",
@@ -517,37 +517,37 @@
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Hautscheren",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/hautscheren/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Feilen",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/feilen/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Manikür- & Lackierhilfen",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/manikuer-lackierhilfen/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Nagelscheren",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/nagelscheren/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Zangen & Knipser",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/zangen-knipser/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Nagelsets",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/nagelsets/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Hand- & Nagelbürsten",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/hand-nagelbuersten/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Hornhautentferner",
@@ -557,7 +557,7 @@
   {
     "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Handschuhe",
     "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/handschuhe/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Parfümerie/Bestseller",
@@ -622,17 +622,17 @@
   {
     "id": "Naturshop/Pflege",
     "url": "https://www.mueller.at/naturshop/pflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Gesichtspflege",
     "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Gesichtspflege/Reinigung",
     "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Gesichtspeeling",
@@ -717,7 +717,7 @@
   {
     "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege",
     "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Seren & Ampullen",
@@ -742,12 +742,12 @@
   {
     "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Gesichtsöl",
     "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/gesichtsoel/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Spray",
     "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/spray/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Gesichtspflege/Lippenpflege",
@@ -757,7 +757,7 @@
   {
     "id": "Naturshop/Pflege/Körperpflege",
     "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Körperpflege/Körperduft & Bodyspray",
@@ -767,7 +767,7 @@
   {
     "id": "Naturshop/Pflege/Körperpflege/Pflege",
     "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/pflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Körperpflege/Deodorants",
@@ -792,22 +792,22 @@
   {
     "id": "Naturshop/Pflege/Körperpflege/Enthaarung",
     "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/enthaarung/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Hand- & Fußpflege",
     "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Hand- & Fußpflege/Fußpflege",
     "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/fusspflege/",
-    "code": null
+    "code": "7B"
   },
   {
     "id": "Naturshop/Pflege/Hand- & Fußpflege/Handpflege",
     "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/handpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Hand- & Fußpflege/Nagelpflege",
@@ -817,12 +817,12 @@
   {
     "id": "Naturshop/Pflege/Hand- & Fußpflege/Nagellackentferner",
     "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/nagellackentferner/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Herrenpflege",
     "url": "https://www.mueller.at/naturshop/pflege/herrenpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Herrenpflege/Rasurzubehör",
@@ -832,12 +832,12 @@
   {
     "id": "Naturshop/Pflege/Herrenpflege/Bartpflege",
     "url": "https://www.mueller.at/naturshop/pflege/herrenpflege/bartpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Naturshop/Pflege/Haarpflege",
     "url": "https://www.mueller.at/naturshop/pflege/haarpflege/",
-    "code": null
+    "code": "73"
   },
   {
     "id": "Naturshop/Pflege/Haarpflege/Haarpflege",
@@ -862,7 +862,7 @@
   {
     "id": "Naturshop/Kind & Mama",
     "url": "https://www.mueller.at/naturshop/kind-mama/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Naturshop/Kind & Mama/Windeln & Zubehör",
@@ -907,7 +907,7 @@
   {
     "id": "Naturshop/Kind & Mama/Für Mütter",
     "url": "https://www.mueller.at/naturshop/kind-mama/fuer-muetter/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Naturshop/Kind & Mama/Für Mütter/Stillzeit",
@@ -1022,7 +1022,7 @@
   {
     "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte",
     "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/",
-    "code": null
+    "code": "5B"
   },
   {
     "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Hülsenfrüchte",
@@ -1097,12 +1097,12 @@
   {
     "id": "Naturshop/Lebensmittel/Babynahrung",
     "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/",
-    "code": null
+    "code": "51"
   },
   {
     "id": "Naturshop/Lebensmittel/Babynahrung/Beikost",
     "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/",
-    "code": null
+    "code": "51"
   },
   {
     "id": "Naturshop/Lebensmittel/Babynahrung/Beikost/Abendbreie",
@@ -1117,17 +1117,17 @@
   {
     "id": "Drogerie/Pflege",
     "url": "https://www.mueller.at/drogerie/pflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Augenpflege",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/augenpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Lippenpflege",
@@ -1137,27 +1137,27 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Make-up",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Augen",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/augen/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Teint",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/teint/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Lippen",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/lippen/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Nägel",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/naegel/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Nachtpflege",
@@ -1167,7 +1167,7 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Maske",
@@ -1177,7 +1177,7 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Seren & Ampullen",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/seren-ampullen/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Gesichtsöl",
@@ -1207,12 +1207,12 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/It’s skin",
@@ -1257,7 +1257,7 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Skinfood",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/skinfood/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/BEAUTY OF JOSEON",
@@ -1282,7 +1282,7 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Reinigung",
@@ -1302,7 +1302,7 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Gesichtsmasken",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-gesichtsmasken/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Feuchtigkeitspflege",
@@ -1312,7 +1312,7 @@
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Reinigung",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/reinigung/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Reinigung/Gesichtsreiniger",
@@ -1342,12 +1342,12 @@
   {
     "id": "Drogerie/Pflege/Herrenpflege & Rasur",
     "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur",
     "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/rasur/",
-    "code": null
+    "code": "77"
   },
   {
     "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur/Rasierapparate",
@@ -1382,7 +1382,7 @@
   {
     "id": "Drogerie/Pflege/Körperpflege",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Intimpflege",
@@ -1407,12 +1407,12 @@
   {
     "id": "Drogerie/Pflege/Körperpflege/Deodorants",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/deodorants/",
-    "code": null
+    "code": "72"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Deodorants/Stick & Roll On",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/deodorants/stick-roll-on/",
-    "code": null
+    "code": "72"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Deodorants/Spray",
@@ -1422,12 +1422,12 @@
   {
     "id": "Drogerie/Pflege/Körperpflege/Pflege",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/pflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Pflege/Körper- & Massageöl",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/pflege/koerper-massageoel/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Pflege/Bodylotion & Creme",
@@ -1437,12 +1437,12 @@
   {
     "id": "Drogerie/Pflege/Körperpflege/Enthaarung",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Enthaarung/Enthaarungswachs & -creme",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/enthaarungswachs-creme/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Enthaarung/Rasierschaum & -gel",
@@ -1472,12 +1472,12 @@
   {
     "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Nagellackentferner",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/nagellackentferner/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Fußpflege",
@@ -1487,7 +1487,7 @@
   {
     "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Handpflege",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/handpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Sohlen",
@@ -1497,17 +1497,17 @@
   {
     "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Nagelpflege",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/nagelpflege/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Düfte",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/duefte/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Düfte/Körperdüfte",
     "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/duefte/koerperduefte/",
-    "code": null
+    "code": "75"
   },
   {
     "id": "Drogerie/Pflege/Körperpflege/Düfte/Düfte für Ihn",
@@ -1602,7 +1602,7 @@
   {
     "id": "Drogerie/Pflege/Haarpflege/Coloration",
     "url": "https://www.mueller.at/drogerie/pflege/haarpflege/coloration/",
-    "code": null
+    "code": "73"
   },
   {
     "id": "Drogerie/Pflege/Haarpflege/Coloration/Haarfarbe",
@@ -1617,12 +1617,12 @@
   {
     "id": "Drogerie/Pflege/Mund- & Zahnpflege",
     "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/",
-    "code": null
+    "code": "76"
   },
   {
     "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahnbürsten",
     "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/zahnbuersten/",
-    "code": null
+    "code": "76"
   },
   {
     "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahnbürsten/Handzahnbürsten",
@@ -1712,12 +1712,12 @@
   {
     "id": "Drogerie/Kind & Mama/Babynahrung",
     "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Babynahrung/Milchnahrung",
     "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/milchnahrung/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Babynahrung/Milchnahrung/Anfangsmilch",
@@ -1742,7 +1742,7 @@
   {
     "id": "Drogerie/Kind & Mama/Babynahrung/Beikost",
     "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Früchte",
@@ -1792,7 +1792,7 @@
   {
     "id": "Drogerie/Kind & Mama/Babynahrung/Getränke",
     "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/getraenke/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Babynahrung/Getränke/Tee",
@@ -1812,7 +1812,7 @@
   {
     "id": "Drogerie/Kind & Mama/Babypflege",
     "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Babypflege/Waschen & Baden",
@@ -1852,7 +1852,7 @@
   {
     "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör",
     "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Badezubehör",
@@ -1872,27 +1872,27 @@
   {
     "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Gesundheit",
     "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/gesundheit/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Sicherheit",
     "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/sicherheit/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Pflegezubehör",
     "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/pflegezubehoer/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Töpfchen & Toilettentrainer",
     "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/toepfchen-toilettentrainer/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Kind & Mama/Baby Bekleidung",
     "url": "https://www.mueller.at/drogerie/kind-mama/baby-bekleidung/",
-    "code": null
+    "code": "70"
   },
   {
     "id": "Drogerie/Accessoires",
@@ -2345,391 +2345,6 @@
     "code": null
   },
   {
-    "id": "Spielwaren/Kuscheltiere & Puppen",
-    "url": "https://www.mueller.at/spielwaren/kuscheltiere-puppen/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Spiele & Puzzles",
-    "url": "https://www.mueller.at/spielwaren/spiele-puzzles/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Modellbau & Modelleisenbahn",
-    "url": "https://www.mueller.at/spielwaren/modellbau-modelleisenbahn/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Verkehr & Action",
-    "url": "https://www.mueller.at/spielwaren/verkehr-action/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Bauen & Konstruieren",
-    "url": "https://www.mueller.at/spielwaren/bauen-konstruieren/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Elektronisches Spielzeug",
-    "url": "https://www.mueller.at/spielwaren/elektronisches-spielzeug/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Kostüme & Partyartikel",
-    "url": "https://www.mueller.at/spielwaren/kostueme-partyartikel/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Baby & Kleinkind",
-    "url": "https://www.mueller.at/spielwaren/baby-kleinkind/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Hörspiele & Musik",
-    "url": "https://www.mueller.at/spielwaren/hoerspiele-musik/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Sport & Outdoor",
-    "url": "https://www.mueller.at/spielwaren/sport-outdoor/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Kinderfahrzeuge",
-    "url": "https://www.mueller.at/spielwaren/kinderfahrzeuge/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Küchen & Kaufläden",
-    "url": "https://www.mueller.at/spielwaren/kuechen-kauflaeden/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Kreativ & Basteln",
-    "url": "https://www.mueller.at/spielwaren/kreativ-basteln/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Mode & Beauty",
-    "url": "https://www.mueller.at/spielwaren/mode-beauty/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Lieblingsstars",
-    "url": "https://www.mueller.at/spielwaren/lieblingsstars/",
-    "code": null
-  },
-  {
-    "id": "Spielwaren/Sale",
-    "url": "https://www.mueller.at/spielwaren/sale/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV",
-    "url": "https://www.mueller.at/multi-media/filme-tv/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Action & Abenteuer",
-    "url": "https://www.mueller.at/multi-media/filme-tv/action-abenteuer/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Anime",
-    "url": "https://www.mueller.at/multi-media/filme-tv/anime/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Dokumentationen",
-    "url": "https://www.mueller.at/multi-media/filme-tv/dokumentationen/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Drama",
-    "url": "https://www.mueller.at/multi-media/filme-tv/drama/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Familienfilme",
-    "url": "https://www.mueller.at/multi-media/filme-tv/familienfilme/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Horror",
-    "url": "https://www.mueller.at/multi-media/filme-tv/horror/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Kinderfilme",
-    "url": "https://www.mueller.at/multi-media/filme-tv/kinderfilme/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Komödie & Comedy",
-    "url": "https://www.mueller.at/multi-media/filme-tv/komoedie-comedy/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Musik- & Tanzfilme",
-    "url": "https://www.mueller.at/multi-media/filme-tv/musik-tanzfilme/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Reisen",
-    "url": "https://www.mueller.at/multi-media/filme-tv/reisen/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Science Fiction & Fantasy",
-    "url": "https://www.mueller.at/multi-media/filme-tv/science-fiction-fantasy/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Sport & Fitness",
-    "url": "https://www.mueller.at/multi-media/filme-tv/sport-fitness/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Thriller & Mystery",
-    "url": "https://www.mueller.at/multi-media/filme-tv/thriller-mystery/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/TV Serien",
-    "url": "https://www.mueller.at/multi-media/filme-tv/tv-serien/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Filme & TV/Western",
-    "url": "https://www.mueller.at/multi-media/filme-tv/western/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik",
-    "url": "https://www.mueller.at/multi-media/musik/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Alternative",
-    "url": "https://www.mueller.at/multi-media/musik/alternative/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Dance",
-    "url": "https://www.mueller.at/multi-media/musik/dance/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Filmmusik",
-    "url": "https://www.mueller.at/multi-media/musik/filmmusik/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Heavy Metal",
-    "url": "https://www.mueller.at/multi-media/musik/heavy-metal/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Hip-Hop",
-    "url": "https://www.mueller.at/multi-media/musik/hip-hop/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Hörspiele",
-    "url": "https://www.mueller.at/multi-media/musik/hoerspiele/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Jazz",
-    "url": "https://www.mueller.at/multi-media/musik/jazz/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Pop",
-    "url": "https://www.mueller.at/multi-media/musik/pop/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Rock",
-    "url": "https://www.mueller.at/multi-media/musik/rock/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Musik/Volksmusik",
-    "url": "https://www.mueller.at/multi-media/musik/volksmusik/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Games",
-    "url": "https://www.mueller.at/multi-media/games/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Games/Nintendo Switch",
-    "url": "https://www.mueller.at/multi-media/games/nintendo-switch/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Games/PC & MAC",
-    "url": "https://www.mueller.at/multi-media/games/pc-mac/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Games/Playstation 5",
-    "url": "https://www.mueller.at/multi-media/games/playstation-5/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Games/Playstation 4",
-    "url": "https://www.mueller.at/multi-media/games/playstation-4/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Games/Nintendo 3DS",
-    "url": "https://www.mueller.at/multi-media/games/nintendo-3ds/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Games/Xbox One",
-    "url": "https://www.mueller.at/multi-media/games/xbox-one/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Konsolen & Zubehör",
-    "url": "https://www.mueller.at/multi-media/konsolen-zubehoer/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Konsolen & Zubehör/Controller & Lenkräder",
-    "url": "https://www.mueller.at/multi-media/konsolen-zubehoer/controller-lenkraeder/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Konsolen & Zubehör/Displayschutz",
-    "url": "https://www.mueller.at/multi-media/konsolen-zubehoer/displayschutz/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Konsolen & Zubehör/Headsets & Gaming-Kopfhörer",
-    "url": "https://www.mueller.at/multi-media/konsolen-zubehoer/headsets-gaming-kopfhoerer/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Konsolen & Zubehör/Spielfiguren",
-    "url": "https://www.mueller.at/multi-media/konsolen-zubehoer/spielfiguren/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Kopfhörer & Lautsprecher",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/kopfhoerer-lautsprecher/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Kopfhörer & Lautsprecher/Lautsprecher",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/kopfhoerer-lautsprecher/lautsprecher/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Kopfhörer & Lautsprecher/In-Ear Kopfhörer",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/kopfhoerer-lautsprecher/in-ear-kopfhoerer/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Kopfhörer & Lautsprecher/Kopfhörer",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/kopfhoerer-lautsprecher/kopfhoerer/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Kopfhörer & Lautsprecher/Headsets",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/kopfhoerer-lautsprecher/headsets/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Smartphone & Tablet",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/smartphone-tablet/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Smartphone & Tablet/Taschen & Schalen",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/smartphone-tablet/taschen-schalen/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Smartphone & Tablet/Sonstiges",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/smartphone-tablet/sonstiges/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Smartphone & Tablet/Displayschutz",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/smartphone-tablet/displayschutz/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Smartphone & Tablet/Mobilfunk & Internet",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/smartphone-tablet/mobilfunk-internet/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Smartphone & Tablet/Kabel & Adapter",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/smartphone-tablet/kabel-adapter/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Audio- & Video-Zubehör",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/audio-video-zubehoer/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Audio- & Video-Zubehör/Pflege",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/audio-video-zubehoer/pflege/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Audio- & Video-Zubehör/Fernbedienung",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/audio-video-zubehoer/fernbedienung/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Audio- & Video-Zubehör/Aufbewahrung",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/audio-video-zubehoer/aufbewahrung/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Fitnessarmbänder",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/fitnessarmbaender/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Radios & Player",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/radios-player/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Unterhaltungselektronik/Speichermedien",
-    "url": "https://www.mueller.at/multi-media/unterhaltungselektronik/speichermedien/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Fanartikel",
-    "url": "https://www.mueller.at/multi-media/fanartikel/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Exklusiv online erhältliche Artikel",
-    "url": "https://www.mueller.at/multi-media/exklusiv-online-erhaeltliche-artikel/",
-    "code": null
-  },
-  {
-    "id": "Multi-Media/Exklusive Mediabooks",
-    "url": "https://www.mueller.at/multi-media/exklusive-mediabooks/",
-    "code": null
-  },
-  {
     "id": "Haushalt/Schönheit & Gesundheit",
     "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/",
     "code": null
@@ -3067,27 +2682,27 @@
   {
     "id": "Haushalt/Putzen & Reinigen",
     "url": "https://www.mueller.at/haushalt/putzen-reinigen/",
-    "code": null
+    "code": "88"
   },
   {
     "id": "Haushalt/Putzen & Reinigen/Reinigungshelfer",
     "url": "https://www.mueller.at/haushalt/putzen-reinigen/reinigungshelfer/",
-    "code": null
+    "code": "88"
   },
   {
     "id": "Haushalt/Putzen & Reinigen/Fensterreinigung",
     "url": "https://www.mueller.at/haushalt/putzen-reinigen/fensterreinigung/",
-    "code": null
+    "code": "88"
   },
   {
     "id": "Haushalt/Putzen & Reinigen/Besen & Bürsten",
     "url": "https://www.mueller.at/haushalt/putzen-reinigen/besen-buersten/",
-    "code": null
+    "code": "88"
   },
   {
     "id": "Haushalt/Putzen & Reinigen/Wäschepflege",
     "url": "https://www.mueller.at/haushalt/putzen-reinigen/waeschepflege/",
-    "code": null
+    "code": "8A"
   },
   {
     "id": "Haushalt/Putzen & Reinigen/Wäschepflege/Bügeleisen",
@@ -3107,7 +2722,7 @@
   {
     "id": "Haushalt/Putzen & Reinigen/Bodenreinigung",
     "url": "https://www.mueller.at/haushalt/putzen-reinigen/bodenreinigung/",
-    "code": null
+    "code": "88"
   },
   {
     "id": "Haushalt/Putzen & Reinigen/Bodenreinigung/Staubsauger",
@@ -3135,676 +2750,6 @@
     "code": null
   },
   {
-    "id": "Schreibwaren/Schreibgeräte",
-    "url": "https://www.mueller.at/schreibwaren/schreibgeraete/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schreibgeräte/Buntstifte",
-    "url": "https://www.mueller.at/schreibwaren/schreibgeraete/buntstifte/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schreibgeräte/Fineliner",
-    "url": "https://www.mueller.at/schreibwaren/schreibgeraete/fineliner/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schreibgeräte/Kugelschreiber",
-    "url": "https://www.mueller.at/schreibwaren/schreibgeraete/kugelschreiber/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schreibgeräte/Bleistifte",
-    "url": "https://www.mueller.at/schreibwaren/schreibgeraete/bleistifte/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schreibgeräte/Füller",
-    "url": "https://www.mueller.at/schreibwaren/schreibgeraete/fueller/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro",
-    "url": "https://www.mueller.at/schreibwaren/buero/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürobedarf",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerobedarf/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürobedarf/Hefte",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerobedarf/hefte/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürobedarf/Bürokleinteile",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerobedarf/buerokleinteile/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürobedarf/Timer & Kalender",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerobedarf/timer-kalender/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürobedarf/Anspitzer & Radierer",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerobedarf/anspitzer-radierer/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürobedarf/Geldkassette",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerobedarf/geldkassette/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürobedarf/Kopierpapier",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerobedarf/kopierpapier/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürotechnik",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerotechnik/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürotechnik/Aktenvernichter",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerotechnik/aktenvernichter/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürotechnik/Beschriftungsgeräte",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerotechnik/beschriftungsgeraete/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürotechnik/Laminiergeräte",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerotechnik/laminiergeraete/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürotechnik/Speichermedien",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerotechnik/speichermedien/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Bürotechnik/Taschenrechner",
-    "url": "https://www.mueller.at/schreibwaren/buero/buerotechnik/taschenrechner/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Druckerpatronen",
-    "url": "https://www.mueller.at/schreibwaren/buero/druckerpatronen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Notizen",
-    "url": "https://www.mueller.at/schreibwaren/buero/notizen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Notizen/Pinnwand",
-    "url": "https://www.mueller.at/schreibwaren/buero/notizen/pinnwand/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Notizen/Notizbuch",
-    "url": "https://www.mueller.at/schreibwaren/buero/notizen/notizbuch/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Notizen/Notizzettel",
-    "url": "https://www.mueller.at/schreibwaren/buero/notizen/notizzettel/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Ordner & Mappen",
-    "url": "https://www.mueller.at/schreibwaren/buero/ordner-mappen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Ordner & Mappen/Ringbücher",
-    "url": "https://www.mueller.at/schreibwaren/buero/ordner-mappen/ringbuecher/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Ordner & Mappen/Fotoalbum",
-    "url": "https://www.mueller.at/schreibwaren/buero/ordner-mappen/fotoalbum/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Ordner & Mappen/Karteikasten",
-    "url": "https://www.mueller.at/schreibwaren/buero/ordner-mappen/karteikasten/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Ordner & Mappen/Hefter",
-    "url": "https://www.mueller.at/schreibwaren/buero/ordner-mappen/hefter/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Ordner & Mappen/Ablagebox",
-    "url": "https://www.mueller.at/schreibwaren/buero/ordner-mappen/ablagebox/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Büro/Ordner & Mappen/Klemmbretter",
-    "url": "https://www.mueller.at/schreibwaren/buero/ordner-mappen/klemmbretter/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf/Bastelfarbe",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/bastelfarbe/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf/Bastelsets",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/bastelsets/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf/Buntstifte",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/buntstifte/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf/Etiketten & Sticker",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/etiketten-sticker/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf/Filzstifte",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/filzstifte/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf/Kleber",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/kleber/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Bastelbedarf/Knete",
-    "url": "https://www.mueller.at/schreibwaren/bastelbedarf/knete/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule",
-    "url": "https://www.mueller.at/schreibwaren/schule/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulbedarf",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulbedarf/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulbedarf/Schreibblöcke",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulbedarf/schreibbloecke/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulbedarf/Schulhefte",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulbedarf/schulhefte/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulbedarf/Ordner & Mappen",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulbedarf/ordner-mappen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulbedarf/Füller & Tintenroller",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulbedarf/fueller-tintenroller/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulbedarf/Schreibgeräte & Textmarker",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulbedarf/schreibgeraete-textmarker/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulbedarf/Farbkasten & Stifte",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulbedarf/farbkasten-stifte/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Federmäppchen",
-    "url": "https://www.mueller.at/schreibwaren/schule/federmaeppchen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Rucksäcke",
-    "url": "https://www.mueller.at/schreibwaren/schule/rucksaecke/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Taschen",
-    "url": "https://www.mueller.at/schreibwaren/schule/taschen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Aktionen",
-    "url": "https://www.mueller.at/schreibwaren/schule/aktionen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Aktionen/Schreibhefte & Schreibblöcke",
-    "url": "https://www.mueller.at/schreibwaren/schule/aktionen/schreibhefte-schreibbloecke/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Aktionen/Stundenpläne",
-    "url": "https://www.mueller.at/schreibwaren/schule/aktionen/stundenplaene/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Aktionen/Brotdosen und Trinkflaschen",
-    "url": "https://www.mueller.at/schreibwaren/schule/aktionen/brotdosen-und-trinkflaschen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Aktionen/Düfte und Aromen",
-    "url": "https://www.mueller.at/schreibwaren/schule/aktionen/duefte-und-aromen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Aktionen/Schülerkalender",
-    "url": "https://www.mueller.at/schreibwaren/schule/aktionen/schuelerkalender/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Aktionen/Farbkasten & Pinsel",
-    "url": "https://www.mueller.at/schreibwaren/schule/aktionen/farbkasten-pinsel/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Schule/Schulranzen",
-    "url": "https://www.mueller.at/schreibwaren/schule/schulranzen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Fanshop",
-    "url": "https://www.mueller.at/schreibwaren/fanshop/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Fanshop/FC BAYERN MÜNCHEN",
-    "url": "https://www.mueller.at/schreibwaren/fanshop/fc-bayern-muenchen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Fanshop/BVB 09",
-    "url": "https://www.mueller.at/schreibwaren/fanshop/bvb-09/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Fanshop/NFL",
-    "url": "https://www.mueller.at/schreibwaren/fanshop/nfl/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Neuheiten",
-    "url": "https://www.mueller.at/schreibwaren/neuheiten/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Aktionen",
-    "url": "https://www.mueller.at/schreibwaren/aktionen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Aktionen/Schülerkalender",
-    "url": "https://www.mueller.at/schreibwaren/aktionen/schuelerkalender/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Aktionen/Bullet Journaling",
-    "url": "https://www.mueller.at/schreibwaren/aktionen/bullet-journaling/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Aktionen/Zeichnen",
-    "url": "https://www.mueller.at/schreibwaren/aktionen/zeichnen/",
-    "code": null
-  },
-  {
-    "id": "Schreibwaren/Aktionen/Kreatives Gestalten",
-    "url": "https://www.mueller.at/schreibwaren/aktionen/kreatives-gestalten/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen",
-    "url": "https://www.mueller.at/struempfe/damen/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Socken",
-    "url": "https://www.mueller.at/struempfe/damen/socken/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Halterlose Strümpfe",
-    "url": "https://www.mueller.at/struempfe/damen/halterlose-struempfe/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Stützstrümpfe & -strumpfhosen",
-    "url": "https://www.mueller.at/struempfe/damen/stuetzstruempfe-strumpfhosen/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Sneaker & Füßlinge",
-    "url": "https://www.mueller.at/struempfe/damen/sneaker-fuesslinge/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Shapewear",
-    "url": "https://www.mueller.at/struempfe/damen/shapewear/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Strumpfhosen",
-    "url": "https://www.mueller.at/struempfe/damen/strumpfhosen/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Leggings",
-    "url": "https://www.mueller.at/struempfe/damen/leggings/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Damen/Kniestrümpfe",
-    "url": "https://www.mueller.at/struempfe/damen/kniestruempfe/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Herren",
-    "url": "https://www.mueller.at/struempfe/herren/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Herren/Stützstrümpfe",
-    "url": "https://www.mueller.at/struempfe/herren/stuetzstruempfe/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Herren/Socken",
-    "url": "https://www.mueller.at/struempfe/herren/socken/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Herren/Sneaker & Füßlinge",
-    "url": "https://www.mueller.at/struempfe/herren/sneaker-fuesslinge/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Herren/Kniestrümpfe",
-    "url": "https://www.mueller.at/struempfe/herren/kniestruempfe/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Kinder",
-    "url": "https://www.mueller.at/struempfe/kinder/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Kinder/Socken",
-    "url": "https://www.mueller.at/struempfe/kinder/socken/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Kinder/Sneaker & Füßlinge",
-    "url": "https://www.mueller.at/struempfe/kinder/sneaker-fuesslinge/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Kinder/Strumpfhosen",
-    "url": "https://www.mueller.at/struempfe/kinder/strumpfhosen/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Kinder/Kniestrümpfe",
-    "url": "https://www.mueller.at/struempfe/kinder/kniestruempfe/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Sport",
-    "url": "https://www.mueller.at/struempfe/sport/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Bestseller",
-    "url": "https://www.mueller.at/struempfe/bestseller/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Exklusiv online erhältliche Strumpfartikel",
-    "url": "https://www.mueller.at/struempfe/exklusiv-online-erhaeltliche-strumpfartikel/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Aktionen",
-    "url": "https://www.mueller.at/struempfe/aktionen/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Aktionen/Warner Bros",
-    "url": "https://www.mueller.at/struempfe/aktionen/warner-bros/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Aktionen/Tennissocken",
-    "url": "https://www.mueller.at/struempfe/aktionen/tennissocken/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Aktionen/Wilox Grüner Knopf",
-    "url": "https://www.mueller.at/struempfe/aktionen/wilox-gruener-knopf/",
-    "code": null
-  },
-  {
-    "id": "Strümpfe/Aktionen/Bunte Socken",
-    "url": "https://www.mueller.at/struempfe/aktionen/bunte-socken/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Wolle",
-    "url": "https://www.mueller.at/handarbeit/wolle/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Garne",
-    "url": "https://www.mueller.at/handarbeit/garne/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Garne/Nähgarn",
-    "url": "https://www.mueller.at/handarbeit/garne/naehgarn/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Garne/Häkelgarn",
-    "url": "https://www.mueller.at/handarbeit/garne/haekelgarn/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Kurzwaren",
-    "url": "https://www.mueller.at/handarbeit/kurzwaren/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Kurzwaren/Reißverschlüsse",
-    "url": "https://www.mueller.at/handarbeit/kurzwaren/reissverschluesse/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Kurzwaren/Applikationen",
-    "url": "https://www.mueller.at/handarbeit/kurzwaren/applikationen/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Kurzwaren/Bänder & Kordeln",
-    "url": "https://www.mueller.at/handarbeit/kurzwaren/baender-kordeln/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Kurzwaren/Knöpfe",
-    "url": "https://www.mueller.at/handarbeit/kurzwaren/knoepfe/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Kurzwaren/Helfer",
-    "url": "https://www.mueller.at/handarbeit/kurzwaren/helfer/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Kurzwaren/Nähzubehör",
-    "url": "https://www.mueller.at/handarbeit/kurzwaren/naehzubehoer/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Nadeln",
-    "url": "https://www.mueller.at/handarbeit/nadeln/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Nadeln/Stricknadeln",
-    "url": "https://www.mueller.at/handarbeit/nadeln/stricknadeln/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Nadeln/Häkelnadeln",
-    "url": "https://www.mueller.at/handarbeit/nadeln/haekelnadeln/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Nadeln/Sticknadeln",
-    "url": "https://www.mueller.at/handarbeit/nadeln/sticknadeln/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Nadeln/Nähnadeln",
-    "url": "https://www.mueller.at/handarbeit/nadeln/naehnadeln/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Nadeln/Weitere Nadeln",
-    "url": "https://www.mueller.at/handarbeit/nadeln/weitere-nadeln/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Sets & Anleitungen",
-    "url": "https://www.mueller.at/handarbeit/sets-anleitungen/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Sets & Anleitungen/Sets",
-    "url": "https://www.mueller.at/handarbeit/sets-anleitungen/sets/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Bestseller",
-    "url": "https://www.mueller.at/handarbeit/bestseller/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Aktionen",
-    "url": "https://www.mueller.at/handarbeit/aktionen/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Aktionen/Socken Stricken",
-    "url": "https://www.mueller.at/handarbeit/aktionen/socken-stricken/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Aktionen/Nähstube",
-    "url": "https://www.mueller.at/handarbeit/aktionen/naehstube/",
-    "code": null
-  },
-  {
-    "id": "Handarbeit/Aktionen/Kuscheltiere häkeln",
-    "url": "https://www.mueller.at/handarbeit/aktionen/kuscheltiere-haekeln/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Bestseller",
-    "url": "https://www.mueller.at/buecher/bestseller/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Schule & Lernen",
-    "url": "https://www.mueller.at/buecher/schule-lernen/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Freizeit & Hobby",
-    "url": "https://www.mueller.at/buecher/freizeit-hobby/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Romane & Erzählungen",
-    "url": "https://www.mueller.at/buecher/romane-erzaehlungen/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Krimis & Thriller",
-    "url": "https://www.mueller.at/buecher/krimis-thriller/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Fantasy & Science Fiction",
-    "url": "https://www.mueller.at/buecher/fantasy-science-fiction/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Gesundheit & Fitness",
-    "url": "https://www.mueller.at/buecher/gesundheit-fitness/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Ratgeber & Lebenshilfe",
-    "url": "https://www.mueller.at/buecher/ratgeber-lebenshilfe/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Sachbücher & Biografien",
-    "url": "https://www.mueller.at/buecher/sachbuecher-biografien/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Geschenkbücher",
-    "url": "https://www.mueller.at/buecher/geschenkbuecher/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Geschenkbücher/Kommunion, Konfirmation & Jugendweihe",
-    "url": "https://www.mueller.at/buecher/geschenkbuecher/kommunion-konfirmation-jugendweihe/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Zeit zum Lesen",
-    "url": "https://www.mueller.at/buecher/zeit-zum-lesen/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Kalender",
-    "url": "https://www.mueller.at/buecher/kalender/",
-    "code": null
-  },
-  {
-    "id": "Bücher/Kinderbücher",
-    "url": "https://www.mueller.at/buecher/kinderbuecher/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Nahrung",
     "url": "https://www.mueller.at/genusswelt/nahrung/",
     "code": null
@@ -3812,7 +2757,7 @@
   {
     "id": "Genusswelt/Süßigkeiten",
     "url": "https://www.mueller.at/genusswelt/suessigkeiten/",
-    "code": null
+    "code": "64"
   },
   {
     "id": "Genusswelt/Geschenkideen",
@@ -3822,17 +2767,17 @@
   {
     "id": "Genusswelt/Getränke",
     "url": "https://www.mueller.at/genusswelt/getraenke/",
-    "code": null
+    "code": "20"
   },
   {
     "id": "Genusswelt/Gewürze",
     "url": "https://www.mueller.at/genusswelt/gewuerze/",
-    "code": null
+    "code": "55"
   },
   {
     "id": "Genusswelt/Tee & Kaffee",
     "url": "https://www.mueller.at/genusswelt/tee-kaffee/",
-    "code": null
+    "code": "22"
   },
   {
     "id": "Genusswelt/Marken",
@@ -3952,12 +2897,12 @@
   {
     "id": "Tiershop/Tiernahrung",
     "url": "https://www.mueller.at/tiershop/tiernahrung/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Tiernahrung/Hund",
     "url": "https://www.mueller.at/tiershop/tiernahrung/hund/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Tiernahrung/Hund/Nassfutter",
@@ -3982,7 +2927,7 @@
   {
     "id": "Tiershop/Tiernahrung/Katze",
     "url": "https://www.mueller.at/tiershop/tiernahrung/katze/",
-    "code": null
+    "code": "91"
   },
   {
     "id": "Tiershop/Tiernahrung/Katze/Nahrungsergänzung",
@@ -4007,7 +2952,7 @@
   {
     "id": "Tiershop/Tierpflege",
     "url": "https://www.mueller.at/tiershop/tierpflege/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Tierpflege/Fellpflege",
@@ -4027,12 +2972,12 @@
   {
     "id": "Tiershop/Accessoires & Zubehör",
     "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Accessoires & Zubehör/Hund",
     "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Accessoires & Zubehör/Hund/Halsbänder",
@@ -4072,7 +3017,7 @@
   {
     "id": "Tiershop/Accessoires & Zubehör/Katze",
     "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/katze/",
-    "code": null
+    "code": "91"
   },
   {
     "id": "Tiershop/Accessoires & Zubehör/Katze/Näpfe",
@@ -4092,17 +3037,17 @@
   {
     "id": "Tiershop/Marken",
     "url": "https://www.mueller.at/tiershop/marken/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Marken/Alpha Spirit",
     "url": "https://www.mueller.at/tiershop/marken/alpha-spirit/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Marken/Amora",
     "url": "https://www.mueller.at/tiershop/marken/amora/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Marken/Applaws",
@@ -4112,7 +3057,7 @@
   {
     "id": "Tiershop/Marken/bosch Tiernahrung",
     "url": "https://www.mueller.at/tiershop/marken/bosch-tiernahrung/",
-    "code": null
+    "code": "90"
   },
   {
     "id": "Tiershop/Marken/bosch Tiernahrung/Alles von bosch Tiernahrung",

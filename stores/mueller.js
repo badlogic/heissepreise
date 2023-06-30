@@ -123,8 +123,10 @@ exports.initializeCategoryMapping = async () => {
 
     const data = (await axios.get(`${exports.urlBase}/ajax/burgermenu/`)).data;
     data.forEach((category) => {
-        const subcategories = getSubcategories(category);
-        categories.push(...subcategories);
+        if (!categoriesExcludeList.includes(category.name)) {
+            const subcategories = getSubcategories(category);
+            categories.push(...subcategories);
+        }
     });
 
     utils.mergeAndSaveCategories("mueller", categories);
