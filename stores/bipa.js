@@ -77,7 +77,7 @@ exports.fetchData = async function () {
                             price: parseFloat(gtmdata.price),
                             unit: product.querySelector(".product-info").text.replace("Inhalt:").trim(),
                             canonicalUrl: canonicalUrl,
-                            categoryPath: gtmdata.category.replaceAll("-", "/"), // use slashes for seperation to match format used in sitemap.xml
+                            category: gtmdata.category,
                         });
                     } catch (error) {
                         console.log(`Error parsing json on ${categoryPageRawUrl} for product: ${canonicalUrl}`);
@@ -97,7 +97,7 @@ exports.initializeCategoryMapping = async () => {
 
     for (let categoryPageRawUrl of BIPA_CATEGORIES) {
         const res = await axios.get(`${categoryPageRawUrl}?start=0&sz=1`, {
-            // we don't need much products here for faster loading
+            // sz=1 (one item) because we don't need much products here for faster loading
             validateStatus: function (status) {
                 return status >= 200 && status < 300;
             },
@@ -127,7 +127,7 @@ exports.initializeCategoryMapping = async () => {
 };
 
 exports.mapCategory = (rawItem) => {
-    return exports.categoryLookup[rawItem.categoryPath]?.code;
+    return exports.categoryLookup[rawItem.category]?.code;
 };
 
 exports.urlBase = "https://www.bipa.at";
