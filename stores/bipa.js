@@ -55,7 +55,6 @@ exports.fetchData = async function () {
 
     const BIPA_CATEGORIES = await exports.getBipaCategoryPages();
 
-    /*
     for (let categoryPageRawUrl of BIPA_CATEGORIES) {
         const res = await axios.get(`${categoryPageRawUrl}?start=0&sz=1000`, {
             validateStatus: function (status) {
@@ -87,7 +86,6 @@ exports.fetchData = async function () {
             });
         }
     }
-    */
 
     return bipaItems;
 };
