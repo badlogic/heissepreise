@@ -1,1813 +1,1753 @@
 [
   {
-    "id": "gesundheit/kontaktlinsenzubehoer-und---fluessigkeiten",
-    "description": "gesundheit -> kontaktlinsenzubehoer-und---fluessigkeiten",
+    "id": "gesundheit-kontaktlinsenzubehoer-fluessigkeiten",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/kontaktlinsenzubehoer-und---fluessigkeiten",
     "code": null
   },
   {
-    "id": "gesundheit/kontaktlinsenzubehoer-und---fluessigkeiten/linsenfluessigkeiten",
-    "description": "gesundheit -> kontaktlinsenzubehoer-und---fluessigkeiten/linsenfluessigkeiten",
+    "id": "gesundheit-kontaktlinsenzubehoer-fluessigkeiten-linsenfluessigkeiten",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/kontaktlinsenzubehoer-und---fluessigkeiten/linsenfluessigkeiten",
     "code": null
   },
   {
-    "id": "gesundheit/kontaktlinsenzubehoer-und---fluessigkeiten/zubehoer",
-    "description": "gesundheit -> kontaktlinsenzubehoer-und---fluessigkeiten/zubehoer",
+    "id": "gesundheit-kontaktlinsenzubehoer-fluessigkeiten-zubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/kontaktlinsenzubehoer-und---fluessigkeiten/zubehoer",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-frauen/vibratoren",
-    "description": "love -> sexspielzeug-fuer-frauen/vibratoren",
+    "id": "love-sexspielzeugfuerfrauen-vibratoren",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-frauen/vibratoren",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-frauen/vibratoren/g-punkt-vibratoren",
-    "description": "love -> sexspielzeug-fuer-frauen/vibratoren/g-punkt-vibratoren",
+    "id": "love-sexspielzeugfuerfrauen-vibratoren-gpunktvibratoren",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-frauen/vibratoren/g-punkt-vibratoren",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-frauen/vibratoren/klassische-vibratoren",
-    "description": "love -> sexspielzeug-fuer-frauen/vibratoren/klassische-vibratoren",
+    "id": "love-sexspielzeugfuerfrauen-vibratoren-klassischevibratoren",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-frauen/vibratoren/klassische-vibratoren",
     "code": null
   },
   {
-    "id": "pflege/gesicht/geraete-und-zubehoer",
-    "description": "pflege -> gesicht/geraete-und-zubehoer",
+    "id": "pflege-gesicht-geraetezubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/geraete-und-zubehoer",
     "code": null
   },
   {
-    "id": "love/anal-spielzeug",
-    "description": "love -> anal-spielzeug",
+    "id": "love-analspielzeug",
+    "description": null,
     "url": "https://www.bipa.at/c/love/anal-spielzeug",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-frauen/vibratoren/rabbit",
-    "description": "love -> sexspielzeug-fuer-frauen/vibratoren/rabbit",
+    "id": "love-sexspielzeugfuerfrauen-vibratoren-rabbit",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-frauen/vibratoren/rabbit",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-maenner",
-    "description": "love -> sexspielzeug-fuer-maenner",
+    "id": "love-sexspielzeugfuermaenner",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-maenner",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/babyglaeschen-und-co.",
-    "description": "baby-und-kind -> babynahrung/babyglaeschen-und-co.",
+    "id": "babykind-babynahrung-babyglaeschenco",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/babyglaeschen-und-co.",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/milchnahrung",
-    "description": "baby-und-kind -> babynahrung/milchnahrung",
+    "id": "babykind-babynahrung-milchnahrung",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/milchnahrung",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/milchnahrung/anfangsnahrung",
-    "description": "baby-und-kind -> babynahrung/milchnahrung/anfangsnahrung",
+    "id": "babykind-babynahrung-milchnahrung-anfangsnahrung",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/milchnahrung/anfangsnahrung",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/milchnahrung/folgemilch",
-    "description": "baby-und-kind -> babynahrung/milchnahrung/folgemilch",
+    "id": "babykind-babynahrung-milchnahrung-folgemilch",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/milchnahrung/folgemilch",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/milchnahrung/kindermilch",
-    "description": "baby-und-kind -> babynahrung/milchnahrung/kindermilch",
+    "id": "babykind-babynahrung-milchnahrung-kindermilch",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/milchnahrung/kindermilch",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/baby-snacks/baby-riegel",
-    "description": "baby-und-kind -> babynahrung/baby-snacks/baby-riegel",
+    "id": "babykind-babynahrung-babysnacks-babyriegel",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/baby-snacks/baby-riegel",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/baby-snacks/baby-quetschies",
-    "description": "baby-und-kind -> babynahrung/baby-snacks/baby-quetschies",
+    "id": "babykind-babynahrung-babysnacks-babyquetschies",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/baby-snacks/baby-quetschies",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/baby-snacks/baby-kekse-und-knabberein",
-    "description": "baby-und-kind -> babynahrung/baby-snacks/baby-kekse-und-knabberein",
+    "id": "babykind-babynahrung-babysnacks-babykekseknabberein",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/baby-snacks/baby-kekse-und-knabberein",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/entkalkung-und-reiniger",
-    "description": "haushalt -> putzen-und-reinigen/entkalkung-und-reiniger",
+    "id": "haushalt-putzenreinigen-entkalkungreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/entkalkung-und-reiniger",
     "code": null
   },
   {
-    "id": "themen/mode/bademode",
-    "description": "themen -> mode/bademode",
+    "id": "themen-mode-bademode",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/bademode",
     "code": null
   },
   {
-    "id": "themen/reisen",
-    "description": "themen -> reisen",
+    "id": "themen-reisen",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/reisen",
     "code": null
   },
   {
-    "id": "pflege/gesicht/watte-und-kosmetiktuecher",
-    "description": "pflege -> gesicht/watte-und-kosmetiktuecher",
+    "id": "pflege-gesicht-wattekosmetiktuecher",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/watte-und-kosmetiktuecher",
     "code": null
   },
   {
-    "id": "baby-und-kind/babypflege",
-    "description": "baby-und-kind -> babypflege",
+    "id": "babykind-babypflege",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babypflege",
     "code": null
   },
   {
-    "id": "baby-und-kind/babypflege/baden-und-baby-shampoo",
-    "description": "baby-und-kind -> babypflege/baden-und-baby-shampoo",
+    "id": "babykind-babypflege-badenbabyshampoo",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babypflege/baden-und-baby-shampoo",
     "code": null
   },
   {
-    "id": "baby-und-kind/babypflege/babyoel-und-baby-creme",
-    "description": "baby-und-kind -> babypflege/babyoel-und-baby-creme",
+    "id": "babykind-babypflege-babyoelbabycreme",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babypflege/babyoel-und-baby-creme",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung",
-    "description": "baby-und-kind -> babynahrung",
+    "id": "babykind-babynahrung",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/babybreie",
-    "description": "baby-und-kind -> babynahrung/babybreie",
+    "id": "babykind-babynahrung-babybreie",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/babybreie",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/baby-snacks",
-    "description": "baby-und-kind -> babynahrung/baby-snacks",
+    "id": "babykind-babynahrung-babysnacks",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/baby-snacks",
     "code": null
   },
   {
-    "id": "baby-und-kind/babynahrung/getraenke",
-    "description": "baby-und-kind -> babynahrung/getraenke",
+    "id": "babykind-babynahrung-getraenke",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babynahrung/getraenke",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln",
-    "description": "baby-und-kind -> windeln-und-wickeln",
+    "id": "babykind-windelnwickeln",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln/windeln",
-    "description": "baby-und-kind -> windeln-und-wickeln/windeln",
+    "id": "babykind-windelnwickeln-windeln",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln/windeln",
     "code": null
   },
   {
-    "id": "baby-und-kind/schnuller--flaeschchen-und-stillen",
-    "description": "baby-und-kind -> schnuller--flaeschchen-und-stillen",
+    "id": "babykind-schnullerflaeschchenstillen",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/schnuller--flaeschchen-und-stillen",
     "code": null
   },
   {
-    "id": "baby-und-kind/schnuller--flaeschchen-und-stillen/schnuller",
-    "description": "baby-und-kind -> schnuller--flaeschchen-und-stillen/schnuller",
+    "id": "babykind-schnullerflaeschchenstillen-schnuller",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/schnuller--flaeschchen-und-stillen/schnuller",
     "code": null
   },
   {
-    "id": "baby-und-kind/schnuller--flaeschchen-und-stillen/stillen",
-    "description": "baby-und-kind -> schnuller--flaeschchen-und-stillen/stillen",
+    "id": "babykind-schnullerflaeschchenstillen-stillen",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/schnuller--flaeschchen-und-stillen/stillen",
     "code": null
   },
   {
-    "id": "baby-und-kind/babyspielzeug",
-    "description": "baby-und-kind -> babyspielzeug",
+    "id": "babykind-babyspielzeug",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babyspielzeug",
     "code": null
   },
   {
-    "id": "baby-und-kind/babyspielzeug/motorikspielzeug",
-    "description": "baby-und-kind -> babyspielzeug/motorikspielzeug",
+    "id": "babykind-babyspielzeug-motorikspielzeug",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babyspielzeug/motorikspielzeug",
     "code": null
   },
   {
-    "id": "baby-und-kind/babyspielzeug/holzspielzeug",
-    "description": "baby-und-kind -> babyspielzeug/holzspielzeug",
+    "id": "babykind-babyspielzeug-holzspielzeug",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babyspielzeug/holzspielzeug",
     "code": null
   },
   {
-    "id": "baby-und-kind/babypflege/zahnpflege",
-    "description": "baby-und-kind -> babypflege/zahnpflege",
+    "id": "babykind-babypflege-zahnpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/babypflege/zahnpflege",
     "code": null
   },
   {
-    "id": "haar/elektrogeraete",
-    "description": "haar -> elektrogeraete",
+    "id": "haar-elektrogeraete",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/elektrogeraete",
     "code": null
   },
   {
-    "id": "haar/elektrogeraete/haarschneider",
-    "description": "haar -> elektrogeraete/haarschneider",
+    "id": "haar-elektrogeraete-haarschneider",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/elektrogeraete/haarschneider",
     "code": null
   },
   {
-    "id": "haar/elektrogeraete/haartrockner",
-    "description": "haar -> elektrogeraete/haartrockner",
+    "id": "haar-elektrogeraete-haartrockner",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/elektrogeraete/haartrockner",
     "code": null
   },
   {
-    "id": "haar/elektrogeraete/haarstyler",
-    "description": "haar -> elektrogeraete/haarstyler",
+    "id": "haar-elektrogeraete-haarstyler",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/elektrogeraete/haarstyler",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln/babyfeuchttuecher",
-    "description": "baby-und-kind -> windeln-und-wickeln/babyfeuchttuecher",
+    "id": "babykind-windelnwickeln-babyfeuchttuecher",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln/babyfeuchttuecher",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln/babypuder",
-    "description": "baby-und-kind -> windeln-und-wickeln/babypuder",
+    "id": "babykind-windelnwickeln-babypuder",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln/babypuder",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/schuhpflege",
-    "description": "haushalt -> haushaltsartikel/schuhpflege",
+    "id": "haushalt-haushaltsartikel-schuhpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/schuhpflege",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln/wickelunterlage-und-wickelauflage",
-    "description": "baby-und-kind -> windeln-und-wickeln/wickelunterlage-und-wickelauflage",
+    "id": "babykind-windelnwickeln-wickelunterlagewickelauflage",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln/wickelunterlage-und-wickelauflage",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln/schwimmwindeln",
-    "description": "baby-und-kind -> windeln-und-wickeln/schwimmwindeln",
+    "id": "babykind-windelnwickeln-schwimmwindeln",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln/schwimmwindeln",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln/stoffwindeln-und-windeleinlagen",
-    "description": "baby-und-kind -> windeln-und-wickeln/stoffwindeln-und-windeleinlagen",
+    "id": "babykind-windelnwickeln-stoffwindelnwindeleinlagen",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln/stoffwindeln-und-windeleinlagen",
     "code": null
   },
   {
-    "id": "pflege/koerper",
-    "description": "pflege -> koerper",
+    "id": "pflege-koerper",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper",
     "code": null
   },
   {
-    "id": "baby-und-kind/windeln-und-wickeln/trainerhoeschen",
-    "description": "baby-und-kind -> windeln-und-wickeln/trainerhoeschen",
+    "id": "babykind-windelnwickeln-trainerhoeschen",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/windeln-und-wickeln/trainerhoeschen",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/elektrorasierer-und-epilierer",
-    "description": "pflege -> enthaarung/elektrorasierer-und-epilierer",
+    "id": "pflege-enthaarung-elektrorasiererepilierer",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/elektrorasierer-und-epilierer",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/aufbewahrung-und-lunchboxen",
-    "description": "haushalt -> haushaltsartikel/aufbewahrung-und-lunchboxen",
+    "id": "haushalt-haushaltsartikel-aufbewahrunglunchboxen",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/aufbewahrung-und-lunchboxen",
     "code": null
   },
   {
-    "id": "gesundheit/mundschutz-und-ffp2-masken",
-    "description": "gesundheit -> mundschutz-und-ffp2-masken",
+    "id": "gesundheit-mundschutzffp2masken",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/mundschutz-und-ffp2-masken",
     "code": null
   },
   {
-    "id": "themen/mode/unterwaesche",
-    "description": "themen -> mode/unterwaesche",
+    "id": "themen-mode-unterwaesche",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/unterwaesche",
     "code": null
   },
   {
-    "id": "haar/pflege/trockenshampoos",
-    "description": "haar -> pflege/trockenshampoos",
+    "id": "haar-pflege-trockenshampoos",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/trockenshampoos",
     "code": null
   },
   {
-    "id": "haushalt/papier",
-    "description": "haushalt -> papier",
+    "id": "haushalt-papier",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier",
     "code": null
   },
   {
-    "id": "haushalt/papier/kuechenrolle",
-    "description": "haushalt -> papier/kuechenrolle",
+    "id": "haushalt-papier-kuechenrolle",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier/kuechenrolle",
     "code": null
   },
   {
-    "id": "haushalt/papier/taschentuecher",
-    "description": "haushalt -> papier/taschentuecher",
+    "id": "haushalt-papier-taschentuecher",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier/taschentuecher",
     "code": null
   },
   {
-    "id": "haushalt/papier/toilettenpapier",
-    "description": "haushalt -> papier/toilettenpapier",
+    "id": "haushalt-papier-toilettenpapier",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier/toilettenpapier",
     "code": null
   },
   {
-    "id": "haushalt/papier/toilettenzubehoer",
-    "description": "haushalt -> papier/toilettenzubehoer",
+    "id": "haushalt-papier-toilettenzubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier/toilettenzubehoer",
     "code": null
   },
   {
-    "id": "themen/mode/homewear",
-    "description": "themen -> mode/homewear",
+    "id": "themen-mode-homewear",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/homewear",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtssprays",
-    "description": "pflege -> gesicht/gesichtssprays",
+    "id": "pflege-gesicht-gesichtssprays",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtssprays",
     "code": null
   },
   {
-    "id": "baby-und-kind/badespass",
-    "description": "baby-und-kind -> badespass",
+    "id": "babykind-badespass",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/badespass",
     "code": null
   },
   {
-    "id": "fotoshop/fotobuecher",
-    "description": "fotoshop -> fotobuecher",
-    "url": "https://www.bipa.at/c/fotoshop/fotobuecher",
-    "code": null
-  },
-  {
-    "id": "fotoshop/fotos",
-    "description": "fotoshop -> fotos",
-    "url": "https://www.bipa.at/c/fotoshop/fotos",
-    "code": null
-  },
-  {
-    "id": "fotoshop/wandbilder",
-    "description": "fotoshop -> wandbilder",
-    "url": "https://www.bipa.at/c/fotoshop/wandbilder",
-    "code": null
-  },
-  {
-    "id": "fotoshop/fotokalender",
-    "description": "fotoshop -> fotokalender",
-    "url": "https://www.bipa.at/c/fotoshop/fotokalender",
-    "code": null
-  },
-  {
-    "id": "fotoshop/foto-adventskalender",
-    "description": "fotoshop -> foto-adventskalender",
+    "id": "fotoshop-foto-adventskalender",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/foto-adventskalender",
     "code": null
   },
   {
-    "id": "fotoshop/fotogeschenke",
-    "description": "fotoshop -> fotogeschenke",
-    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke",
-    "code": null
-  },
-  {
-    "id": "fotoshop/grusskarten",
-    "description": "fotoshop -> grusskarten",
-    "url": "https://www.bipa.at/c/fotoshop/grusskarten",
-    "code": null
-  },
-  {
-    "id": "fotoshop/handyhuellen",
-    "description": "fotoshop -> handyhuellen",
+    "id": "fotoshop-handyhuellen",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/handyhuellen",
     "code": null
   },
   {
-    "id": "haar/styling/haarschmuck",
-    "description": "haar -> styling/haarschmuck",
+    "id": "haar-styling-haarschmuck",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling/haarschmuck",
     "code": null
   },
   {
-    "id": "fotoshop/wandbilder/fotocollage",
-    "description": "fotoshop -> wandbilder/fotocollage",
-    "url": "https://www.bipa.at/c/fotoshop/wandbilder/fotocollage",
-    "code": null
-  },
-  {
-    "id": "fotoshop/wandbilder/alu-dibond",
-    "description": "fotoshop -> wandbilder/alu-dibond",
-    "url": "https://www.bipa.at/c/fotoshop/wandbilder/alu-dibond",
-    "code": null
-  },
-  {
-    "id": "fotoshop/wandbilder/poster",
-    "description": "fotoshop -> wandbilder/poster",
-    "url": "https://www.bipa.at/c/fotoshop/wandbilder/poster",
-    "code": null
-  },
-  {
-    "id": "fotoshop/wandbilder/leinwand",
-    "description": "fotoshop -> wandbilder/leinwand",
-    "url": "https://www.bipa.at/c/fotoshop/wandbilder/leinwand",
-    "code": null
-  },
-  {
-    "id": "fotoshop/fotokalender/wandkalender",
-    "description": "fotoshop -> fotokalender/wandkalender",
+    "id": "fotoshop-fotokalender-wandkalender",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/fotokalender/wandkalender",
     "code": null
   },
   {
-    "id": "fotoshop/fotogeschenke/kissen-und-textilien",
-    "description": "fotoshop -> fotogeschenke/kissen-und-textilien",
+    "id": "fotoshop-fotogeschenke-kissentextilien",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/kissen-und-textilien",
     "code": null
   },
   {
-    "id": "fotoshop/fotogeschenke/dekoration-und-wohnung",
-    "description": "fotoshop -> fotogeschenke/dekoration-und-wohnung",
+    "id": "fotoshop-fotogeschenke-dekorationwohnung",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/dekoration-und-wohnung",
     "code": null
   },
   {
-    "id": "fotoshop/fotogeschenke/trinkgefaesse",
-    "description": "fotoshop -> fotogeschenke/trinkgefaesse",
+    "id": "fotoshop-fotogeschenke-trinkgefaesse",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/trinkgefaesse",
     "code": null
   },
   {
-    "id": "fotoshop/fotogeschenke/buero-und-schule",
-    "description": "fotoshop -> fotogeschenke/buero-und-schule",
+    "id": "fotoshop-fotogeschenke-bueroschule",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/buero-und-schule",
     "code": null
   },
   {
-    "id": "fotoshop/fotogeschenke/spiele",
-    "description": "fotoshop -> fotogeschenke/spiele",
+    "id": "fotoshop-fotogeschenke-spiele",
+    "description": null,
     "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/spiele",
     "code": null
   },
   {
-    "id": "ernaehrung/getraenke",
-    "description": "ernaehrung -> getraenke",
+    "id": "ernaehrung-getraenke",
+    "description": null,
     "url": "https://www.bipa.at/c/ernaehrung/getraenke",
     "code": null
   },
   {
-    "id": "haushalt/pflanzen-und-insekten",
-    "description": "haushalt -> pflanzen-und-insekten",
+    "id": "haushalt-pflanzeninsekten",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/pflanzen-und-insekten",
     "code": null
   },
   {
-    "id": "haushalt/pflanzen-und-insekten/duenger-und-pflanzenschutz",
-    "description": "haushalt -> pflanzen-und-insekten/duenger-und-pflanzenschutz",
+    "id": "haushalt-pflanzeninsekten-duengerpflanzenschutz",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/pflanzen-und-insekten/duenger-und-pflanzenschutz",
     "code": null
   },
   {
-    "id": "haushalt/pflanzen-und-insekten/insektenschutz",
-    "description": "haushalt -> pflanzen-und-insekten/insektenschutz",
+    "id": "haushalt-pflanzeninsekten-insektenschutz",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/pflanzen-und-insekten/insektenschutz",
     "code": null
   },
   {
-    "id": "haushalt/pflanzen-und-insekten/schaedlingsbekaempfung",
-    "description": "haushalt -> pflanzen-und-insekten/schaedlingsbekaempfung",
+    "id": "haushalt-pflanzeninsekten-schaedlingsbekaempfung",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/pflanzen-und-insekten/schaedlingsbekaempfung",
     "code": null
   },
   {
-    "id": "pflege/koerper/schwaemme-und-buersten",
-    "description": "pflege -> koerper/schwaemme-und-buersten",
+    "id": "pflege-koerper-schwaemmebuersten",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/schwaemme-und-buersten",
     "code": null
   },
   {
-    "id": "baby-und-kind/schnuller--flaeschchen-und-stillen/babyflaschen-und-trinksauger",
-    "description": "baby-und-kind -> schnuller--flaeschchen-und-stillen/babyflaschen-und-trinksauger",
+    "id": "babykind-schnullerflaeschchenstillen-babyflaschentrinksauger",
+    "description": null,
     "url": "https://www.bipa.at/c/baby-und-kind/schnuller--flaeschchen-und-stillen/babyflaschen-und-trinksauger",
     "code": null
   },
   {
-    "id": "ernaehrung/snacks",
-    "description": "ernaehrung -> snacks",
+    "id": "ernaehrung-snacks",
+    "description": null,
     "url": "https://www.bipa.at/c/ernaehrung/snacks",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen",
-    "description": "haushalt -> putzen-und-reinigen",
+    "id": "haushalt-putzenreinigen",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/glasreiniger",
-    "description": "haushalt -> putzen-und-reinigen/glasreiniger",
+    "id": "haushalt-putzenreinigen-glasreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/glasreiniger",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/handschuhe",
-    "description": "haushalt -> putzen-und-reinigen/handschuhe",
+    "id": "haushalt-putzenreinigen-handschuhe",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/handschuhe",
     "code": null
   },
   {
-    "id": "haar/styling/haargel-und-wachs",
-    "description": "haar -> styling/haargel-und-wachs",
+    "id": "haar-styling-haargelwachs",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling/haargel-und-wachs",
     "code": null
   },
   {
-    "id": "haar/styling/haarfestiger-und-puder",
-    "description": "haar -> styling/haarfestiger-und-puder",
+    "id": "haar-styling-haarfestigerpuder",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling/haarfestiger-und-puder",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/schwaemme-und-tuecher",
-    "description": "haushalt -> putzen-und-reinigen/schwaemme-und-tuecher",
+    "id": "haushalt-putzenreinigen-schwaemmetuecher",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/schwaemme-und-tuecher",
     "code": null
   },
   {
-    "id": "themen/geschenkideen/kleinigkeiten-schenken",
-    "description": "themen -> geschenkideen/kleinigkeiten-schenken",
+    "id": "themen-geschenkideen-kleinigkeitenschenken",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/geschenkideen/kleinigkeiten-schenken",
     "code": null
   },
   {
-    "id": "pflege/koerper/badezusaetze",
-    "description": "pflege -> koerper/badezusaetze",
+    "id": "pflege-koerper-badezusaetze",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/badezusaetze",
     "code": null
   },
   {
-    "id": "pflege/koerper/fusspflege",
-    "description": "pflege -> koerper/fusspflege",
+    "id": "pflege-koerper-fusspflege",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/fusspflege",
     "code": null
   },
   {
-    "id": "pflege/koerper/intimpflege",
-    "description": "pflege -> koerper/intimpflege",
+    "id": "pflege-koerper-intimpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/intimpflege",
     "code": null
   },
   {
-    "id": "pflege/koerper/massagezubehoer",
-    "description": "pflege -> koerper/massagezubehoer",
+    "id": "pflege-koerper-massagezubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/massagezubehoer",
     "code": null
   },
   {
-    "id": "pflege/gesicht/augenpflege",
-    "description": "pflege -> gesicht/augenpflege",
+    "id": "pflege-gesicht-augenpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/augenpflege",
     "code": null
   },
   {
-    "id": "pflege/gesicht/lippenpflege",
-    "description": "pflege -> gesicht/lippenpflege",
+    "id": "pflege-gesicht-lippenpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/lippenpflege",
     "code": null
   },
   {
-    "id": "pflege/hygiene",
-    "description": "pflege -> hygiene",
+    "id": "pflege-hygiene",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene",
     "code": null
   },
   {
-    "id": "pflege/hygiene/seifen",
-    "description": "pflege -> hygiene/seifen",
+    "id": "pflege-hygiene-seifen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/seifen",
     "code": null
   },
   {
-    "id": "pflege/hygiene/deos",
-    "description": "pflege -> hygiene/deos",
+    "id": "pflege-hygiene-deos",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/deos",
     "code": null
   },
   {
-    "id": "pflege/enthaarung",
-    "description": "pflege -> enthaarung",
+    "id": "pflege-enthaarung",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/rasierer",
-    "description": "pflege -> enthaarung/rasierer",
+    "id": "pflege-enthaarung-rasierer",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/rasierer",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/rasierklingen",
-    "description": "pflege -> enthaarung/rasierklingen",
+    "id": "pflege-enthaarung-rasierklingen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/rasierklingen",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/einwegrasierer",
-    "description": "pflege -> enthaarung/einwegrasierer",
+    "id": "pflege-enthaarung-einwegrasierer",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/einwegrasierer",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/wachs",
-    "description": "pflege -> enthaarung/wachs",
+    "id": "pflege-enthaarung-wachs",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/wachs",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/enthaarungscremen",
-    "description": "pflege -> enthaarung/enthaarungscremen",
+    "id": "pflege-enthaarung-enthaarungscremen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/enthaarungscremen",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/aftershaves",
-    "description": "pflege -> enthaarung/aftershaves",
+    "id": "pflege-enthaarung-aftershaves",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/aftershaves",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/rasurpflege",
-    "description": "pflege -> enthaarung/rasurpflege",
+    "id": "pflege-enthaarung-rasurpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/rasurpflege",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/bleichcremen",
-    "description": "pflege -> enthaarung/bleichcremen",
+    "id": "pflege-enthaarung-bleichcremen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/bleichcremen",
     "code": null
   },
   {
-    "id": "pflege/sonne/sonnencremen",
-    "description": "pflege -> sonne/sonnencremen",
+    "id": "pflege-sonne-sonnencremen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/sonnencremen",
     "code": null
   },
   {
-    "id": "pflege/sonne/sonnensprays",
-    "description": "pflege -> sonne/sonnensprays",
+    "id": "pflege-sonne-sonnensprays",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/sonnensprays",
     "code": null
   },
   {
-    "id": "pflege/sonne/lippenschutz",
-    "description": "pflege -> sonne/lippenschutz",
+    "id": "pflege-sonne-lippenschutz",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/lippenschutz",
     "code": null
   },
   {
-    "id": "pflege/sonne/intensivschutz",
-    "description": "pflege -> sonne/intensivschutz",
+    "id": "pflege-sonne-intensivschutz",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/intensivschutz",
     "code": null
   },
   {
-    "id": "pflege/sonne/after-sun",
-    "description": "pflege -> sonne/after-sun",
+    "id": "pflege-sonne-aftersun",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/after-sun",
     "code": null
   },
   {
-    "id": "pflege/sonne/selbstbraeuner",
-    "description": "pflege -> sonne/selbstbraeuner",
+    "id": "pflege-sonne-selbstbraeuner",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/selbstbraeuner",
     "code": null
   },
   {
-    "id": "haar/pflege",
-    "description": "haar -> pflege",
+    "id": "haar-pflege",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege",
     "code": null
   },
   {
-    "id": "haar/pflege/shampoos",
-    "description": "haar -> pflege/shampoos",
+    "id": "haar-pflege-shampoos",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/shampoos",
     "code": null
   },
   {
-    "id": "haar/pflege/haartonic",
-    "description": "haar -> pflege/haartonic",
+    "id": "haar-pflege-haartonic",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/haartonic",
     "code": null
   },
   {
-    "id": "haar/pflege/balsam-und-fluid",
-    "description": "haar -> pflege/balsam-und-fluid",
+    "id": "haar-pflege-balsamfluid",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/balsam-und-fluid",
     "code": null
   },
   {
-    "id": "haar/pflege/conditioner-und-spuelungen",
-    "description": "haar -> pflege/conditioner-und-spuelungen",
+    "id": "haar-pflege-conditionerspuelungen",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/conditioner-und-spuelungen",
     "code": null
   },
   {
-    "id": "haar/pflege/haarmasken-und-kuren",
-    "description": "haar -> pflege/haarmasken-und-kuren",
+    "id": "haar-pflege-haarmaskenkuren",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/haarmasken-und-kuren",
     "code": null
   },
   {
-    "id": "haar/colorationen",
-    "description": "haar -> colorationen",
+    "id": "haar-colorationen",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/colorationen",
     "code": null
   },
   {
-    "id": "haar/colorationen/haarfarben",
-    "description": "haar -> colorationen/haarfarben",
+    "id": "haar-colorationen-haarfarben",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/colorationen/haarfarben",
     "code": null
   },
   {
-    "id": "haar/colorationen/toenungen",
-    "description": "haar -> colorationen/toenungen",
+    "id": "haar-colorationen-toenungen",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/colorationen/toenungen",
     "code": null
   },
   {
-    "id": "haar/colorationen/zubehoer",
-    "description": "haar -> colorationen/zubehoer",
+    "id": "haar-colorationen-zubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/colorationen/zubehoer",
     "code": null
   },
   {
-    "id": "haar/styling",
-    "description": "haar -> styling",
+    "id": "haar-styling",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling",
     "code": null
   },
   {
-    "id": "haar/styling/schutz-und-anti-frizz",
-    "description": "haar -> styling/schutz-und-anti-frizz",
+    "id": "haar-styling-schutzanti-frizz",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling/schutz-und-anti-frizz",
     "code": null
   },
   {
-    "id": "haar/styling/haarspray",
-    "description": "haar -> styling/haarspray",
+    "id": "haar-styling-haarspray",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling/haarspray",
     "code": null
   },
   {
-    "id": "love/kondome",
-    "description": "love -> kondome",
+    "id": "love-kondome",
+    "description": null,
     "url": "https://www.bipa.at/c/love/kondome",
     "code": null
   },
   {
-    "id": "love/gleitgel-und-massage",
-    "description": "love -> gleitgel-und-massage",
+    "id": "love-gleitgelmassage",
+    "description": null,
     "url": "https://www.bipa.at/c/love/gleitgel-und-massage",
     "code": null
   },
   {
-    "id": "love/intimpflege",
-    "description": "love -> intimpflege",
+    "id": "love-intimpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/love/intimpflege",
     "code": null
   },
   {
-    "id": "love/spiele-und-geschenksets",
-    "description": "love -> spiele-und-geschenksets",
+    "id": "love-spielegeschenksets",
+    "description": null,
     "url": "https://www.bipa.at/c/love/spiele-und-geschenksets",
     "code": null
   },
   {
-    "id": "gesundheit/bodycare",
-    "description": "gesundheit -> bodycare",
+    "id": "gesundheit-bodycare",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/bodycare",
     "code": null
   },
   {
-    "id": "gesundheit/wundversorgung",
-    "description": "gesundheit -> wundversorgung",
+    "id": "gesundheit-wundversorgung",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/wundversorgung",
     "code": null
   },
   {
-    "id": "haar/styling/buersten--kaemme-und-scheren",
-    "description": "haar -> styling/buersten--kaemme-und-scheren",
+    "id": "haar-styling-buerstenkaemmescheren",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling/buersten--kaemme-und-scheren",
     "code": null
   },
   {
-    "id": "pflege/reisegroessen",
-    "description": "pflege -> reisegroessen",
+    "id": "pflege-reisegroessen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/reisegroessen",
     "code": null
   },
   {
-    "id": "themen/fasching",
-    "description": "themen -> fasching",
+    "id": "themen-fasching",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/fasching",
     "code": null
   },
   {
-    "id": "haar/styling/lockenwickler",
-    "description": "haar -> styling/lockenwickler",
+    "id": "haar-styling-lockenwickler",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/styling/lockenwickler",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko",
-    "description": "haushalt -> wohnaccessoires-und-deko",
+    "id": "haushalt-wohnaccessoiresdeko",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko/trinkflaschen-und-thermosflaschen",
-    "description": "haushalt -> wohnaccessoires-und-deko/trinkflaschen-und-thermosflaschen",
+    "id": "haushalt-wohnaccessoiresdeko-trinkflaschenthermosflaschen",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko/trinkflaschen-und-thermosflaschen",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko/kuechenaccessoires",
-    "description": "haushalt -> wohnaccessoires-und-deko/kuechenaccessoires",
+    "id": "haushalt-wohnaccessoiresdeko-kuechenaccessoires",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko/kuechenaccessoires",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte",
-    "description": "haushalt -> wohnaccessoires-und-deko/kerzen-und-raumduefte",
+    "id": "haushalt-wohnaccessoiresdeko-kerzenraumduefte",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte",
     "code": null
   },
   {
-    "id": "tier/hund/zubehoer",
-    "description": "tier -> hund/zubehoer",
+    "id": "tier-hund-zubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/zubehoer",
     "code": null
   },
   {
-    "id": "themen/geschenkideen",
-    "description": "themen -> geschenkideen",
+    "id": "themen-geschenkideen&amp;pmax=300&amp;pmin=0&amp;srule=Neu eingetroffen",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/geschenkideen",
     "code": null
   },
   {
-    "id": "themen/geschenkideen/kunterbunte-geschenkideen",
-    "description": "themen -> geschenkideen/kunterbunte-geschenkideen",
+    "id": "themen-geschenkideen-kunterbuntegeschenkideen",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/geschenkideen/kunterbunte-geschenkideen",
     "code": null
   },
   {
-    "id": "themen/geschenkideen/geschenke-fuer-frauen",
-    "description": "themen -> geschenkideen/geschenke-fuer-frauen",
+    "id": "themen-geschenkideen-geschenkefuerfrauen",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/geschenkideen/geschenke-fuer-frauen",
     "code": null
   },
   {
-    "id": "themen/geschenkideen/geschenke-fuer-maenner",
-    "description": "themen -> geschenkideen/geschenke-fuer-maenner",
+    "id": "themen-geschenkideen-geschenkefuermaenner",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/geschenkideen/geschenke-fuer-maenner",
     "code": null
   },
   {
-    "id": "themen/geschenkideen/baby-geschenke",
-    "description": "themen -> geschenkideen/baby-geschenke",
+    "id": "themen-geschenkideen-babygeschenke",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/geschenkideen/baby-geschenke",
     "code": null
   },
   {
-    "id": "pflege/hygiene/blasenschwaeche",
-    "description": "pflege -> hygiene/blasenschwaeche",
+    "id": "pflege-hygiene-blasenschwaeche",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/blasenschwaeche",
     "code": null
   },
   {
-    "id": "tier/hund",
-    "description": "tier -> hund",
+    "id": "tier-hund",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund",
     "code": null
   },
   {
-    "id": "tier/hund/pflege-und-hygiene",
-    "description": "tier -> hund/pflege-und-hygiene",
+    "id": "tier-hund-pflegehygiene",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/pflege-und-hygiene",
     "code": null
   },
   {
-    "id": "tier/hund/leinen-und-halsbaender",
-    "description": "tier -> hund/leinen-und-halsbaender",
+    "id": "tier-hund-leinenhalsbaender",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/leinen-und-halsbaender",
     "code": null
   },
   {
-    "id": "tier/hund/hundespielzeug",
-    "description": "tier -> hund/hundespielzeug",
+    "id": "tier-hund-hundespielzeug",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/hundespielzeug",
     "code": null
   },
   {
-    "id": "tier/hund/hundeschlafplatz",
-    "description": "tier -> hund/hundeschlafplatz",
+    "id": "tier-hund-hundeschlafplatz",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/hundeschlafplatz",
     "code": null
   },
   {
-    "id": "tier/hund/napf-und-traenke",
-    "description": "tier -> hund/napf-und-traenke",
+    "id": "tier-hund-napftraenke",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/napf-und-traenke",
     "code": null
   },
   {
-    "id": "tier/hund/transport-und-unterwegs",
-    "description": "tier -> hund/transport-und-unterwegs",
+    "id": "tier-hund-transportunterwegs",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/transport-und-unterwegs",
     "code": null
   },
   {
-    "id": "themen/maennerwelt/rasur-und-bartpflege",
-    "description": "themen -> maennerwelt/rasur-und-bartpflege",
+    "id": "themen-maennerwelt-rasurbartpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/maennerwelt/rasur-und-bartpflege",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtsreinigung/waschgel-und-reinigungsschaum",
-    "description": "pflege -> gesicht/gesichtsreinigung/waschgel-und-reinigungsschaum",
+    "id": "pflege-gesicht-gesichtsreinigung-waschgelreinigungsschaum",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtsreinigung/waschgel-und-reinigungsschaum",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-paare",
-    "description": "love -> sexspielzeug-fuer-paare",
+    "id": "love-sexspielzeugfuerpaare",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-paare",
     "code": null
   },
   {
-    "id": "themen/mode/accessoires",
-    "description": "themen -> mode/accessoires",
+    "id": "themen-mode-accessoires",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/accessoires",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-frauen",
-    "description": "love -> sexspielzeug-fuer-frauen",
+    "id": "love-sexspielzeugfuerfrauen",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-frauen",
     "code": null
   },
   {
-    "id": "love/erotik-zubehoer",
-    "description": "love -> erotik-zubehoer",
+    "id": "love-erotikzubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/love/erotik-zubehoer",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-frauen/liebeskugeln",
-    "description": "love -> sexspielzeug-fuer-frauen/liebeskugeln",
+    "id": "love-sexspielzeugfuerfrauen-liebeskugeln",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-frauen/liebeskugeln",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung",
     "code": null
   },
   {
-    "id": "gesundheit/diagnostika-und-tests/diagnostika",
-    "description": "gesundheit -> diagnostika-und-tests/diagnostika",
+    "id": "gesundheit-diagnostikatests-diagnostika",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/diagnostika-und-tests/diagnostika",
     "code": null
   },
   {
-    "id": "gesundheit/diagnostika-und-tests/schwangerschaft-und-fruchtbarkeitstest",
-    "description": "gesundheit -> diagnostika-und-tests/schwangerschaft-und-fruchtbarkeitstest",
+    "id": "gesundheit-diagnostikatests-schwangerschaftfruchtbarkeitstest",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/diagnostika-und-tests/schwangerschaft-und-fruchtbarkeitstest",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/geschirrspuelmittel-und--reiniger",
-    "description": "haushalt -> putzen-und-reinigen/geschirrspuelmittel-und--reiniger",
+    "id": "haushalt-putzenreinigen-geschirrspuelmittel-reiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/geschirrspuelmittel-und--reiniger",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/kuechenreiniger",
-    "description": "haushalt -> putzen-und-reinigen/kuechenreiniger",
+    "id": "haushalt-putzenreinigen-kuechenreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/kuechenreiniger",
     "code": null
   },
   {
-    "id": "love/sexspielzeug-fuer-frauen/vibratoren/druckwellenvibratoren",
-    "description": "love -> sexspielzeug-fuer-frauen/vibratoren/druckwellenvibratoren",
+    "id": "love-sexspielzeugfuerfrauen-vibratoren-druckwellenvibratoren",
+    "description": null,
     "url": "https://www.bipa.at/c/love/sexspielzeug-fuer-frauen/vibratoren/druckwellenvibratoren",
     "code": null
   },
   {
-    "id": "gesundheit/diagnostika-und-tests/sonstige-selbsttests",
-    "description": "gesundheit -> diagnostika-und-tests/sonstige-selbsttests",
+    "id": "gesundheit-diagnostikatests-sonstigeselbsttests",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/diagnostika-und-tests/sonstige-selbsttests",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/augen-und-ohren",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/augen-und-ohren",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-augenohren",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/augen-und-ohren",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/beruhigung-und-energie",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/beruhigung-und-energie",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-beruhigungenergie",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/beruhigung-und-energie",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/blase-und-prostata",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/blase-und-prostata",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-blaseprostata",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/blase-und-prostata",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/erkaeltung-und-abwehr",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/erkaeltung-und-abwehr",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-erkaeltungabwehr",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/erkaeltung-und-abwehr",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/gewicht-und-entschlackung",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/gewicht-und-entschlackung",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-gewichtentschlackung",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/gewicht-und-entschlackung",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/herz-und-kreislauf",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/herz-und-kreislauf",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-herzkreislauf",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/herz-und-kreislauf",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/magen-und-verdauung",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/magen-und-verdauung",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-magenverdauung",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/magen-und-verdauung",
     "code": null
   },
   {
-    "id": "themen/online-only",
-    "description": "themen -> online-only",
+    "id": "navigation",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/online-only",
     "code": null
   },
   {
-    "id": "pflege/hygiene/periodenprodukte",
-    "description": "pflege -> hygiene/periodenprodukte",
+    "id": "pflege-hygiene-periodenprodukte",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/periodenprodukte",
     "code": null
   },
   {
-    "id": "pflege/hygiene/periodenprodukte/tampons",
-    "description": "pflege -> hygiene/periodenprodukte/tampons",
+    "id": "pflege-hygiene-periodenprodukte-tampons",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/periodenprodukte/tampons",
     "code": null
   },
   {
-    "id": "pflege/hygiene/periodenprodukte/binden",
-    "description": "pflege -> hygiene/periodenprodukte/binden",
+    "id": "pflege-hygiene-periodenprodukte-binden",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/periodenprodukte/binden",
     "code": null
   },
   {
-    "id": "gesundheit/diagnostika-und-tests",
-    "description": "gesundheit -> diagnostika-und-tests",
+    "id": "gesundheit-diagnostikatests",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/diagnostika-und-tests",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/frau-und-mann",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/frau-und-mann",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-fraumann",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/frau-und-mann",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/muskeln-und-gelenke",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/muskeln-und-gelenke",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-muskelngelenke",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/muskeln-und-gelenke",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/schoenheit",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/schoenheit",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-schoenheit",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/schoenheit",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/spezialpflege",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/spezialpflege",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-spezialpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/spezialpflege",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/staerkung",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/staerkung",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-staerkung",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/staerkung",
     "code": null
   },
   {
-    "id": "pflege/hygiene/periodenprodukte/slipeinlagen",
-    "description": "pflege -> hygiene/periodenprodukte/slipeinlagen",
+    "id": "pflege-hygiene-periodenprodukte-slipeinlagen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/periodenprodukte/slipeinlagen",
     "code": null
   },
   {
-    "id": "pflege/hygiene/periodenprodukte/menstruationstassen",
-    "description": "pflege -> hygiene/periodenprodukte/menstruationstassen",
+    "id": "pflege-hygiene-periodenprodukte-menstruationstassen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/periodenprodukte/menstruationstassen",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/badreiniger",
-    "description": "haushalt -> putzen-und-reinigen/badreiniger",
+    "id": "haushalt-putzenreinigen-badreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/badreiniger",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtsreinigung/gesichtswasser",
-    "description": "pflege -> gesicht/gesichtsreinigung/gesichtswasser",
+    "id": "pflege-gesicht-gesichtsreinigung-gesichtswasser",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtsreinigung/gesichtswasser",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/allzweckreiniger",
-    "description": "haushalt -> putzen-und-reinigen/allzweckreiniger",
+    "id": "haushalt-putzenreinigen-allzweckreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/allzweckreiniger",
     "code": null
   },
   {
-    "id": "pflege/hygiene/periodenprodukte/periodenunterwaesche",
-    "description": "pflege -> hygiene/periodenprodukte/periodenunterwaesche",
+    "id": "pflege-hygiene-periodenprodukte-periodenunterwaesche",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/hygiene/periodenprodukte/periodenunterwaesche",
     "code": null
   },
   {
-    "id": "gesundheit/wundversorgung/pflaster",
-    "description": "gesundheit -> wundversorgung/pflaster",
+    "id": "gesundheit-wundversorgung-pflaster",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/wundversorgung/pflaster",
     "code": null
   },
   {
-    "id": "gesundheit/wundversorgung/verbaende",
-    "description": "gesundheit -> wundversorgung/verbaende",
+    "id": "gesundheit-wundversorgung-verbaende",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/wundversorgung/verbaende",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtsreinigung/make-up-entferner",
-    "description": "pflege -> gesicht/gesichtsreinigung/make-up-entferner",
+    "id": "pflege-gesicht-gesichtsreinigung-make-upentferner",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtsreinigung/make-up-entferner",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko/badezimmeraccessoires",
-    "description": "haushalt -> wohnaccessoires-und-deko/badezimmeraccessoires",
+    "id": "haushalt-wohnaccessoiresdeko-badezimmeraccessoires",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko/badezimmeraccessoires",
     "code": null
   },
   {
-    "id": "tier/hund/hundefutter",
-    "description": "tier -> hund/hundefutter",
+    "id": "tier-hund-hundefutter",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/hund/hundefutter",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtsreinigung/reinigungstuecher",
-    "description": "pflege -> gesicht/gesichtsreinigung/reinigungstuecher",
+    "id": "pflege-gesicht-gesichtsreinigung-reinigungstuecher",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtsreinigung/reinigungstuecher",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtsreinigung/reinigungsmilch",
-    "description": "pflege -> gesicht/gesichtsreinigung/reinigungsmilch",
+    "id": "pflege-gesicht-gesichtsreinigung-reinigungsmilch",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtsreinigung/reinigungsmilch",
     "code": null
   },
   {
-    "id": "themen/ballsaison",
-    "description": "themen -> ballsaison",
+    "id": "themen-ballsaison",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/ballsaison",
     "code": null
   },
   {
-    "id": "themen/oktoberfest",
-    "description": "themen -> oktoberfest",
+    "id": "themen-oktoberfest",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/oktoberfest",
     "code": null
   },
   {
-    "id": "themen/valentinstag",
-    "description": "themen -> valentinstag",
+    "id": "themen-valentinstag",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/valentinstag",
     "code": null
   },
   {
-    "id": "themen/ostern",
-    "description": "themen -> ostern",
+    "id": "themen-ostern",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/ostern",
     "code": null
   },
   {
-    "id": "themen/mode/taschen",
-    "description": "themen -> mode/taschen",
+    "id": "themen-mode-taschen",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/taschen",
     "code": null
   },
   {
-    "id": "themen/mode/sonnenbrillen",
-    "description": "themen -> mode/sonnenbrillen",
+    "id": "themen-mode-sonnenbrillen",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/sonnenbrillen",
     "code": null
   },
   {
-    "id": "themen/sommer",
-    "description": "themen -> sommer",
+    "id": "themen-sommer",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/sommer",
     "code": null
   },
   {
-    "id": "themen/maennerwelt",
-    "description": "themen -> maennerwelt",
+    "id": "themen-maennerwelt",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/maennerwelt",
     "code": null
   },
   {
-    "id": "themen/maennerwelt/koerperpflege",
-    "description": "themen -> maennerwelt/koerperpflege",
+    "id": "themen-maennerwelt-koerperpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/maennerwelt/koerperpflege",
     "code": null
   },
   {
-    "id": "themen/maennerwelt/haarpflege-und-styling",
-    "description": "themen -> maennerwelt/haarpflege-und-styling",
+    "id": "themen-maennerwelt-haarpflegestyling",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/maennerwelt/haarpflege-und-styling",
     "code": null
   },
   {
-    "id": "themen/maennerwelt/gesichtspflege",
-    "description": "themen -> maennerwelt/gesichtspflege",
+    "id": "themen-maennerwelt-gesichtspflege",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/maennerwelt/gesichtspflege",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel",
-    "description": "haushalt -> haushaltsartikel",
+    "id": "haushalt-haushaltsartikel",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/zubehoer",
-    "description": "haushalt -> haushaltsartikel/zubehoer",
+    "id": "haushalt-haushaltsartikel-zubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/zubehoer",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/batterien",
-    "description": "haushalt -> haushaltsartikel/batterien",
+    "id": "haushalt-haushaltsartikel-batterien",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/batterien",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/bueromaterial",
-    "description": "haushalt -> haushaltsartikel/bueromaterial",
+    "id": "haushalt-haushaltsartikel-bueromaterial",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/bueromaterial",
     "code": null
   },
   {
-    "id": "pflege/sonne/sonnenoel",
-    "description": "pflege -> sonne/sonnenoel",
+    "id": "pflege-sonne-sonnenoel",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/sonnenoel",
     "code": null
   },
   {
-    "id": "gesundheit/medizinprodukte-und-nahrungsergaenzung/vitamine-und-mineralstoffe",
-    "description": "gesundheit -> medizinprodukte-und-nahrungsergaenzung/vitamine-und-mineralstoffe",
+    "id": "gesundheit-medizinproduktenahrungsergaenzung-vitaminemineralstoffe",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/medizinprodukte-und-nahrungsergaenzung/vitamine-und-mineralstoffe",
     "code": null
   },
   {
-    "id": "pflege/sonne/sonnencreme-fuers-gesicht",
-    "description": "pflege -> sonne/sonnencreme-fuers-gesicht",
+    "id": "pflege-sonne-sonnencremefuersgesicht",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/sonne/sonnencreme-fuers-gesicht",
     "code": null
   },
   {
-    "id": "gesundheit/wundversorgung/wundreinigung-und--pflege",
-    "description": "gesundheit -> wundversorgung/wundreinigung-und--pflege",
+    "id": "gesundheit-wundversorgung-wundreinigung-pflege",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/wundversorgung/wundreinigung-und--pflege",
     "code": null
   },
   {
-    "id": "tier/vogel",
-    "description": "tier -> vogel",
+    "id": "tier-vogel",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/vogel",
     "code": null
   },
   {
-    "id": "tier/vogel/vogelfutter",
-    "description": "tier -> vogel/vogelfutter",
+    "id": "tier-vogel-vogelfutter",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/vogel/vogelfutter",
     "code": null
   },
   {
-    "id": "tier/vogel/zubehoer",
-    "description": "tier -> vogel/zubehoer",
+    "id": "tier-vogel-zubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/vogel/zubehoer",
     "code": null
   },
   {
-    "id": "tier/kleintiere",
-    "description": "tier -> kleintiere",
+    "id": "tier-kleintiere",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/kleintiere",
     "code": null
   },
   {
-    "id": "tier/kleintiere/kleintierfutter",
-    "description": "tier -> kleintiere/kleintierfutter",
+    "id": "tier-kleintiere-kleintierfutter",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/kleintiere/kleintierfutter",
     "code": null
   },
   {
-    "id": "tier/kleintiere/zubehoer",
-    "description": "tier -> kleintiere/zubehoer",
+    "id": "tier-kleintiere-zubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/kleintiere/zubehoer",
     "code": null
   },
   {
-    "id": "tier/aquaristik",
-    "description": "tier -> aquaristik",
+    "id": "tier-aquaristik",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/aquaristik",
     "code": null
   },
   {
-    "id": "tier/aquaristik/fischfutter",
-    "description": "tier -> aquaristik/fischfutter",
+    "id": "tier-aquaristik-fischfutter",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/aquaristik/fischfutter",
     "code": null
   },
   {
-    "id": "tier/aquaristik/aquarium-technik",
-    "description": "tier -> aquaristik/aquarium-technik",
+    "id": "tier-aquaristik-aquariumtechnik",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/aquaristik/aquarium-technik",
     "code": null
   },
   {
-    "id": "tier/aquaristik/aquarium-filter",
-    "description": "tier -> aquaristik/aquarium-filter",
+    "id": "tier-aquaristik-aquariumfilter",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/aquaristik/aquarium-filter",
     "code": null
   },
   {
-    "id": "tier/aquaristik/zubehoer",
-    "description": "tier -> aquaristik/zubehoer",
+    "id": "tier-aquaristik-zubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/tier/aquaristik/zubehoer",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtscremen",
-    "description": "pflege -> gesicht/gesichtscremen",
+    "id": "pflege-gesicht-gesichtscremen",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtscremen",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtsreinigung",
-    "description": "pflege -> gesicht/gesichtsreinigung",
+    "id": "pflege-gesicht-gesichtsreinigung",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtsreinigung",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtspeelings",
-    "description": "pflege -> gesicht/gesichtspeelings",
+    "id": "pflege-gesicht-gesichtspeelings",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtspeelings",
     "code": null
   },
   {
-    "id": "pflege/gesicht/gesichtsmasken",
-    "description": "pflege -> gesicht/gesichtsmasken",
+    "id": "pflege-gesicht-gesichtsmasken",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/gesichtsmasken",
     "code": null
   },
   {
-    "id": "pflege/gesicht/seren-und-oele",
-    "description": "pflege -> gesicht/seren-und-oele",
+    "id": "pflege-gesicht-serenoele",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/seren-und-oele",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/top-coat",
-    "description": "make-up -> schoene-naegel/top-coat",
+    "id": "make-up-schoenenaegel-topcoat",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/top-coat",
     "code": null
   },
   {
-    "id": "haushalt/partyartikel-und-deko",
-    "description": "haushalt -> partyartikel-und-deko",
+    "id": "haushalt-partyartikeldeko",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/partyartikel-und-deko",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/base-coat-und-nagelhaerter",
-    "description": "make-up -> schoene-naegel/base-coat-und-nagelhaerter",
+    "id": "make-up-schoenenaegel-basecoatnagelhaerter",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/base-coat-und-nagelhaerter",
     "code": null
   },
   {
-    "id": "haushalt/papier/servietten-und-tischkultur",
-    "description": "haushalt -> papier/servietten-und-tischkultur",
+    "id": "haushalt-papier-serviettentischkultur",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier/servietten-und-tischkultur",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/wc-reiniger-und-hygiene",
-    "description": "haushalt -> putzen-und-reinigen/wc-reiniger-und-hygiene",
+    "id": "haushalt-putzenreinigen-wc-reinigerhygiene",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/wc-reiniger-und-hygiene",
     "code": null
   },
   {
-    "id": "haushalt/gluehbirnen-und-led-lampen",
-    "description": "haushalt -> gluehbirnen-und-led-lampen",
+    "id": "haushalt-gluehbirnenledlampen",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/gluehbirnen-und-led-lampen",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/alufolie--backpapier-und-co.",
-    "description": "haushalt -> haushaltsartikel/alufolie--backpapier-und-co.",
+    "id": "haushalt-haushaltsartikel-alufoliebackpapierco",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/alufolie--backpapier-und-co.",
     "code": null
   },
   {
-    "id": "gesundheit/alten--und-krankenpflege/inkontinenz",
-    "description": "gesundheit -> alten--und-krankenpflege/inkontinenz",
+    "id": "gesundheit-alten-krankenpflege-inkontinenz",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/alten--und-krankenpflege/inkontinenz",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/spezialreiniger",
-    "description": "haushalt -> putzen-und-reinigen/spezialreiniger",
+    "id": "haushalt-putzenreinigen-spezialreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/spezialreiniger",
     "code": null
   },
   {
-    "id": "gesundheit/alten--und-krankenpflege/spezialpflege",
-    "description": "gesundheit -> alten--und-krankenpflege/spezialpflege",
+    "id": "gesundheit-alten-krankenpflege-spezialpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/alten--und-krankenpflege/spezialpflege",
     "code": null
   },
   {
-    "id": "gesundheit/alten--und-krankenpflege/desinfektion",
-    "description": "gesundheit -> alten--und-krankenpflege/desinfektion",
+    "id": "gesundheit-alten-krankenpflege-desinfektion",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/alten--und-krankenpflege/desinfektion",
     "code": null
   },
   {
-    "id": "gesundheit/alten--und-krankenpflege/alltagshilfen",
-    "description": "gesundheit -> alten--und-krankenpflege/alltagshilfen",
+    "id": "gesundheit-alten-krankenpflege-alltagshilfen",
+    "description": null,
     "url": "https://www.bipa.at/c/gesundheit/alten--und-krankenpflege/alltagshilfen",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/desinfektionsreiniger",
-    "description": "haushalt -> putzen-und-reinigen/desinfektionsreiniger",
+    "id": "haushalt-putzenreinigen-desinfektionsreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/desinfektionsreiniger",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/muellsaecke",
-    "description": "haushalt -> haushaltsartikel/muellsaecke",
+    "id": "haushalt-haushaltsartikel-muellsaecke",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/muellsaecke",
     "code": null
   },
   {
-    "id": "haushalt/haushaltsartikel/staubsaugerbeutel",
-    "description": "haushalt -> haushaltsartikel/staubsaugerbeutel",
+    "id": "haushalt-haushaltsartikel-staubsaugerbeutel",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/haushaltsartikel/staubsaugerbeutel",
     "code": null
   },
   {
-    "id": "pflege/koerper/duschseife",
-    "description": "pflege -> koerper/duschseife",
+    "id": "pflege-koerper-duschseife",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/duschseife",
     "code": null
   },
   {
-    "id": "pflege/koerper/duschgel",
-    "description": "pflege -> koerper/duschgel",
+    "id": "pflege-koerper-duschgel",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/duschgel",
     "code": null
   },
   {
-    "id": "haar/pflege/haarseife",
-    "description": "haar -> pflege/haarseife",
+    "id": "haar-pflege-haarseife",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/haarseife",
     "code": null
   },
   {
-    "id": "ernaehrung/gesunde-ernaehrung",
-    "description": "ernaehrung -> gesunde-ernaehrung",
+    "id": "ernaehrung-gesundeernaehrung",
+    "description": null,
     "url": "https://www.bipa.at/c/ernaehrung/gesunde-ernaehrung",
     "code": null
   },
   {
-    "id": "ernaehrung/atem-erfrischen",
-    "description": "ernaehrung -> atem-erfrischen",
+    "id": "ernaehrung-atemerfrischen",
+    "description": null,
     "url": "https://www.bipa.at/c/ernaehrung/atem-erfrischen",
     "code": null
   },
   {
-    "id": "ernaehrung/sportnahrung",
-    "description": "ernaehrung -> sportnahrung",
+    "id": "ernaehrung-sportnahrung",
+    "description": null,
     "url": "https://www.bipa.at/c/ernaehrung/sportnahrung",
     "code": null
   },
   {
-    "id": "ernaehrung/gesund-abnehmen",
-    "description": "ernaehrung -> gesund-abnehmen",
+    "id": "ernaehrung-gesundabnehmen",
+    "description": null,
     "url": "https://www.bipa.at/c/ernaehrung/gesund-abnehmen",
     "code": null
   },
   {
-    "id": "haar/pflege/seren-und-oele",
-    "description": "haar -> pflege/seren-und-oele",
+    "id": "haar-pflege-serenoele",
+    "description": null,
     "url": "https://www.bipa.at/c/haar/pflege/seren-und-oele",
     "code": null
   },
   {
-    "id": "haushalt/putzen-und-reinigen/teppich--und-bodenreiniger",
-    "description": "haushalt -> putzen-und-reinigen/teppich--und-bodenreiniger",
+    "id": "haushalt-putzenreinigen-teppich-undbodenreiniger",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/putzen-und-reinigen/teppich--und-bodenreiniger",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte/duftoele",
-    "description": "haushalt -> wohnaccessoires-und-deko/kerzen-und-raumduefte/duftoele",
+    "id": "haushalt-wohnaccessoiresdeko-kerzenraumduefte-duftoele",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte/duftoele",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte/kerzen",
-    "description": "haushalt -> wohnaccessoires-und-deko/kerzen-und-raumduefte/kerzen",
+    "id": "haushalt-wohnaccessoiresdeko-kerzenraumduefte-kerzen",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte/kerzen",
     "code": null
   },
   {
-    "id": "haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte/lufterfrischer",
-    "description": "haushalt -> wohnaccessoires-und-deko/kerzen-und-raumduefte/lufterfrischer",
+    "id": "haushalt-wohnaccessoiresdeko-kerzenraumduefte-lufterfrischer",
+    "description": null,
     "url": "https://www.bipa.at/c/haushalt/wohnaccessoires-und-deko/kerzen-und-raumduefte/lufterfrischer",
     "code": null
   },
   {
-    "id": "make-up/auge",
-    "description": "make-up -> auge",
+    "id": "make-up-auge",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/auge",
     "code": null
   },
   {
-    "id": "make-up/lippe",
-    "description": "make-up -> lippe",
+    "id": "make-up-lippe",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/lippe",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel",
-    "description": "make-up -> schoene-naegel",
+    "id": "make-up-schoenenaegel",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel",
     "code": null
   },
   {
-    "id": "make-up/auge/augenbrauen",
-    "description": "make-up -> auge/augenbrauen",
+    "id": "make-up-auge-augenbrauen",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/auge/augenbrauen",
     "code": null
   },
   {
-    "id": "make-up/auge/eyeliner",
-    "description": "make-up -> auge/eyeliner",
+    "id": "make-up-auge-eyeliner",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/auge/eyeliner",
     "code": null
   },
   {
-    "id": "make-up/auge/kajalstift",
-    "description": "make-up -> auge/kajalstift",
+    "id": "make-up-auge-kajalstift",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/auge/kajalstift",
     "code": null
   },
   {
-    "id": "make-up/auge/lidschatten",
-    "description": "make-up -> auge/lidschatten",
+    "id": "make-up-auge-lidschatten",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/auge/lidschatten",
     "code": null
   },
   {
-    "id": "make-up/auge/mascaras",
-    "description": "make-up -> auge/mascaras",
+    "id": "make-up-auge-mascaras",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/auge/mascaras",
     "code": null
   },
   {
-    "id": "make-up/lippe/lipliner",
-    "description": "make-up -> lippe/lipliner",
+    "id": "make-up-lippe-lipliner",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/lippe/lipliner",
     "code": null
   },
   {
-    "id": "make-up/lippe/lippenstifte",
-    "description": "make-up -> lippe/lippenstifte",
+    "id": "make-up-lippe-lippenstifte",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/lippe/lippenstifte",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/nagelscheren-und-zubehoer",
-    "description": "make-up -> schoene-naegel/nagelscheren-und-zubehoer",
+    "id": "make-up-schoenenaegel-nagelscherenzubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/nagelscheren-und-zubehoer",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/french-manicure",
-    "description": "make-up -> schoene-naegel/french-manicure",
+    "id": "make-up-schoenenaegel-frenchmanicure",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/french-manicure",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/nagelfeilen",
-    "description": "make-up -> schoene-naegel/nagelfeilen",
+    "id": "make-up-schoenenaegel-nagelfeilen",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/nagelfeilen",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/nagellacke",
-    "description": "make-up -> schoene-naegel/nagellacke",
+    "id": "make-up-schoenenaegel-nagellacke",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/nagellacke",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/nagellackentferner",
-    "description": "make-up -> schoene-naegel/nagellackentferner",
+    "id": "make-up-schoenenaegel-nagellackentferner",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/nagellackentferner",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/nagelpflege",
-    "description": "make-up -> schoene-naegel/nagelpflege",
+    "id": "make-up-schoenenaegel-nagelpflege",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/nagelpflege",
     "code": null
   },
   {
-    "id": "make-up/kosmetikzubehoer",
-    "description": "make-up -> kosmetikzubehoer",
+    "id": "make-up-kosmetikzubehoer",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/kosmetikzubehoer",
     "code": null
   },
   {
-    "id": "make-up/kosmetikzubehoer/pinsel",
-    "description": "make-up -> kosmetikzubehoer/pinsel",
+    "id": "make-up-kosmetikzubehoer-pinsel",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/kosmetikzubehoer/pinsel",
     "code": null
   },
   {
-    "id": "make-up/kosmetikzubehoer/schwaemme",
-    "description": "make-up -> kosmetikzubehoer/schwaemme",
+    "id": "make-up-kosmetikzubehoer-schwaemme",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/kosmetikzubehoer/schwaemme",
     "code": null
   },
   {
-    "id": "make-up/kosmetikzubehoer/pinzetten",
-    "description": "make-up -> kosmetikzubehoer/pinzetten",
+    "id": "make-up-kosmetikzubehoer-pinzetten",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/kosmetikzubehoer/pinzetten",
     "code": null
   },
   {
-    "id": "make-up/kosmetikzubehoer/spitzer",
-    "description": "make-up -> kosmetikzubehoer/spitzer",
+    "id": "make-up-kosmetikzubehoer-spitzer",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/kosmetikzubehoer/spitzer",
     "code": null
   },
   {
-    "id": "make-up/kosmetikzubehoer/kosmetiktaschen",
-    "description": "make-up -> kosmetikzubehoer/kosmetiktaschen",
+    "id": "make-up-kosmetikzubehoer-kosmetiktaschen",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/kosmetikzubehoer/kosmetiktaschen",
     "code": null
   },
   {
-    "id": "make-up/kosmetikzubehoer/sonstiges",
-    "description": "make-up -> kosmetikzubehoer/sonstiges",
+    "id": "make-up-kosmetikzubehoer-sonstiges",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/kosmetikzubehoer/sonstiges",
     "code": null
   },
   {
-    "id": "themen/mode/strumpfhosen-und-socken",
-    "description": "themen -> mode/strumpfhosen-und-socken",
+    "id": "themen-mode-strumpfhosensocken",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/strumpfhosen-und-socken",
     "code": null
   },
   {
-    "id": "make-up/auge/falsche-wimpern",
-    "description": "make-up -> auge/falsche-wimpern",
+    "id": "make-up-auge-falschewimpern",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/auge/falsche-wimpern",
     "code": null
   },
   {
-    "id": "make-up/lippe/lipgloss",
-    "description": "make-up -> lippe/lipgloss",
+    "id": "make-up-lippe-lipgloss",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/lippe/lipgloss",
     "code": null
   },
   {
-    "id": "make-up/schoene-naegel/kunstnaegel",
-    "description": "make-up -> schoene-naegel/kunstnaegel",
+    "id": "make-up-schoenenaegel-kunstnaegel",
+    "description": null,
     "url": "https://www.bipa.at/c/make-up/schoene-naegel/kunstnaegel",
     "code": null
   },
   {
-    "id": "pflege/koerper/handcreme",
-    "description": "pflege -> koerper/handcreme",
+    "id": "pflege-koerper-handcreme",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/handcreme",
     "code": null
   },
   {
-    "id": "pflege/gesicht/anti-pickel-und-mitesser",
-    "description": "pflege -> gesicht/anti-pickel-und-mitesser",
+    "id": "pflege-gesicht-antipickelmitesser",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/gesicht/anti-pickel-und-mitesser",
     "code": null
   },
   {
-    "id": "pflege/koerper/massageoel-und-koerperoel",
-    "description": "pflege -> koerper/massageoel-und-koerperoel",
+    "id": "pflege-koerper-massageoelkoerperoel",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/massageoel-und-koerperoel",
     "code": null
   },
   {
-    "id": "pflege/koerper/saunaoel-und-saunaduft",
-    "description": "pflege -> koerper/saunaoel-und-saunaduft",
+    "id": "pflege-koerper-saunaoelsaunaduft",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/koerper/saunaoel-und-saunaduft",
     "code": null
   },
   {
-    "id": "themen/geschenkideen/geschenke-fuer-kinder",
-    "description": "themen -> geschenkideen/geschenke-fuer-kinder",
+    "id": "themen-geschenkideen-geschenkefuerkinder",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/geschenkideen/geschenke-fuer-kinder",
     "code": null
   },
   {
-    "id": "themen/mode/schmuck",
-    "description": "themen -> mode/schmuck",
+    "id": "themen-mode-schmuck",
+    "description": null,
     "url": "https://www.bipa.at/c/themen/mode/schmuck",
     "code": null
   },
   {
-    "id": "pflege/enthaarung/rasiergel-und-rasierschaum",
-    "description": "pflege -> enthaarung/rasiergel-und-rasierschaum",
+    "id": "pflege-enthaarung-rasiergelrasierschaum",
+    "description": null,
     "url": "https://www.bipa.at/c/pflege/enthaarung/rasiergel-und-rasierschaum",
     "code": null
   }

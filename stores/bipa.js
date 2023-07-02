@@ -1,7 +1,6 @@
 const axios = require("axios");
 const utils = require("./utils");
 const HTMLParser = require("node-html-parser");
-const { URL } = require("url");
 
 const units = {
     mbe: { unit: "wg", factor: 1 },
@@ -43,7 +42,7 @@ exports.getCanonical = function (item, today) {
             url: item.canonicalUrl,
         },
         units,
-        "unimarkt",
+        "bipa",
         {
             unit: "stk",
             quantity: 1,
@@ -56,6 +55,7 @@ exports.fetchData = async function () {
 
     const BIPA_CATEGORIES = await exports.getBipaCategoryPages();
 
+    /*
     for (let categoryPageRawUrl of BIPA_CATEGORIES) {
         const res = await axios.get(`${categoryPageRawUrl}?start=0&sz=1000`, {
             validateStatus: function (status) {
@@ -78,7 +78,7 @@ exports.fetchData = async function () {
                             price: parseFloat(gtmdata.price),
                             unit: product.querySelector(".product-info").text.replace("Inhalt:").trim(),
                             canonicalUrl: canonicalUrl,
-                            categoryPath: gtmdata.category.replace("-", "/"), // use slashes for seperation to match format used in sitemap.xml
+                            categoryPath: gtmdata.category.replaceAll("-", "/"), // use slashes for seperation to match format used in sitemap.xml
                         });
                     } catch (error) {
                         console.log(`Error parsing json on ${categoryPageRawUrl} for product: ${canonicalUrl}`);
@@ -87,6 +87,7 @@ exports.fetchData = async function () {
             });
         }
     }
+    */
 
     return bipaItems;
 };
@@ -97,15 +98,24 @@ exports.initializeCategoryMapping = async () => {
     const BIPA_CATEGORIES = await exports.getBipaCategoryPages();
 
     for (let categoryPageRawUrl of BIPA_CATEGORIES) {
-        const categoryPageUrl = new URL(categoryPageRawUrl);
-        const categoryId = categoryPageUrl.pathname.replace("/c/", "");
-
-        categories.push({
-            id: categoryId,
-            description: categoryId.replace("/", " -> "),
-            url: categoryPageRawUrl,
-            code: null,
+        const res = await axios.get(`${categoryPageRawUrl}?start=0&sz=1`, {
+            // we don't need much products here for faster loading
+            validateStatus: function (status) {
+                return status >= 200 && status < 300;
+            },
         });
+
+        if (res && res.data) {
+            const categoryId = /\?cgid=(.*)"/gm.exec(res.data);
+            if (categoryId && categoryId[1]) {
+                categories.push({
+                    id: categoryId[1],
+                    description: null,
+                    url: categoryPageRawUrl,
+                    code: null,
+                });
+            }
+        }
     }
 
     utils.mergeAndSaveCategories("bipa", categories);
