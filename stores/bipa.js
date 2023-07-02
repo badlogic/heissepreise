@@ -17,7 +17,7 @@ exports.getBipaCategoryPages = async () => {
 
     if (res && res.data) {
         let pages = res.data.replace(/[\s]*/gm, "").match(/<url>(.*?)<\/url>/gm);
-        pages = pages.filter((page) => /<changefreq>daily<\/changefreq>/g.test(page)); // only return pages which change daily ("monthly" are mainly seo, brand or offer pages)
+        pages = pages.filter((page) => /<changefreq>(daily|weekly)<\/changefreq>/g.test(page)); // only return pages which change daily or weekly ("monthly" are mainly seo, brand or offer pages)
         pages = pages.map((page) => page.match(/<loc>(.*)<\/loc>/gm)[0]);
         pages = pages.map((page) => page.replace(/<\/{0,1}loc>/g, "")); // remove <loc> xml-tags
         pages = pages.filter((page) => /\/c\/.*\/.{1,}/g.test(page)); // only return 2nd level category pages (level 1 is mostly landing pages or some special offer pages)
@@ -117,6 +117,9 @@ exports.initializeCategoryMapping = async () => {
             }
         }
     }
+
+    // sort alphabetically for easier category mapping
+    categories.sort((a, b) => a.id.localeCompare(b.id));
 
     utils.mergeAndSaveCategories("bipa", categories);
     exports.categoryLookup = {};
