@@ -15,7 +15,7 @@ class ProgressBar {
     addStep() {
         this.progress += this.step;
         this.progressBar.style.transform = `scaleX(${this.progress / 100})`;
-        if (this.progress >= 100) {
+        if (this.progress >= 99) {
             this.finished();
         }
     }
