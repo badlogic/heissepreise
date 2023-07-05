@@ -1,0 +1,3117 @@
+[
+  {
+    "id": "Parfümerie/Düfte für Sie",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-sie/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Düfte für Sie/Düfte",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-sie/duefte/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Düfte für Sie/Körperpflege",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-sie/koerperpflege/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Düfte für Sie/Duschpflege",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-sie/duschpflege/",
+    "code": "78"
+  },
+  {
+    "id": "Parfümerie/Düfte für Sie/Deodorants",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-sie/deodorants/",
+    "code": "72"
+  },
+  {
+    "id": "Parfümerie/Düfte für Sie/Seifen",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-sie/seifen/",
+    "code": "78"
+  },
+  {
+    "id": "Parfümerie/Düfte für Ihn",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-ihn/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Düfte für Ihn/Düfte",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-ihn/duefte/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Düfte für Ihn/Duschpflege",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-ihn/duschpflege/",
+    "code": "78"
+  },
+  {
+    "id": "Parfümerie/Düfte für Ihn/Deodorants",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-ihn/deodorants/",
+    "code": "72"
+  },
+  {
+    "id": "Parfümerie/Düfte für Ihn/Pre- & After-Shave",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-ihn/pre-after-shave/",
+    "code": "77"
+  },
+  {
+    "id": "Parfümerie/Düfte für Ihn/Rasur",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-ihn/rasur/",
+    "code": "77"
+  },
+  {
+    "id": "Parfümerie/Düfte für Ihn/Seifen",
+    "url": "https://www.mueller.at/parfuemerie/duefte-fuer-ihn/seifen/",
+    "code": "78"
+  },
+  {
+    "id": "Parfümerie/Make-up",
+    "url": "https://www.mueller.at/parfuemerie/make-up/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint/Grundierung",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/grundierung/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint/Korrektur & Concealer",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/korrektur-concealer/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint/Puder",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/puder/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint/Rouge",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/rouge/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint/Highlighter",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/highlighter/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint/Blotting Paper & Pudertuch",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/blotting-paper-pudertuch/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Teint/Getönte Tagescreme",
+    "url": "https://www.mueller.at/parfuemerie/make-up/teint/getoente-tagescreme/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Augen",
+    "url": "https://www.mueller.at/parfuemerie/make-up/augen/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Augen/Mascara",
+    "url": "https://www.mueller.at/parfuemerie/make-up/augen/mascara/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Augen/Lidschatten",
+    "url": "https://www.mueller.at/parfuemerie/make-up/augen/lidschatten/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Augen/Kajalstifte & Eyeliner",
+    "url": "https://www.mueller.at/parfuemerie/make-up/augen/kajalstifte-eyeliner/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Augen/Augenbrauenfarbe",
+    "url": "https://www.mueller.at/parfuemerie/make-up/augen/augenbrauenfarbe/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Augen/Falsche Wimpern",
+    "url": "https://www.mueller.at/parfuemerie/make-up/augen/falsche-wimpern/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Augen/Wimpernpflege",
+    "url": "https://www.mueller.at/parfuemerie/make-up/augen/wimpernpflege/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Lippen",
+    "url": "https://www.mueller.at/parfuemerie/make-up/lippen/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Lippen/Lippenstift",
+    "url": "https://www.mueller.at/parfuemerie/make-up/lippen/lippenstift/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Lippen/Lipgloss",
+    "url": "https://www.mueller.at/parfuemerie/make-up/lippen/lipgloss/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Make-up/Lippen/Lippenkonturenstift",
+    "url": "https://www.mueller.at/parfuemerie/make-up/lippen/lippenkonturenstift/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Pflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungsgel",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungsgel/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungsöl",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungsoel/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Gesichtspeeling",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/gesichtspeeling/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungsmilch & -balm",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungsmilch-balm/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungsschaum",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungsschaum/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungstücher",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungstuecher/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Make-up-Entferner",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/make-up-entferner/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungspuder",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungspuder/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Gesichtswasser",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/gesichtswasser/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungscreme",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungscreme/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungsseife",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungsseife/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Reinigung/Reinigungslotion",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/reinigung/reinigungslotion/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Tagespflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/tagespflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Nachtpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/nachtpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Augenpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/augenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Spezialpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/spezialpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Spezialpflege/Seren & Ampullen",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/spezialpflege/seren-ampullen/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Spezialpflege/Maske",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/spezialpflege/maske/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Spezialpflege/24h-Pflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/spezialpflege/24h-pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Spezialpflege/Anti-Pickel",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/spezialpflege/anti-pickel/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Spezialpflege/Gesichtsöl",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/spezialpflege/gesichtsoel/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Spezialpflege/Spray",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/spezialpflege/spray/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Lippenpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/lippenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Gesichtspflege/Hals & Dekolleté",
+    "url": "https://www.mueller.at/parfuemerie/pflege/gesichtspflege/hals-dekollete/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Pflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Deodorants",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/deodorants/",
+    "code": "72"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Duschen",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/duschen/",
+    "code": "78"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Baden",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/baden/",
+    "code": "78"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Spezialpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/spezialpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Körperduft & Bodyspray",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/koerperduft-bodyspray/",
+    "code": "72"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Seifen",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/seifen/",
+    "code": "78"
+  },
+  {
+    "id": "Parfümerie/Pflege/Körperpflege/Enthaarung",
+    "url": "https://www.mueller.at/parfuemerie/pflege/koerperpflege/enthaarung/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Hand- & Fußpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Hand- & Fußpflege/Handpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/handpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Hand- & Fußpflege/Fußpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/fusspflege/",
+    "code": "7B"
+  },
+  {
+    "id": "Parfümerie/Pflege/Hand- & Fußpflege/Nagelpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/nagelpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Hand- & Fußpflege/Nagellackentferner",
+    "url": "https://www.mueller.at/parfuemerie/pflege/hand-fusspflege/nagellackentferner/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Herrenpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/herrenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Herrenpflege/Bartpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/herrenpflege/bartpflege/",
+    "code": "77"
+  },
+  {
+    "id": "Parfümerie/Pflege/Herrenpflege/Rasurzubehör",
+    "url": "https://www.mueller.at/parfuemerie/pflege/herrenpflege/rasurzubehoer/",
+    "code": "77"
+  },
+  {
+    "id": "Parfümerie/Pflege/Herrenpflege/Gesichtspflege für Männer",
+    "url": "https://www.mueller.at/parfuemerie/pflege/herrenpflege/gesichtspflege-fuer-maenner/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Pflege/Haarpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/haarpflege/",
+    "code": "73"
+  },
+  {
+    "id": "Parfümerie/Pflege/Haarpflege/Haarwäsche",
+    "url": "https://www.mueller.at/parfuemerie/pflege/haarpflege/haarwaesche/",
+    "code": "73"
+  },
+  {
+    "id": "Parfümerie/Pflege/Haarpflege/Haarpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/haarpflege/haarpflege/",
+    "code": "73"
+  },
+  {
+    "id": "Parfümerie/Pflege/Haarpflege/Haarstyling",
+    "url": "https://www.mueller.at/parfuemerie/pflege/haarpflege/haarstyling/",
+    "code": "73"
+  },
+  {
+    "id": "Parfümerie/Pflege/Haarpflege/Coloration",
+    "url": "https://www.mueller.at/parfuemerie/pflege/haarpflege/coloration/",
+    "code": "73"
+  },
+  {
+    "id": "Parfümerie/Pflege/Sonnenpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/sonnenpflege/",
+    "code": "79"
+  },
+  {
+    "id": "Parfümerie/Pflege/Sonnenpflege/Sonnenschutz",
+    "url": "https://www.mueller.at/parfuemerie/pflege/sonnenpflege/sonnenschutz/",
+    "code": "79"
+  },
+  {
+    "id": "Parfümerie/Pflege/Sonnenpflege/After Sun",
+    "url": "https://www.mueller.at/parfuemerie/pflege/sonnenpflege/after-sun/",
+    "code": "79"
+  },
+  {
+    "id": "Parfümerie/Pflege/Sonnenpflege/Selbstbräuner",
+    "url": "https://www.mueller.at/parfuemerie/pflege/sonnenpflege/selbstbraeuner/",
+    "code": "79"
+  },
+  {
+    "id": "Parfümerie/Pflege/Mund- & Zahnpflege",
+    "url": "https://www.mueller.at/parfuemerie/pflege/mund-zahnpflege/",
+    "code": "76"
+  },
+  {
+    "id": "Parfümerie/Pflege/Mund- & Zahnpflege/Zahnbürsten",
+    "url": "https://www.mueller.at/parfuemerie/pflege/mund-zahnpflege/zahnbuersten/",
+    "code": "76"
+  },
+  {
+    "id": "Parfümerie/Pflege/Mund- & Zahnpflege/Zahncreme",
+    "url": "https://www.mueller.at/parfuemerie/pflege/mund-zahnpflege/zahncreme/",
+    "code": "76"
+  },
+  {
+    "id": "Parfümerie/Pflege/Mund- & Zahnpflege/Mundhygiene",
+    "url": "https://www.mueller.at/parfuemerie/pflege/mund-zahnpflege/mundhygiene/",
+    "code": "76"
+  },
+  {
+    "id": "Parfümerie/Accessoires",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Schmuck",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/schmuck/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Schmuck/Haarschmuck",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/schmuck/haarschmuck/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Schmuck/Trends & Accessoires",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/schmuck/trends-accessoires/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Badaccessoires",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnbürstenköcher",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnbuerstenkoecher/",
+    "code": "76"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnputzbecher",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnputzbecher/",
+    "code": "76"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Seifenschalen & -spender",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/seifenschalen-spender/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Hand- & Taschenspiegel",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/hand-taschenspiegel/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Beauty Helfer",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/beauty-helfer/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Haarstyling",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/haarstyling/",
+    "code": "73"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Hautscheren",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/hautscheren/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Feilen",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/feilen/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Manikür- & Lackierhilfen",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/manikuer-lackierhilfen/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Nagelscheren",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/nagelscheren/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Zangen & Knipser",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/zangen-knipser/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Nagelsets",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/nagelsets/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Hand- & Nagelbürsten",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/hand-nagelbuersten/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Hornhautentferner",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/hornhautentferner/",
+    "code": "7B"
+  },
+  {
+    "id": "Parfümerie/Accessoires/Hand- & Fußpflege/Handschuhe",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/hand-fusspflege/handschuhe/",
+    "code": "75"
+  },
+  {
+    "id": "Parfümerie/Bestseller",
+    "url": "https://www.mueller.at/parfuemerie/bestseller/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Neuheiten",
+    "url": "https://www.mueller.at/parfuemerie/neuheiten/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Zubehör",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Düfte",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/duefte/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Düfte/Damen",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/duefte/damen/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Düfte/Herren",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/duefte/herren/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Aromatherapie",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/aromatherapie/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Aromatherapie/Ätherisches Öl",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/aromatherapie/aetherisches-oel/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Aromatherapie/Aroma Roll On",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/aromatherapie/aroma-roll-on/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Aromatherapie/Airspray",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/aromatherapie/airspray/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Düfte & Aromen/Aromatherapie/Duftsets",
+    "url": "https://www.mueller.at/naturshop/duefte-aromen/aromatherapie/duftsets/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Pflege",
+    "url": "https://www.mueller.at/naturshop/pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Gesichtspeeling",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/gesichtspeeling/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungsmilch & -balm",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungsmilch-balm/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungsgel",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungsgel/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungsschaum",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungsschaum/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungscreme",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungscreme/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungstücher",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungstuecher/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungsöl",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungsoel/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungspuder",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungspuder/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungslotion",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungslotion/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Make-up-Entferner",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/make-up-entferner/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Reinigungsseife",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/reinigungsseife/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Reinigung/Gesichtswasser",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/reinigung/gesichtswasser/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Watte & Tücher",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/watte-tuecher/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Tagespflege",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/tagespflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Nachtpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/nachtpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Augenpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/augenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Seren & Ampullen",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/seren-ampullen/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Maske",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/maske/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/24h-Pflege",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/24h-pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Anti-Pickel",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/anti-pickel/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Gesichtsöl",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/gesichtsoel/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Spezialpflege/Spray",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/spezialpflege/spray/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Gesichtspflege/Lippenpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/gesichtspflege/lippenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege/Körperduft & Bodyspray",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/koerperduft-bodyspray/",
+    "code": "72"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege/Pflege",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege/Deodorants",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/deodorants/",
+    "code": "72"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege/Duschen",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/duschen/",
+    "code": "78"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege/Baden",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/baden/",
+    "code": "78"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege/Seifen",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/seifen/",
+    "code": "78"
+  },
+  {
+    "id": "Naturshop/Pflege/Körperpflege/Enthaarung",
+    "url": "https://www.mueller.at/naturshop/pflege/koerperpflege/enthaarung/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Hand- & Fußpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Hand- & Fußpflege/Fußpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/fusspflege/",
+    "code": "7B"
+  },
+  {
+    "id": "Naturshop/Pflege/Hand- & Fußpflege/Handpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/handpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Hand- & Fußpflege/Nagelpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/nagelpflege/",
+    "code": "7B"
+  },
+  {
+    "id": "Naturshop/Pflege/Hand- & Fußpflege/Nagellackentferner",
+    "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/nagellackentferner/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Herrenpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/herrenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Herrenpflege/Rasurzubehör",
+    "url": "https://www.mueller.at/naturshop/pflege/herrenpflege/rasurzubehoer/",
+    "code": "77"
+  },
+  {
+    "id": "Naturshop/Pflege/Herrenpflege/Bartpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/herrenpflege/bartpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Naturshop/Pflege/Haarpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/haarpflege/",
+    "code": "73"
+  },
+  {
+    "id": "Naturshop/Pflege/Haarpflege/Haarpflege",
+    "url": "https://www.mueller.at/naturshop/pflege/haarpflege/haarpflege/",
+    "code": "73"
+  },
+  {
+    "id": "Naturshop/Pflege/Haarpflege/Haarwäsche",
+    "url": "https://www.mueller.at/naturshop/pflege/haarpflege/haarwaesche/",
+    "code": "73"
+  },
+  {
+    "id": "Naturshop/Pflege/Haarpflege/Haarstyling",
+    "url": "https://www.mueller.at/naturshop/pflege/haarpflege/haarstyling/",
+    "code": "73"
+  },
+  {
+    "id": "Naturshop/Pflege/Haarpflege/Coloration",
+    "url": "https://www.mueller.at/naturshop/pflege/haarpflege/coloration/",
+    "code": "73"
+  },
+  {
+    "id": "Naturshop/Kind & Mama",
+    "url": "https://www.mueller.at/naturshop/kind-mama/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Windeln & Zubehör",
+    "url": "https://www.mueller.at/naturshop/kind-mama/windeln-zubehoer/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege/Tücher",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/tuecher/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege/Pflegecremes & Öle",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/pflegecremes-oele/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege/Zahnhilfen & -pflege",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/zahnhilfen-pflege/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege/Sonnenschutz",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/sonnenschutz/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege/Waschen & Baden",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/waschen-baden/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege/Wundschutz",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/wundschutz/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Für Mütter",
+    "url": "https://www.mueller.at/naturshop/kind-mama/fuer-muetter/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Für Mütter/Stillzeit",
+    "url": "https://www.mueller.at/naturshop/kind-mama/fuer-muetter/stillzeit/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Für Mütter/Schwangerschaft",
+    "url": "https://www.mueller.at/naturshop/kind-mama/fuer-muetter/schwangerschaft/",
+    "code": "70"
+  },
+  {
+    "id": "Naturshop/Hygiene",
+    "url": "https://www.mueller.at/naturshop/hygiene/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Hygiene/Binden",
+    "url": "https://www.mueller.at/naturshop/hygiene/binden/",
+    "code": "71"
+  },
+  {
+    "id": "Naturshop/Hygiene/Blasenschwäche",
+    "url": "https://www.mueller.at/naturshop/hygiene/blasenschwaeche/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Accessoires",
+    "url": "https://www.mueller.at/naturshop/accessoires/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Accessoires/Badaccessoires",
+    "url": "https://www.mueller.at/naturshop/accessoires/badaccessoires/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Accessoires/Haarstyling",
+    "url": "https://www.mueller.at/naturshop/accessoires/haarstyling/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Süße Brotaufstriche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/suesse-brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Nussmus & -creme",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/nussmus-creme/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Herzhafte Brotaufstriche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/herzhafte-brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Backwaren",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/backwaren/",
+    "code": "52"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Backzutaten & Süßungsmittel",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/backzutaten-suessungsmittel/",
+    "code": "5E"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Fleischersatz",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/fleischersatz/",
+    "code": "54"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Obstkonserven",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/obstkonserven/",
+    "code": "57"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Gemüsekonserven",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/gemuesekonserven/",
+    "code": "57"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Schnelle Küche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/schnelle-kueche/",
+    "code": "5F"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Mehl & Getreide",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/mehl-getreide/",
+    "code": "59"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Hülsenfrüchte",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/huelsenfruechte/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Reis",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/reis/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Nudeln",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/nudeln/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nüsse & Trockenfrüchte",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nuesse-trockenfruechte/",
+    "code": "03"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Müsli & Cerealien",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/muesli-cerealien/",
+    "code": "5A"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Essig & Öl",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/essig-oel/",
+    "code": "53"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Gewürze",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/gewuerze/",
+    "code": "55"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Saucen",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/saucen/",
+    "code": "5C"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Milch & Milchalternativen",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/milch-milchalternativen/",
+    "code": "34"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Dessert",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/dessert/",
+    "code": "13"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Superfoods",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/superfoods/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Diätnahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/diaetnahrung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Sportlernahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/sportlernahrung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrungsergänzung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrungsergaenzung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Babynahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/",
+    "code": "51"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Babynahrung/Beikost",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/",
+    "code": "51"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Babynahrung/Beikost/Abendbreie",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/abendbreie/",
+    "code": "51"
+  },
+  {
+    "id": "Naturshop/Neuheiten",
+    "url": "https://www.mueller.at/naturshop/neuheiten/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege",
+    "url": "https://www.mueller.at/drogerie/pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Augenpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/augenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Lippenpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/lippenpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Make-up",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Augen",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/augen/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Teint",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/teint/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Lippen",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/lippen/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Make-up/Nägel",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/make-up/naegel/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Nachtpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/nachtpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Maske",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/maske/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Seren & Ampullen",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/seren-ampullen/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Gesichtsöl",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/gesichtsoel/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Anti-Pickel",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/anti-pickel/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/24h-Pflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/24h-pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Spezialpflege/Hals & Dekolleté",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/spezialpflege/hals-dekollete/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Watte & Tücher",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/watte-tuecher/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/It’s skin",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/it-s-skin/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Holika Holika",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/holika-holika/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/STAY Well",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/stay-well/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Purederm",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/purederm/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/MISSHA",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/missha/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/JMsolution",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/jmsolution/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/WHEN",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/when/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Banila Co",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/banila-co/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Skinfood",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/skinfood/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/BEAUTY OF JOSEON",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/beauty-of-joseon/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Nature Republic",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/nature-republic/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Chasin' Rabbits",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/chasin-rabbits/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Derma:B",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/derma-b/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Reinigung",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-reinigung/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Toner",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-toner/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Seren",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-seren/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Gesichtsmasken",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-gesichtsmasken/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Feuchtigkeitspflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-feuchtigkeitspflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Reinigung",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/reinigung/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Reinigung/Gesichtsreiniger",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/reinigung/gesichtsreiniger/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Reinigung/Gesichtswasser",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/reinigung/gesichtswasser/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Reinigung/Gesichtspeeling",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/reinigung/gesichtspeeling/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Reinigung/Gesichtsreinigungssysteme",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/reinigung/gesichtsreinigungssysteme/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Tagespflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/tagespflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/rasur/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur/Rasierapparate",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/rasur/rasierapparate/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur/Rasierklingen",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/rasur/rasierklingen/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur/Elektrorasierer & Bartschneider",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/rasur/elektrorasierer-bartschneider/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur/Rasierschaum & -gel",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/rasur/rasierschaum-gel/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur/Rasur/Pre- & After-Shave",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/rasur/pre-after-shave/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Herrenpflege & Rasur/Bartpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/herrenpflege-rasur/bartpflege/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Intimpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/intimpflege/",
+    "code": "71"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Duschen",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/duschen/",
+    "code": "78"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Baden",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/baden/",
+    "code": "78"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Seifen",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/seifen/",
+    "code": "78"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Deodorants",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/deodorants/",
+    "code": "72"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Deodorants/Stick & Roll On",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/deodorants/stick-roll-on/",
+    "code": "72"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Deodorants/Spray",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/deodorants/spray/",
+    "code": "72"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Pflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/pflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Pflege/Körper- & Massageöl",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/pflege/koerper-massageoel/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Pflege/Bodylotion & Creme",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/pflege/bodylotion-creme/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Enthaarung",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Enthaarung/Enthaarungswachs & -creme",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/enthaarungswachs-creme/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Enthaarung/Rasierschaum & -gel",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/rasierschaum-gel/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Enthaarung/Rasierklingen",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/rasierklingen/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Enthaarung/Elektrische Haarentfernung",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/elektrische-haarentfernung/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Enthaarung/After-Shave Pflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/after-shave-pflege/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Enthaarung/Damenrasierer",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/enthaarung/damenrasierer/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Nagellackentferner",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/nagellackentferner/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Fußpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/fusspflege/",
+    "code": "7B"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Handpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/handpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Sohlen",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/sohlen/",
+    "code": "7B"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Hand- & Fußpflege/Nagelpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/hand-fusspflege/nagelpflege/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Düfte",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/duefte/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Düfte/Körperdüfte",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/duefte/koerperduefte/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Düfte/Düfte für Ihn",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/duefte/duefte-fuer-ihn/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Düfte/Düfte für Sie",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/duefte/duefte-fuer-sie/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Körperpflege/Sauna",
+    "url": "https://www.mueller.at/drogerie/pflege/koerperpflege/sauna/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Föhne & Haarstyler",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/foehne-haarstyler/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarwäsche",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarwaesche/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarwäsche/Haarshampoo",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarwaesche/haarshampoo/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarwäsche/Trockenshampoo",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarwaesche/trockenshampoo/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarpflege/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarpflege/Haarspülung",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarpflege/haarspuelung/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarpflege/Haarkur & Maske",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarpflege/haarkur-maske/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarpflege/Spezialprodukte",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarpflege/spezialprodukte/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarstyling",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarstyling/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarstyling/Dauerwelle",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarstyling/dauerwelle/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarstyling/Haarspray & -lack",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarstyling/haarspray-lack/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarstyling/Schaumfestiger",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarstyling/schaumfestiger/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarstyling/Haargel & -wachs",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarstyling/haargel-wachs/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Haarstyling/Frisiermittel",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/haarstyling/frisiermittel/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Coloration",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/coloration/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Coloration/Haarfarbe",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/coloration/haarfarbe/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Haarpflege/Coloration/Farbauffrischer",
+    "url": "https://www.mueller.at/drogerie/pflege/haarpflege/coloration/farbauffrischer/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahnbürsten",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/zahnbuersten/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahnbürsten/Handzahnbürsten",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/zahnbuersten/handzahnbuersten/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahnbürsten/Elektrische Zahnbürsten",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/zahnbuersten/elektrische-zahnbuersten/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahnbürsten/Aufsteck- & Ersatzbürsten",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/zahnbuersten/aufsteck-ersatzbuersten/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahncreme",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/zahncreme/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Zahnaufhellung",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/zahnaufhellung/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Mundhygiene",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/mundhygiene/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Pflege/Mund- & Zahnpflege/Dritte Zähne",
+    "url": "https://www.mueller.at/drogerie/pflege/mund-zahnpflege/dritte-zaehne/",
+    "code": "76"
+  },
+  {
+    "id": "Drogerie/Hygiene",
+    "url": "https://www.mueller.at/drogerie/hygiene/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Hygiene/Binden",
+    "url": "https://www.mueller.at/drogerie/hygiene/binden/",
+    "code": "71"
+  },
+  {
+    "id": "Drogerie/Hygiene/Menstruationsunterwäsche",
+    "url": "https://www.mueller.at/drogerie/hygiene/menstruationsunterwaesche/",
+    "code": "71"
+  },
+  {
+    "id": "Drogerie/Hygiene/Menstruationstassen",
+    "url": "https://www.mueller.at/drogerie/hygiene/menstruationstassen/",
+    "code": "71"
+  },
+  {
+    "id": "Drogerie/Kind & Mama",
+    "url": "https://www.mueller.at/drogerie/kind-mama/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Windeln & Zubehör",
+    "url": "https://www.mueller.at/drogerie/kind-mama/windeln-zubehoer/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Windeln & Zubehör/Wickelzubehör",
+    "url": "https://www.mueller.at/drogerie/kind-mama/windeln-zubehoer/wickelzubehoer/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Windeln & Zubehör/Windeln",
+    "url": "https://www.mueller.at/drogerie/kind-mama/windeln-zubehoer/windeln/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Windeln & Zubehör/Windeln/Schwimmwindeln",
+    "url": "https://www.mueller.at/drogerie/kind-mama/windeln-zubehoer/windeln/schwimmwindeln/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Windeln & Zubehör/Windeltorten",
+    "url": "https://www.mueller.at/drogerie/kind-mama/windeln-zubehoer/windeltorten/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Milchnahrung",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/milchnahrung/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Milchnahrung/Anfangsmilch",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/milchnahrung/anfangsmilch/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Milchnahrung/Folgemilch",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/milchnahrung/folgemilch/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Milchnahrung/Spezialnahrung",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/milchnahrung/spezialnahrung/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Milchnahrung/Kindermilch",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/milchnahrung/kindermilch/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Früchte",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/fruechte/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Gemüse",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/gemuese/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Menüs",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/menues/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Milch- & Getreidebreie",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/milch-getreidebreie/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Abendbreie",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/abendbreie/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Kindermüsli",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/kindermuesli/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Trinkmahlzeiten",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/trinkmahlzeiten/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Beikost/Desserts",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/beikost/desserts/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Knabberartikel",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/knabberartikel/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Getränke",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/getraenke/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Getränke/Tee",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/getraenke/tee/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Getränke/Säfte & Schorlen",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/getraenke/saefte-schorlen/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babynahrung/Getränke/Babywasser",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babynahrung/getraenke/babywasser/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege/Waschen & Baden",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/waschen-baden/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege/Pflegecremes & Öle",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/pflegecremes-oele/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege/Sonnenschutz",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/sonnenschutz/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege/Wundschutz",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/wundschutz/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege/Zahnhilfen & -pflege",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/zahnhilfen-pflege/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege/Tücher",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/tuecher/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Babypflege/Watte",
+    "url": "https://www.mueller.at/drogerie/kind-mama/babypflege/watte/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Badezubehör",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/badezubehoer/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Für Unterwegs",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/fuer-unterwegs/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Essen & Trinken",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/essen-trinken/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Gesundheit",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/gesundheit/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Sicherheit",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/sicherheit/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Pflegezubehör",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/pflegezubehoer/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Töpfchen & Toilettentrainer",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/toepfchen-toilettentrainer/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Kind & Mama/Baby Bekleidung",
+    "url": "https://www.mueller.at/drogerie/kind-mama/baby-bekleidung/",
+    "code": "70"
+  },
+  {
+    "id": "Drogerie/Accessoires",
+    "url": "https://www.mueller.at/drogerie/accessoires/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Badaccessoires",
+    "url": "https://www.mueller.at/drogerie/accessoires/badaccessoires/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Badaccessoires/Toilettenartikel",
+    "url": "https://www.mueller.at/drogerie/accessoires/badaccessoires/toilettenartikel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Badaccessoires/Spiegel",
+    "url": "https://www.mueller.at/drogerie/accessoires/badaccessoires/spiegel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Badaccessoires/Schwämme & Massage",
+    "url": "https://www.mueller.at/drogerie/accessoires/badaccessoires/schwaemme-massage/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Make-up-Zubehör",
+    "url": "https://www.mueller.at/drogerie/accessoires/make-up-zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Make-up-Zubehör/Pinsel",
+    "url": "https://www.mueller.at/drogerie/accessoires/make-up-zubehoer/pinsel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Make-up-Zubehör/Quasten & Schwämme",
+    "url": "https://www.mueller.at/drogerie/accessoires/make-up-zubehoer/quasten-schwaemme/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Make-up-Zubehör/Pinzetten",
+    "url": "https://www.mueller.at/drogerie/accessoires/make-up-zubehoer/pinzetten/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Make-up-Zubehör/Beauty Helfer",
+    "url": "https://www.mueller.at/drogerie/accessoires/make-up-zubehoer/beauty-helfer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Wärmflaschen & Wärmeprodukte",
+    "url": "https://www.mueller.at/drogerie/accessoires/waermflaschen-waermeprodukte/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Raumduft",
+    "url": "https://www.mueller.at/drogerie/accessoires/raumduft/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Schmuck",
+    "url": "https://www.mueller.at/drogerie/accessoires/schmuck/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Schmuck/Trends & Accessoires",
+    "url": "https://www.mueller.at/drogerie/accessoires/schmuck/trends-accessoires/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Haarstyling",
+    "url": "https://www.mueller.at/drogerie/accessoires/haarstyling/",
+    "code": "73"
+  },
+  {
+    "id": "Drogerie/Accessoires/Rasurzubehör",
+    "url": "https://www.mueller.at/drogerie/accessoires/rasurzubehoer/",
+    "code": "77"
+  },
+  {
+    "id": "Drogerie/Accessoires/Hand- & Fußpflege",
+    "url": "https://www.mueller.at/drogerie/accessoires/hand-fusspflege/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Hand- & Fußpflege/Scheren & Knipser",
+    "url": "https://www.mueller.at/drogerie/accessoires/hand-fusspflege/scheren-knipser/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Hand- & Fußpflege/Nagelfeilen",
+    "url": "https://www.mueller.at/drogerie/accessoires/hand-fusspflege/nagelfeilen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Hand- & Fußpflege/Nagelpflege",
+    "url": "https://www.mueller.at/drogerie/accessoires/hand-fusspflege/nagelpflege/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Hand- & Fußpflege/Nagelsets",
+    "url": "https://www.mueller.at/drogerie/accessoires/hand-fusspflege/nagelsets/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Hand- & Fußpflege/Hornhautentfernung",
+    "url": "https://www.mueller.at/drogerie/accessoires/hand-fusspflege/hornhautentfernung/",
+    "code": "7B"
+  },
+  {
+    "id": "Drogerie/Accessoires/Regenschutz",
+    "url": "https://www.mueller.at/drogerie/accessoires/regenschutz/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Regenschutz/Regencape & Regenhauben",
+    "url": "https://www.mueller.at/drogerie/accessoires/regenschutz/regencape-regenhauben/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Regenschutz/Regenschirme",
+    "url": "https://www.mueller.at/drogerie/accessoires/regenschutz/regenschirme/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Mode Accessoires",
+    "url": "https://www.mueller.at/drogerie/accessoires/mode-accessoires/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Fruchtgummi",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/fruchtgummi/",
+    "code": "64"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Snacks & Riegel",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/snacks-riegel/",
+    "code": "64"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Kaugummi",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/kaugummi/",
+    "code": "64"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/schokolade/",
+    "code": "64"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Gebäck",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/gebaeck/",
+    "code": "64"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Chips",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/chips/",
+    "code": "63"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Bonbons & Lutscher",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/bonbons-lutscher/",
+    "code": "64"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Tee & Kaffee",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/tee-kaffee/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Tee & Kaffee/Tee",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/tee-kaffee/tee/",
+    "code": "22"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Tee & Kaffee/Kaffee",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/tee-kaffee/kaffee/",
+    "code": "22"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Tee & Kaffee/Kakao & Mischgetränke",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/tee-kaffee/kakao-mischgetraenke/",
+    "code": "22"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Tee & Kaffee/Kaffeesahne & Kondensmilch",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/tee-kaffee/kaffeesahne-kondensmilch/",
+    "code": "22"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Nudeln",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/nudeln/",
+    "code": "5B"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Reis",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/reis/",
+    "code": "5B"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Hülsenfrüchte",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/huelsenfruechte/",
+    "code": "5B"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Mehl & Getreide",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/mehl-getreide/",
+    "code": "59"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Milch & Milchalternativen",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/milch-milchalternativen/",
+    "code": "34"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Müsli & Cerealien",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/muesli-cerealien/",
+    "code": "5A"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Essig & Öl",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/essig-oel/",
+    "code": "53"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Backzutaten & Süßungsmittel",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/backzutaten-suessungsmittel/",
+    "code": "5E"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Nüsse & Trockenfrüchte",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/nuesse-trockenfruechte/",
+    "code": "03"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Fertiggerichte & Konserven",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/fertiggerichte-konserven/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Schnelle Küche",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/fertiggerichte-konserven/schnelle-kueche/",
+    "code": "54"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Fleischersatz",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/fertiggerichte-konserven/fleischersatz/",
+    "code": "57"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Gemüsekonserven",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/fertiggerichte-konserven/gemuesekonserven/",
+    "code": "57"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Obstkonserven",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/fertiggerichte-konserven/obstkonserven/",
+    "code": "57"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Dessert",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/dessert/",
+    "code": "64"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Saucen",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/saucen/",
+    "code": "5C"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Sportlernahrung",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/sportlernahrung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Superfoods",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/superfoods/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Diätnahrung",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/diaetnahrung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Brotaufstriche",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Brotaufstriche/Süße Brotaufstriche",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/brotaufstriche/suesse-brotaufstriche/",
+    "code": "58"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Brotaufstriche/Herzhafte Brotaufstriche",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/brotaufstriche/herzhafte-brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Brotaufstriche/Nussmus & -creme",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/brotaufstriche/nussmus-creme/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Backwaren",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/backwaren/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Nahrung/Gewürze",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/nahrung/gewuerze/",
+    "code": "55"
+  },
+  {
+    "id": "Drogerie/Gesundheit",
+    "url": "https://www.mueller.at/drogerie/gesundheit/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Erkältung",
+    "url": "https://www.mueller.at/drogerie/gesundheit/erkaeltung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Erotik & Verhütung",
+    "url": "https://www.mueller.at/drogerie/gesundheit/erotik-verhuetung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Erotik & Verhütung/Gele & Cremes",
+    "url": "https://www.mueller.at/drogerie/gesundheit/erotik-verhuetung/gele-cremes/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Erotik & Verhütung/Liebesspiel",
+    "url": "https://www.mueller.at/drogerie/gesundheit/erotik-verhuetung/liebesspiel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Erotik & Verhütung/Beckenbodentraining",
+    "url": "https://www.mueller.at/drogerie/gesundheit/erotik-verhuetung/beckenbodentraining/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Erotik & Verhütung/Kondome",
+    "url": "https://www.mueller.at/drogerie/gesundheit/erotik-verhuetung/kondome/",
+    "code": "7A"
+  },
+  {
+    "id": "Drogerie/Gesundheit/Erotik & Verhütung/Schwangerschafts- & Ovulationstest",
+    "url": "https://www.mueller.at/drogerie/gesundheit/erotik-verhuetung/schwangerschafts-ovulationstest/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Alltagshilfen",
+    "url": "https://www.mueller.at/drogerie/gesundheit/alltagshilfen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Gesundheit & Wohlbefinden",
+    "url": "https://www.mueller.at/drogerie/gesundheit/gesundheit-wohlbefinden/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Wundversorgung & Hausapotheke",
+    "url": "https://www.mueller.at/drogerie/gesundheit/wundversorgung-hausapotheke/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Wundversorgung & Hausapotheke/Ohrstöpsel & Nasenstrips",
+    "url": "https://www.mueller.at/drogerie/gesundheit/wundversorgung-hausapotheke/ohrstoepsel-nasenstrips/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Wundversorgung & Hausapotheke/Wundversorgung, Pflaster und Verbände",
+    "url": "https://www.mueller.at/drogerie/gesundheit/wundversorgung-hausapotheke/wundversorgung-pflaster-und-verbaende/",
+    "code": "74"
+  },
+  {
+    "id": "Drogerie/Gesundheit/Wundversorgung & Hausapotheke/Hygiene & Desinfektion",
+    "url": "https://www.mueller.at/drogerie/gesundheit/wundversorgung-hausapotheke/hygiene-desinfektion/",
+    "code": "74"
+  },
+  {
+    "id": "Drogerie/Gesundheit/Wundversorgung & Hausapotheke/Messgeräte",
+    "url": "https://www.mueller.at/drogerie/gesundheit/wundversorgung-hausapotheke/messgeraete/",
+    "code": "74"
+  },
+  {
+    "id": "Drogerie/Gesundheit/Mineralstoffe",
+    "url": "https://www.mueller.at/drogerie/gesundheit/mineralstoffe/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Kontaktlinsen & Zubehör",
+    "url": "https://www.mueller.at/drogerie/gesundheit/kontaktlinsen-zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Brillen & Zubehör",
+    "url": "https://www.mueller.at/drogerie/gesundheit/brillen-zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Brillen & Zubehör/Lesebrillen",
+    "url": "https://www.mueller.at/drogerie/gesundheit/brillen-zubehoer/lesebrillen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Brillen & Zubehör/Sonnenbrillen",
+    "url": "https://www.mueller.at/drogerie/gesundheit/brillen-zubehoer/sonnenbrillen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Brillen & Zubehör/Brillenetuis",
+    "url": "https://www.mueller.at/drogerie/gesundheit/brillen-zubehoer/brillenetuis/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Brillen & Zubehör/Brillenkordeln",
+    "url": "https://www.mueller.at/drogerie/gesundheit/brillen-zubehoer/brillenkordeln/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Brillen & Zubehör/Microfasertücher",
+    "url": "https://www.mueller.at/drogerie/gesundheit/brillen-zubehoer/microfasertuecher/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler/Lockenstäbe",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/lockenstaebe/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler/Haartrockner",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/haartrockner/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler/Warmluftbürsten",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/warmluftbuersten/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler/Haarglätter",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/haarglaetter/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Rasiergeräte",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/rasiergeraete/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Rasiergeräte/Damenrasierer & Epilierer",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/rasiergeraete/damenrasierer-epilierer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Rasiergeräte/Damenrasierer & Epilierer/IPL-Haarentfernungsgeräte",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/rasiergeraete/damenrasierer-epilierer/ipl-haarentfernungsgeraete/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Rasiergeräte/Herrenrasierer & Bartschneider",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/rasiergeraete/herrenrasierer-bartschneider/",
+    "code": "77"
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Rasiergeräte/Rasierer-Zubehör",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/rasiergeraete/rasierer-zubehoer/",
+    "code": "77"
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Babywelt",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/babywelt/",
+    "code": "70"
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Gesichtsreinigungssysteme",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/gesichtsreinigungssysteme/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Wärmflaschen & Wärmeprodukte",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/waermflaschen-waermeprodukte/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Maniküre & Pediküre",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/manikuere-pedikuere/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Mundhygiene",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/mundhygiene/",
+    "code": "76"
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Fitness",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/fitness/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Fitness/Körperwaagen",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/fitness/koerperwaagen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Fitness/Messgeräte",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/fitness/messgeraete/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Fitness/Pulsuhren & Fitnessarmbänder",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/fitness/pulsuhren-fitnessarmbaender/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Schönheit & Gesundheit/Fieberthermometer",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/fieberthermometer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Aufbewahrungssysteme",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/aufbewahrungssysteme/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Bilder & Rahmen",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/bilder-rahmen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr/Becher & Tassen",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/becher-tassen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr/Bretter",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/bretter/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr/Geschirrsets",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/geschirrsets/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr/Kindergeschirr",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/kindergeschirr/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr/Platten & Schalen",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/platten-schalen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr/Teller",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/teller/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Geschirr/Weiteres Geschirr",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/geschirr/weiteres-geschirr/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kaffee & Tee",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kaffee-tee/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kaffee & Tee/Kaffeebereiter",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kaffee-tee/kaffeebereiter/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kaffee & Tee/Kaffeemaschinen",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kaffee-tee/kaffeemaschinen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kaffee & Tee/Kaffeemühlen",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kaffee-tee/kaffeemuehlen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kaffee & Tee/Kaffee- & Teezubehör",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kaffee-tee/kaffee-teezubehoer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kaffee & Tee/Milchaufschäumer",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kaffee-tee/milchaufschaeumer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kaffee & Tee/Teebereiter",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kaffee-tee/teebereiter/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kannen & Flaschen",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kannen-flaschen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kannen & Flaschen/Isolierkannen & -becher",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kannen-flaschen/isolierkannen-becher/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kannen & Flaschen/Kannen",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kannen-flaschen/kannen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kannen & Flaschen/Karaffen & Dekanter",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kannen-flaschen/karaffen-dekanter/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Essen & Trinken/Kannen & Flaschen/Trinkflaschen",
+    "url": "https://www.mueller.at/haushalt/essen-trinken/kannen-flaschen/trinkflaschen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Aufbewahrung",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/aufbewahrung/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Aufbewahrung/Brotdosen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/aufbewahrung/brotdosen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Aufbewahrung/Brotkästen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/aufbewahrung/brotkaesten/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Aufbewahrung/Tabletts",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/aufbewahrung/tabletts/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Aufbewahrung/Vorratsdosen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/aufbewahrung/vorratsdosen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Spülhelfer",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/spuelhelfer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Kochlöffel",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/kochloeffel/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Küchentextilien",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/kuechentextilien/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Schöpflöffel & Servierkellen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/schoepfloeffel-servierkellen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Siebe",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/siebe/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Weitere Küchenhelfer",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/weitere-kuechenhelfer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Reiben & Pressen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/reiben-pressen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Grillhelfer",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/grillhelfer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Küchenmesser",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/kuechenmesser/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Küchenwaagen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/kuechenwaagen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Rührbesen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/ruehrbesen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Sparschäler",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/sparschaeler/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Spezialhelfer",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/spezialhelfer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Auflauf- & Backformen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/auflauf-backformen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/",
+    "code": "88"
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Reinigungshelfer",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/reinigungshelfer/",
+    "code": "88"
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Fensterreinigung",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/fensterreinigung/",
+    "code": "88"
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Besen & Bürsten",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/besen-buersten/",
+    "code": "88"
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Wäschepflege",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/waeschepflege/",
+    "code": "8A"
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Wäschepflege/Bügeleisen",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/waeschepflege/buegeleisen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Wäschepflege/Kleiderbügel",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/waeschepflege/kleiderbuegel/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Wäschepflege/Zubehör",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/waeschepflege/zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Bodenreinigung",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/bodenreinigung/",
+    "code": "88"
+  },
+  {
+    "id": "Haushalt/Putzen & Reinigen/Bodenreinigung/Staubsauger",
+    "url": "https://www.mueller.at/haushalt/putzen-reinigen/bodenreinigung/staubsauger/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Sale",
+    "url": "https://www.mueller.at/haushalt/sale/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Aktionen",
+    "url": "https://www.mueller.at/haushalt/aktionen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Mediashop",
+    "url": "https://www.mueller.at/haushalt/mediashop/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Exklusiv online erhältliche Haushaltsartikel",
+    "url": "https://www.mueller.at/haushalt/exklusiv-online-erhaeltliche-haushaltsartikel/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Nahrung",
+    "url": "https://www.mueller.at/genusswelt/nahrung/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Süßigkeiten",
+    "url": "https://www.mueller.at/genusswelt/suessigkeiten/",
+    "code": "64"
+  },
+  {
+    "id": "Genusswelt/Geschenkideen",
+    "url": "https://www.mueller.at/genusswelt/geschenkideen/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Getränke",
+    "url": "https://www.mueller.at/genusswelt/getraenke/",
+    "code": "20"
+  },
+  {
+    "id": "Genusswelt/Gewürze",
+    "url": "https://www.mueller.at/genusswelt/gewuerze/",
+    "code": "55"
+  },
+  {
+    "id": "Genusswelt/Tee & Kaffee",
+    "url": "https://www.mueller.at/genusswelt/tee-kaffee/",
+    "code": "22"
+  },
+  {
+    "id": "Genusswelt/Marken",
+    "url": "https://www.mueller.at/genusswelt/marken/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/AGRESTIS",
+    "url": "https://www.mueller.at/genusswelt/marken/agrestis/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/ALOIS GÖLLES",
+    "url": "https://www.mueller.at/genusswelt/marken/alois-goelles/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/BioGourmet",
+    "url": "https://www.mueller.at/genusswelt/marken/biogourmet/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/C'est Francais",
+    "url": "https://www.mueller.at/genusswelt/marken/cest-francais/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Dinzler",
+    "url": "https://www.mueller.at/genusswelt/marken/dinzler/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/FRANTOIO DEL GREVEPESA",
+    "url": "https://www.mueller.at/genusswelt/marken/frantoio-del-grevepesa/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Fratelli Lunardi",
+    "url": "https://www.mueller.at/genusswelt/marken/fratelli-lunardi/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Gepp's",
+    "url": "https://www.mueller.at/genusswelt/marken/gepps/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Gourmet Berner",
+    "url": "https://www.mueller.at/genusswelt/marken/gourmet-berner/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/HOME by Berner",
+    "url": "https://www.mueller.at/genusswelt/marken/home-by-berner/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Käfer",
+    "url": "https://www.mueller.at/genusswelt/marken/kaefer/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/KULTBOHNE",
+    "url": "https://www.mueller.at/genusswelt/marken/kultbohne/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/L'Epicerie de Provence",
+    "url": "https://www.mueller.at/genusswelt/marken/lepicerie-de-provence/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Lyre's",
+    "url": "https://www.mueller.at/genusswelt/marken/lyres/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/MILL&MORTAR",
+    "url": "https://www.mueller.at/genusswelt/marken/mill-mortar/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Quai Sud",
+    "url": "https://www.mueller.at/genusswelt/marken/quai-sud/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Reingold",
+    "url": "https://www.mueller.at/genusswelt/marken/reingold/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Sardinha",
+    "url": "https://www.mueller.at/genusswelt/marken/sardinha/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/STAY SPICED!",
+    "url": "https://www.mueller.at/genusswelt/marken/stay-spiced/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/THE GOLDEN CIRCLE",
+    "url": "https://www.mueller.at/genusswelt/marken/the-golden-circle/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Haushalt",
+    "url": "https://www.mueller.at/genusswelt/haushalt/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Aktionen",
+    "url": "https://www.mueller.at/genusswelt/aktionen/",
+    "code": null
+  },
+  {
+    "id": "Tiershop/Tiernahrung",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Hund",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Hund/Nassfutter",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/nassfutter/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Hund/Trockenfutter",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/trockenfutter/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Hund/Belohnung & Snacks",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/belohnung-snacks/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Hund/Nahrungsergänzung",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/nahrungsergaenzung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Katze",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Katze/Nahrungsergänzung",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/nahrungsergaenzung/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Katze/Nassfutter",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/nassfutter/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Katze/Trockenfutter",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/trockenfutter/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Katze/Belohnung & Snacks",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/belohnung-snacks/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Tierpflege",
+    "url": "https://www.mueller.at/tiershop/tierpflege/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tierpflege/Fellpflege",
+    "url": "https://www.mueller.at/tiershop/tierpflege/fellpflege/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tierpflege/Hygiene",
+    "url": "https://www.mueller.at/tiershop/tierpflege/hygiene/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tierpflege/Sonstige Tierpflege",
+    "url": "https://www.mueller.at/tiershop/tierpflege/sonstige-tierpflege/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund/Halsbänder",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/halsbaender/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund/Hundeleinen",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/hundeleinen/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund/Hundebekleidung",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/hundebekleidung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund/Hundebetten",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/hundebetten/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund/Näpfe",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/naepfe/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund/Spielzeug",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/spielzeug/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Hund/Weiteres Zubehör",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/hund/weiteres-zubehoer/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Katze",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/katze/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Katze/Näpfe",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/katze/naepfe/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Katze/Spielzeug",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/katze/spielzeug/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Accessoires & Zubehör/Katze/Weiteres Zubehör",
+    "url": "https://www.mueller.at/tiershop/accessoires-zubehoer/katze/weiteres-zubehoer/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Marken",
+    "url": "https://www.mueller.at/tiershop/marken/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/Alpha Spirit",
+    "url": "https://www.mueller.at/tiershop/marken/alpha-spirit/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/Amora",
+    "url": "https://www.mueller.at/tiershop/marken/amora/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/Applaws",
+    "url": "https://www.mueller.at/tiershop/marken/applaws/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/bosch Tiernahrung",
+    "url": "https://www.mueller.at/tiershop/marken/bosch-tiernahrung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/bosch Tiernahrung/Alles von bosch Tiernahrung",
+    "url": "https://www.mueller.at/tiershop/marken/bosch-tiernahrung/alles-von-bosch-tiernahrung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/bosch Tiernahrung/bosch Adult Tiernahrung",
+    "url": "https://www.mueller.at/tiershop/marken/bosch-tiernahrung/bosch-adult-tiernahrung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/bosch Tiernahrung/bosch Senior Tiernahrung",
+    "url": "https://www.mueller.at/tiershop/marken/bosch-tiernahrung/bosch-senior-tiernahrung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/bosch Tiernahrung/bosch Heimat Tiernahrung",
+    "url": "https://www.mueller.at/tiershop/marken/bosch-tiernahrung/bosch-heimat-tiernahrung/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/CALIMBA",
+    "url": "https://www.mueller.at/tiershop/marken/calimba/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/CANEO",
+    "url": "https://www.mueller.at/tiershop/marken/caneo/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/Carnello",
+    "url": "https://www.mueller.at/tiershop/marken/carnello/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/CATIVIA",
+    "url": "https://www.mueller.at/tiershop/marken/cativia/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Marken/Cat's Best",
+    "url": "https://www.mueller.at/tiershop/marken/cats-best/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Marken/Cats Love",
+    "url": "https://www.mueller.at/tiershop/marken/cats-love/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Sale",
+    "url": "https://www.mueller.at/tiershop/sale/",
+    "code": "90"
+  }
+]
