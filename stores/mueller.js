@@ -98,8 +98,46 @@ exports.fetchData = async function () {
     return muellerItems;
 };
 
-exports.initializeCategoryMapping = async () => {};
+function getSubcategories(json) {
+    const subcategories = [];
 
-exports.mapCategory = (rawItem) => {};
+    function traverseCategories(categories, parent = "", url, mainCategory) {
+        if (!mainCategory) {
+            subcategories.push({ id: parent, url: url, code: null });
+        }
+
+        for (const category of categories) {
+            const { name, subcategories, url } = category;
+            const current = parent ? `${parent}/${name}` : name;
+            traverseCategories(subcategories, current, url, false);
+        }
+    }
+
+    traverseCategories(json.subcategories, json.name, json.url, true);
+
+    return subcategories;
+}
+
+exports.initializeCategoryMapping = async () => {
+    const categories = [];
+
+    const data = (await axios.get(`${exports.urlBase}/ajax/burgermenu/`)).data;
+    data.forEach((category) => {
+        if (!categoriesExcludeList.includes(category.name)) {
+            const subcategories = getSubcategories(category);
+            categories.push(...subcategories);
+        }
+    });
+
+    utils.mergeAndSaveCategories("mueller", categories);
+    exports.categoryLookup = {};
+    for (const category of categories) {
+        exports.categoryLookup[category.id] = category;
+    }
+};
+
+exports.mapCategory = (rawItem) => {
+    return exports.categoryLookup[rawItem.category]?.code;
+};
 
 exports.urlBase = "https://www.mueller.at";

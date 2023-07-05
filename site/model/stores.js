@@ -73,6 +73,14 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.reformmarkt.com/catalog/product/view/id/${item.id}`,
     },
+    bipa: {
+        name: "Bipa",
+        budgetBrands: ["babywell", "look by bipa", "bi care", "bi kids", "bi good", "bi life", "bi life dent"],
+        color: "rose",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.bipa.at${item.url}`,
+        removeOld: false,
+    },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],

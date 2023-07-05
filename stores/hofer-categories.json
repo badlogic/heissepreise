@@ -479,11 +479,6 @@
     "code": "32"
   },
   {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
-    "code": "32"
-  },
-  {
     "id": "schweinefleisch-spezialitaten",
     "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
     "code": "32"
@@ -491,6 +486,11 @@
   {
     "id": "rind",
     "url": "https://www.roksh.at/hofer/angebot/rind",
+    "code": "32"
+  },
+  {
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
     "code": "32"
   },
   {
@@ -534,6 +534,11 @@
     "code": "03"
   },
   {
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
+    "code": "64"
+  },
+  {
     "id": "bonbons-kaugummi",
     "url": "https://www.roksh.at/hofer/angebot/bonbons-kaugummi",
     "code": "64"
@@ -542,11 +547,6 @@
     "id": "waffeln",
     "url": "https://www.roksh.at/hofer/angebot/waffeln",
     "code": "60"
-  },
-  {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
-    "code": "64"
   },
   {
     "id": "kekse",
@@ -629,13 +629,13 @@
     "code": "20"
   },
   {
-    "id": "smoothies",
-    "url": "https://www.roksh.at/hofer/angebot/smoothies",
+    "id": "sirupe",
+    "url": "https://www.roksh.at/hofer/angebot/sirupe",
     "code": "20"
   },
   {
-    "id": "sirupe",
-    "url": "https://www.roksh.at/hofer/angebot/sirupe",
+    "id": "smoothies",
+    "url": "https://www.roksh.at/hofer/angebot/smoothies",
     "code": "20"
   },
   {
