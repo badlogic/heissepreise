@@ -66,6 +66,14 @@ exports.stores = {
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
         removeOld: true,
     },
+    bipa: {
+        name: "Bipa",
+        budgetBrands: ["babywell", "look by bipa", "bi care", "bi kids", "bi good", "bi life", "bi life dent"],
+        color: "rose",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.bipa.at${item.url}`,
+        removeOld: false,
+    },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],
