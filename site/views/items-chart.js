@@ -60,7 +60,7 @@ class ItemsChart extends View {
 
         let priceChanges = new Array(uniqueDates.length);
         for (let i = 0; i < uniqueDates.length; i++) {
-            priceChanges[i] = { date: uniqueDates[i], price: 0 };
+            priceChanges[i] = { date: uniqueDates[i], price: 0, unitPrice: 0 };
         }
         const priceScratch = new Array(uniqueDates.length);
         items.forEach((product) => {
@@ -87,6 +87,7 @@ class ItemsChart extends View {
             for (let i = 0; i < priceScratch.length; i++) {
                 const price = priceScratch[i];
                 priceChanges[i].price += price;
+                priceChanges[i].unitPrice += price;
             }
         });
 

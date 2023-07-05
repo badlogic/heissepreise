@@ -514,13 +514,13 @@
     "code": "57"
   },
   {
-    "id": "sauerkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/sauerkonserven",
+    "id": "fleisch-fischkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/fleisch-fischkonserven",
     "code": "57"
   },
   {
-    "id": "fleisch-fischkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/fleisch-fischkonserven",
+    "id": "sauerkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/sauerkonserven",
     "code": "57"
   },
   {
@@ -534,6 +534,11 @@
     "code": "03"
   },
   {
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
+    "code": "64"
+  },
+  {
     "id": "bonbons-kaugummi",
     "url": "https://www.roksh.at/hofer/angebot/bonbons-kaugummi",
     "code": "64"
@@ -542,11 +547,6 @@
     "id": "waffeln",
     "url": "https://www.roksh.at/hofer/angebot/waffeln",
     "code": "60"
-  },
-  {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
-    "code": "64"
   },
   {
     "id": "kekse",
