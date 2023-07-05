@@ -23,7 +23,7 @@ exports.getCanonical = function (item, today) {
             priceHistory: [{ date: today, price: item.price.value }],
             unit,
             quantity,
-            ...((item.brandName === "dmBio" || (item.name ? item.name.startsWith("Bio ") | item.name.startsWith("Bio-") : false)) && { bio: true }),
+            ...((item.brandName === "dmBio" || (item.name && /^Bio[ -]/.test(item.name))) && { bio: true }),
         },
         units,
         "dm"
@@ -45,8 +45,9 @@ exports.fetchData = async function () {
         "allCategories.id=020000&price.value.from=3&price.value.to=4", //~600 items
         "allCategories.id=020000&price.value.from=4&price.value.to=6", //~800 items
         "allCategories.id=020000&price.value.from=6&price.value.to=10", //~850 items
-        "allCategories.id=020000&price.value.from=10&price.value.to=18", //~900 items
-        "allCategories.id=020000&price.value.from=18", //~960 items (!)
+        "allCategories.id=020000&price.value.from=10&price.value.to=18", //~930 items
+        "allCategories.id=020000&price.value.from=18&price.value.to=70", //~940 items
+        "allCategories.id=020000&price.value.from=70", //~60 items
         "allCategories.id=030000&price.value.to=8", //~900 items
         "allCategories.id=030000&price.value.from=8", //~500 items
         "allCategories.id=040000&price.value.to=2", //~600 items
