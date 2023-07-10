@@ -24,7 +24,20 @@ class ItemsFilter extends View {
         const placeholder = this.hasAttribute("placeholder") ? this.getAttribute("placeholder") : "Produkte suchen... (min. 3 Zeichen)";
 
         this.innerHTML = /*html*/ `
+            ${
+                settings.stickySearch
+                    ? `
+            <div class="wrapper wrapper--search">
+                <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+                <label for="filter-toggle-search"><abbr title="Filter anzeigen/ausblenden">🎚</abbr></label>
+            </div>
+            <input class="toggle toggle--hidden" type="checkbox" id="filter-toggle-search" />
+            <div class="wrapper wrapper--sticky">
+            `
+                    : `
             <input x-id="query" x-state x-input-debounce class="rounded-lg px-2 py-1 w-full" type="text" placeholder="${placeholder}" />
+            `
+            }
 
             <div x-id="sqlError" class="hidden mt-4 p-4">
             </div>
@@ -88,8 +101,20 @@ class ItemsFilter extends View {
                         )
                         .join("")}
             </div>
+            ${
+                settings.stickySearch
+                    ? `
+            </div>
+            `
+                    : ""
+            }
         `;
         this.classList.add("items-filter");
+
+        if (settings.stickySearch) {
+            this.classList.add("sticky");
+            this.style = "top: -1px;z-index:20;";
+        }
 
         const elements = this.elements;
 
@@ -262,9 +287,12 @@ class ItemsFilter extends View {
                     elements.sqlError.classList.remove("hidden");
                     elements.sqlError.innerText = e.message;
                     filteredItems = [];
+                    this.lastQueryTokens = [];
                 }
             } else {
-                filteredItems = queryItems(query, filteredItems, elements.exact.checked);
+                const result = queryItems(query, filteredItems, elements.exact.checked);
+                filteredItems = result.items;
+                this.model.lastQueryTokens = result.queryTokens;
             }
         }
 
@@ -359,6 +387,7 @@ class ItemsFilter extends View {
                 let value = state[el];
                 if (value === true) value = ".";
                 if (value === false) value = "-";
+                if (el == "query") value = encodeURIComponent(value);
                 return value;
             })
             .join(";");
@@ -382,6 +411,7 @@ class ItemsFilter extends View {
             .forEach((el, index) => {
                 if (values[index] === ".") state[el] = true;
                 else if (values[index] === "-") state[el] = false;
+                else if (el == "query") state[el] = decodeURIComponent(values[index]);
                 else state[el] = values[index];
                 storeIndex = index + 1;
             });

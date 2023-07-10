@@ -1,5 +1,6 @@
 const axios = require("axios");
 const utils = require("./utils");
+const HTMLParser = require("node-html-parser");
 const MAXITEMS = 10000;
 
 const units = {
@@ -48,8 +49,44 @@ exports.fetchData = async function () {
     return result;
 };
 
-exports.initializeCategoryMapping = async () => {};
+async function parseCategory(url, parent, result) {
+    const data = (await axios.get(url)).data;
+    const dom = HTMLParser.parse(data);
+    const categories = dom.querySelectorAll('[data-test="category-tree-navigation-button"]');
+    for (const category of categories) {
+        const link = "https://www.penny.at" + category.getAttribute("href");
+        if (!category.querySelector(".subtitle-2")) continue;
+        const name = (parent ? parent + " -> " : "") + category.querySelector(".subtitle-2").innerText.trim().replace("&amp;", "&");
+        if (name.startsWith("Alle Angebote")) continue;
 
-exports.mapCategory = (rawItem) => {};
+        result.push({
+            id: name,
+            url: link,
+            code: null,
+        });
+
+        await parseCategory(link, name, result);
+    }
+}
+
+exports.initializeCategoryMapping = async () => {
+    const categories = [];
+    await parseCategory("https://www.penny.at/kategorie", null, categories);
+    utils.mergeAndSaveCategories("penny", categories);
+
+    exports.categoryLookup = {};
+    for (const category of categories) {
+        exports.categoryLookup[category.id] = category;
+    }
+};
+
+exports.mapCategory = (rawItem) => {
+    const categoryPath = rawItem.parentCategories.filter((path) => path.length > 0 && !path[0].name.includes("ngebot"))[0];
+    if (!categoryPath) return null;
+    const categoryName = categoryPath.map((path) => path.name).join(" -> ");
+    const category = exports.categoryLookup[categoryName];
+    if (category) return category.code;
+    return null;
+};
 
 exports.urlBase = "https://www.penny.at/produkte/";

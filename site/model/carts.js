@@ -13,7 +13,7 @@ class Carts extends Model {
 
     async load(itemsLookup) {
         const val = localStorage.getItem("carts");
-        const carts = (this._carts = val ? JSON.parse(val) : []);
+        let carts = (this._carts = val ? JSON.parse(val) : []);
 
         // Add Momentum cart if it is not in the list of carts
         if (!localStorage.getItem("updatedMomentum") || !carts.some((cart) => cart.name === "Momentum Eigenmarken Vergleich")) {
@@ -22,13 +22,40 @@ class Carts extends Model {
             carts.unshift(momentumCart);
         }
 
+        if (!localStorage.getItem("updatedKnnCarts")) {
+            localStorage.setItem("updatedKnnCarts", "true");
+            carts = this._carts = carts.filter((cart) => cart.name != "Markenprodukte Billa/Spar");
+            carts = this._carts = carts.filter((cart) => cart.name != "Diskont-Marken Produkte Billa/Spar");
+            carts = this._carts = carts.filter((cart) => cart.name != "Bio Eigenmarken Produkte Billa/Spar");
+            carts = this._carts = carts.filter((cart) => cart.name != "Mittelpreisige Eigenmarken Produkte Billa/Spar");
+        }
+
+        if (!carts.some((cart) => cart.name == "Markenprodukte Billa/Spar")) {
+            const billaSparCart = await misc.fetchJSON("data/billa-spar-cart.json");
+            carts.unshift(billaSparCart);
+        }
+
+        if (!carts.some((cart) => cart.name == "Diskont-Marken Produkte Billa/Spar")) {
+            const budgetCart = await misc.fetchJSON("data/budget-cart.json");
+            carts.unshift(budgetCart);
+        }
+
+        if (!carts.some((cart) => cart.name == "Bio Eigenmarken Produkte Billa/Spar")) {
+            const budgetCart = await misc.fetchJSON("data/bio-cart.json");
+            carts.unshift(budgetCart);
+        }
+
+        if (!carts.some((cart) => cart.name == "Mittelpreisige Eigenmarken Produkte Billa/Spar")) {
+            const budgetCart = await misc.fetchJSON("data/midrange-cart.json");
+            carts.unshift(budgetCart);
+        }
+
         // Update items in cart to their latest version.
         for (const cart of carts) {
             const items = [];
             for (const cartItem of cart.items) {
                 const item = itemsLookup[cartItem.store + cartItem.id];
-                if (!item) items.push(cartItem);
-                else items.push(item);
+                if (item) items.push(item);
             }
             cart.items = items;
         }
@@ -36,7 +63,16 @@ class Carts extends Model {
     }
 
     save() {
-        localStorage.setItem("carts", JSON.stringify(this._carts, null, 2));
+        const carts = [];
+        for (const cart of this._carts) {
+            carts.push({
+                name: cart.name,
+                items: cart.items.map((item) => {
+                    return { store: item.store, id: item.id };
+                }),
+            });
+        }
+        localStorage.setItem("carts", JSON.stringify(carts, null, 2));
         this.notify();
     }
 

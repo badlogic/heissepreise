@@ -1,4 +1,15 @@
-const { downloadJSON, dom, onVisibleOnce, isMobile, getBooleanAttribute, deltaTime, log } = require("../js/misc");
+const {
+    downloadJSON,
+    downloadFile,
+    dom,
+    onVisibleOnce,
+    isMobile,
+    getBooleanAttribute,
+    deltaTime,
+    log,
+    itemsToCSV,
+    numberToLocale,
+} = require("../js/misc");
 const { vectorizeItems, similaritySortItems } = require("../js/knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
@@ -26,6 +37,7 @@ class ItemsList extends View {
                             <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
                             <span>
                                 <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
+                                <a x-id="csv" class="hidden text-primary font-medium hover:underline" href="">CSV</a>
                             </span>
                             <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
                                 this._chart ? "" : "hidden"
@@ -57,7 +69,7 @@ class ItemsList extends View {
                     <tr class="bg-primary text-white md:table-row uppercase text-sm">
                         <th class="text-center">Kette</th>
                         <th>Name</th>
-                        <th x-id="expandPriceHistories" class="cursor-pointer">Preis +</th>
+                        <th x-id="expandPriceHistories" class="cursor-pointer">Preis ▼</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -70,9 +82,16 @@ class ItemsList extends View {
 
         if (this._share) elements.shareLink.classList.remove("hidden");
         if (this._json) elements.json.classList.remove("hidden");
+        if (this._json) elements.csv.classList.remove("hidden");
         if (this._chart) elements.enableChart.classList.remove("hidden");
 
         elements.json.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (!this.model) return;
+            this.download(this.model.filteredItems, true);
+        });
+
+        elements.csv.addEventListener("click", (event) => {
             event.preventDefault();
             if (!this.model) return;
             this.download(this.model.filteredItems);
@@ -87,7 +106,7 @@ class ItemsList extends View {
         this._showAllPriceHistories = false;
         elements.expandPriceHistories.addEventListener("click", () => {
             const showAll = (this._showAllPriceHistories = !this._showAllPriceHistories);
-            elements.expandPriceHistories.innerText = showAll ? "Preis -" : "Preis +";
+            elements.expandPriceHistories.innerText = showAll ? "Preis ▲" : "Preis ▼";
             elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
         });
 
@@ -123,7 +142,7 @@ class ItemsList extends View {
         return super.model;
     }
 
-    download(items) {
+    download(items, json) {
         const cleanedItems = [];
         items.forEach((item) => {
             cleanedItems.push({
@@ -137,10 +156,15 @@ class ItemsList extends View {
                 unit: item.unit,
                 quantity: item.quantity,
                 bio: item.bio,
+                available: !(item.unavailable ?? false),
                 url: stores[item.store].getUrl(item),
             });
         });
-        downloadJSON("items.json", cleanedItems);
+        if (json) {
+            downloadJSON("items.json", cleanedItems);
+        } else {
+            downloadFile("items.csv", itemsToCSV(cleanedItems));
+        }
     }
 
     sort(items) {
@@ -184,6 +208,17 @@ class ItemsList extends View {
         return items;
     }
 
+    highlightMatches(keywords, name) {
+        let highlightedName = name;
+        for (let i = 0; i < keywords.length; i++) {
+            const string = keywords[i];
+            // check if keyword is not preceded by a < or </
+            const regex = new RegExp(`(?<!<\/?)${string}`, "gi");
+            highlightedName = highlightedName.replace(regex, "<strong>$&</strong>");
+        }
+        return `${highlightedName}`;
+    }
+
     renderItem(item) {
         if (!this._itemTemplate) {
             this._itemTemplate = dom(
@@ -204,15 +239,17 @@ class ItemsList extends View {
                     <span x-id="numPrices"></span>
                     <span class="chevron">▼</span>
                 </td>
-                <td class="action">
-                    <label x-id="chart" class="${this._chart ? "" : "hidden"}">
-                        <input x-id="chartCheckbox" type="checkbox" class="hidden peer">
-                        <span class="peer-checked:bg-blue-700 btn-action">📈</span>
-                    </label>
-                    <input x-id="add" type="button" class="${this._add ? "" : "hidden"} btn-action" value="+">
-                    <input x-id="remove" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="-">
-                    <input x-id="up" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▲">
-                    <input x-id="down" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▼">
+                <td data-label="Aktionen">
+                    <span class="action">
+                        <label x-id="chart" class="${this._chart ? "" : "hidden"}">
+                            <input x-id="chartCheckbox" type="checkbox" class="hidden peer">
+                            <span class="peer-checked:bg-blue-700 btn-action">📈</span>
+                        </label>
+                        <input x-id="add" type="button" class="${this._add ? "" : "hidden"} btn-action" value="+">
+                        <input x-id="remove" type="button" class="${this._remove ? "" : "hidden"} btn-action" value="-">
+                        <input x-id="up" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▲">
+                        <input x-id="down" type="button" class="${this._updown ? "" : "hidden"} btn-action" value="▼">
+                    </span>
                 </td>
             `
             );
@@ -235,9 +272,9 @@ class ItemsList extends View {
 
         let quantity = item.quantity || "";
         let unit = item.unit || "";
-        if (quantity >= 1000 && (unit == "g" || unit == "ml")) {
+        if (quantity >= 1000 && (unit === "g" || unit === "ml")) {
             quantity = parseFloat((0.001 * quantity).toFixed(2));
-            unit = unit == "ml" ? "l" : "kg";
+            unit = unit === "ml" ? "l" : "kg";
         }
         let percentageChange = "";
         if (prevPrice != -1) {
@@ -247,8 +284,8 @@ class ItemsList extends View {
         let showUnitPrice = this.elements.unitPrice.checked;
         let priceUnit = "";
         if (showUnitPrice) {
-            if (item.unit == "g") priceUnit = " / kg";
-            else if (item.unit == "ml") priceUnit = " / l";
+            if (item.unit === "g") priceUnit = " / kg";
+            else if (item.unit === "ml") priceUnit = " / l";
             else priceUnit = " / stk";
         }
 
@@ -294,7 +331,7 @@ class ItemsList extends View {
         const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
         elements.name.href = stores[item.store].getUrl(item);
-        elements.name.innerText = item.name + (item.unavailable ? " 💀" : "");
+        elements.name.innerHTML = this.highlightMatches(this.model.lastQueryTokens ?? [], item.name) + (item.unavailable ? " 💀" : "");
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
         elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;
@@ -358,7 +395,7 @@ class ItemsList extends View {
 
         elements.up.addEventListener("click", () => {
             const index = itemDom.rowIndex - 1;
-            if (index == 0) return;
+            if (index === 0) return;
             let otherItem = this.model.items[index - 1];
             this.model.items[index - 1] = item;
             this.model.items[index] = otherItem;
@@ -371,7 +408,7 @@ class ItemsList extends View {
 
         elements.down.addEventListener("click", () => {
             const index = itemDom.rowIndex - 1;
-            if (index == this.model.items.length - 1) return;
+            if (index === this.model.items.length - 1) return;
             let otherItem = this.model.items[index + 1];
             this.model.items[index + 1] = item;
             this.model.items[index] = otherItem;
@@ -395,11 +432,11 @@ class ItemsList extends View {
             elements.nameSimilarity.removeAttribute("disabled");
         } else {
             elements.nameSimilarity.setAttribute("disabled", "true");
-            if (this.model.filteredItems.length != 0 && elements.sort.value == "name-similarity") elements.sort.value = "price-asc";
+            if (this.model.filteredItems.length != 0 && elements.sort.value === "name-similarity") elements.sort.value = "price-asc";
         }
 
         let items = [...this.model.filteredItems];
-        if (this.model.lastQuery && this.model.lastQuery.charAt(0) == "!" && this.model.lastQuery.toLowerCase().indexOf("order by") >= 0) {
+        if (this.model.lastQuery && this.model.lastQuery.charAt(0) === "!" && this.model.lastQuery.toLowerCase().indexOf("order by") >= 0) {
             elements.sort.parentElement.classList.add("hidden");
         } else {
             if (!this._noSort) {
@@ -407,7 +444,7 @@ class ItemsList extends View {
                 items = this.sort(items);
             }
         }
-        if (items.length == 0) {
+        if (items.length === 0) {
             elements.chart.classList.add("hidden");
             elements.options.classList.add("hidden");
             elements.itemsTable.classList.add("hidden");
@@ -416,7 +453,8 @@ class ItemsList extends View {
             elements.options.classList.remove("hidden");
             elements.itemsTable.classList.remove("hidden");
         }
-        elements.numItems.innerHTML = items.length + (this.model.totalItems > items.length ? " / " + this.model.totalItems : "");
+        elements.numItems.innerHTML =
+            numberToLocale(items.length) + (this.model.totalItems > items.length ? " / " + numberToLocale(this.model.totalItems) : "");
         const tableBody = elements.tableBody;
         tableBody.innerHTML = "";
 
@@ -424,7 +462,7 @@ class ItemsList extends View {
         const batches = [];
         let batch = [];
         items.forEach((item) => {
-            if (batch.length == 25) {
+            if (batch.length === 25) {
                 batches.push(batch);
                 batch = [];
             }

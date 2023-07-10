@@ -3,6 +3,7 @@ const path = require("path");
 const http = require("http");
 const analysis = require("./analysis");
 const bundle = require("./bundle");
+const csv = require("./site/js/misc");
 const chokidar = require("chokidar");
 const express = require("express");
 const compression = require("compression");
@@ -14,6 +15,8 @@ function copyItemsToSite(dataDir) {
         const storeItems = items.filter((item) => item.store === store);
         analysis.writeJSON(`site/output/data/latest-canonical.${store}.compressed.json`, storeItems, false, 0, true);
     }
+    const csvItems = csv.itemsToCSV(items);
+    fs.writeFileSync("site/output/data/latest-canonical.csv", csvItems, "utf-8");
     console.log("Copied latest items to site.");
 }
 
@@ -64,6 +67,18 @@ function parseArguments() {
     return { port, liveReload };
 }
 
+function setupLogging() {
+    // Poor man's logging framework, wooh...
+    const originalConsoleLog = console.log;
+    const logStream = fs.createWriteStream("site/output/data/log.txt", { flags: "a" });
+    logStream.write("===========================================\n\n");
+    console.log = (message) => {
+        const formattedMessage = `[${new Date().toISOString()}] ${message}\n`;
+        logStream.write(formattedMessage);
+        originalConsoleLog.apply(console, [message]);
+    };
+}
+
 (async () => {
     const dataDir = "data";
     const { port, liveReload } = parseArguments();
@@ -73,9 +88,18 @@ function parseArguments() {
     }
 
     const outputDir = "site/output";
+
+    if (fs.existsSync("site/output/data/log.txt")) {
+        fs.copyFileSync("site/output/data/log.txt", "site/log.txt");
+    }
     bundle.deleteDirectory(outputDir);
     fs.mkdirSync(outputDir);
     fs.mkdirSync(outputDir + "/data");
+    if (fs.existsSync("site/log.txt")) {
+        fs.copyFileSync("site/log.txt", "site/output/data/log.txt");
+        fs.unlinkSync("site/log.txt");
+    }
+    setupLogging();
     bundle.bundle("site", outputDir, liveReload);
 
     analysis.migrateCompression(dataDir, ".json", ".json.br");

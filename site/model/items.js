@@ -28,10 +28,11 @@ class Items extends Model {
         return this._lookup;
     }
 
-    async load() {
+    async load(progress) {
         const settings = new Settings();
         let start = performance.now();
         const compressedItemsPerStore = [];
+
         for (const store of STORE_KEYS) {
             compressedItemsPerStore.push(
                 new Promise(async (resolve) => {
@@ -48,9 +49,11 @@ class Items extends Model {
                         log(`Loader - error while loading compressed items for ${store} ${e.message}`);
                         resolve([]);
                     }
+                    if (progress) progress();
                 })
             );
         }
+
         let items = [].concat(...(await Promise.all(compressedItemsPerStore)));
         log(`Loader - loaded ${items.length} items took ${deltaTime(start).toFixed(4)} secs`);
 
@@ -177,7 +180,7 @@ exports.decompress = (compressedItems) => {
     for (let l = 0; l < numItems; l++) {
         const store = storeLookup[data[i++]];
         const id = data[i++];
-        const name = data[i++];
+        const name = data[i++].replace("M & M", "M&M");
         const category = data[i++];
         const unavailable = data[i++] == 1;
         const numPrices = data[i++];

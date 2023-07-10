@@ -24,7 +24,7 @@ exports.stores = {
     },
     lidl: {
         name: "Lidl",
-        budgetBrands: ["milbona"],
+        budgetBrands: ["milbona", "alpengut", "cien", "livarno", "wiesentaler"],
         color: "pink",
         defaultChecked: true,
         getUrl: (item) => `https://www.lidl.at${item.url}`,
@@ -44,6 +44,13 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
+    mueller: {
+        name: "Müller",
+        budgetBrands: ["aveo"],
+        color: "emerald",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.mueller.at${item.url}`,
+    },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
@@ -59,6 +66,14 @@ exports.stores = {
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
         removeOld: true,
     },
+    bipa: {
+        name: "Bipa",
+        budgetBrands: ["babywell", "look by bipa", "bi care", "bi kids", "bi good", "bi life", "bi life dent"],
+        color: "rose",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.bipa.at${item.url}`,
+        removeOld: false,
+    },
     dmDe: {
         name: "DM DE",
         budgetBrands: ["balea"],
@@ -73,14 +88,20 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://shop.rewe.de/p/${item.name.toLowerCase().replace(allSpacesRegex, "-")}/${item.id}`,
     },
-    // Disabled as it just polutes search results
-    /*sparSi: {
+    sparSi: {
         name: "Spar SI",
         budgetBrands: ["s-budget"],
         color: "emerald",
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
-    },*/
+    },
+    muellerDe: {
+        name: "Müller DE",
+        budgetBrands: ["aveo"],
+        color: "stone",
+        defaultChecked: false,
+        getUrl: (item) => `https://www.muller.de/${item.url}`,
+    },
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);

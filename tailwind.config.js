@@ -9,6 +9,10 @@ module.exports = {
             scale: {
                 flip: "-1",
             },
+            content: {
+                label: "attr(data-label)",
+                none: "none",
+            },
         },
     },
     plugins: [],

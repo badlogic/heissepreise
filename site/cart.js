@@ -4,6 +4,8 @@ const { Model } = require("./model/model");
 const { View } = require("./views/view");
 const { STORE_KEYS, stores } = require("./model/stores");
 require("./views");
+const { ProgressBar } = require("./views/progress-bar");
+const progressBar = new ProgressBar(STORE_KEYS.length);
 
 let carts = null;
 
@@ -118,7 +120,7 @@ function loadCart() {
 }
 
 (async () => {
-    await models.load();
+    await models.load(() => progressBar.addStep());
     carts = models.carts.carts;
     const cart = loadCart();
 
@@ -132,8 +134,8 @@ function loadCart() {
         cartFilter.elements[store].checked = true;
     });
     cartList.elements.numItemsLabel.innerHTML = "<strong>Artikel:</strong>";
-    cartList.elements.enableChart.checked = true;
-    cartList.elements.chart.elements.sumStores.checked = true;
+    cartList.elements.enableChart.checked = models.items.length < 2000;
+    cartList.elements.chart.elements.sumStores.checked = models.items.length < 2000;
 
     if (cart.items.length == 0) {
         elements.noItems.classList.remove("hidden");
@@ -208,5 +210,4 @@ function loadCart() {
     productsList.model = productsFilter.model = models.items;
     if (c || d) itemsChart.render();
     cartFilter.filter();
-    document.querySelector('[x-id="loader"]').classList.add("hidden");
 })();

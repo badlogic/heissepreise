@@ -46,14 +46,19 @@ function findMostSimilarItem(refItem, items) {
     let maxSimilarity = -1;
     let similarItem = null;
     let similarItemIdx = -1;
-    items.forEach((item, idx) => {
+    for (let idx = 0; idx < items.length; idx++) {
+        const item = items[idx];
+        if (item.sorted) continue;
         let similarity = dotProduct(refItem.vector, item.vector);
-        if (similarity > maxSimilarity) {
+        if (similarity > maxSimilarity || similarity > 0.9999999) {
             maxSimilarity = similarity;
             similarItem = item;
             similarItemIdx = idx;
         }
-    });
+        if (similarity > 0.9999999) {
+            break;
+        }
+    }
     return {
         similarity: maxSimilarity,
         item: similarItem,
@@ -96,16 +101,19 @@ function findMostSimilarItems(refItem, items, k = 5, accept = (ref, item) => tru
 }
 exports.findMostSimilarItems = findMostSimilarItems;
 
-function similaritySortItems(items) {
+function similaritySortItems(items, progress) {
     if (items.length == 0) return items;
     sortedItems = [items.shift()];
     let refItem = sortedItems[0];
-    while (items.length > 0) {
+    items.forEach((item) => (item.sorted = false));
+    while (items.length != sortedItems.length) {
         const similarItem = findMostSimilarItem(refItem, items);
         sortedItems.push(similarItem.item);
-        items.splice(similarItem.index, 1);
+        similarItem.item.sorted = true;
         refItem = similarItem.item;
+        if (progress) progress(sortedItems, items);
     }
+    items.forEach((item) => delete item.sorted);
     return sortedItems;
 }
 exports.similaritySortItems = similaritySortItems;
