@@ -810,6 +810,11 @@
     "code": "75"
   },
   {
+    "id": "Naturshop/Pflege/Hand- & Fußpflege/Handseife",
+    "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/handseife/",
+    "code": null
+  },
+  {
     "id": "Naturshop/Pflege/Hand- & Fußpflege/Nagelpflege",
     "url": "https://www.mueller.at/naturshop/pflege/hand-fusspflege/nagelpflege/",
     "code": "7B"
@@ -2050,11 +2055,6 @@
     "code": "64"
   },
   {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/schokolade/",
-    "code": "64"
-  },
-  {
     "id": "Drogerie/Lebensmittel/Süßigkeiten/Gebäck",
     "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/gebaeck/",
     "code": "64"
@@ -2895,11 +2895,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Aktionen/Aus dem Prospekt",
-    "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
-    "code": null
-  },
-  {
     "id": "Tiershop/Tiernahrung",
     "url": "https://www.mueller.at/tiershop/tiernahrung/",
     "code": "90"
@@ -3123,5 +3118,15 @@
     "id": "Tiershop/Sale",
     "url": "https://www.mueller.at/tiershop/sale/",
     "code": "90"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/schokolade/",
+    "code": "64"
+  },
+  {
+    "id": "Genusswelt/Aktionen/Aus dem Prospekt",
+    "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
+    "code": null
   }
 ]
