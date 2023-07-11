@@ -105,3 +105,14 @@ exports.parseUnitAndQuantityAtEnd = function (name) {
     }
     return [undefined, undefined];
 };
+
+exports.showHeap = () => {
+    setInterval(() => {
+        const mu = process.memoryUsage();
+        // # bytes / KB / MB / GB
+        const gbNow = mu["heapUsed"] / 1024 / 1024 / 1024;
+        const gbRounded = Math.round(gbNow * 100) / 100;
+
+        console.log(`Heap allocated ${gbRounded} GB`);
+    }, 5000);
+};

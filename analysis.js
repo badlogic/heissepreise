@@ -55,15 +55,32 @@ function currentDate() {
     return `${year}-${month}-${day}`;
 }
 
+const strings = new Map();
+const internString = (value) => {
+    if (strings.has(value)) {
+        return strings.get(value);
+    } else {
+        strings.set(value, value);
+        return value;
+    }
+};
+
 function getCanonicalFor(store, rawItems, today) {
     const canonicalItems = [];
     for (let i = 0; i < rawItems.length; i++) {
-        const item = stores[store]?.getCanonical(rawItems[i], today);
-        if (item)
-            canonicalItems.push({
+        let item = stores[store]?.getCanonical(rawItems[i], today);
+        if (item) {
+            item = {
                 store,
                 ...item,
-            });
+            };
+            for (const property of Object.keys(item)) {
+                if (typeof item[property] === "string") {
+                    item[property] = internString(item[property]);
+                }
+            }
+            canonicalItems.push(item);
+        }
     }
     return canonicalItems;
 }
@@ -360,13 +377,13 @@ exports.dedupItems = (items) => {
             dedupItems.push(item);
         } else {
             if (seenItem.quantity != item.quantity || seenItem.unit != item.unit) {
-                console.log(`Item with same id but different quantity and unit: ${item.store}-${item.id} '${item.name}'`);
+                // console.log(`Item with same id but different quantity and unit: ${item.store}-${item.id} '${item.name}'`);
             }
             duplicates[item.store] = duplicates[item.store] ? duplicates[item.store] + 1 : 1;
         }
     }
-    console.log("Deduplicated items");
-    console.log(JSON.stringify(duplicates, null, 2));
+    //console.log("Deduplicated items");
+    //console.log(JSON.stringify(duplicates, null, 2));
     return dedupItems;
 };
 
