@@ -129,13 +129,14 @@ class Items extends Model {
             item.id = intern(item.id);
             item.name = intern(item.name);
             item.category = intern(item.category);
-            item.price = intern(item.price);
+            item.price = item.price;
             for (const price of item.priceHistory) {
                 price.date = intern(price.date);
-                price.price = intern(price.price);
+                price.price = price.price;
             }
+            item.priceHistory = item.priceHistory.filter((price) => price.price > 0);
             item.unit = intern(item.unit);
-            item.quantity = intern(item.quantity);
+            item.quantity = item.quantity;
 
             item.search = item.name + " " + item.quantity + " " + item.unit;
             item.search = intern(item.search.toLowerCase().replace(",", "."));
