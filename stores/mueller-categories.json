@@ -2890,11 +2890,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Aktionen",
-    "url": "https://www.mueller.at/genusswelt/aktionen/",
-    "code": null
-  },
-  {
     "id": "Tiershop/Tiernahrung",
     "url": "https://www.mueller.at/tiershop/tiernahrung/",
     "code": "90"
@@ -3118,6 +3113,11 @@
     "id": "Tiershop/Sale",
     "url": "https://www.mueller.at/tiershop/sale/",
     "code": "90"
+  },
+  {
+    "id": "Genusswelt/Aktionen",
+    "url": "https://www.mueller.at/genusswelt/aktionen/",
+    "code": null
   },
   {
     "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
