@@ -111,6 +111,7 @@ async function bundleJS(inputDir, outputDir, watch) {
             changes: `${inputDir}/changes.js`,
             settings: `${inputDir}/settings.js`,
             index: `${inputDir}/index.js`,
+            experiment_plot: `${inputDir}/experiment_plot.js`,
         },
         bundle: true,
         sourcemap: true,
