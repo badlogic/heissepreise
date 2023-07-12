@@ -106,7 +106,7 @@ class Items extends Model {
             },
         };
 
-        for (let i = 1; i < 3; i++) {
+        for (let i = 1; i <= 3; i++) {
             (getters[`price${i}`] = {
                 get() {
                     return this.priceHistory[i] ? this.priceHistory[i].price : 0;
