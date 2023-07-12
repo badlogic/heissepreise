@@ -60,7 +60,7 @@ class Items extends Model {
         const result = this.processItems(items);
         log(`Loader - total loading took ${deltaTime(start).toFixed(4)} secs`);
 
-        this._items = result.items;
+        this._items = result.items.filter((item) => item.priceHistory.length > 0);
         this._lookup = result.lookup;
     }
 
