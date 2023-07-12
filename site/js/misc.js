@@ -119,6 +119,14 @@ exports.queryItemsAlasql = (query, items) => {
         return priceHistory.some((price) => price.date.indexOf(date) >= 0);
     };
 
+    alasql.fn.daysBetween = (date1, date2) => {
+        const d1 = new Date(date1);
+        const d2 = new Date(date2);
+        const diffInMs = Math.abs(d2 - d1);
+        const days = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+        return days;
+    };
+
     query = query.substring(1);
     return alasql("select * from ? where " + query, [items]);
 };
