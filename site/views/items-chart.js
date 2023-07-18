@@ -1,6 +1,6 @@
 const { STORE_KEYS } = require("../model/stores");
 const { settings } = require("../model");
-const { today, log, deltaTime, isMobile } = require("../js/misc");
+const { today, log, deltaTime, uniqueDates, calculateItemPriceTimeSeries } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
 const moment = require("moment");
@@ -42,68 +42,6 @@ class ItemsChart extends View {
         });
     }
 
-    uniqueDates(items, startDate, endDate) {
-        const allDates = items.flatMap((product) =>
-            product.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate).map((item) => item.date)
-        );
-        let uniqueDates = new Set(allDates);
-        uniqueDates.add(startDate);
-        uniqueDates.add(endDate);
-        uniqueDates = [...uniqueDates];
-        uniqueDates.sort();
-        return uniqueDates;
-    }
-
-    calculateItemPriceTimeSeries(product, percentageChange, startDate, uniqueDates) {
-        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
-
-        const priceScratch = new Array(uniqueDates.length);
-        let startPrice = null;
-        const priceHistoryLookup = {};
-        priceScratch.fill(null);
-        if (!product.priceHistoryLookup) {
-            product.priceHistory.forEach((price) => {
-                priceHistoryLookup[price.date] = price;
-                if (!startPrice && price.date <= startDate) {
-                    startPrice = getPrice(price);
-                }
-            });
-        }
-        if (startPrice == null) {
-            const firstPrice = product.priceHistory[product.priceHistory.length - 1];
-            startPrice = getPrice(firstPrice);
-        }
-        for (let i = 0; i < uniqueDates.length; i++) {
-            const priceObj = priceHistoryLookup[uniqueDates[i]];
-            priceScratch[i] = priceObj ? getPrice(priceObj) : null;
-        }
-
-        for (let i = 0; i < priceScratch.length; i++) {
-            if (priceScratch[i] == null) {
-                priceScratch[i] = startPrice;
-            } else {
-                startPrice = priceScratch[i];
-            }
-        }
-
-        if (priceScratch.some((price) => price == null)) {
-            return null;
-        }
-
-        if (percentageChange) {
-            const firstPrice = priceScratch.find((price) => price != 0);
-            if (firstPrice == 0) return null;
-            for (let i = 0; i < priceScratch.length; i++) {
-                priceScratch[i] = ((priceScratch[i] - firstPrice) / firstPrice) * 100;
-            }
-        }
-
-        if (priceScratch.some((price) => isNaN(price))) {
-            return null;
-        }
-        return priceScratch;
-    }
-
     calculateOverallPriceChanges(items, onlyToday, percentageChange, startDate, endDate) {
         if (items.length == 0) return { dates: [], changes: [] };
 
@@ -112,10 +50,10 @@ class ItemsChart extends View {
         if (onlyToday) {
             let sum = 0;
             for (const item of items) sum += getPrice(item);
-            return [{ date: today(), price: sum }];
+            return [{ date: today(), price: sum, unitPrice: sum }];
         }
 
-        const dates = this.uniqueDates(items, startDate, endDate);
+        const dates = uniqueDates(items, startDate, endDate);
 
         let priceChanges = new Array(dates.length);
         for (let i = 0; i < dates.length; i++) {
@@ -124,7 +62,7 @@ class ItemsChart extends View {
 
         let numItems = 0;
         items.forEach((product) => {
-            const priceScratch = this.calculateItemPriceTimeSeries(product, percentageChange, startDate, dates);
+            const priceScratch = calculateItemPriceTimeSeries(product, percentageChange, startDate, dates);
             if (priceScratch == null) return;
             numItems++;
 
@@ -296,13 +234,17 @@ class ItemsChart extends View {
 
         items.forEach((item) => {
             if (item.chart) {
-                const dates = this.uniqueDates([item], startDate, endDate);
-                const prices = this.calculateItemPriceTimeSeries(item, percentageChange, startDate, dates).map((price) =>
+                const dates = uniqueDates([item], startDate, endDate);
+                const prices = calculateItemPriceTimeSeries(item, percentageChange, startDate, dates).map((price) =>
                     percentageChange ? price.toFixed(2) : price
                 );
                 const priceHistory = [];
-                for (let i = 0; i < dates.length; i++) {
-                    priceHistory.push({ date: dates[i], price: prices[i], unitPrice: prices[i] });
+                if (!onlyToday) {
+                    for (let i = 0; i < dates.length; i++) {
+                        priceHistory.push({ date: dates[i], price: prices[i], unitPrice: prices[i] });
+                    }
+                } else {
+                    priceHistory.push({ date: dates[dates.length - 1], price: prices[prices.length - 1], unitPrice: prices[prices.length - 1] });
                 }
                 const chartItem = {
                     name: item.store + " " + item.name,
