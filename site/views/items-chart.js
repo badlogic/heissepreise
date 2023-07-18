@@ -179,7 +179,7 @@ class ItemsChart extends View {
                 }),
             };
             if (settings.chartType == "stepped") {
-                dataset.stepped = prices.length % 2 == 0 ? "after" : "before";
+                dataset.stepped = prices.length >= 2 && prices[0].price != prices[1].price ? "after" : "before";
             }
 
             return dataset;
