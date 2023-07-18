@@ -205,6 +205,9 @@ function loadCart() {
         for (const id of d.split(";")) {
             cart.items.lookup[id].chart = true;
         }
+        const url = stateToUrl();
+        history.pushState({}, null, url);
+        cartHeader.render();
     }
     cartList.model = cartFilter.model = cart;
     productsList.model = productsFilter.model = models.items;
