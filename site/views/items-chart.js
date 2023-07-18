@@ -302,7 +302,7 @@ class ItemsChart extends View {
                 );
                 const priceHistory = [];
                 for (let i = 0; i < dates.length; i++) {
-                    priceHistory.push({ date: dates[i], price: prices[i] });
+                    priceHistory.push({ date: dates[i], price: prices[i], unitPrice: prices[i] });
                 }
                 const chartItem = {
                     name: item.store + " " + item.name,
