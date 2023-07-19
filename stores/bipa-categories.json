@@ -1188,12 +1188,6 @@
     "code": null
   },
   {
-    "id": "make-up-lippe",
-    "description": null,
-    "url": "https://www.bipa.at/c/make-up/lippe",
-    "code": null
-  },
-  {
     "id": "make-up-lippe-lipgloss",
     "description": null,
     "url": "https://www.bipa.at/c/make-up/lippe/lipgloss",
@@ -2098,5 +2092,11 @@
     "description": null,
     "url": "https://www.bipa.at/c/tier/vogel/zubehoer",
     "code": "93"
+  },
+  {
+    "id": "make-up-lippe",
+    "description": null,
+    "url": "https://www.bipa.at/c/make-up/lippe",
+    "code": null
   }
 ]

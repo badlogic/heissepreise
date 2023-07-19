@@ -3035,6 +3035,11 @@
     "code": "90"
   },
   {
+    "id": "Tiershop/Marken/almo nature",
+    "url": "https://www.mueller.at/tiershop/marken/almo-nature/",
+    "code": null
+  },
+  {
     "id": "Tiershop/Marken/Alpha Spirit",
     "url": "https://www.mueller.at/tiershop/marken/alpha-spirit/",
     "code": "90"
@@ -3105,14 +3110,14 @@
     "code": "91"
   },
   {
-    "id": "Tiershop/Marken/Cats Love",
-    "url": "https://www.mueller.at/tiershop/marken/cats-love/",
-    "code": "91"
-  },
-  {
     "id": "Tiershop/Sale",
     "url": "https://www.mueller.at/tiershop/sale/",
     "code": "90"
+  },
+  {
+    "id": "Tiershop/Marken/Cats Love",
+    "url": "https://www.mueller.at/tiershop/marken/cats-love/",
+    "code": "91"
   },
   {
     "id": "Genusswelt/Aktionen",
