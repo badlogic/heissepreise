@@ -209,14 +209,9 @@ class ItemsList extends View {
     }
 
     highlightMatches(keywords, name) {
-        let highlightedName = name;
-        for (let i = 0; i < keywords.length; i++) {
-            const string = keywords[i];
-            // check if keyword is not preceded by a < or </
-            const regex = new RegExp(`(?<!<\/?)${string}`, "gi");
-            highlightedName = highlightedName.replace(regex, "<strong>$&</strong>");
-        }
-        return `${highlightedName}`;
+        // check if keyword is not preceded by a < or </
+        const regex = new RegExp(`(?<!<\/?)${keywords.join("|")}`, "gi");
+        return name.replace(regex, "<strong>$&</strong>");
     }
 
     renderItem(item) {
