@@ -2055,14 +2055,14 @@
     "code": "64"
   },
   {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Gebäck",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/gebaeck/",
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/schokolade/",
     "code": "64"
   },
   {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Chips",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/chips/",
-    "code": "63"
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Gebäck",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/gebaeck/",
+    "code": "64"
   },
   {
     "id": "Drogerie/Lebensmittel/Süßigkeiten/Bonbons & Lutscher",
@@ -3115,6 +3115,11 @@
     "code": "90"
   },
   {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Chips",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/chips/",
+    "code": "63"
+  },
+  {
     "id": "Tiershop/Marken/Cats Love",
     "url": "https://www.mueller.at/tiershop/marken/cats-love/",
     "code": "91"
@@ -3123,11 +3128,6 @@
     "id": "Genusswelt/Aktionen",
     "url": "https://www.mueller.at/genusswelt/aktionen/",
     "code": null
-  },
-  {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/schokolade/",
-    "code": "64"
   },
   {
     "id": "Genusswelt/Aktionen/Aus dem Prospekt",
