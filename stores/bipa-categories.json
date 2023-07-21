@@ -228,54 +228,6 @@
     "code": null
   },
   {
-    "id": "fotoshop-foto-adventskalender",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/foto-adventskalender",
-    "code": null
-  },
-  {
-    "id": "fotoshop-fotogeschenke-bueroschule",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/buero-und-schule",
-    "code": null
-  },
-  {
-    "id": "fotoshop-fotogeschenke-dekorationwohnung",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/dekoration-und-wohnung",
-    "code": null
-  },
-  {
-    "id": "fotoshop-fotogeschenke-kissentextilien",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/kissen-und-textilien",
-    "code": null
-  },
-  {
-    "id": "fotoshop-fotogeschenke-spiele",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/spiele",
-    "code": null
-  },
-  {
-    "id": "fotoshop-fotogeschenke-trinkgefaesse",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/trinkgefaesse",
-    "code": null
-  },
-  {
-    "id": "fotoshop-fotokalender-wandkalender",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/fotokalender/wandkalender",
-    "code": null
-  },
-  {
-    "id": "fotoshop-handyhuellen",
-    "description": null,
-    "url": "https://www.bipa.at/c/fotoshop/handyhuellen",
-    "code": null
-  },
-  {
     "id": "gesundheit-alten-krankenpflege-alltagshilfen",
     "description": null,
     "url": "https://www.bipa.at/c/gesundheit/alten--und-krankenpflege/alltagshilfen",
@@ -2092,6 +2044,54 @@
     "description": null,
     "url": "https://www.bipa.at/c/tier/vogel/zubehoer",
     "code": "93"
+  },
+  {
+    "id": "fotoshop-foto-adventskalender",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/foto-adventskalender",
+    "code": null
+  },
+  {
+    "id": "fotoshop-fotogeschenke-bueroschule",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/buero-und-schule",
+    "code": null
+  },
+  {
+    "id": "fotoshop-fotogeschenke-dekorationwohnung",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/dekoration-und-wohnung",
+    "code": null
+  },
+  {
+    "id": "fotoshop-fotogeschenke-kissentextilien",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/kissen-und-textilien",
+    "code": null
+  },
+  {
+    "id": "fotoshop-fotogeschenke-spiele",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/spiele",
+    "code": null
+  },
+  {
+    "id": "fotoshop-fotogeschenke-trinkgefaesse",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/fotogeschenke/trinkgefaesse",
+    "code": null
+  },
+  {
+    "id": "fotoshop-fotokalender-wandkalender",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/fotokalender/wandkalender",
+    "code": null
+  },
+  {
+    "id": "fotoshop-handyhuellen",
+    "description": null,
+    "url": "https://www.bipa.at/c/fotoshop/handyhuellen",
+    "code": null
   },
   {
     "id": "make-up-lippe",

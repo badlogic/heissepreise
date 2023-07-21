@@ -424,6 +424,11 @@
     "code": "33"
   },
   {
+    "id": "kasespezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
+    "code": "33"
+  },
+  {
     "id": "weichkase",
     "url": "https://www.roksh.at/hofer/angebot/weichkase",
     "code": "33"
@@ -434,18 +439,8 @@
     "code": "33"
   },
   {
-    "id": "kasespezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
-    "code": "33"
-  },
-  {
     "id": "streichwurst-pasteten",
     "url": "https://www.roksh.at/hofer/angebot/streichwurst-pasteten",
-    "code": "37"
-  },
-  {
-    "id": "kochschinken",
-    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
     "code": "37"
   },
   {
@@ -454,8 +449,18 @@
     "code": "37"
   },
   {
+    "id": "kochschinken",
+    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
+    "code": "37"
+  },
+  {
     "id": "stangenwurst",
     "url": "https://www.roksh.at/hofer/angebot/stangenwurst",
+    "code": "37"
+  },
+  {
+    "id": "speck-rohschinken",
+    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
   },
   {
@@ -466,11 +471,6 @@
   {
     "id": "leberkase-co",
     "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
-    "code": "37"
-  },
-  {
-    "id": "speck-rohschinken",
-    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
   },
   {
@@ -584,6 +584,11 @@
     "code": "23"
   },
   {
+    "id": "roseweine-spezialweine",
+    "url": "https://www.roksh.at/hofer/angebot/roseweine-spezialweine",
+    "code": "25"
+  },
+  {
     "id": "rotweine",
     "url": "https://www.roksh.at/hofer/angebot/rotweine",
     "code": "25"
@@ -591,11 +596,6 @@
   {
     "id": "weißweine",
     "url": "https://www.roksh.at/hofer/angebot/weißweine",
-    "code": "25"
-  },
-  {
-    "id": "roseweine-spezialweine",
-    "url": "https://www.roksh.at/hofer/angebot/roseweine-spezialweine",
     "code": "25"
   },
   {
