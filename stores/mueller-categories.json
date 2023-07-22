@@ -3055,6 +3055,16 @@
     "code": "91"
   },
   {
+    "id": "Tiershop/Aktionen",
+    "url": "https://www.mueller.at/tiershop/aktionen/",
+    "code": null
+  },
+  {
+    "id": "Tiershop/Aktionen/Kühlmatten",
+    "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
     "id": "Tiershop/Sale",
     "url": "https://www.mueller.at/tiershop/sale/",
     "code": "90"
