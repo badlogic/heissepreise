@@ -44,6 +44,13 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.dm.at/product-p${item.id}.html`,
     },
+    mueller: {
+        name: "Müller",
+        budgetBrands: ["aveo"],
+        color: "emerald",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.mueller.at${item.url}`,
+    },
     unimarkt: {
         name: "Unimarkt",
         budgetBrands: ["jeden tag", "unipur"],
@@ -58,6 +65,14 @@ exports.stores = {
         defaultChecked: true,
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
         removeOld: true,
+    },
+    bipa: {
+        name: "Bipa",
+        budgetBrands: ["babywell", "look by bipa", "bi care", "bi kids", "bi good", "bi life", "bi life dent"],
+        color: "rose",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.bipa.at${item.url}`,
+        removeOld: false,
     },
     dmDe: {
         name: "DM DE",
@@ -79,6 +94,13 @@ exports.stores = {
         color: "emerald",
         defaultChecked: false,
         getUrl: (item) => `https://www.spar.si/online/p/${item.id}`,
+    },
+    muellerDe: {
+        name: "Müller DE",
+        budgetBrands: ["aveo"],
+        color: "stone",
+        defaultChecked: false,
+        getUrl: (item) => `https://www.muller.de/${item.url}`,
     },
 };
 

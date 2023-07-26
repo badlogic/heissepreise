@@ -119,6 +119,28 @@ exports.queryItemsAlasql = (query, items) => {
         return priceHistory.some((price) => price.date.indexOf(date) >= 0);
     };
 
+    alasql.fn.daysBetween = (date1, date2) => {
+        const d1 = new Date(date1);
+        const d2 = new Date(date2);
+        const diffInMs = Math.abs(d2 - d1);
+        const days = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+        return days;
+    };
+
+    alasql.fn.priceOn = (priceHistory, date) => {
+        return this.priceOn(priceHistory, date);
+    };
+
+    alasql.fn.unitPriceOn = (priceHistory, date) => {
+        return this.unitPriceOn(priceHistory, date);
+    };
+
+    alasql.fn.percentageChangeSince = (priceHistory, date) => {
+        const firstPrice = this.priceOn(priceHistory, date);
+        const price = priceHistory[0].price;
+        return ((price - firstPrice) / firstPrice) * 100;
+    };
+
     query = query.substring(1);
     return alasql("select * from ? where " + query, [items]);
 };
@@ -126,7 +148,7 @@ exports.queryItemsAlasql = (query, items) => {
 exports.queryItems = (query, items, exactWord) => {
     query = query.trim().replace(",", ".").toLowerCase();
     if (query.length < 3) return { items: [], queryTokens: [] };
-    const regex = /([\p{L}-][\p{L}\p{N}-]*)|(>=|<=|=|>|<)|(\d+(\.\d+)?)/gu;
+    const regex = /([\p{L}&-\.][\p{L}\p{N}&-\.]*)|(>=|<=|=|>|<)|(\d+(\.\d+)?)/gu;
     let tokens = query.match(regex);
 
     // Find quantity/unit query
@@ -287,4 +309,94 @@ exports.numberToLocale = (number) => {
     } catch (e) {
         return number;
     }
+};
+
+exports.priceOn = (priceHistory, date) => {
+    let startPrice = null;
+    priceHistory.forEach((price) => {
+        if (!startPrice && price.date <= date) {
+            startPrice = price.price;
+        }
+    });
+    if (startPrice == null) {
+        const firstPrice = priceHistory[priceHistory.length - 1];
+        startPrice = firstPrice.price;
+    }
+    return startPrice;
+};
+
+exports.unitPriceOn = (priceHistory, date) => {
+    let startPrice = null;
+    priceHistory.forEach((price) => {
+        if (!startPrice && price.date <= date) {
+            startPrice = price.unitPrice;
+        }
+    });
+    if (startPrice == null) {
+        const firstPrice = priceHistory[priceHistory.length - 1];
+        startPrice = firstPrice.unitPrice;
+    }
+    return startPrice;
+};
+
+exports.uniqueDates = (items, startDate, endDate) => {
+    const allDates = items.flatMap((product) =>
+        product.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate).map((item) => item.date)
+    );
+    let uniqueDates = new Set(allDates);
+    uniqueDates.add(startDate);
+    uniqueDates.add(endDate);
+    uniqueDates = [...uniqueDates];
+    uniqueDates.sort();
+    return uniqueDates;
+};
+
+exports.calculateItemPriceTimeSeries = (product, percentageChange, startDate, uniqueDates) => {
+    const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
+
+    const priceScratch = new Array(uniqueDates.length);
+    let startPrice = null;
+    const priceHistoryLookup = {};
+    priceScratch.fill(null);
+    if (!product.priceHistoryLookup) {
+        product.priceHistory.forEach((price) => {
+            priceHistoryLookup[price.date] = price;
+            if (!startPrice && price.date <= startDate) {
+                startPrice = getPrice(price);
+            }
+        });
+    }
+    if (startPrice == null) {
+        const firstPrice = product.priceHistory[product.priceHistory.length - 1];
+        startPrice = getPrice(firstPrice);
+    }
+    for (let i = 0; i < uniqueDates.length; i++) {
+        const priceObj = priceHistoryLookup[uniqueDates[i]];
+        priceScratch[i] = priceObj ? getPrice(priceObj) : null;
+    }
+
+    for (let i = 0; i < priceScratch.length; i++) {
+        if (priceScratch[i] == null) {
+            priceScratch[i] = startPrice;
+        } else {
+            startPrice = priceScratch[i];
+        }
+    }
+
+    if (priceScratch.some((price) => price == null)) {
+        return null;
+    }
+
+    if (percentageChange) {
+        const firstPrice = priceScratch.find((price) => price != 0);
+        if (firstPrice == 0) return null;
+        for (let i = 0; i < priceScratch.length; i++) {
+            priceScratch[i] = ((priceScratch[i] - firstPrice) / firstPrice) * 100;
+        }
+    }
+
+    if (priceScratch.some((price) => isNaN(price))) {
+        return null;
+    }
+    return priceScratch;
 };

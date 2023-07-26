@@ -49,6 +49,7 @@ exports.globalUnits = {
     m: { unit: "cm", factor: 100 },
     meter: { unit: "cm", factor: 100 },
     g: { unit: "g", factor: 1 },
+    gr: { unit: "g", factor: 1 },
     gramm: { unit: "g", factor: 1 },
     dag: { unit: "g", factor: 10 },
     kg: { unit: "g", factor: 1000 },
@@ -58,6 +59,7 @@ exports.globalUnits = {
     dl: { unit: "ml", factor: 10 },
     cl: { unit: "ml", factor: 100 },
     l: { unit: "ml", factor: 1000 },
+    lt: { unit: "ml", factor: 1000 },
     liter: { unit: "ml", factor: 1000 },
     wg: { unit: "wg", factor: 1 },
 };
@@ -102,4 +104,15 @@ exports.parseUnitAndQuantityAtEnd = function (name) {
         return [quantity, unit.toLowerCase()];
     }
     return [undefined, undefined];
+};
+
+exports.showHeap = () => {
+    setInterval(() => {
+        const mu = process.memoryUsage();
+        // # bytes / KB / MB / GB
+        const gbNow = mu["heapUsed"] / 1024 / 1024 / 1024;
+        const gbRounded = Math.round(gbNow * 100) / 100;
+
+        console.log(`Heap allocated ${gbRounded} GB`);
+    }, 5000);
 };

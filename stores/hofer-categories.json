@@ -424,11 +424,6 @@
     "code": "33"
   },
   {
-    "id": "kasespezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
-    "code": "33"
-  },
-  {
     "id": "weichkase",
     "url": "https://www.roksh.at/hofer/angebot/weichkase",
     "code": "33"
@@ -436,6 +431,11 @@
   {
     "id": "hart-schnittkase",
     "url": "https://www.roksh.at/hofer/angebot/hart-schnittkase",
+    "code": "33"
+  },
+  {
+    "id": "kasespezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
     "code": "33"
   },
   {
@@ -479,13 +479,13 @@
     "code": "32"
   },
   {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
+    "id": "schweinefleisch-spezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
     "code": "32"
   },
   {
-    "id": "schweinefleisch-spezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
     "code": "32"
   },
   {
@@ -534,11 +534,6 @@
     "code": "03"
   },
   {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
-    "code": "64"
-  },
-  {
     "id": "bonbons-kaugummi",
     "url": "https://www.roksh.at/hofer/angebot/bonbons-kaugummi",
     "code": "64"
@@ -547,6 +542,11 @@
     "id": "waffeln",
     "url": "https://www.roksh.at/hofer/angebot/waffeln",
     "code": "60"
+  },
+  {
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
+    "code": "64"
   },
   {
     "id": "kekse",
@@ -584,6 +584,11 @@
     "code": "23"
   },
   {
+    "id": "roseweine-spezialweine",
+    "url": "https://www.roksh.at/hofer/angebot/roseweine-spezialweine",
+    "code": "25"
+  },
+  {
     "id": "rotweine",
     "url": "https://www.roksh.at/hofer/angebot/rotweine",
     "code": "25"
@@ -591,11 +596,6 @@
   {
     "id": "weißweine",
     "url": "https://www.roksh.at/hofer/angebot/weißweine",
-    "code": "25"
-  },
-  {
-    "id": "roseweine-spezialweine",
-    "url": "https://www.roksh.at/hofer/angebot/roseweine-spezialweine",
     "code": "25"
   },
   {

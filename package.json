@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "prepare": "husky install",
-    "dev": "cross-env NODE_ENV=development PORT=$PORT node --trace-warnings server.js",
-    "start": "cross-env NODE_ENV=production PORT=$PORT node server.js",
+    "dev": "cross-env NODE_ENV=development PORT=$PORT node --max_old_space_size=8192 --trace-warnings server.js",
+    "start": "cross-env NODE_ENV=production PORT=$PORT node --max_old_space_size=8192 server.js",
     "format": "npx prettier --write ."
   },
   "repository": {
@@ -31,6 +31,7 @@
     "hyphen": "^1.6.6",
     "moment": "^2.29.4",
     "node-html-parser": "^6.1.5",
+    "pdfjs-dist": "^3.7.107",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

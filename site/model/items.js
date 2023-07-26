@@ -60,7 +60,7 @@ class Items extends Model {
         const result = this.processItems(items);
         log(`Loader - total loading took ${deltaTime(start).toFixed(4)} secs`);
 
-        this._items = result.items;
+        this._items = result.items.filter((item) => item.priceHistory.length > 0);
         this._lookup = result.lookup;
     }
 
@@ -106,7 +106,7 @@ class Items extends Model {
             },
         };
 
-        for (let i = 1; i < 3; i++) {
+        for (let i = 1; i <= 3; i++) {
             (getters[`price${i}`] = {
                 get() {
                     return this.priceHistory[i] ? this.priceHistory[i].price : 0;
@@ -129,13 +129,14 @@ class Items extends Model {
             item.id = intern(item.id);
             item.name = intern(item.name);
             item.category = intern(item.category);
-            item.price = intern(item.price);
+            item.price = item.price;
             for (const price of item.priceHistory) {
                 price.date = intern(price.date);
-                price.price = intern(price.price);
+                price.price = price.price;
             }
+            item.priceHistory = item.priceHistory.filter((price) => price.price > 0);
             item.unit = intern(item.unit);
-            item.quantity = intern(item.quantity);
+            item.quantity = item.quantity;
 
             item.search = item.name + " " + item.quantity + " " + item.unit;
             item.search = intern(item.search.toLowerCase().replace(",", "."));
@@ -180,7 +181,7 @@ exports.decompress = (compressedItems) => {
     for (let l = 0; l < numItems; l++) {
         const store = storeLookup[data[i++]];
         const id = data[i++];
-        const name = data[i++];
+        const name = data[i++].replace("M & M", "M&M");
         const category = data[i++];
         const unavailable = data[i++] == 1;
         const numPrices = data[i++];

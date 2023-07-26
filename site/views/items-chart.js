@@ -1,6 +1,6 @@
 const { STORE_KEYS } = require("../model/stores");
 const { settings } = require("../model");
-const { today, log, deltaTime, isMobile } = require("../js/misc");
+const { today, log, deltaTime, uniqueDates, calculateItemPriceTimeSeries } = require("../js/misc");
 const { View } = require("./view");
 require("./custom-checkbox");
 const moment = require("moment");
@@ -25,6 +25,7 @@ class ItemsChart extends View {
                     <custom-checkbox x-id="sumTotal" x-change x-state label="Preissumme Gesamt"></custom-checkbox>
                     <custom-checkbox x-id="sumStores" x-change x-state label="Preissumme Ketten"></custom-checkbox>
                     <custom-checkbox x-id="onlyToday" x-change x-state label="Nur heutige Preise"></custom-checkbox>
+                    <custom-checkbox x-id="percentageChange" x-change x-state label="Änderung in % seit"></custom-checkbox>
                     <div
                         class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600">
                         <input x-id="startDate" x-change x-state type="date" value="2017-01-01" />
@@ -41,7 +42,7 @@ class ItemsChart extends View {
         });
     }
 
-    calculateOverallPriceChanges(items, onlyToday, startDate, endDate) {
+    calculateOverallPriceChanges(items, onlyToday, percentageChange, startDate, endDate) {
         if (items.length == 0) return { dates: [], changes: [] };
 
         const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
@@ -49,52 +50,45 @@ class ItemsChart extends View {
         if (onlyToday) {
             let sum = 0;
             for (const item of items) sum += getPrice(item);
-            return [{ date: today(), price: sum }];
+            return [{ date: today(), price: sum, unitPrice: sum }];
         }
 
-        const allDates = items.flatMap((product) =>
-            product.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate).map((item) => item.date)
-        );
-        let uniqueDates = [...new Set(allDates)];
-        uniqueDates.sort();
+        const dates = uniqueDates(items, startDate, endDate);
 
-        let priceChanges = new Array(uniqueDates.length);
-        for (let i = 0; i < uniqueDates.length; i++) {
-            priceChanges[i] = { date: uniqueDates[i], price: 0 };
+        let priceChanges = new Array(dates.length);
+        for (let i = 0; i < dates.length; i++) {
+            priceChanges[i] = { date: dates[i], price: 0, unitPrice: 0 };
         }
-        const priceScratch = new Array(uniqueDates.length);
+
+        let numItems = 0;
         items.forEach((product) => {
-            let price = null;
-            priceScratch.fill(null);
-            if (!product.priceHistoryLookup) {
-                product.priceHistoryLookup = {};
-                product.priceHistory.forEach((price) => (product.priceHistoryLookup[price.date] = price));
-            }
-            for (let i = 0; i < uniqueDates.length; i++) {
-                const priceObj = product.priceHistoryLookup[uniqueDates[i]];
-                if (!price && priceObj) price = getPrice(priceObj);
-                priceScratch[i] = priceObj ? getPrice(priceObj) : null;
-            }
-
-            for (let i = 0; i < priceScratch.length; i++) {
-                if (!priceScratch[i]) {
-                    priceScratch[i] = price;
-                } else {
-                    price = priceScratch[i];
-                }
-            }
+            const priceScratch = calculateItemPriceTimeSeries(product, percentageChange, startDate, dates);
+            if (priceScratch == null) return;
+            numItems++;
 
             for (let i = 0; i < priceScratch.length; i++) {
                 const price = priceScratch[i];
                 priceChanges[i].price += price;
+                priceChanges[i].unitPrice += price;
             }
         });
 
-        priceChanges = priceChanges.filter((price) => price.date >= startDate && price.date <= endDate);
+        if (percentageChange) {
+            for (let i = 0; i < priceChanges.length; i++) {
+                priceChanges[i].price /= numItems;
+                priceChanges[i].unitPrice /= numItems;
+            }
+
+            for (let i = 0; i < priceChanges.length; i++) {
+                priceChanges[i].price = priceChanges[i].price.toFixed(2);
+                priceChanges[i].unitPrice = priceChanges[i].unitPrice.toFixed(2);
+            }
+        }
+
         return priceChanges;
     }
 
-    renderChart(items, chartType) {
+    renderChart(items, chartType, startDate) {
         const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
         const canvasDom = this.elements.canvas;
         const noData = this.elements.noData;
@@ -107,12 +101,11 @@ class ItemsChart extends View {
             noData.classList.add("hidden");
         }
 
-        const startDate = this.elements.startDate.value;
-        const endDate = this.elements.endDate.value;
+        const percentageChange = this.elements.percentageChange.checked;
 
         const now = performance.now();
         const datasets = items.map((item) => {
-            const prices = item.priceHistory.filter((price) => price.date >= startDate && price.date <= endDate);
+            const prices = item.priceHistory;
 
             const dataset = {
                 label: (item.store ? item.store + " " : "") + item.name,
@@ -124,9 +117,10 @@ class ItemsChart extends View {
                 }),
             };
             if (settings.chartType == "stepped") {
-                // I don't know why this is necessary...
-                if (dataset.label.startsWith("Preissumme")) dataset.stepped = "before";
-                else dataset.stepped = "after";
+                dataset.stepped =
+                    prices.length >= 2 && prices[0].price != prices[1].price && prices[prices.length - 2].price != prices[prices.length - 1].price
+                        ? "after"
+                        : "before";
             }
 
             return dataset;
@@ -139,6 +133,32 @@ class ItemsChart extends View {
             scrollTop = document.documentElement.scrollTop;
             canvasDom.lastChart.destroy();
         }
+
+        let yAxis = {
+            ticks: {
+                callback: function (value, index, ticks) {
+                    return value.toLocaleString("de-DE", {
+                        minimumFractionDigits: 2,
+                        style: "currency",
+                        currency: "EUR",
+                    });
+                },
+            },
+        };
+        if (percentageChange) {
+            yAxis = {
+                title: {
+                    display: true,
+                    text: "Änderung in % seit " + startDate,
+                },
+                ticks: {
+                    callback: (value) => {
+                        return value + "%";
+                    },
+                },
+            };
+        }
+
         canvasDom.lastChart = new Chart(ctx, {
             type: chartType ? chartType : "line",
             data: {
@@ -168,17 +188,7 @@ class ItemsChart extends View {
                             text: "Date",
                         },
                     },
-                    y: {
-                        ticks: {
-                            callback: function (value, index, ticks) {
-                                return value.toLocaleString("de-DE", {
-                                    minimumFractionDigits: 2,
-                                    style: "currency",
-                                    currency: "EUR",
-                                });
-                            },
-                        },
-                    },
+                    y: yAxis,
                 },
             },
         });
@@ -191,15 +201,19 @@ class ItemsChart extends View {
         const items = this.model.filteredItems;
         const elements = this.elements;
         const onlyToday = this.elements.onlyToday.checked;
-        const startDate = this.elements.startDate.value;
-        const endDate = this.elements.endDate.value;
+        let startDate = this.elements.startDate.value;
+        let endDate = this.elements.endDate.value;
+        let validDate = /^20\d{2}-\d{2}-\d{2}$/;
+        if (!validDate.test(startDate)) startDate = "2017-01-01";
+        if (!validDate.test(endDate)) endDate = today();
+        const percentageChange = this.elements.percentageChange.checked;
         const itemsToShow = [];
 
         if (elements.sumTotal.checked && items.length > 0) {
             const now = performance.now();
             itemsToShow.push({
                 name: "Preissumme Gesamt",
-                priceHistory: this.calculateOverallPriceChanges(items, onlyToday, startDate, endDate),
+                priceHistory: this.calculateOverallPriceChanges(items, onlyToday, percentageChange, startDate, endDate),
             });
             log("ItemsChart - Calculating overall sum total " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
         }
@@ -211,25 +225,36 @@ class ItemsChart extends View {
                 if (storeItems.length > 0) {
                     itemsToShow.push({
                         name: "Preissumme " + store,
-                        priceHistory: this.calculateOverallPriceChanges(storeItems, onlyToday, startDate, endDate),
+                        priceHistory: this.calculateOverallPriceChanges(storeItems, onlyToday, percentageChange, startDate, endDate),
                     });
                 }
             });
             log("ItemsChart - Calculating overall sum per store took " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
         }
 
-        const getPrice = this.unitPrice ? (o) => o.unitPrice : (o) => o.price;
         items.forEach((item) => {
             if (item.chart) {
+                const dates = uniqueDates([item], startDate, endDate);
+                const prices = calculateItemPriceTimeSeries(item, percentageChange, startDate, dates).map((price) =>
+                    percentageChange ? price.toFixed(2) : price
+                );
+                const priceHistory = [];
+                if (!onlyToday) {
+                    for (let i = 0; i < dates.length; i++) {
+                        priceHistory.push({ date: dates[i], price: prices[i], unitPrice: prices[i] });
+                    }
+                } else {
+                    priceHistory.push({ date: dates[dates.length - 1], price: prices[prices.length - 1], unitPrice: prices[prices.length - 1] });
+                }
                 const chartItem = {
                     name: item.store + " " + item.name,
-                    priceHistory: onlyToday ? [{ date: today(), price: getPrice(item) }] : item.priceHistory,
+                    priceHistory,
                 };
                 itemsToShow.push(chartItem);
             }
         });
 
-        this.renderChart(itemsToShow, onlyToday ? "bar" : "line");
+        this.renderChart(itemsToShow, onlyToday ? "bar" : "line", startDate);
         log(`ItemsChart - charted ${itemsToShow.length} items in ${deltaTime(start).toFixed(2)} secs`);
     }
 }

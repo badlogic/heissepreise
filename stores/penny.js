@@ -49,9 +49,11 @@ exports.fetchData = async function () {
     return result;
 };
 
-async function parseCategory(url, parent, result) {
+async function parseCategory(url, parent, result, lookup) {
     const data = (await axios.get(url)).data;
     const dom = HTMLParser.parse(data);
+    const categoryTitle = dom.querySelector('[data-test="category-title"]')?.textContent;
+    if (url != "https://www.penny.at/kategorie" && categoryTitle.includes("Alle Kategorien")) return;
     const categories = dom.querySelectorAll('[data-test="category-tree-navigation-button"]');
     for (const category of categories) {
         const link = "https://www.penny.at" + category.getAttribute("href");
@@ -59,19 +61,26 @@ async function parseCategory(url, parent, result) {
         const name = (parent ? parent + " -> " : "") + category.querySelector(".subtitle-2").innerText.trim().replace("&amp;", "&");
         if (name.startsWith("Alle Angebote")) continue;
 
-        result.push({
-            id: name,
-            url: link,
-            code: null,
-        });
+        if (!lookup.has(link)) {
+            lookup.add(link);
+            result.push({
+                id: name,
+                url: link,
+                code: null,
+            });
 
-        await parseCategory(link, name, result);
+            try {
+                await parseCategory(link, name, result, lookup);
+            } catch (e) {
+                // Ignore, sometimes the server responds with 502. No idea why
+            }
+        }
     }
 }
 
 exports.initializeCategoryMapping = async () => {
     const categories = [];
-    await parseCategory("https://www.penny.at/kategorie", null, categories);
+    await parseCategory("https://www.penny.at/kategorie", null, categories, new Set());
     utils.mergeAndSaveCategories("penny", categories);
 
     exports.categoryLookup = {};
@@ -82,6 +91,7 @@ exports.initializeCategoryMapping = async () => {
 
 exports.mapCategory = (rawItem) => {
     const categoryPath = rawItem.parentCategories.filter((path) => path.length > 0 && !path[0].name.includes("ngebot"))[0];
+    if (!categoryPath) return null;
     const categoryName = categoryPath.map((path) => path.name).join(" -> ");
     const category = exports.categoryLookup[categoryName];
     if (category) return category.code;
@@ -89,3 +99,9 @@ exports.mapCategory = (rawItem) => {
 };
 
 exports.urlBase = "https://www.penny.at/produkte/";
+
+if (require.main == module) {
+    (async () => {
+        await exports.initializeCategoryMapping();
+    })();
+}

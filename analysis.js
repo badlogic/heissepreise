@@ -55,15 +55,32 @@ function currentDate() {
     return `${year}-${month}-${day}`;
 }
 
+const strings = new Map();
+const internString = (value) => {
+    if (strings.has(value)) {
+        return strings.get(value);
+    } else {
+        strings.set(value, value);
+        return value;
+    }
+};
+
 function getCanonicalFor(store, rawItems, today) {
     const canonicalItems = [];
     for (let i = 0; i < rawItems.length; i++) {
-        const item = stores[store]?.getCanonical(rawItems[i], today);
-        if (item)
-            canonicalItems.push({
+        let item = stores[store]?.getCanonical(rawItems[i], today);
+        if (item) {
+            item = {
                 store,
                 ...item,
-            });
+            };
+            for (const property of Object.keys(item)) {
+                if (typeof item[property] === "string") {
+                    item[property] = internString(item[property]);
+                }
+            }
+            canonicalItems.push(item);
+        }
     }
     return canonicalItems;
 }
@@ -226,7 +243,7 @@ exports.replay = async (rawDataDir) => {
         canonicalFiles[store] = storeFiles[store].map((file) => {
             console.log(`Creating canonical items for ${file}`);
             const rawItems = readJSON(file);
-            const items = getCanonicalFor(store, rawItems, file.match(/\d{4}-\d{2}-\d{2}/)[0]);
+            const items = exports.dedupItems(getCanonicalFor(store, rawItems, file.match(/\d{4}-\d{2}-\d{2}/)[0]));
             for (let i = 0; i < items.length; i++) {
                 const rawItem = rawItems[i];
                 const item = items[i];
@@ -279,7 +296,7 @@ exports.updateData = async function (dataDir, done) {
                         rawItems = await stores[store].fetchData();
                         writeJSON(rawDataFile, rawItems, FILE_COMPRESSOR);
                     }
-                    const items = getCanonicalFor(store, rawItems, today);
+                    const items = exports.dedupItems(getCanonicalFor(store, rawItems, today));
 
                     await stores[store].initializeCategoryMapping(rawItems);
                     let numUncategorized = 0;
@@ -304,7 +321,7 @@ exports.updateData = async function (dataDir, done) {
         );
     }
 
-    const items = [].concat(...(await Promise.all(storeFetchPromises)));
+    let items = [].concat(...(await Promise.all(storeFetchPromises)));
 
     if (fs.existsSync(`${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`)) {
         const oldItems = readJSON(`${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`);
@@ -319,6 +336,7 @@ exports.updateData = async function (dataDir, done) {
     }
 
     sortItems(items);
+    items = exports.dedupItems(items);
     writeJSON(`${dataDir}/latest-canonical.json`, items, FILE_COMPRESSOR);
 
     if (done) done(items);
@@ -347,3 +365,29 @@ exports.migrateCompression = (dataDir, fromSuffix, toSuffix, remove = true) => {
         }
     }
 };
+
+exports.dedupItems = (items) => {
+    const lookup = {};
+    const dedupItems = [];
+    let duplicates = {};
+    for (const item of items) {
+        const seenItem = lookup[item.store + item.id];
+        if (!seenItem) {
+            lookup[item.store + item.id] = item;
+            dedupItems.push(item);
+        } else {
+            if (seenItem.quantity != item.quantity || seenItem.unit != item.unit) {
+                // console.log(`Item with same id but different quantity and unit: ${item.store}-${item.id} '${item.name}'`);
+            }
+            duplicates[item.store] = duplicates[item.store] ? duplicates[item.store] + 1 : 1;
+        }
+    }
+    //console.log("Deduplicated items");
+    //console.log(JSON.stringify(duplicates, null, 2));
+    return dedupItems;
+};
+
+if (require.main == module) {
+    const items = exports.readJSON("latest-canonical.json.br");
+    exports.dedupItems(items);
+}
