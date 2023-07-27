@@ -424,13 +424,13 @@
     "code": "33"
   },
   {
-    "id": "kasespezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
+    "id": "weichkase",
+    "url": "https://www.roksh.at/hofer/angebot/weichkase",
     "code": "33"
   },
   {
-    "id": "weichkase",
-    "url": "https://www.roksh.at/hofer/angebot/weichkase",
+    "id": "kasespezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
     "code": "33"
   },
   {
@@ -479,13 +479,13 @@
     "code": "32"
   },
   {
-    "id": "schweinefleisch-spezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
     "code": "32"
   },
   {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
+    "id": "schweinefleisch-spezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
     "code": "32"
   },
   {
@@ -664,14 +664,14 @@
     "code": "77"
   },
   {
-    "id": "sonnenpflege",
-    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
-    "code": "79"
-  },
-  {
     "id": "deodorants",
     "url": "https://www.roksh.at/hofer/angebot/deodorants",
     "code": "72"
+  },
+  {
+    "id": "sonnenpflege",
+    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
+    "code": "79"
   },
   {
     "id": "beikost-snacks",
