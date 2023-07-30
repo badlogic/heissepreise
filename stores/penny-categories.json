@@ -5,14 +5,14 @@
     "code": "00"
   },
   {
-    "id": "Obst & Gemüse -> Gemüse & Salate",
-    "url": "https://www.penny.at/kategorie/gemuese-und-salate-13015",
-    "code": "01"
-  },
-  {
     "id": "Obst & Gemüse -> Obst",
     "url": "https://www.penny.at/kategorie/obst-13014",
     "code": "00"
+  },
+  {
+    "id": "Obst & Gemüse -> Gemüse & Salate",
+    "url": "https://www.penny.at/kategorie/gemuese-und-salate-13015",
+    "code": "01"
   },
   {
     "id": "Brot & Gebäck",
@@ -20,14 +20,14 @@
     "code": "10"
   },
   {
-    "id": "Brot & Gebäck -> Kuchen & Co.",
-    "url": "https://www.penny.at/kategorie/kuchen-und-co-13022",
-    "code": "13"
-  },
-  {
     "id": "Brot & Gebäck -> Brot & Gebäck",
     "url": "https://www.penny.at/kategorie/brot-und-gebaeck-13021",
     "code": "11"
+  },
+  {
+    "id": "Brot & Gebäck -> Kuchen & Co.",
+    "url": "https://www.penny.at/kategorie/kuchen-und-co-13022",
+    "code": "13"
   },
   {
     "id": "Getränke",
@@ -75,14 +75,14 @@
     "code": "34"
   },
   {
-    "id": "Kühlwaren -> Wurst, Schinken & Speck",
-    "url": "https://www.penny.at/kategorie/wurst-schinken-und-speck-13044",
-    "code": "37"
-  },
-  {
     "id": "Kühlwaren -> Fleisch",
     "url": "https://www.penny.at/kategorie/fleisch-13035",
     "code": "32"
+  },
+  {
+    "id": "Kühlwaren -> Käse, Aufstriche & Salate",
+    "url": "https://www.penny.at/kategorie/kaese-aufstriche-und-salate-13038",
+    "code": "33"
   },
   {
     "id": "Kühlwaren -> Fisch",
@@ -90,9 +90,9 @@
     "code": "39"
   },
   {
-    "id": "Kühlwaren -> Käse, Aufstriche & Salate",
-    "url": "https://www.penny.at/kategorie/kaese-aufstriche-und-salate-13038",
-    "code": "33"
+    "id": "Kühlwaren -> Wurst, Schinken & Speck",
+    "url": "https://www.penny.at/kategorie/wurst-schinken-und-speck-13044",
+    "code": "37"
   },
   {
     "id": "Kühlwaren -> Schnelle Küche",
@@ -170,13 +170,13 @@
     "code": "60"
   },
   {
-    "id": "Süßes & Salziges -> Süßwaren",
-    "url": "https://www.penny.at/kategorie/suesswaren-13075",
+    "id": "Süßes & Salziges -> Schokolade",
+    "url": "https://www.penny.at/kategorie/schokolade-13074",
     "code": "64"
   },
   {
-    "id": "Süßes & Salziges -> Schokolade",
-    "url": "https://www.penny.at/kategorie/schokolade-13074",
+    "id": "Süßes & Salziges -> Süßwaren",
+    "url": "https://www.penny.at/kategorie/suesswaren-13075",
     "code": "64"
   },
   {
@@ -210,11 +210,6 @@
     "code": "80"
   },
   {
-    "id": "Haushalt -> Küchenrollen & WC-Papier",
-    "url": "https://www.penny.at/kategorie/kuechenrollen-und-wcpapier-13094",
-    "code": "84"
-  },
-  {
     "id": "Haushalt -> Waschmittel & Weichspüler",
     "url": "https://www.penny.at/kategorie/waschmittel-und-weichspueler-13099",
     "code": "8A"
@@ -223,6 +218,11 @@
     "id": "Haushalt -> Reinigen & Pflegen",
     "url": "https://www.penny.at/kategorie/reinigen-und-pflegen-13097",
     "code": "88"
+  },
+  {
+    "id": "Haushalt -> Küchenrollen & WC-Papier",
+    "url": "https://www.penny.at/kategorie/kuechenrollen-und-wcpapier-13094",
+    "code": "84"
   },
   {
     "id": "Haushalt -> Raumsprays & Kerzen",
@@ -240,14 +240,14 @@
     "code": "70"
   },
   {
-    "id": "Pflege -> Seifen & Duschbäder",
-    "url": "https://www.penny.at/kategorie/seifen-und-duschbaeder-13085",
-    "code": "78"
-  },
-  {
     "id": "Pflege -> Mund- & Zahnhygiene",
     "url": "https://www.penny.at/kategorie/mund-und-zahnhygiene-13083",
     "code": null
+  },
+  {
+    "id": "Pflege -> Seifen & Duschbäder",
+    "url": "https://www.penny.at/kategorie/seifen-und-duschbaeder-13085",
+    "code": "78"
   },
   {
     "id": "Pflege -> Rasierbedarf",
@@ -270,13 +270,13 @@
     "code": "82"
   },
   {
-    "id": "Non-Food -> Bekleidung & Textilien",
-    "url": "https://www.penny.at/kategorie/bekleidung-und-textilien-13107",
+    "id": "Non-Food -> Saison",
+    "url": "https://www.penny.at/kategorie/saison-13111",
     "code": null
   },
   {
-    "id": "Non-Food -> Saison",
-    "url": "https://www.penny.at/kategorie/saison-13111",
+    "id": "Non-Food -> Bekleidung & Textilien",
+    "url": "https://www.penny.at/kategorie/bekleidung-und-textilien-13107",
     "code": null
   },
   {
