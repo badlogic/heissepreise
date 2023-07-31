@@ -2845,6 +2845,11 @@
     "code": null
   },
   {
+    "id": "Genusswelt/Aktionen/Aus dem Prospekt",
+    "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
+    "code": null
+  },
+  {
     "id": "Tiershop/Tiernahrung",
     "url": "https://www.mueller.at/tiershop/tiernahrung/",
     "code": "90"
@@ -3248,10 +3253,5 @@
     "id": "Tiershop/Marken/Cats Love",
     "url": "https://www.mueller.at/tiershop/marken/cats-love/",
     "code": "91"
-  },
-  {
-    "id": "Genusswelt/Aktionen/Aus dem Prospekt",
-    "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
-    "code": null
   }
 ]
