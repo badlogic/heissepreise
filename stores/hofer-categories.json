@@ -449,11 +449,6 @@
     "code": "37"
   },
   {
-    "id": "kochschinken",
-    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
-    "code": "37"
-  },
-  {
     "id": "stangenwurst",
     "url": "https://www.roksh.at/hofer/angebot/stangenwurst",
     "code": "37"
@@ -471,6 +466,11 @@
   {
     "id": "leberkase-co",
     "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
+    "code": "37"
+  },
+  {
+    "id": "kochschinken",
+    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
     "code": "37"
   },
   {
@@ -559,13 +559,13 @@
     "code": "64"
   },
   {
-    "id": "fruchtgummi",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
+    "id": "pralinen",
+    "url": "https://www.roksh.at/hofer/angebot/pralinen",
     "code": "64"
   },
   {
-    "id": "pralinen",
-    "url": "https://www.roksh.at/hofer/angebot/pralinen",
+    "id": "fruchtgummi",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
     "code": "64"
   },
   {
