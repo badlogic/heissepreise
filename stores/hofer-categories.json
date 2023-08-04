@@ -449,6 +449,11 @@
     "code": "37"
   },
   {
+    "id": "kochschinken",
+    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
+    "code": "37"
+  },
+  {
     "id": "stangenwurst",
     "url": "https://www.roksh.at/hofer/angebot/stangenwurst",
     "code": "37"
@@ -469,23 +474,18 @@
     "code": "37"
   },
   {
-    "id": "kochschinken",
-    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
-    "code": "37"
-  },
-  {
     "id": "hühnchen-geflügel",
     "url": "https://www.roksh.at/hofer/angebot/hühnchen-geflügel",
     "code": "32"
   },
   {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
+    "id": "schweinefleisch-spezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
     "code": "32"
   },
   {
-    "id": "schweinefleisch-spezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
     "code": "32"
   },
   {
@@ -609,14 +609,14 @@
     "code": "22"
   },
   {
-    "id": "softdrinks",
-    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
-    "code": "20"
-  },
-  {
     "id": "mineralwasser",
     "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
     "code": "26"
+  },
+  {
+    "id": "softdrinks",
+    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
+    "code": "20"
   },
   {
     "id": "sport-energy-drinks",
@@ -664,14 +664,14 @@
     "code": "77"
   },
   {
-    "id": "deodorants",
-    "url": "https://www.roksh.at/hofer/angebot/deodorants",
-    "code": "72"
-  },
-  {
     "id": "sonnenpflege",
     "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
     "code": "79"
+  },
+  {
+    "id": "deodorants",
+    "url": "https://www.roksh.at/hofer/angebot/deodorants",
+    "code": "72"
   },
   {
     "id": "beikost-snacks",
