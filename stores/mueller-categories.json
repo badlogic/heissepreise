@@ -2840,8 +2840,8 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Aktionen",
-    "url": "https://www.mueller.at/genusswelt/aktionen/",
+    "id": "Genusswelt/Alle Genusswelt Produkte",
+    "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
     "code": null
   },
   {
@@ -3072,6 +3072,11 @@
   {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Aktionen",
+    "url": "https://www.mueller.at/genusswelt/aktionen/",
     "code": null
   },
   {
