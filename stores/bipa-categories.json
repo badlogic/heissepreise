@@ -1272,7 +1272,7 @@
     "code": null
   },
   {
-    "id": "navigation",
+    "id": "onlineonly",
     "description": null,
     "url": "https://www.bipa.at/c/themen/online-only",
     "code": null
@@ -2098,6 +2098,12 @@
     "description": null,
     "url": "https://www.bipa.at/c/tier/vogel/zubehoer",
     "code": "93"
+  },
+  {
+    "id": "navigation",
+    "description": null,
+    "url": "https://www.bipa.at/c/themen/online-only",
+    "code": null
   },
   {
     "id": "make-up-lippe",
