@@ -138,12 +138,6 @@
     "code": "57"
   },
   {
-    "id": "fertiggerichte-suppen",
-    "description": "Fertiggerichte & Suppen",
-    "url": "https://www.roksh.at//hofer/angebot/vorratsschrank/fertiggerichte-suppen",
-    "code": "54"
-  },
-  {
     "id": "essig-ol-saucen",
     "description": "Essig, Öl & Saucen",
     "url": "https://www.roksh.at//hofer/angebot/vorratsschrank/essig-ol-saucen",
@@ -154,12 +148,6 @@
     "description": "Reis, Teigwaren & Getreide",
     "url": "https://www.roksh.at//hofer/angebot/vorratsschrank/reis-teigwaren-getreide",
     "code": "5B"
-  },
-  {
-    "id": "gewurze",
-    "description": "Gewürze",
-    "url": "https://www.roksh.at//hofer/angebot/vorratsschrank/gewurze",
-    "code": "55"
   },
   {
     "id": "nusse-trockenfruchte",
@@ -240,18 +228,6 @@
     "code": "3B"
   },
   {
-    "id": "margarine-pflanzliche",
-    "description": "Margarine & pflanzliche Fette",
-    "url": "https://www.roksh.at//hofer/angebot/vegetarisch-vegan/margarine-pflanzliche",
-    "code": "34"
-  },
-  {
-    "id": "fleischersatzprodukte",
-    "description": "Fleischersatz- Produkte",
-    "url": "https://www.roksh.at//hofer/angebot/vegetarisch-vegan/fleischersatzprodukte",
-    "code": "3B"
-  },
-  {
     "id": "getranke",
     "description": "Getränke",
     "url": "https://www.roksh.at//hofer/angebot/getranke",
@@ -300,6 +276,336 @@
     "code": "72"
   },
   {
+    "id": "haushalt",
+    "description": "Haushalt",
+    "url": "https://www.roksh.at//hofer/angebot/haushalt",
+    "code": "80"
+  },
+  {
+    "id": "waschen-reinigen",
+    "description": "Waschen & Reinigen",
+    "url": "https://www.roksh.at//hofer/angebot/haushalt/waschen-reinigen",
+    "code": "8A"
+  },
+  {
+    "id": "tierberdarf",
+    "description": "Tierbedarf",
+    "url": "https://www.roksh.at//hofer/angebot/tierberdarf",
+    "code": "90"
+  },
+  {
+    "id": "hundenahrung",
+    "description": "Hundenahrung",
+    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/hundenahrung",
+    "code": "90"
+  },
+  {
+    "id": "katzenzubehor",
+    "description": "Katzenzubehör",
+    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzenzubehor",
+    "code": "91"
+  },
+  {
+    "id": "katzennahrung",
+    "description": "Katzennahrung",
+    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzennahrung",
+    "code": "91"
+  },
+  {
+    "id": "fruchtjoghurt",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtjoghurt",
+    "code": "34"
+  },
+  {
+    "id": "milchgetrank",
+    "url": "https://www.roksh.at/hofer/angebot/milchgetrank",
+    "code": "34"
+  },
+  {
+    "id": "joghurt-topfen",
+    "url": "https://www.roksh.at/hofer/angebot/joghurt-topfen",
+    "code": "34"
+  },
+  {
+    "id": "haltbare-milch-sahne-eiskaffee",
+    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
+    "code": "34"
+  },
+  {
+    "id": "milch-sahne-butter",
+    "url": "https://www.roksh.at/hofer/angebot/milch-sahne-butter",
+    "code": "34"
+  },
+  {
+    "id": "aufstriche-co",
+    "url": "https://www.roksh.at/hofer/angebot/aufstriche-co",
+    "code": "33"
+  },
+  {
+    "id": "kase-geschnitten-gerieben",
+    "url": "https://www.roksh.at/hofer/angebot/kase-geschnitten-gerieben",
+    "code": "33"
+  },
+  {
+    "id": "hart-schnittkase",
+    "url": "https://www.roksh.at/hofer/angebot/hart-schnittkase",
+    "code": "33"
+  },
+  {
+    "id": "kasespezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
+    "code": "33"
+  },
+  {
+    "id": "frischkase-co",
+    "url": "https://www.roksh.at/hofer/angebot/frischkase-co",
+    "code": "33"
+  },
+  {
+    "id": "weichkase",
+    "url": "https://www.roksh.at/hofer/angebot/weichkase",
+    "code": "33"
+  },
+  {
+    "id": "wurst-geschnitten",
+    "url": "https://www.roksh.at/hofer/angebot/wurst-geschnitten",
+    "code": "37"
+  },
+  {
+    "id": "stangenwurst",
+    "url": "https://www.roksh.at/hofer/angebot/stangenwurst",
+    "code": "37"
+  },
+  {
+    "id": "speck-rohschinken",
+    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
+    "code": "37"
+  },
+  {
+    "id": "leberkase-co",
+    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
+    "code": "37"
+  },
+  {
+    "id": "wurstel",
+    "url": "https://www.roksh.at/hofer/angebot/wurstel",
+    "code": "37"
+  },
+  {
+    "id": "kochschinken",
+    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
+    "code": "37"
+  },
+  {
+    "id": "streichwurst-pasteten",
+    "url": "https://www.roksh.at/hofer/angebot/streichwurst-pasteten",
+    "code": "37"
+  },
+  {
+    "id": "hühnchen-geflügel",
+    "url": "https://www.roksh.at/hofer/angebot/hühnchen-geflügel",
+    "code": "32"
+  },
+  {
+    "id": "schweinefleisch-spezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
+    "code": "32"
+  },
+  {
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
+    "code": "32"
+  },
+  {
+    "id": "fruchtaufstriche",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtaufstriche",
+    "code": "56"
+  },
+  {
+    "id": "honig-nussaufstriche",
+    "url": "https://www.roksh.at/hofer/angebot/honig-nussaufstriche",
+    "code": "56"
+  },
+  {
+    "id": "sauerkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/sauerkonserven",
+    "code": "57"
+  },
+  {
+    "id": "gemusekonserven",
+    "url": "https://www.roksh.at/hofer/angebot/gemusekonserven",
+    "code": "57"
+  },
+  {
+    "id": "obstkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/obstkonserven",
+    "code": "57"
+  },
+  {
+    "id": "fleisch-fischkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/fleisch-fischkonserven",
+    "code": "57"
+  },
+  {
+    "id": "nusse",
+    "url": "https://www.roksh.at/hofer/angebot/nusse",
+    "code": "03"
+  },
+  {
+    "id": "waffeln",
+    "url": "https://www.roksh.at/hofer/angebot/waffeln",
+    "code": "60"
+  },
+  {
+    "id": "schokoriegel",
+    "url": "https://www.roksh.at/hofer/angebot/schokoriegel",
+    "code": "64"
+  },
+  {
+    "id": "pralinen",
+    "url": "https://www.roksh.at/hofer/angebot/pralinen",
+    "code": "64"
+  },
+  {
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
+    "code": "64"
+  },
+  {
+    "id": "bonbons-kaugummi",
+    "url": "https://www.roksh.at/hofer/angebot/bonbons-kaugummi",
+    "code": "64"
+  },
+  {
+    "id": "kekse",
+    "url": "https://www.roksh.at/hofer/angebot/kekse",
+    "code": "64"
+  },
+  {
+    "id": "fruchtgummi",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
+    "code": "64"
+  },
+  {
+    "id": "chips",
+    "url": "https://www.roksh.at/hofer/angebot/chips",
+    "code": "63"
+  },
+  {
+    "id": "salzgeback-kracker",
+    "url": "https://www.roksh.at/hofer/angebot/salzgeback-kracker",
+    "code": "63"
+  },
+  {
+    "id": "roseweine-spezialweine",
+    "url": "https://www.roksh.at/hofer/angebot/roseweine-spezialweine",
+    "code": "25"
+  },
+  {
+    "id": "weißweine",
+    "url": "https://www.roksh.at/hofer/angebot/weißweine",
+    "code": "25"
+  },
+  {
+    "id": "rotweine",
+    "url": "https://www.roksh.at/hofer/angebot/rotweine",
+    "code": "25"
+  },
+  {
+    "id": "sekt",
+    "url": "https://www.roksh.at/hofer/angebot/sekt",
+    "code": "23"
+  },
+  {
+    "id": "kaffee-kakao-co",
+    "url": "https://www.roksh.at/hofer/angebot/kaffee-kakao-co",
+    "code": "22"
+  },
+  {
+    "id": "mineralwasser",
+    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
+    "code": "26"
+  },
+  {
+    "id": "sport-energy-drinks",
+    "url": "https://www.roksh.at/hofer/angebot/sport-energy-drinks",
+    "code": "20"
+  },
+  {
+    "id": "fruchtsafte",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtsafte",
+    "code": "20"
+  },
+  {
+    "id": "sirupe",
+    "url": "https://www.roksh.at/hofer/angebot/sirupe",
+    "code": "20"
+  },
+  {
+    "id": "smoothies",
+    "url": "https://www.roksh.at/hofer/angebot/smoothies",
+    "code": "20"
+  },
+  {
+    "id": "softdrinks",
+    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
+    "code": "20"
+  },
+  {
+    "id": "zahn-mundhygiene",
+    "url": "https://www.roksh.at/hofer/angebot/zahn-mundhygiene",
+    "code": "76"
+  },
+  {
+    "id": "deodorants",
+    "url": "https://www.roksh.at/hofer/angebot/deodorants",
+    "code": "72"
+  },
+  {
+    "id": "haarpflege",
+    "url": "https://www.roksh.at/hofer/angebot/haarpflege",
+    "code": "73"
+  },
+  {
+    "id": "wc-lufterfrischer",
+    "url": "https://www.roksh.at/hofer/angebot/wc-lufterfrischer",
+    "code": "87"
+  },
+  {
+    "id": "waschmittel",
+    "url": "https://www.roksh.at/hofer/angebot/waschmittel",
+    "code": "8A"
+  },
+  {
+    "id": "spulmittel-putzmittel",
+    "url": "https://www.roksh.at/hofer/angebot/spulmittel-putzmittel",
+    "code": "88"
+  },
+  {
+    "id": "fertiggerichte-suppen",
+    "description": "Fertiggerichte & Suppen",
+    "url": "https://www.roksh.at//hofer/angebot/vorratsschrank/fertiggerichte-suppen",
+    "code": "54"
+  },
+  {
+    "id": "gewurze",
+    "description": "Gewürze",
+    "url": "https://www.roksh.at//hofer/angebot/vorratsschrank/gewurze",
+    "code": "55"
+  },
+  {
+    "id": "margarine-pflanzliche",
+    "description": "Margarine & pflanzliche Fette",
+    "url": "https://www.roksh.at//hofer/angebot/vegetarisch-vegan/margarine-pflanzliche",
+    "code": "34"
+  },
+  {
+    "id": "fleischersatzprodukte",
+    "description": "Fleischersatz- Produkte",
+    "url": "https://www.roksh.at//hofer/angebot/vegetarisch-vegan/fleischersatzprodukte",
+    "code": "3B"
+  },
+  {
     "id": "babyartikel",
     "description": "Babyartikel",
     "url": "https://www.roksh.at//hofer/angebot/drogerie/babyartikel",
@@ -316,18 +622,6 @@
     "description": "Damensocken & Feinstrümpfe",
     "url": "https://www.roksh.at//hofer/angebot/drogerie/damensocken-feinstrumpfe",
     "code": "7C"
-  },
-  {
-    "id": "haushalt",
-    "description": "Haushalt",
-    "url": "https://www.roksh.at//hofer/angebot/haushalt",
-    "code": "80"
-  },
-  {
-    "id": "waschen-reinigen",
-    "description": "Waschen & Reinigen",
-    "url": "https://www.roksh.at//hofer/angebot/haushalt/waschen-reinigen",
-    "code": "8A"
   },
   {
     "id": "hygieneartikel",
@@ -360,173 +654,9 @@
     "code": "85"
   },
   {
-    "id": "tierberdarf",
-    "description": "Tierbedarf",
-    "url": "https://www.roksh.at//hofer/angebot/tierberdarf",
-    "code": "90"
-  },
-  {
-    "id": "hundenahrung",
-    "description": "Hundenahrung",
-    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/hundenahrung",
-    "code": "90"
-  },
-  {
-    "id": "katzenzubehor",
-    "description": "Katzenzubehör",
-    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzenzubehor",
-    "code": "91"
-  },
-  {
-    "id": "katzennahrung",
-    "description": "Katzennahrung",
-    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzennahrung",
-    "code": "91"
-  },
-  {
-    "id": "fruchtjoghurt",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtjoghurt",
-    "code": "34"
-  },
-  {
-    "id": "haltbare-milch-sahne-eiskaffee",
-    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
-    "code": "34"
-  },
-  {
-    "id": "milchgetrank",
-    "url": "https://www.roksh.at/hofer/angebot/milchgetrank",
-    "code": "34"
-  },
-  {
-    "id": "joghurt-topfen",
-    "url": "https://www.roksh.at/hofer/angebot/joghurt-topfen",
-    "code": "34"
-  },
-  {
-    "id": "milch-sahne-butter",
-    "url": "https://www.roksh.at/hofer/angebot/milch-sahne-butter",
-    "code": "34"
-  },
-  {
-    "id": "frischkase-co",
-    "url": "https://www.roksh.at/hofer/angebot/frischkase-co",
-    "code": "33"
-  },
-  {
-    "id": "aufstriche-co",
-    "url": "https://www.roksh.at/hofer/angebot/aufstriche-co",
-    "code": "33"
-  },
-  {
-    "id": "kase-geschnitten-gerieben",
-    "url": "https://www.roksh.at/hofer/angebot/kase-geschnitten-gerieben",
-    "code": "33"
-  },
-  {
-    "id": "weichkase",
-    "url": "https://www.roksh.at/hofer/angebot/weichkase",
-    "code": "33"
-  },
-  {
-    "id": "kasespezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
-    "code": "33"
-  },
-  {
-    "id": "hart-schnittkase",
-    "url": "https://www.roksh.at/hofer/angebot/hart-schnittkase",
-    "code": "33"
-  },
-  {
-    "id": "streichwurst-pasteten",
-    "url": "https://www.roksh.at/hofer/angebot/streichwurst-pasteten",
-    "code": "37"
-  },
-  {
-    "id": "wurst-geschnitten",
-    "url": "https://www.roksh.at/hofer/angebot/wurst-geschnitten",
-    "code": "37"
-  },
-  {
-    "id": "kochschinken",
-    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
-    "code": "37"
-  },
-  {
-    "id": "stangenwurst",
-    "url": "https://www.roksh.at/hofer/angebot/stangenwurst",
-    "code": "37"
-  },
-  {
-    "id": "speck-rohschinken",
-    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
-    "code": "37"
-  },
-  {
-    "id": "wurstel",
-    "url": "https://www.roksh.at/hofer/angebot/wurstel",
-    "code": "37"
-  },
-  {
-    "id": "leberkase-co",
-    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
-    "code": "37"
-  },
-  {
-    "id": "hühnchen-geflügel",
-    "url": "https://www.roksh.at/hofer/angebot/hühnchen-geflügel",
-    "code": "32"
-  },
-  {
-    "id": "schweinefleisch-spezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
-    "code": "32"
-  },
-  {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
-    "code": "32"
-  },
-  {
     "id": "rind",
     "url": "https://www.roksh.at/hofer/angebot/rind",
     "code": "32"
-  },
-  {
-    "id": "fruchtaufstriche",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtaufstriche",
-    "code": "56"
-  },
-  {
-    "id": "honig-nussaufstriche",
-    "url": "https://www.roksh.at/hofer/angebot/honig-nussaufstriche",
-    "code": "56"
-  },
-  {
-    "id": "obstkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/obstkonserven",
-    "code": "57"
-  },
-  {
-    "id": "gemusekonserven",
-    "url": "https://www.roksh.at/hofer/angebot/gemusekonserven",
-    "code": "57"
-  },
-  {
-    "id": "fleisch-fischkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/fleisch-fischkonserven",
-    "code": "57"
-  },
-  {
-    "id": "sauerkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/sauerkonserven",
-    "code": "57"
-  },
-  {
-    "id": "nusse",
-    "url": "https://www.roksh.at/hofer/angebot/nusse",
-    "code": "03"
   },
   {
     "id": "trockenfruchte",
@@ -534,114 +664,9 @@
     "code": "03"
   },
   {
-    "id": "bonbons-kaugummi",
-    "url": "https://www.roksh.at/hofer/angebot/bonbons-kaugummi",
-    "code": "64"
-  },
-  {
-    "id": "waffeln",
-    "url": "https://www.roksh.at/hofer/angebot/waffeln",
-    "code": "60"
-  },
-  {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
-    "code": "64"
-  },
-  {
-    "id": "kekse",
-    "url": "https://www.roksh.at/hofer/angebot/kekse",
-    "code": "64"
-  },
-  {
-    "id": "schokoriegel",
-    "url": "https://www.roksh.at/hofer/angebot/schokoriegel",
-    "code": "64"
-  },
-  {
-    "id": "pralinen",
-    "url": "https://www.roksh.at/hofer/angebot/pralinen",
-    "code": "64"
-  },
-  {
-    "id": "fruchtgummi",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
-    "code": "64"
-  },
-  {
-    "id": "salzgeback-kracker",
-    "url": "https://www.roksh.at/hofer/angebot/salzgeback-kracker",
-    "code": "63"
-  },
-  {
-    "id": "chips",
-    "url": "https://www.roksh.at/hofer/angebot/chips",
-    "code": "63"
-  },
-  {
-    "id": "sekt",
-    "url": "https://www.roksh.at/hofer/angebot/sekt",
-    "code": "23"
-  },
-  {
-    "id": "roseweine-spezialweine",
-    "url": "https://www.roksh.at/hofer/angebot/roseweine-spezialweine",
-    "code": "25"
-  },
-  {
-    "id": "rotweine",
-    "url": "https://www.roksh.at/hofer/angebot/rotweine",
-    "code": "25"
-  },
-  {
-    "id": "weißweine",
-    "url": "https://www.roksh.at/hofer/angebot/weißweine",
-    "code": "25"
-  },
-  {
     "id": "tee",
     "url": "https://www.roksh.at/hofer/angebot/tee",
     "code": "22"
-  },
-  {
-    "id": "kaffee-kakao-co",
-    "url": "https://www.roksh.at/hofer/angebot/kaffee-kakao-co",
-    "code": "22"
-  },
-  {
-    "id": "mineralwasser",
-    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
-    "code": "26"
-  },
-  {
-    "id": "softdrinks",
-    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
-    "code": "20"
-  },
-  {
-    "id": "sport-energy-drinks",
-    "url": "https://www.roksh.at/hofer/angebot/sport-energy-drinks",
-    "code": "20"
-  },
-  {
-    "id": "fruchtsafte",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtsafte",
-    "code": "20"
-  },
-  {
-    "id": "smoothies",
-    "url": "https://www.roksh.at/hofer/angebot/smoothies",
-    "code": "20"
-  },
-  {
-    "id": "sirupe",
-    "url": "https://www.roksh.at/hofer/angebot/sirupe",
-    "code": "20"
-  },
-  {
-    "id": "zahn-mundhygiene",
-    "url": "https://www.roksh.at/hofer/angebot/zahn-mundhygiene",
-    "code": "76"
   },
   {
     "id": "intimhygiene",
@@ -654,11 +679,6 @@
     "code": "78"
   },
   {
-    "id": "haarpflege",
-    "url": "https://www.roksh.at/hofer/angebot/haarpflege",
-    "code": "73"
-  },
-  {
     "id": "herrenkosmetik-rasur",
     "url": "https://www.roksh.at/hofer/angebot/herrenkosmetik-rasur",
     "code": "77"
@@ -667,11 +687,6 @@
     "id": "sonnenpflege",
     "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
     "code": "79"
-  },
-  {
-    "id": "deodorants",
-    "url": "https://www.roksh.at/hofer/angebot/deodorants",
-    "code": "72"
   },
   {
     "id": "beikost-snacks",
@@ -689,23 +704,8 @@
     "code": "51"
   },
   {
-    "id": "spulmittel-putzmittel",
-    "url": "https://www.roksh.at/hofer/angebot/spulmittel-putzmittel",
-    "code": "88"
-  },
-  {
-    "id": "wc-lufterfrischer",
-    "url": "https://www.roksh.at/hofer/angebot/wc-lufterfrischer",
-    "code": "87"
-  },
-  {
     "id": "reinigungstucher-kuchentucher",
     "url": "https://www.roksh.at/hofer/angebot/reinigungstucher-kuchentucher",
     "code": "88"
-  },
-  {
-    "id": "waschmittel",
-    "url": "https://www.roksh.at/hofer/angebot/waschmittel",
-    "code": "8A"
   }
 ]
