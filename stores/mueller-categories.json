@@ -2815,11 +2815,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Marken/Reingold",
-    "url": "https://www.mueller.at/genusswelt/marken/reingold/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Marken/Sardinha",
     "url": "https://www.mueller.at/genusswelt/marken/sardinha/",
     "code": null
@@ -3072,6 +3067,11 @@
   {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Reingold",
+    "url": "https://www.mueller.at/genusswelt/marken/reingold/",
     "code": null
   },
   {
