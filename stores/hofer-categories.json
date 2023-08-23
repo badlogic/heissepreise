@@ -544,11 +544,6 @@
     "code": "60"
   },
   {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
-    "code": "64"
-  },
-  {
     "id": "kekse",
     "url": "https://www.roksh.at/hofer/angebot/kekse",
     "code": "64"
@@ -556,6 +551,11 @@
   {
     "id": "schokoriegel",
     "url": "https://www.roksh.at/hofer/angebot/schokoriegel",
+    "code": "64"
+  },
+  {
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
     "code": "64"
   },
   {
