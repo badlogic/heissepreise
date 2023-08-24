@@ -170,6 +170,11 @@
     "code": null
   },
   {
+    "id": "Grundnahrungsmittel -> Asia Produkte",
+    "url": "https://www.penny.at/kategorie/asia-produkte-13056",
+    "code": "50"
+  },
+  {
     "id": "Grundnahrungsmittel -> Backen",
     "url": "https://www.penny.at/kategorie/backen-13057",
     "code": "52"
@@ -185,6 +190,11 @@
     "code": "56"
   },
   {
+    "id": "Grundnahrungsmittel -> Müsli & Cerealien",
+    "url": "https://www.penny.at/kategorie/muesli-und-cerealien-13065",
+    "code": "5A"
+  },
+  {
     "id": "Grundnahrungsmittel -> Reis, Teigwaren & Sugo",
     "url": "https://www.penny.at/kategorie/reis-teigwaren-und-sugo-13066",
     "code": "5B"
@@ -193,6 +203,11 @@
     "id": "Grundnahrungsmittel -> Saucen & Dressings",
     "url": "https://www.penny.at/kategorie/saucen-und-dressings-13067",
     "code": "5C"
+  },
+  {
+    "id": "Grundnahrungsmittel -> Spezielle Ernährung",
+    "url": "https://www.penny.at/kategorie/spezielle-ernaehrung-13068",
+    "code": "5D"
   },
   {
     "id": "Grundnahrungsmittel -> Zucker & Süßstoffe",
@@ -280,6 +295,11 @@
     "code": "73"
   },
   {
+    "id": "Pflege -> Baby",
+    "url": "https://www.penny.at/kategorie/baby-13077",
+    "code": null
+  },
+  {
     "id": "Pflege -> Mund- & Zahnhygiene",
     "url": "https://www.penny.at/kategorie/mund-und-zahnhygiene-13083",
     "code": null
@@ -315,14 +335,14 @@
     "code": null
   },
   {
+    "id": "Non-Food -> Spiele, Bücher & Co.",
+    "url": "https://www.penny.at/kategorie/spiele-buecher-und-co-13110",
+    "code": "8E"
+  },
+  {
     "id": "Non-Food -> Küche",
     "url": "https://www.penny.at/kategorie/kueche-13108",
     "code": "83"
-  },
-  {
-    "id": "Grundnahrungsmittel -> Asia Produkte",
-    "url": "https://www.penny.at/kategorie/asia-produkte-13056",
-    "code": "50"
   },
   {
     "id": "Süßes & Salziges -> Müsliriegel",
@@ -360,34 +380,14 @@
     "code": null
   },
   {
-    "id": "Grundnahrungsmittel -> Müsli & Cerealien",
-    "url": "https://www.penny.at/kategorie/muesli-und-cerealien-13065",
-    "code": "5A"
-  },
-  {
-    "id": "Grundnahrungsmittel -> Spezielle Ernährung",
-    "url": "https://www.penny.at/kategorie/spezielle-ernaehrung-13068",
-    "code": "5D"
-  },
-  {
     "id": "Haushalt -> Lampen & Batterien",
     "url": "https://www.penny.at/kategorie/lampen-und-batterien-13102",
     "code": "85"
   },
   {
-    "id": "Pflege -> Baby",
-    "url": "https://www.penny.at/kategorie/baby-13077",
-    "code": null
-  },
-  {
     "id": "Pflege -> Sonnen- & Insektenschutzmittel",
     "url": "https://www.penny.at/kategorie/sonnen-und-insektenschutzmittel-13088",
     "code": "79"
-  },
-  {
-    "id": "Non-Food -> Spiele, Bücher & Co.",
-    "url": "https://www.penny.at/kategorie/spiele-buecher-und-co-13110",
-    "code": "8E"
   },
   {
     "id": "Non-Food -> Körbe, Koffer & Co.",
