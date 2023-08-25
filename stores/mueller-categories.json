@@ -1,70 +1,5 @@
 [
   {
-    "id": "Sale/Alle Produkte",
-    "url": "https://www.mueller.at/sale/alle-produkte/",
-    "code": null
-  },
-  {
-    "id": "Sale/Drogerie",
-    "url": "https://www.mueller.at/sale/drogerie/",
-    "code": null
-  },
-  {
-    "id": "Sale/Naturshop",
-    "url": "https://www.mueller.at/sale/naturshop/",
-    "code": null
-  },
-  {
-    "id": "Sale/Multi-Media",
-    "url": "https://www.mueller.at/sale/multi-media/",
-    "code": null
-  },
-  {
-    "id": "Sale/Parfümerie",
-    "url": "https://www.mueller.at/sale/parfuemerie/",
-    "code": null
-  },
-  {
-    "id": "Sale/Spielwaren",
-    "url": "https://www.mueller.at/sale/spielwaren/",
-    "code": null
-  },
-  {
-    "id": "Sale/Schreibwaren",
-    "url": "https://www.mueller.at/sale/schreibwaren/",
-    "code": null
-  },
-  {
-    "id": "Sale/Strümpfe",
-    "url": "https://www.mueller.at/sale/struempfe/",
-    "code": null
-  },
-  {
-    "id": "Sale/Haushalt",
-    "url": "https://www.mueller.at/sale/haushalt/",
-    "code": null
-  },
-  {
-    "id": "Sale/Letzte Chance",
-    "url": "https://www.mueller.at/sale/letzte-chance/",
-    "code": null
-  },
-  {
-    "id": "Sale/über 60 Prozent Rabatt",
-    "url": "https://www.mueller.at/sale/ueber-60-prozent-rabatt/",
-    "code": null
-  },
-  {
-    "id": "Sale/über 80 Prozent Rabatt",
-    "url": "https://www.mueller.at/sale/ueber-80-prozent-rabatt/",
-    "code": null
-  },
-  {
-    "id": "Sale/über 50 Prozent Rabatt",
-    "url": "https://www.mueller.at/sale/ueber-50-prozent-rabatt/",
-    "code": null
-  },
-  {
     "id": "Parfümerie/Düfte für Sie",
     "url": "https://www.mueller.at/parfuemerie/duefte-fuer-sie/",
     "code": null
@@ -3137,6 +3072,71 @@
   {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
+    "id": "Sale/Alle Produkte",
+    "url": "https://www.mueller.at/sale/alle-produkte/",
+    "code": null
+  },
+  {
+    "id": "Sale/Drogerie",
+    "url": "https://www.mueller.at/sale/drogerie/",
+    "code": null
+  },
+  {
+    "id": "Sale/Naturshop",
+    "url": "https://www.mueller.at/sale/naturshop/",
+    "code": null
+  },
+  {
+    "id": "Sale/Multi-Media",
+    "url": "https://www.mueller.at/sale/multi-media/",
+    "code": null
+  },
+  {
+    "id": "Sale/Parfümerie",
+    "url": "https://www.mueller.at/sale/parfuemerie/",
+    "code": null
+  },
+  {
+    "id": "Sale/Spielwaren",
+    "url": "https://www.mueller.at/sale/spielwaren/",
+    "code": null
+  },
+  {
+    "id": "Sale/Schreibwaren",
+    "url": "https://www.mueller.at/sale/schreibwaren/",
+    "code": null
+  },
+  {
+    "id": "Sale/Strümpfe",
+    "url": "https://www.mueller.at/sale/struempfe/",
+    "code": null
+  },
+  {
+    "id": "Sale/Haushalt",
+    "url": "https://www.mueller.at/sale/haushalt/",
+    "code": null
+  },
+  {
+    "id": "Sale/Letzte Chance",
+    "url": "https://www.mueller.at/sale/letzte-chance/",
+    "code": null
+  },
+  {
+    "id": "Sale/über 60 Prozent Rabatt",
+    "url": "https://www.mueller.at/sale/ueber-60-prozent-rabatt/",
+    "code": null
+  },
+  {
+    "id": "Sale/über 80 Prozent Rabatt",
+    "url": "https://www.mueller.at/sale/ueber-80-prozent-rabatt/",
+    "code": null
+  },
+  {
+    "id": "Sale/über 50 Prozent Rabatt",
+    "url": "https://www.mueller.at/sale/ueber-50-prozent-rabatt/",
     "code": null
   },
   {
