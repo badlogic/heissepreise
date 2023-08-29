@@ -449,18 +449,13 @@
     "code": "37"
   },
   {
-    "id": "stangenwurst",
-    "url": "https://www.roksh.at/hofer/angebot/stangenwurst",
-    "code": "37"
-  },
-  {
     "id": "kochschinken",
     "url": "https://www.roksh.at/hofer/angebot/kochschinken",
     "code": "37"
   },
   {
-    "id": "speck-rohschinken",
-    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
+    "id": "stangenwurst",
+    "url": "https://www.roksh.at/hofer/angebot/stangenwurst",
     "code": "37"
   },
   {
@@ -471,6 +466,11 @@
   {
     "id": "leberkase-co",
     "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
+    "code": "37"
+  },
+  {
+    "id": "speck-rohschinken",
+    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
   },
   {
@@ -589,13 +589,13 @@
     "code": "25"
   },
   {
-    "id": "rotweine",
-    "url": "https://www.roksh.at/hofer/angebot/rotweine",
+    "id": "weißweine",
+    "url": "https://www.roksh.at/hofer/angebot/weißweine",
     "code": "25"
   },
   {
-    "id": "weißweine",
-    "url": "https://www.roksh.at/hofer/angebot/weißweine",
+    "id": "rotweine",
+    "url": "https://www.roksh.at/hofer/angebot/rotweine",
     "code": "25"
   },
   {
@@ -609,14 +609,14 @@
     "code": "22"
   },
   {
-    "id": "softdrinks",
-    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
-    "code": "20"
-  },
-  {
     "id": "mineralwasser",
     "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
     "code": "26"
+  },
+  {
+    "id": "softdrinks",
+    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
+    "code": "20"
   },
   {
     "id": "sport-energy-drinks",
