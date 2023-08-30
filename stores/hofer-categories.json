@@ -459,6 +459,11 @@
     "code": "37"
   },
   {
+    "id": "speck-rohschinken",
+    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
+    "code": "37"
+  },
+  {
     "id": "wurstel",
     "url": "https://www.roksh.at/hofer/angebot/wurstel",
     "code": "37"
@@ -466,11 +471,6 @@
   {
     "id": "leberkase-co",
     "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
-    "code": "37"
-  },
-  {
-    "id": "speck-rohschinken",
-    "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
   },
   {
@@ -544,6 +544,11 @@
     "code": "60"
   },
   {
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
+    "code": "64"
+  },
+  {
     "id": "kekse",
     "url": "https://www.roksh.at/hofer/angebot/kekse",
     "code": "64"
@@ -554,18 +559,13 @@
     "code": "64"
   },
   {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
+    "id": "fruchtgummi",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
     "code": "64"
   },
   {
     "id": "pralinen",
     "url": "https://www.roksh.at/hofer/angebot/pralinen",
-    "code": "64"
-  },
-  {
-    "id": "fruchtgummi",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
     "code": "64"
   },
   {
@@ -589,13 +589,13 @@
     "code": "25"
   },
   {
-    "id": "weißweine",
-    "url": "https://www.roksh.at/hofer/angebot/weißweine",
+    "id": "rotweine",
+    "url": "https://www.roksh.at/hofer/angebot/rotweine",
     "code": "25"
   },
   {
-    "id": "rotweine",
-    "url": "https://www.roksh.at/hofer/angebot/rotweine",
+    "id": "weißweine",
+    "url": "https://www.roksh.at/hofer/angebot/weißweine",
     "code": "25"
   },
   {
