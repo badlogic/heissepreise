@@ -459,6 +459,11 @@
     "code": "37"
   },
   {
+    "id": "leberkase-co",
+    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
+    "code": "37"
+  },
+  {
     "id": "speck-rohschinken",
     "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
@@ -469,18 +474,13 @@
     "code": "37"
   },
   {
-    "id": "leberkase-co",
-    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
-    "code": "37"
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
+    "code": "32"
   },
   {
     "id": "hühnchen-geflügel",
     "url": "https://www.roksh.at/hofer/angebot/hühnchen-geflügel",
-    "code": "32"
-  },
-  {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
     "code": "32"
   },
   {
@@ -524,13 +524,13 @@
     "code": "57"
   },
   {
-    "id": "trockenfruchte",
-    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
+    "id": "nusse",
+    "url": "https://www.roksh.at/hofer/angebot/nusse",
     "code": "03"
   },
   {
-    "id": "nusse",
-    "url": "https://www.roksh.at/hofer/angebot/nusse",
+    "id": "trockenfruchte",
+    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
     "code": "03"
   },
   {
@@ -664,14 +664,14 @@
     "code": "77"
   },
   {
-    "id": "sonnenpflege",
-    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
-    "code": "79"
-  },
-  {
     "id": "deodorants",
     "url": "https://www.roksh.at/hofer/angebot/deodorants",
     "code": "72"
+  },
+  {
+    "id": "sonnenpflege",
+    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
+    "code": "79"
   },
   {
     "id": "beikost-snacks",

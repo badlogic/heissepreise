@@ -1230,6 +1230,11 @@
     "code": "75"
   },
   {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/COSRX",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/cosrx/",
+    "code": null
+  },
+  {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/",
     "code": "75"
@@ -2840,8 +2845,8 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Alle Genusswelt Produkte",
-    "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
+    "id": "Genusswelt/Aktionen",
+    "url": "https://www.mueller.at/genusswelt/aktionen/",
     "code": null
   },
   {
@@ -3075,6 +3080,11 @@
     "code": null
   },
   {
+    "id": "Genusswelt/Alle Genusswelt Produkte",
+    "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
+    "code": null
+  },
+  {
     "id": "Sale/Alle Produkte",
     "url": "https://www.mueller.at/sale/alle-produkte/",
     "code": null
@@ -3142,11 +3152,6 @@
   {
     "id": "Tiershop/Aktionen/Aus dem Prospekt",
     "url": "https://www.mueller.at/tiershop/aktionen/aus-dem-prospekt/",
-    "code": null
-  },
-  {
-    "id": "Genusswelt/Aktionen",
-    "url": "https://www.mueller.at/genusswelt/aktionen/",
     "code": null
   },
   {

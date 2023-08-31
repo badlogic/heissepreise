@@ -600,6 +600,12 @@
     "code": "73"
   },
   {
+    "id": "haar-styling-lockenwickler",
+    "description": null,
+    "url": "https://www.bipa.at/c/haar/styling/lockenwickler",
+    "code": "73"
+  },
+  {
     "id": "haar-styling-schutzanti-frizz",
     "description": null,
     "url": "https://www.bipa.at/c/haar/styling/schutz-und-anti-frizz",
@@ -666,6 +672,12 @@
     "code": "80"
   },
   {
+    "id": "haushalt-papier",
+    "description": null,
+    "url": "https://www.bipa.at/c/haushalt/papier",
+    "code": "83"
+  },
+  {
     "id": "haushalt-papier-kuechenrolle",
     "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier/kuechenrolle",
@@ -687,6 +699,12 @@
     "id": "haushalt-papier-toilettenpapier",
     "description": null,
     "url": "https://www.bipa.at/c/haushalt/papier/toilettenpapier",
+    "code": "84"
+  },
+  {
+    "id": "haushalt-papier-toilettenzubehoer",
+    "description": null,
+    "url": "https://www.bipa.at/c/haushalt/papier/toilettenzubehoer",
     "code": "84"
   },
   {
@@ -2074,24 +2092,6 @@
     "description": null,
     "url": "https://www.bipa.at/c/tier/vogel/zubehoer",
     "code": "93"
-  },
-  {
-    "id": "haar-styling-lockenwickler",
-    "description": null,
-    "url": "https://www.bipa.at/c/haar/styling/lockenwickler",
-    "code": "73"
-  },
-  {
-    "id": "haushalt-papier",
-    "description": null,
-    "url": "https://www.bipa.at/c/haushalt/papier",
-    "code": "83"
-  },
-  {
-    "id": "haushalt-papier-toilettenzubehoer",
-    "description": null,
-    "url": "https://www.bipa.at/c/haushalt/papier/toilettenzubehoer",
-    "code": "84"
   },
   {
     "id": "love-analspielzeug",
