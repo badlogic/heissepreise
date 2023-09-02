@@ -424,13 +424,13 @@
     "code": "33"
   },
   {
-    "id": "kasespezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
+    "id": "weichkase",
+    "url": "https://www.roksh.at/hofer/angebot/weichkase",
     "code": "33"
   },
   {
-    "id": "weichkase",
-    "url": "https://www.roksh.at/hofer/angebot/weichkase",
+    "id": "kasespezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
     "code": "33"
   },
   {
@@ -459,6 +459,11 @@
     "code": "37"
   },
   {
+    "id": "leberkase-co",
+    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
+    "code": "37"
+  },
+  {
     "id": "speck-rohschinken",
     "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
@@ -466,11 +471,6 @@
   {
     "id": "wurstel",
     "url": "https://www.roksh.at/hofer/angebot/wurstel",
-    "code": "37"
-  },
-  {
-    "id": "leberkase-co",
-    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
     "code": "37"
   },
   {
