@@ -459,11 +459,6 @@
     "code": "37"
   },
   {
-    "id": "leberkase-co",
-    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
-    "code": "37"
-  },
-  {
     "id": "speck-rohschinken",
     "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
@@ -471,6 +466,11 @@
   {
     "id": "wurstel",
     "url": "https://www.roksh.at/hofer/angebot/wurstel",
+    "code": "37"
+  },
+  {
+    "id": "leberkase-co",
+    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
     "code": "37"
   },
   {
@@ -614,11 +614,6 @@
     "code": "26"
   },
   {
-    "id": "softdrinks",
-    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
-    "code": "20"
-  },
-  {
     "id": "sport-energy-drinks",
     "url": "https://www.roksh.at/hofer/angebot/sport-energy-drinks",
     "code": "20"
@@ -626,6 +621,11 @@
   {
     "id": "fruchtsafte",
     "url": "https://www.roksh.at/hofer/angebot/fruchtsafte",
+    "code": "20"
+  },
+  {
+    "id": "softdrinks",
+    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
     "code": "20"
   },
   {
