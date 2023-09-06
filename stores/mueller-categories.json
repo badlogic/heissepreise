@@ -2995,6 +2995,21 @@
     "code": "91"
   },
   {
+    "id": "Tiershop/Sale",
+    "url": "https://www.mueller.at/tiershop/sale/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Aktionen",
+    "url": "https://www.mueller.at/tiershop/aktionen/",
+    "code": null
+  },
+  {
+    "id": "Tiershop/Aktionen/Kühlmatten",
+    "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
     "id": "Tiershop/Marken",
     "url": "https://www.mueller.at/tiershop/marken/",
     "code": "90"
@@ -3075,16 +3090,6 @@
     "code": "91"
   },
   {
-    "id": "Tiershop/Aktionen",
-    "url": "https://www.mueller.at/tiershop/aktionen/",
-    "code": null
-  },
-  {
-    "id": "Tiershop/Aktionen/Kühlmatten",
-    "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Alle Genusswelt Produkte",
     "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
     "code": null
@@ -3163,11 +3168,6 @@
     "id": "Genusswelt/Marken/Reingold",
     "url": "https://www.mueller.at/genusswelt/marken/reingold/",
     "code": null
-  },
-  {
-    "id": "Tiershop/Sale",
-    "url": "https://www.mueller.at/tiershop/sale/",
-    "code": "90"
   },
   {
     "id": "Naturshop/Lebensmittel",
