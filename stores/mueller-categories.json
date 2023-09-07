@@ -485,11 +485,6 @@
     "code": "76"
   },
   {
-    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnputzbecher",
-    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnputzbecher/",
-    "code": "76"
-  },
-  {
     "id": "Parfümerie/Accessoires/Badaccessoires/Seifenschalen & -spender",
     "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/seifenschalen-spender/",
     "code": null
@@ -2745,11 +2740,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Marken/AGRESTIS",
-    "url": "https://www.mueller.at/genusswelt/marken/agrestis/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Marken/ALOIS GÖLLES",
     "url": "https://www.mueller.at/genusswelt/marken/alois-goelles/",
     "code": null
@@ -3007,6 +2997,16 @@
   {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnputzbecher",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnputzbecher/",
+    "code": "76"
+  },
+  {
+    "id": "Genusswelt/Marken/AGRESTIS",
+    "url": "https://www.mueller.at/genusswelt/marken/agrestis/",
     "code": null
   },
   {
