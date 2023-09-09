@@ -419,11 +419,6 @@
     "code": "33"
   },
   {
-    "id": "weichkase",
-    "url": "https://www.roksh.at/hofer/angebot/weichkase",
-    "code": "33"
-  },
-  {
     "id": "kase-geschnitten-gerieben",
     "url": "https://www.roksh.at/hofer/angebot/kase-geschnitten-gerieben",
     "code": "33"
@@ -431,6 +426,11 @@
   {
     "id": "kasespezialitaten",
     "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
+    "code": "33"
+  },
+  {
+    "id": "weichkase",
+    "url": "https://www.roksh.at/hofer/angebot/weichkase",
     "code": "33"
   },
   {
