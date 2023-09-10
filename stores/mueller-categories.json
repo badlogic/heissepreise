@@ -2850,11 +2850,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Aktionen/Aus dem Prospekt",
-    "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
-    "code": null
-  },
-  {
     "id": "Tiershop/Tiernahrung",
     "url": "https://www.mueller.at/tiershop/tiernahrung/",
     "code": "90"
@@ -3007,6 +3002,11 @@
   {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Aktionen/Aus dem Prospekt",
+    "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
     "code": null
   },
   {
