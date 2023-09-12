@@ -504,13 +504,13 @@
     "code": "56"
   },
   {
-    "id": "obstkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/obstkonserven",
+    "id": "gemusekonserven",
+    "url": "https://www.roksh.at/hofer/angebot/gemusekonserven",
     "code": "57"
   },
   {
-    "id": "gemusekonserven",
-    "url": "https://www.roksh.at/hofer/angebot/gemusekonserven",
+    "id": "obstkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/obstkonserven",
     "code": "57"
   },
   {
@@ -534,6 +534,11 @@
     "code": "03"
   },
   {
+    "id": "fruchtgummi",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
+    "code": "64"
+  },
+  {
     "id": "bonbons-kaugummi",
     "url": "https://www.roksh.at/hofer/angebot/bonbons-kaugummi",
     "code": "64"
@@ -551,11 +556,6 @@
   {
     "id": "schokoriegel",
     "url": "https://www.roksh.at/hofer/angebot/schokoriegel",
-    "code": "64"
-  },
-  {
-    "id": "fruchtgummi",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
     "code": "64"
   },
   {
