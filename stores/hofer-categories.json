@@ -372,12 +372,6 @@
     "code": "90"
   },
   {
-    "id": "katzenzubehor",
-    "description": "Katzenzubehör",
-    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzenzubehor",
-    "code": "91"
-  },
-  {
     "id": "katzennahrung",
     "description": "Katzennahrung",
     "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzennahrung",
@@ -386,11 +380,6 @@
   {
     "id": "fruchtjoghurt",
     "url": "https://www.roksh.at/hofer/angebot/fruchtjoghurt",
-    "code": "34"
-  },
-  {
-    "id": "haltbare-milch-sahne-eiskaffee",
-    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
     "code": "34"
   },
   {
@@ -406,6 +395,11 @@
   {
     "id": "milch-sahne-butter",
     "url": "https://www.roksh.at/hofer/angebot/milch-sahne-butter",
+    "code": "34"
+  },
+  {
+    "id": "haltbare-milch-sahne-eiskaffee",
+    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
     "code": "34"
   },
   {
@@ -524,19 +518,14 @@
     "code": "57"
   },
   {
-    "id": "trockenfruchte",
-    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
-    "code": "03"
-  },
-  {
     "id": "nusse",
     "url": "https://www.roksh.at/hofer/angebot/nusse",
     "code": "03"
   },
   {
-    "id": "fruchtgummi",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
-    "code": "64"
+    "id": "trockenfruchte",
+    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
+    "code": "03"
   },
   {
     "id": "bonbons-kaugummi",
@@ -569,6 +558,11 @@
     "code": "64"
   },
   {
+    "id": "fruchtgummi",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
+    "code": "64"
+  },
+  {
     "id": "salzgeback-kracker",
     "url": "https://www.roksh.at/hofer/angebot/salzgeback-kracker",
     "code": "63"
@@ -589,13 +583,13 @@
     "code": "25"
   },
   {
-    "id": "rotweine",
-    "url": "https://www.roksh.at/hofer/angebot/rotweine",
+    "id": "weißweine",
+    "url": "https://www.roksh.at/hofer/angebot/weißweine",
     "code": "25"
   },
   {
-    "id": "weißweine",
-    "url": "https://www.roksh.at/hofer/angebot/weißweine",
+    "id": "rotweine",
+    "url": "https://www.roksh.at/hofer/angebot/rotweine",
     "code": "25"
   },
   {
@@ -607,6 +601,11 @@
     "id": "kaffee-kakao-co",
     "url": "https://www.roksh.at/hofer/angebot/kaffee-kakao-co",
     "code": "22"
+  },
+  {
+    "id": "softdrinks",
+    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
+    "code": "20"
   },
   {
     "id": "mineralwasser",
@@ -624,11 +623,6 @@
     "code": "20"
   },
   {
-    "id": "softdrinks",
-    "url": "https://www.roksh.at/hofer/angebot/softdrinks",
-    "code": "20"
-  },
-  {
     "id": "smoothies",
     "url": "https://www.roksh.at/hofer/angebot/smoothies",
     "code": "20"
@@ -639,19 +633,14 @@
     "code": "20"
   },
   {
-    "id": "zahn-mundhygiene",
-    "url": "https://www.roksh.at/hofer/angebot/zahn-mundhygiene",
-    "code": "76"
-  },
-  {
-    "id": "intimhygiene",
-    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
-    "code": "71"
-  },
-  {
     "id": "duschpflege-seife",
     "url": "https://www.roksh.at/hofer/angebot/duschpflege-seife",
     "code": "78"
+  },
+  {
+    "id": "zahn-mundhygiene",
+    "url": "https://www.roksh.at/hofer/angebot/zahn-mundhygiene",
+    "code": "76"
   },
   {
     "id": "haarpflege",
@@ -672,6 +661,11 @@
     "id": "deodorants",
     "url": "https://www.roksh.at/hofer/angebot/deodorants",
     "code": "72"
+  },
+  {
+    "id": "intimhygiene",
+    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
+    "code": "71"
   },
   {
     "id": "beikost-snacks",
@@ -707,5 +701,11 @@
     "id": "waschmittel",
     "url": "https://www.roksh.at/hofer/angebot/waschmittel",
     "code": "8A"
+  },
+  {
+    "id": "katzenzubehor",
+    "description": "Katzenzubehör",
+    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzenzubehor",
+    "code": "91"
   }
 ]
