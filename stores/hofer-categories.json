@@ -372,6 +372,12 @@
     "code": "90"
   },
   {
+    "id": "katzenzubehor",
+    "description": "Katzenzubehör",
+    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzenzubehor",
+    "code": "91"
+  },
+  {
     "id": "katzennahrung",
     "description": "Katzennahrung",
     "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzennahrung",
@@ -380,6 +386,11 @@
   {
     "id": "fruchtjoghurt",
     "url": "https://www.roksh.at/hofer/angebot/fruchtjoghurt",
+    "code": "34"
+  },
+  {
+    "id": "haltbare-milch-sahne-eiskaffee",
+    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
     "code": "34"
   },
   {
@@ -398,11 +409,6 @@
     "code": "34"
   },
   {
-    "id": "haltbare-milch-sahne-eiskaffee",
-    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
-    "code": "34"
-  },
-  {
     "id": "frischkase-co",
     "url": "https://www.roksh.at/hofer/angebot/frischkase-co",
     "code": "33"
@@ -418,13 +424,13 @@
     "code": "33"
   },
   {
-    "id": "kasespezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
+    "id": "weichkase",
+    "url": "https://www.roksh.at/hofer/angebot/weichkase",
     "code": "33"
   },
   {
-    "id": "weichkase",
-    "url": "https://www.roksh.at/hofer/angebot/weichkase",
+    "id": "kasespezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
     "code": "33"
   },
   {
@@ -518,13 +524,13 @@
     "code": "57"
   },
   {
-    "id": "nusse",
-    "url": "https://www.roksh.at/hofer/angebot/nusse",
+    "id": "trockenfruchte",
+    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
     "code": "03"
   },
   {
-    "id": "trockenfruchte",
-    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
+    "id": "nusse",
+    "url": "https://www.roksh.at/hofer/angebot/nusse",
     "code": "03"
   },
   {
@@ -583,13 +589,13 @@
     "code": "25"
   },
   {
-    "id": "weißweine",
-    "url": "https://www.roksh.at/hofer/angebot/weißweine",
+    "id": "rotweine",
+    "url": "https://www.roksh.at/hofer/angebot/rotweine",
     "code": "25"
   },
   {
-    "id": "rotweine",
-    "url": "https://www.roksh.at/hofer/angebot/rotweine",
+    "id": "weißweine",
+    "url": "https://www.roksh.at/hofer/angebot/weißweine",
     "code": "25"
   },
   {
@@ -701,11 +707,5 @@
     "id": "waschmittel",
     "url": "https://www.roksh.at/hofer/angebot/waschmittel",
     "code": "8A"
-  },
-  {
-    "id": "katzenzubehor",
-    "description": "Katzenzubehör",
-    "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzenzubehor",
-    "code": "91"
   }
 ]
