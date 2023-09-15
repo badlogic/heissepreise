@@ -659,11 +659,6 @@
     "code": "77"
   },
   {
-    "id": "sonnenpflege",
-    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
-    "code": "79"
-  },
-  {
     "id": "deodorants",
     "url": "https://www.roksh.at/hofer/angebot/deodorants",
     "code": "72"
@@ -672,6 +667,11 @@
     "id": "intimhygiene",
     "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
     "code": "71"
+  },
+  {
+    "id": "sonnenpflege",
+    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
+    "code": "79"
   },
   {
     "id": "beikost-snacks",

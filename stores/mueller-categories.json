@@ -2850,8 +2850,8 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Aktionen",
-    "url": "https://www.mueller.at/genusswelt/aktionen/",
+    "id": "Genusswelt/Alle Genusswelt Produkte",
+    "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
     "code": null
   },
   {
@@ -3010,6 +3010,11 @@
     "code": null
   },
   {
+    "id": "Genusswelt/Aktionen",
+    "url": "https://www.mueller.at/genusswelt/aktionen/",
+    "code": null
+  },
+  {
     "id": "Genusswelt/Aktionen/Aus dem Prospekt",
     "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
     "code": null
@@ -3103,11 +3108,6 @@
     "id": "Tiershop/Marken/Cat's Best",
     "url": "https://www.mueller.at/tiershop/marken/cats-best/",
     "code": "91"
-  },
-  {
-    "id": "Genusswelt/Alle Genusswelt Produkte",
-    "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
-    "code": null
   },
   {
     "id": "Sale/Alle Produkte",
