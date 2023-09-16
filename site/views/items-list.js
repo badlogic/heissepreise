@@ -331,7 +331,7 @@ class ItemsList extends View {
         const elements = View.elements(itemDom);
         elements.store.innerText = item.store;
         elements.name.href = stores[item.store].getUrl(item);
-        elements.name.innerHTML = this.highlightMatches(this.model.lastQueryTokens ?? [], item.name) + (item.unavailable ? " 💀" : "");
+        elements.name.innerHTML = this.highlightMatches(this.model.lastQueryTokens ?? [], item.name) + (item.unavailable ? " †" : "");
         elements.quantity.innerText = (item.isWeighted ? "⚖ " : "") + `${quantity} ${unit}`;
         elements.price.innerText = `€ ${Number(showUnitPrice ? unitPrice : price).toFixed(2)} ${priceUnit}`;
         elements.priceHistory.innerHTML = priceHistory;
