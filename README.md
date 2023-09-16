@@ -2,7 +2,7 @@
 
 A terrible grocery price search "app". Fetches data from big Austrian grocery chains daily and lets you search them. See <https://heisse-preise.io>.
 
-The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front end (see `server.js`). The front end is a least-effort vanilla HTML/JS app (see sources in `site/`).
+The project consists of a trivial NodeJS Express server responsible for fetching the product data, massaging it, and serving it to the front-end (see `server.js`). The front-end is a least-effort vanilla HTML/JS app (see sources in `site/`).
 
 ## Requirements
 
@@ -48,7 +48,7 @@ Install the dependencies as per above, then simply run:
 git clone https://github.com/badlogic/heissepreise
 cd heissepreise
 npm install
-npm run dev
+npm run start
 ```
 
 Once the app is listening per default on port 3000, open <http://localhost:3000> in your browser.
