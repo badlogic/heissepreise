@@ -485,11 +485,6 @@
     "code": "76"
   },
   {
-    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnputzbecher",
-    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnputzbecher/",
-    "code": "76"
-  },
-  {
     "id": "Parfümerie/Accessoires/Badaccessoires/Seifenschalen & -spender",
     "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/seifenschalen-spender/",
     "code": null
@@ -940,6 +935,11 @@
     "code": null
   },
   {
+    "id": "Naturshop/Neuheiten",
+    "url": "https://www.mueller.at/naturshop/neuheiten/",
+    "code": null
+  },
+  {
     "id": "Naturshop/Accessoires",
     "url": "https://www.mueller.at/naturshop/accessoires/",
     "code": null
@@ -955,168 +955,108 @@
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/",
+    "id": "Naturshop/Make-up",
+    "url": "https://www.mueller.at/naturshop/make-up/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/",
+    "id": "Naturshop/Make-up/Teint",
+    "url": "https://www.mueller.at/naturshop/make-up/teint/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/",
+    "id": "Naturshop/Make-up/Teint/Grundierung",
+    "url": "https://www.mueller.at/naturshop/make-up/teint/grundierung/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Süße Brotaufstriche",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/suesse-brotaufstriche/",
+    "id": "Naturshop/Make-up/Teint/Korrektur & Concealer",
+    "url": "https://www.mueller.at/naturshop/make-up/teint/korrektur-concealer/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Nussmus & -creme",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/nussmus-creme/",
+    "id": "Naturshop/Make-up/Teint/Puder",
+    "url": "https://www.mueller.at/naturshop/make-up/teint/puder/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Herzhafte Brotaufstriche",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/herzhafte-brotaufstriche/",
+    "id": "Naturshop/Make-up/Teint/Rouge",
+    "url": "https://www.mueller.at/naturshop/make-up/teint/rouge/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Backwaren",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/backwaren/",
-    "code": "52"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Backzutaten & Süßungsmittel",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/backzutaten-suessungsmittel/",
-    "code": "5E"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/",
+    "id": "Naturshop/Make-up/Teint/Highlighter",
+    "url": "https://www.mueller.at/naturshop/make-up/teint/highlighter/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Fleischersatz",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/fleischersatz/",
-    "code": "54"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Obstkonserven",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/obstkonserven/",
-    "code": "57"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Gemüsekonserven",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/gemuesekonserven/",
-    "code": "57"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Schnelle Küche",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/schnelle-kueche/",
-    "code": "5F"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Mehl & Getreide",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/mehl-getreide/",
-    "code": "59"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/",
-    "code": "5B"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Hülsenfrüchte",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/huelsenfruechte/",
-    "code": "5B"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Reis",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/reis/",
-    "code": "5B"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Nudeln",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/nudeln/",
-    "code": "5B"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Nüsse & Trockenfrüchte",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nuesse-trockenfruechte/",
-    "code": "03"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Müsli & Cerealien",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/muesli-cerealien/",
-    "code": "5A"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Essig & Öl",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/essig-oel/",
-    "code": "53"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Gewürze",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/gewuerze/",
-    "code": "55"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Saucen",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/saucen/",
-    "code": "5C"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Milch & Milchalternativen",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/milch-milchalternativen/",
-    "code": "34"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Dessert",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/dessert/",
-    "code": "13"
-  },
-  {
-    "id": "Naturshop/Lebensmittel/Nahrung/Superfoods",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/superfoods/",
+    "id": "Naturshop/Make-up/Teint/Getönte Tagescreme",
+    "url": "https://www.mueller.at/naturshop/make-up/teint/getoente-tagescreme/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Diätnahrung",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/diaetnahrung/",
+    "id": "Naturshop/Make-up/Augen",
+    "url": "https://www.mueller.at/naturshop/make-up/augen/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrung/Sportlernahrung",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/sportlernahrung/",
+    "id": "Naturshop/Make-up/Augen/Mascara",
+    "url": "https://www.mueller.at/naturshop/make-up/augen/mascara/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Nahrungsergänzung",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrungsergaenzung/",
+    "id": "Naturshop/Make-up/Augen/Lidschatten",
+    "url": "https://www.mueller.at/naturshop/make-up/augen/lidschatten/",
     "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Babynahrung",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/",
-    "code": "51"
+    "id": "Naturshop/Make-up/Augen/Kajalstifte & Eyeliner",
+    "url": "https://www.mueller.at/naturshop/make-up/augen/kajalstifte-eyeliner/",
+    "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Babynahrung/Beikost",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/",
-    "code": "51"
+    "id": "Naturshop/Make-up/Augen/Augenbrauenfarbe",
+    "url": "https://www.mueller.at/naturshop/make-up/augen/augenbrauenfarbe/",
+    "code": null
   },
   {
-    "id": "Naturshop/Lebensmittel/Babynahrung/Beikost/Abendbreie",
-    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/abendbreie/",
-    "code": "51"
+    "id": "Naturshop/Make-up/Augen/Wimpernpflege",
+    "url": "https://www.mueller.at/naturshop/make-up/augen/wimpernpflege/",
+    "code": null
   },
   {
-    "id": "Naturshop/Neuheiten",
-    "url": "https://www.mueller.at/naturshop/neuheiten/",
+    "id": "Naturshop/Make-up/Lippen",
+    "url": "https://www.mueller.at/naturshop/make-up/lippen/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Make-up/Lippen/Lippenstift",
+    "url": "https://www.mueller.at/naturshop/make-up/lippen/lippenstift/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Make-up/Lippen/Lipgloss",
+    "url": "https://www.mueller.at/naturshop/make-up/lippen/lipgloss/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Make-up/Lippen/Lippenkonturenstift",
+    "url": "https://www.mueller.at/naturshop/make-up/lippen/lippenkonturenstift/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Make-up/Nägel",
+    "url": "https://www.mueller.at/naturshop/make-up/naegel/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Make-up/Nägel/Nagellack",
+    "url": "https://www.mueller.at/naturshop/make-up/naegel/nagellack/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Make-up/Nägel/Top- & Basecoat",
+    "url": "https://www.mueller.at/naturshop/make-up/naegel/top-basecoat/",
     "code": null
   },
   {
@@ -1220,48 +1160,8 @@
     "code": "75"
   },
   {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/It’s skin",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/it-s-skin/",
-    "code": "75"
-  },
-  {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Holika Holika",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/holika-holika/",
-    "code": "75"
-  },
-  {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/STAY Well",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/stay-well/",
-    "code": "75"
-  },
-  {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Purederm",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/purederm/",
-    "code": "75"
-  },
-  {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/MISSHA",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/missha/",
-    "code": "75"
-  },
-  {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/JMsolution",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/jmsolution/",
-    "code": "75"
-  },
-  {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/WHEN",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/when/",
-    "code": "75"
-  },
-  {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Banila Co",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/banila-co/",
-    "code": "75"
-  },
-  {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Skinfood",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/skinfood/",
     "code": "75"
   },
   {
@@ -1270,18 +1170,73 @@
     "code": "75"
   },
   {
-    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Nature Republic",
-    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/nature-republic/",
-    "code": "75"
-  },
-  {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Chasin' Rabbits",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/chasin-rabbits/",
     "code": "75"
   },
   {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/COSRX",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/cosrx/",
+    "code": null
+  },
+  {
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Derma:B",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/derma-b/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Holika Holika",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/holika-holika/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/It’s skin",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/it-s-skin/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Jiinju Beauty",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/jiinju-beauty/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/JMsolution",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/jmsolution/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/MISSHA",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/missha/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Nature Republic",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/nature-republic/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Purederm",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/purederm/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Skin1004",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/skin1004/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/Skinfood",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/skinfood/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/STAY Well",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/stay-well/",
+    "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Koreanische Pflegemarken/WHEN",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/koreanische-pflegemarken/when/",
     "code": "75"
   },
   {
@@ -1313,6 +1268,11 @@
     "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Feuchtigkeitspflege",
     "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-feuchtigkeitspflege/",
     "code": "75"
+  },
+  {
+    "id": "Drogerie/Pflege/Gesichtspflege/Koreanische Kosmetik/Mehrstufige Hautpflege/Koreanische Sonnenpflege",
+    "url": "https://www.mueller.at/drogerie/pflege/gesichtspflege/koreanische-kosmetik/mehrstufige-hautpflege/koreanische-sonnenpflege/",
+    "code": null
   },
   {
     "id": "Drogerie/Pflege/Gesichtspflege/Reinigung",
@@ -1895,6 +1855,11 @@
     "code": "70"
   },
   {
+    "id": "Drogerie/Kind & Mama/Ausstattung & Zubehör/Accessoires für Babys & Kinder",
+    "url": "https://www.mueller.at/drogerie/kind-mama/ausstattung-zubehoer/accessoires-fuer-babys-kinder/",
+    "code": null
+  },
+  {
     "id": "Drogerie/Kind & Mama/Baby Bekleidung",
     "url": "https://www.mueller.at/drogerie/kind-mama/baby-bekleidung/",
     "code": "70"
@@ -1907,6 +1872,11 @@
   {
     "id": "Drogerie/Accessoires/Badaccessoires",
     "url": "https://www.mueller.at/drogerie/accessoires/badaccessoires/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Badaccessoires/Badekappen & -schuhe",
+    "url": "https://www.mueller.at/drogerie/accessoires/badaccessoires/badekappen-schuhe/",
     "code": null
   },
   {
@@ -2055,14 +2025,14 @@
     "code": "64"
   },
   {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Gebäck",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/gebaeck/",
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/schokolade/",
     "code": "64"
   },
   {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Chips",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/chips/",
-    "code": "63"
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Gebäck",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/gebaeck/",
+    "code": "64"
   },
   {
     "id": "Drogerie/Lebensmittel/Süßigkeiten/Bonbons & Lutscher",
@@ -2785,11 +2755,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Marken/AGRESTIS",
-    "url": "https://www.mueller.at/genusswelt/marken/agrestis/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Marken/ALOIS GÖLLES",
     "url": "https://www.mueller.at/genusswelt/marken/alois-goelles/",
     "code": null
@@ -2862,11 +2827,6 @@
   {
     "id": "Genusswelt/Marken/Quai Sud",
     "url": "https://www.mueller.at/genusswelt/marken/quai-sud/",
-    "code": null
-  },
-  {
-    "id": "Genusswelt/Marken/Reingold",
-    "url": "https://www.mueller.at/genusswelt/marken/reingold/",
     "code": null
   },
   {
@@ -3035,6 +2995,201 @@
     "code": "91"
   },
   {
+    "id": "Tiershop/Sale",
+    "url": "https://www.mueller.at/tiershop/sale/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Aktionen",
+    "url": "https://www.mueller.at/tiershop/aktionen/",
+    "code": null
+  },
+  {
+    "id": "Tiershop/Aktionen/Kühlmatten",
+    "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnputzbecher",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnputzbecher/",
+    "code": "76"
+  },
+  {
+    "id": "Naturshop/Lebensmittel",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Süße Brotaufstriche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/suesse-brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Nussmus & -creme",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/nussmus-creme/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Brotaufstriche/Herzhafte Brotaufstriche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/brotaufstriche/herzhafte-brotaufstriche/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Backwaren",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/backwaren/",
+    "code": "52"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Backzutaten & Süßungsmittel",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/backzutaten-suessungsmittel/",
+    "code": "5E"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Fleischersatz",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/fleischersatz/",
+    "code": "54"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Obstkonserven",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/obstkonserven/",
+    "code": "57"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Gemüsekonserven",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/gemuesekonserven/",
+    "code": "57"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Fertiggerichte & Konserven/Schnelle Küche",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/fertiggerichte-konserven/schnelle-kueche/",
+    "code": "5F"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Mehl & Getreide",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/mehl-getreide/",
+    "code": "59"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Hülsenfrüchte",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/huelsenfruechte/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Reis",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/reis/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nudeln, Reis & Hülsenfrüchte/Nudeln",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nudeln-reis-huelsenfruechte/nudeln/",
+    "code": "5B"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Nüsse & Trockenfrüchte",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/nuesse-trockenfruechte/",
+    "code": "03"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Müsli & Cerealien",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/muesli-cerealien/",
+    "code": "5A"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Essig & Öl",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/essig-oel/",
+    "code": "53"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Gewürze",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/gewuerze/",
+    "code": "55"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Saucen",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/saucen/",
+    "code": "5C"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Milch & Milchalternativen",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/milch-milchalternativen/",
+    "code": "34"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Dessert",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/dessert/",
+    "code": "13"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Superfoods",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/superfoods/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Diätnahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/diaetnahrung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrung/Sportlernahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrung/sportlernahrung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Nahrungsergänzung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/nahrungsergaenzung/",
+    "code": null
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Babynahrung",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/",
+    "code": "51"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Babynahrung/Beikost",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/",
+    "code": "51"
+  },
+  {
+    "id": "Naturshop/Lebensmittel/Babynahrung/Beikost/Abendbreie",
+    "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/abendbreie/",
+    "code": "51"
+  },
+  {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Chips",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/chips/",
+    "code": "63"
+  },
+  {
+    "id": "Genusswelt/Marken/AGRESTIS",
+    "url": "https://www.mueller.at/genusswelt/marken/agrestis/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Reingold",
+    "url": "https://www.mueller.at/genusswelt/marken/reingold/",
+    "code": null
+  },
+  {
     "id": "Tiershop/Marken",
     "url": "https://www.mueller.at/tiershop/marken/",
     "code": "90"
@@ -3113,16 +3268,6 @@
     "id": "Tiershop/Marken/Cats Love",
     "url": "https://www.mueller.at/tiershop/marken/cats-love/",
     "code": "91"
-  },
-  {
-    "id": "Tiershop/Sale",
-    "url": "https://www.mueller.at/tiershop/sale/",
-    "code": "90"
-  },
-  {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Schokolade",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/schokolade/",
-    "code": "64"
   },
   {
     "id": "Genusswelt/Aktionen/Aus dem Prospekt",

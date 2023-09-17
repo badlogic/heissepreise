@@ -424,6 +424,11 @@
     "code": "33"
   },
   {
+    "id": "kasespezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
+    "code": "33"
+  },
+  {
     "id": "weichkase",
     "url": "https://www.roksh.at/hofer/angebot/weichkase",
     "code": "33"
@@ -431,11 +436,6 @@
   {
     "id": "hart-schnittkase",
     "url": "https://www.roksh.at/hofer/angebot/hart-schnittkase",
-    "code": "33"
-  },
-  {
-    "id": "kasespezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/kasespezialitaten",
     "code": "33"
   },
   {
@@ -459,6 +459,11 @@
     "code": "37"
   },
   {
+    "id": "leberkase-co",
+    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
+    "code": "37"
+  },
+  {
     "id": "speck-rohschinken",
     "url": "https://www.roksh.at/hofer/angebot/speck-rohschinken",
     "code": "37"
@@ -469,23 +474,18 @@
     "code": "37"
   },
   {
-    "id": "leberkase-co",
-    "url": "https://www.roksh.at/hofer/angebot/leberkase-co",
-    "code": "37"
-  },
-  {
     "id": "hühnchen-geflügel",
     "url": "https://www.roksh.at/hofer/angebot/hühnchen-geflügel",
     "code": "32"
   },
   {
-    "id": "schweinefleisch-spezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
     "code": "32"
   },
   {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
+    "id": "schweinefleisch-spezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
     "code": "32"
   },
   {
@@ -504,13 +504,13 @@
     "code": "56"
   },
   {
-    "id": "obstkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/obstkonserven",
+    "id": "gemusekonserven",
+    "url": "https://www.roksh.at/hofer/angebot/gemusekonserven",
     "code": "57"
   },
   {
-    "id": "gemusekonserven",
-    "url": "https://www.roksh.at/hofer/angebot/gemusekonserven",
+    "id": "obstkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/obstkonserven",
     "code": "57"
   },
   {
@@ -524,13 +524,13 @@
     "code": "57"
   },
   {
-    "id": "nusse",
-    "url": "https://www.roksh.at/hofer/angebot/nusse",
+    "id": "trockenfruchte",
+    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
     "code": "03"
   },
   {
-    "id": "trockenfruchte",
-    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
+    "id": "nusse",
+    "url": "https://www.roksh.at/hofer/angebot/nusse",
     "code": "03"
   },
   {
@@ -544,11 +544,6 @@
     "code": "60"
   },
   {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
-    "code": "64"
-  },
-  {
     "id": "kekse",
     "url": "https://www.roksh.at/hofer/angebot/kekse",
     "code": "64"
@@ -559,13 +554,18 @@
     "code": "64"
   },
   {
-    "id": "fruchtgummi",
-    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
     "code": "64"
   },
   {
     "id": "pralinen",
     "url": "https://www.roksh.at/hofer/angebot/pralinen",
+    "code": "64"
+  },
+  {
+    "id": "fruchtgummi",
+    "url": "https://www.roksh.at/hofer/angebot/fruchtgummi",
     "code": "64"
   },
   {
@@ -609,14 +609,14 @@
     "code": "22"
   },
   {
-    "id": "mineralwasser",
-    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
-    "code": "26"
-  },
-  {
     "id": "softdrinks",
     "url": "https://www.roksh.at/hofer/angebot/softdrinks",
     "code": "20"
+  },
+  {
+    "id": "mineralwasser",
+    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
+    "code": "26"
   },
   {
     "id": "sport-energy-drinks",
@@ -629,29 +629,24 @@
     "code": "20"
   },
   {
-    "id": "sirupe",
-    "url": "https://www.roksh.at/hofer/angebot/sirupe",
-    "code": "20"
-  },
-  {
     "id": "smoothies",
     "url": "https://www.roksh.at/hofer/angebot/smoothies",
     "code": "20"
   },
   {
-    "id": "zahn-mundhygiene",
-    "url": "https://www.roksh.at/hofer/angebot/zahn-mundhygiene",
-    "code": "76"
-  },
-  {
-    "id": "intimhygiene",
-    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
-    "code": "71"
+    "id": "sirupe",
+    "url": "https://www.roksh.at/hofer/angebot/sirupe",
+    "code": "20"
   },
   {
     "id": "duschpflege-seife",
     "url": "https://www.roksh.at/hofer/angebot/duschpflege-seife",
     "code": "78"
+  },
+  {
+    "id": "zahn-mundhygiene",
+    "url": "https://www.roksh.at/hofer/angebot/zahn-mundhygiene",
+    "code": "76"
   },
   {
     "id": "haarpflege",
@@ -664,14 +659,19 @@
     "code": "77"
   },
   {
-    "id": "sonnenpflege",
-    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
-    "code": "79"
-  },
-  {
     "id": "deodorants",
     "url": "https://www.roksh.at/hofer/angebot/deodorants",
     "code": "72"
+  },
+  {
+    "id": "intimhygiene",
+    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
+    "code": "71"
+  },
+  {
+    "id": "sonnenpflege",
+    "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
+    "code": "79"
   },
   {
     "id": "beikost-snacks",
@@ -689,6 +689,11 @@
     "code": "51"
   },
   {
+    "id": "spulmittel-putzmittel",
+    "url": "https://www.roksh.at/hofer/angebot/spulmittel-putzmittel",
+    "code": "88"
+  },
+  {
     "id": "wc-lufterfrischer",
     "url": "https://www.roksh.at/hofer/angebot/wc-lufterfrischer",
     "code": "87"
@@ -696,11 +701,6 @@
   {
     "id": "reinigungstucher-kuchentucher",
     "url": "https://www.roksh.at/hofer/angebot/reinigungstucher-kuchentucher",
-    "code": "88"
-  },
-  {
-    "id": "spulmittel-putzmittel",
-    "url": "https://www.roksh.at/hofer/angebot/spulmittel-putzmittel",
     "code": "88"
   },
   {
