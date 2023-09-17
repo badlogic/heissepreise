@@ -14,7 +14,7 @@ const { vectorizeItems, similaritySortItems } = require("../js/knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
 const { ItemsChart } = require("./items-chart");
-const { __ } = require("../i18n");
+const { __ } = require("../browser_i18n");
 
 class ItemsList extends View {
     static priceTypeId = 0;

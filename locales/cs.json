@@ -78,8 +78,9 @@
     "ItemsList_Name": "Název",
     "ItemsList_Preis": "Cena",
 
-    "Cart_Teilen": "Sdílet",
+    "Cart_Teilen": "Detail",
     "Cart_Speichern": "Uložit",
+    "Cart_Warenkorb {{name}}": "Nákupní košík {{name}}",
     "Cart_Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben": "Nákupní košík '{{name}}' již existuje. Zadejte prosím jiný název",
     "Cart_Warenkorb '{{name}}' existiert nicht.": "Nákupní košík '{{name}}' neexistuje.",
     "Cart_Artikel": "Položka",

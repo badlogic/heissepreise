@@ -3,7 +3,7 @@ const { stores, STORE_KEYS, BUDGET_BRANDS } = require("../model/stores");
 const { fromCategoryCode, categories } = require("../model/categories");
 const { settings } = require("../model");
 const { View } = require("./view");
-const { __ } = require("../i18n");
+const { __ } = require("../browser_i18n");
 
 class ItemsFilter extends View {
     constructor() {

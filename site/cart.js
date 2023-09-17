@@ -6,7 +6,7 @@ const { STORE_KEYS, stores } = require("./model/stores");
 require("./views");
 const { ProgressBar } = require("./views/progress-bar");
 const progressBar = new ProgressBar(STORE_KEYS.length);
-const { __ } = require("./i18n");
+const { __ } = require("./browser_i18n");
 
 let carts = null;
 

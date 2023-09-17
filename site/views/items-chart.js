@@ -1,7 +1,7 @@
 const { STORE_KEYS } = require("../model/stores");
 const { settings } = require("../model");
 const { today, log, deltaTime, uniqueDates, calculateItemPriceTimeSeries } = require("../js/misc");
-const { __ } = require("../i18n");
+const { __ } = require("../browser_i18n");
 const { View } = require("./view");
 require("./custom-checkbox");
 const moment = require("moment");

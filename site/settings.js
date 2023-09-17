@@ -3,7 +3,7 @@ const { View } = require("./views/view");
 const { Settings } = require("./model/settings");
 require("./js/misc");
 require("./views/custom-checkbox");
-const { __ } = require("./i18n");
+const { __ } = require("./browser_i18n");
 
 class SettingsView extends View {
     constructor() {

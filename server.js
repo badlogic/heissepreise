@@ -7,7 +7,7 @@ const csv = require("./site/js/misc");
 const chokidar = require("chokidar");
 const express = require("express");
 const compression = require("compression");
-const i18n = require("./site/i18n");
+const i18n = require("./i18n");
 
 function copyItemsToSite(dataDir) {
     const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);

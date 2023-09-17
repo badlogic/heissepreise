@@ -30,38 +30,6 @@ const locales = Object.keys(translations);
 const defaultLocale = "de";
 
 /**
- * The currently selected locale.
- * @type {string}
- */
-var currentLocale = defaultLocale;
-
-/**
- * Set the globally used locale.
- * Expects a 2 character language code string, one from locales.
- * @param {string} locale
- */
-function setLocale(locale) {
-    if (locales.includes(locale)) {
-        console.log("Locale changed to " + locale);
-        currentLocale = locale;
-        return true;
-    }
-    console.error("Attempted to setLocale to unsupported language: ", locale);
-    return false;
-}
-
-/**
- * Translates the key using the current global locale.
- *
- * @param {!string} key to translate
- * @param {!Object.<string, string>} [args] arguments to substitute into the translated key
- * @returns {string} translated string
- */
-function translate(key, args) {
-    return translateWithLocale(currentLocale, key, args);
-}
-
-/**
  * @param {!string} locale name of the language to use for translation, MUST be one of the supported languages
  * @param {!string} key to translate
  * @param {!Object.<string, string>} [args] arguments to substitute into the translated key
@@ -88,9 +56,6 @@ function translateWithLocale(locale, key, args) {
     return translation;
 }
 
-exports.setLocale = setLocale;
 exports.defaultLocale = defaultLocale;
 exports.locales = locales;
-exports.translate = translate;
-exports.__ = translate;
 exports.translateWithLocale = translateWithLocale;

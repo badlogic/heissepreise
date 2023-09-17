@@ -80,6 +80,7 @@
 
     "Cart_Teilen": "Teilen",
     "Cart_Speichern": "Speichern",
+    "Cart_Warenkorb {{name}}": "Warenkorb {{name}}",
     "Cart_Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben": "Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben",
     "Cart_Warenkorb '{{name}}' existiert nicht.": "Warenkorb '{{name}}' existiert nicht.",
     "Cart_Artikel": "Artikel",

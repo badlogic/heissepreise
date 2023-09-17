@@ -1,6 +1,6 @@
 const { downloadJSON, dom } = require("../js/misc");
 const { View } = require("./view");
-const { __ } = require("../i18n");
+const { __ } = require("../browser_i18n");
 
 class CartsList extends View {
     constructor() {

@@ -1,7 +1,7 @@
 const { downloadJSON, today } = require("./js/misc");
 const model = require("./model");
 require("./views");
-const { __ } = require("./i18n");
+const { __ } = require("./browser_i18n");
 
 const { STORE_KEYS } = require("./model/stores");
 const { ProgressBar } = require("./views/progress-bar");

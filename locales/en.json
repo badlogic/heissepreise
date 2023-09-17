@@ -78,8 +78,9 @@
     "ItemsList_Name": "Name",
     "ItemsList_Preis": "Price",
 
-    "Cart_Teilen": "Share",
+    "Cart_Teilen": "Detail",
     "Cart_Speichern": "Save",
+    "Cart_Warenkorb {{name}}": "Shopping cart {{name}}",
     "Cart_Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben": "Shopping cart '{{name}}' already exists. Please enter a different name for the shopping cart to be saved",
     "Cart_Warenkorb '{{name}}' existiert nicht.": "Shopping cart '{{name}}' does not exist.",
     "Cart_Artikel": "Item",

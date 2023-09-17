@@ -4,7 +4,7 @@ const chokidar = require("chokidar");
 const esbuild = require("esbuild");
 const { exec } = require("child_process");
 const { promisify } = require("util");
-const i18n = require("./site/i18n");
+const i18n = require("./i18n");
 
 function deleteDirectory(directory) {
     if (fs.existsSync(directory)) {
@@ -64,16 +64,18 @@ function processFile(inputFile, outputFile, filter) {
             const replacedData = replaceFileContents(data, path.dirname(inputFile), locale);
             if (locale == i18n.defaultLocale) {
                 fs.writeFileSync(outputFile, replacedData);
+                console.log(`${inputFile} -> ${outputFile}`);
             }
             let pathWithLanguageCode = outputFile.substring(0, outputFile.length - extension.length) + "." + locale + extension;
             fs.writeFileSync(pathWithLanguageCode, replacedData);
+            console.log(`${inputFile} -> ${pathWithLanguageCode}`);
         }
     } else {
         const data = fs.readFileSync(inputFile);
         if (filter(inputFile, false, data)) return;
         fs.writeFileSync(outputFile, data);
+        console.log(`${inputFile} -> ${outputFile}`);
     }
-    console.log(`${inputFile} -> ${outputFile}`);
 }
 
 /**
@@ -167,6 +169,7 @@ async function bundle(inputDir, outputDir, watch) {
         bundleHTML(inputDir, outputDir, false, watch, (filePath, isDir, data) => {
             if (isDir) return false;
             if (filePath.endsWith("style.css")) return true;
+            if (filePath.includes("/locales/")) return true;
             if (filePath.endsWith(".js") && !filePath.includes("socket.io.js")) return true;
             if (data.includes(`require("`)) return true;
             return false;
