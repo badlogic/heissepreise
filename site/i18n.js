@@ -11,8 +11,9 @@
  *
  * If the key is missing in the current localization, it falls back to default localization
  * and then to treating the key itself as the localization.
+ *
+ * @type {Object.<string, Object.<string, string>>}
  */
-
 const translations = {
     cs: require("./locales/cs.json"),
     de: require("./locales/de.json"),
@@ -21,18 +22,25 @@ const translations = {
 /**
  * @type {string[]}
  */
-const locales = Object.keys(locales);
+const locales = Object.keys(translations);
+/**
+ * @type {string}
+ */
 const defaultLocale = "de";
 
-/** The currently selected locale. */
+/**
+ * The currently selected locale.
+ * @type {string}
+ */
 var currentLocale = defaultLocale;
 
 /**
  * Set the globally used locale.
  * Expects a 2 character language code string, one from locales.
+ * @param {string} locale
  */
 function setLocale(locale) {
-    if (Object.hasOwn(locales, locale)) {
+    if (locales.indexOf(locale) != -1) {
         currentLocale = locale;
         return true;
     }
@@ -41,16 +49,28 @@ function setLocale(locale) {
 }
 
 /**
- * @param {string} key to translate
- * @param {Object?} args arguments to substitute into the translated key
- * @returns translated string
+ * Translates the key using the current global locale.
+ *
+ * @param {!string} key to translate
+ * @param {!Object.<string, string>} [args] arguments to substitute into the translated key
+ * @returns {string} translated string
  */
 function translate(key, args) {
-    let translation = locales[currentLocale][key];
+    return translateWithLocale(currentLocale, key, args);
+}
+
+/**
+ * @param {!string} locale name of the language to use for translation, MUST be one of the supported languages
+ * @param {!string} key to translate
+ * @param {!Object.<string, string>} [args] arguments to substitute into the translated key
+ * @returns {string} translated string
+ */
+function translateWithLocale(locale, key, args) {
+    let translation = translations[locale][key];
     if (translation === undefined) {
-        console.error("Untranslated key in ", currentLocale, ": ", key);
-        if (currentLocale != defaultLocale) {
-            translation = locales[defaultLocale][key] || key;
+        console.error("Untranslated key in ", locale, ": ", key);
+        if (locale != defaultLocale) {
+            translation = translations[defaultLocale][key] || key;
         } else {
             translation = key;
         }
@@ -67,5 +87,7 @@ function translate(key, args) {
 }
 
 exports.setLocale = setLocale;
+exports.defaultLocale = defaultLocale;
 exports.locales = locales;
 exports.translate = translate;
+exports.translateWithLocale = translateWithLocale;

@@ -7,6 +7,7 @@ const csv = require("./site/js/misc");
 const chokidar = require("chokidar");
 const express = require("express");
 const compression = require("compression");
+const i18n = require("./site/i18n");
 
 function copyItemsToSite(dataDir) {
     const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
@@ -45,6 +46,7 @@ function parseArguments() {
     const args = process.argv.slice(2);
     let port = process.env.PORT !== undefined && process.env.PORT != "" ? parseInt(process.env.PORT) : 3000;
     let liveReload = process.env.NODE_ENV === "development" || false;
+    let skipDataUpdate = false;
     for (let i = 0; i < args.length; i++) {
         if (args[i] === "-p" || args[i] === "--port") {
             port = parseInt(args[i + 1]);
@@ -54,6 +56,8 @@ function parseArguments() {
                 throw new Error("Live reload is only supported in development mode");
             }
             liveReload = true;
+        } else if (args[i] === "--skip-data-update") {
+            skipDataUpdate = true;
         } else if (args[i] === "-h" || args[i] === "--help") {
             console.log("Usage: node server.js [-p|--port PORT] [-l|--live-reload]");
             console.log();
@@ -64,7 +68,7 @@ function parseArguments() {
         }
     }
 
-    return { port, liveReload };
+    return { port, liveReload, skipDataUpdate };
 }
 
 function setupLogging() {
@@ -81,7 +85,7 @@ function setupLogging() {
 
 (async () => {
     const dataDir = "data";
-    const { port, liveReload } = parseArguments();
+    const { port, liveReload, skipDataUpdate } = parseArguments();
 
     if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir);
@@ -102,25 +106,43 @@ function setupLogging() {
     setupLogging();
     bundle.bundle("site", outputDir, liveReload);
 
-    analysis.migrateCompression(dataDir, ".json", ".json.br");
-    analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
+    if (!skipDataUpdate) {
+        analysis.migrateCompression(dataDir, ".json", ".json.br");
+        analysis.migrateCompression(dataDir, ".json.gz", ".json.br");
 
-    if (fs.existsSync(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`)) {
-        copyItemsToSite(dataDir);
-        analysis.updateData(dataDir, (_newItems) => {
+        if (fs.existsSync(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`)) {
+            copyItemsToSite(dataDir);
+            analysis.updateData(dataDir, (_newItems) => {
+                copyItemsToSite(dataDir);
+            });
+        } else {
+            await analysis.updateData(dataDir);
+            copyItemsToSite(dataDir);
+        }
+        scheduleFunction(5, 0, 0, async () => {
+            items = await analysis.updateData(dataDir);
             copyItemsToSite(dataDir);
         });
-    } else {
-        await analysis.updateData(dataDir);
-        copyItemsToSite(dataDir);
     }
-    scheduleFunction(5, 0, 0, async () => {
-        items = await analysis.updateData(dataDir);
-        copyItemsToSite(dataDir);
-    });
 
     const app = express();
     app.use(compression());
+    app.use(function (req, res, next) {
+        if (req.method == "GET") {
+            if (req.path == "/") {
+                req.url = "/index.html";
+            }
+            if (req.path.endsWith(".html")) {
+                // Only html files are translated
+                let pickedLanguage = req.acceptsLanguages(i18n.locales);
+                if (pickedLanguage) {
+                    let translatedPath = req.path.substring(0, req.path.length - "html".length) + pickedLanguage + ".html";
+                    req.url = translatedPath;
+                } // otherwise use default, untranslated file
+            }
+        }
+        next();
+    });
     app.use(express.static("site/output"));
     const server = http.createServer(app).listen(port, () => {
         console.log(`App listening on port ${port}`);
