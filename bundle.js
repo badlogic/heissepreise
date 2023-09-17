@@ -23,6 +23,7 @@ function replaceFileContents(string, fileDir) {
     const pattern = /%%([^%]+)%%|\/\/\s*include\s*"([^"]+)"/g;
 
     return string.replace(pattern, (_, filename1, filename2) => {
+        if (filename2 != null) console.error("include is used!!!!!");
         const filename = filename1 || filename2;
         const filenamePath = path.join(fileDir, filename);
         try {
