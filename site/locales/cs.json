@@ -1,6 +1,6 @@
 {
     "Heisse Preise": "Zlevněno?",
-    "__page_description__": "Nekomerční open source projekt umožňující spotřebitelům najít nejlevnější verzi produktu v obchodech.",
+    "page_description": "Nekomerční open source projekt umožňující spotřebitelům najít nejlevnější verzi produktu v obchodech.",
     "Einstellungen": "Nastavení",
     "Impressum": "Impressum",
     "Logs": "Logy",
@@ -32,5 +32,68 @@
     "Produktsuche": "Vyhledávání produktů",
 
     "Radio & Fernsehen": "Rádio & Televize",
-    "Print & Online": "Tisk & Online"
+    "Print & Online": "Tisk & Online",
+
+    "CartsList_Name": "Název",
+    "CartsList_Produkte": "Produkt",
+    "CartsList_Preis": "Cena",
+
+    "CartsList_Preisänderungen": "Změny cen",
+    "CartsList_Teilen": "Sdílet",
+    "CartsList_JSON": "JSON",
+    "CartsList_Löschen": "Smazat",
+
+    "ItemsChart_Keine Daten ausgewählt": "Nejsou vybrána žádná data",
+    "ItemsChart_Preissumme Gesamt": "Celková cena",
+    "ItemsChart_Preissumme Ketten": "Cena řetězce",
+    "ItemsChart_Nur heutige Preise": "Cena dnes",
+    "ItemsChart_Änderung in % seit": "Změna v % od",
+    "ItemsChart_Änderung in % seit {{date}}": "Změna v % od {{date}}",
+    "ItemsChart_Preissumme {{s}}": "Cena {{s}}",
+
+    "ItemsFilter_Produkte suchen...": "Vyhledávání produktů...",
+    "ItemsFilter_Filter anzeigen/ausblenden": "Zobrazit/skrýt filtry",
+    "ItemsFilter_Alle": "Vše",
+    "ItemsFilter_Datum": "Datum",
+    "ItemsFilter_Billiger seit letzter Änderung": "Levnější od poslední změny",
+    "ItemsFilter_Nur Diskont-Eigenmarken": "Pouze privátní značky",
+    "ItemsFilter_Nur Bio": "Pouze bio",
+    "ItemsFilter_Exaktes Wort": "Přesná slova",
+    "ItemsFilter_Preis €": "Cena €",
+    "ItemsFilter_Teurer": "Dražší",
+    "ItemsFilter_Billiger": "Levnější",
+
+    "ItemsList_Resultate": "Výsledky",
+    "ItemsList_Diagramm": "Graf",
+    "ItemsList_Verkaufspreis": "Prodejní cena",
+    "ItemsList_Mengenpreis": "Měrná cena",
+    "ItemsList_Sortieren": "Seřadit podle",
+    "ItemsList_Preis aufsteigend": "Cena vzestupně",
+    "ItemsList_Preis absteigend": "Cena sestupně",
+    "ItemsList_Menge aufsteigend": "Množství vzsetupně",
+    "ItemsList_Menge absteigend": "Množství sestupně",
+    "ItemsList_Kette &amp; Name": "Řetězec &amp; název",
+    "ItemsList_Namensähnlichkeit": "Podobnost jména",
+    "ItemsList_Kette": "Řetězec",
+    "ItemsList_Name": "Název",
+    "ItemsList_Preis": "Cena",
+
+    "Cart_Teilen": "Sdílet",
+    "Cart_Speichern": "Uložit",
+    "Cart_Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben": "Nákupní košík '{{name}}' již existuje. Zadejte prosím jiný název",
+    "Cart_Warenkorb '{{name}}' existiert nicht.": "Nákupní košík '{{name}}' neexistuje.",
+    "Cart_Artikel": "Položka",
+
+    "Carts_Name für Warenkorb eingeben:": "Zadejte název nákupního košíku:",
+    "Carts_Warenkorb mit Namen '{{name}}' existiert bereits": "Nákupní košík se jménem '{{name}}' již existuje",
+    "Carts_Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu importierenden Warenkorb eingeben": "Nákupní košík '{{name}}' již existuje. Zadejte prosím jiný název pod který se nákupní košík importuje",
+
+    "Settings_Vorselektierte Ketten": "Předvybrané řetězce",
+    "Settings_Start-Datum für Diagramme": "Počáteční datum pro grafy",
+    "Settings_Diagramm Typ": "Typ grafu",
+    "Settings_Stufen": "Schodový",
+    "Settings_Linien": "Čárový",
+    "Settings_Nur verfügbare Produkte anzeigen": "Zobrazit pouze dostupné produkty",
+    "Settings_Diagramm immer anzeigen (wenn verfügbar)": "Vždy zobrazovat graf (pokud je k dispozici)",
+    "Settings_Suche immer anzeigen (wenn verfügbar)": "Vždy zobrazit vyhledávání (je-li k dispozici)"
 }

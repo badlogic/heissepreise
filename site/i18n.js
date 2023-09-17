@@ -15,6 +15,7 @@
  * @type {Object.<string, Object.<string, string>>}
  */
 const translations = {
+    // sorted alphabetically
     cs: require("./locales/cs.json"),
     de: require("./locales/de.json"),
     en: require("./locales/en.json"),
@@ -40,7 +41,8 @@ var currentLocale = defaultLocale;
  * @param {string} locale
  */
 function setLocale(locale) {
-    if (locales.indexOf(locale) != -1) {
+    if (locales.includes(locale)) {
+        console.log("Locale changed to " + locale);
         currentLocale = locale;
         return true;
     }
@@ -90,4 +92,5 @@ exports.setLocale = setLocale;
 exports.defaultLocale = defaultLocale;
 exports.locales = locales;
 exports.translate = translate;
+exports.__ = translate;
 exports.translateWithLocale = translateWithLocale;

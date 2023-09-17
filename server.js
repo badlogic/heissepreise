@@ -123,6 +123,8 @@ function setupLogging() {
             items = await analysis.updateData(dataDir);
             copyItemsToSite(dataDir);
         });
+    } else {
+        copyItemsToSite(dataDir);
     }
 
     const app = express();

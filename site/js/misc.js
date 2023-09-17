@@ -305,7 +305,11 @@ exports.itemsToCSV = (items) => {
  */
 exports.numberToLocale = (number) => {
     try {
-        return number.toLocaleString("at-DE", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+        let locale = "at-DE";
+        if (navigator) {
+            locale = navigator.language;
+        }
+        return number.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 2 });
     } catch (e) {
         return number;
     }

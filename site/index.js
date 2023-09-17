@@ -1,3 +1,24 @@
+const i18n = require("./i18n");
+
+// Process redirects and localization before running anything else
+(() => {
+    if (location.href.includes("heissepreise.github.io")) {
+        location.href = "https://heisse-preise.io";
+        return;
+    }
+
+    // Find the most preferred supported language
+    for (const langCode of navigator.languages) {
+        // We don't do regional codes, so take just the language code
+        let lang = langCode.length >= 2 ? langCode.substring(0, 2) : null;
+        if (lang == null) continue;
+        if (i18n.locales.includes(lang)) {
+            i18n.setLocale(lang);
+            break;
+        }
+    }
+})();
+
 const { getQueryParameter } = require("./js/misc");
 const model = require("./model");
 require("./views");
@@ -6,24 +27,7 @@ const { STORE_KEYS } = require("./model/stores");
 const { ProgressBar } = require("./views/progress-bar");
 const progressBar = new ProgressBar(STORE_KEYS.length);
 
-const i18n = require("./i18n");
-
 (async () => {
-    if (location.href.includes("heissepreise.github.io")) {
-        location.href = "https://heisse-preise.io";
-    }
-
-    // Find the most preferred supported language
-    for (const langCode in navigator.languages) {
-        // We don't do regional codes, so take just the language code
-        let lang = langCode.length >= 2 ? langCode.substring(0, 2) : null;
-        if (lang == null) continue;
-        if (i18n.locales.indexOf(lang) != -1) {
-            i18n.setLocale(lang);
-            break;
-        }
-    }
-
     await model.load(() => progressBar.addStep());
     const itemsFilter = document.querySelector("items-filter");
     const itemsList = document.querySelector("items-list");
