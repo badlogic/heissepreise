@@ -1,0 +1,13 @@
+[Unit]
+Description=Heissepreis App
+After=network.target
+
+[Service]
+ExecStart=node --dns-result-order=ipv4first --max_old_space_size=8192 server.js
+Restart=always
+User=yourusername
+#Group=yourgroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+Environment=PORT=3000
+WorkingDirectory=/srv/heissepreise-cz
