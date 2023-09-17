@@ -11,3 +11,6 @@ Environment=PATH=/usr/bin:/usr/local/bin
 Environment=NODE_ENV=production
 Environment=PORT=3000
 WorkingDirectory=/srv/heissepreise-cz
+
+[Install]
+WantedBy=multi-user.target
