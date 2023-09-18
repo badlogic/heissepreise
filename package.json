@@ -27,6 +27,7 @@
     "chartjs-adapter-moment": "^1.0.1",
     "chokidar": "^3.5.3",
     "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
     "express": "^4.18.2",
     "hyphen": "^1.6.6",
     "moment": "^2.29.4",
@@ -37,7 +38,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.1.0",
-    "cross-env": "^7.0.3",
     "esbuild": "^0.17.19",
     "husky": "^8.0.3",
     "postcss": "^8.4.24",
