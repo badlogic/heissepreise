@@ -47,8 +47,8 @@ Install the dependencies as per above, then simply run:
 ```
 git clone https://github.com/badlogic/heissepreise
 cd heissepreise
-npm install
-npm run dev
+node --dns-result-order=ipv4first /usr/bin/npm install --omit=dev
+npm run start
 ```
 
 Once the app is listening per default on port 3000, open <http://localhost:3000> in your browser.
