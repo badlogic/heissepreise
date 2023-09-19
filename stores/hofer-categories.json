@@ -524,13 +524,13 @@
     "code": "57"
   },
   {
-    "id": "trockenfruchte",
-    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
+    "id": "nusse",
+    "url": "https://www.roksh.at/hofer/angebot/nusse",
     "code": "03"
   },
   {
-    "id": "nusse",
-    "url": "https://www.roksh.at/hofer/angebot/nusse",
+    "id": "trockenfruchte",
+    "url": "https://www.roksh.at/hofer/angebot/trockenfruchte",
     "code": "03"
   },
   {
@@ -614,14 +614,14 @@
     "code": "20"
   },
   {
-    "id": "mineralwasser",
-    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
-    "code": "26"
-  },
-  {
     "id": "sport-energy-drinks",
     "url": "https://www.roksh.at/hofer/angebot/sport-energy-drinks",
     "code": "20"
+  },
+  {
+    "id": "mineralwasser",
+    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
+    "code": "26"
   },
   {
     "id": "fruchtsafte",
