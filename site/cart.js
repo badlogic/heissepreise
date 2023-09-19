@@ -6,6 +6,7 @@ const { STORE_KEYS, stores } = require("./model/stores");
 require("./views");
 const { ProgressBar } = require("./views/progress-bar");
 const progressBar = new ProgressBar(STORE_KEYS.length);
+const { __ } = require("./browser_i18n");
 
 let carts = null;
 
@@ -35,8 +36,12 @@ class CartHeader extends View {
             <h1 class="text-2xl font-bold pb-2 pt-8 text-center">
                 <span x-id="name"></span>
             </h1>
-            <a x-id="share" class="hidden cursor-pointer font-bold text-sm text-primary hover:underline block text-center mt-3">Teilen</a>
-            <input x-id="save" class="hidden cursor-pointer font-bold text-sm text-primary block mx-auto mt-3" type="button" value="Speichern">
+            <a x-id="share" class="hidden cursor-pointer font-bold text-sm text-primary hover:underline block text-center mt-3">${__(
+                "Cart_Teilen"
+            )}</a>
+            <input x-id="save" class="hidden cursor-pointer font-bold text-sm text-primary block mx-auto mt-3" type="button" value="${__(
+                "Cart_Speichern"
+            )}">
         `;
 
         const elements = this.elements;
@@ -47,7 +52,9 @@ class CartHeader extends View {
                 let newName = cart.name;
                 while (true) {
                     newName = prompt(
-                        "Warenkorb '" + cart.name + " existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben",
+                        __("Cart_Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu speichernden Warenkorb eingeben", {
+                            name: cart.name,
+                        }),
                         cart.name + today()
                     );
                     if (!newName || newName.trim().length == 0) return;
@@ -69,7 +76,7 @@ class CartHeader extends View {
     render() {
         const cart = this.model.cart;
         const elements = this.elements;
-        elements.name.innerText = `Warenkorb '${cart.name}'`;
+        elements.name.innerText = __("Cart_Warenkorb {{name}}", { name: cart.name });
         if (this.model.linked) {
             elements.save.classList.remove("hidden");
         } else {
@@ -112,7 +119,7 @@ function loadCart() {
     }
 
     if (cart == null) {
-        alert("Warenkorb '" + cartName + "' existiert nicht.");
+        alert(__("Cart_Warenkorb '{{name}}' existiert nicht.", { name: cartName }));
         location.href = "carts.html";
     }
 
@@ -133,7 +140,7 @@ function loadCart() {
     STORE_KEYS.forEach((store) => {
         cartFilter.elements[store].checked = true;
     });
-    cartList.elements.numItemsLabel.innerHTML = "<strong>Artikel:</strong>";
+    cartList.elements.numItemsLabel.innerHTML = `<strong>${__("Cart_Artikel")}:</strong>`;
     cartList.elements.enableChart.checked = models.items.length < 2000;
     cartList.elements.chart.elements.sumStores.checked = models.items.length < 2000;
 

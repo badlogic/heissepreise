@@ -4,6 +4,7 @@ const chokidar = require("chokidar");
 const esbuild = require("esbuild");
 const { exec } = require("child_process");
 const { promisify } = require("util");
+const i18n = require("./i18n");
 
 function deleteDirectory(directory) {
     if (fs.existsSync(directory)) {
@@ -19,38 +20,71 @@ function deleteDirectory(directory) {
     }
 }
 
-function replaceFileContents(string, fileDir) {
-    const pattern = /%%([^%]+)%%|\/\/\s*include\s*"([^"]+)"/g;
+/**
+ * Process file content by resolving includes and translation placeholders.
+ *
+ * @param {string} fileContent original file content
+ * @param {string} fileDir path of the directory of the file
+ * @param {string} locale language code which should be used to resolve translation placeholders
+ * @returns {string}
+ */
+function replaceFileContents(fileContent, fileDir, locale) {
+    const pattern = /%%([^%]+)%%|__(.+?)__/g;
 
-    return string.replace(pattern, (_, filename1, filename2) => {
-        const filename = filename1 || filename2;
-        const filenamePath = path.join(fileDir, filename);
-        try {
-            const data = fs.readFileSync(filenamePath, "utf8");
-            const replacedData = replaceFileContents(data, path.dirname(filenamePath));
-            return replacedData;
-        } catch (error) {
-            console.error(`Error reading file "${filenamePath}":`, error);
-            return "";
+    return fileContent.replace(pattern, (_, filename, translationKey) => {
+        if (filename != undefined) {
+            const filenamePath = path.join(fileDir, filename);
+            try {
+                const data = fs.readFileSync(filenamePath, "utf8");
+                const replacedData = replaceFileContents(data, path.dirname(filenamePath), locale);
+                return replacedData;
+            } catch (error) {
+                console.error(`Error reading file "${filenamePath}":`, error);
+                return "";
+            }
+        } else if (translationKey != undefined) {
+            return i18n.translateWithLocale(locale, translationKey);
         }
     });
 }
 
+/**
+ * Copy inputFile to outputFile, possibly modifying it in the process.
+ *
+ * @param {string} inputFile path
+ * @param {string} outputFile path
+ * @param {function(string, boolean, string):boolean} filter takes path, whether it is a directory and data (or null if directory), returns true if the file should be left out
+ */
 function processFile(inputFile, outputFile, filter) {
-    const fileDir = path.dirname(inputFile);
-    if (inputFile.includes(".mp3")) {
+    let extension = path.extname(inputFile);
+    if (extension == ".html") {
+        const data = fs.readFileSync(inputFile, "utf8");
+        if (filter(inputFile, false, data)) return;
+        for (const locale of i18n.locales) {
+            const replacedData = replaceFileContents(data, path.dirname(inputFile), locale);
+            if (locale == i18n.defaultLocale) {
+                fs.writeFileSync(outputFile, replacedData);
+                console.log(`${inputFile} -> ${outputFile}`);
+            }
+            let pathWithLanguageCode = outputFile.substring(0, outputFile.length - extension.length) + "." + locale + extension;
+            fs.writeFileSync(pathWithLanguageCode, replacedData);
+            console.log(`${inputFile} -> ${pathWithLanguageCode}`);
+        }
+    } else {
         const data = fs.readFileSync(inputFile);
         if (filter(inputFile, false, data)) return;
         fs.writeFileSync(outputFile, data);
-    } else {
-        const data = fs.readFileSync(inputFile, "utf8");
-        if (filter(inputFile, false, data)) return;
-        const replacedData = replaceFileContents(data, fileDir);
-        fs.writeFileSync(outputFile, replacedData);
+        console.log(`${inputFile} -> ${outputFile}`);
     }
-    console.log(`${inputFile} -> ${outputFile}`);
 }
 
+/**
+ *
+ * @param {string} inputDir path to the input directory, traversed recursively, outputDir and files/directories starting with _ are automatically skipped
+ * @param {string} outputDir path to the output directory
+ * @param {boolean} deleteOutput whether the contents of output directory should be deleted first
+ * @param {function(string, boolean, string):boolean} filter takes path, whether it is a directory and data (or null if directory), returns true if the file should be left out
+ */
 function generateSite(inputDir, outputDir, deleteOutput, filter) {
     if (deleteOutput) {
         deleteDirectory(outputDir);
@@ -135,6 +169,7 @@ async function bundle(inputDir, outputDir, watch) {
         bundleHTML(inputDir, outputDir, false, watch, (filePath, isDir, data) => {
             if (isDir) return false;
             if (filePath.endsWith("style.css")) return true;
+            if (filePath.includes("/locales/")) return true;
             if (filePath.endsWith(".js") && !filePath.includes("socket.io.js")) return true;
             if (data.includes(`require("`)) return true;
             return false;

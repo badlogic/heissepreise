@@ -14,6 +14,7 @@ const { vectorizeItems, similaritySortItems } = require("../js/knn");
 const { stores } = require("../model/stores");
 const { View } = require("./view");
 const { ItemsChart } = require("./items-chart");
+const { __ } = require("../browser_i18n");
 
 class ItemsList extends View {
     static priceTypeId = 0;
@@ -34,32 +35,34 @@ class ItemsList extends View {
                 <div>
                     <div class="flex flex-col md:flex-row gap-2 items-center">
                         <div class="flex flex-row gap-2 items-center">
-                            <span x-id="numItemsLabel">Resultate</span><span x-id="numItems"></span>
+                            <span x-id="numItemsLabel">${__("ItemsList_Resultate")}</span><span x-id="numItems"></span>
                             <span>
                                 <a x-id="json" class="hidden text-primary font-medium hover:underline" href="">JSON</a>
                                 <a x-id="csv" class="hidden text-primary font-medium hover:underline" href="">CSV</a>
                             </span>
-                            <custom-checkbox x-id="enableChart" x-change x-state label="Diagramm" class="${
-                                this._chart ? "" : "hidden"
-                            }"></custom-checkbox>
+                            <custom-checkbox x-id="enableChart" x-change x-state label="${__("ItemsList_Diagramm")}" class="${
+            this._chart ? "" : "hidden"
+        }"></custom-checkbox>
                         </div>
                         <div class="flex flex-row gap-2 items-center">
-                            <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType${
-                                ItemsList.priceTypeId
-                            }" checked> Verkaufspreis</label>
-                            <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType${ItemsList.priceTypeId++}"> Mengenpreis</label>
+                            <label><input x-id="salesPrice" x-change x-state type="radio" name="priceType${ItemsList.priceTypeId}" checked> ${__(
+            "ItemsList_Verkaufspreis"
+        )}</label>
+                            <label><input x-id="unitPrice" x-change x-state type="radio" name="priceType${ItemsList.priceTypeId++}"> ${__(
+            "ItemsList_Mengenpreis"
+        )}</label>
                         </div>
                     </div>
                 </div>
                 <label class="${hideSort}">
-                    Sortieren
+                ${__("ItemsList_Sortieren")}
                     <select x-id="sort" x-change x-state>
-                        <option value="price-asc">Preis aufsteigend</option>
-                        <option value="price-desc">Preis absteigend</option>
-                        <option value="quantity-asc">Menge aufsteigend</option>
-                        <option value="quantity-desc">Menge absteigend</option>
-                        <option value="store-and-name">Kette &amp; Name</option>
-                        <option value="name-similarity" x-id="nameSimilarity" disabled>Namensähnlichkeit</option>
+                        <option value="price-asc">${__("ItemsList_Preis aufsteigend")}</option>
+                        <option value="price-desc">${__("ItemsList_Preis absteigend")}</option>
+                        <option value="quantity-asc">${__("ItemsList_Menge aufsteigend")}</option>
+                        <option value="quantity-desc">${__("ItemsList_Menge absteigend")}</option>
+                        <option value="store-and-name">${__("ItemsList_Kette &amp; Name")}</option>
+                        <option value="name-similarity" x-id="nameSimilarity" disabled>${__("ItemsList_Namensähnlichkeit")}</option>
                     </select>
                 </label>
             </div>
@@ -67,9 +70,9 @@ class ItemsList extends View {
             <table x-id="itemsTable" class="hidden rounded-b-xl overflow-hidden w-full text-left">
                 <thead>
                     <tr class="bg-primary text-white md:table-row uppercase text-sm">
-                        <th class="text-center">Kette</th>
-                        <th>Name</th>
-                        <th x-id="expandPriceHistories" class="cursor-pointer">Preis ▼</th>
+                        <th class="text-center">${__("ItemsList_Kette")}</th>
+                        <th>${__("ItemsList_Name")}</th>
+                        <th x-id="expandPriceHistories" class="cursor-pointer">${__("ItemsList_Preis")} ▼</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -106,7 +109,7 @@ class ItemsList extends View {
         this._showAllPriceHistories = false;
         elements.expandPriceHistories.addEventListener("click", () => {
             const showAll = (this._showAllPriceHistories = !this._showAllPriceHistories);
-            elements.expandPriceHistories.innerText = showAll ? "Preis ▲" : "Preis ▼";
+            elements.expandPriceHistories.innerText = __("ItemsList_Preis") + (showAll ? " ▲" : " ▼");
             elements.tableBody.querySelectorAll(".priceinfo").forEach((el) => (showAll ? el.classList.remove("hidden") : el.classList.add("hidden")));
         });
 

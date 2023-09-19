@@ -4,13 +4,20 @@
     <cart-header x-id="cartHeader"></cart-header>
 
     <div x-id="noItems" class="hidden block text-center my-3">
-        Noch keine Produkte im Warenkorb.<br />
-        Produkte suchen und mit '+' zum Warenkorb hinzufügen.
+        __Noch keine Produkte im Warenkorb.__<br />
+        __Produkte suchen und mit '+' zum Warenkorb hinzufügen.__
     </div>
-    <items-filter x-id="cartFilter" stores nochartclear class="hidden" placeholder="Filtern... (min. 3 Zeichen)"></items-filter>
+    <items-filter x-id="cartFilter" stores nochartclear class="hidden" placeholder="__Filtern...__ __(min. 3 Zeichen)__"></items-filter>
     <items-list x-id="linkedCartList" chart json nosort class="hidden"></items-list>
     <items-list x-id="cartList" chart json nosort remove updown class="hidden"></items-list>
-    <items-filter x-id="productsFilter" class="hidden" stores misc nochartclear placeholder="Produkt hinzufügen... (min. 3 Zeichen)"></items-filter>
+    <items-filter
+        x-id="productsFilter"
+        class="hidden"
+        stores
+        misc
+        nochartclear
+        placeholder="__Produkt hinzufügen...__ (__min. 3 Zeichen__)"
+    ></items-filter>
     <items-list x-id="productsList" class="hidden" add></items-list>
     %%_templates/_loader.html%%
 </div>

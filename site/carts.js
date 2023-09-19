@@ -1,17 +1,18 @@
 const { downloadJSON, today } = require("./js/misc");
 const model = require("./model");
 require("./views");
+const { __ } = require("./browser_i18n");
 
 const { STORE_KEYS } = require("./model/stores");
 const { ProgressBar } = require("./views/progress-bar");
 const progressBar = new ProgressBar(STORE_KEYS.length);
 
 function newCart() {
-    let name = prompt("Name für Warenkorb eingeben:");
+    let name = prompt(__("Carts_Name für Warenkorb eingeben:"));
     if (!name || name.trim().length == 0) return;
     name = name.trim();
     if (model.carts.carts.some((cart) => cart.name === name)) {
-        alert("Warenkorb mit Namen '" + name + "' existiert bereits");
+        alert(__("Carts_Warenkorb mit Namen '{{name}}' existiert bereits", { name: name }));
         return;
     }
     model.carts.add(name);
@@ -36,7 +37,9 @@ function importCart(importedCart) {
         let newName = importedCart.name;
         while (true) {
             newName = prompt(
-                "Warenkorb '" + importedCart.name + " existiert bereits. Bitte einen anderen Namen für den zu importierenden Warenkorb eingeben",
+                __("Carts_Warenkorb '{{name}}' existiert bereits. Bitte einen anderen Namen für den zu importierenden Warenkorb eingeben", {
+                    name: importedCart.name,
+                }),
                 importedCart.name + today()
             );
             if (!newName || newName.trim().length == 0) return;
