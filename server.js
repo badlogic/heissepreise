@@ -56,14 +56,15 @@ function parseArguments() {
                 throw new Error("Live reload is only supported in development mode");
             }
             liveReload = true;
-        } else if (args[i] === "--skip-data-update") {
+        } else if (args[i] === "-s" || args[i] === "--skip-data-update") {
             skipDataUpdate = true;
         } else if (args[i] === "-h" || args[i] === "--help") {
             console.log("Usage: node server.js [-p|--port PORT] [-l|--live-reload]");
             console.log();
             console.log("Options:");
-            console.log("  -p, --port PORT      Port to listen on (default: 3000)");
-            console.log("  -l, --live-reload    Enable live reload (automatically enabled if NODE_ENV is development)");
+            console.log("  -p, --port PORT         Port to listen on (default: 3000)");
+            console.log("  -l, --live-reload       Enable live reload (automatically enabled if NODE_ENV is development)");
+            console.log("  -s, --skip-data-update  Skip fetching data");
             process.exit(0);
         }
     }
