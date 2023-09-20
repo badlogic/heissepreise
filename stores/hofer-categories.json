@@ -509,6 +509,11 @@
     "code": "57"
   },
   {
+    "id": "sauerkonserven",
+    "url": "https://www.roksh.at/hofer/angebot/sauerkonserven",
+    "code": "57"
+  },
+  {
     "id": "obstkonserven",
     "url": "https://www.roksh.at/hofer/angebot/obstkonserven",
     "code": "57"
@@ -516,11 +521,6 @@
   {
     "id": "fleisch-fischkonserven",
     "url": "https://www.roksh.at/hofer/angebot/fleisch-fischkonserven",
-    "code": "57"
-  },
-  {
-    "id": "sauerkonserven",
-    "url": "https://www.roksh.at/hofer/angebot/sauerkonserven",
     "code": "57"
   },
   {
@@ -609,6 +609,11 @@
     "code": "22"
   },
   {
+    "id": "mineralwasser",
+    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
+    "code": "26"
+  },
+  {
     "id": "softdrinks",
     "url": "https://www.roksh.at/hofer/angebot/softdrinks",
     "code": "20"
@@ -617,11 +622,6 @@
     "id": "sport-energy-drinks",
     "url": "https://www.roksh.at/hofer/angebot/sport-energy-drinks",
     "code": "20"
-  },
-  {
-    "id": "mineralwasser",
-    "url": "https://www.roksh.at/hofer/angebot/mineralwasser",
-    "code": "26"
   },
   {
     "id": "fruchtsafte",
@@ -639,14 +639,19 @@
     "code": "20"
   },
   {
-    "id": "duschpflege-seife",
-    "url": "https://www.roksh.at/hofer/angebot/duschpflege-seife",
-    "code": "78"
-  },
-  {
     "id": "zahn-mundhygiene",
     "url": "https://www.roksh.at/hofer/angebot/zahn-mundhygiene",
     "code": "76"
+  },
+  {
+    "id": "intimhygiene",
+    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
+    "code": "71"
+  },
+  {
+    "id": "duschpflege-seife",
+    "url": "https://www.roksh.at/hofer/angebot/duschpflege-seife",
+    "code": "78"
   },
   {
     "id": "haarpflege",
@@ -659,19 +664,14 @@
     "code": "77"
   },
   {
-    "id": "deodorants",
-    "url": "https://www.roksh.at/hofer/angebot/deodorants",
-    "code": "72"
-  },
-  {
-    "id": "intimhygiene",
-    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
-    "code": "71"
-  },
-  {
     "id": "sonnenpflege",
     "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
     "code": "79"
+  },
+  {
+    "id": "deodorants",
+    "url": "https://www.roksh.at/hofer/angebot/deodorants",
+    "code": "72"
   },
   {
     "id": "beikost-snacks",
