@@ -192,6 +192,12 @@
     "code": "63"
   },
   {
+    "id": "weihnachten-hofer",
+    "description": "Weihnachten",
+    "url": "https://www.roksh.at//hofer/angebot/sußes-salziges/weihnachten-hofer",
+    "code": null
+  },
+  {
     "id": "tiefkuhlwaren",
     "description": "Tiefkühlwaren",
     "url": "https://www.roksh.at//hofer/angebot/tiefkuhlwaren",
@@ -544,6 +550,11 @@
     "code": "60"
   },
   {
+    "id": "tafelschokolade",
+    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
+    "code": "64"
+  },
+  {
     "id": "kekse",
     "url": "https://www.roksh.at/hofer/angebot/kekse",
     "code": "64"
@@ -551,11 +562,6 @@
   {
     "id": "schokoriegel",
     "url": "https://www.roksh.at/hofer/angebot/schokoriegel",
-    "code": "64"
-  },
-  {
-    "id": "tafelschokolade",
-    "url": "https://www.roksh.at/hofer/angebot/tafelschokolade",
     "code": "64"
   },
   {
@@ -644,11 +650,6 @@
     "code": "76"
   },
   {
-    "id": "intimhygiene",
-    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
-    "code": "71"
-  },
-  {
     "id": "duschpflege-seife",
     "url": "https://www.roksh.at/hofer/angebot/duschpflege-seife",
     "code": "78"
@@ -662,6 +663,11 @@
     "id": "herrenkosmetik-rasur",
     "url": "https://www.roksh.at/hofer/angebot/herrenkosmetik-rasur",
     "code": "77"
+  },
+  {
+    "id": "intimhygiene",
+    "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
+    "code": "71"
   },
   {
     "id": "sonnenpflege",

@@ -2315,6 +2315,91 @@
     "code": null
   },
   {
+    "id": "Drogerie/Tier",
+    "url": "https://www.mueller.at/drogerie/tier/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund",
+    "url": "https://www.mueller.at/drogerie/tier/hund/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Nassfutter",
+    "url": "https://www.mueller.at/drogerie/tier/hund/nassfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Belohnung & Snacks",
+    "url": "https://www.mueller.at/drogerie/tier/hund/belohnung-snacks/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Zubehör",
+    "url": "https://www.mueller.at/drogerie/tier/hund/zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Trockenfutter",
+    "url": "https://www.mueller.at/drogerie/tier/hund/trockenfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Nahrungsergänzung",
+    "url": "https://www.mueller.at/drogerie/tier/hund/nahrungsergaenzung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze",
+    "url": "https://www.mueller.at/drogerie/tier/katze/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Nassfutter",
+    "url": "https://www.mueller.at/drogerie/tier/katze/nassfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Zubehör",
+    "url": "https://www.mueller.at/drogerie/tier/katze/zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Belohnung & Snacks",
+    "url": "https://www.mueller.at/drogerie/tier/katze/belohnung-snacks/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Trockenfutter",
+    "url": "https://www.mueller.at/drogerie/tier/katze/trockenfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Nahrungsergänzung",
+    "url": "https://www.mueller.at/drogerie/tier/katze/nahrungsergaenzung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager",
+    "url": "https://www.mueller.at/drogerie/tier/nager/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Hauptfutter",
+    "url": "https://www.mueller.at/drogerie/tier/nager/hauptfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Belohnung & Snacks",
+    "url": "https://www.mueller.at/drogerie/tier/nager/belohnung-snacks/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Zubehör",
+    "url": "https://www.mueller.at/drogerie/tier/nager/zubehoer/",
+    "code": null
+  },
+  {
     "id": "Haushalt/Schönheit & Gesundheit",
     "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/",
     "code": null
@@ -2850,8 +2935,8 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Alle Genusswelt Produkte",
-    "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
+    "id": "Genusswelt/Aktionen",
+    "url": "https://www.mueller.at/genusswelt/aktionen/",
     "code": null
   },
   {
@@ -3020,8 +3105,8 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Aktionen",
-    "url": "https://www.mueller.at/genusswelt/aktionen/",
+    "id": "Genusswelt/Alle Genusswelt Produkte",
+    "url": "https://www.mueller.at/genusswelt/alle-genusswelt-produkte/",
     "code": null
   },
   {
