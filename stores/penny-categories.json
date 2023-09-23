@@ -100,9 +100,9 @@
     "code": "33"
   },
   {
-    "id": "Kühlwaren -> Blätterteig & Strudelteig",
-    "url": "https://www.penny.at/kategorie/blaetterteig-und-strudelteig-13043",
-    "code": "36"
+    "id": "Kühlwaren -> Wurst, Schinken & Speck",
+    "url": "https://www.penny.at/kategorie/wurst-schinken-und-speck-13044",
+    "code": "37"
   },
   {
     "id": "Kühlwaren -> Fisch",
@@ -110,29 +110,24 @@
     "code": "39"
   },
   {
-    "id": "Kühlwaren -> Wurst, Schinken & Speck",
-    "url": "https://www.penny.at/kategorie/wurst-schinken-und-speck-13044",
-    "code": "37"
-  },
-  {
-    "id": "Kühlwaren -> Tofu & Vegetarische/Vegane Produkte",
-    "url": "https://www.penny.at/kategorie/tofu-und-vegetarischevegane-produkte-13046",
-    "code": "3B"
-  },
-  {
     "id": "Tiefkühl",
     "url": "https://www.penny.at/kategorie/tiefkuehl-13047",
     "code": "40"
   },
   {
-    "id": "Tiefkühl -> Eis",
-    "url": "https://www.penny.at/kategorie/eis-13048",
-    "code": "40"
+    "id": "Tiefkühl -> Desserts & Früchte",
+    "url": "https://www.penny.at/kategorie/desserts-und-fruechte-13054",
+    "code": "47"
   },
   {
     "id": "Tiefkühl -> Fertiggerichte",
     "url": "https://www.penny.at/kategorie/fertiggerichte-13049",
     "code": "42"
+  },
+  {
+    "id": "Tiefkühl -> Pizza & Baguette",
+    "url": "https://www.penny.at/kategorie/pizza-und-baguette-13053",
+    "code": "46"
   },
   {
     "id": "Tiefkühl -> Fisch & Garnelen",
@@ -215,18 +210,23 @@
     "code": "5E"
   },
   {
+    "id": "Grundnahrungsmittel -> Basisprodukte",
+    "url": "https://www.penny.at/kategorie/basisprodukte-13070",
+    "code": null
+  },
+  {
     "id": "Süßes & Salziges",
     "url": "https://www.penny.at/kategorie/suesses-und-salziges-13071",
     "code": "60"
   },
   {
-    "id": "Süßes & Salziges -> Schokolade",
-    "url": "https://www.penny.at/kategorie/schokolade-13074",
+    "id": "Süßes & Salziges -> Süßwaren",
+    "url": "https://www.penny.at/kategorie/suesswaren-13075",
     "code": "64"
   },
   {
-    "id": "Süßes & Salziges -> Süßwaren",
-    "url": "https://www.penny.at/kategorie/suesswaren-13075",
+    "id": "Süßes & Salziges -> Schokolade",
+    "url": "https://www.penny.at/kategorie/schokolade-13074",
     "code": "64"
   },
   {
@@ -240,6 +240,11 @@
     "code": "90"
   },
   {
+    "id": "Haustier -> Hunde",
+    "url": "https://www.penny.at/kategorie/hunde-13091",
+    "code": "90"
+  },
+  {
     "id": "Haustier -> Katzen",
     "url": "https://www.penny.at/kategorie/katzen-13092",
     "code": "91"
@@ -248,6 +253,11 @@
     "id": "Haushalt",
     "url": "https://www.penny.at/kategorie/haushalt-13089",
     "code": "80"
+  },
+  {
+    "id": "Haushalt -> Küchenrollen & WC-Papier",
+    "url": "https://www.penny.at/kategorie/kuechenrollen-und-wcpapier-13094",
+    "code": "84"
   },
   {
     "id": "Haushalt -> Waschmittel & Weichspüler",
@@ -260,24 +270,94 @@
     "code": "88"
   },
   {
-    "id": "Haushalt -> Küchenrollen & WC-Papier",
-    "url": "https://www.penny.at/kategorie/kuechenrollen-und-wcpapier-13094",
-    "code": "84"
-  },
-  {
     "id": "Haushalt -> Raumsprays & Kerzen",
     "url": "https://www.penny.at/kategorie/raumsprays-und-kerzen-13096",
     "code": null
   },
   {
-    "id": "Haushalt -> Taschentücher & Servietten",
-    "url": "https://www.penny.at/kategorie/taschentuecher-und-servietten-13098",
-    "code": "89"
+    "id": "Haushalt -> Pflanzen & Blumen",
+    "url": "https://www.penny.at/kategorie/pflanzen-und-blumen-13100",
+    "code": "81"
+  },
+  {
+    "id": "Haushalt -> Lampen & Batterien",
+    "url": "https://www.penny.at/kategorie/lampen-und-batterien-13102",
+    "code": "85"
   },
   {
     "id": "Pflege",
     "url": "https://www.penny.at/kategorie/pflege-13076",
     "code": "70"
+  },
+  {
+    "id": "Pflege -> Damenhygiene",
+    "url": "https://www.penny.at/kategorie/damenhygiene-13078",
+    "code": null
+  },
+  {
+    "id": "Pflege -> Haarpflege & Haarfarben",
+    "url": "https://www.penny.at/kategorie/haarpflege-und-haarfarben-13080",
+    "code": "73"
+  },
+  {
+    "id": "Pflege -> Seifen & Duschbäder",
+    "url": "https://www.penny.at/kategorie/seifen-und-duschbaeder-13085",
+    "code": "78"
+  },
+  {
+    "id": "Pflege -> Strumpfhosen & Socken",
+    "url": "https://www.penny.at/kategorie/strumpfhosen-und-socken-13086",
+    "code": "7C"
+  },
+  {
+    "id": "Non-Food",
+    "url": "https://www.penny.at/kategorie/nonfood-13106",
+    "code": "80"
+  },
+  {
+    "id": "Non-Food -> Spiele, Bücher & Co.",
+    "url": "https://www.penny.at/kategorie/spiele-buecher-und-co-13110",
+    "code": "8E"
+  },
+  {
+    "id": "Non-Food -> Haushalt",
+    "url": "https://www.penny.at/kategorie/haushalt-13109",
+    "code": "82"
+  },
+  {
+    "id": "Non-Food -> Bekleidung & Textilien",
+    "url": "https://www.penny.at/kategorie/bekleidung-und-textilien-13107",
+    "code": null
+  },
+  {
+    "id": "Non-Food -> Saison",
+    "url": "https://www.penny.at/kategorie/saison-13111",
+    "code": null
+  },
+  {
+    "id": "Non-Food -> Küche",
+    "url": "https://www.penny.at/kategorie/kueche-13108",
+    "code": "83"
+  },
+  {
+    "id": "Kühlwaren -> Blätterteig & Strudelteig",
+    "url": "https://www.penny.at/kategorie/blaetterteig-und-strudelteig-13043",
+    "code": "36"
+  },
+  {
+    "id": "Kühlwaren -> Tofu & Vegetarische/Vegane Produkte",
+    "url": "https://www.penny.at/kategorie/tofu-und-vegetarischevegane-produkte-13046",
+    "code": "3B"
+  },
+  {
+    "id": "Tiefkühl -> Eis",
+    "url": "https://www.penny.at/kategorie/eis-13048",
+    "code": "40"
+  },
+  {
+    "id": "Haushalt -> Taschentücher & Servietten",
+    "url": "https://www.penny.at/kategorie/taschentuecher-und-servietten-13098",
+    "code": "89"
   },
   {
     "id": "Pflege -> Haut- & Lippenpflege",
@@ -290,11 +370,6 @@
     "code": "72"
   },
   {
-    "id": "Pflege -> Haarpflege & Haarfarben",
-    "url": "https://www.penny.at/kategorie/haarpflege-und-haarfarben-13080",
-    "code": "73"
-  },
-  {
     "id": "Pflege -> Baby",
     "url": "https://www.penny.at/kategorie/baby-13077",
     "code": null
@@ -305,84 +380,14 @@
     "code": null
   },
   {
-    "id": "Pflege -> Seifen & Duschbäder",
-    "url": "https://www.penny.at/kategorie/seifen-und-duschbaeder-13085",
-    "code": "78"
-  },
-  {
     "id": "Pflege -> Rasierbedarf",
     "url": "https://www.penny.at/kategorie/rasierbedarf-13084",
     "code": null
   },
   {
-    "id": "Non-Food",
-    "url": "https://www.penny.at/kategorie/nonfood-13106",
-    "code": "80"
-  },
-  {
-    "id": "Non-Food -> Haushalt",
-    "url": "https://www.penny.at/kategorie/haushalt-13109",
-    "code": "82"
-  },
-  {
-    "id": "Non-Food -> Saison",
-    "url": "https://www.penny.at/kategorie/saison-13111",
-    "code": null
-  },
-  {
-    "id": "Non-Food -> Bekleidung & Textilien",
-    "url": "https://www.penny.at/kategorie/bekleidung-und-textilien-13107",
-    "code": null
-  },
-  {
-    "id": "Non-Food -> Spiele, Bücher & Co.",
-    "url": "https://www.penny.at/kategorie/spiele-buecher-und-co-13110",
-    "code": "8E"
-  },
-  {
-    "id": "Non-Food -> Küche",
-    "url": "https://www.penny.at/kategorie/kueche-13108",
-    "code": "83"
-  },
-  {
     "id": "Süßes & Salziges -> Müsliriegel",
     "url": "https://www.penny.at/kategorie/muesliriegel-13072",
     "code": "62"
-  },
-  {
-    "id": "Haustier -> Hunde",
-    "url": "https://www.penny.at/kategorie/hunde-13091",
-    "code": "90"
-  },
-  {
-    "id": "Haushalt -> Pflanzen & Blumen",
-    "url": "https://www.penny.at/kategorie/pflanzen-und-blumen-13100",
-    "code": "81"
-  },
-  {
-    "id": "Pflege -> Strumpfhosen & Socken",
-    "url": "https://www.penny.at/kategorie/strumpfhosen-und-socken-13086",
-    "code": "7C"
-  },
-  {
-    "id": "Tiefkühl -> Desserts & Früchte",
-    "url": "https://www.penny.at/kategorie/desserts-und-fruechte-13054",
-    "code": "47"
-  },
-  {
-    "id": "Tiefkühl -> Pizza & Baguette",
-    "url": "https://www.penny.at/kategorie/pizza-und-baguette-13053",
-    "code": "46"
-  },
-  {
-    "id": "Grundnahrungsmittel -> Basisprodukte",
-    "url": "https://www.penny.at/kategorie/basisprodukte-13070",
-    "code": null
-  },
-  {
-    "id": "Haushalt -> Lampen & Batterien",
-    "url": "https://www.penny.at/kategorie/lampen-und-batterien-13102",
-    "code": "85"
   },
   {
     "id": "Pflege -> Sonnen- & Insektenschutzmittel",
