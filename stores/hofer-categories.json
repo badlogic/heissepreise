@@ -395,11 +395,6 @@
     "code": "34"
   },
   {
-    "id": "haltbare-milch-sahne-eiskaffee",
-    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
-    "code": "34"
-  },
-  {
     "id": "milchgetrank",
     "url": "https://www.roksh.at/hofer/angebot/milchgetrank",
     "code": "34"
@@ -412,6 +407,11 @@
   {
     "id": "milch-sahne-butter",
     "url": "https://www.roksh.at/hofer/angebot/milch-sahne-butter",
+    "code": "34"
+  },
+  {
+    "id": "haltbare-milch-sahne-eiskaffee",
+    "url": "https://www.roksh.at/hofer/angebot/haltbare-milch-sahne-eiskaffee",
     "code": "34"
   },
   {
@@ -485,13 +485,13 @@
     "code": "32"
   },
   {
-    "id": "faschiertes",
-    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
+    "id": "schweinefleisch-spezialitaten",
+    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
     "code": "32"
   },
   {
-    "id": "schweinefleisch-spezialitaten",
-    "url": "https://www.roksh.at/hofer/angebot/schweinefleisch-spezialitaten",
+    "id": "faschiertes",
+    "url": "https://www.roksh.at/hofer/angebot/faschiertes",
     "code": "32"
   },
   {
