@@ -2515,6 +2515,26 @@
     "code": null
   },
   {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Ambiente",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/ambiente/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Baumschmuck",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/baumschmuck/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Geschirr",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/geschirr/",
+    "code": null
+  },
+  {
     "id": "Haushalt/Wohnen & Dekorieren/Aufbewahrungssysteme",
     "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/aufbewahrungssysteme/",
     "code": null
@@ -2522,11 +2542,6 @@
   {
     "id": "Haushalt/Wohnen & Dekorieren/Bilder & Rahmen",
     "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/bilder-rahmen/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
     "code": null
   },
   {
@@ -3102,6 +3117,11 @@
   {
     "id": "Tiershop/Aktionen/Adventkalender für Hunde & Katzen",
     "url": "https://www.mueller.at/tiershop/aktionen/adventkalender-fuer-hunde-katzen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
     "code": null
   },
   {
