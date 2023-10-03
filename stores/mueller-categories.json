@@ -485,6 +485,11 @@
     "code": "76"
   },
   {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnputzbecher",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnputzbecher/",
+    "code": "76"
+  },
+  {
     "id": "Parfümerie/Accessoires/Badaccessoires/Seifenschalen & -spender",
     "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/seifenschalen-spender/",
     "code": null
@@ -3143,11 +3148,6 @@
     "id": "Genusswelt/Aktionen/Aus dem Prospekt",
     "url": "https://www.mueller.at/genusswelt/aktionen/aus-dem-prospekt/",
     "code": null
-  },
-  {
-    "id": "Parfümerie/Accessoires/Badaccessoires/Zahnputzbecher",
-    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/zahnputzbecher/",
-    "code": "76"
   },
   {
     "id": "Genusswelt/Marken/AGRESTIS",
