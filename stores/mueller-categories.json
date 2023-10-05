@@ -2925,11 +2925,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Marken/Lyre's",
-    "url": "https://www.mueller.at/genusswelt/marken/lyres/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Marken/MILL&MORTAR",
     "url": "https://www.mueller.at/genusswelt/marken/mill-mortar/",
     "code": null
@@ -3127,6 +3122,11 @@
   {
     "id": "Tiershop/Aktionen/Adventkalender für Hunde & Katzen",
     "url": "https://www.mueller.at/tiershop/aktionen/adventkalender-fuer-hunde-katzen/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Lyre's",
+    "url": "https://www.mueller.at/genusswelt/marken/lyres/",
     "code": null
   },
   {
