@@ -445,13 +445,13 @@
     "code": "33"
   },
   {
-    "id": "wurst-geschnitten",
-    "url": "https://www.roksh.at/hofer/angebot/wurst-geschnitten",
+    "id": "streichwurst-pasteten",
+    "url": "https://www.roksh.at/hofer/angebot/streichwurst-pasteten",
     "code": "37"
   },
   {
-    "id": "kochschinken",
-    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
+    "id": "wurst-geschnitten",
+    "url": "https://www.roksh.at/hofer/angebot/wurst-geschnitten",
     "code": "37"
   },
   {
@@ -475,8 +475,8 @@
     "code": "37"
   },
   {
-    "id": "streichwurst-pasteten",
-    "url": "https://www.roksh.at/hofer/angebot/streichwurst-pasteten",
+    "id": "kochschinken",
+    "url": "https://www.roksh.at/hofer/angebot/kochschinken",
     "code": "37"
   },
   {
@@ -665,6 +665,11 @@
     "code": "77"
   },
   {
+    "id": "deodorants",
+    "url": "https://www.roksh.at/hofer/angebot/deodorants",
+    "code": "72"
+  },
+  {
     "id": "intimhygiene",
     "url": "https://www.roksh.at/hofer/angebot/intimhygiene",
     "code": "71"
@@ -673,11 +678,6 @@
     "id": "sonnenpflege",
     "url": "https://www.roksh.at/hofer/angebot/sonnenpflege",
     "code": "79"
-  },
-  {
-    "id": "deodorants",
-    "url": "https://www.roksh.at/hofer/angebot/deodorants",
-    "code": "72"
   },
   {
     "id": "beikost-snacks",
@@ -695,14 +695,14 @@
     "code": "51"
   },
   {
-    "id": "spulmittel-putzmittel",
-    "url": "https://www.roksh.at/hofer/angebot/spulmittel-putzmittel",
-    "code": "88"
-  },
-  {
     "id": "wc-lufterfrischer",
     "url": "https://www.roksh.at/hofer/angebot/wc-lufterfrischer",
     "code": "87"
+  },
+  {
+    "id": "spulmittel-putzmittel",
+    "url": "https://www.roksh.at/hofer/angebot/spulmittel-putzmittel",
+    "code": "88"
   },
   {
     "id": "reinigungstucher-kuchentucher",
