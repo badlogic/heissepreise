@@ -276,6 +276,7 @@ exports.itemsToCSV = (items) => {
     let result = "store;id;name;priceDate;price;isBudgetBrand;quantity;unit;isWeighted;isBio;isAvailable;url\n";
     for (const item of items) {
         if (item.store == "lidl" || item.store == "penny") continue;
+        if (!item.name) continue;
         let rowFront = "";
         rowFront += item.store + ";";
         rowFront += `"${item.id}"` + ";";
