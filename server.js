@@ -10,7 +10,7 @@ const compression = require("compression");
 const i18n = require("./i18n");
 
 function copyItemsToSite(dataDir) {
-    const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`);
+    const items = analysis.readJSON(`${dataDir}/latest-canonical.json.${analysis.FILE_COMPRESSOR}`).filter((item) => item.name);
     analysis.writeJSON(`site/output/data/latest-canonical.json`, items);
     for (const store of analysis.STORE_KEYS) {
         const storeItems = items.filter((item) => item.store === store);
