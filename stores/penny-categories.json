@@ -5,14 +5,14 @@
     "code": "00"
   },
   {
-    "id": "Obst & Gemüse -> Gemüse & Salate",
-    "url": "https://www.penny.at/kategorie/gemuese-und-salate-13015",
-    "code": "01"
-  },
-  {
     "id": "Obst & Gemüse -> Obst",
     "url": "https://www.penny.at/kategorie/obst-13014",
     "code": "00"
+  },
+  {
+    "id": "Obst & Gemüse -> Gemüse & Salate",
+    "url": "https://www.penny.at/kategorie/gemuese-und-salate-13015",
+    "code": "01"
   },
   {
     "id": "Brot & Gebäck",
@@ -20,9 +20,9 @@
     "code": "10"
   },
   {
-    "id": "Brot & Gebäck -> Kuchen & Co.",
-    "url": "https://www.penny.at/kategorie/kuchen-und-co-13022",
-    "code": "13"
+    "id": "Brot & Gebäck -> Aufbackbrötchen & Toast",
+    "url": "https://www.penny.at/kategorie/aufbackbroetchen-und-toast-13019",
+    "code": "10"
   },
   {
     "id": "Brot & Gebäck -> Brot & Gebäck",
@@ -30,9 +30,19 @@
     "code": "11"
   },
   {
+    "id": "Brot & Gebäck -> Kuchen & Co.",
+    "url": "https://www.penny.at/kategorie/kuchen-und-co-13022",
+    "code": "13"
+  },
+  {
     "id": "Getränke",
     "url": "https://www.penny.at/kategorie/getraenke-13024",
     "code": ""
+  },
+  {
+    "id": "Getränke -> Alkoholfreie Getränke",
+    "url": "https://www.penny.at/kategorie/alkoholfreie-getraenke-13025",
+    "code": "20"
   },
   {
     "id": "Getränke -> Bier & Radler",
@@ -55,11 +65,6 @@
     "code": "23"
   },
   {
-    "id": "Getränke -> Alkoholfreie Getränke",
-    "url": "https://www.penny.at/kategorie/alkoholfreie-getraenke-13025",
-    "code": "20"
-  },
-  {
     "id": "Getränke -> Spirituosen",
     "url": "https://www.penny.at/kategorie/spirituosen-13029",
     "code": "24"
@@ -75,29 +80,9 @@
     "code": ""
   },
   {
-    "id": "Kühlwaren -> Milchprodukte",
-    "url": "https://www.penny.at/kategorie/milchprodukte-13039",
-    "code": "34"
-  },
-  {
-    "id": "Kühlwaren -> Wurst, Schinken & Speck",
-    "url": "https://www.penny.at/kategorie/wurst-schinken-und-speck-13044",
-    "code": "37"
-  },
-  {
     "id": "Kühlwaren -> Fleisch",
     "url": "https://www.penny.at/kategorie/fleisch-13035",
     "code": "32"
-  },
-  {
-    "id": "Kühlwaren -> Fisch",
-    "url": "https://www.penny.at/kategorie/fisch-13045",
-    "code": "39"
-  },
-  {
-    "id": "Kühlwaren -> Käse, Aufstriche & Salate",
-    "url": "https://www.penny.at/kategorie/kaese-aufstriche-und-salate-13038",
-    "code": "33"
   },
   {
     "id": "Kühlwaren -> Schnelle Küche",
@@ -110,23 +95,28 @@
     "code": "31"
   },
   {
-    "id": "Kühlwaren -> Tofu & Vegetarische/Vegane Produkte",
-    "url": "https://www.penny.at/kategorie/tofu-und-vegetarischevegane-produkte-13046",
-    "code": "3B"
+    "id": "Kühlwaren -> Milchprodukte",
+    "url": "https://www.penny.at/kategorie/milchprodukte-13039",
+    "code": "34"
+  },
+  {
+    "id": "Kühlwaren -> Käse, Aufstriche & Salate",
+    "url": "https://www.penny.at/kategorie/kaese-aufstriche-und-salate-13038",
+    "code": "33"
+  },
+  {
+    "id": "Kühlwaren -> Wurst, Schinken & Speck",
+    "url": "https://www.penny.at/kategorie/wurst-schinken-und-speck-13044",
+    "code": "37"
+  },
+  {
+    "id": "Kühlwaren -> Fisch",
+    "url": "https://www.penny.at/kategorie/fisch-13045",
+    "code": "39"
   },
   {
     "id": "Tiefkühl",
     "url": "https://www.penny.at/kategorie/tiefkuehl-13047",
-    "code": "40"
-  },
-  {
-    "id": "Tiefkühl -> Desserts & Früchte",
-    "url": "https://www.penny.at/kategorie/desserts-und-fruechte-13054",
-    "code": "47"
-  },
-  {
-    "id": "Tiefkühl -> Eis",
-    "url": "https://www.penny.at/kategorie/eis-13048",
     "code": "40"
   },
   {
@@ -135,8 +125,28 @@
     "code": "42"
   },
   {
+    "id": "Tiefkühl -> Pizza & Baguette",
+    "url": "https://www.penny.at/kategorie/pizza-und-baguette-13053",
+    "code": "46"
+  },
+  {
+    "id": "Tiefkühl -> Gemüse & Kräuter",
+    "url": "https://www.penny.at/kategorie/gemuese-und-kraeuter-13051",
+    "code": "44"
+  },
+  {
     "id": "Grundnahrungsmittel",
     "url": "https://www.penny.at/kategorie/grundnahrungsmittel-13055",
+    "code": "50"
+  },
+  {
+    "id": "Grundnahrungsmittel -> Essig & Öle",
+    "url": "https://www.penny.at/kategorie/essig-und-oele-13058",
+    "code": "53"
+  },
+  {
+    "id": "Grundnahrungsmittel -> Asia Produkte",
+    "url": "https://www.penny.at/kategorie/asia-produkte-13056",
     "code": "50"
   },
   {
@@ -145,34 +155,9 @@
     "code": "57"
   },
   {
-    "id": "Grundnahrungsmittel -> Essig & Öle",
-    "url": "https://www.penny.at/kategorie/essig-und-oele-13058",
-    "code": "53"
-  },
-  {
     "id": "Grundnahrungsmittel -> Mehl & Getreideprodukte",
     "url": "https://www.penny.at/kategorie/mehl-und-getreideprodukte-13064",
     "code": null
-  },
-  {
-    "id": "Grundnahrungsmittel -> Gewürze & Würzmittel",
-    "url": "https://www.penny.at/kategorie/gewuerze-und-wuerzmittel-13060",
-    "code": null
-  },
-  {
-    "id": "Grundnahrungsmittel -> Zucker & Süßstoffe",
-    "url": "https://www.penny.at/kategorie/zucker-und-suessstoffe-13069",
-    "code": "5E"
-  },
-  {
-    "id": "Grundnahrungsmittel -> Basisprodukte",
-    "url": "https://www.penny.at/kategorie/basisprodukte-13070",
-    "code": null
-  },
-  {
-    "id": "Grundnahrungsmittel -> Müsli & Cerealien",
-    "url": "https://www.penny.at/kategorie/muesli-und-cerealien-13065",
-    "code": "5A"
   },
   {
     "id": "Grundnahrungsmittel -> Honig, Marmelade & Co.",
@@ -180,9 +165,14 @@
     "code": "56"
   },
   {
-    "id": "Grundnahrungsmittel -> Asia Produkte",
-    "url": "https://www.penny.at/kategorie/asia-produkte-13056",
-    "code": "50"
+    "id": "Grundnahrungsmittel -> Müsli & Cerealien",
+    "url": "https://www.penny.at/kategorie/muesli-und-cerealien-13065",
+    "code": "5A"
+  },
+  {
+    "id": "Grundnahrungsmittel -> Reis, Teigwaren & Sugo",
+    "url": "https://www.penny.at/kategorie/reis-teigwaren-und-sugo-13066",
+    "code": "5B"
   },
   {
     "id": "Grundnahrungsmittel -> Saucen & Dressings",
@@ -193,16 +183,6 @@
     "id": "Grundnahrungsmittel -> Spezielle Ernährung",
     "url": "https://www.penny.at/kategorie/spezielle-ernaehrung-13068",
     "code": "5D"
-  },
-  {
-    "id": "Grundnahrungsmittel -> Reis, Teigwaren & Sugo",
-    "url": "https://www.penny.at/kategorie/reis-teigwaren-und-sugo-13066",
-    "code": "5B"
-  },
-  {
-    "id": "Grundnahrungsmittel -> Backen",
-    "url": "https://www.penny.at/kategorie/backen-13057",
-    "code": "52"
   },
   {
     "id": "Süßes & Salziges",
@@ -227,6 +207,11 @@
   {
     "id": "Haustier",
     "url": "https://www.penny.at/kategorie/haustier-13090",
+    "code": "90"
+  },
+  {
+    "id": "Haustier -> Hunde",
+    "url": "https://www.penny.at/kategorie/hunde-13091",
     "code": "90"
   },
   {
@@ -260,6 +245,11 @@
     "code": null
   },
   {
+    "id": "Haushalt -> Taschentücher & Servietten",
+    "url": "https://www.penny.at/kategorie/taschentuecher-und-servietten-13098",
+    "code": "89"
+  },
+  {
     "id": "Haushalt -> Pflanzen & Blumen",
     "url": "https://www.penny.at/kategorie/pflanzen-und-blumen-13100",
     "code": "81"
@@ -270,9 +260,14 @@
     "code": "70"
   },
   {
-    "id": "Pflege -> Mund- & Zahnhygiene",
-    "url": "https://www.penny.at/kategorie/mund-und-zahnhygiene-13083",
-    "code": null
+    "id": "Pflege -> Haut- & Lippenpflege",
+    "url": "https://www.penny.at/kategorie/haut-und-lippenpflege-13082",
+    "code": "75"
+  },
+  {
+    "id": "Pflege -> Deodrants",
+    "url": "https://www.penny.at/kategorie/deodrants-13079",
+    "code": "72"
   },
   {
     "id": "Pflege -> Haarpflege & Haarfarben",
@@ -280,19 +275,29 @@
     "code": "73"
   },
   {
-    "id": "Pflege -> Baby",
-    "url": "https://www.penny.at/kategorie/baby-13077",
+    "id": "Pflege -> Seifen & Duschbäder",
+    "url": "https://www.penny.at/kategorie/seifen-und-duschbaeder-13085",
+    "code": "78"
+  },
+  {
+    "id": "Pflege -> Mund- & Zahnhygiene",
+    "url": "https://www.penny.at/kategorie/mund-und-zahnhygiene-13083",
     "code": null
   },
   {
-    "id": "Pflege -> Sonnen- & Insektenschutzmittel",
-    "url": "https://www.penny.at/kategorie/sonnen-und-insektenschutzmittel-13088",
-    "code": "79"
+    "id": "Pflege -> Strumpfhosen & Socken",
+    "url": "https://www.penny.at/kategorie/strumpfhosen-und-socken-13086",
+    "code": "7C"
   },
   {
     "id": "Non-Food",
     "url": "https://www.penny.at/kategorie/nonfood-13106",
     "code": "80"
+  },
+  {
+    "id": "Non-Food -> Spiele, Bücher & Co.",
+    "url": "https://www.penny.at/kategorie/spiele-buecher-und-co-13110",
+    "code": "8E"
   },
   {
     "id": "Non-Food -> Haushalt",
@@ -315,14 +320,54 @@
     "code": "83"
   },
   {
+    "id": "Kühlwaren -> Tofu & Vegetarische/Vegane Produkte",
+    "url": "https://www.penny.at/kategorie/tofu-und-vegetarischevegane-produkte-13046",
+    "code": "3B"
+  },
+  {
+    "id": "Tiefkühl -> Desserts & Früchte",
+    "url": "https://www.penny.at/kategorie/desserts-und-fruechte-13054",
+    "code": "47"
+  },
+  {
+    "id": "Tiefkühl -> Eis",
+    "url": "https://www.penny.at/kategorie/eis-13048",
+    "code": "40"
+  },
+  {
+    "id": "Grundnahrungsmittel -> Gewürze & Würzmittel",
+    "url": "https://www.penny.at/kategorie/gewuerze-und-wuerzmittel-13060",
+    "code": null
+  },
+  {
+    "id": "Grundnahrungsmittel -> Zucker & Süßstoffe",
+    "url": "https://www.penny.at/kategorie/zucker-und-suessstoffe-13069",
+    "code": "5E"
+  },
+  {
+    "id": "Grundnahrungsmittel -> Basisprodukte",
+    "url": "https://www.penny.at/kategorie/basisprodukte-13070",
+    "code": null
+  },
+  {
+    "id": "Grundnahrungsmittel -> Backen",
+    "url": "https://www.penny.at/kategorie/backen-13057",
+    "code": "52"
+  },
+  {
+    "id": "Pflege -> Baby",
+    "url": "https://www.penny.at/kategorie/baby-13077",
+    "code": null
+  },
+  {
+    "id": "Pflege -> Sonnen- & Insektenschutzmittel",
+    "url": "https://www.penny.at/kategorie/sonnen-und-insektenschutzmittel-13088",
+    "code": "79"
+  },
+  {
     "id": "Kühlwaren -> Blätterteig & Strudelteig",
     "url": "https://www.penny.at/kategorie/blaetterteig-und-strudelteig-13043",
     "code": "36"
-  },
-  {
-    "id": "Tiefkühl -> Pizza & Baguette",
-    "url": "https://www.penny.at/kategorie/pizza-und-baguette-13053",
-    "code": "46"
   },
   {
     "id": "Tiefkühl -> Fisch & Garnelen",
@@ -340,58 +385,13 @@
     "code": "85"
   },
   {
-    "id": "Pflege -> Haut- & Lippenpflege",
-    "url": "https://www.penny.at/kategorie/haut-und-lippenpflege-13082",
-    "code": "75"
-  },
-  {
-    "id": "Pflege -> Seifen & Duschbäder",
-    "url": "https://www.penny.at/kategorie/seifen-und-duschbaeder-13085",
-    "code": "78"
-  },
-  {
-    "id": "Pflege -> Deodrants",
-    "url": "https://www.penny.at/kategorie/deodrants-13079",
-    "code": "72"
-  },
-  {
-    "id": "Non-Food -> Spiele, Bücher & Co.",
-    "url": "https://www.penny.at/kategorie/spiele-buecher-und-co-13110",
-    "code": "8E"
-  },
-  {
     "id": "Non-Food -> Körbe, Koffer & Co.",
     "url": "https://www.penny.at/kategorie/koerbe-koffer-und-co-13112",
     "code": null
   },
   {
-    "id": "Brot & Gebäck -> Aufbackbrötchen & Toast",
-    "url": "https://www.penny.at/kategorie/aufbackbroetchen-und-toast-13019",
-    "code": "10"
-  },
-  {
-    "id": "Tiefkühl -> Gemüse & Kräuter",
-    "url": "https://www.penny.at/kategorie/gemuese-und-kraeuter-13051",
-    "code": "44"
-  },
-  {
     "id": "Süßes & Salziges -> Müsliriegel",
     "url": "https://www.penny.at/kategorie/muesliriegel-13072",
     "code": "62"
-  },
-  {
-    "id": "Haustier -> Hunde",
-    "url": "https://www.penny.at/kategorie/hunde-13091",
-    "code": "90"
-  },
-  {
-    "id": "Haushalt -> Taschentücher & Servietten",
-    "url": "https://www.penny.at/kategorie/taschentuecher-und-servietten-13098",
-    "code": "89"
-  },
-  {
-    "id": "Pflege -> Strumpfhosen & Socken",
-    "url": "https://www.penny.at/kategorie/strumpfhosen-und-socken-13086",
-    "code": "7C"
   }
 ]

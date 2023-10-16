@@ -590,11 +590,6 @@
     "url": "https://www.mpreis.at/shop/c/20845561"
   },
   {
-    "id": "Getränke -> Energy- & Sportgetränke-17714924",
-    "code": "20",
-    "url": "https://www.mpreis.at/shop/c/17714924"
-  },
-  {
     "id": "Getränke -> Eistee-14897036",
     "code": "20",
     "url": "https://www.mpreis.at/shop/c/14897036"
@@ -848,5 +843,10 @@
     "id": "Drogerie -> Baby -> Babypflege-6782753",
     "code": "79",
     "url": "https://www.mpreis.at/shop/c/6782753"
+  },
+  {
+    "id": "Getränke -> Energy- & Sportgetränke-17714924",
+    "code": "20",
+    "url": "https://www.mpreis.at/shop/c/17714924"
   }
 ]

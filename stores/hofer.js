@@ -13,27 +13,27 @@ const units = {
 
 exports.getCanonical = function (item, today) {
     // try to read quantity and unit from product name
-    const name = item.ProductName;
+    const name = item.productName;
     let [quantity, unit] = utils.parseUnitAndQuantityAtEnd(name);
 
     return utils.convertUnit(
         {
-            id: item.ProductID,
+            id: item.productID,
             name,
             // description: "", not available
-            price: item.Price,
-            priceHistory: [{ date: today, price: item.Price }],
-            isWeighted: item.IsBulk,
-            unit: !unit ? item.UnitType : unit,
-            quantity: !quantity ? item.Unit : quantity,
-            bio: item.IsBio,
-            url: `${item.CategorySEOName}/${item.SEOName}`,
+            price: item.price,
+            priceHistory: [{ date: today, price: item.price }],
+            isWeighted: item.isBulk,
+            unit: !unit ? item.unitType : unit,
+            quantity: !quantity ? item.unit : quantity,
+            bio: item.isBio,
+            url: `${item.categorySEOName}/${item.sEOName}`,
         },
         units,
         "hofer",
         {
-            quantity: item.Unit,
-            unit: item.UnitType,
+            quantity: item.unit,
+            unit: item.unitType,
         }
     );
 };

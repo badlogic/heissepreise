@@ -192,6 +192,12 @@
     "code": "63"
   },
   {
+    "id": "weihnachten-hofer",
+    "description": "Weihnachten",
+    "url": "https://www.roksh.at//hofer/angebot/sußes-salziges/weihnachten-hofer",
+    "code": null
+  },
+  {
     "id": "tiefkuhlwaren",
     "description": "Tiefkühlwaren",
     "url": "https://www.roksh.at//hofer/angebot/tiefkuhlwaren",
@@ -382,6 +388,10 @@
     "description": "Katzennahrung",
     "url": "https://www.roksh.at//hofer/angebot/tierberdarf/katzennahrung",
     "code": "91"
+  },
+  {
+    "url": "https://www.roksh.at/hofer/angebot/undefined",
+    "code": ""
   },
   {
     "id": "fruchtjoghurt",
