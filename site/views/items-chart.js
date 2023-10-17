@@ -1,6 +1,7 @@
 const { STORE_KEYS } = require("../model/stores");
 const { settings } = require("../model");
 const { today, log, deltaTime, uniqueDates, calculateItemPriceTimeSeries } = require("../js/misc");
+const { __ } = require("../browser_i18n");
 const { View } = require("./view");
 require("./custom-checkbox");
 const moment = require("moment");
@@ -19,13 +20,13 @@ class ItemsChart extends View {
             }">
                 <div class="w-full grow">
                     <canvas x-id="canvas" class="bg-white rounded-lg"></canvas>
-                    <div x-id="noData" class="hidden flex items-center justify-center h-full">Keine Daten ausgewählt</div>
+                    <div x-id="noData" class="hidden flex items-center justify-center h-full">${__("ItemsChart_Keine Daten ausgewählt")}</div>
                 </div>
                 <div class="filters flex items-center flex-wrap justify-center gap-2 pt-2">
-                    <custom-checkbox x-id="sumTotal" x-change x-state label="Preissumme Gesamt"></custom-checkbox>
-                    <custom-checkbox x-id="sumStores" x-change x-state label="Preissumme Ketten"></custom-checkbox>
-                    <custom-checkbox x-id="onlyToday" x-change x-state label="Nur heutige Preise"></custom-checkbox>
-                    <custom-checkbox x-id="percentageChange" x-change x-state label="Änderung in % seit"></custom-checkbox>
+                    <custom-checkbox x-id="sumTotal" x-change x-state label="${__("ItemsChart_Preissumme Gesamt")}"></custom-checkbox>
+                    <custom-checkbox x-id="sumStores" x-change x-state label="${__("ItemsChart_Preissumme Ketten")}"></custom-checkbox>
+                    <custom-checkbox x-id="onlyToday" x-change x-state label="${__("ItemsChart_Nur heutige Preise")}"></custom-checkbox>
+                    <custom-checkbox x-id="percentageChange" x-change x-state label="${__("ItemsChart_Änderung in % seit")}"></custom-checkbox>
                     <div
                         class="cursor-pointer inline-flex items-center gap-x-1 rounded-full bg-white border border-gray-400 px-2 py-1 text-xs font-medium text-gray-600">
                         <input x-id="startDate" x-change x-state type="date" value="2017-01-01" />
@@ -137,7 +138,7 @@ class ItemsChart extends View {
         let yAxis = {
             ticks: {
                 callback: function (value, index, ticks) {
-                    return value.toLocaleString("de-DE", {
+                    return value.toLocaleString(navigator.language || "de-DE", {
                         minimumFractionDigits: 2,
                         style: "currency",
                         currency: "EUR",
@@ -149,7 +150,7 @@ class ItemsChart extends View {
             yAxis = {
                 title: {
                     display: true,
-                    text: "Änderung in % seit " + startDate,
+                    text: __("ItemsChart_Änderung in % seit {{date}}", { date: startDate }),
                 },
                 ticks: {
                     callback: (value) => {
@@ -212,7 +213,7 @@ class ItemsChart extends View {
         if (elements.sumTotal.checked && items.length > 0) {
             const now = performance.now();
             itemsToShow.push({
-                name: "Preissumme Gesamt",
+                name: __("ItemsChart_Preissumme Gesamt"),
                 priceHistory: this.calculateOverallPriceChanges(items, onlyToday, percentageChange, startDate, endDate),
             });
             log("ItemsChart - Calculating overall sum total " + ((performance.now() - now) / 1000).toFixed(2) + " secs");
@@ -224,7 +225,7 @@ class ItemsChart extends View {
                 const storeItems = items.filter((item) => item.store === store);
                 if (storeItems.length > 0) {
                     itemsToShow.push({
-                        name: "Preissumme " + store,
+                        name: __("ItemsChart_Preissumme {{s}}", { s: store }),
                         priceHistory: this.calculateOverallPriceChanges(storeItems, onlyToday, percentageChange, startDate, endDate),
                     });
                 }

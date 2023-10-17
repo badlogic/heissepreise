@@ -276,6 +276,7 @@ exports.itemsToCSV = (items) => {
     let result = "store;id;name;priceDate;price;isBudgetBrand;quantity;unit;isWeighted;isBio;isAvailable;url\n";
     for (const item of items) {
         if (item.store == "lidl" || item.store == "penny") continue;
+        if (!item.name) continue;
         let rowFront = "";
         rowFront += item.store + ";";
         rowFront += `"${item.id}"` + ";";
@@ -305,7 +306,11 @@ exports.itemsToCSV = (items) => {
  */
 exports.numberToLocale = (number) => {
     try {
-        return number.toLocaleString("at-DE", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+        let locale = "at-DE";
+        if (navigator) {
+            locale = navigator.language;
+        }
+        return number.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 2 });
     } catch (e) {
         return number;
     }

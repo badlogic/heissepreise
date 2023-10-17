@@ -1,3 +1,9 @@
+// Process redirects before running anything else
+if (location.href.includes("heissepreise.github.io")) {
+    location.href = "https://heisse-preise.io";
+    return;
+}
+
 const { getQueryParameter } = require("./js/misc");
 const model = require("./model");
 require("./views");
@@ -7,10 +13,6 @@ const { ProgressBar } = require("./views/progress-bar");
 const progressBar = new ProgressBar(STORE_KEYS.length);
 
 (async () => {
-    if (location.href.includes("heissepreise.github.io")) {
-        location.href = "https://heisse-preise.io";
-    }
-
     await model.load(() => progressBar.addStep());
     const itemsFilter = document.querySelector("items-filter");
     const itemsList = document.querySelector("items-list");

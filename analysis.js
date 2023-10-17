@@ -90,6 +90,7 @@ function mergePriceHistory(oldItems, items) {
 
     const lookup = {};
     for (oldItem of oldItems) {
+        if (!oldItem.name) continue;
         delete oldItem.unavailable;
         lookup[oldItem.store + oldItem.id] = oldItem;
     }
@@ -284,6 +285,7 @@ exports.updateData = async function (dataDir, done) {
     console.log("Fetching data for date: " + today);
     const storeFetchPromises = [];
     for (const store of STORE_KEYS) {
+        if (store == "billa") continue;
         storeFetchPromises.push(
             new Promise(async (resolve) => {
                 const start = performance.now();

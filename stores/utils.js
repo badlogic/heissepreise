@@ -87,6 +87,7 @@ exports.convertUnit = function (item, units, store, fallback) {
 };
 
 exports.parseUnitAndQuantityAtEnd = function (name) {
+    if (!name) return [undefined, undefined];
     let unit,
         quantity = 1;
     const nameTokens = name.trim().replaceAll("(", "").replaceAll(")", "").replaceAll(",", ".").split(" ");
