@@ -40,37 +40,43 @@ exports.getCanonical = function (item, today) {
     );
 };
 
-exports.fetchData = async function () {
-    const items = [];
-    const lookup = {};
-    let numDuplicates = 0;
+exports.getCategories = async function () {
+    const categories = {};
 
-    for (let i = 1; i <= categories.length; i++) {
-        const category = categories[i - 1];
-        const categoryCode = i < 10 ? "" + i : String.fromCharCode("A".charCodeAt(0) + (i - 10));
+    // all letters of alphabet
+    for (let i = 0; i < 26; i++) {
+        const letter = String.fromCharCode("A".charCodeAt(0) + i);
+        const BILLA_SEARCH = `https://shop.billa.at/api/categories/search/${letter}?pageSize=1000&storeId=00-10`;
+        const data = (await axios.get(BILLA_SEARCH)).data;
 
-        for (let j = 1; j <= category.subcategories.length; j++) {
-            const subCategoryCode = j < 10 ? "" + j : String.fromCharCode("A".charCodeAt(0) + (j - 10));
-            const code = `B2-${categoryCode}${subCategoryCode}`;
-
-            const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}&category=${code}`;
-            const data = (await axios.get(BILLA_SEARCH)).data;
-            data.tiles.forEach((item) => {
-                try {
-                    const canonicalItem = exports.getCanonical(item);
-                    if (lookup[canonicalItem.id]) {
-                        numDuplicates++;
-                        return;
-                    }
-                    lookup[canonicalItem.id] = item;
-                    items.push(item);
-                } catch (e) {
-                    // Ignore super tiles
-                }
-            });
-        }
+        // loop through results
+        data.results.forEach((item) => {
+            const category = {
+                id: item.slug,
+                name: item.name
+            };
+            categories[category.id] = category;
+        });
     }
-    console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
+
+    return categories;
+}
+
+exports.fetchData = async function () {
+    const categories = await exports.getCategories();
+    const items = [];
+
+    console.log(categories);
+
+    Object.keys(categories).forEach(async (category_slug) => {
+        const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category_slug}/products?page=0&sortBy=relevance&pageSize=500&storeId=00-10`;
+        const data = (await axios.get(BILLA_SEARCH)).data;
+        data.results.forEach((item) => {
+            items.push(item);
+        });
+
+        console.log(items.length);
+    });
     return items;
 };
 
