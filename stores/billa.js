@@ -8,6 +8,8 @@ const units = {
     beutel: { unit: "stk", factor: 1 },
     bund: { unit: "stk", factor: 1 },
     packung: { unit: "stk", factor: 1 },
+    pa: { unit: "stk", factor: 1 },
+    fl: { unit: "stk", factor: 1 },
     portion: { unit: "stk", factor: 1 },
     rollen: { unit: "stk", factor: 1 },
     teebeutel: { unit: "stk", factor: 1 },
@@ -15,26 +17,18 @@ const units = {
 };
 
 exports.getCanonical = function (item, today) {
-    let quantity = 1,
-        unit = "kg";
-
-    if (item.data.grammagePriceFactor == 1) {
-        if (item.data.grammage.indexOf("Per ") == 0) item.data.grammage = item.data.grammage.replace("Per ", "");
-        const grammage = item.data.grammage !== "" && item.data.grammage.trim().split(" ").length > 1 ? item.data.grammage : item.data.price.unit;
-        if (grammage) [quantity, unit] = grammage.trim().split(" ").splice(0, 2);
-    }
-
+    
     return utils.convertUnit(
         {
-            id: item.data.articleId,
-            name: item.data.name,
-            description: item.data.description ?? "",
-            price: item.data.price.final,
-            priceHistory: [{ date: today, price: item.data.price.final }],
-            isWeighted: item.data.isWeightArticle,
-            unit,
-            quantity,
-            bio: item.data.attributes && item.data.attributes.includes("s_bio"),
+            id: item.productId,
+            name: item.name,
+            description: item.descriptionShort ?? "",
+            price: item.price.regular.value,
+            priceHistory: [{ date: today, price: item.price.regular.value }],
+            isWeighted: item.weightArticle,
+            unit: item.packageLabelKey,
+            quantity: 1,
+            bio: item.badges && item.badges.includes("pp-bio"),
         },
         units,
         "billa"
@@ -44,34 +38,30 @@ exports.getCanonical = function (item, today) {
 exports.fetchData = async function () {
     
     const items = [];
+    const lookup = {};
+    let numDuplicates = 0;
 
     billaCategories.forEach(async (category) => {
 
-        // optimistic guess
-        let page_size = 500;
-        let total_pages = Math.ceil(page_size / 500);
-        let current_page = 0;
+        const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category.id}/products?page=0&sortBy=relevance&pageSize=500&storeId=00-10`;
+        const data = (await axios.get(BILLA_SEARCH)).data;
 
-        // fetch all pages
-        while (current_page < total_pages) {
-            const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category.id}/products?page=${current_page}&sortBy=relevance&pageSize=${page_size}&storeId=00-10`;
-            const data = (await axios.get(BILLA_SEARCH)).data;
-
-            data.results.forEach((item) => {
-
-                // check if we already have product with product ID
-                if (items.find((i) => i.productId === item.productId)) return;
-
-                // check if product is available
+        data.results.forEach((item) => {
+            try {
+                const canonicalItem = exports.getCanonical(item);
+                if (lookup[canonicalItem.id]) {
+                    numDuplicates++;
+                    return;
+                }
+                lookup[canonicalItem.id] = item;
                 items.push(item);
-            });
+            } catch (e) {
+                // Ignore super tiles
+            }
+        });
 
-            // update total pages
-            total_pages = Math.ceil(data.total / 500);
-            current_page++;
-        }
-
-        console.log("Product Count: " + items.length);
+        console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
+        
     });
     return items;
 };
