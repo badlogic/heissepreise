@@ -4,17 +4,17 @@
 
 /* Product table */
 thead > tr {
-    @apply bg-primary text-white text-left hidden md:table-row uppercase text-sm;
+    @apply hidden text-sm text-left text-white uppercase bg-primary md:table-row;
 }
 .item {
     @apply mb-3 overflow-hidden;
-    @apply grid grid-cols-3 col-span-3 items-end;
+    @apply grid items-end grid-cols-3 col-span-3;
     @apply md:table-row;
     @apply border border-b md:rounded-xl;
 }
 
 .item > td[data-label="Kette"] {
-    @apply p-1 uppercase font-medium align-top;
+    @apply p-1 font-medium uppercase align-top;
     @apply md:text-center;
     @apply order-2;
 }
@@ -25,7 +25,7 @@ thead > tr {
     @apply order-1 col-span-3;
 }
 .item > td[data-label="Preis"] {
-    @apply p-1 text-left whitespace-nowrap align-top;
+    @apply p-1 text-left align-top whitespace-nowrap;
     @apply order-3;
 }
 .item > td:nth-child(4) {
@@ -39,7 +39,7 @@ thead > tr {
 }
 
 .item > td[data-label]::before {
-    @apply content-label font-bold uppercase block bg-primary text-white px-1 -m-1 mb-1 text-sm;
+    @apply block px-1 mb-1 -m-1 text-sm font-bold text-white uppercase content-label bg-primary;
     @apply md:content-none;
 }
 
@@ -48,14 +48,14 @@ thead > tr {
 }
 /* additional info table */
 .priceinfo {
-    @apply text-xs  mt-2;
+    @apply mt-2 text-xs;
     @apply md:text-sm;
 }
 .priceinfo tr > td:nth-child(1) {
     @apply font-medium;
 }
 .priceinfo .price-line {
-    @apply text-xs  text-white px-1;
+    @apply px-1 text-xs text-white;
     @apply md:text-sm;
 }
 
@@ -63,7 +63,7 @@ thead > tr {
     @apply w-6 h-6;
     @apply flex items-center justify-center bg-white;
     @apply cursor-pointer hover:shadow hover:scale-110;
-    @apply border rounded leading-none;
+    @apply leading-none border rounded;
     @apply transition-transform duration-200;
 }
 
@@ -120,10 +120,10 @@ thead > tr {
 
 /* checkbox */
 .customcheckbox {
-    @apply inline-flex items-center gap-x-1 px-2 py-1;
+    @apply inline-flex items-center px-2 py-1 gap-x-1;
     @apply text-xs font-medium text-gray-600;
     @apply cursor-pointer hover:bg-gray-400 hover:scale-105;
-    @apply border rounded-full bg-gray-200 border-gray-400;
+    @apply bg-gray-200 border border-gray-400 rounded-full;
     @apply transition-all duration-200;
 }
 /* colors */
@@ -219,8 +219,8 @@ thead > tr {
 }
 
 .wrapper {
-    @apply flex justify-center items-center;
-    @apply relative text-center mx-auto my-0 gap-2;
+    @apply flex items-center justify-center;
+    @apply relative gap-2 mx-auto my-0 text-center;
     @apply w-full z-[2];
 }
 
@@ -262,17 +262,4 @@ a {
     transition: scaleX 0.5s;
     width: 100%;
     transform-origin: left center;
-}
-
-/* for experiments */
-.tooltip {
-    @apply absolute;
-    @apply bg-black/75;
-    @apply text-white;
-    @apply text-xs;
-    @apply px-2;
-    @apply py-1;
-    @apply rounded;
-    @apply z-10;
-    @apply opacity-0;
 }
