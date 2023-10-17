@@ -8,6 +8,9 @@
         "name": "After Shave"
     },
     {
+        "id": "alkoholfreie-getraenke-13785"
+    },
+    {
         "id": "alkoholfreie-spirituosen-14533",
         "name": "Alkoholfreie Spirituosen"
     },
@@ -48,6 +51,12 @@
         "name": "Aufbackbrötchen & -baguettes"
     },
     {
+        "id": "aufbackbroetchen-und-toast-13767"
+    },
+    {
+        "id": "aufschnittplatten-13888"
+    },
+    {
         "id": "aufstriche-13993",
         "name": "Aufstriche"
     },
@@ -60,12 +69,24 @@
         "name": "Aus der Feinkost"
     },
     {
+        "id": "aus-der-feinkost-13892"
+    },
+    {
+        "id": "baby-13947"
+    },
+    {
+        "id": "baby-14084"
+    },
+    {
         "id": "babynahrung-im-glas-13948",
         "name": "Babynahrung im Glas"
     },
     {
         "id": "babypflege-14085",
         "name": "Babypflege"
+    },
+    {
+        "id": "backen-13955"
     },
     {
         "id": "backformen-14141",
@@ -104,6 +125,9 @@
         "name": "Beutelsuppen"
     },
     {
+        "id": "bier-und-radler-13796"
+    },
+    {
         "id": "binden-14091",
         "name": "Binden"
     },
@@ -114,6 +138,9 @@
     {
         "id": "blaetterteig-strudelteig-13890",
         "name": "Blätterteig, Strudelteig"
+    },
+    {
+        "id": "blaetterteig-strudelteig-13962"
     },
     {
         "id": "blumenerde-14136",
@@ -134,6 +161,9 @@
     {
         "id": "brot-und-gebaeck-13766",
         "name": "Brot & Gebäck"
+    },
+    {
+        "id": "brot-und-gebaeck-13770"
     },
     {
         "id": "brot-verpackt-13771",
@@ -168,8 +198,14 @@
         "name": "Champagner"
     },
     {
+        "id": "chicken-wings-und-nuggets-14551"
+    },
+    {
         "id": "chips-14062",
         "name": "Chips"
+    },
+    {
+        "id": "chips-und-co-14061"
     },
     {
         "id": "cider-14532",
@@ -180,12 +216,18 @@
         "name": "Cognac & Whiskey"
     },
     {
+        "id": "damenhygiene-14089"
+    },
+    {
         "id": "deodorants-14094",
         "name": "Deodorants"
     },
     {
         "id": "dessertwein-13836",
         "name": "Dessertwein"
+    },
+    {
+        "id": "div-buero-und-schulartikel-14128"
     },
     {
         "id": "div-damenhygiene-14093",
@@ -224,6 +266,12 @@
         "name": "Eier"
     },
     {
+        "id": "eier-13960"
+    },
+    {
+        "id": "eis-13917"
+    },
+    {
         "id": "eis-am-stiel-und-stanitzel-13919",
         "name": "Eis am Stiel & Stanitzel"
     },
@@ -252,8 +300,14 @@
         "name": "Enthaarungsmittel"
     },
     {
+        "id": "erbsen-14559"
+    },
+    {
         "id": "essig-13967",
         "name": "Essig"
+    },
+    {
+        "id": "essig-und-oel-13966"
     },
     {
         "id": "exotisches-obst-13754",
@@ -264,8 +318,17 @@
         "name": "Feingebäck & Kekse"
     },
     {
+        "id": "feinkost-13906"
+    },
+    {
+        "id": "feinkostplatten-und-broetchen-13886"
+    },
+    {
         "id": "fertiggerichte-13842",
         "name": "Fertiggerichte"
+    },
+    {
+        "id": "fertiggerichte-13969"
     },
     {
         "id": "feta-und-mozzarella-13862",
@@ -288,12 +351,18 @@
         "name": "Fisch"
     },
     {
+        "id": "fisch-13910"
+    },
+    {
         "id": "fisch-natur-13931",
         "name": "Fisch natur"
     },
     {
         "id": "fisch-paniert-und-gewuerzt-13932",
         "name": "Fisch paniert & gewürzt"
+    },
+    {
+        "id": "fisch-und-meeresfruechte-13930"
     },
     {
         "id": "fischkonserven-13994",
@@ -304,12 +373,21 @@
         "name": "Fischstäbchen"
     },
     {
+        "id": "fixprodukte-14044"
+    },
+    {
         "id": "flaschenbier-13799",
         "name": "Flaschenbier"
     },
     {
         "id": "flecken-und-vorwaschmittel-14173",
         "name": "Flecken- & Vorwaschmittel"
+    },
+    {
+        "id": "fleisch-13849"
+    },
+    {
+        "id": "fleisch-und-gefluegel-13921"
     },
     {
         "id": "fleischgerichte-14549",
@@ -320,8 +398,14 @@
         "name": "Frischer Kuchen"
     },
     {
+        "id": "frischer-kuchen-14008"
+    },
+    {
         "id": "frischer-plunder-und-strudel-13776",
         "name": "Frischer Plunder & Strudel"
+    },
+    {
+        "id": "frischer-plunder-und-strudel-14007"
     },
     {
         "id": "frucht-und-gemuesesaefte-13789",
@@ -372,6 +456,9 @@
         "name": "Gelierhilfe & -Zucker"
     },
     {
+        "id": "gelierhilfe-und-zucker-14043"
+    },
+    {
         "id": "gelsenschutzmittel-14122",
         "name": "Gelsenschutzmittel"
     },
@@ -384,6 +471,9 @@
         "name": "Gemüse"
     },
     {
+        "id": "gemuese-kraeuter-und-obst-13934"
+    },
+    {
         "id": "geschenksideen-14267",
         "name": "Geschenksideen"
     },
@@ -394,6 +484,9 @@
     {
         "id": "gesichtspflege-14102",
         "name": "Gesichtspflege"
+    },
+    {
+        "id": "getraenke-13784"
     },
     {
         "id": "getraenke-und-tees-13952",
@@ -412,6 +505,9 @@
         "name": "Gewürze"
     },
     {
+        "id": "gewuerze-und-wuerzmittel-13981"
+    },
+    {
         "id": "gewuerzglaeser-und-packungen-13983",
         "name": "Gewürzgläser & -Packungen"
     },
@@ -428,12 +524,18 @@
         "name": "Gin"
     },
     {
+        "id": "glaeser-und-besteck-14142"
+    },
+    {
         "id": "glutenfrei-14034",
         "name": "Glutenfrei"
     },
     {
         "id": "golatschen-muffins-und-co-13780",
         "name": "Golatschen, Muffins & Co."
+    },
+    {
+        "id": "golatschen-muffins-und-co-14011"
     },
     {
         "id": "grablichter-14161",
@@ -446,6 +548,9 @@
     {
         "id": "haarfarben-14098",
         "name": "Haarfarben"
+    },
+    {
+        "id": "haarpflege-und-haarfarben-14095"
     },
     {
         "id": "haarspray-und-gel-14097",
@@ -464,8 +569,20 @@
         "name": "Hart- & Weichkäse am Stück"
     },
     {
+        "id": "haushalt-14126"
+    },
+    {
+        "id": "haustier-14181"
+    },
+    {
+        "id": "haut-und-lippenpflege-14100"
+    },
+    {
         "id": "honig-13989",
         "name": "Honig"
+    },
+    {
+        "id": "honig-marmelade-und-co-13988"
     },
     {
         "id": "huelsenfruechte-13995",
@@ -478,6 +595,9 @@
     {
         "id": "huhn-und-truthahn-13851",
         "name": "Huhn & Truthahn"
+    },
+    {
+        "id": "hunde-14182"
     },
     {
         "id": "hunde-nassfutter-14183",
@@ -516,6 +636,9 @@
         "name": "Käse"
     },
     {
+        "id": "kaese-aufstriche-und-salate-13855"
+    },
+    {
         "id": "kaesespezialitaeten-13865",
         "name": "Käsespezialitäten"
     },
@@ -524,12 +647,18 @@
         "name": "Kaffee"
     },
     {
+        "id": "kaffee-tee-und-co-13801"
+    },
+    {
         "id": "kakao-13809",
         "name": "Kakao"
     },
     {
         "id": "kartoffelspezialitaeten-14556",
         "name": "Kartoffelspezialitäten"
+    },
+    {
+        "id": "katzen-14186"
     },
     {
         "id": "katzen-nassfutter-14187",
@@ -588,16 +717,40 @@
         "name": "Knödel & Beilagen"
     },
     {
+        "id": "konserven-und-sauerwaren-13992"
+    },
+    {
         "id": "kraeuter-13760",
         "name": "Kräuter"
+    },
+    {
+        "id": "kraeuter-14560"
+    },
+    {
+        "id": "krampus-und-nikolo-14080"
     },
     {
         "id": "krapfen-und-brandteiggebaeck-13781",
         "name": "Krapfen & Brandteiggebäck"
     },
     {
+        "id": "krapfen-und-brandteiggebaeck-14012"
+    },
+    {
         "id": "kuchen-strudel-und-rouladen-13778",
         "name": "Kuchen, Strudel & Rouladen"
+    },
+    {
+        "id": "kuchen-strudel-und-rouladen-14009"
+    },
+    {
+        "id": "kuchen-und-co-13775"
+    },
+    {
+        "id": "kuchen-und-co-14006"
+    },
+    {
+        "id": "kuechenartikel-14140"
     },
     {
         "id": "kuechenhilfen-14143",
@@ -606,6 +759,18 @@
     {
         "id": "kuechenrollen-14153",
         "name": "Küchenrollen"
+    },
+    {
+        "id": "kuechenrollen-und-wcpapier-14150"
+    },
+    {
+        "id": "kuehlwaren-13841"
+    },
+    {
+        "id": "kunststoffbehaelter-14147"
+    },
+    {
+        "id": "kunststoffbehaelter-14176"
     },
     {
         "id": "laktosefrei-14035",
@@ -618,6 +783,9 @@
     {
         "id": "lampen-14155",
         "name": "Lampen"
+    },
+    {
+        "id": "lampen-und-batterien-14154"
     },
     {
         "id": "lebkuchen-14078",
@@ -644,6 +812,12 @@
         "name": "Mehl"
     },
     {
+        "id": "mehl-14017"
+    },
+    {
+        "id": "mehl-und-getreideprodukte-14014"
+    },
+    {
         "id": "menues-und-dosengerichte-13975",
         "name": "Menüs & Dosengerichte"
     },
@@ -664,6 +838,9 @@
         "name": "Milchgetränke"
     },
     {
+        "id": "milchprodukte-13869"
+    },
+    {
         "id": "milchpulver-und-milch-13949",
         "name": "Milchpulver & Milch"
     },
@@ -672,8 +849,14 @@
         "name": "Milchsnacks"
     },
     {
+        "id": "mild-13839"
+    },
+    {
         "id": "mineralwasser-13792",
         "name": "Mineralwasser"
+    },
+    {
+        "id": "mineralwasser-13837"
     },
     {
         "id": "mineralwasser-mit-geschmack-13793",
@@ -688,8 +871,17 @@
         "name": "Müsli"
     },
     {
+        "id": "muesli-und-cerealien-14018"
+    },
+    {
         "id": "muesliriegel-14021",
         "name": "Müsliriegel"
+    },
+    {
+        "id": "muesliriegel-14060"
+    },
+    {
+        "id": "mund-und-zahnhygiene-14105"
     },
     {
         "id": "mundwasser-und-kukident-14108",
@@ -702,6 +894,9 @@
     {
         "id": "nahrungsergaenzung-14039",
         "name": "Nahrungsergänzung"
+    },
+    {
+        "id": "nahrungsmittel-13943"
     },
     {
         "id": "neu-im-online-shop-14506",
@@ -720,6 +915,9 @@
         "name": "Obst"
     },
     {
+        "id": "obst-und-gemuese-13751"
+    },
+    {
         "id": "obst-und-kompotte-13996",
         "name": "Obst & Kompotte"
     },
@@ -734,6 +932,9 @@
     {
         "id": "ofenfrisches-gebaeck-13773",
         "name": "Ofenfrisches Gebäck"
+    },
+    {
+        "id": "papier-und-block-14129"
     },
     {
         "id": "parmesan-und-reibkaese-13866",
@@ -760,12 +961,24 @@
         "name": "Pflege"
     },
     {
+        "id": "pflege-14174"
+    },
+    {
         "id": "pizza-13938",
         "name": "Pizza"
     },
     {
+        "id": "pizza-baguette-und-gebaeck-13936"
+    },
+    {
         "id": "pommes-frites-14555",
         "name": "Pommes Frites"
+    },
+    {
+        "id": "pommes-frites-und-mehr-13935"
+    },
+    {
+        "id": "prickelnd-13840"
     },
     {
         "id": "prosecco-und-frizzante-13822",
@@ -784,6 +997,9 @@
         "name": "Rahm, Obers & Topfen"
     },
     {
+        "id": "rasierbedarf-14110"
+    },
+    {
         "id": "rasierer-und-klingen-14111",
         "name": "Rasierer & Klingen"
     },
@@ -792,8 +1008,14 @@
         "name": "Rasierschaum & -Gel"
     },
     {
+        "id": "raumsprays-und-kerzen-14158"
+    },
+    {
         "id": "raumsprays-und-lufterfrischer-14159",
         "name": "Raumsprays & Lufterfrischer"
+    },
+    {
+        "id": "reinigen-und-pflegen-14162"
     },
     {
         "id": "reinigungsgeraete-und-tuecher-14166",
@@ -802,6 +1024,9 @@
     {
         "id": "reis-14023",
         "name": "Reis"
+    },
+    {
+        "id": "reis-teigwaren-und-sugo-14022"
     },
     {
         "id": "reiswaffeln-und-vollwert-14036",
@@ -828,6 +1053,15 @@
         "name": "Salate"
     },
     {
+        "id": "salate-13762"
+    },
+    {
+        "id": "salate-13844"
+    },
+    {
+        "id": "salate-13977"
+    },
+    {
         "id": "salate-aufstriche-13909",
         "name": "Salate, Aufstriche"
     },
@@ -838,6 +1072,9 @@
     {
         "id": "salz-13986",
         "name": "Salz"
+    },
+    {
+        "id": "saucen-und-dressings-14027"
     },
     {
         "id": "saucen-und-saefte-14030",
@@ -892,6 +1129,9 @@
         "name": "Schweinefleisch"
     },
     {
+        "id": "seife-und-duschbaeder-14115"
+    },
+    {
         "id": "seifen-14118",
         "name": "Seifen"
     },
@@ -902,6 +1142,9 @@
     {
         "id": "sekt-und-champagner-13820",
         "name": "Sekt & Champagner"
+    },
+    {
+        "id": "sekt-und-champagner-14268"
     },
     {
         "id": "semmelwuerfel-und-broesel-13783",
@@ -940,20 +1183,35 @@
         "name": "Soja, Hafer & Reisdrinks"
     },
     {
+        "id": "sonnen-und-gelsenschutzmittel-14119"
+    },
+    {
         "id": "sonnenschutzmittel-14120",
         "name": "Sonnenschutzmittel"
+    },
+    {
+        "id": "sonstiges-14538"
     },
     {
         "id": "spezialitaeten-13926",
         "name": "Spezialitäten"
     },
     {
+        "id": "spezielle-ernaehrung-14032"
+    },
+    {
         "id": "spielwaren-14534",
         "name": "Spielwaren"
     },
     {
+        "id": "spinat-14558"
+    },
+    {
         "id": "spirituosen-13824",
         "name": "Spirituosen"
+    },
+    {
+        "id": "spirituosen-14537"
     },
     {
         "id": "spruehsahne-und-kaffeeobers-13885",
@@ -976,6 +1234,9 @@
         "name": "Striezel, Brioche & Croissants"
     },
     {
+        "id": "striezel-brioche-und-croissants-14010"
+    },
+    {
         "id": "strumpfhosen-und-socken-14125",
         "name": "Strumpfhosen & Socken"
     },
@@ -992,6 +1253,21 @@
         "name": "Süßes"
     },
     {
+        "id": "suesses-13979"
+    },
+    {
+        "id": "suesses-14067"
+    },
+    {
+        "id": "suesses-und-backen-13987"
+    },
+    {
+        "id": "suesses-und-salziges-14057"
+    },
+    {
+        "id": "suessspeisen-und-torten-13939"
+    },
+    {
         "id": "suessstoffe-14042",
         "name": "Süßstoffe"
     },
@@ -1004,6 +1280,9 @@
         "name": "Suppeneinlagen"
     },
     {
+        "id": "suppeneinlagen-14026"
+    },
+    {
         "id": "suppenwuerfel-13972",
         "name": "Suppenwürfel"
     },
@@ -1014,6 +1293,9 @@
     {
         "id": "taschentuecher-14168",
         "name": "Taschentücher"
+    },
+    {
+        "id": "taschentuecher-und-servietten-14167"
     },
     {
         "id": "tee-13810",
@@ -1030,6 +1312,9 @@
     {
         "id": "teigwaren-und-beilagen-13846",
         "name": "Teigwaren & Beilagen"
+    },
+    {
+        "id": "teigwaren-und-beilagen-13980"
     },
     {
         "id": "tequila-13832",
@@ -1056,12 +1341,18 @@
         "name": "Tiefgekühlte Torten, Schnitten & Kuchen"
     },
     {
+        "id": "tiefkuehl-13916"
+    },
+    {
         "id": "tiefkuehl-baguette-13937",
         "name": "Tiefkühl Baguette"
     },
     {
         "id": "tiefkuehl-gemuese-und-pilze-14557",
         "name": "Tiefkühl Gemüse & Pilze"
+    },
+    {
+        "id": "tiefkuehlgerichte-13922"
     },
     {
         "id": "toastbrot-13769",
@@ -1094,6 +1385,15 @@
     {
         "id": "vegan-13911",
         "name": "Vegan"
+    },
+    {
+        "id": "vegan-14037"
+    },
+    {
+        "id": "vegane-artikel-14528"
+    },
+    {
+        "id": "vegane-ernaehrung-14048"
     },
     {
         "id": "vegane-suessigkeiten-14056",
@@ -1164,6 +1464,9 @@
         "name": "Wurst"
     },
     {
+        "id": "wurst-schinken-und-speck-13891"
+    },
+    {
         "id": "wurst-und-stangenwurst-13903",
         "name": "Wurst & Stangenwurst"
     },
@@ -1190,6 +1493,9 @@
     {
         "id": "zucker-14041",
         "name": "Zucker"
+    },
+    {
+        "id": "zucker-und-suessstoffe-14040"
     },
     {
         "id": "zuckerl-und-bonbons-14074",
