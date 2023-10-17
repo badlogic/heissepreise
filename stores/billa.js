@@ -69,18 +69,33 @@ exports.fetchData = async function () {
     console.log(categories);
 
     Object.keys(categories).forEach(async (category_slug) => {
-        const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category_slug}/products?page=0&sortBy=relevance&pageSize=500&storeId=00-10`;
-        const data = (await axios.get(BILLA_SEARCH)).data;
-        data.results.forEach((item) => {
 
-            // check if we already have product with product ID
-            if (items.find((i) => i.productId === item.productId)) return;
+        // optimistic guess
+        let page_size = 500;
+        let total_pages = Math.ceil(page_size / 500);
+        let current_page = 0;
 
-            // check if product is available
-            items.push(item);
-        });
+        // fetch all pages
+        while (current_page < total_pages) {
+            const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category_slug}/products?page=${current_page}&sortBy=relevance&pageSize=${page_size}&storeId=00-10`;
+            const data = (await axios.get(BILLA_SEARCH)).data;
 
-        console.log(items.length);
+            data.results.forEach((item) => {
+
+                // check if we already have product with product ID
+                if (items.find((i) => i.productId === item.productId)) return;
+
+                // check if product is available
+                items.push(item);
+            });
+
+            // update total pages
+            console.log(data.total);
+            total_pages = Math.ceil(data.total / 500);
+            current_page++;
+        }
+
+        // console.log(items.length);
     });
     return items;
 };
