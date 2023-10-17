@@ -1,6 +1,7 @@
 const axios = require("axios");
 const utils = require("./utils");
 const { categories, toCategoryCode, fromCategoryCode, getCategory } = require("../site/model/categories");
+const billaCategories = require("./billa-categories.json");
 const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const units = {
@@ -40,35 +41,11 @@ exports.getCanonical = function (item, today) {
     );
 };
 
-exports.getCategories = async function () {
-    const categories = {};
-
-    // all letters of alphabet
-    for (let i = 0; i < 26; i++) {
-        const letter = String.fromCharCode("A".charCodeAt(0) + i);
-        const BILLA_SEARCH = `https://shop.billa.at/api/categories/search/${letter}?pageSize=1000&storeId=00-10`;
-        const data = (await axios.get(BILLA_SEARCH)).data;
-
-        // loop through results
-        data.results.forEach((item) => {
-            const category = {
-                id: item.slug,
-                name: item.name
-            };
-            categories[category.id] = category;
-        });
-    }
-
-    return categories;
-}
-
 exports.fetchData = async function () {
-    const categories = await exports.getCategories();
+    
     const items = [];
 
-    console.log(categories);
-
-    Object.keys(categories).forEach(async (category_slug) => {
+    billaCategories.forEach(async (category) => {
 
         // optimistic guess
         let page_size = 500;
@@ -77,7 +54,7 @@ exports.fetchData = async function () {
 
         // fetch all pages
         while (current_page < total_pages) {
-            const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category_slug}/products?page=${current_page}&sortBy=relevance&pageSize=${page_size}&storeId=00-10`;
+            const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category.id}/products?page=${current_page}&sortBy=relevance&pageSize=${page_size}&storeId=00-10`;
             const data = (await axios.get(BILLA_SEARCH)).data;
 
             data.results.forEach((item) => {
