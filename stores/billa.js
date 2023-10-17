@@ -90,12 +90,11 @@ exports.fetchData = async function () {
             });
 
             // update total pages
-            console.log(data.total);
             total_pages = Math.ceil(data.total / 500);
             current_page++;
         }
 
-        // console.log(items.length);
+        console.log("Product Count: " + items.length);
     });
     return items;
 };
