@@ -72,6 +72,11 @@ exports.fetchData = async function () {
         const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category_slug}/products?page=0&sortBy=relevance&pageSize=500&storeId=00-10`;
         const data = (await axios.get(BILLA_SEARCH)).data;
         data.results.forEach((item) => {
+
+            // check if we already have product with product ID
+            if (items.find((i) => i.productId === item.productId)) return;
+
+            // check if product is available
             items.push(item);
         });
 
