@@ -2665,6 +2665,31 @@
     "code": null
   },
   {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Ausstechformen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/ausstechformen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Backformen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/backformen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Backhelfer",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/backhelfer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Gebäckdosen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/gebaeckdosen/",
+    "code": null
+  },
+  {
     "id": "Haushalt/Kochen & Backen/Aufbewahrung",
     "url": "https://www.mueller.at/haushalt/kochen-backen/aufbewahrung/",
     "code": null
@@ -2757,11 +2782,6 @@
   {
     "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Spezialhelfer",
     "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/spezialhelfer/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Kochen & Backen/Auflauf- & Backformen",
-    "url": "https://www.mueller.at/haushalt/kochen-backen/auflauf-backformen/",
     "code": null
   },
   {
@@ -3122,6 +3142,11 @@
   {
     "id": "Tiershop/Aktionen/Adventkalender für Hunde & Katzen",
     "url": "https://www.mueller.at/tiershop/aktionen/adventkalender-fuer-hunde-katzen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Auflauf- & Backformen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/auflauf-backformen/",
     "code": null
   },
   {

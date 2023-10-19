@@ -624,6 +624,18 @@
     "code": "64"
   },
   {
+    "id": "lebkuchen",
+    "description": "Süßes & Snacks -> Lebkuchen & mehr",
+    "url": "https://shop.unimarkt.at/lebkuchen",
+    "code": null
+  },
+  {
+    "id": "suesses-zu-weihnachten",
+    "description": "",
+    "url": "https://shop.unimarkt.at/suesses-zu-weihnachten",
+    "code": null
+  },
+  {
     "id": "bonbons",
     "description": "Süßes & Snacks -> Bonbons & Kaugummis -> Bonbons",
     "url": "https://shop.unimarkt.at/bonbons",
