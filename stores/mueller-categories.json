@@ -2045,6 +2045,11 @@
     "code": "64"
   },
   {
+    "id": "Drogerie/Lebensmittel/Süßigkeiten/Chips",
+    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/chips/",
+    "code": "63"
+  },
+  {
     "id": "Drogerie/Lebensmittel/Süßigkeiten/Bonbons & Lutscher",
     "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/bonbons-lutscher/",
     "code": "64"
@@ -3493,11 +3498,6 @@
     "id": "Naturshop/Lebensmittel/Babynahrung/Beikost/Abendbreie",
     "url": "https://www.mueller.at/naturshop/lebensmittel/babynahrung/beikost/abendbreie/",
     "code": "51"
-  },
-  {
-    "id": "Drogerie/Lebensmittel/Süßigkeiten/Chips",
-    "url": "https://www.mueller.at/drogerie/lebensmittel/suessigkeiten/chips/",
-    "code": "63"
   },
   {
     "id": "Tiershop/Marken/Cats Love",
