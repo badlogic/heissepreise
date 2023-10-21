@@ -37,7 +37,7 @@ exports.categories = [
     {
         name: "🥚🥛🥩 Kühlwaren",
         subcategories: [
-            /*30*/ "Schnelle Küche",
+            /*30*/ "Fertiggerichte",
             /*31*/ "Eier",
             /*32*/ "Fleisch",
             /*33*/ "Käse, Aufstriche & Salate",
@@ -139,7 +139,7 @@ exports.categories = [
         subcategories: [
             /*90*/ "Hunde",
             /*91*/ "Katzen",
-            /*92*/ "Nager",
+            /*92*/ "Kleintiere",
             /*93*/ "Vögel", // I don't know how to make formatting stop.
         ],
     },
