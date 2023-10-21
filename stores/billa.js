@@ -26,7 +26,7 @@ exports.getCanonical = function (item, today) {
             price: item.price.regular.value,
             priceHistory: [{ date: today, price: item.price.regular.value }],
             isWeighted: item.weightArticle,
-            unit: item.packageLabelKey,
+            unit: item.price.baseUnitShort,
             quantity: 1,
             bio: item.badges && item.badges.includes("pp-bio"),
         },
@@ -36,33 +36,42 @@ exports.getCanonical = function (item, today) {
 };
 
 exports.fetchData = async function () {
-    
     const items = [];
     const lookup = {};
     let numDuplicates = 0;
 
-    billaCategories.forEach(async (category) => {
+    const categories = (await axios.get("https://shop.billa.at/api/categories/all/child-properties?storeId=00-10")).data;
+    const requests = [];
+    const pageSize = 500;
+    for (const category of categories)
+        for (let page = 0; page < Math.ceil(category.total / pageSize); page++)
+            requests.push(
+                `https://shop.billa.at/api/categories/${category.slug}/products?page=${page}&sortBy=relevance&pageSize=${pageSize}&storeId=00-10`
+            );
 
-        const BILLA_SEARCH = `https://shop.billa.at/api/categories/${category.id}/products?page=0&sortBy=relevance&pageSize=500&storeId=00-10`;
-        const data = (await axios.get(BILLA_SEARCH)).data;
-
-        data.results.forEach((item) => {
-            try {
-                const canonicalItem = exports.getCanonical(item);
-                if (lookup[canonicalItem.id]) {
-                    numDuplicates++;
-                    return;
-                }
-                lookup[canonicalItem.id] = item;
-                items.push(item);
-            } catch (e) {
-                // Ignore super tiles
-            }
-        });
-
-        console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
-        
-    });
+    // fetch only 10 categories to avoid limiting/timeouts
+    const num_parallel_requests = 10;
+    for (let i = 0; i < requests.length; i += num_parallel_requests) {
+        await Promise.all(
+            requests.slice(i, i + num_parallel_requests).map(async (url) => {
+                const data = (await axios.get(url)).data;
+                data.results.forEach((item) => {
+                    try {
+                        const canonicalItem = exports.getCanonical(item);
+                        if (lookup[canonicalItem.id]) {
+                            numDuplicates++;
+                            return;
+                        }
+                        lookup[canonicalItem.id] = item;
+                        items.push(item);
+                    } catch (e) {
+                        // Ignore super tiles
+                    }
+                });
+                console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
+            })
+        );
+    }
     return items;
 };
 
@@ -71,17 +80,17 @@ exports.initializeCategoryMapping = async () => {
 };
 
 exports.mapCategory = (rawItem) => {
-    let billaCategory = null;
-    for (const groupId of rawItem.data.articleGroupIds) {
-        if (billaCategory == null) {
-            billaCategory = groupId;
-            continue;
-        }
+    let billaCategory = "";
+    // for (const groupId of rawItem.data.articleGroupIds) {
+    //     if (billaCategory == null) {
+    //         billaCategory = groupId;
+    //         continue;
+    //     }
 
-        if (groupId.charCodeAt(3) < billaCategory.charCodeAt(3)) {
-            billaCategory = groupId;
-        }
-    }
+    //     if (groupId.charCodeAt(3) < billaCategory.charCodeAt(3)) {
+    //         billaCategory = groupId;
+    //     }
+    // }
     let categoryCode = billaCategory.replace("B2-", "").substring(0, 2);
     let [ci, cj] = fromCategoryCode(categoryCode);
     categoryCode = toCategoryCode(ci - 1, cj - 1);
