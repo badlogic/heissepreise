@@ -6,7 +6,7 @@ exports.stores = {
         budgetBrands: ["clever"],
         color: "yellow",
         defaultChecked: true,
-        getUrl: (item) => `https://shop.billa.at/produkte/${item.id}`,
+        getUrl: (item) => `https://shop.billa.at/produkte/${item.url}`,
     },
     spar: {
         name: "Spar",

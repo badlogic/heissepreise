@@ -58,7 +58,7 @@ exports.categories = [
             /*41*/ "Unbekannt", // Not available in Billa hierarchy, left blank
             /*42*/ "Fertiggerichte",
             /*43*/ "Fisch & Garnelen",
-            /*44*/ "Gemüse & Kräuter",
+            /*44*/ "Gemüse, Kräuter & Obst",
             /*45*/ "Pommes Frites & Co.",
             /*46*/ "Pizza & Baguette",
             /*47*/ "Desserts & Früchte",

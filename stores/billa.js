@@ -1,77 +1,118 @@
 const axios = require("axios");
+const fs = require("fs");
 const utils = require("./utils");
-const { categories, toCategoryCode, fromCategoryCode, getCategory } = require("../site/model/categories");
-const HITS = Math.floor(30000 + Math.random() * 2000);
 
 const units = {
     beutel: { unit: "stk", factor: 1 },
     bund: { unit: "stk", factor: 1 },
     packung: { unit: "stk", factor: 1 },
+    pa: { unit: "stk", factor: 1 },
+    fl: { unit: "stk", factor: 1 },
     portion: { unit: "stk", factor: 1 },
     rollen: { unit: "stk", factor: 1 },
     teebeutel: { unit: "stk", factor: 1 },
     waschgang: { unit: "wg", factor: 1 },
 };
 
+const baseCategorySlugs = [
+    "obst-und-gemuese-13751",
+    "brot-und-gebaeck-13766",
+    "getraenke-13784",
+    "kuehlwaren-13841",
+    "tiefkuehl-13916",
+    "nahrungsmittel-13943",
+    "suesses-und-salziges-14057",
+    "pflege-14083",
+    "haushalt-14126",
+    "haustier-14181",
+];
+
+// Map from old categories (see categories.js) to new categories in new Billa Store
+const subCategoryMap = {
+    "vegan-13911": "3A",
+    "tofu-14529": "3A",
+    "fleisch-und-gefluegel-13921": "42",
+    "fisch-und-meeresfruechte-13930": "43",
+    "pizza-baguette-und-gebaeck-13936": "46",
+    "pommes-frites-und-mehr-13935": "45",
+    "tiefkuehlgerichte-13922": "42",
+    "gemuese-kraeuter-und-obst-13934": "44",
+    "eis-13917": "40",
+    "suessspeisen-und-torten-13939": "47",
+    "vegane-ernaehrung-14048": "5D",
+    "filter-und-entkalker-14535": "83",
+    "hygiene-schutzartikel-14536": "8F",
+};
+
 exports.getCanonical = function (item, today) {
-    let quantity = 1,
-        unit = "kg";
-
-    if (item.data.grammagePriceFactor == 1) {
-        if (item.data.grammage.indexOf("Per ") == 0) item.data.grammage = item.data.grammage.replace("Per ", "");
-        const grammage = item.data.grammage !== "" && item.data.grammage.trim().split(" ").length > 1 ? item.data.grammage : item.data.price.unit;
-        if (grammage) [quantity, unit] = grammage.trim().split(" ").splice(0, 2);
-    }
-
+    const price = item.price.regular.value / 100;
     return utils.convertUnit(
         {
-            id: item.data.articleId,
-            name: item.data.name,
-            description: item.data.description ?? "",
-            price: item.data.price.final,
-            priceHistory: [{ date: today, price: item.data.price.final }],
-            isWeighted: item.data.isWeightArticle,
-            unit,
-            quantity,
-            bio: item.data.attributes && item.data.attributes.includes("s_bio"),
+            id: item.sku,
+            name: item.name,
+            description: item.descriptionShort ?? "",
+            price,
+            priceHistory: [{ date: today, price }],
+            isWeighted: item.weightArticle,
+            unit: item.volumeLabelShort ?? item.price.baseUnitShort,
+            quantity: parseFloat(item.amount),
+            bio: item.badges && item.badges.includes("pp-bio") ? true : false,
+            url: item.slug,
         },
         units,
         "billa"
     );
 };
 
-exports.fetchData = async function () {
-    const items = [];
-    const lookup = {};
-    let numDuplicates = 0;
-
-    for (let i = 1; i <= categories.length; i++) {
-        const category = categories[i - 1];
-        const categoryCode = i < 10 ? "" + i : String.fromCharCode("A".charCodeAt(0) + (i - 10));
-
-        for (let j = 1; j <= category.subcategories.length; j++) {
-            const subCategoryCode = j < 10 ? "" + j : String.fromCharCode("A".charCodeAt(0) + (j - 10));
-            const code = `B2-${categoryCode}${subCategoryCode}`;
-
-            const BILLA_SEARCH = `https://shop.billa.at/api/search/full?searchTerm=*&storeId=00-10&pageSize=${HITS}&category=${code}`;
-            const data = (await axios.get(BILLA_SEARCH)).data;
-            data.tiles.forEach((item) => {
-                try {
-                    const canonicalItem = exports.getCanonical(item);
-                    if (lookup[canonicalItem.id]) {
-                        numDuplicates++;
-                        return;
-                    }
-                    lookup[canonicalItem.id] = item;
-                    items.push(item);
-                } catch (e) {
-                    // Ignore super tiles
-                }
+exports.generateCategories = async function () {
+    const categories = [];
+    let baseIndex = 0;
+    for (const baseSlug of baseCategorySlugs) {
+        const data = await axios.get(`https://shop.billa.at/api/categories/${baseSlug}/child-properties?storeId=00-10`);
+        data.data.forEach((value, index) => {
+            const code = subCategoryMap[value.slug] ?? baseIndex.toString(16).toUpperCase() + index.toString(16).toUpperCase();
+            categories.push({
+                id: value.slug,
+                description: value.name,
+                url: "https://shop.billa.at/kategorie/" + value.slug,
+                code,
             });
+        });
+        baseIndex++;
+    }
+    return categories;
+};
+
+exports.fetchData = async function () {
+    const categories = await exports.generateCategories();
+    const rawItems = [];
+    for (const category of categories) {
+        let page = 0;
+        while (true) {
+            const data = await axios.get(`https://shop.billa.at/api/categories/${category.id}/products?pageSize=500&storeId=00-10&page=${page}`);
+            page++;
+            if (data.data.count == 0) break;
+            for (const rawItem of data.data.results) {
+                rawItem.mappedCategory = category.code;
+            }
+            rawItems.push(...data.data.results);
+        }
+        // console.log("Fetched Billa category " + category.id);
+    }
+    const lookup = {};
+    const dedupRawItems = [];
+    let duplicates = 0;
+    for (const rawItem of rawItems) {
+        if (lookup[rawItem.sku]) {
+            duplicates++;
+        } else {
+            lookup[rawItem.sku] = rawItem;
+            dedupRawItems.push(rawItem);
         }
     }
-    console.log(`Duplicate items in BILLA data: ${numDuplicates}, total items: ${items.length}`);
-    return items;
+    // console.log("Billa duplicates: " + duplicates);
+    // console.log("Billa total items: " + dedupRawItems.length);
+    return dedupRawItems;
 };
 
 exports.initializeCategoryMapping = async () => {
@@ -79,21 +120,91 @@ exports.initializeCategoryMapping = async () => {
 };
 
 exports.mapCategory = (rawItem) => {
-    let billaCategory = null;
-    for (const groupId of rawItem.data.articleGroupIds) {
-        if (billaCategory == null) {
-            billaCategory = groupId;
-            continue;
-        }
-
-        if (groupId.charCodeAt(3) < billaCategory.charCodeAt(3)) {
-            billaCategory = groupId;
-        }
-    }
-    let categoryCode = billaCategory.replace("B2-", "").substring(0, 2);
-    let [ci, cj] = fromCategoryCode(categoryCode);
-    categoryCode = toCategoryCode(ci - 1, cj - 1);
-    return categoryCode;
+    return rawItem.mappedCategory;
 };
 
 exports.urlBase = "https://shop.billa.at";
+
+if (require.main === module) {
+    main();
+}
+
+/* Test code, ensuring the data from the old Billa store is still compatible with the data from the new Billa store.
+ you can get an old latest-canonical.json from here:
+ https://marioslab.io/uploads/latest-canonical-2023-10-22.json
+*/
+function currentDate() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
+
+async function main() {
+    const categories = await exports.generateCategories();
+    console.log(categories);
+    const oldCanonical = fs.existsSync("old-canonical.json")
+        ? JSON.parse(fs.readFileSync("old-canonical.json"))
+        : (await axios.get("https://heisse-preise.io/data/latest-canonical.json")).data;
+    fs.writeFileSync("old-canonical.json", JSON.stringify(oldCanonical, null, 2));
+    const oldItems = oldCanonical.filter((item) => item.store == "billa");
+    const oldItemsLookup = {};
+    for (const oldItem of oldItems) {
+        oldItemsLookup[oldItem.id] = oldItem;
+    }
+    const newItems = fs.existsSync("billa-new.json") ? JSON.parse(fs.readFileSync("billa-new.json")) : await exports.fetchData();
+    fs.writeFileSync("billa-new.json", JSON.stringify(newItems, null, 2));
+    const canonicalItems = [];
+    for (const newItem of newItems) {
+        const canonicalItem = exports.getCanonical(newItem, currentDate());
+        canonicalItems.push(canonicalItem);
+        const oldItem = oldItemsLookup[newItem.sku];
+        if (!oldItem) continue;
+
+        let change = false;
+
+        if (Math.abs(canonicalItem.price - oldItem.price) / oldItem.price > 1) {
+            console.log(
+                "Too big a price difference " +
+                    canonicalItem.id +
+                    " " +
+                    canonicalItem.name +
+                    ", old: " +
+                    oldItem.price +
+                    ", new: " +
+                    canonicalItem.price
+            );
+            change = true;
+        }
+        if (canonicalItem.isWeighted != oldItem.isWeighted) {
+            console.log(
+                "!= isWeighted " + canonicalItem.id + " " + canonicalItem.name + ", old: " + oldItem.isWeighted + ", new: " + canonicalItem.isWeighted
+            );
+            change = true;
+        }
+        if (canonicalItem.unit != oldItem.unit) {
+            console.log("!= unit " + canonicalItem.id + " " + canonicalItem.name + ", old: " + oldItem.unit + ", new: " + canonicalItem.unit);
+            change = true;
+        }
+        if (canonicalItem.quantity != oldItem.quantity) {
+            console.log(
+                "!= quantity " + canonicalItem.id + " " + canonicalItem.name + ", old: " + oldItem.quantity + ", new: " + canonicalItem.quantity
+            );
+            change = true;
+        }
+        if (canonicalItem.bio != oldItem.bio) {
+            console.log("!= bio " + canonicalItem.id + " " + canonicalItem.name + ", old: " + oldItem.bio + ", new: " + canonicalItem.bio);
+            change = true;
+        }
+        if (canonicalItem.category != oldItem.category) {
+            console.log(
+                "!= category " + canonicalItem.id + " " + canonicalItem.name + ", old: " + oldItem.category + ", new: " + canonicalItem.category
+            );
+            change = true;
+        }
+        if (change) console.log("\n");
+    }
+
+    console.log("Canonical items");
+}
