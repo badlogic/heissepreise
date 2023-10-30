@@ -2460,11 +2460,6 @@
     "code": null
   },
   {
-    "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler/Warmluftbürsten",
-    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/warmluftbuersten/",
-    "code": null
-  },
-  {
     "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler/Haarglätter",
     "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/haarglaetter/",
     "code": null
@@ -3160,6 +3155,11 @@
     "code": null
   },
   {
+    "id": "Tiershop/Aktionen/Aus dem Prospekt",
+    "url": "https://www.mueller.at/tiershop/aktionen/aus-dem-prospekt/",
+    "code": null
+  },
+  {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
     "code": null
@@ -3170,8 +3170,8 @@
     "code": null
   },
   {
-    "id": "Tiershop/Aktionen/Aus dem Prospekt",
-    "url": "https://www.mueller.at/tiershop/aktionen/aus-dem-prospekt/",
+    "id": "Haushalt/Schönheit & Gesundheit/Föhne & Haarstyler/Warmluftbürsten",
+    "url": "https://www.mueller.at/haushalt/schoenheit-gesundheit/foehne-haarstyler/warmluftbuersten/",
     "code": null
   },
   {
