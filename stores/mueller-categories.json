@@ -3160,11 +3160,6 @@
     "code": null
   },
   {
-    "id": "Tiershop/Aktionen/Aus dem Prospekt",
-    "url": "https://www.mueller.at/tiershop/aktionen/aus-dem-prospekt/",
-    "code": null
-  },
-  {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
     "code": null
@@ -3172,6 +3167,11 @@
   {
     "id": "Tiershop/Aktionen/Adventkalender für Hunde & Katzen",
     "url": "https://www.mueller.at/tiershop/aktionen/adventkalender-fuer-hunde-katzen/",
+    "code": null
+  },
+  {
+    "id": "Tiershop/Aktionen/Aus dem Prospekt",
+    "url": "https://www.mueller.at/tiershop/aktionen/aus-dem-prospekt/",
     "code": null
   },
   {
