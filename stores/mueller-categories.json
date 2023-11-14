@@ -2410,8 +2410,28 @@
     "code": null
   },
   {
+    "id": "Drogerie/Tier/Katze/Trockenfutter",
+    "url": "https://www.mueller.at/drogerie/tier/katze/trockenfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Nahrungsergänzung",
+    "url": "https://www.mueller.at/drogerie/tier/katze/nahrungsergaenzung/",
+    "code": null
+  },
+  {
     "id": "Drogerie/Tier/Nager",
     "url": "https://www.mueller.at/drogerie/tier/nager/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Hauptfutter",
+    "url": "https://www.mueller.at/drogerie/tier/nager/hauptfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Belohnung & Snacks",
+    "url": "https://www.mueller.at/drogerie/tier/nager/belohnung-snacks/",
     "code": null
   },
   {
@@ -3010,13 +3030,38 @@
     "code": "90"
   },
   {
+    "id": "Tiershop/Tiernahrung/Hund/Belohnung & Snacks",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/belohnung-snacks/",
+    "code": "90"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Hund/Nahrungsergänzung",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/nahrungsergaenzung/",
+    "code": "90"
+  },
+  {
     "id": "Tiershop/Tiernahrung/Katze",
     "url": "https://www.mueller.at/tiershop/tiernahrung/katze/",
     "code": "91"
   },
   {
+    "id": "Tiershop/Tiernahrung/Katze/Nahrungsergänzung",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/nahrungsergaenzung/",
+    "code": "91"
+  },
+  {
     "id": "Tiershop/Tiernahrung/Katze/Nassfutter",
     "url": "https://www.mueller.at/tiershop/tiernahrung/katze/nassfutter/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Katze/Trockenfutter",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/trockenfutter/",
+    "code": "91"
+  },
+  {
+    "id": "Tiershop/Tiernahrung/Katze/Belohnung & Snacks",
+    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/belohnung-snacks/",
     "code": "91"
   },
   {
@@ -3123,51 +3168,6 @@
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
     "code": null
-  },
-  {
-    "id": "Drogerie/Tier/Katze/Trockenfutter",
-    "url": "https://www.mueller.at/drogerie/tier/katze/trockenfutter/",
-    "code": null
-  },
-  {
-    "id": "Drogerie/Tier/Katze/Nahrungsergänzung",
-    "url": "https://www.mueller.at/drogerie/tier/katze/nahrungsergaenzung/",
-    "code": null
-  },
-  {
-    "id": "Drogerie/Tier/Nager/Hauptfutter",
-    "url": "https://www.mueller.at/drogerie/tier/nager/hauptfutter/",
-    "code": null
-  },
-  {
-    "id": "Drogerie/Tier/Nager/Belohnung & Snacks",
-    "url": "https://www.mueller.at/drogerie/tier/nager/belohnung-snacks/",
-    "code": null
-  },
-  {
-    "id": "Tiershop/Tiernahrung/Hund/Belohnung & Snacks",
-    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/belohnung-snacks/",
-    "code": "90"
-  },
-  {
-    "id": "Tiershop/Tiernahrung/Hund/Nahrungsergänzung",
-    "url": "https://www.mueller.at/tiershop/tiernahrung/hund/nahrungsergaenzung/",
-    "code": "90"
-  },
-  {
-    "id": "Tiershop/Tiernahrung/Katze/Nahrungsergänzung",
-    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/nahrungsergaenzung/",
-    "code": "91"
-  },
-  {
-    "id": "Tiershop/Tiernahrung/Katze/Trockenfutter",
-    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/trockenfutter/",
-    "code": "91"
-  },
-  {
-    "id": "Tiershop/Tiernahrung/Katze/Belohnung & Snacks",
-    "url": "https://www.mueller.at/tiershop/tiernahrung/katze/belohnung-snacks/",
-    "code": "91"
   },
   {
     "id": "Tiershop/Aktionen/Adventkalender für Hunde & Katzen",
