@@ -2320,11 +2320,6 @@
     "code": "74"
   },
   {
-    "id": "Drogerie/Gesundheit/Mineralstoffe",
-    "url": "https://www.mueller.at/drogerie/gesundheit/mineralstoffe/",
-    "code": null
-  },
-  {
     "id": "Drogerie/Gesundheit/Kontaktlinsen & Zubehör",
     "url": "https://www.mueller.at/drogerie/gesundheit/kontaktlinsen-zubehoer/",
     "code": null
@@ -2360,88 +2355,298 @@
     "code": null
   },
   {
-    "id": "Drogerie/Tier",
-    "url": "https://www.mueller.at/drogerie/tier/",
+    "id": "Drogerie/Haushalt",
+    "url": "https://www.mueller.at/drogerie/haushalt/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Hund",
-    "url": "https://www.mueller.at/drogerie/tier/hund/",
+    "id": "Drogerie/Haushalt/Papierartikel",
+    "url": "https://www.mueller.at/drogerie/haushalt/papierartikel/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Hund/Nassfutter",
-    "url": "https://www.mueller.at/drogerie/tier/hund/nassfutter/",
+    "id": "Drogerie/Haushalt/Papierartikel/Servietten",
+    "url": "https://www.mueller.at/drogerie/haushalt/papierartikel/servietten/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Hund/Belohnung & Snacks",
-    "url": "https://www.mueller.at/drogerie/tier/hund/belohnung-snacks/",
+    "id": "Drogerie/Haushalt/Papierartikel/Toilettenpapier",
+    "url": "https://www.mueller.at/drogerie/haushalt/papierartikel/toilettenpapier/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Hund/Zubehör",
-    "url": "https://www.mueller.at/drogerie/tier/hund/zubehoer/",
+    "id": "Drogerie/Haushalt/Papierartikel/Taschentücher",
+    "url": "https://www.mueller.at/drogerie/haushalt/papierartikel/taschentuecher/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Hund/Trockenfutter",
-    "url": "https://www.mueller.at/drogerie/tier/hund/trockenfutter/",
+    "id": "Drogerie/Haushalt/Papierartikel/Tischdecken",
+    "url": "https://www.mueller.at/drogerie/haushalt/papierartikel/tischdecken/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Hund/Nahrungsergänzung",
-    "url": "https://www.mueller.at/drogerie/tier/hund/nahrungsergaenzung/",
+    "id": "Drogerie/Haushalt/Papierartikel/Küchentücher",
+    "url": "https://www.mueller.at/drogerie/haushalt/papierartikel/kuechentuecher/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Katze",
-    "url": "https://www.mueller.at/drogerie/tier/katze/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Katze/Nassfutter",
-    "url": "https://www.mueller.at/drogerie/tier/katze/nassfutter/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Allzweckreiniger",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/allzweckreiniger/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Katze/Zubehör",
-    "url": "https://www.mueller.at/drogerie/tier/katze/zubehoer/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Bad- & Kalkreiniger",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/bad-kalkreiniger/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Katze/Belohnung & Snacks",
-    "url": "https://www.mueller.at/drogerie/tier/katze/belohnung-snacks/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Gummihandschuhe",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/gummihandschuhe/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Katze/Trockenfutter",
-    "url": "https://www.mueller.at/drogerie/tier/katze/trockenfutter/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Glas- & Flächenreiniger",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/glas-flaechenreiniger/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Katze/Nahrungsergänzung",
-    "url": "https://www.mueller.at/drogerie/tier/katze/nahrungsergaenzung/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Küchenreiniger",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/kuechenreiniger/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Nager",
-    "url": "https://www.mueller.at/drogerie/tier/nager/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Spezialreiniger",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/spezialreiniger/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Nager/Hauptfutter",
-    "url": "https://www.mueller.at/drogerie/tier/nager/hauptfutter/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Teppich- & Bodenreiniger",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/teppich-bodenreiniger/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Nager/Belohnung & Snacks",
-    "url": "https://www.mueller.at/drogerie/tier/nager/belohnung-snacks/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Desinfektionsmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/desinfektionsmittel/",
     "code": null
   },
   {
-    "id": "Drogerie/Tier/Nager/Zubehör",
-    "url": "https://www.mueller.at/drogerie/tier/nager/zubehoer/",
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/Möbelpflege",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/moebelpflege/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Putzen & Reinigen/WC-Reiniger & -Steine",
+    "url": "https://www.mueller.at/drogerie/haushalt/putzen-reinigen/wc-reiniger-steine/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Zubehör",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Trocknen",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/trocknen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Textilerfrischer",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/textilerfrischer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Weichspüler",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/weichspueler/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Textilfarbe",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/textilfarbe/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Nachbehandeln, Stärke & Bügelhilfe",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/nachbehandeln-staerke-buegelhilfe/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Waschzusätze",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/waschzusaetze/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Waschmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/waschmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Waschmittel/Woll- & Feinwaschmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/waschmittel/woll-feinwaschmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Waschmittel/Spezialwaschmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/waschmittel/spezialwaschmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Waschmittel/Colorwaschmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/waschmittel/colorwaschmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Waschmittel/Weiß- & Vollwaschmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/waschmittel/weiss-vollwaschmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Waschen/Vorbehandlung & Fleckenentfernung",
+    "url": "https://www.mueller.at/drogerie/haushalt/waschen/vorbehandlung-fleckenentfernung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Spülen",
+    "url": "https://www.mueller.at/drogerie/haushalt/spuelen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Spülen/Maschinenpflege & -deo",
+    "url": "https://www.mueller.at/drogerie/haushalt/spuelen/maschinenpflege-deo/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Spülen/Spezialsalz",
+    "url": "https://www.mueller.at/drogerie/haushalt/spuelen/spezialsalz/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Spülen/Geschirrspülmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/spuelen/geschirrspuelmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Spülen/Klarspüler",
+    "url": "https://www.mueller.at/drogerie/haushalt/spuelen/klarspueler/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Spülen/Handspülmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/spuelen/handspuelmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Wasserfilter",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/wasserfilter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Schuh- & Textilpflege",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/schuh-textilpflege/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Handschuhe",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/handschuhe/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Reinigungshelfer",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/reinigungshelfer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Kerzen",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/kerzen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Dünger",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/duenger/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Kaffee- & Teefilter",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/kaffee-teefilter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Folien & Beutel",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/folien-beutel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Staubsaugerbeutel",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/staubsaugerbeutel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Raumdüfte & Luftentfeuchter",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/raumduefte-luftentfeuchter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Spülbürsten & -schwämme",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/spuelbuersten-schwaemme/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Einweggeschirr & Partybedarf",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/einweggeschirr-partybedarf/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Grillen",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/grillen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Müllbeutel & Abfallsäcke",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/muellbeutel-abfallsaecke/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Anzünder & Brennstoffe",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/anzuender-brennstoffe/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Leuchtmittel",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/leuchtmittel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Saisonartikel",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/saisonartikel/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Insekten- & Ungezieferschutz",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/insekten-ungezieferschutz/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Batterien & Akkus",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/batterien-akkus/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Haushalt/Haushaltsartikel/Autopflege & -zubehör",
+    "url": "https://www.mueller.at/drogerie/haushalt/haushaltsartikel/autopflege-zubehoer/",
     "code": null
   },
   {
@@ -3177,6 +3382,96 @@
   {
     "id": "Tiershop/Aktionen/Adventkalender für Hunde & Katzen",
     "url": "https://www.mueller.at/tiershop/aktionen/adventkalender-fuer-hunde-katzen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Gesundheit/Mineralstoffe",
+    "url": "https://www.mueller.at/drogerie/gesundheit/mineralstoffe/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier",
+    "url": "https://www.mueller.at/drogerie/tier/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund",
+    "url": "https://www.mueller.at/drogerie/tier/hund/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Nassfutter",
+    "url": "https://www.mueller.at/drogerie/tier/hund/nassfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Belohnung & Snacks",
+    "url": "https://www.mueller.at/drogerie/tier/hund/belohnung-snacks/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Zubehör",
+    "url": "https://www.mueller.at/drogerie/tier/hund/zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Trockenfutter",
+    "url": "https://www.mueller.at/drogerie/tier/hund/trockenfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Hund/Nahrungsergänzung",
+    "url": "https://www.mueller.at/drogerie/tier/hund/nahrungsergaenzung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze",
+    "url": "https://www.mueller.at/drogerie/tier/katze/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Nassfutter",
+    "url": "https://www.mueller.at/drogerie/tier/katze/nassfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Zubehör",
+    "url": "https://www.mueller.at/drogerie/tier/katze/zubehoer/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Belohnung & Snacks",
+    "url": "https://www.mueller.at/drogerie/tier/katze/belohnung-snacks/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Trockenfutter",
+    "url": "https://www.mueller.at/drogerie/tier/katze/trockenfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Katze/Nahrungsergänzung",
+    "url": "https://www.mueller.at/drogerie/tier/katze/nahrungsergaenzung/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager",
+    "url": "https://www.mueller.at/drogerie/tier/nager/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Hauptfutter",
+    "url": "https://www.mueller.at/drogerie/tier/nager/hauptfutter/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Belohnung & Snacks",
+    "url": "https://www.mueller.at/drogerie/tier/nager/belohnung-snacks/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Tier/Nager/Zubehör",
+    "url": "https://www.mueller.at/drogerie/tier/nager/zubehoer/",
     "code": null
   },
   {
