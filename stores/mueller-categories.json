@@ -3145,11 +3145,6 @@
     "code": null
   },
   {
-    "id": "Genusswelt/Marken/Fratelli Lunardi",
-    "url": "https://www.mueller.at/genusswelt/marken/fratelli-lunardi/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Marken/Gepp's",
     "url": "https://www.mueller.at/genusswelt/marken/gepps/",
     "code": null
@@ -3367,6 +3362,11 @@
   {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
+    "code": null
+  },
+  {
+    "id": "Genusswelt/Marken/Fratelli Lunardi",
+    "url": "https://www.mueller.at/genusswelt/marken/fratelli-lunardi/",
     "code": null
   },
   {
