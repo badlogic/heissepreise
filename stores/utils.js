@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const globalUnits = require("./global-units");
 
 exports.mergeAndSaveCategories = (store, categories) => {
     const mappingFile = path.join(__dirname, `${store}-categories.json`);
@@ -32,45 +33,13 @@ exports.mergeAndSaveCategories = (store, categories) => {
     return categories;
 };
 
-exports.globalUnits = {
-    "stk.": { unit: "stk", factor: 1 },
-    blatt: { unit: "stk", factor: 1 },
-    paar: { unit: "stk", factor: 1 },
-    stk: { unit: "stk", factor: 1 },
-    st: { unit: "stk", factor: 1 },
-    teebeutel: { unit: "stk", factor: 1 },
-    tücher: { unit: "stk", factor: 1 },
-    rollen: { unit: "stk", factor: 1 },
-    tabs: { unit: "stk", factor: 1 },
-    stück: { unit: "stk", factor: 1 },
-    mm: { unit: "cm", factor: 0.1 },
-    cm: { unit: "cm", factor: 1 },
-    zentimeter: { unit: "cm", factor: 1 },
-    m: { unit: "cm", factor: 100 },
-    meter: { unit: "cm", factor: 100 },
-    g: { unit: "g", factor: 1 },
-    gr: { unit: "g", factor: 1 },
-    gramm: { unit: "g", factor: 1 },
-    dag: { unit: "g", factor: 10 },
-    kg: { unit: "g", factor: 1000 },
-    kilogramm: { unit: "g", factor: 1000 },
-    ml: { unit: "ml", factor: 1 },
-    milliliter: { unit: "ml", factor: 1 },
-    dl: { unit: "ml", factor: 10 },
-    cl: { unit: "ml", factor: 100 },
-    l: { unit: "ml", factor: 1000 },
-    lt: { unit: "ml", factor: 1000 },
-    liter: { unit: "ml", factor: 1000 },
-    wg: { unit: "wg", factor: 1 },
-};
-
 exports.convertUnit = function (item, units, store, fallback) {
     if (typeof item.quantity == "string") item.quantity = parseFloat(item.quantity.replace(",", "."));
 
     let unit = item.unit;
     if (typeof unit === "string") unit = unit.toLowerCase();
 
-    const conv = unit in exports.globalUnits ? exports.globalUnits[unit] : units[unit];
+    const conv = unit in globalUnits.globalUnits ? globalUnits.globalUnits[unit] : units[unit];
     if (conv === undefined) {
         if (fallback) {
             item.quantity = fallback.quantity;
