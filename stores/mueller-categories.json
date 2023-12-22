@@ -1635,19 +1635,19 @@
     "code": null
   },
   {
+    "id": "Drogerie/Hygiene/Slipeinlagen",
+    "url": "https://www.mueller.at/drogerie/hygiene/slipeinlagen/",
+    "code": null
+  },
+  {
     "id": "Drogerie/Hygiene/Binden",
     "url": "https://www.mueller.at/drogerie/hygiene/binden/",
     "code": "71"
   },
   {
-    "id": "Drogerie/Hygiene/Menstruationsunterwäsche",
-    "url": "https://www.mueller.at/drogerie/hygiene/menstruationsunterwaesche/",
-    "code": "71"
-  },
-  {
-    "id": "Drogerie/Hygiene/Menstruationstassen",
-    "url": "https://www.mueller.at/drogerie/hygiene/menstruationstassen/",
-    "code": "71"
+    "id": "Drogerie/Hygiene/Tampons",
+    "url": "https://www.mueller.at/drogerie/hygiene/tampons/",
+    "code": null
   },
   {
     "id": "Drogerie/Kind & Mama",
@@ -3388,6 +3388,16 @@
     "id": "Tiershop/Aktionen/Tiershop Großpackungen",
     "url": "https://www.mueller.at/tiershop/aktionen/tiershop-grosspackungen/",
     "code": null
+  },
+  {
+    "id": "Drogerie/Hygiene/Menstruationsunterwäsche",
+    "url": "https://www.mueller.at/drogerie/hygiene/menstruationsunterwaesche/",
+    "code": "71"
+  },
+  {
+    "id": "Drogerie/Hygiene/Menstruationstassen",
+    "url": "https://www.mueller.at/drogerie/hygiene/menstruationstassen/",
+    "code": "71"
   },
   {
     "id": "Genusswelt/Marken/Fratelli Lunardi",
