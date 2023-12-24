@@ -495,11 +495,6 @@
     "code": null
   },
   {
-    "id": "Parfümerie/Accessoires/Badaccessoires/Hand- & Taschenspiegel",
-    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/hand-taschenspiegel/",
-    "code": null
-  },
-  {
     "id": "Parfümerie/Accessoires/Beauty Helfer",
     "url": "https://www.mueller.at/parfuemerie/accessoires/beauty-helfer/",
     "code": null
@@ -2755,31 +2750,6 @@
     "code": null
   },
   {
-    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Ambiente",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/ambiente/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Baumschmuck",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/baumschmuck/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Geschirr",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/geschirr/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Kerzen",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/kerzen/",
-    "code": null
-  },
-  {
     "id": "Haushalt/Wohnen & Dekorieren/Aufbewahrungssysteme",
     "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/aufbewahrungssysteme/",
     "code": null
@@ -2787,6 +2757,11 @@
   {
     "id": "Haushalt/Wohnen & Dekorieren/Bilder & Rahmen",
     "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/bilder-rahmen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
     "code": null
   },
   {
@@ -2900,31 +2875,6 @@
     "code": null
   },
   {
-    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei",
-    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Ausstechformen",
-    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/ausstechformen/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Backformen",
-    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/backformen/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Backhelfer",
-    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/backhelfer/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Gebäckdosen",
-    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/gebaeckdosen/",
-    "code": null
-  },
-  {
     "id": "Haushalt/Kochen & Backen/Aufbewahrung",
     "url": "https://www.mueller.at/haushalt/kochen-backen/aufbewahrung/",
     "code": null
@@ -3017,6 +2967,11 @@
   {
     "id": "Haushalt/Kochen & Backen/Küchenhelfer & -textilien/Spezialhelfer",
     "url": "https://www.mueller.at/haushalt/kochen-backen/kuechenhelfer-textilien/spezialhelfer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Auflauf- & Backformen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/auflauf-backformen/",
     "code": null
   },
   {
@@ -3390,6 +3345,61 @@
     "code": null
   },
   {
+    "id": "Parfümerie/Accessoires/Badaccessoires/Hand- & Taschenspiegel",
+    "url": "https://www.mueller.at/parfuemerie/accessoires/badaccessoires/hand-taschenspiegel/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Ambiente",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/ambiente/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Baumschmuck",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/baumschmuck/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Geschirr",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/geschirr/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Weihnachtsdekoration/Kerzen",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/weihnachtsdekoration/kerzen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Ausstechformen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/ausstechformen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Backformen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/backformen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Backhelfer",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/backhelfer/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Kochen & Backen/Weihnachtsbäckerei/Gebäckdosen",
+    "url": "https://www.mueller.at/haushalt/kochen-backen/weihnachtsbaeckerei/gebaeckdosen/",
+    "code": null
+  },
+  {
     "id": "Drogerie/Hygiene/Menstruationsunterwäsche",
     "url": "https://www.mueller.at/drogerie/hygiene/menstruationsunterwaesche/",
     "code": "71"
@@ -3510,11 +3520,6 @@
     "code": null
   },
   {
-    "id": "Haushalt/Kochen & Backen/Auflauf- & Backformen",
-    "url": "https://www.mueller.at/haushalt/kochen-backen/auflauf-backformen/",
-    "code": null
-  },
-  {
     "id": "Genusswelt/Marken/FRANTOIO DEL GREVEPESA",
     "url": "https://www.mueller.at/genusswelt/marken/frantoio-del-grevepesa/",
     "code": null
@@ -3522,11 +3527,6 @@
   {
     "id": "Genusswelt/Marken/Lyre's",
     "url": "https://www.mueller.at/genusswelt/marken/lyres/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
     "code": null
   },
   {
