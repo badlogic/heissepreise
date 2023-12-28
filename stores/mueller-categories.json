@@ -2005,11 +2005,6 @@
     "code": null
   },
   {
-    "id": "Drogerie/Accessoires/Mode Accessoires/Caps",
-    "url": "https://www.mueller.at/drogerie/accessoires/mode-accessoires/caps/",
-    "code": null
-  },
-  {
     "id": "Drogerie/Accessoires/Mode Accessoires/Handschuhe",
     "url": "https://www.mueller.at/drogerie/accessoires/mode-accessoires/handschuhe/",
     "code": null
@@ -3342,6 +3337,11 @@
   {
     "id": "Tiershop/Aktionen/Tiershop Großpackungen",
     "url": "https://www.mueller.at/tiershop/aktionen/tiershop-grosspackungen/",
+    "code": null
+  },
+  {
+    "id": "Drogerie/Accessoires/Mode Accessoires/Caps",
+    "url": "https://www.mueller.at/drogerie/accessoires/mode-accessoires/caps/",
     "code": null
   },
   {
