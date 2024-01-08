@@ -244,9 +244,10 @@ exports.replay = async (rawDataDir) => {
         canonicalFiles[store] = storeFiles[store].map((file) => {
             console.log(`Creating canonical items for ${file}`);
             const rawItems = readJSON(file);
-            const items = exports.dedupItems(getCanonicalFor(store, rawItems, file.match(/\d{4}-\d{2}-\d{2}/)[0]));
+            let sourceIdx = [];
+            const items = exports.dedupItems(getCanonicalFor(store, rawItems, file.match(/\d{4}-\d{2}-\d{2}/)[0]), sourceIdx);
             for (let i = 0; i < items.length; i++) {
-                const rawItem = rawItems[i];
+                const rawItem = rawItems[sourceIdx[i]];
                 const item = items[i];
                 item.category = stores[store].mapCategory(rawItem);
             }
@@ -297,14 +298,15 @@ exports.updateData = async function (dataDir, done) {
                         rawItems = await stores[store].fetchData();
                         writeJSON(rawDataFile, rawItems, FILE_COMPRESSOR);
                     }
-                    const items = exports.dedupItems(getCanonicalFor(store, rawItems, today));
+                    let sourceIdx = [];
+                    const items = exports.dedupItems(getCanonicalFor(store, rawItems, today), sourceIdx);
 
                     await stores[store].initializeCategoryMapping(rawItems);
                     let numUncategorized = 0;
                     for (let i = 0; i < items.length; i++) {
-                        const rawItem = rawItems[i];
+                        const rawItem = rawItems[sourceIdx[i]];
                         const item = items[i];
-                        item.category = stores[store].mapCategory(rawItem);
+                        item.category = stores[store].mapCategory(rawItem, item); // both could be unrelated ?!
                         if (item.category == null) numUncategorized++;
                     }
 
@@ -367,14 +369,16 @@ exports.migrateCompression = (dataDir, fromSuffix, toSuffix, remove = true) => {
     }
 };
 
-exports.dedupItems = (items) => {
+exports.dedupItems = (items, sourceIdx = []) => {
     const lookup = {};
     const dedupItems = [];
     let duplicates = {};
-    for (const item of items) {
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
         const seenItem = lookup[item.store + item.id];
         if (!seenItem) {
             lookup[item.store + item.id] = item;
+            sourceIdx.push(i);
             dedupItems.push(item);
         } else {
             if (seenItem.quantity != item.quantity || seenItem.unit != item.unit) {
