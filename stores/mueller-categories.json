@@ -890,11 +890,6 @@
     "code": "70"
   },
   {
-    "id": "Naturshop/Kind & Mama/Babypflege/Sonnenschutz",
-    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/sonnenschutz/",
-    "code": "70"
-  },
-  {
     "id": "Naturshop/Kind & Mama/Babypflege/Waschen & Baden",
     "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/waschen-baden/",
     "code": "70"
@@ -3338,6 +3333,11 @@
     "id": "Tiershop/Aktionen/Tiershop Großpackungen",
     "url": "https://www.mueller.at/tiershop/aktionen/tiershop-grosspackungen/",
     "code": null
+  },
+  {
+    "id": "Naturshop/Kind & Mama/Babypflege/Sonnenschutz",
+    "url": "https://www.mueller.at/naturshop/kind-mama/babypflege/sonnenschutz/",
+    "code": "70"
   },
   {
     "id": "Drogerie/Accessoires/Mode Accessoires/Stirnbänder",
