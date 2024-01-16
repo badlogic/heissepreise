@@ -2735,6 +2735,11 @@
     "code": null
   },
   {
+    "id": "Haushalt/Wohnen & Dekorieren/Osterdeko",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/osterdeko/",
+    "code": null
+  },
+  {
     "id": "Haushalt/Wohnen & Dekorieren/Aufbewahrungssysteme",
     "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/aufbewahrungssysteme/",
     "code": null
@@ -2742,11 +2747,6 @@
   {
     "id": "Haushalt/Wohnen & Dekorieren/Bilder & Rahmen",
     "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/bilder-rahmen/",
-    "code": null
-  },
-  {
-    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
     "code": null
   },
   {
@@ -3327,6 +3327,11 @@
   {
     "id": "Tiershop/Aktionen/Tiershop Großpackungen",
     "url": "https://www.mueller.at/tiershop/aktionen/tiershop-grosspackungen/",
+    "code": null
+  },
+  {
+    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
     "code": null
   },
   {
