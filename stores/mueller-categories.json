@@ -2000,11 +2000,6 @@
     "code": null
   },
   {
-    "id": "Drogerie/Accessoires/Mode Accessoires/Handschuhe",
-    "url": "https://www.mueller.at/drogerie/accessoires/mode-accessoires/handschuhe/",
-    "code": null
-  },
-  {
     "id": "Drogerie/Accessoires/Mode Accessoires/Mützen",
     "url": "https://www.mueller.at/drogerie/accessoires/mode-accessoires/muetzen/",
     "code": null
@@ -3320,6 +3315,11 @@
     "code": null
   },
   {
+    "id": "Tiershop/Aktionen/Aus dem Prospekt",
+    "url": "https://www.mueller.at/tiershop/aktionen/aus-dem-prospekt/",
+    "code": null
+  },
+  {
     "id": "Tiershop/Aktionen/Kühlmatten",
     "url": "https://www.mueller.at/tiershop/aktionen/kuehlmatten/",
     "code": null
@@ -3330,13 +3330,13 @@
     "code": null
   },
   {
-    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
-    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
+    "id": "Drogerie/Accessoires/Mode Accessoires/Handschuhe",
+    "url": "https://www.mueller.at/drogerie/accessoires/mode-accessoires/handschuhe/",
     "code": null
   },
   {
-    "id": "Tiershop/Aktionen/Aus dem Prospekt",
-    "url": "https://www.mueller.at/tiershop/aktionen/aus-dem-prospekt/",
+    "id": "Haushalt/Wohnen & Dekorieren/Windlichter & Kerzen",
+    "url": "https://www.mueller.at/haushalt/wohnen-dekorieren/windlichter-kerzen/",
     "code": null
   },
   {
