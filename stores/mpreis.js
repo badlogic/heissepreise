@@ -45,7 +45,7 @@ exports.getCanonical = function (item, today) {
 };
 
 exports.fetchData = async function () {
-    const MPREIS_URL = `https://ax2ixv4hll-dsn.algolia.net/1/indexes/prod_mpreis_8450/browse?X-Algolia-API-Key=NmJlMTI0NjY1NGU4MDUwYTRlMmYzYWFjOWFlY2U4MGFkNGZjMDY2NmNjNjQzNWY3OWJlNDY4OTY0ZjEwOTEwYWZpbHRlcnM9cHVibGlzaGVk&X-Algolia-Application-Id=AX2IXV4HLL&X-Algolia-Agent=Vue.js`;
+    const MPREIS_URL = `https://uzxors8tl2-dsn.algolia.net/1/indexes/prod_mpreis_8450/browse?X-Algolia-API-Key=6d27574257fd3a92542ff880585333f1&X-Algolia-Application-Id=UZXORS8TL2&X-Algolia-Agent=Vue.js`;
     let mpreisItems = [];
     let res = (await axios.get(MPREIS_URL)).data;
     mpreisItems = mpreisItems.concat(res.hits);
