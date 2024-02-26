@@ -26,7 +26,7 @@ exports.getCanonical = function (item, today) {
             isWeighted: item.isBulk,
             unit: !unit ? item.unitType : unit,
             quantity: !quantity ? item.unit : quantity,
-            bio: item.isBio,
+            bio: item.icons.filter((icon) => icon.iconTooltip === "Bio").length > 0,
             url: `${item.categorySEOName}/${item.sEOName}`,
         },
         units,
