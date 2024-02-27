@@ -117,6 +117,10 @@ thead > tr {
     @apply bg-emerald-600/50;
     @apply border-emerald-500;
 }
+.item.lime {
+    @apply bg-lime-200/50;
+    @apply border-lime-200;
+}
 
 /* checkbox */
 .customcheckbox {
@@ -191,6 +195,11 @@ thead > tr {
     @apply bg-indigo-200;
     @apply border-indigo-300;
     @apply hover:bg-indigo-300;
+}
+.customcheckbox.lime {
+    @apply bg-lime-200;
+    @apply border-lime-300;
+    @apply hover:bg-lime-300;
 }
 
 /* items filter */
