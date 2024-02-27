@@ -66,6 +66,13 @@ exports.stores = {
         getUrl: (item) => `https://www.penny.at/produkte/${item.url}`,
         removeOld: true,
     },
+    reformstark: {
+        name: "Reformstark Martin",
+        budgetBrands: [],
+        color: "green",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.reformmarkt.com/catalog/product/view/id/${item.id}`,
+    },
     bipa: {
         name: "Bipa",
         budgetBrands: ["babywell", "look by bipa", "bi care", "bi kids", "bi good", "bi life", "bi life dent"],

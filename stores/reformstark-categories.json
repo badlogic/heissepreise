@@ -1,0 +1,1844 @@
+[
+  {
+    "id": "5-23",
+    "desciption": "Kosmetik -> Gesicht",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-28",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Cremes",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-37",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Kuren & Kapseln",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-38",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Milche, Fluide & Seren",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-42",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Tonika",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-43",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Gesichtsöle",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-45",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Gele",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-166",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Nachtpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-178",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Pickel- und Abdeckstifte",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-419",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Faltenfüller",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-27-568",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtspflege -> Masken",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtspflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-25",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-25-26",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung -> Masken & Bäder",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtsreinigung.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-25-40",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung -> Reinigungsmilche",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtsreinigung.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-25-44",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung -> Peelings",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtsreinigung.html",
+    "code": null
+  },
+  {
+    "id": "5-23-25-46",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung -> Reinigungsgele",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtsreinigung.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-25-160",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung -> Augen Make-up Entferner",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtsreinigung.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-25-170",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung -> Schaum & Mousse",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtsreinigung.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-25-300",
+    "desciption": "Kosmetik -> Gesicht -> Gesichtsreinigung -> Wascherden",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht/gesichtsreinigung.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-24",
+    "desciption": "Kosmetik -> Gesicht -> Augenpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-23-41",
+    "desciption": "Kosmetik -> Gesicht -> Lippenpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29",
+    "desciption": "Kosmetik -> Körperpflege",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-35",
+    "desciption": "Kosmetik -> Körperpflege -> Haarpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "73"
+  },
+  {
+    "id": "5-29-35-36",
+    "desciption": "Kosmetik -> Körperpflege -> Haarpflege -> Balsam & Spülung",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/haarpflege.html",
+    "code": "73"
+  },
+  {
+    "id": "5-29-35-57",
+    "desciption": "Kosmetik -> Körperpflege -> Haarpflege -> Shampoo",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/haarpflege.html",
+    "code": "73"
+  },
+  {
+    "id": "5-29-35-227",
+    "desciption": "Kosmetik -> Körperpflege -> Haarpflege -> Haarwässer & Öle",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/haarpflege.html",
+    "code": "73"
+  },
+  {
+    "id": "5-29-35-274",
+    "desciption": "Kosmetik -> Körperpflege -> Haarpflege -> Styling",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/haarpflege.html",
+    "code": "73"
+  },
+  {
+    "id": "5-29-35-299",
+    "desciption": "Kosmetik -> Körperpflege -> Haarpflege -> Tönen",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/haarpflege.html",
+    "code": "73"
+  },
+  {
+    "id": "5-29-35-306",
+    "desciption": "Kosmetik -> Körperpflege -> Haarpflege -> Färben",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/haarpflege.html",
+    "code": "73"
+  },
+  {
+    "id": "5-29-32",
+    "desciption": "Kosmetik -> Körperpflege -> Mund- & Zahnpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "76"
+  },
+  {
+    "id": "5-29-32-33",
+    "desciption": "Kosmetik -> Körperpflege -> Mund- & Zahnpflege -> Mundspülungen & Gele",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/mund-zahnpflege.html",
+    "code": "76"
+  },
+  {
+    "id": "5-29-32-34",
+    "desciption": "Kosmetik -> Körperpflege -> Mund- & Zahnpflege -> Zahncremes",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/mund-zahnpflege.html",
+    "code": "76"
+  },
+  {
+    "id": "5-29-32-561",
+    "desciption": "Kosmetik -> Körperpflege -> Mund- & Zahnpflege -> Zahnbürsten",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/mund-zahnpflege.html",
+    "code": "76"
+  },
+  {
+    "id": "5-29-30",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-30-31",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege -> Cremes & Lotions",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautpflege.html",
+    "code": "76"
+  },
+  {
+    "id": "5-29-30-54",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege -> Körperbutter",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-30-55",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege -> Körperöle",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-30-431",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege -> Fango und Slimcremes",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-30-448",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege -> Balsame & Gele",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-30-455",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege -> Salben",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-30-559",
+    "desciption": "Kosmetik -> Körperpflege -> Hautpflege -> Schaum & Mousse",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-176",
+    "desciption": "Kosmetik -> Körperpflege -> Handpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-176-177",
+    "desciption": "Kosmetik -> Körperpflege -> Handpflege -> Normale Haut",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/handpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-176-180",
+    "desciption": "Kosmetik -> Körperpflege -> Handpflege -> Empfindliche Haut",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/handpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-176-245",
+    "desciption": "Kosmetik -> Körperpflege -> Handpflege -> Anti-Aging",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/handpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-176-316",
+    "desciption": "Kosmetik -> Körperpflege -> Handpflege -> Nagelpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/handpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-118",
+    "desciption": "Kosmetik -> Körperpflege -> Hautreinigung",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-118-119",
+    "desciption": "Kosmetik -> Körperpflege -> Hautreinigung -> Duschpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautreinigung.html",
+    "code": "78"
+  },
+  {
+    "id": "5-29-118-122",
+    "desciption": "Kosmetik -> Körperpflege -> Hautreinigung -> Seifen",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautreinigung.html",
+    "code": "78"
+  },
+  {
+    "id": "5-29-118-294",
+    "desciption": "Kosmetik -> Körperpflege -> Hautreinigung -> Körperpeelings",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege/hautreinigung.html",
+    "code": "78"
+  },
+  {
+    "id": "5-29-117",
+    "desciption": "Kosmetik -> Körperpflege -> Spezialpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-29-129",
+    "desciption": "Kosmetik -> Körperpflege -> Badezusätze",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "78"
+  },
+  {
+    "id": "5-29-196",
+    "desciption": "Kosmetik -> Körperpflege -> Fußpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/korperpflege.html",
+    "code": "7B"
+  },
+  {
+    "id": "5-355",
+    "desciption": "Kosmetik -> Make-up",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-357",
+    "desciption": "Kosmetik -> Make-up -> Lippen",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-357-358",
+    "desciption": "Kosmetik -> Make-up -> Lippen -> Lippenkonturenstifte",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/lippen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-357-359",
+    "desciption": "Kosmetik -> Make-up -> Lippen -> Lipglosse & Lip Balme",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/lippen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-357-360",
+    "desciption": "Kosmetik -> Make-up -> Lippen -> Lippenstifte",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/lippen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-361",
+    "desciption": "Kosmetik -> Make-up -> Augen",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-361-362",
+    "desciption": "Kosmetik -> Make-up -> Augen -> Augenbrauen",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/augen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-361-363",
+    "desciption": "Kosmetik -> Make-up -> Augen -> Kajal",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/augen.html",
+    "code": null
+  },
+  {
+    "id": "5-355-361-367",
+    "desciption": "Kosmetik -> Make-up -> Augen -> Lidschatten",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/augen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-361-371",
+    "desciption": "Kosmetik -> Make-up -> Augen -> Mascara",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/augen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-361-373",
+    "desciption": "Kosmetik -> Make-up -> Augen -> Eyeliner",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/augen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-361-414",
+    "desciption": "Kosmetik -> Make-up -> Augen -> Wimpernpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/augen.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-364",
+    "desciption": "Kosmetik -> Make-up -> Gesicht",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-364-368",
+    "desciption": "Kosmetik -> Make-up -> Gesicht -> Rouge",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-364-369",
+    "desciption": "Kosmetik -> Make-up -> Gesicht -> Puder",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-364-370",
+    "desciption": "Kosmetik -> Make-up -> Gesicht -> Make-Up",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-364-372",
+    "desciption": "Kosmetik -> Make-up -> Gesicht -> Tönungscremes",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-364-520",
+    "desciption": "Kosmetik -> Make-up -> Gesicht -> Concealer &#47; Abdeckstifte",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up/gesicht.html",
+    "code": "75"
+  },
+  {
+    "id": "5-355-356",
+    "desciption": "Kosmetik -> Make-up -> Zubehör",
+    "url": "https://www.reformmarkt.com/kosmetik/make-up.html",
+    "code": "75"
+  },
+  {
+    "id": "5-130",
+    "desciption": "Kosmetik -> Bürsten & Massieren",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": null
+  },
+  {
+    "id": "5-130-131",
+    "desciption": "Kosmetik -> Bürsten & Massieren -> Massage",
+    "url": "https://www.reformmarkt.com/kosmetik/bursten-massieren.html",
+    "code": null
+  },
+  {
+    "id": "5-130-131-132",
+    "desciption": "Kosmetik -> Bürsten & Massieren -> Massage -> Bürsten",
+    "url": "https://www.reformmarkt.com/kosmetik/bursten-massieren/massage.html",
+    "code": null
+  },
+  {
+    "id": "5-130-131-278",
+    "desciption": "Kosmetik -> Bürsten & Massieren -> Massage -> Handschuhe",
+    "url": "https://www.reformmarkt.com/kosmetik/bursten-massieren/massage.html",
+    "code": null
+  },
+  {
+    "id": "5-130-131-281",
+    "desciption": "Kosmetik -> Bürsten & Massieren -> Massage -> Bänder",
+    "url": "https://www.reformmarkt.com/kosmetik/bursten-massieren/massage.html",
+    "code": null
+  },
+  {
+    "id": "5-130-277",
+    "desciption": "Kosmetik -> Bürsten & Massieren -> Luffa",
+    "url": "https://www.reformmarkt.com/kosmetik/bursten-massieren.html",
+    "code": null
+  },
+  {
+    "id": "5-130-279",
+    "desciption": "Kosmetik -> Bürsten & Massieren -> Kämme",
+    "url": "https://www.reformmarkt.com/kosmetik/bursten-massieren.html",
+    "code": null
+  },
+  {
+    "id": "5-130-280",
+    "desciption": "Kosmetik -> Bürsten & Massieren -> Haarbürsten",
+    "url": "https://www.reformmarkt.com/kosmetik/bursten-massieren.html",
+    "code": null
+  },
+  {
+    "id": "5-451",
+    "desciption": "Kosmetik -> Für die Reise",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "75"
+  },
+  {
+    "id": "5-451-483",
+    "desciption": "Kosmetik -> Für die Reise -> Mücken- & Zeckenschutz",
+    "url": "https://www.reformmarkt.com/kosmetik/fur-die-reise.html",
+    "code": "8D"
+  },
+  {
+    "id": "5-451-558",
+    "desciption": "Kosmetik -> Für die Reise -> Körperpflege",
+    "url": "https://www.reformmarkt.com/kosmetik/fur-die-reise.html",
+    "code": null
+  },
+  {
+    "id": "5-150",
+    "desciption": "Kosmetik -> Sonnenschutz",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "79"
+  },
+  {
+    "id": "5-150-151",
+    "desciption": "Kosmetik -> Sonnenschutz -> Sprays",
+    "url": "https://www.reformmarkt.com/kosmetik/sonnenschutz.html",
+    "code": "79"
+  },
+  {
+    "id": "5-150-169",
+    "desciption": "Kosmetik -> Sonnenschutz -> Cremes",
+    "url": "https://www.reformmarkt.com/kosmetik/sonnenschutz.html",
+    "code": "79"
+  },
+  {
+    "id": "5-150-174",
+    "desciption": "Kosmetik -> Sonnenschutz -> Milche",
+    "url": "https://www.reformmarkt.com/kosmetik/sonnenschutz.html",
+    "code": "79"
+  },
+  {
+    "id": "5-150-421",
+    "desciption": "Kosmetik -> Sonnenschutz -> Öle",
+    "url": "https://www.reformmarkt.com/kosmetik/sonnenschutz.html",
+    "code": "79"
+  },
+  {
+    "id": "5-150-482",
+    "desciption": "Kosmetik -> Sonnenschutz -> Kindersonnenschutz",
+    "url": "https://www.reformmarkt.com/kosmetik/sonnenschutz.html",
+    "code": "79"
+  },
+  {
+    "id": "5-150-172",
+    "desciption": "Kosmetik -> Sonnenschutz -> After Sun",
+    "url": "https://www.reformmarkt.com/kosmetik/sonnenschutz.html",
+    "code": "79"
+  },
+  {
+    "id": "5-150-173",
+    "desciption": "Kosmetik -> Sonnenschutz -> Lippenschutz",
+    "url": "https://www.reformmarkt.com/kosmetik/sonnenschutz.html",
+    "code": "79"
+  },
+  {
+    "id": "5-94",
+    "desciption": "Kosmetik -> Männerpflege",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "77"
+  },
+  {
+    "id": "5-94-95",
+    "desciption": "Kosmetik -> Männerpflege -> After Shave",
+    "url": "https://www.reformmarkt.com/kosmetik/mannerpflege.html",
+    "code": "77"
+  },
+  {
+    "id": "5-94-96",
+    "desciption": "Kosmetik -> Männerpflege -> Rasierschaum & -creme",
+    "url": "https://www.reformmarkt.com/kosmetik/mannerpflege.html",
+    "code": "77"
+  },
+  {
+    "id": "5-94-97",
+    "desciption": "Kosmetik -> Männerpflege -> Gesichtspflege",
+    "url": "https://www.reformmarkt.com/kosmetik/mannerpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-94-175",
+    "desciption": "Kosmetik -> Männerpflege -> Dusche & Shampoo",
+    "url": "https://www.reformmarkt.com/kosmetik/mannerpflege.html",
+    "code": "78"
+  },
+  {
+    "id": "5-94-273",
+    "desciption": "Kosmetik -> Männerpflege -> Körperlotion",
+    "url": "https://www.reformmarkt.com/kosmetik/mannerpflege.html",
+    "code": "75"
+  },
+  {
+    "id": "5-94-275",
+    "desciption": "Kosmetik -> Männerpflege -> Deo & Parfüm",
+    "url": "https://www.reformmarkt.com/kosmetik/mannerpflege.html",
+    "code": "72"
+  },
+  {
+    "id": "5-48",
+    "desciption": "Kosmetik -> Parfum & Deo",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "72"
+  },
+  {
+    "id": "5-51",
+    "desciption": "Kosmetik -> Sauna & Zubehör",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": null
+  },
+  {
+    "id": "5-237",
+    "desciption": "Kosmetik -> Baby- & Kinderpflege",
+    "url": "https://www.reformmarkt.com/kosmetik.html",
+    "code": "70"
+  },
+  {
+    "id": "3-13",
+    "desciption": "Lebensmittel -> Getränke",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "20"
+  },
+  {
+    "id": "3-13-581",
+    "desciption": "Lebensmittel -> Getränke -> Tee",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "22"
+  },
+  {
+    "id": "3-13-581-78",
+    "desciption": "Lebensmittel -> Getränke -> Tee -> Tees für den Genuss",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke/tee.html",
+    "code": "22"
+  },
+  {
+    "id": "3-13-581-442",
+    "desciption": "Lebensmittel -> Getränke -> Tee -> Tees in Arzneiqualität",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke/tee.html",
+    "code": "22"
+  },
+  {
+    "id": "3-13-209",
+    "desciption": "Lebensmittel -> Getränke -> Kaffee & Espresso",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "22"
+  },
+  {
+    "id": "3-13-210",
+    "desciption": "Lebensmittel -> Getränke -> Kaffee-Alternativen",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "22"
+  },
+  {
+    "id": "3-13-264",
+    "desciption": "Lebensmittel -> Getränke -> Kakao & Carob",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "22"
+  },
+  {
+    "id": "3-13-14",
+    "desciption": "Lebensmittel -> Getränke -> Fruchtsäfte",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "20"
+  },
+  {
+    "id": "3-13-239",
+    "desciption": "Lebensmittel -> Getränke -> Gemüsesäfte",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "20"
+  },
+  {
+    "id": "3-13-198",
+    "desciption": "Lebensmittel -> Getränke -> Sirupe",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "20"
+  },
+  {
+    "id": "3-13-312",
+    "desciption": "Lebensmittel -> Getränke -> Smoothies & Shots",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "20"
+  },
+  {
+    "id": "3-13-318",
+    "desciption": "Lebensmittel -> Getränke -> Limonaden & Schorlen",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "20"
+  },
+  {
+    "id": "3-13-445",
+    "desciption": "Lebensmittel -> Getränke -> Fermentgetränke",
+    "url": "https://www.reformmarkt.com/lebensmittel/getranke.html",
+    "code": "20"
+  },
+  {
+    "id": "3-9",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "52"
+  },
+  {
+    "id": "3-9-92",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Fette & Öle",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "53"
+  },
+  {
+    "id": "3-9-92-93",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Fette & Öle -> Bratfette & Bratöle",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten/fette-ole.html",
+    "code": "53"
+  },
+  {
+    "id": "3-9-92-230",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Fette & Öle -> Salatöle",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten/fette-ole.html",
+    "code": "53"
+  },
+  {
+    "id": "3-9-10",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Gewürze & Kräuter",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "55"
+  },
+  {
+    "id": "3-9-19",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Backzutaten",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "52"
+  },
+  {
+    "id": "3-9-76",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Salze",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "55"
+  },
+  {
+    "id": "3-9-108",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Essig & Balsam",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "53"
+  },
+  {
+    "id": "3-9-195",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Brühe",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "5F"
+  },
+  {
+    "id": "3-9-219",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Pasten & Konzentrate",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "5F"
+  },
+  {
+    "id": "3-9-246",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Tofu, Seitan & Tempeh",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-9-259",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Algen",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-9-291",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Hefe & Fermente",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "3A"
+  },
+  {
+    "id": "3-9-293",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Saucen & Dressing",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "5C"
+  },
+  {
+    "id": "3-9-303",
+    "desciption": "Lebensmittel -> Koch- & Backzutaten -> Binde- & Geliermittel",
+    "url": "https://www.reformmarkt.com/lebensmittel/koch-backzutaten.html",
+    "code": "52"
+  },
+  {
+    "id": "3-201",
+    "desciption": "Lebensmittel -> Früchte, Nüsse & Pilze",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "03"
+  },
+  {
+    "id": "3-201-562",
+    "desciption": "Lebensmittel -> Früchte, Nüsse & Pilze -> Frucht- & Nussmix",
+    "url": "https://www.reformmarkt.com/lebensmittel/fruchte.html",
+    "code": "03"
+  },
+  {
+    "id": "3-201-564",
+    "desciption": "Lebensmittel -> Früchte, Nüsse & Pilze -> Nüsse & Kerne",
+    "url": "https://www.reformmarkt.com/lebensmittel/fruchte.html",
+    "code": "03"
+  },
+  {
+    "id": "3-201-565",
+    "desciption": "Lebensmittel -> Früchte, Nüsse & Pilze -> Pilze",
+    "url": "https://www.reformmarkt.com/lebensmittel/fruchte.html",
+    "code": "03"
+  },
+  {
+    "id": "3-201-566",
+    "desciption": "Lebensmittel -> Früchte, Nüsse & Pilze -> Trockenfrüchte",
+    "url": "https://www.reformmarkt.com/lebensmittel/fruchte.html",
+    "code": "03"
+  },
+  {
+    "id": "3-63",
+    "desciption": "Lebensmittel -> Brot & Brotbelag",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "11"
+  },
+  {
+    "id": "3-63-212",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Brote & Brötchen",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "11"
+  },
+  {
+    "id": "3-63-188",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Brotbackmischungen",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "52"
+  },
+  {
+    "id": "3-63-64",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Aufstriche herzhaft",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "33"
+  },
+  {
+    "id": "3-63-217",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Aufstriche süß",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "56"
+  },
+  {
+    "id": "3-63-313",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Honige",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "56"
+  },
+  {
+    "id": "3-63-218",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Nussmuse",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "56"
+  },
+  {
+    "id": "3-63-229",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Fleischalternativen",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-63-263",
+    "desciption": "Lebensmittel -> Brot & Brotbelag -> Käsealternativen",
+    "url": "https://www.reformmarkt.com/lebensmittel/brot-brotbelag.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-191",
+    "desciption": "Lebensmittel -> Süßungsmittel",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "5E"
+  },
+  {
+    "id": "3-191-192",
+    "desciption": "Lebensmittel -> Süßungsmittel -> Alternativ Süßen",
+    "url": "https://www.reformmarkt.com/lebensmittel/sussungsmittel.html",
+    "code": "5E"
+  },
+  {
+    "id": "3-191-240",
+    "desciption": "Lebensmittel -> Süßungsmittel -> Zucker",
+    "url": "https://www.reformmarkt.com/lebensmittel/sussungsmittel.html",
+    "code": "5E"
+  },
+  {
+    "id": "3-181",
+    "desciption": "Lebensmittel -> Vegane Milch & Co",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-181-182",
+    "desciption": "Lebensmittel -> Vegane Milch & Co -> Getreidemilch & -drinks",
+    "url": "https://www.reformmarkt.com/lebensmittel/vegane-milch-co.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-181-184",
+    "desciption": "Lebensmittel -> Vegane Milch & Co -> Sojamilch & -drinks",
+    "url": "https://www.reformmarkt.com/lebensmittel/vegane-milch-co.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-181-250",
+    "desciption": "Lebensmittel -> Vegane Milch & Co -> Nussdrinks",
+    "url": "https://www.reformmarkt.com/lebensmittel/vegane-milch-co.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-181-186",
+    "desciption": "Lebensmittel -> Vegane Milch & Co -> Sojajoghurts",
+    "url": "https://www.reformmarkt.com/lebensmittel/vegane-milch-co.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-181-200",
+    "desciption": "Lebensmittel -> Vegane Milch & Co -> Kokosmilch",
+    "url": "https://www.reformmarkt.com/lebensmittel/vegane-milch-co.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-181-271",
+    "desciption": "Lebensmittel -> Vegane Milch & Co -> Cuisine & Cremes",
+    "url": "https://www.reformmarkt.com/lebensmittel/vegane-milch-co.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-181-308",
+    "desciption": "Lebensmittel -> Vegane Milch & Co -> Desserts",
+    "url": "https://www.reformmarkt.com/lebensmittel/vegane-milch-co.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-21",
+    "desciption": "Lebensmittel -> Schnelle Küche",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "54"
+  },
+  {
+    "id": "3-21-22",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Saucen & Dressings",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "5C"
+  },
+  {
+    "id": "3-21-65",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Salate",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "02"
+  },
+  {
+    "id": "3-21-207",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Konserven & Gläser",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "57"
+  },
+  {
+    "id": "3-21-214",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Teigmischungen",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "52"
+  },
+  {
+    "id": "3-21-220",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Vegetarisches Fleisch & Bratlinge",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "3B"
+  },
+  {
+    "id": "3-21-224",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Fertiggerichte",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "54"
+  },
+  {
+    "id": "3-21-226",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Suppen",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "54"
+  },
+  {
+    "id": "3-21-258",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Würzmischungen",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "5F"
+  },
+  {
+    "id": "3-21-295",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Teigböden & Wraps",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "54"
+  },
+  {
+    "id": "3-21-324",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Fisch",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "54"
+  },
+  {
+    "id": "3-21-338",
+    "desciption": "Lebensmittel -> Schnelle Küche -> Desserts",
+    "url": "https://www.reformmarkt.com/lebensmittel/schnelle-kuche.html",
+    "code": "54"
+  },
+  {
+    "id": "3-17",
+    "desciption": "Lebensmittel -> Pasta",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-18",
+    "desciption": "Lebensmittel -> Pasta -> Dinkelnudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-189",
+    "desciption": "Lebensmittel -> Pasta -> Weizennudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-190",
+    "desciption": "Lebensmittel -> Pasta -> Reisnudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-241",
+    "desciption": "Lebensmittel -> Pasta -> Linsennudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-260",
+    "desciption": "Lebensmittel -> Pasta -> Shirataki",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-261",
+    "desciption": "Lebensmittel -> Pasta -> Konjaknudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-262",
+    "desciption": "Lebensmittel -> Pasta -> Maisnudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-326",
+    "desciption": "Lebensmittel -> Pasta -> Gnocchi",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-339",
+    "desciption": "Lebensmittel -> Pasta -> Buchweizennudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-471",
+    "desciption": "Lebensmittel -> Pasta -> Algennudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-17-546",
+    "desciption": "Lebensmittel -> Pasta -> Emmernudeln",
+    "url": "https://www.reformmarkt.com/lebensmittel/pasta.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-85",
+    "desciption": "Lebensmittel -> Leckereien",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "64"
+  },
+  {
+    "id": "3-85-86",
+    "desciption": "Lebensmittel -> Leckereien -> Kekse & Kuchen",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "58"
+  },
+  {
+    "id": "3-85-91",
+    "desciption": "Lebensmittel -> Leckereien -> Waffeln & Popcorn",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "60"
+  },
+  {
+    "id": "3-85-102",
+    "desciption": "Lebensmittel -> Leckereien -> Schokolierte Früchte & Konfekt",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "64"
+  },
+  {
+    "id": "3-85-103",
+    "desciption": "Lebensmittel -> Leckereien -> Salziges",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "63"
+  },
+  {
+    "id": "3-85-199",
+    "desciption": "Lebensmittel -> Leckereien -> Müsli- & Eiweißriegel",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "62"
+  },
+  {
+    "id": "3-85-216",
+    "desciption": "Lebensmittel -> Leckereien -> Bonbons & Fruchtgummis",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "63"
+  },
+  {
+    "id": "3-85-247",
+    "desciption": "Lebensmittel -> Leckereien -> Schokoladen",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "63"
+  },
+  {
+    "id": "3-85-253",
+    "desciption": "Lebensmittel -> Leckereien -> Kaugummis",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "63"
+  },
+  {
+    "id": "3-85-292",
+    "desciption": "Lebensmittel -> Leckereien -> Fruchtschnitten",
+    "url": "https://www.reformmarkt.com/lebensmittel/leckereien.html",
+    "code": "63"
+  },
+  {
+    "id": "3-87",
+    "desciption": "Lebensmittel -> Getreide & Saaten",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-87-88",
+    "desciption": "Lebensmittel -> Getreide & Saaten -> Müsli & Cerealien",
+    "url": "https://www.reformmarkt.com/lebensmittel/getreide-saaten.html",
+    "code": "5A"
+  },
+  {
+    "id": "3-87-144",
+    "desciption": "Lebensmittel -> Getreide & Saaten -> Flocken",
+    "url": "https://www.reformmarkt.com/lebensmittel/getreide-saaten.html",
+    "code": "59"
+  },
+  {
+    "id": "3-87-208",
+    "desciption": "Lebensmittel -> Getreide & Saaten -> Stärke & Mehle",
+    "url": "https://www.reformmarkt.com/lebensmittel/getreide-saaten.html",
+    "code": "59"
+  },
+  {
+    "id": "3-87-215",
+    "desciption": "Lebensmittel -> Getreide & Saaten -> Körner & Schrote",
+    "url": "https://www.reformmarkt.com/lebensmittel/getreide-saaten.html",
+    "code": "59"
+  },
+  {
+    "id": "3-87-244",
+    "desciption": "Lebensmittel -> Getreide & Saaten -> Keime & Saaten",
+    "url": "https://www.reformmarkt.com/lebensmittel/getreide-saaten.html",
+    "code": "59"
+  },
+  {
+    "id": "3-87-288",
+    "desciption": "Lebensmittel -> Getreide & Saaten -> Reis",
+    "url": "https://www.reformmarkt.com/lebensmittel/getreide-saaten.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-87-301",
+    "desciption": "Lebensmittel -> Getreide & Saaten -> Hülsenfrüchte",
+    "url": "https://www.reformmarkt.com/lebensmittel/getreide-saaten.html",
+    "code": "5B"
+  },
+  {
+    "id": "3-80",
+    "desciption": "Lebensmittel -> Baby & Kinderkost",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "51"
+  },
+  {
+    "id": "3-80-81",
+    "desciption": "Lebensmittel -> Baby & Kinderkost -> Brei & Öl",
+    "url": "https://www.reformmarkt.com/lebensmittel/baby-kinderkost.html",
+    "code": "51"
+  },
+  {
+    "id": "3-80-128",
+    "desciption": "Lebensmittel -> Baby & Kinderkost -> Anfangs- & Folgemilch",
+    "url": "https://www.reformmarkt.com/lebensmittel/baby-kinderkost.html",
+    "code": "51"
+  },
+  {
+    "id": "3-569",
+    "desciption": "Lebensmittel -> Glutenfreie Ernährung",
+    "url": "https://www.reformmarkt.com/lebensmittel.html",
+    "code": "5D"
+  },
+  {
+    "id": "4-285",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-285-296",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Erkältung",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden.html",
+    "code": null
+  },
+  {
+    "id": "4-285-296-307",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Erkältung -> Hustenpastillen & -bonbons",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden/erkaltung.html",
+    "code": null
+  },
+  {
+    "id": "4-285-296-335",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Erkältung -> Sirupe & Säfte",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden/erkaltung.html",
+    "code": null
+  },
+  {
+    "id": "4-285-296-541",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Erkältung -> Gurgellösungen",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden/erkaltung.html",
+    "code": null
+  },
+  {
+    "id": "4-285-286",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Bluthochdruck",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden.html",
+    "code": null
+  },
+  {
+    "id": "4-285-538",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Herpes",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden.html",
+    "code": null
+  },
+  {
+    "id": "4-285-539",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Diabetes",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden.html",
+    "code": null
+  },
+  {
+    "id": "4-285-545",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Wechseljahre",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden.html",
+    "code": null
+  },
+  {
+    "id": "4-285-549",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Zöliakie",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden.html",
+    "code": null
+  },
+  {
+    "id": "4-285-571",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Erkrankungen & Beschwerden -> Arthrose",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/erkrankungen-beschwerden.html",
+    "code": null
+  },
+  {
+    "id": "4-203",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Fit werden & bleiben",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-203-205",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Fit werden & bleiben -> Proteine & Mineralien",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/fit-werden-bleiben.html",
+    "code": null
+  },
+  {
+    "id": "4-203-282",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Fit werden & bleiben -> Abnehmen",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/fit-werden-bleiben.html",
+    "code": null
+  },
+  {
+    "id": "4-203-390",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Fit werden & bleiben -> Stoffwechsel",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/fit-werden-bleiben.html",
+    "code": null
+  },
+  {
+    "id": "4-203-557",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Fit werden & bleiben -> Aufbaunahrung",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/fit-werden-bleiben.html",
+    "code": null
+  },
+  {
+    "id": "4-72",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-72-73",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Super Food",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-98",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Tinkturen & Elixiere",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-197",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Säfte",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-222",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Gelée Royal",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-354",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Pulver",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-378",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Kapseln",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-453",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Sonstige",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-465",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Gel",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-72-478",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Allgemeines Wohlbefinden -> Öle",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/allgemeines-wohlbefinden.html",
+    "code": null
+  },
+  {
+    "id": "4-266",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Freie Arzneimittel",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-266-267",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Freie Arzneimittel -> Augen & Nase",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-266-284",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Freie Arzneimittel -> Magen & Darm",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-266-537",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Freie Arzneimittel -> Blase & Niere",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-266-544",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Freie Arzneimittel -> Knochen",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-266-552",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Freie Arzneimittel -> Herz & Kreislauf",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-266-553",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Freie Arzneimittel -> Gefäße",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-11",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Vitamine & Mineralien",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-11-12",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Vitamine & Mineralien -> Antioxidantien",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/vitamine-mineralien.html",
+    "code": null
+  },
+  {
+    "id": "4-11-243",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Vitamine & Mineralien -> Vitamine",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/vitamine-mineralien.html",
+    "code": null
+  },
+  {
+    "id": "4-11-416",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Vitamine & Mineralien -> Mineralien",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/vitamine-mineralien.html",
+    "code": null
+  },
+  {
+    "id": "4-11-437",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Vitamine & Mineralien -> Mischpräperate",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/vitamine-mineralien.html",
+    "code": null
+  },
+  {
+    "id": "4-99",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel.html",
+    "code": null
+  },
+  {
+    "id": "4-99-100",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Immunsystem",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-231",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Blase & Nieren",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-254",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Säure-/Basenhaushalt",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-256",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Knochen, Muskeln & Gelenke",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-276",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Haut, Haare & Nägel",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-334",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Atemwege",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-340",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Verdauung",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-427",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Augen",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-435",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Gefäße",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-436",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Gedächtnis",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-439",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Nerven, Schlaf & Beruhigung",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "4-99-456",
+    "desciption": "Nahrungsergänzung & Freie Arzneimittel  -> Körper -> Herz & Kreislauf",
+    "url": "https://www.reformmarkt.com/nahrungserganzung-freiverkaufliche-arzneimittel/korper.html",
+    "code": null
+  },
+  {
+    "id": "6-74",
+    "desciption": "Haushalt & Wohnen -> Waschmittel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-120",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Vollwaschmittel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-120-121",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Vollwaschmittel -> Pulver & Nüsse",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel/vollwaschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-120-125",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Vollwaschmittel -> Flüssig",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel/vollwaschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-75",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Colorwaschmittel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-105",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Bleiche & Fleckenreiniger",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-123",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Enthärten & Entkalken",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-126",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Fein- & Sportwaschmittel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-74-139",
+    "desciption": "Haushalt & Wohnen -> Waschmittel -> Weichspüler",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/waschmittel.html",
+    "code": "8A"
+  },
+  {
+    "id": "6-457",
+    "desciption": "Haushalt & Wohnen -> Allerlei",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": null
+  },
+  {
+    "id": "6-457-542",
+    "desciption": "Haushalt & Wohnen -> Allerlei -> Hund, Katze & Co",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/allerlei.html",
+    "code": null
+  },
+  {
+    "id": "6-7",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": "87"
+  },
+  {
+    "id": "6-7-8",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung -> Ätherische Öle",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/raumbeduftung.html",
+    "code": "87"
+  },
+  {
+    "id": "6-7-47",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung -> Raumsprays",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/raumbeduftung.html",
+    "code": "87"
+  },
+  {
+    "id": "6-7-50",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung -> Zubehör",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/raumbeduftung.html",
+    "code": "87"
+  },
+  {
+    "id": "6-7-56",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung -> Duftstein & Duftspender",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/raumbeduftung.html",
+    "code": "87"
+  },
+  {
+    "id": "6-7-322",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung -> Duftlampen & Aroma Vernebler",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/raumbeduftung.html",
+    "code": "87"
+  },
+  {
+    "id": "6-7-494",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung -> Räucherwerk",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/raumbeduftung.html",
+    "code": "87"
+  },
+  {
+    "id": "6-7-579",
+    "desciption": "Haushalt & Wohnen -> Raumbeduftung -> Duftkerzen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/raumbeduftung.html",
+    "code": "87"
+  },
+  {
+    "id": "6-58",
+    "desciption": "Haushalt & Wohnen -> Putzmittel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": "88"
+  },
+  {
+    "id": "6-58-59",
+    "desciption": "Haushalt & Wohnen -> Putzmittel -> WC-Reiniger",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/putzmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-58-60",
+    "desciption": "Haushalt & Wohnen -> Putzmittel -> Glas & Oberflächen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/putzmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-58-110",
+    "desciption": "Haushalt & Wohnen -> Putzmittel -> Entkalken",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/putzmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-58-111",
+    "desciption": "Haushalt & Wohnen -> Putzmittel -> Desinfizieren",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/putzmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-58-124",
+    "desciption": "Haushalt & Wohnen -> Putzmittel -> Badreiniger",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/putzmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-58-137",
+    "desciption": "Haushalt & Wohnen -> Putzmittel -> Universalreiniger",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/putzmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-58-213",
+    "desciption": "Haushalt & Wohnen -> Putzmittel -> Zubehör",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/putzmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-82",
+    "desciption": "Haushalt & Wohnen -> Spülmittel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": "88"
+  },
+  {
+    "id": "6-82-83",
+    "desciption": "Haushalt & Wohnen -> Spülmittel -> Für die Maschine",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/spulmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-82-84",
+    "desciption": "Haushalt & Wohnen -> Spülmittel -> Handspülmittel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/spulmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-82-138",
+    "desciption": "Haushalt & Wohnen -> Spülmittel -> Klarspüler",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/spulmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-82-145",
+    "desciption": "Haushalt & Wohnen -> Spülmittel -> Spülsalz",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/spulmittel.html",
+    "code": "88"
+  },
+  {
+    "id": "6-61",
+    "desciption": "Haushalt & Wohnen -> Kochen & Essen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": null
+  },
+  {
+    "id": "6-61-62",
+    "desciption": "Haushalt & Wohnen -> Kochen & Essen -> Flaschen & Zubehör",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/kochen-essen.html",
+    "code": null
+  },
+  {
+    "id": "6-61-242",
+    "desciption": "Haushalt & Wohnen -> Kochen & Essen -> Asia Kochzubehör",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/kochen-essen.html",
+    "code": null
+  },
+  {
+    "id": "6-61-332",
+    "desciption": "Haushalt & Wohnen -> Kochen & Essen -> Allerlei",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/kochen-essen.html",
+    "code": null
+  },
+  {
+    "id": "6-61-423",
+    "desciption": "Haushalt & Wohnen -> Kochen & Essen -> Gläser & Karaffen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/kochen-essen.html",
+    "code": null
+  },
+  {
+    "id": "6-430",
+    "desciption": "Haushalt & Wohnen -> Insektenschutz",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": "8D"
+  },
+  {
+    "id": "6-430-477",
+    "desciption": "Haushalt & Wohnen -> Insektenschutz -> Fliegenfallen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/insektenschutz.html",
+    "code": "8D"
+  },
+  {
+    "id": "6-430-479",
+    "desciption": "Haushalt & Wohnen -> Insektenschutz -> Ameisenfallen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/insektenschutz.html",
+    "code": "8D"
+  },
+  {
+    "id": "6-430-480",
+    "desciption": "Haushalt & Wohnen -> Insektenschutz -> Mottenfallen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/insektenschutz.html",
+    "code": "8D"
+  },
+  {
+    "id": "6-430-484",
+    "desciption": "Haushalt & Wohnen -> Insektenschutz -> Repellentien",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/insektenschutz.html",
+    "code": "8D"
+  },
+  {
+    "id": "6-430-485",
+    "desciption": "Haushalt & Wohnen -> Insektenschutz -> Milbenschutz",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/insektenschutz.html",
+    "code": "8D"
+  },
+  {
+    "id": "6-15",
+    "desciption": "Haushalt & Wohnen -> Haushaltsgeräte",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": null
+  },
+  {
+    "id": "6-15-309",
+    "desciption": "Haushalt & Wohnen -> Haushaltsgeräte -> Keimgeräte",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/haushaltsgerate.html",
+    "code": null
+  },
+  {
+    "id": "6-15-487",
+    "desciption": "Haushalt & Wohnen -> Haushaltsgeräte -> Mühlen & Flocker",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/haushaltsgerate.html",
+    "code": null
+  },
+  {
+    "id": "6-15-560",
+    "desciption": "Haushalt & Wohnen -> Haushaltsgeräte -> Mixer",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/haushaltsgerate.html",
+    "code": null
+  },
+  {
+    "id": "6-424",
+    "desciption": "Haushalt & Wohnen -> Geschenkideen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": null
+  },
+  {
+    "id": "6-424-475",
+    "desciption": "Haushalt & Wohnen -> Geschenkideen -> Geschenksets",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/geschenkideen.html",
+    "code": null
+  },
+  {
+    "id": "6-424-535",
+    "desciption": "Haushalt & Wohnen -> Geschenkideen -> Accessoires",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/geschenkideen.html",
+    "code": null
+  },
+  {
+    "id": "6-336",
+    "desciption": "Haushalt & Wohnen -> Licht & Wärme",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": null
+  },
+  {
+    "id": "6-336-447",
+    "desciption": "Haushalt & Wohnen -> Licht & Wärme -> Ohrkerzen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/licht-warme.html",
+    "code": null
+  },
+  {
+    "id": "6-336-460",
+    "desciption": "Haushalt & Wohnen -> Licht & Wärme -> Erwärmbare Kissen",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen/licht-warme.html",
+    "code": null
+  },
+  {
+    "id": "6-428",
+    "desciption": "Haushalt & Wohnen -> Textil & Saisonartikel",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": null
+  },
+  {
+    "id": "6-472",
+    "desciption": "Haushalt & Wohnen -> Pflanzensamen & Dünger",
+    "url": "https://www.reformmarkt.com/haushalt-wohnen.html",
+    "code": null
+  }
+]
