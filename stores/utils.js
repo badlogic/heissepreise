@@ -23,7 +23,7 @@ exports.mergeAndSaveCategories = (store, categories) => {
         if (Object.keys(oldLookup).length > 0) {
             for (const key in oldLookup) {
                 const category = oldLookup[key];
-                console.log(`Found category absent in latest mapping for ${store}: ${category.id} - ${category.description}`);
+                // console.log(`Found category absent in latest mapping for ${store}: ${category.id} - ${category.description}`);
                 categories.push(category);
             }
         }
