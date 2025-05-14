@@ -43,7 +43,9 @@ function writeJSON(file, data, fileCompressor = false, spacer = 2, compressData 
     data = JSON.stringify(data, null, spacer);
     if (fileCompressor == "gz") data = zlib.gzipSync(data);
     if (fileCompressor == "br") data = zlib.brotliCompressSync(data, BROTLI_OPTIONS);
-    fs.writeFileSync(`${file}${fileCompressor ? "." + fileCompressor : ""}`, data);
+    const outputFile = `${file}${fileCompressor ? "." + fileCompressor : ""}`;
+    console.log(`Writing ${outputFile}`);
+    fs.writeFileSync(outputFile, data);
 }
 exports.writeJSON = writeJSON;
 
@@ -284,10 +286,21 @@ exports.updateData = async function (dataDir, done) {
     const today = currentDate();
     console.log("Fetching data for date: " + today);
     const storeFetchPromises = [];
+    const pendingStores = new Set(STORE_KEYS); // Initialize set with all stores
+    const errorStores = new Set();
+
     for (const store of STORE_KEYS) {
         storeFetchPromises.push(
             new Promise(async (resolve) => {
                 const start = performance.now();
+                if (store == "bipa" || store == "lidl" || store == "muellerDe" || store == "mueller" || store == "mpreis") {
+                    console.log(`Skipping ${store}`);
+                    pendingStores.delete(store);
+                    console.log(`Remaining stores to fetch: ${pendingStores.size} (${[...pendingStores].join(", ")})`);
+                    console.log(`Error stores: ${[...errorStores].join(", ")}`);
+                    resolve([]);
+                    return;
+                }
                 try {
                     const rawDataFile = `${dataDir}/${store}-${today}.json`;
                     let rawItems;
@@ -313,9 +326,17 @@ exports.updateData = async function (dataDir, done) {
                             items.length
                         } items without category.`
                     );
+
+                    pendingStores.delete(store);
+                    console.log(`Remaining stores to fetch: ${pendingStores.size} (${[...pendingStores].join(", ")})`);
+                    console.log(`Error stores: ${[...errorStores].join(", ")}`);
                     resolve(items);
                 } catch (e) {
                     console.error(`Error while fetching data from ${store}, continuing after ${(performance.now() - start) / 1000} seconds...`, e);
+                    pendingStores.delete(store);
+                    errorStores.add(store);
+                    console.log(`Remaining stores to fetch: ${pendingStores.size} (${[...pendingStores].join(", ")})`);
+                    console.log(`Error stores: ${[...errorStores].join(", ")}`);
                     resolve([]);
                 }
             })
@@ -328,16 +349,23 @@ exports.updateData = async function (dataDir, done) {
         const oldItems = readJSON(`${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}`);
         mergePriceHistory(oldItems, items);
         console.log("Merged price history");
+    } else {
+        console.log(`No old canonical items found in ${dataDir}/latest-canonical.json.${FILE_COMPRESSOR}, skipping merge`);
     }
 
     if (fs.existsSync(`${dataDir}/latest-canonical-reference.json.${FILE_COMPRESSOR}`)) {
         const refItems = readJSON(`${dataDir}/latest-canonical-reference.json.${FILE_COMPRESSOR}`);
         const changes = compareItems(refItems, items);
         writeJSON(`${dataDir}/latest-canonical-changes.json`, changes, FILE_COMPRESSOR);
+    } else {
+        console.log(`No reference canonical items found in ${dataDir}/latest-canonical-reference.json.${FILE_COMPRESSOR}, skipping comparison`);
     }
 
+    console.log("Sorting items");
     sortItems(items);
+    console.log("Deduplicating items");
     items = exports.dedupItems(items);
+    console.log("Writing canonical items");
     writeJSON(`${dataDir}/latest-canonical.json`, items, FILE_COMPRESSOR);
 
     if (done) done(items);
