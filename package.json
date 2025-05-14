@@ -22,7 +22,7 @@
   "dependencies": {
     "alasql": "^4.0.4",
     "axios": "^1.4.0",
-    "better-sqlite3": "^8.4.0",
+    "better-sqlite3": "11.10.0",
     "chart.js": "^4.3.0",
     "chartjs-adapter-moment": "^1.0.1",
     "chokidar": "^3.5.3",

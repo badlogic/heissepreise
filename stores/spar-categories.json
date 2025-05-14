@@ -150,6 +150,30 @@
     "code": null
   },
   {
+    "id": "F17-3",
+    "description": "Veggie Produkte Tiefgekühlt",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-3",
+    "code": null
+  },
+  {
+    "id": "F17-3-1",
+    "description": "Veganes Eis",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-3-1",
+    "code": null
+  },
+  {
+    "id": "F17-3-2",
+    "description": "Vegane Fertiggerichte",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-3-2",
+    "code": null
+  },
+  {
+    "id": "F17-4",
+    "description": "Vegane Süßigkeiten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F17-4",
+    "code": null
+  },
+  {
     "id": "F1",
     "description": "Obst & Gemüse",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F1",
@@ -304,12 +328,6 @@
     "description": "Saisonartikel",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F1-4",
     "code": "01"
-  },
-  {
-    "id": "F1-5",
-    "description": "Obst- & Gemüsekisten",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-5",
-    "code": "00"
   },
   {
     "id": "F2",
@@ -1236,12 +1254,6 @@
     "code": null
   },
   {
-    "id": "F6-2-3",
-    "description": "Vollkornbrot",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-3",
-    "code": null
-  },
-  {
     "id": "F6-2-4",
     "description": "Weiß- & Halbweißbrot",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-4",
@@ -1278,51 +1290,15 @@
     "code": null
   },
   {
-    "id": "F6-3-2",
-    "description": "Salzstangerl",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-2",
-    "code": null
-  },
-  {
-    "id": "F6-3-3",
-    "description": "Korn- & Vollkorngebäck",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-3",
-    "code": null
-  },
-  {
-    "id": "F6-3-4",
-    "description": "Laugengebäck",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-4",
-    "code": null
-  },
-  {
-    "id": "F6-3-5",
-    "description": "Sonstiges Kleingebäck",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-5",
-    "code": null
-  },
-  {
     "id": "F6-4",
     "description": "Feinbackwaren",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4",
     "code": "12"
   },
   {
-    "id": "F6-4-1",
-    "description": "Croissant & Plundergebäck",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-1",
-    "code": null
-  },
-  {
     "id": "F6-4-2",
     "description": "Strudel & Hefeteiggebäck",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-2",
-    "code": null
-  },
-  {
-    "id": "F6-4-3",
-    "description": "Zöpfe",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-3",
     "code": null
   },
   {
@@ -1350,8 +1326,14 @@
     "code": null
   },
   {
+    "id": "F6-4-8",
+    "description": "Krapfen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-8",
+    "code": null
+  },
+  {
     "id": "F6-4-9",
-    "description": "Sonstige Konditoreiwaren",
+    "description": "Sonstige Feinbackware",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-9",
     "code": null
   },
@@ -1384,6 +1366,12 @@
     "description": "Brösel & Semmelwürfel",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F6-6",
     "code": "14"
+  },
+  {
+    "id": "F6-7",
+    "description": "Snacks",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-7",
+    "code": null
   },
   {
     "id": "F7",
@@ -1545,12 +1533,6 @@
     "id": "F7-6-1",
     "description": "Lager/Märzen",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-1",
-    "code": null
-  },
-  {
-    "id": "F7-6-2",
-    "description": "Schankbier",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-2",
     "code": null
   },
   {
@@ -1758,6 +1740,12 @@
     "code": null
   },
   {
+    "id": "F7-8-12",
+    "description": "Alkoholfreie Spirituosen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-8-12",
+    "code": null
+  },
+  {
     "id": "F8",
     "description": "Tiefkühlung",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F8",
@@ -1779,12 +1767,6 @@
     "id": "F8-1-2",
     "description": "Rind & Wild",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-2",
-    "code": "42"
-  },
-  {
-    "id": "F8-1-3",
-    "description": "Gans & Ente",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-3",
     "code": "42"
   },
   {
@@ -1942,6 +1924,12 @@
     "description": "Nudeln",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-3",
     "code": "47"
+  },
+  {
+    "id": "F8-5-4",
+    "description": "Tascherl",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-5-4",
+    "code": null
   },
   {
     "id": "F8-5-5",
@@ -2676,12 +2664,6 @@
     "code": "8E"
   },
   {
-    "id": "F12-7",
-    "description": "Regenschirme",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-7",
-    "code": null
-  },
-  {
     "id": "F13",
     "description": "Küche & Tisch",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F13",
@@ -2952,12 +2934,6 @@
     "code": "83"
   },
   {
-    "id": "F13-13-3",
-    "description": "Mikrowelle & Kleinküchen",
-    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-3",
-    "code": "83"
-  },
-  {
     "id": "F13-13-4",
     "description": "Mixer & Küchenmaschinen",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-4",
@@ -2992,6 +2968,78 @@
     "description": "Partyservice",
     "url": "https://www.interspar.at/shop/lebensmittel/c/F15",
     "code": null
+  },
+  {
+    "id": "F1-5",
+    "description": "Obst- & Gemüsekisten",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F1-5",
+    "code": "00"
+  },
+  {
+    "id": "F6-2-3",
+    "description": "Vollkornbrot",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-2-3",
+    "code": null
+  },
+  {
+    "id": "F6-3-2",
+    "description": "Salzstangerl",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-2",
+    "code": null
+  },
+  {
+    "id": "F6-3-3",
+    "description": "Korn- & Vollkorngebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-3",
+    "code": null
+  },
+  {
+    "id": "F6-3-4",
+    "description": "Laugengebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-4",
+    "code": null
+  },
+  {
+    "id": "F6-3-5",
+    "description": "Sonstiges Kleingebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-3-5",
+    "code": null
+  },
+  {
+    "id": "F6-4-1",
+    "description": "Croissant & Plundergebäck",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-1",
+    "code": null
+  },
+  {
+    "id": "F6-4-3",
+    "description": "Zöpfe",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F6-4-3",
+    "code": null
+  },
+  {
+    "id": "F7-6-2",
+    "description": "Schankbier",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F7-6-2",
+    "code": null
+  },
+  {
+    "id": "F8-1-3",
+    "description": "Gans & Ente",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F8-1-3",
+    "code": "42"
+  },
+  {
+    "id": "F12-7",
+    "description": "Regenschirme",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F12-7",
+    "code": null
+  },
+  {
+    "id": "F13-13-3",
+    "description": "Mikrowelle & Kleinküchen",
+    "url": "https://www.interspar.at/shop/lebensmittel/c/F13-13-3",
+    "code": "83"
   },
   {
     "id": "F13-13-8",

@@ -81,7 +81,27 @@ exports.fetchData = async function () {
 exports.initializeCategoryMapping = async () => {
     let categories = null;
     try {
-        const result = (await axios.get("https://www.interspar.at/shop/lebensmittel/")).data;
+        const resp = await fetch("https://www.interspar.at/shop/lebensmittel/", {
+            headers: {
+                accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                "accept-language": "en-US,en;q=0.9,de-DE;q=0.8,de;q=0.7,es;q=0.6",
+                "cache-control": "max-age=0",
+                priority: "u=0, i",
+                "sec-ch-ua": '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-platform": '"macOS"',
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-site": "same-origin",
+                traceparent: "00-fcd492d273167ab5dfec84cc1650c5c8-bc8dd5c3b2ad86fd-01",
+                "upgrade-insecure-requests": "1",
+                Referer: "https://www.interspar.at/shop/lebensmittel/",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+            },
+            body: null,
+            method: "GET",
+        });
+        const result = await resp.text();
         const root = HTMLParser.parse(result);
         categories = Array.from(root.querySelectorAll(`.flyout-categories__link`))
             .filter((el) => !(el.innerText.toLowerCase().includes("übersicht") || el.innerText.toLowerCase().includes("zurück")))
@@ -139,7 +159,7 @@ exports.mapCategory = (rawItem) => {
         }
     }
 
-    return categoryCode.code;
+    return categoryCode ? categoryCode.code : null;
 };
 
 exports.urlBase = "https://www.interspar.at/shop/lebensmittel";

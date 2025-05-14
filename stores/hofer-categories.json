@@ -1,87 +1,45 @@
 [
   {
-    "id": "obst-gemuse",
+    "id": "obst-gemuse-hofer-hofer-hofer-hofer",
     "description": "Obst & Gemüse",
-    "url": "https://www.roksh.at//hofer/angebot/obst-gemuse",
-    "code": "00"
+    "url": "https://www.roksh.at//hofer/angebot/obst-gemuse-hofer-hofer-hofer-hofer",
+    "code": null
   },
   {
     "id": "gemuse",
     "description": "Gemüse",
-    "url": "https://www.roksh.at//hofer/angebot/obst-gemuse/gemuse",
+    "url": "https://www.roksh.at//hofer/angebot/obst-gemuse-hofer-hofer-hofer-hofer/gemuse",
     "code": "01"
   },
   {
     "id": "obst",
     "description": "Obst",
-    "url": "https://www.roksh.at//hofer/angebot/obst-gemuse/obst",
+    "url": "https://www.roksh.at//hofer/angebot/obst-gemuse-hofer-hofer-hofer-hofer/obst",
     "code": "00"
   },
   {
-    "id": "brot-geback",
+    "id": "brot-geback-hofer-hofer-hofer",
     "description": "Brot & Gebäck",
-    "url": "https://www.roksh.at//hofer/angebot/brot-geback",
-    "code": "10"
+    "url": "https://www.roksh.at//hofer/angebot/brot-geback-hofer-hofer-hofer",
+    "code": null
   },
   {
     "id": "backbox",
     "description": "BACKBOX",
-    "url": "https://www.roksh.at//hofer/angebot/brot-geback/backbox",
+    "url": "https://www.roksh.at//hofer/angebot/brot-geback-hofer-hofer-hofer/backbox",
     "code": "11"
   },
   {
     "id": "brot-geback-2",
     "description": "Brot & Gebäck",
-    "url": "https://www.roksh.at//hofer/angebot/brot-geback/brot-geback-2",
+    "url": "https://www.roksh.at//hofer/angebot/brot-geback-hofer-hofer-hofer/brot-geback-2",
     "code": "12"
   },
   {
     "id": "suße-backwaren",
     "description": "Süße Backwaren",
-    "url": "https://www.roksh.at//hofer/angebot/brot-geback/suße-backwaren",
+    "url": "https://www.roksh.at//hofer/angebot/brot-geback-hofer-hofer-hofer/suße-backwaren",
     "code": "13"
-  },
-  {
-    "id": "kuhlwaren",
-    "description": "Kühlwaren",
-    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren",
-    "code": "30"
-  },
-  {
-    "id": "milch-joghurt-co",
-    "description": "Milch, Joghurt & Co",
-    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren/milch-joghurt-co",
-    "code": "34"
-  },
-  {
-    "id": "kase-aufstriche",
-    "description": "Käse & Aufstriche",
-    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren/kase-aufstriche",
-    "code": "33"
-  },
-  {
-    "id": "schnell-kuche",
-    "description": "Schnelle Küche",
-    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren/schnell-kuche",
-    "code": "30"
-  },
-  {
-    "id": "desserts-und-sußspeise",
-    "description": "Desserts und Süßspeisen",
-    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren/desserts-und-sußspeise",
-    "code": "34"
-  },
-  {
-    "id": "eier",
-    "description": "Eier",
-    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren/eier",
-    "code": "31"
-  },
-  {
-    "id": "teig-backwaren",
-    "description": "Teig- & Backwaren",
-    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren/teig-backwaren",
-    "code": "36"
   },
   {
     "id": "fleisch-fisch-und-wurst",
@@ -106,6 +64,48 @@
     "description": "Fisch & Meeresfrüchte",
     "url": "https://www.roksh.at//hofer/angebot/fleisch-fisch-und-wurst/fisch-meeresfruchte",
     "code": "39"
+  },
+  {
+    "id": "kuhlwaren-hofer",
+    "description": "Kühlwaren",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren-hofer",
+    "code": null
+  },
+  {
+    "id": "milch-joghurt-co",
+    "description": "Milch, Joghurt & Co",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren-hofer/milch-joghurt-co",
+    "code": "34"
+  },
+  {
+    "id": "kase-aufstriche",
+    "description": "Käse & Aufstriche",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren-hofer/kase-aufstriche",
+    "code": "33"
+  },
+  {
+    "id": "schnell-kuche",
+    "description": "Schnelle Küche",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren-hofer/schnell-kuche",
+    "code": "30"
+  },
+  {
+    "id": "desserts-und-sußspeise",
+    "description": "Desserts und Süßspeisen",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren-hofer/desserts-und-sußspeise",
+    "code": "34"
+  },
+  {
+    "id": "eier",
+    "description": "Eier",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren-hofer/eier",
+    "code": "31"
+  },
+  {
+    "id": "teig-backwaren",
+    "description": "Teig- & Backwaren",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren-hofer/teig-backwaren",
+    "code": "36"
   },
   {
     "id": "vorratsschrank",
@@ -190,12 +190,6 @@
     "description": "Salziges",
     "url": "https://www.roksh.at//hofer/angebot/sußes-salziges/salziges",
     "code": "63"
-  },
-  {
-    "id": "weihnachten-hofer",
-    "description": "Weihnachten",
-    "url": "https://www.roksh.at//hofer/angebot/sußes-salziges/weihnachten-hofer",
-    "code": null
   },
   {
     "id": "tiefkuhlwaren",
@@ -392,6 +386,30 @@
   {
     "url": "https://www.roksh.at/hofer/angebot/undefined",
     "code": ""
+  },
+  {
+    "id": "obst-gemuse",
+    "description": "Obst & Gemüse",
+    "url": "https://www.roksh.at//hofer/angebot/obst-gemuse",
+    "code": "00"
+  },
+  {
+    "id": "brot-geback",
+    "description": "Brot & Gebäck",
+    "url": "https://www.roksh.at//hofer/angebot/brot-geback",
+    "code": "10"
+  },
+  {
+    "id": "kuhlwaren",
+    "description": "Kühlwaren",
+    "url": "https://www.roksh.at//hofer/angebot/kuhlwaren",
+    "code": "30"
+  },
+  {
+    "id": "weihnachten-hofer",
+    "description": "Weihnachten",
+    "url": "https://www.roksh.at//hofer/angebot/sußes-salziges/weihnachten-hofer",
+    "code": null
   },
   {
     "id": "fruchtjoghurt",
