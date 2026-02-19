@@ -15,3 +15,4 @@ site/data/latest-canonical*.json*
 site/output
 copy
 patterns
+stores/mila-producers.json

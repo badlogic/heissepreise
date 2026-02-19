@@ -108,6 +108,10 @@ thead > tr {
     @apply bg-teal-200/50;
     @apply border-teal-200;
 }
+.item.mila {
+    @apply bg-mila-200/50;
+    @apply border-mila-200;
+}
 .item.stone {
     @apply bg-gray-200/50;
     @apply border-gray-200;
@@ -176,6 +180,11 @@ thead > tr {
     @apply bg-teal-200;
     @apply border-teal-400;
     @apply hover:bg-teal-400;
+}
+.customcheckbox.mila {
+    @apply bg-mila-200;
+    @apply border-mila-400;
+    @apply hover:bg-mila-400;
 }
 .customcheckbox.stone {
     @apply bg-stone-200;
