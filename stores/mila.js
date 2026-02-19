@@ -115,7 +115,7 @@ exports.fetchData = async function () {
                 try {
                     const detailRes = await axios.get(url);
                     const match = HTMLParser.parse(detailRes.data).text.match(/Produzent:\s*([^\n\r]+)/i);
-                    producer = match ? match[1].trim() : null;
+                    producer = match ? match[1].replace(/\s*Powered by:.*$/i, "").trim() || null : null;
                 } catch (e) {
                     // best-effort
                 }
