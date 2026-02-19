@@ -102,6 +102,13 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://www.muller.de/${item.url}`,
     },
+    mila: {
+        name: "MILA",
+        budgetBrands: [],
+        color: "teal",
+        defaultChecked: true,
+        getUrl: (item) => item.url,
+    },
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);

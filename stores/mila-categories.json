@@ -1,0 +1,632 @@
+[
+  {
+    "id": "960_limonaden",
+    "description": "limonaden",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/960_limonaden",
+    "code": null
+  },
+  {
+    "id": "961_pflanzenmilch",
+    "description": "pflanzenmilch",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/961_pflanzenmilch",
+    "code": null
+  },
+  {
+    "id": "962_sirupe__nektar",
+    "description": "sirupe > nektar",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/962_sirupe__nektar",
+    "code": null
+  },
+  {
+    "id": "963_saefte",
+    "description": "saefte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/963_saefte",
+    "code": null
+  },
+  {
+    "id": "964_wasser",
+    "description": "wasser",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/964_wasser",
+    "code": null
+  },
+  {
+    "id": "981_aufstriche",
+    "description": "aufstriche",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/981_aufstriche",
+    "code": null
+  },
+  {
+    "id": "982_fischkonserven",
+    "description": "fischkonserven",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/982_fischkonserven",
+    "code": null
+  },
+  {
+    "id": "983_fleischkonserven",
+    "description": "fleischkonserven",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/983_fleischkonserven",
+    "code": null
+  },
+  {
+    "id": "984_gemuesekonserven",
+    "description": "gemuesekonserven",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/984_gemuesekonserven",
+    "code": null
+  },
+  {
+    "id": "985_nussmus",
+    "description": "nussmus",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/985_nussmus",
+    "code": null
+  },
+  {
+    "id": "986_obstkonserven",
+    "description": "obstkonserven",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/986_obstkonserven",
+    "code": null
+  },
+  {
+    "id": "999_essig",
+    "description": "essig",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/999_essig",
+    "code": null
+  },
+  {
+    "id": "1000_getreide,_reis__huelsenfruechte",
+    "description": "getreide, reis > huelsenfruechte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1000_getreide,_reis__huelsenfruechte",
+    "code": null
+  },
+  {
+    "id": "1001_kerne__saaten",
+    "description": "kerne > saaten",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1001_kerne__saaten",
+    "code": null
+  },
+  {
+    "id": "1002_mehl,_staerke__griess",
+    "description": "mehl, staerke > griess",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1002_mehl,_staerke__griess",
+    "code": null
+  },
+  {
+    "id": "1003_Oel",
+    "description": "Oel",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1003_Oel",
+    "code": null
+  },
+  {
+    "id": "1004_salz__gewuerze",
+    "description": "salz > gewuerze",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1004_salz__gewuerze",
+    "code": null
+  },
+  {
+    "id": "1005_teigwaren__sughi",
+    "description": "teigwaren > sughi",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1005_teigwaren__sughi",
+    "code": null
+  },
+  {
+    "id": "1006_trockenfruechte__nuesse",
+    "description": "trockenfruechte > nuesse",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1006_trockenfruechte__nuesse",
+    "code": null
+  },
+  {
+    "id": "1007_unverpackt",
+    "description": "unverpackt",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1007_unverpackt",
+    "code": null
+  },
+  {
+    "id": "1008_zucker__suessungsmittel",
+    "description": "zucker > suessungsmittel",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1008_zucker__suessungsmittel",
+    "code": null
+  },
+  {
+    "id": "1027_eier",
+    "description": "eier",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1027_eier",
+    "code": null
+  },
+  {
+    "id": "1040_gemuese",
+    "description": "gemuese",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1040_gemuese",
+    "code": null
+  },
+  {
+    "id": "1041_obst",
+    "description": "obst",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1041_obst",
+    "code": null
+  },
+  {
+    "id": "1048_geschirrreiniger",
+    "description": "geschirrreiniger",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1048_geschirrreiniger",
+    "code": null
+  },
+  {
+    "id": "1049_haushaltsreiniger",
+    "description": "haushaltsreiniger",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1049_haushaltsreiniger",
+    "code": null
+  },
+  {
+    "id": "1050_spezialreiniger",
+    "description": "spezialreiniger",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1050_spezialreiniger",
+    "code": null
+  },
+  {
+    "id": "1051_wasch-__reinigunszubehoer",
+    "description": "wasch- > reinigunszubehoer",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1051_wasch-__reinigunszubehoer",
+    "code": null
+  },
+  {
+    "id": "1052_waschmittel__weichspueler",
+    "description": "waschmittel > weichspueler",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1052_waschmittel__weichspueler",
+    "code": null
+  },
+  {
+    "id": "1070_eis",
+    "description": "eis",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1070_eis",
+    "code": null
+  },
+  {
+    "id": "1071_tk_fertigprodukte",
+    "description": "tk fertigprodukte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1071_tk_fertigprodukte",
+    "code": null
+  },
+  {
+    "id": "1072_tk_fisch",
+    "description": "tk fisch",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1072_tk_fisch",
+    "code": null
+  },
+  {
+    "id": "1073_tk_fleisch",
+    "description": "tk fleisch",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1073_tk_fleisch",
+    "code": null
+  },
+  {
+    "id": "1074_tk_og",
+    "description": "tk og",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1074_tk_og",
+    "code": null
+  },
+  {
+    "id": "1087_vorbestellung_weihnachten",
+    "description": "vorbestellung weihnachten",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1087_vorbestellung_weihnachten",
+    "code": null
+  },
+  {
+    "id": "966_bier",
+    "description": "bier",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/966_bier",
+    "code": null
+  },
+  {
+    "id": "969_most",
+    "description": "most",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/969_most",
+    "code": null
+  },
+  {
+    "id": "970_schaumwein",
+    "description": "schaumwein",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/970_schaumwein",
+    "code": null
+  },
+  {
+    "id": "971_spirituosen",
+    "description": "spirituosen",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/971_spirituosen",
+    "code": null
+  },
+  {
+    "id": "972_wein",
+    "description": "wein",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/972_wein",
+    "code": null
+  },
+  {
+    "id": "988_backprodukte",
+    "description": "backprodukte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/988_backprodukte",
+    "code": null
+  },
+  {
+    "id": "989_fertiggerichte",
+    "description": "fertiggerichte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/989_fertiggerichte",
+    "code": null
+  },
+  {
+    "id": "990_suppen",
+    "description": "suppen",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/990_suppen",
+    "code": null
+  },
+  {
+    "id": "991_wuerzmittel",
+    "description": "wuerzmittel",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/991_wuerzmittel",
+    "code": null
+  },
+  {
+    "id": "1055_ketchup",
+    "description": "ketchup",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1055_ketchup",
+    "code": null
+  },
+  {
+    "id": "1010_kaffee",
+    "description": "kaffee",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1010_kaffee",
+    "code": null
+  },
+  {
+    "id": "1011_kakao",
+    "description": "kakao",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1011_kakao",
+    "code": null
+  },
+  {
+    "id": "1012_tee",
+    "description": "tee",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1012_tee",
+    "code": null
+  },
+  {
+    "id": "1017_kaese",
+    "description": "kaese",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1017_kaese",
+    "code": null
+  },
+  {
+    "id": "1019_gesichtspflege__-reinigung,_schminken",
+    "description": "gesichtspflege > -reinigung, schminken",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1019_gesichtspflege__-reinigung,_schminken",
+    "code": null
+  },
+  {
+    "id": "1020_haarpflege__-reinigung",
+    "description": "haarpflege > -reinigung",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1020_haarpflege__-reinigung",
+    "code": null
+  },
+  {
+    "id": "1021_hygiene__intimprodukte",
+    "description": "hygiene > intimprodukte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1021_hygiene__intimprodukte",
+    "code": null
+  },
+  {
+    "id": "1022_koerperpflege__-reinigung",
+    "description": "koerperpflege > -reinigung",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1022_koerperpflege__-reinigung",
+    "code": null
+  },
+  {
+    "id": "1023_mundpflege__-reinigung",
+    "description": "mundpflege > -reinigung",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1023_mundpflege__-reinigung",
+    "code": null
+  },
+  {
+    "id": "1035_haushaltsartikel",
+    "description": "haushaltsartikel",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1035_haushaltsartikel",
+    "code": null
+  },
+  {
+    "id": "1036_kleidung",
+    "description": "kleidung",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1036_kleidung",
+    "code": null
+  },
+  {
+    "id": "1037_leuchtmittel__batterien",
+    "description": "leuchtmittel > batterien",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1037_leuchtmittel__batterien",
+    "code": null
+  },
+  {
+    "id": "1038_pflanzen__blumen",
+    "description": "pflanzen > blumen",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1038_pflanzen__blumen",
+    "code": null
+  },
+  {
+    "id": "1054_andere_saucen",
+    "description": "andere saucen",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1054_andere_saucen",
+    "code": null
+  },
+  {
+    "id": "1056_mayonaisse",
+    "description": "mayonaisse",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1056_mayonaisse",
+    "code": null
+  },
+  {
+    "id": "1057_senf",
+    "description": "senf",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1057_senf",
+    "code": null
+  },
+  {
+    "id": "1061_bonbons__fruchtgummi",
+    "description": "bonbons > fruchtgummi",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1061_bonbons__fruchtgummi",
+    "code": null
+  },
+  {
+    "id": "1062_kaugummi",
+    "description": "kaugummi",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1062_kaugummi",
+    "code": null
+  },
+  {
+    "id": "1063_kekse",
+    "description": "kekse",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1063_kekse",
+    "code": null
+  },
+  {
+    "id": "1064_pralines__bonbonieren",
+    "description": "pralines > bonbonieren",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1064_pralines__bonbonieren",
+    "code": null
+  },
+  {
+    "id": "1065_saisonales",
+    "description": "saisonales",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1065_saisonales",
+    "code": null
+  },
+  {
+    "id": "1066_schnitten__waffeln",
+    "description": "schnitten > waffeln",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1066_schnitten__waffeln",
+    "code": null
+  },
+  {
+    "id": "1067_schokolade-,_muesli-__fruchtriegel",
+    "description": "schokolade-, muesli- > fruchtriegel",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1067_schokolade-,_muesli-__fruchtriegel",
+    "code": null
+  },
+  {
+    "id": "1068_schokoladetafeln",
+    "description": "schokoladetafeln",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1068_schokoladetafeln",
+    "code": null
+  },
+  {
+    "id": "974_babynahrung",
+    "description": "babynahrung",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/974_babynahrung",
+    "code": null
+  },
+  {
+    "id": "975_babywindeln",
+    "description": "babywindeln",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/975_babywindeln",
+    "code": null
+  },
+  {
+    "id": "977_brot_verpackt",
+    "description": "brot verpackt",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/977_brot_verpackt",
+    "code": null
+  },
+  {
+    "id": "978_gebaeck",
+    "description": "gebaeck",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/978_gebaeck",
+    "code": null
+  },
+  {
+    "id": "979_mehlspeisen",
+    "description": "mehlspeisen",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/979_mehlspeisen",
+    "code": null
+  },
+  {
+    "id": "1086_brot",
+    "description": "brot",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1086_brot",
+    "code": null
+  },
+  {
+    "id": "992_fisch",
+    "description": "fisch",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/992_fisch",
+    "code": null
+  },
+  {
+    "id": "993_fleisch",
+    "description": "fleisch",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/993_fleisch",
+    "code": null
+  },
+  {
+    "id": "995_cerealien",
+    "description": "cerealien",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/995_cerealien",
+    "code": null
+  },
+  {
+    "id": "996_muesli__flocken",
+    "description": "muesli > flocken",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/996_muesli__flocken",
+    "code": null
+  },
+  {
+    "id": "997_suesse_brotaufstriche",
+    "description": "suesse brotaufstriche",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/997_suesse_brotaufstriche",
+    "code": null
+  },
+  {
+    "id": "1014_andere_herzhafte_snacks",
+    "description": "andere herzhafte snacks",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1014_andere_herzhafte_snacks",
+    "code": null
+  },
+  {
+    "id": "1015_chips",
+    "description": "chips",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1015_chips",
+    "code": null
+  },
+  {
+    "id": "1016_nuesse__kerne",
+    "description": "nuesse > kerne",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1016_nuesse__kerne",
+    "code": null
+  },
+  {
+    "id": "1025_butter,_margarine__aufstriche",
+    "description": "butter, margarine > aufstriche",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1025_butter,_margarine__aufstriche",
+    "code": null
+  },
+  {
+    "id": "1026_desserts",
+    "description": "desserts",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1026_desserts",
+    "code": null
+  },
+  {
+    "id": "1028_joghurt",
+    "description": "joghurt",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1028_joghurt",
+    "code": null
+  },
+  {
+    "id": "1029_milch",
+    "description": "milch",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1029_milch",
+    "code": null
+  },
+  {
+    "id": "1030_rahm__topfen",
+    "description": "rahm > topfen",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1030_rahm__topfen",
+    "code": null
+  },
+  {
+    "id": "1031_teige__convenience",
+    "description": "teige > convenience",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1031_teige__convenience",
+    "code": null
+  },
+  {
+    "id": "1032_tofu,_tempeh__seitan",
+    "description": "tofu, tempeh > seitan",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1032_tofu,_tempeh__seitan",
+    "code": null
+  },
+  {
+    "id": "1033_vegetarische__vegane_produkte",
+    "description": "vegetarische > vegane produkte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1033_vegetarische__vegane_produkte",
+    "code": null
+  },
+  {
+    "id": "1043_buecher",
+    "description": "buecher",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1043_buecher",
+    "code": null
+  },
+  {
+    "id": "1044_kuechen-__taschentuecher,_servietten",
+    "description": "kuechen- > taschentuecher, servietten",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1044_kuechen-__taschentuecher,_servietten",
+    "code": null
+  },
+  {
+    "id": "1045_toilettenpapier",
+    "description": "toilettenpapier",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1045_toilettenpapier",
+    "code": null
+  },
+  {
+    "id": "1046_verbrauchspapier",
+    "description": "verbrauchspapier",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1046_verbrauchspapier",
+    "code": null
+  },
+  {
+    "id": "1059_nahrungsergaenzung",
+    "description": "nahrungsergaenzung",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1059_nahrungsergaenzung",
+    "code": null
+  },
+  {
+    "id": "1076_hundefutter",
+    "description": "hundefutter",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1076_hundefutter",
+    "code": null
+  },
+  {
+    "id": "1077_katzenfutter",
+    "description": "katzenfutter",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1077_katzenfutter",
+    "code": null
+  },
+  {
+    "id": "1078_sonstige_tierwelt_(food_und_nonfood)",
+    "description": "sonstige tierwelt (food und nonfood)",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1078_sonstige_tierwelt_(food_und_nonfood)",
+    "code": null
+  },
+  {
+    "id": "1080_andere_wurstprodukte",
+    "description": "andere wurstprodukte",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1080_andere_wurstprodukte",
+    "code": null
+  },
+  {
+    "id": "1081_dauerwuerste",
+    "description": "dauerwuerste",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1081_dauerwuerste",
+    "code": null
+  },
+  {
+    "id": "1082_salami",
+    "description": "salami",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1082_salami",
+    "code": null
+  },
+  {
+    "id": "1083_schinken_und_wurst",
+    "description": "schinken und wurst",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1083_schinken_und_wurst",
+    "code": null
+  },
+  {
+    "id": "1084_speck",
+    "description": "speck",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1084_speck",
+    "code": null
+  },
+  {
+    "id": "1085_wuerstel",
+    "description": "wuerstel",
+    "url": "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f/1085_wuerstel",
+    "code": null
+  }
+]
