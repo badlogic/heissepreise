@@ -1,6 +1,8 @@
 const axios = require("axios");
 const utils = require("./utils");
 const HTMLParser = require("node-html-parser");
+const path = require("path");
+const fs = require("fs");
 
 const urlBase = "https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f";
 exports.urlBase = urlBase;
@@ -55,6 +57,16 @@ exports.fetchData = async function () {
     const items = [];
     const categories = await getMilaCategoryPages();
 
+    // Load persistent producer cache (keyed by product ID)
+    const cacheFile = path.join(__dirname, "mila-producers.json");
+    let producerCache = {};
+    try {
+        producerCache = JSON.parse(fs.readFileSync(cacheFile, "utf8"));
+    } catch (e) {
+        // cache doesn't exist yet
+    }
+    let cacheUpdated = false;
+
     for (const category of categories) {
         const categoryId = category.split("_")[0];
 
@@ -77,11 +89,11 @@ exports.fetchData = async function () {
             // bio detection is best-effort
         }
 
-        root.querySelectorAll(".block.blockart").forEach((product) => {
+        for (const product of root.querySelectorAll(".block.blockart")) {
             const input = product.querySelector("input.artikel_img_menge_c");
-            if (!input) return;
+            if (!input) continue;
             const id = (input.getAttribute("id") || "").replace("menge", "");
-            if (!id) return;
+            if (!id) continue;
 
             const link = product.querySelector("a");
             const rawHref = link?.getAttribute("href") || "";
@@ -91,13 +103,37 @@ exports.fetchData = async function () {
             const name = (nameEl?.text || "").split("\n")[0].trim();
 
             const priceEl = product.querySelector(".text_preis i");
-            if (!priceEl) return;
+            if (!priceEl) continue;
             const { price, unit } = parsePrice(priceEl.text);
-            if (!name || isNaN(price)) return;
+            if (!name || isNaN(price)) continue;
 
-            items.push({ id, name, price, unit, url, categoryPath: category, bio: bioIds.has(id) });
-        });
+            // Producer detection — use cache, fetch detail page only for new products
+            let producer = null;
+            if (id in producerCache) {
+                producer = producerCache[id];
+            } else {
+                try {
+                    const detailRes = await axios.get(url);
+                    const match = HTMLParser.parse(detailRes.data).text.match(/Produzent:\s*([^\n\r]+)/i);
+                    producer = match ? match[1].trim() : null;
+                } catch (e) {
+                    // best-effort
+                }
+                producerCache[id] = producer;
+                cacheUpdated = true;
+            }
+
+            items.push({ id, name, price, unit, url, categoryPath: category, bio: bioIds.has(id), producer });
+        }
     }
+
+    // Persist updated cache
+    if (cacheUpdated) {
+        try {
+            fs.writeFileSync(cacheFile, JSON.stringify(producerCache, null, 2));
+        } catch (e) {}
+    }
+
     return items;
 };
 
@@ -115,7 +151,7 @@ exports.getCanonical = function (item, today) {
     return utils.convertUnit(
         {
             id: item.id,
-            name: item.name,
+            name: item.producer && item.producer.toLowerCase() === "jeden tag" ? `${item.producer} ${item.name}` : item.name,
             price: item.price,
             priceHistory: [{ date: today, price: item.price }],
             quantity,
