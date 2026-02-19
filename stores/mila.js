@@ -84,7 +84,8 @@ exports.fetchData = async function () {
             if (!id) return;
 
             const link = product.querySelector("a");
-            const url = link?.getAttribute("href") || "";
+            const rawHref = link?.getAttribute("href") || "";
+            const url = rawHref ? new URL(rawHref, `${urlBase}/${category}`).href : "";
 
             const nameEl = product.querySelector(".text_artikelname");
             const name = (nameEl?.text || "").split("\n")[0].trim();

@@ -107,7 +107,10 @@ exports.stores = {
         budgetBrands: [],
         color: "teal",
         defaultChecked: true,
-        getUrl: (item) => item.url,
+        getUrl: (item) =>
+            item.url.startsWith("/shop_v2/")
+                ? `https://lotzapp.net${item.url}`
+                : `https://lotzapp.net/shop_v2/c45147dee729311ef5b5c3003946c48f${item.url}`,
     },
 };
 
