@@ -102,6 +102,13 @@ exports.stores = {
         defaultChecked: false,
         getUrl: (item) => `https://www.muller.de/${item.url}`,
     },
+    aldiDe: {
+        name: "Aldi DE",
+        budgetBrands: ["milsana"],
+        color: "lime",
+        defaultChecked: true,
+        getUrl: (item) => `https://www.mein-aldi.de/product/${item.url}`,
+    },
 };
 
 exports.STORE_KEYS = Object.keys(exports.stores);
