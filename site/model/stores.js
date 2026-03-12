@@ -19,7 +19,7 @@ exports.stores = {
         name: "Hofer",
         budgetBrands: ["milfina"],
         color: "purple",
-        defaultChecked: false,
+        defaultChecked: true,
         getUrl: (item) => `https://www.roksh.at/hofer/produkte/${item.url}`,
     },
     lidl: {

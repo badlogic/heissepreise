@@ -192,6 +192,12 @@
     "code": "63"
   },
   {
+    "id": "ostern-hofer",
+    "description": "Ostern",
+    "url": "https://www.roksh.at//hofer/angebot/sußes-salziges/ostern-hofer",
+    "code": null
+  },
+  {
     "id": "tiefkuhlwaren",
     "description": "Tiefkühlwaren",
     "url": "https://www.roksh.at//hofer/angebot/tiefkuhlwaren",
@@ -348,12 +354,6 @@
     "code": "86"
   },
   {
-    "id": "tragetaschen",
-    "description": "Tragetaschen",
-    "url": "https://www.roksh.at//hofer/angebot/haushalt/tragetaschen",
-    "code": "8C"
-  },
-  {
     "id": "batterien-akkus",
     "description": "Batterien & Akkus",
     "url": "https://www.roksh.at//hofer/angebot/haushalt/batterien-akkus",
@@ -386,6 +386,12 @@
   {
     "url": "https://www.roksh.at/hofer/angebot/undefined",
     "code": ""
+  },
+  {
+    "id": "tragetaschen",
+    "description": "Tragetaschen",
+    "url": "https://www.roksh.at//hofer/angebot/haushalt/tragetaschen",
+    "code": "8C"
   },
   {
     "id": "obst-gemuse",

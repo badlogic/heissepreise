@@ -39,16 +39,7 @@ exports.getCanonical = function (item, today) {
 };
 
 const HOFER_BASE_URL = `https://shopservice.roksh.at`;
-const CATEGORIES = HOFER_BASE_URL + `/category/GetFullCategoryList/`;
-const CONFIG = { headers: { authorization: null } };
-const TOKEN_DATA = {
-    OwnWebshopProviderCode: "",
-    SetUserSelectedShopsOnFirstSiteLoad: true,
-    RedirectToDashboardNeeded: false,
-    ShopsSelectedForRoot: "hofer",
-    BrandProviderSelectedForRoot: null,
-    UserSelectedShops: [],
-};
+const CATEGORIES_URL = HOFER_BASE_URL + `/category/GetFullCategoryList/?providerCode=hofer`;
 const ITEMS = HOFER_BASE_URL + `/productlist/CategoryProductList`;
 
 exports.fetchData = async function () {
@@ -56,13 +47,16 @@ exports.fetchData = async function () {
 
     let hoferItems = [];
     for (let subCategory of subCategories) {
-        let categoryData = (await axios.get(`${ITEMS}?progId=${subCategory.ProgID}&firstLoadProductListResultNum=4&listResultProductNum=24`, CONFIG))
-            .data;
+        let categoryData = (
+            await axios.get(`${ITEMS}?progId=${subCategory.ProgID}&firstLoadProductListResultNum=4&listResultProductNum=24&providerCode=hofer`)
+        ).data;
         const numPages = categoryData.ProductListResults[0].ListContext.TotalPages;
 
         for (let iPage = 1; iPage <= numPages; iPage++) {
             let items = (
-                await axios.post(`${HOFER_BASE_URL}/productlist/GetProductList`, { CategoryProgId: subCategory.ProgID, Page: iPage }, CONFIG)
+                await axios.get(
+                    `${HOFER_BASE_URL}/productlist/GetProductList?Page=${iPage}&CategoryProgId=${subCategory.ProgID}&userSelectedProviderCodeArray=hofer`
+                )
             ).data;
             hoferItems = hoferItems.concat(items.ProductList);
         }
@@ -72,15 +66,8 @@ exports.fetchData = async function () {
 };
 
 exports.getCategories = async () => {
-    const token = (
-        await axios.post("https://shopservice.roksh.at/session/configure", TOKEN_DATA, {
-            headers: { Accept: "application/json", "Content-Type": "application/json" },
-        })
-    ).headers["jwt-auth"];
-    CONFIG.headers.authorization = "Bearer " + token;
-
     // concat all subcategories (categories.[i].ChildList)
-    const categories = (await axios.post(CATEGORIES, {}, CONFIG)).data;
+    const categories = (await axios.get(CATEGORIES_URL)).data;
     const subCategories = categories.reduce((acc, category) => acc.concat(category.ChildList), []);
     return { categories, subCategories };
 };
